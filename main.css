@@ -20,11 +20,14 @@ header {
     box-sizing: border-box;
     width: 50%; /* 幅をさらに小さく設定 */
     margin: auto; /* 左右中央揃え */
-    text-align: center; /* コンテナ内のテキスト中央揃え */
+}
+
+.content{
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .button-container {
-    margin-bottom: 20px;
     text-align: center; /* ボタンの中央揃え */
 }
 
