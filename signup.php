@@ -20,7 +20,7 @@ if (isset($_SESSION['signup_error'])) {
     </div>
     <div class="form-group">
         <label for="address">メールアドレス:</label>
-        <input type="address" id="address" name="address" required>
+        <input type="email" id="address" name="address" required>
     </div>
     <div class="form-group">
         <label for="password">パスワード:</label>
