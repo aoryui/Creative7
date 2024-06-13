@@ -19,4 +19,8 @@ $result = $form->signUP($username, $email, $subject, $password);
 if ($result == '') {
     header("Location: login.php");
     exit();
+} else {
+    $_SESSION['signup_error'] = $result;
+    header('Location: signup.php');
+    exit();
 }
