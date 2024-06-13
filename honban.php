@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
-<?php
-require_once __DIR__ . '/header.php';
-?>
-
+<head>
+    <link rel="stylesheet" href="main.css">
+</head>
 <body>
+    <?php require_once __DIR__ . '/header.php'; ?>
+
     <header>
         <h1>就活タイサくん</h1>
     </header>
@@ -20,6 +21,7 @@ require_once __DIR__ . '/header.php';
     </main>
 </body>
 </html>
+
 
 
 

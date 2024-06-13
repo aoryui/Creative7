@@ -6,8 +6,11 @@ header {
 }
 
 main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
     text-align: left;
-    margin: 20px;
 }
 
 .container {
@@ -16,11 +19,13 @@ main {
     height: 400px; /* 縦長にするための高さ指定 */
     box-sizing: border-box;
     width: 50%; /* 幅をさらに小さく設定 */
-    margin: 0; /* 左寄せのために右側のマージンを削除 */
+    margin: auto; /* 左右中央揃え */
+    text-align: center; /* コンテナ内のテキスト中央揃え */
 }
 
 .button-container {
     margin-bottom: 20px;
+    text-align: center; /* ボタンの中央揃え */
 }
 
 .button-container button {
@@ -28,4 +33,5 @@ main {
     font-size: 16px;
     cursor: pointer;
 }
+
 
