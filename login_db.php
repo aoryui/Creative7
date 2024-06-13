@@ -9,7 +9,7 @@ $result = $form->authUser($userid, $password);
 session_start();
 if (empty($result['userid'])) {
     $_SESSION['login_error'] = 'ユーザーID、パスワードを確認してください。';
-    header('Location: ' . 'login.php');
+    header('Location: ' . 'honban.php');
     exit();
 }
 
@@ -23,4 +23,4 @@ $_SESSION['userEmail'] = $result['email'];
 setcookie("userid", $userid, time() + 60 * 60 * 24 * 14, '/');
 setcookie("userName", $username, time() + 60 * 60 * 24 * 14, '/');
 
-header(('Location:' . 'mypage.php'));
+header(('Location:' . 'honban.php'));
