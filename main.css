@@ -1,0 +1,31 @@
+header {
+    background-color: rgb(89, 208, 247);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+main {
+    text-align: left;
+    margin: 20px;
+}
+
+.container {
+    border: 2px solid black;
+    padding: 20px;
+    height: 400px; /* 縦長にするための高さ指定 */
+    box-sizing: border-box;
+    width: 50%; /* 幅をさらに小さく設定 */
+    margin: 0; /* 左寄せのために右側のマージンを削除 */
+}
+
+.button-container {
+    margin-bottom: 20px;
+}
+
+.button-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
