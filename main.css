@@ -34,4 +34,6 @@ header {
     cursor: pointer;
 }
 
-
+.message-red {
+    color: red;
+}
