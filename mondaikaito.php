@@ -6,6 +6,7 @@
     <link rel="icon" type="image/x-icon" href="image/icon.png" />
     <title>SPIタイサくん</title>
 </head>
+
 <body>
 <?php
 require_once __DIR__ . '/header.php';
