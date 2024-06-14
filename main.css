@@ -130,3 +130,47 @@ body{
     margin-left: 920px;
 }
 /*mondaikaito以上*/
+
+/*loguinのCSS*/
+.login-ji{
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid #ffc0cb;
+    border-radius: 25px;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color:rgb(89, 208, 247);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #68B7F0;
+}
+
+/* 結果表示エリア */
+#loginResult {
+    margin: 10px auto;
+}
+/*loginのCSS*/
