@@ -9,6 +9,7 @@ if (!empty($message)) {
     echo '<span class="message">' . htmlspecialchars($message, ENT_QUOTES, 'UTF-8') . '</span>';
 }
 ?>
+
 <div class="login-container">
 <div class="login-ji">
 <h1>ログイン</h1>
@@ -22,11 +23,11 @@ if (isset($_SESSION['login_error'])) {
 ?>
 <form action="login_db.php" method="post" class="form-group">
     <div class="form-group">
-        <label for="username">メールアドレス：</label>
+        <label for="username">メールアドレス</label>
         <input type="email" id="username" name="username" required />
     </div>
     <div class="form-group">
-        <label for="password">パスワード：</label>
+        <label for="password">パスワード</label>
         <input type="password" id="password" name="password" required />
     </div>
     <button type="submit">ログイン</button>

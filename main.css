@@ -137,13 +137,13 @@ body {
 
 /*login.phpのスタイリング*/
 .login-container{
-    width: 400px;
-    margin: 100px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    font-weight: bold;
+    background-color: #ffefd5;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #ff6b6b;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .login-ji{
