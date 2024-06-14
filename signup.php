@@ -9,7 +9,7 @@ if (isset($_SESSION['signup_error'])) {
     unset($_SESSION['signup_error']);
 }
 ?>
-<form action="touroku.php" method="post" class="form-groupa">
+<form action="touroku.php" method="post" class="form-group">
     <div class="form-group">
         <label for="username">ユーザー名:</label>
         <input type="text" id="username" name="username" required>
