@@ -11,7 +11,7 @@ $username = $_SESSION['userName'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>就活タイサくんのページ</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="css/main.css">
     <header>
         <h1>就活タイサくん</h1>
     </header>
