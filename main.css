@@ -41,47 +41,41 @@ header {
     color: red;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    flex-direction: column;
-    align-items: center;
+/*mondaikaitoのCSS以下*/
+
+body{
+    overflow: hidden;
 }
 
-.menu {
-    display: flex;
-    flex-direction: column;
-    margin-right: 20px;
-}
-.menu div {
-    width: 30px;
-    height: 5px;
-    background-color: #fff;
-    margin: 3px 0;
-}
 .content {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     width: 100%;
     padding: 20px;
+    flex-grow: 1;
+    box-sizing: border-box;
+    
 }
 .question {
     flex-grow: 1;
-    margin-right: 20px;
+    margin: 0 0 0 auto;
 }
 .question-text {
     background-color: #e0e0e0;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 30px;
+    text-align: center; /* テキストを右揃え */
+    margin-left: 310px;
+}
+.question p{
+    margin-right: 390px;
 }
 .choices {
     display: flex;
     flex-direction: column;
     margin-bottom: 40px;
     margin-top: 100px; /* 上側のマージンを追加 */
-    margin-right: 300px;
+    margin-right: 70px;
     width: 200px; /* 適切な幅を設定 */
 }
 .choice {
@@ -120,20 +114,22 @@ body {
     margin: 0 1px;
     opacity: 1;
 }
-.footer {
-    text-align: center;
-    margin-top: 20px;
-}
-.footer p {
-    margin-bottom: 10px;
-}
+
 .next-button {
     padding: 10px 20px;
     background-color: #00aaff;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
+    position: absolute;
+    bottom: 50px; /* ボタンの位置を調整 */
+    right: 20px;
 }
+
+.footer p{
+    margin-left: 920px;
+}
+/*mondaikaito以上*/
 
 /*login.phpのスタイリング*/
 .login-container{
