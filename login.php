@@ -9,7 +9,7 @@ if (!empty($message)) {
     echo '<span class="message">' . htmlspecialchars($message, ENT_QUOTES, 'UTF-8') . '</span>';
 }
 ?>
-
+<div class="login-container">
 <h1>ログイン情報を入力してください</h1>
 <?php
 if (isset($_SESSION['login_error'])) {
@@ -17,7 +17,7 @@ if (isset($_SESSION['login_error'])) {
     unset($_SESSION['login_error']);
 }
 ?>
-<form action="login_db.php" method="post" class="form-groupa">
+<form action="login_db.php" method="post" class="form-group">
     <div class="form-group">
         <label for="username">メールアドレス：</label>
         <input type="email" id="username" name="username" required />
@@ -28,7 +28,9 @@ if (isset($_SESSION['login_error'])) {
     </div>
     <button type="submit">ログイン</button>
 </form>
+<div class="">
 <p><a href="signup.php">新規登録はこちら</a></p>
+</div>
 </body>
 
 </html>
