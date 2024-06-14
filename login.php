@@ -10,7 +10,10 @@ if (!empty($message)) {
 }
 ?>
 <div class="login-container">
-<h1>ログイン情報を入力してください</h1>
+<div class="login-ji">
+<h1>ログイン</h1>
+</div>
+<!-- ログインフォーム -->
 <?php
 if (isset($_SESSION['login_error'])) {
     echo '<p class="message-red">' . $_SESSION['login_error'] . '</p>';
@@ -30,6 +33,7 @@ if (isset($_SESSION['login_error'])) {
 </form>
 <div class="">
 <p><a href="signup.php">新規登録はこちら</a></p>
+</div>
 </div>
 </body>
 
