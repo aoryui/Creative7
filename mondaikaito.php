@@ -1,10 +1,9 @@
-
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="image/icon.png" />
     <title>SPIタイサくん</title>
 </head>
 <body>
@@ -44,7 +43,7 @@ require_once __DIR__ . '/header.php';
     </div>
     <div class="footer">
         <p>時間超過した場合次の問題に行きます</p>
-        <a href="#" class="next-button">次に進む</a>
+        <a href="#" class="next-button" id="next-button">次に進む</a>
     </div>
     <script>
         const timerBar = document.getElementById('timer-bar');
@@ -81,13 +80,23 @@ require_once __DIR__ . '/header.php';
             const interval = setInterval(() => {
                 if (currentSegment >= totalSegments) {
                     clearInterval(interval);
-                    // タイムアップ後の処理をここに書く
+                    goToNextQuestion(); // タイムアップ後の処理をここに書く
                 } else {
                     segments[currentSegment].style.backgroundColor = darkColors[currentSegment];
                     currentSegment++;
                 }
             }, segmentTime);
         }
+
+        function goToNextQuestion() {
+            // 次の問題に進む処理をここに書く
+            window.location.href = "次の問題のURL"; // 実際の次の問題のURLに変更
+        }
+
+        document.getElementById('next-button').addEventListener('click', (e) => {
+            e.preventDefault();
+            goToNextQuestion();
+        });
 
         createSegments();
         startTimer();
