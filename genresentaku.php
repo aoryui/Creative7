@@ -4,84 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPIタイサくん</title>
+    <link rel="stylesheet" href="css/genresentaku.css">
 </head>
-
-<style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-}
-
-.container {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #bcd;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.menu-icon {
-    font-size: 24px;
-}
-
-h1 {
-    margin: 0;
-    font-size: 24px;
-}
-
-.login {
-    font-size: 16px;
-    color: #666;
-}
-
-main {
-    margin-top: 20px;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.categories {
-    display: flex;
-    justify-content: space-around;
-}
-
-.category {
-    background-color: white;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 45%;
-}
-
-.category h3 {
-    text-align: center;
-    margin-top: 0;
-}
-
-.category ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.category li {
-    margin: 10px 0;
-    text-align: center;
-}
-
-</style>
 
 <body class="body2">
     <div class="container">
