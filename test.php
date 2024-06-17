@@ -1,39 +1,53 @@
 <?php
 require_once __DIR__ . '/header.php';
+
+$servername = "localhost";
+$username = "Creative7";
+$password = "11111";
+$dbname = "creative7";
+
+// データベース接続
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// 接続確認
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// 問題を取得
+$question_sql = "SELECT * FROM questions LIMIT 1"; // ここでは最初の問題を取得
+$question_result = $conn->query($question_sql);
+$question = $question_result->fetch_assoc();
+
+// 選択肢を取得
+$choices_sql = "SELECT * FROM choices WHERE question_id=" . $question['question_id'];
+$choices_result = $conn->query($choices_sql);
+
+$conn->close();
 ?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/test.css">
     <title>SPIタイサくん</title>
 </head>
-
 <body>
     <div class="content">
         <div class="question">
             <div class="question-text">次の文章を読んで問いに答えなさい</div>
-            <p>下線部の語が最も近い意味で使われているものを1つ選びなさい。</p>
-            <p><u>あかるい未来がまっている</u></p>
+            <p><?php echo $question['question_text']; ?></p>
         </div>
         <div class="choices">
-            <div class="choice">
-                <input type="radio" name="future" id="option1">
-                <label for="option1">明るい未来</label>
-            </div>
-            <div class="choice" style="background-color: #dcd0c0;">
-                <input type="radio" name="future" id="option2">
-                <label for="option2">輝るい未来</label>
-            </div>
-            <div class="choice">
-                <input type="radio" name="future" id="option3">
-                <label for="option3">輝く未来</label>
-            </div>
-            <div class="choice" style="background-color: #dcd0c0;">
-                <input type="radio" name="future" id="option4">
-                <label for="option4">拓類未来</label>
-            </div>
+            <?php
+            while ($choice = $choices_result->fetch_assoc()) {
+                echo '<div class="choice">';
+                echo '<input type="radio" name="choice" id="option' . $choice['choice_id'] . '">';
+                echo '<label for="option' . $choice['choice_id'] . '">' . $choice['choice_text'] . '</label>';
+                echo '</div>';
+            }
+            ?>
         </div>
     </div>
     <div class="timer">
