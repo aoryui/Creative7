@@ -37,7 +37,6 @@ require_once __DIR__ . '/header.php';
         </div>
     </div>
     <div class="footer">
-        <p>時間超過した場合次の問題に行きます</p>
         <a href="#" class="next-button" id="next-button">次に進む</a>
     </div>
     <script>
