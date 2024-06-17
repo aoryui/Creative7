@@ -24,6 +24,9 @@ $choices_sql = "SELECT * FROM choices WHERE question_id=" . $question['question_
 $choices_result = $conn->query($choices_sql);
 
 $conn->close();
+
+// 改行を HTML 改行タグに変換
+$question_text = nl2br(htmlspecialchars($question['question_text'], ENT_QUOTES, 'UTF-8'));
 ?>
 
 <!DOCTYPE html>
@@ -37,14 +40,14 @@ $conn->close();
     <div class="content">
         <div class="question">
             <div class="question-text">次の文章を読んで問いに答えなさい</div>
-            <p><?php echo $question['question_text']; ?></p>
+            <p><?php echo $question_text; ?></p>
         </div>
         <div class="choices">
             <?php
             while ($choice = $choices_result->fetch_assoc()) {
                 echo '<div class="choice">';
                 echo '<input type="radio" name="choice" id="option' . $choice['choice_id'] . '">';
-                echo '<label for="option' . $choice['choice_id'] . '">' . $choice['choice_text'] . '</label>';
+                echo '<label for="option' . $choice['choice_id'] . '">' . htmlspecialchars($choice['choice_text'], ENT_QUOTES, 'UTF-8') . '</label>';
                 echo '</div>';
             }
             ?>
