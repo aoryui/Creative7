@@ -2,11 +2,11 @@
     background-color: #ffefd5;
     font-family: 'Comic Sans MS', cursive, sans-serif;
     color: #ff6b6b;
-    min-height: 100vh;
+    height: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: scroll;
+    
   }
   
 .login-container{
