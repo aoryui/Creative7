@@ -12,7 +12,6 @@ $username = $_SESSION['userName'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="image/icon.png" />
     <title>就活タイサくんのページ</title>
-    <link rel="stylesheet" href="css/main.css">
     <header>
         <h1>就活タイサくん</h1>
     </header>
