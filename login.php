@@ -9,9 +9,9 @@ if (!empty($message)) {
     echo '<span class="message">' . htmlspecialchars($message, ENT_QUOTES, 'UTF-8') . '</span>';
 }
 ?>
-
 <!DOCTYPE html>
 <link rel="stylesheet" href="./css/login.css">
+<div class="login-body">
 <div class="login-container">
 <div class="login-ji">
 <h1>ログイン</h1>
