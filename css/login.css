@@ -1,3 +1,11 @@
+
+header {
+  background-color: rgb(89, 208, 247);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
 .login-body{
     background-color: #ffefd5;
     font-family: 'Comic Sans MS', cursive, sans-serif;
