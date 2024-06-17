@@ -6,19 +6,18 @@ header {
 }
 
 .login-body{
-    background-color: #ffefd5;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    color: #ff6b6b;
-    height: 600px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-  }
+  background-color: #ffefd5;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  color: #ff6b6b;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
   
 .login-container{
   background-color: #fff;
-  padding: 50px;
+  padding: 40px;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -56,7 +55,7 @@ input::placeholder {
   }
 
 button {
-    width: 100%;
+    width: 80%;
     padding: 10px;
     background-color:rgb(89, 208, 247);
     color: white;
