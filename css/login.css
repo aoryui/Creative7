@@ -5,8 +5,11 @@
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
-    overflow: scroll;
+    align-items: center; 
+  }
+
+html{
+  overflow-y: scroll;
   }
   
 .login-container{
