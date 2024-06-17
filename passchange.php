@@ -27,7 +27,9 @@ if (!empty($message)) {
     echo '<span class="message-red">' . htmlspecialchars($message, ENT_QUOTES, 'UTF-8') . '</span>';
 }
 ?>
-
+<head>
+<link rel="stylesheet" href="css/passchange.css">
+</head>
 <form action="changepass.php" method="POST" class="form-groupa">
     <div class="form-group">
         <label for="old_password">現在のパスワード：</label>
