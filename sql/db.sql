@@ -27,8 +27,7 @@ CREATE TABLE questions (
 -- 選択肢テーブルを作成
 DROP TABLE IF EXISTS choices;
 CREATE TABLE choices (
-    question_id AUTO_INCREMENT PRIMARY KEY,
-    choice_id INT INT NOT NULL
+    choice_id INT AUTO_INCREMENT PRIMARY KEY,
     question_id INT NOT NULL,
     choice_text TEXT NOT NULL,
     FOREIGN KEY (question_id) REFERENCES questions(question_id) ON DELETE CASCADE
