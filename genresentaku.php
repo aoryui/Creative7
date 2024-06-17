@@ -9,15 +9,6 @@ require_once __DIR__ . '/header.php';
     <title>SPIタイサくん</title>
     <link rel="stylesheet" href="css/genresentaku.css">
 </head>
-
-<body class="body2">
-    <div class="container">
-        <header>
-            <div class="menu-icon">&#9776;</div>
-            <h1 class="genreh1">SPIタイサくん</h1>
-            <div class="login">ログイン</div>
-        </header>
-        <main class="main2">
             <h2 class="genreh2">ジャンル選択</h2>
             <div class="categories">
                 <div class="category">
