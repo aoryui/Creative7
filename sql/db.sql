@@ -44,7 +44,7 @@ CREATE TABLE answers (
 );
 
 -- 問題を挿入
-INSERT INTO questions (question_text) VALUES ('この問題の正解はどれですか？');
+INSERT INTO questions (question_text) VALUES ('この問題の正解はどれですか？\nテキストを改行して');
 
 -- 選択肢を挿入
 INSERT INTO choices (question_id, choice_text) VALUES (1, '選択肢1');
