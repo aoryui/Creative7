@@ -2,7 +2,7 @@
 require_once __DIR__ . '/header.php';
 ?>
 <!DOCTYPE html>
-<link rel="stylesheet" href="./css/main.css">
+<link rel="stylesheet" href="./css/honban.css">
 <html lang="ja">
 <head>
 </head>

@@ -5,41 +5,6 @@ header {
     padding: 20px;
 }
 
-.honbanmain {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 80vh;
-    text-align: left;
-}
-
-.container {
-    border: 2px solid black;
-    padding: 20px;
-    height: 400px; /* 縦長にするための高さ指定 */
-    box-sizing: border-box;
-    width: 50%; /* 幅をさらに小さく設定 */
-    margin: auto; /* 左右中央揃え */
-}
-
-.content{
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.button-container {
-    text-align: center; /* ボタンの中央揃え */
-}
-
-.button-container button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-
-/*testのCSS以下*/
-
 body{
     overflow: hidden;
     
