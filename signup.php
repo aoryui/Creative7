@@ -1,8 +1,13 @@
 <?php
 require_once __DIR__ . '/header.php';
 ?>
-
+<!DOCTYPE html>
+<link rel="stylesheet" href="./css/signup.css">
+<div class="login-body">
+<div class="login-container">
+<div class="login-ji">
 <h1>利用開始に必要な情報を入力してください</h1>
+</div>
 <?php
 if (isset($_SESSION['signup_error'])) {
     echo '<p class="message-red">' . $_SESSION['signup_error'] . '</p>';
@@ -28,6 +33,8 @@ if (isset($_SESSION['signup_error'])) {
     </div>
     <button type="submit">登録</button>
 </form>
+</div>
+</div>
 </body>
 
 </html>
