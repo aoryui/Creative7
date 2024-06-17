@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/pre.php';
 require_once __DIR__ . '/class.php';
+require_once __DIR__ . '/header.php';
 
 // 接続
 $dsn = 'mysql:dbname=creative7;host=localhost;charset=utf8';
@@ -15,7 +16,6 @@ if (isset($_SESSION['userId'])) {
     $userid = $_SESSION['userId'];
 }
 
-require_once __DIR__ . '/header.php'
 ?>
 
 <h1>現在のパスワードと新しいパスワードを入力してください</h1>

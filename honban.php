@@ -1,10 +1,12 @@
+<?php
+require_once __DIR__ . '/header.php';
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <?php require_once __DIR__ . '/header.php'; ?>
     <main>
         <div class="honbanmain">
         <div class="container">

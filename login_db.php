@@ -3,6 +3,7 @@ $userid = $_POST['username'];
 $password = $_POST['password'];
 
 require_once __DIR__ . '/class.php';
+require_once __DIR__ . '/header.php';
 $form = new Form();
 $result = $form->authUser($userid, $password);
 
