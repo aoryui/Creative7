@@ -1,17 +1,16 @@
+<?php
+require_once __DIR__ . '/header.php';
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="image/icon.png" />
-    <link rel="stylesheet" href="./css/practice.css">
     <title>SPIタイサくん</title>
 </head>
 
 <body>
-<?php
-require_once __DIR__ . '/header.php';
-?>
     <div class="content">
         <div class="question">
             <div class="question-text">次の文章を読んで問いに答えなさい</div>

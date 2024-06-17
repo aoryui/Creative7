@@ -2,6 +2,7 @@
 require_once __DIR__ . '/pre.php';
 require_once __DIR__ . '/class.php';
 require_once __DIR__ . '/dbdata.php';
+require_once __DIR__ . '/header.php';
 
 // POSTされた現在のパスワードと新しいパスワードを取得
 $form = new form();
