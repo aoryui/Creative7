@@ -14,7 +14,12 @@ $username = $_SESSION['userName'];
 <title>就活タイサくんのページ</title>
 </head>
 <header>
-<h1>就活タイサくん</h1>
+<div class="menu-container">
+        <button id="menuButton">
+            <img src="image/menubutton.png">
+        </button>
+        <h1>就活タイサくん</h1>
+</div>
 </header>
 
 
