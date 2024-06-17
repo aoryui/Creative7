@@ -38,6 +38,5 @@ if (isset($_SESSION['login_error'])) {
 <p><a href="signup.php">新規登録はこちら</a></p>
 </div>
 </div>
-</body>
 
 </html>
