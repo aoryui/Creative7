@@ -27,7 +27,8 @@ CREATE TABLE questions (
 -- 選択肢テーブルを作成
 DROP TABLE IF EXISTS choices;
 CREATE TABLE choices (
-    choice_id INT AUTO_INCREMENT PRIMARY KEY,
+    question_id AUTO_INCREMENT PRIMARY KEY,
+    choice_id INT INT NOT NULL
     question_id INT NOT NULL,
     choice_text TEXT NOT NULL,
     FOREIGN KEY (question_id) REFERENCES questions(question_id) ON DELETE CASCADE
@@ -44,7 +45,7 @@ CREATE TABLE answers (
 );
 
 -- 問題を挿入
-INSERT INTO questions (question_text) VALUES ('この問題の正解はどれですか？');
+INSERT INTO questions (question_text) VALUES ('この問題の正解はどれですか？\nテキストを改行して');
 
 -- 選択肢を挿入
 INSERT INTO choices (question_id, choice_text) VALUES (1, '選択肢1');
