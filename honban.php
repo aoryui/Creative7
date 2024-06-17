@@ -2,9 +2,9 @@
 require_once __DIR__ . '/header.php';
 ?>
 <!DOCTYPE html>
+<link rel="stylesheet" href="./css/main.css">
 <html lang="ja">
 <head>
-    <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <main>
@@ -21,6 +21,7 @@ require_once __DIR__ . '/header.php';
         </div>
         </div>
     </main>
+    ?>
 </body>
 </html>
 
