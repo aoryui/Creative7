@@ -28,4 +28,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 
-exit();
+//exit();
+?>
+
+<html>
+    <head>
+    <link rel="stylesheet" href="css/changepass.css">
+    </head>
+</html>

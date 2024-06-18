@@ -7,9 +7,9 @@ require_once __DIR__ . '/header.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPIタイサくん</title>
-    <link rel="stylesheet" href="css/genresentaku.css">
+    <link rel="stylesheet" href="css/genre-selection.css">
 </head>
-            <h2 class="genreh2">ジャンル選択</h2>
+            <h2 class="genre h2">ジャンル選択</h2>
             <div class="categories">
                 <div class="category">
                     <h3>言語系</h3>

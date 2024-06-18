@@ -1,7 +1,152 @@
-body{
-    background-color: #ffefd5;;
+header {
+    background-color: rgb(89, 208, 247);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+body {
+    overflow: hidden;
+    background-color: #ffefd5;
+    ;
+
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+    flex-grow: 1;
+    box-sizing: border-box;
+
+}
+
+.question {
+    flex-grow: 1;
+    margin: 0 0 0 auto;
+}
+
+.question-text {
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-radius: 30px;
+    text-align: center;
+    /* テキストを右揃え */
+    margin-left: 310px;
+}
+
+.question p {
+    margin-right: 390px;
+}
+
+.choices {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    margin-top: 100px;
+    /* 上側のマージンを追加 */
+    margin-right: 70px;
+    width: 200px;
+    /* 適切な幅を設定 */
+}
+
+.choice {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    background-color: #d3d3d3;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.choice input {
+    margin-right: 10px;
+}
+
+.choice label {
+    margin: 0;
+    flex-grow: 1;
+}
+
+.timer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.timer-label {
+    margin-right: 10px;
+}
+
+.timer-bar {
+    display: flex;
+    width: 80%;
+    height: 20px;
+    overflow: hidden;
+}
+
+.timer-bar div {
+    flex: 1;
+    background-color: #e0e0e0;
+    margin: 0 1px;
+    opacity: 1;
+}
+
+.next-button {
+    padding: 10px 20px;
+    background-color: #00aaff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 50px;
+    /* ボタンの位置を調整 */
+    right: 20px;
+}
+
+.footer p {
+    margin-left: 920px;
 }
 
 #next-button {
     margin: 10px 50px 10px 50px;
+}
+
+/*mondaikaito以上*/
+
+img:hover {
+    /*画像にポインタが触られたとき*/
+    opacity: 0.5;
+    /*アイコンを薄くする*/
+    cursor: pointer;
+    /* カーソルをポインターに変更 */
+}
+
+img:active {
+    /*画像がクリックされたとき*/
+    position: relative;
+    /*画像の位置を元に戻す*/
+    top: 3px;
+    /* 画像を少し下に移動させる */
+}
+
+#menuButton {
+    margin-right: 400px;
+    width: auto;
+    /* 画像の幅に合わせてボタンの幅を自動調整 */
+    height: auto;
+    /* 画像の高さに合わせてボタンの高さを自動調整 */
+    padding: 0;
+    /* ボタンの余白をなくす */
+    border: none;
+    /* ボタンの境界線をなくす */
+    background-color: transparent;
+    /* ボタンの背景色を透明にする */
+}
+
+.menu-container {
+    display: flex;
+    align-items: center;
 }

@@ -6,7 +6,7 @@ require_once __DIR__ . '/header.php';
 <div class="login-body">
 <div class="login-container">
 <div class="login-ji">
-<h1>利用開始に必要な情報を入力してください</h1>
+<h1>新規登録</h1>
 </div>
 <?php
 if (isset($_SESSION['signup_error'])) {
