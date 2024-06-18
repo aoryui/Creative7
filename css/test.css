@@ -101,9 +101,9 @@ body {
     text-decoration: none;
     border-radius: 5px;
     position: absolute;
-    bottom: 50px;
+    bottom: 10px;
     /* ボタンの位置を調整 */
-    right: 20px;
+    right: 5px;
 }
 
 .footer p {
@@ -141,3 +141,18 @@ img:active {
     align-items: center;
 }
 */
+
+#timer-bar{
+    position: relative;
+    bottom: 30px;
+}
+
+.timer-label{
+    position: relative;
+    bottom: 30px;
+}
+
+.choice{
+    position: relative;
+    bottom: 50px;
+}
