@@ -14,10 +14,18 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+// パラメータから question_id を取得。無ければ1をデフォルト値とする
+$question_id = isset($_GET['question_id']) ? (int)$_GET['question_id'] : 1;
+
 // 問題を取得
-$question_sql = "SELECT * FROM questions LIMIT 1"; // ここでは最初の問題を取得
+$question_sql = "SELECT * FROM questions WHERE question_id = $question_id";
 $question_result = $conn->query($question_sql);
-$question = $question_result->fetch_assoc();
+
+if ($question_result->num_rows > 0) {
+    $question = $question_result->fetch_assoc();
+} else {
+    die("No question found with the given ID.");
+}
 
 // 選択肢を取得
 $choices_sql = "SELECT * FROM choices WHERE question_id=" . $question['question_id'];
@@ -27,6 +35,7 @@ $conn->close();
 
 // 改行を HTML 改行タグに変換
 $question_text = nl2br(htmlspecialchars($question['question_text'], ENT_QUOTES, 'UTF-8'));
+
 ?>
 
 <!DOCTYPE html>
@@ -108,7 +117,8 @@ $question_text = nl2br(htmlspecialchars($question['question_text'], ENT_QUOTES, 
 
         function goToNextQuestion() {
             // 次の問題に進む処理をここに書く
-            window.location.href = "次の問題のURL"; // 実際の次の問題のURLに変更
+            const nextQuestionId = <?php echo $question['question_id'] + 1; ?>;
+            window.location.href = "test.php?question_id=" + nextQuestionId; // 実際の次の問題のURLに変更
         }
 
         document.getElementById('next-button').addEventListener('click', (e) => {

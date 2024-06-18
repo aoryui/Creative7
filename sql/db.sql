@@ -44,13 +44,24 @@ CREATE TABLE answers (
 );
 
 -- 問題を挿入
-INSERT INTO questions (question_text) VALUES ('この問題の正解はどれですか？\nテキストを改行して');
+INSERT INTO questions (question_id,question_text) VALUES (1,'1. 努力：成功\nア　試験：合格\nイ　調査：研究\nウ　勉強：理解');
+INSERT INTO questions (question_id,question_text) VALUES (2,'2. 勤勉：怠惰\nア　勇敢：臆病\nイ　慎重：軽率\nウ　豊富：貧困');
+
 
 -- 選択肢を挿入
-INSERT INTO choices (question_id, choice_text) VALUES (1, '選択肢1');
-INSERT INTO choices (question_id, choice_text) VALUES (1, '選択肢2');
-INSERT INTO choices (question_id, choice_text) VALUES (1, '選択肢3');
-INSERT INTO choices (question_id, choice_text) VALUES (1, '選択肢4');
+INSERT INTO choices (question_id, choice_text) VALUES (1, 'A.アだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (1, 'B.イだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (1, 'C.ウだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (1, 'D.アとイ');
+INSERT INTO choices (question_id, choice_text) VALUES (1, 'E.アとウ');
+INSERT INTO choices (question_id, choice_text) VALUES (1, 'F.イとウ');
+
+INSERT INTO choices (question_id, choice_text) VALUES (2, 'A.アだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (2, 'B.イだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (2, 'C.ウだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (2, 'D.アとイ');
+INSERT INTO choices (question_id, choice_text) VALUES (2, 'E.アとウ');
+INSERT INTO choices (question_id, choice_text) VALUES (2, 'F.イとウ');
 
 -- 正解と解説を挿入
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (1, 2, '正解は選択肢2です。これは最も適切な回答です。');
