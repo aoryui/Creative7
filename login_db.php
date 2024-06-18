@@ -9,7 +9,7 @@ $result = $form->authUser($userid, $password);
 
 session_start();
 if (empty($result['userid'])) {
-    $_SESSION['login_error'] = 'ユーザーID、パスワードを確認してください。';
+    $_SESSION['login_error'] = 'メールアドレス、パスワードを確認してください。';
     header('Location: ' . 'honban.php');
     exit();
 }
