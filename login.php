@@ -26,7 +26,7 @@ if (isset($_SESSION['login_error'])) {
 <form action="login_db.php" method="post" class="form-group">
     <div class="form-group">
         <label for="username">メールアドレス</label>
-        <input type="email" id="username" name="username" required />
+        <input type="text" id="username" name="username" required />
     </div>
     <div class="form-group">
         <label for="password">パスワード</label>
