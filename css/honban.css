@@ -49,6 +49,7 @@ header {
     background-color: darkred;
 }
 
+/*
 img:hover {
     opacity: 0.5;
     cursor: pointer;

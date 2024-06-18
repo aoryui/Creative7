@@ -49,7 +49,9 @@ $question_text = nl2br(htmlspecialchars($question['question_text'], ENT_QUOTES, 
 <body>
     <div class="content">
         <div class="question">
-            <div class="question-text">次の文章を読んで問いに答えなさい</div>
+            <div class="question-text">最初に示された二語の関係を考えて、同じ関係のものを選びなさい。
+
+</div>
             <p><?php echo $question_text; ?></p>
         </div>
         <div class="choices">

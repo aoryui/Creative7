@@ -5,37 +5,28 @@ header {
     padding: 20px;
 }
 
+/*
 img:hover {
-    /*画像にポインタが触られたとき*/
     opacity: 0.5;
-    /*アイコンを薄くする*/
     cursor: pointer;
-    /* カーソルをポインターに変更 */
 }
 
 img:active {
-    /*画像がクリックされたとき*/
     position: relative;
-    /*画像の位置を元に戻す*/
     top: 3px;
-    /* 画像を少し下に移動させる */
 }
 
 #menuButton {
     margin-right: 400px;
     width: auto;
-    /* 画像の幅に合わせてボタンの幅を自動調整 */
     height: auto;
-    /* 画像の高さに合わせてボタンの高さを自動調整 */
     padding: 0;
-    /* ボタンの余白をなくす */
     border: none;
-    /* ボタンの境界線をなくす */
     background-color: transparent;
-    /* ボタンの背景色を透明にする */
 }
 
 .menu-container {
     display: flex;
     align-items: center;
 }
+*/
