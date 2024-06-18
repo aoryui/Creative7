@@ -10,7 +10,6 @@ header {
     justify-content: center;
     align-items: center;
     min-height: 80vh;
-    text-align: left;
     background-color: #ffefd5;
 }
 
@@ -18,59 +17,55 @@ header {
     border: 2px solid black;
     padding: 20px;
     height: 400px;
-    /* 縦長にするための高さ指定 */
     box-sizing: border-box;
     width: 50%;
-    /* 幅をさらに小さく設定 */
     margin: auto;
-    /* 左右中央揃え */
     background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .content {
     text-align: center;
-    margin-bottom: 20px;
 }
 
 .button-container {
     text-align: center;
-    /* ボタンの中央揃え */
 }
 
-.button-container button {
-    padding: 10px 20px;
-    font-size: 16px;
+.button-container input[type="button"] {
+    padding: 40px 20px;
+    font-size: 30px;
     cursor: pointer;
+    background-color: rgb(236, 106, 40);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button-container input[type="button"]:hover {
+    background-color: darkred;
 }
 
 img:hover {
-    /*画像にポインタが触られたとき*/
     opacity: 0.5;
-    /*アイコンを薄くする*/
     cursor: pointer;
-    /* カーソルをポインターに変更 */
 }
 
 img:active {
-    /*画像がクリックされたとき*/
     position: relative;
-    /*画像の位置を元に戻す*/
     top: 3px;
-    /* 画像を少し下に移動させる */
 }
 
 #menuButton {
     margin-right: 400px;
     width: auto;
-    /* 画像の幅に合わせてボタンの幅を自動調整 */
     height: auto;
-    /* 画像の高さに合わせてボタンの高さを自動調整 */
     padding: 0;
-    /* ボタンの余白をなくす */
     border: none;
-    /* ボタンの境界線をなくす */
     background-color: transparent;
-    /* ボタンの背景色を透明にする */
 }
 
 .menu-container {
