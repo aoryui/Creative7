@@ -1,0 +1,1 @@
+<p><a href="changepass.php">パスワード変更はこちら</a></p>
