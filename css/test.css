@@ -2,7 +2,7 @@ header {
     background-color: rgb(89, 208, 247);
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 1px;
 }
 
 body {
@@ -142,17 +142,17 @@ img:active {
 }
 */
 
-#timer-bar{
+#timer-bar {
     position: relative;
     bottom: 30px;
 }
 
-.timer-label{
+.timer-label {
     position: relative;
     bottom: 30px;
 }
 
-.choice{
+.choice {
     position: relative;
     bottom: 50px;
 }
