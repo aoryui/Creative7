@@ -6,10 +6,7 @@ header {
 }
 
 body {
-    overflow: hidden;
     background-color: #ffefd5;
-    ;
-
 }
 
 .content {
@@ -103,7 +100,7 @@ body {
     position: absolute;
     bottom: 10px;
     /* ボタンの位置を調整 */
-    right: 5px;
+    right: 15px;
 }
 
 .footer p {
