@@ -2,7 +2,7 @@ header {
     background-color: rgb(89, 208, 247);
     color: white;
     text-align: center;
-    padding: 1px;
+    padding: 20px;
 }
 
 .honbanmain {
@@ -10,7 +10,6 @@ header {
     justify-content: center;
     align-items: center;
     min-height: 80vh;
-    text-align: left;
     background-color: #ffefd5;
 }
 
@@ -18,29 +17,60 @@ header {
     border: 2px solid black;
     padding: 20px;
     height: 400px;
-    /* 縦長にするための高さ指定 */
     box-sizing: border-box;
     width: 50%;
-    /* 幅をさらに小さく設定 */
     margin: auto;
-    /* 左右中央揃え */
     background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .content {
     text-align: center;
-    margin-bottom: 20px;
 }
 
 .button-container {
     text-align: center;
-    /* ボタンの中央揃え */
 }
 
-.button-container button {
-    padding: 10px 20px;
-    font-size: 16px;
+.button-container input[type="button"] {
+    padding: 30px 20px;
+    font-size: 30px;
     cursor: pointer;
+    background-color: rgb(235, 118, 46);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button-container input[type="button"]:hover {
+    background-color: darkred;
+}
+
+img:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+img:active {
+    position: relative;
+    top: 3px;
+}
+
+#menuButton {
+    margin-right: 400px;
+    width: auto;
+    height: auto;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+
+.menu-container {
+    display: flex;
+    align-items: center;
 }
 
 /*
