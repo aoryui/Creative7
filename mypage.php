@@ -1,1 +1,1 @@
-<p><a href="changepass.php">パスワード変更はこちら</a></p>
+<p><a href="passchange.php">パスワード変更はこちら</a></p>
