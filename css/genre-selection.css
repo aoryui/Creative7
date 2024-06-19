@@ -5,6 +5,49 @@ header {
     padding: 1px;
 }
 
+.genresentaku-body {
+    background-color: #ffefd5;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #ff6b6b;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+html{
+    overflow-y: scroll;
+}
+
+.genresentaku-container{
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .genresentaku-ji{
+    text-align: center;
+  }
+  
+
+.left-content{
+    flex: 1;
+    background-color: #90ee90;
+    text-align: left;
+    margin-right: 5px;
+}
+.right-content{
+    flex: 1;
+    background-color: #90ee90;
+    text-align: left;
+    margin-right: 5px;
+}
+
+
+
+
 /*
 img:hover {
     opacity: 0.5;
@@ -30,3 +73,5 @@ img:active {
     align-items: center;
 }
 */
+
+    
