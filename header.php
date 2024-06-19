@@ -18,7 +18,7 @@ $username = $_SESSION['userName'];
         <button id="menuButton">
             <img src="image/menubutton.png">
         </button>-->
-        <h1>就活タイサくん</h1><!--
+        <h1>SPIタイサくん</h1><!--
 </div>-->
 </header>
 
