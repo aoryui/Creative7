@@ -9,18 +9,19 @@ $username = $_SESSION['userName'];
 <html lang="ja">
 <meta charset="UTF-8">    
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheets" href="../css/header.css">
+<link rel="stylesheet" href="../css/header.css">
 <link rel="icon" type="../image/x-icon" href="../image/icon.png" />
-<title>SPIタイサくん</title>
-</head>
+<title>就活タイサくんのページ</title>
 <header>
 <!--<div class="menu-container">
         <button id="menuButton">
             <img src="image/menubutton.png">
-        </button>-->
-        <h1>SPIタイサくん</h1><!--
-</div>-->
+</button>
+</div> -->
+<h1>SPIタイサくん</h1>
 </header>
+</head>
+</html>
 
 
 
