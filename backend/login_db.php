@@ -9,7 +9,7 @@ $result = $form->authUser($userid, $password);
 session_start();
 if (empty($result['userid'])) {
     $_SESSION['login_error'] = 'メールアドレス、パスワードを確認してください。';
-    header('Location: ' . '/../frontend/login.php');
+    header('Location: ' . '../frontend/login.php');
     exit();
 }
 

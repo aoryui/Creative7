@@ -10,17 +10,17 @@ $subject = $_POST['school'];
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $_SESSION['signup_error'] = '正しいメールアドレスを入力してください。';
-    header('Location: ' . '/../frontend/signup.php');
+    header('Location: ../frontend/signup.php');
     exit();
 }
 
 $result = $form->signUP($username, $email, $subject, $password);
 
 if ($result == '') {
-    header("Location: login.php");
+    header('Location: ../frontend/login.php');
     exit();
 } else {
     $_SESSION['signup_error'] = $result;
-    header('Location: signup.php');
+    header('Location: ../frontend/signup.php');
     exit();
 }
