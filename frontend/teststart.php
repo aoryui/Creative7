@@ -4,7 +4,7 @@ require_once __DIR__ . '/header.php';
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <link rel="stylesheet" href="./css/teststart.css">
+    <link rel="stylesheet" href="../css/teststart.css">
 </head>
 <body>
     <main>

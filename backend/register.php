@@ -4,7 +4,7 @@ session_start();
 // ログアウト状態の場合
 if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
     $_SESSION['requested_page'] = $_SERVER['REQUEST_URI']; // リクエストされたページの情報を保存
-    header("Location: /login.php"); // ログインページにリダイレクト
+    header("Location: /../frontend/login.php"); // ログインページにリダイレクト
     exit;
 }
 

@@ -2,7 +2,7 @@
 require_once __DIR__ . '/header.php';
 ?>
 <!DOCTYPE html>
-<link rel="stylesheet" href="./css/signup.css">
+<link rel="stylesheet" href="../css/signup.css">
 <div class="login-body">
 <div class="login-container">
 <div class="login-ji">

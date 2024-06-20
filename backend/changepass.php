@@ -16,11 +16,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // パスワードの更新
         $form->getpass($userid, $newpasswordhash);
         echo "パスワードが正常に更新されました。";
-        header("Location: login.php?message=" . urlencode("パスワードが正常に更新されました"));
+        header("Location: ../frontend/login.php?message=" . urlencode("パスワードが正常に更新されました"));
         exit();
     } else {
         echo "パスワードが違います";
-        header("Location: passchange.php?message=" . urlencode("パスワードが違います"));
+        header("Location: ../frontend/passchange.php?message=" . urlencode("パスワードが違います"));
         exit();
     }
 } else {
@@ -33,6 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <html>
     <head>
-    <link rel="stylesheet" href="css/changepass.css">
+    <link rel="stylesheet" href="../css/changepass.css">
     </head>
 </html>
