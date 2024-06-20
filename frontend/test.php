@@ -50,7 +50,12 @@ $question_text = nl2br(htmlspecialchars($question['question_text'], ENT_QUOTES, 
     <div class="content">
         <div class="question">
             <div class="question-text">次の文章を読んで問いに答えなさい</div>
-            <p><?php echo $question_text; ?></p>
+            <p><?php
+            // 画像のパスを作成
+            $image_path = "../image/言語/" . $question_text . ".jpg";
+            // HTMLで画像を表示
+            echo '<img src="' . $image_path . '" alt="icon">';
+            ?></p>
         </div>
         <div class="choices">
             <?php
