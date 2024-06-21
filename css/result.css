@@ -9,21 +9,18 @@ body {
 }
 
 .bar-graph-wrap .graph {
-    height: 50px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    background: #03a9f4;
-    width: 88%;
-    border-radius: 0 4px 4px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    animation: graphAnim 3s forwards;
-      
+  position: absolute; /* 親要素に対して固定 */
+  left: 10%; /* 親要素の左から10%の位置に配置 */
+  top: 10%; /* 親要素の上から10%の位置に配置 */
+  height: 50px;
+  background: #03a9f4;
+  width: 0%; /* 初期幅を0%に設定 */
+  border-radius: 0 4px 4px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  animation: graphAnim 3s forwards;
 }
 
 .graph span {
@@ -32,11 +29,10 @@ body {
 }
 
 @keyframes graphAnim {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
+  from {
+      width: 0%; /* アニメーション開始時の幅 */
   }
-
+  to {
+      width: 88%; /* アニメーション終了時の幅 */
+  }
+}
