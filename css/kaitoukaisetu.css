@@ -2,20 +2,16 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    background-color: #ffefd5; /* クリーム色の背景 */
 }
 
 .kaisetu1 {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 40px auto 0 auto; /* 上に40pxの余白を追加 */
     padding: 20px;
     background: #fff;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     border-radius: 8px;
-}
-
-main {
-    margin-top: 20px;
 }
 
 .kaitouran, .kaiseturan {
@@ -26,21 +22,9 @@ main {
     background-color: #fafafa;
 }
 
-.kaitouran h2, .kaiseturan h2 {
-    margin-top: 0;
-    color: #333;
-    font-size: 24px;
-}
-
 .kaitou {
     margin-bottom: 10px;
     font-size: 18px;
-}
-
-.kaitou strong {
-    display: inline-block;
-    width: 100px;
-    color: #555;
 }
 
 #user-kaitou, #correct-kaitou {
@@ -52,5 +36,4 @@ main {
     color: #333;
     line-height: 1.6;
 }
-
 

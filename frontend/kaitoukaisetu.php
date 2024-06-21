@@ -9,11 +9,10 @@ require_once __DIR__ . '/header.php';
     <title>回答と解説画面</title>
     <link rel="stylesheet" href="../css/kaitoukaisetu.css">
 </head>
-<body>
     <div class="kaisetu1">        
         <main>
+            <h2>回答</h2>
             <section class="kaitouran">
-                <h2>回答</h2>
                 <div class="kaitou">
                     <strong>貴方の回答:</strong>
                     <span id="user-kaitou">うんちな未来</span>
@@ -23,8 +22,8 @@ require_once __DIR__ . '/header.php';
                     <span id="correct-kaitou">うんこな未来</span>
                 </div>
             </section>
+            <h2>解説</h2>
             <section class="kaiseturan">
-                <h2>解説</h2>
                 <p id="kaisetu">以下解説</p>
             </section>
         </main>
