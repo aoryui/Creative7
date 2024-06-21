@@ -82,9 +82,9 @@ $_SESSION['displayed_questions'][] = $question_id;
             <div class="question-text">次の文章を読んで問いに答えなさい</div>
             <p><?php
             // 画像のパスを作成
-            $image_path = "../image/言語/" . $question_text . ".jpg";
+            $image_path = "../image/問題集/" . $question_text . ".jpg";
             // HTMLで画像を表示
-            echo '<img src="' . $image_path . '" alt="icon">';
+            echo '<img src="' . $image_path . '" alt="問題画像" class="question_img">';
             ?></p>
         </div>
         <div class="choices">

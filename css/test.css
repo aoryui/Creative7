@@ -26,6 +26,10 @@ body {
     margin-left: 310px;
 }
 
+img.question_img{
+    width: 500px;
+}
+
 .question p {
     margin-right: 390px;
 }
