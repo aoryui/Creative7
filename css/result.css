@@ -1,0 +1,42 @@
+body {
+    background-color: #ffefd5;
+}
+
+.bar-graph-wrap {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+}
+
+.bar-graph-wrap .graph {
+    height: 50px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #03a9f4;
+    width: 88%;
+    border-radius: 0 4px 4px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    animation: graphAnim 3s forwards;
+      
+}
+
+.graph span {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+@keyframes graphAnim {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
