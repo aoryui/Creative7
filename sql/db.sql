@@ -44,45 +44,45 @@ CREATE TABLE answers (
 );
 
 -- 問題を挿入
-INSERT INTO questions (question_id,question_text) VALUES (1,'最初に示された二語の関係を考えて、同じ関係のものを選びなさい。\n1. 努力：成功\nア　試験：合格\nイ　調査：研究\nウ　勉強：理解');
-INSERT INTO questions (question_id,question_text) VALUES (2,'最初に示された二語の関係を考えて、同じ関係のものを選びなさい。\n2. 勤勉：怠惰\nア　勇敢：臆病\nイ　慎重：軽率\nウ　豊富：貧困');
-INSERT INTO questions (question_id,question_text) VALUES (3,'最初に示された二語の関係を考えて、同じ関係のものを選びなさい。\n3. 医者：患者\nア　教師：生徒\nイ　警察官：犯罪者\nウ　作家：読者');
-INSERT INTO questions (question_id,question_text) VALUES (4,'最初に示された二語の関係を考えて、同じ関係のものを選びなさい。\n4. 花：種\nア　鳥：卵\nイ　木：葉\nウ　人：赤ちゃん');
-INSERT INTO questions (question_id,question_text) VALUES (5,'最初に示された二語の関係を考えて、同じ関係のものを選びなさい。\n5.映画：劇場\nア　本：図書館\nイ　演劇：舞台\nウ　音楽：楽器');
+INSERT INTO questions (question_id,question_text) VALUES (1,'1.1');
+INSERT INTO questions (question_id,question_text) VALUES (2,'1.2');
+INSERT INTO questions (question_id,question_text) VALUES (3,'1.3');
+INSERT INTO questions (question_id,question_text) VALUES (4,'1.4');
+INSERT INTO questions (question_id,question_text) VALUES (5,'1.5');
 
 
 
 -- 選択肢を挿入
-INSERT INTO choices (question_id, choice_text) VALUES (1, 'A.アだけ');
-INSERT INTO choices (question_id, choice_text) VALUES (1, 'B.イだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (1, '1.アだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (1, '1.イだけ');
 INSERT INTO choices (question_id, choice_text) VALUES (1, 'C.ウだけ');
 INSERT INTO choices (question_id, choice_text) VALUES (1, 'D.アとイ');
 INSERT INTO choices (question_id, choice_text) VALUES (1, 'E.アとウ');
 INSERT INTO choices (question_id, choice_text) VALUES (1, 'F.イとウ');
 
-INSERT INTO choices (question_id, choice_text) VALUES (2, 'A.アだけ');
-INSERT INTO choices (question_id, choice_text) VALUES (2, 'B.イだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (2, '2.アだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (2, '2.イだけ');
 INSERT INTO choices (question_id, choice_text) VALUES (2, 'C.ウだけ');
 INSERT INTO choices (question_id, choice_text) VALUES (2, 'D.アとイ');
 INSERT INTO choices (question_id, choice_text) VALUES (2, 'E.アとウ');
 INSERT INTO choices (question_id, choice_text) VALUES (2, 'F.イとウ');
 
-INSERT INTO choices (question_id, choice_text) VALUES (3, 'A.アだけ');
-INSERT INTO choices (question_id, choice_text) VALUES (3, 'B.イだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (3, '3.アだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (3, '3.イだけ');
 INSERT INTO choices (question_id, choice_text) VALUES (3, 'C.ウだけ');
 INSERT INTO choices (question_id, choice_text) VALUES (3, 'D.アとイ');
 INSERT INTO choices (question_id, choice_text) VALUES (3, 'E.アとウ');
 INSERT INTO choices (question_id, choice_text) VALUES (3, 'F.イとウ');
 
-INSERT INTO choices (question_id, choice_text) VALUES (4, 'A.アだけ');
-INSERT INTO choices (question_id, choice_text) VALUES (4, 'B.イだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (4, '4.アだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (4, '4.イだけ');
 INSERT INTO choices (question_id, choice_text) VALUES (4, 'C.ウだけ');
 INSERT INTO choices (question_id, choice_text) VALUES (4, 'D.アとイ');
 INSERT INTO choices (question_id, choice_text) VALUES (4, 'E.アとウ');
 INSERT INTO choices (question_id, choice_text) VALUES (4, 'F.イとウ');
 
-INSERT INTO choices (question_id, choice_text) VALUES (5, 'A.アだけ');
-INSERT INTO choices (question_id, choice_text) VALUES (5, 'B.イだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (5, '5.アだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (5, '5.イだけ');
 INSERT INTO choices (question_id, choice_text) VALUES (5, 'C.ウだけ');
 INSERT INTO choices (question_id, choice_text) VALUES (5, 'D.アとイ');
 INSERT INTO choices (question_id, choice_text) VALUES (5, 'E.アとウ');

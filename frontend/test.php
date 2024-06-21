@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once __DIR__ . '/header.php';
 
 $servername = "localhost";
@@ -14,8 +15,35 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// パラメータから question_id を取得。無ければ1をデフォルト値とする
-$question_id = isset($_GET['question_id']) ? (int)$_GET['question_id'] : 1;
+// 既に表示した question_id を取得
+$displayed_questions = isset($_SESSION['displayed_questions']) ? $_SESSION['displayed_questions'] : [];
+
+// 既に表示した question_id の数が5つに達したらリセット
+if (count($displayed_questions) >= 5) {
+    $displayed_questions = [];
+    $_SESSION['displayed_questions'] = [];
+}
+
+// パラメータから question_id を取得。無ければランダムに選択
+$question_id = isset($_GET['question_id']) ? (int)$_GET['question_id'] : null;
+
+if (!$question_id) {
+    // 既に表示した question_id を除外してランダムに選択
+    if (count($displayed_questions) > 0) {
+        $excluded_ids = implode(',', $displayed_questions);
+        $random_sql = "SELECT question_id FROM questions WHERE question_id NOT IN ($excluded_ids) ORDER BY RAND() LIMIT 1";
+    } else {
+        $random_sql = "SELECT question_id FROM questions ORDER BY RAND() LIMIT 1";
+    }
+    $random_result = $conn->query($random_sql);
+    if ($random_result->num_rows > 0) {
+        $random_question = $random_result->fetch_assoc();
+        $question_id = $random_question['question_id'];
+    } else {
+        // 全ての問題を表示した場合の処理（例: 全ての問題が表示されたとユーザーに通知）
+        die("All questions have been displayed.");
+    }
+}
 
 // 問題を取得
 $question_sql = "SELECT * FROM questions WHERE question_id = $question_id";
@@ -36,6 +64,8 @@ $conn->close();
 // 改行を HTML 改行タグに変換
 $question_text = nl2br(htmlspecialchars($question['question_text'], ENT_QUOTES, 'UTF-8'));
 
+// セッションに現在のquestion_idを保存
+$_SESSION['displayed_questions'][] = $question_id;
 ?>
 
 <!DOCTYPE html>
@@ -44,8 +74,8 @@ $question_text = nl2br(htmlspecialchars($question['question_text'], ENT_QUOTES, 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPIタイサくん</title>
-</head>
     <link rel="stylesheet" href="../css/test.css">
+</head>
 <body>
     <div class="content">
         <div class="question">
@@ -123,8 +153,7 @@ $question_text = nl2br(htmlspecialchars($question['question_text'], ENT_QUOTES, 
 
         function goToNextQuestion() {
             // 次の問題に進む処理をここに書く
-            const nextQuestionId = <?php echo $question['question_id'] + 1; ?>;
-            window.location.href = "test.php?question_id=" + nextQuestionId; // 実際の次の問題のURLに変更
+            window.location.href = "test.php"; // 実際の次の問題のURLに変更
         }
 
         document.getElementById('next-button').addEventListener('click', (e) => {
