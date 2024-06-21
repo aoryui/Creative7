@@ -8,8 +8,9 @@ require_once __DIR__ . '/header.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>回答と解説画面</title>
     <link rel="stylesheet" href="../css/kaitoukaisetu.css">
-</head>
-    <div class="kaisetu1">        
+</head>  
+    <div class="kaisetu1">  
+        <body>
         <main>
             <h2>回答</h2>
             <section class="kaitouran">
@@ -26,9 +27,9 @@ require_once __DIR__ . '/header.php';
             <section class="kaiseturan">
                 <p id="kaisetu">以下解説</p>
             </section>
-        </main>
-    </div>
-</body>
+        </main> 
+        </div>
+    </body>
 </html>
 
 
