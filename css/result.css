@@ -36,3 +36,12 @@ body {
       width: 88%; /* アニメーション終了時の幅 */
   }
 }
+
+#table{
+    width: 1000px;
+    background-color: gray;
+}
+
+#tri{
+    color: white;
+}

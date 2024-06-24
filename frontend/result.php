@@ -11,3 +11,35 @@ require_once __DIR__ . '/header.php';
   </div>
 </div>
 <h2>回答</h2>
+<table border="1" id="table">
+    <tr>
+      <th>問題No.</th>
+      <th>正誤</th>
+      <th>分野</th>
+      <th>解説</th>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td id="tri">▼</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td id="tri">▼</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td id="tri">▼</td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td id="tri">▼</td>
+    </tr>
+  </table>
