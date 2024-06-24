@@ -7,10 +7,24 @@ require_once __DIR__ . '/header.php';
 <div class="bar-graph-wrap">
   <div class="graph">
   <span class="name">Graph 01</span>
-  <span class="number">88%</span>
+  <span class="number">70%</span>
   </div>
 </div>
-<h2>回答</h2>
+<h2 class="level">Lv.10</h2>
+<h2 class="exp">700/1000 exp</h2>
+<h2 class="addition">+100exp</h2>
+<h2 class="correct answer rate"></h2>
+
+
+
+<h3>回答</h3>
+
+
+
+
+
+
+
 <table border="1" id="table">
     <tr>
       <th>問題No.</th>

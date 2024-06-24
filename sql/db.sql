@@ -49,8 +49,11 @@ INSERT INTO questions (question_id,question_text) VALUES (2,'1_1_2');
 INSERT INTO questions (question_id,question_text) VALUES (3,'1_1_3');
 INSERT INTO questions (question_id,question_text) VALUES (4,'1_1_4');
 INSERT INTO questions (question_id,question_text) VALUES (5,'1_1_5');
-
-
+INSERT INTO questions (question_id,question_text) VALUES (6,'1_1_6');
+INSERT INTO questions (question_id,question_text) VALUES (7,'1_1_7');
+INSERT INTO questions (question_id,question_text) VALUES (8,'1_1_8');
+INSERT INTO questions (question_id,question_text) VALUES (9,'1_1_9');
+INSERT INTO questions (question_id,question_text) VALUES (10,'1_1_10');
 
 -- 選択肢を挿入
 INSERT INTO choices (question_id, choice_text) VALUES (1, 'A.アだけ');
@@ -88,6 +91,50 @@ INSERT INTO choices (question_id, choice_text) VALUES (5, 'D.アとイ');
 INSERT INTO choices (question_id, choice_text) VALUES (5, 'E.アとウ');
 INSERT INTO choices (question_id, choice_text) VALUES (5, 'F.イとウ');
 
--- 正解と解説を挿入
-INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (1, 2, '正解は選択肢2です。これは最も適切な回答です。');
+INSERT INTO choices (question_id, choice_text) VALUES (6, 'A.アだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (6, 'B.イだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (6, 'C.ウだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (6, 'D.アとイ');
+INSERT INTO choices (question_id, choice_text) VALUES (6, 'E.アとウ');
+INSERT INTO choices (question_id, choice_text) VALUES (6, 'F.イとウ');
 
+INSERT INTO choices (question_id, choice_text) VALUES (7, 'A.アだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (7, 'B.イだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (7, 'C.ウだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (7, 'D.アとイ');
+INSERT INTO choices (question_id, choice_text) VALUES (7, 'E.アとウ');
+INSERT INTO choices (question_id, choice_text) VALUES (7, 'F.イとウ');
+
+INSERT INTO choices (question_id, choice_text) VALUES (8, 'A.アだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (8, 'B.イだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (8, 'C.ウだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (8, 'D.アとイ');
+INSERT INTO choices (question_id, choice_text) VALUES (8, 'E.アとウ');
+INSERT INTO choices (question_id, choice_text) VALUES (8, 'F.イとウ');
+
+INSERT INTO choices (question_id, choice_text) VALUES (9, 'A.アだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (9, 'B.イだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (9, 'C.ウだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (9, 'D.アとイ');
+INSERT INTO choices (question_id, choice_text) VALUES (9, 'E.アとウ');
+INSERT INTO choices (question_id, choice_text) VALUES (9, 'F.イとウ');
+
+INSERT INTO choices (question_id, choice_text) VALUES (10, 'A.アだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (10, 'B.イだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (10, 'C.ウだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (10, 'D.アとイ');
+INSERT INTO choices (question_id, choice_text) VALUES (10, 'E.アとウ');
+INSERT INTO choices (question_id, choice_text) VALUES (10, 'F.イとウ');
+
+-- 正解と解説を挿入
+-- 正解の番号が違うので後で修正
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (1, 2, '1_1_1');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (2, 10, '1_1_2');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (3, 17, '1_1_3');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (4, 23, '1_1_4');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (5, 25, '1_1_5');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (6, 25, '1_1_6');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (7, 2, '1_1_7');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (8, 10, '1_1_8');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (9, 17, '1_1_9');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (10, 23, '1_1_10');
