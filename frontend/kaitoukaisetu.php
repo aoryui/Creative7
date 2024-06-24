@@ -15,7 +15,6 @@ require_once __DIR__ . '/header.php';
             <h2>回答</h2>
             <section class="kaitouran">
                 <div class="kaitou">
-                    <p>不正解</p>
                     <strong>貴方の回答:</strong>
                     <span id="user-kaitou">回答欄</span>
                 </div>
