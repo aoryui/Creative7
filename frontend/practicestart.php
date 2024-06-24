@@ -20,7 +20,7 @@ require_once __DIR__ . '/header.php';
                     メモ用紙と筆記用具を用意してください。
                 </div>
                 <div class="button-container">
-                    <input type="button" onclick="location.href='./pracice.php'" value="練習問題を開始する">
+                    <input type="button" onclick="location.href='./practice.php'" value="練習問題を開始する">
                 </div>
             </div>
         </div>
