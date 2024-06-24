@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.profile-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-sidebar {
+    width: 30%;
+    background-color: #e9e9e9;
+    padding: 20px;
+    text-align: center;
+}
+
+.profile-icon {
+    width: 80px;
+    height: 80px;
+}
+
+.profile-info {
+    margin-top: 20px;
+}
+
+.profile-info h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.profile-info p {
+    margin: 10px 0;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.progress {
+    height: 20px;
+    background-color: #4caf50;
+}
+
+.progress-text {
+    font-size: 0.9em;
+}
+
+.edit-profile-btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.profile-main {
+    width: 70%;
+    padding: 20px;
+}
+
+.profile-main h2 {
+    margin-top: 0;
+}
+
+.learning-progress,
+.growth-record {
+    margin-top: 20px;
+}
+
+.learning-progress h3,
+.growth-record h3 {
+    margin-bottom: 10px;
+}
+
+.progress-item {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.growth-chart {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
