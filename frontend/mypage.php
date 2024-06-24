@@ -18,8 +18,9 @@
                     <div class="progress" style="width: 70%;"></div>
                 </div>
                 <p class="progress-text">700/1000 exp</p>
-                <p>SI合格するぞ<br>テニスやろうぜ！</p>
+                <p>SPI合格するぞ<br>テニスやろうぜ！</p>
                 <button class="edit-profile-btn">プロフィール編集</button>
+                
             </div>
         </div>
         <div class="profile-main">
@@ -28,18 +29,21 @@
                 <h3>学習進捗</h3>
                 <div class="progress-item">
                     <h4>言語</h4>
-                    <p>正答率：20%</p>
-                    <p>平均回答時間：180秒</p>
-                    <p>学習問題数：255問</p>
+                    <p>正答率：</p>
+                    <p>平均回答時間：</p>
+                    <p>学習問題数：</p>
                 </div>
                 <div class="progress-item">
                     <h4>非言語</h4>
+                    <p>正答率：</p>
+                    <p>平均回答時間：</p>
+                    <p>学習問題数：</p>
                     <!-- Add similar content for 非言語 if needed -->
                 </div>
             </div>
             <div class="growth-record">
                 <h3>成長記録</h3>
-                <img src="path/to/chart.png" alt="Growth Chart" class="growth-chart">
+                <img src="path/to/chart.png" alt="gakusyu" class="gakusyu">
             </div>
         </div>
     </div>
