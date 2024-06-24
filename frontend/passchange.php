@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../backend/pre.php';
 require_once __DIR__ . '/../backend/class.php';
+require_once __DIR__ . '/header.php';
 
 // 接続
 $dsn = 'mysql:dbname=creative7;host=localhost;charset=utf8';
