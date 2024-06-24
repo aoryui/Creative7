@@ -63,3 +63,15 @@ body {
     top: -320px;
     left: 900px;
 }
+
+.correct-answer-rate{
+    position:relative;
+    top: -320px;
+    left: 600px;
+}
+
+.rate{
+    position:relative;
+    top: -375px;
+    left: 925px;
+}

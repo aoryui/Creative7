@@ -13,8 +13,9 @@ require_once __DIR__ . '/header.php';
 <h2 class="level">Lv.10</h2>
 <h2 class="exp">700/1000 exp</h2>
 <h2 class="addition">+100exp</h2>
-<h2 class="correct answer rate"></h2>
-
+<h2 class="correct-answer-rate">正答率:</h2>
+<h2 class="rate">20%</h2>
+<h2 class="response time">平均回答時間：</h2>
 
 
 <h3>回答</h3>
