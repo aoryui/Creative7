@@ -10,3 +10,4 @@ require_once __DIR__ . '/header.php';
   <span class="number">88%</span>
   </div>
 </div>
+<h2>回答</h2>
