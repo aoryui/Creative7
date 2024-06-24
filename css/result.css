@@ -45,3 +45,21 @@ body {
 #tri{
     color: white;
 }
+
+.level{
+    position:relative;
+    top: -300px;
+    left:50px;
+}
+
+.exp{
+    position:relative;
+    top: -300px;
+    left:800px;
+}
+
+.addition{
+    position:relative;
+    top: -320px;
+    left: 900px;
+}
