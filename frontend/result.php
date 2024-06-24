@@ -37,24 +37,24 @@ require_once __DIR__ . '/header.php';
       <td></td>
       <td></td>
       <td></td>
-      <td id="tri">▼</td>
+      <td id="tri"><a href="kaitoukaisetu.php">▼</a></td>
     </tr>
     <tr>
       <td></td>
       <td></td>
       <td></td>
-      <td id="tri">▼</td>
+      <td id="tri"><a href="kaitoukaisetu.php">▼</a></td>
     </tr>
     <tr>
       <td></td>
       <td></td>
       <td></td>
-      <td id="tri">▼</td>
+      <td id="tri"><a href="kaitoukaisetu.php">▼</a></td>
     </tr>
     <tr>
     <td></td>
     <td></td>
     <td></td>
-    <td id="tri">▼</td>
+    <td id="tri"><a href="kaitoukaisetu.php">▼</a></td>
     </tr>
   </table>
