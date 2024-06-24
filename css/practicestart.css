@@ -1,0 +1,93 @@
+.practicestartmain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background-color: #ffefd5;
+}
+
+.container {
+    border: 2px solid black;
+    padding: 20px;
+    height: 400px;
+    box-sizing: border-box;
+    width: 50%;
+    margin: auto;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.content {
+    text-align: center;
+}
+
+.button-container {
+    text-align: center;
+}
+
+.button-container input[type="button"] {
+    padding: 30px 20px;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: rgb(226, 46, 46);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button-container input[type="button"]:hover {
+    background-color: darkred;
+}
+
+img:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+img:active {
+    position: relative;
+    top: 3px;
+}
+
+#menuButton {
+    margin-right: 400px;
+    width: auto;
+    height: auto;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+
+.menu-container {
+    display: flex;
+    align-items: center;
+}
+
+/*
+img:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+img:active {
+    position: relative;
+    top: 3px;
+}
+
+#menuButton {
+    margin-right: 400px;
+    width: auto;
+    height: auto;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+
+.menu-container {
+    display: flex;
+    align-items: center;
+}
+*/
