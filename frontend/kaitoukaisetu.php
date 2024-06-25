@@ -29,9 +29,7 @@ require_once __DIR__ . '/header.php';
                 <img src="../image/解説/1_1_1.jpg" alt="解説画像" width="100%" height="50%">
                 </p>
             </section>
-            <div class="button-container">
-                    <input type="button" onclick="location.href='./result.php'" value="リザルトに戻る">
-                </div>
+            <p><a href="result.php">リザルトに戻る</a></p>
         </main> 
         </div>
     </body>
