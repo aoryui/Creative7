@@ -63,4 +63,12 @@ class form extends Dbdata
         $this->exec($sql, [$username, $subject, $userId]);
     }
 
+    public function getQues($question_id)
+    {
+        $sql = "SELECT * FROM answers WHERE question_id = ?";
+        $stmt = $this->query($sql, [$question_id]);
+        $result = $stmt->fetch();
+        return $result;
+    }
+
 }    

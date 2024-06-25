@@ -94,7 +94,7 @@ echo '<script>console.log('.json_encode($selected_choice).')</script>';
       <td><?php echo $key + 1; ?></td>
       <td><?php echo $correct_answers[$question] ? '○' : '×'; ?></td>
       <td><?php echo htmlspecialchars($genres[$question], ENT_QUOTES, 'UTF-8'); ?></td> <!-- ここに分野名などを表示 -->
-      <td id="tri"><a href="kaitoukaisetu.php">▼</a></td> <!-- 解説ページへのリンク -->
+      <td id="tri"><a href="kaitoukaisetu.php?question_id=<?php echo $question; ?>">▼</a></td> <!-- 解説ページへのリンク -->
     </tr>
   <?php endforeach; ?>
 </table>

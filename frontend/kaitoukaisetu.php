@@ -1,5 +1,9 @@
 <?php
 require_once __DIR__ . '/header.php';
+require_once __DIR__ . '/../backend/class.php';
+$kaisetuID = $_GET['question_id'];
+$form = new form();
+$kaisetu = $form->getQues($kaisetuID);
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -26,7 +30,12 @@ require_once __DIR__ . '/header.php';
             <h2>解説</h2>
             <section class="kaiseturan">
                 <p id="kaisetu">
-                <img src="../image/解説/1_1_1.jpg" alt="解説画像" width="100%" height="50%">
+                    <p><?php
+                        // 画像のパスを作成
+                        $image_path = "../image/解説/" . $kaisetu['explanation'] . ".jpg";
+                        // HTMLで画像を表示
+                        echo '<img src="' . $image_path . '" alt="問題画像" class="question_img">';
+                    ?></p>
                 </p>
             </section>
             <p><a href="result.php">リザルトに戻る</a></p>
