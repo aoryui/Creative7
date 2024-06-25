@@ -47,6 +47,9 @@ body {
 #table {
     width: 1000px;
     background-color: gray;
+    position: relative;
+    top: -300px;
+    left: 100px;
 }
 
 #tri {
@@ -80,12 +83,32 @@ body {
 .rate {
     position: relative;
     top: -375px;
-    left: 925px;
+    left: 725px;
 }
 
+.response-time {
+    position: relative;
+    top: -375px;
+    left: 575px;
+}
+
+.time{
+    position: relative;
+    top: -430px;
+    left: 775px;
+}
+
+.answer{
+    position: relative;
+    top: -300px;
+    left: 50px;
+    font-size: 38px;
+}
 a {
     text-decoration: none;
     /* 下線をなくす */
     color: inherit;
     /* 親要素の色を継承 */
 }
+
+
