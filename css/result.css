@@ -92,23 +92,22 @@ body {
     left: 575px;
 }
 
-.time{
+.time {
     position: relative;
     top: -430px;
     left: 775px;
 }
 
-.answer{
+.answer {
     position: relative;
     top: -400px;
     left: 50px;
     font-size: 38px;
 }
+
 a {
     text-decoration: none;
     /* 下線をなくす */
     color: inherit;
     /* 親要素の色を継承 */
 }
-
-
