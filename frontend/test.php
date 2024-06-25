@@ -17,11 +17,27 @@ if ($conn->connect_error) {
 
 // 既に表示した question_id を取得
 $displayed_questions = isset($_SESSION['displayed_questions']) ? $_SESSION['displayed_questions'] : [];
+// 選択したchoice_id を取得
+$selected_choice = isset($_SESSION['selected_choice']) ? $_SESSION['selected_choice'] : [];
 
-// 既に表示した question_id の数が5つに達したらリセット
-if (count($displayed_questions) >= 5) {
-    $displayed_questions = [];
-    $_SESSION['displayed_questions'] = [];
+// フォーム送信時の処理
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['choice'])) {
+        $choice_id = $_POST['choice'];
+
+        // 選択肢IDをセッションに保存
+        $selected_choice[] = $choice_id;
+        $_SESSION['selected_choice'] = $selected_choice;
+    }
+}
+
+// ログ表示
+echo '<script>console.log('.json_encode($displayed_questions).')</script>'; // 既に表示した問題IDをコンソールに表示
+echo '<script>console.log('.json_encode($selected_choice).')</script>'; // 選択した答えを表示
+
+// 既に表示した question_id の数が10つに達したらリセット
+if (count($displayed_questions) >= 10) {
+    echo '<script>window.location.href = "result.php";</script>';
 }
 
 // パラメータから question_id を取得。無ければランダムに選択
@@ -79,7 +95,9 @@ $_SESSION['displayed_questions'][] = $question_id;
 <body>
     <div class="content">
         <div class="question">
-            <div class="question-text">次の文章を読んで問いに答えなさい</div>
+            <?php
+            echo '<div class="question-text">問題番号'.$question_id.'次の文章を読んで問いに答えなさい</div>';
+            ?>
             <p><?php
             // 画像のパスを作成
             $image_path = "../image/問題集/" . $question_text . ".jpg";
@@ -87,16 +105,19 @@ $_SESSION['displayed_questions'][] = $question_id;
             echo '<img src="' . $image_path . '" alt="問題画像" class="question_img">';
             ?></p>
         </div>
-        <div class="choices">
-            <?php
-            while ($choice = $choices_result->fetch_assoc()) {
-                echo '<div class="choice">';
-                echo '<input type="radio" name="choice" id="option' . $choice['choice_id'] . '">';
-                echo '<label for="option' . $choice['choice_id'] . '">' . htmlspecialchars($choice['choice_text'], ENT_QUOTES, 'UTF-8') . '</label>';
-                echo '</div>';
-            }
-            ?>
-        </div>
+        <form id="choiceForm" method="post" action="test.php">
+            <div class="choices">
+                <?php
+                while ($choice = $choices_result->fetch_assoc()) {
+                    echo '<div class="choice">';
+                    echo '<input type="radio" name="choice" value="' . $choice['choice_id'] . '" id="option' . $choice['choice_id'] . '">';
+                    echo '<label for="option' . $choice['choice_id'] . '">' . htmlspecialchars($choice['choice_text'], ENT_QUOTES, 'UTF-8') . '</label>';
+                    echo '</div>';
+                }
+                ?>
+            </div>
+            <input type="hidden" name="question_id" value="<?php echo $question_id; ?>">
+        </form>
     </div>
     <div class="timer">
         <div class="timer-label">回答時間</div>
@@ -153,12 +174,25 @@ $_SESSION['displayed_questions'][] = $question_id;
 
         function goToNextQuestion() {
             // 次の問題に進む処理をここに書く
-            window.location.href = "test.php"; // 実際の次の問題のURLに変更
+            if (!document.querySelector('input[name="choice"]:checked')) { // 時間切れの場合は0を格納する
+                const hiddenInput = document.createElement('input');
+                hiddenInput.type = 'hidden';
+                hiddenInput.name = 'choice';
+                hiddenInput.value = '0';
+                document.getElementById('choiceForm').appendChild(hiddenInput);
+            }
+            document.getElementById('choiceForm').submit(); // フォームを送信
         }
 
         document.getElementById('next-button').addEventListener('click', (e) => {
             e.preventDefault();
             goToNextQuestion();
+        });
+
+        window.addEventListener('load', function() { // ページリロードされたらteststart.phpに遷移
+            if (performance.navigation.type === 1) {
+                window.location.href = 'teststart.php';
+            }
         });
 
         createSegments();
