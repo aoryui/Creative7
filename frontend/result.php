@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/header.php';
+$displayed_questions = isset($_SESSION['displayed_questions']) ? $_SESSION['displayed_questions'] : [];
 ?>
 
 <!DOCTYPE html>
