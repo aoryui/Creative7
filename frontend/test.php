@@ -21,6 +21,7 @@ $displayed_questions = isset($_SESSION['displayed_questions']) ? $_SESSION['disp
 $selected_choice = isset($_SESSION['selected_choice']) ? $_SESSION['selected_choice'] : [];
 // $displayed_questions をセッションに保存
 $_SESSION['displayed_questions'] = $displayed_questions;
+$_SESSION['selected_choice'] = $selected_choice;
 
 // フォーム送信時の処理
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
