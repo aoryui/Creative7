@@ -1,5 +1,10 @@
 <?php
+session_start();
 require_once __DIR__ . '/header.php';
+
+// Initialize the lists
+$_SESSION['displayed_questions'] = [];
+$_SESSION['selected_choice'] = [];
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -22,18 +27,14 @@ require_once __DIR__ . '/header.php';
                     メモ用紙と筆記用具を用意してください。
                 </div>
                 <div class="button-container">
-                    <input type="button" onclick="location.href='./test.php'" value="模擬試験を開始する">
+                    <form method="post" action="test.php">
+                        <input type="hidden" name="displayed_questions" value='<?php echo json_encode($_SESSION['displayed_questions']); ?>'>
+                        <input type="hidden" name="selected_choice" value='<?php echo json_encode($_SESSION['selected_choice']); ?>'>
+                        <input type="submit" value="模擬試験を開始する">
+                    </form>
                 </div>
             </div>
         </div>
     </main>
 </body>
 </html>
-
-
-
-
-
-
-
-
