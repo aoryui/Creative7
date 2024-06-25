@@ -25,8 +25,11 @@ require_once __DIR__ . '/header.php';
             </section>
             <h2>解説</h2>
             <section class="kaiseturan">
-                <p id="kaisetu">解説欄</p>
+                <p id="kaisetu">
+                <img src="../image/解説/1_1_1.jpg" alt="解説画像" width="100%" height="50%">
+                </p>
             </section>
+            <p><a href="result.php">リザルトに戻る</a></p>
         </main> 
         </div>
     </body>

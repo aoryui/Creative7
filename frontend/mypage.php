@@ -1,3 +1,6 @@
+<?php
+require_once __DIR__ . '/header.php';
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -11,8 +14,8 @@
         <div class="profile-sidebar">
             <img src="path/to/icon.png" alt="Icon" class="profile-icon">
             <div class="profile-info">
-                <h2>M.Jun</h2>
-                <p>国際信州学院大学</p>
+                <h2>名前</h2>
+                <p>学科：</p>
                 <p>Lv.10</p>
                 <div class="progress-bar">
                     <div class="progress" style="width: 70%;"></div>
@@ -28,17 +31,10 @@
             <div class="learning-progress">
                 <h3>学習進捗</h3>
                 <div class="progress-item">
-                    <h4>言語</h4>
+                    <h4>言語 非言語</h4>
                     <p>正答率：</p>
                     <p>平均回答時間：</p>
                     <p>学習問題数：</p>
-                </div>
-                <div class="progress-item">
-                    <h4>非言語</h4>
-                    <p>正答率：</p>
-                    <p>平均回答時間：</p>
-                    <p>学習問題数：</p>
-                    <!-- Add similar content for 非言語 if needed -->
                 </div>
             </div>
             <div class="growth-record">
