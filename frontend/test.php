@@ -19,6 +19,8 @@ if ($conn->connect_error) {
 $displayed_questions = isset($_SESSION['displayed_questions']) ? $_SESSION['displayed_questions'] : [];
 // 選択したchoice_id を取得
 $selected_choice = isset($_SESSION['selected_choice']) ? $_SESSION['selected_choice'] : [];
+// $displayed_questions をセッションに保存
+$_SESSION['displayed_questions'] = $displayed_questions;
 
 // フォーム送信時の処理
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -37,6 +39,7 @@ echo '<script>console.log('.json_encode($selected_choice).')</script>'; // 選�
 
 // 既に表示した question_id の数が10つに達したらリセット
 if (count($displayed_questions) >= 10) {
+
     echo '<script>window.location.href = "result.php";</script>';
 }
 
