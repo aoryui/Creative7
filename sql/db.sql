@@ -128,13 +128,13 @@ INSERT INTO choices (question_id, choice_text) VALUES (10, 'F.イとウ');
 
 -- 正解と解説を挿入
 -- 正解の番号が違うので後で修正
-INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (1, 2, '1_1_1');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (1, 5, '1_1_1');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (2, 10, '1_1_2');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (3, 17, '1_1_3');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (4, 23, '1_1_4');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (5, 25, '1_1_5');
-INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (6, 25, '1_1_6');
-INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (7, 2, '1_1_7');
-INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (8, 10, '1_1_8');
-INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (9, 17, '1_1_9');
-INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (10, 23, '1_1_10');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (6, 34, '1_1_6');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (7, 37, '1_1_7');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (8, 47, '1_1_8');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (9, 54, '1_1_9');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (10, 58, '1_1_10');
