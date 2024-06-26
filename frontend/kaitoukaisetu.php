@@ -83,7 +83,7 @@ $kaisetu = $form->getQues($kaisetuID);
                     <?php
                     $image_path1 = "../image/問題集/" . $question_info['question_text'] . ".jpg";
                     //HTMLで画像を表示
-                    echo '<img src="' . $image_path1 . '" alt="問題画像" class="question_img">';
+                    echo '<img src="' . $image_path1 . '" alt="問題画像" class="question_img" width="100%" height="50%">';
                     ?>
                 </div>
             </section>
@@ -105,7 +105,7 @@ $kaisetu = $form->getQues($kaisetuID);
                         // 画像のパスを作成
                         $image_path = "../image/解説/" . $kaisetu['explanation'] . ".jpg";
                         // HTMLで画像を表示
-                        echo '<img src="' . $image_path . '" alt="問題画像" class="question_img">';
+                        echo '<img src="' . $image_path . '" alt="問題画像" class="question_img" width="100%" height="50%">';
                     ?></p>
                 </p>
             </section>
