@@ -112,4 +112,4 @@ echo '<script>console.log('.json_encode($selected_choice).')</script>';
     </table>
     </div>
 </body>
-</html>▷
+</html>
