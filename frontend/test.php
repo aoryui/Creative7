@@ -32,6 +32,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $selected_choice[] = $choice_id;
         $_SESSION['selected_choice'] = $selected_choice;
     }
+
+    if (isset($_POST['interval'])) {
+        $_SESSION['interval'] = (int)$_POST['interval'];
+    }
 }
 
 // ログ表示
@@ -87,7 +91,7 @@ $question_text = nl2br(htmlspecialchars($question['question_text'], ENT_QUOTES, 
 $_SESSION['displayed_questions'][] = $question_id;
 
 // 選択した秒数を取得
-$interval = isset($_POST['interval']) ? (int)$_POST['interval'] : 30; // デフォルトは30秒
+$interval = isset($_SESSION['interval']) ? $_SESSION['interval'] : 30; // デフォルトは30秒
 ?>
 
 <!DOCTYPE html>
