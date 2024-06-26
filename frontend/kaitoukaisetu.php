@@ -4,10 +4,15 @@ require_once __DIR__ . '/../backend/class.php';
 
 // $kaisetuID を最初に取得
 $kaisetuID = isset($_GET['question_id']) ? $_GET['question_id'] : null;
+$kaisetuID = -1;
 
 // セッションから選択肢と正解の情報を取得
-$correct_choices = isset($_SESSION['correct_choices']) ? $_SESSION['correct_choices'] : [];
+$displayed_questions = isset($_SESSION['displayed_questions']) ? $_SESSION['displayed_questions'] : [];
 $selected_choices = isset($_SESSION['selected_choice']) ? $_SESSION['selected_choice'] : [];
+$correct_choices = isset($_SESSION['correct_choices']) ? $_SESSION['correct_choices'] : [];
+echo '<script>console.log('.json_encode($displayed_questions).')</script>';
+echo '<script>console.log('.json_encode($selected_choices).')</script>';
+echo '<script>console.log('.json_encode($correct_choices).')</script>';
 
 // ユーザーの回答と正解の選択肢IDを取得
 $user_choice_id = isset($selected_choices[$kaisetuID]) ? $selected_choices[$kaisetuID] : 'N/A';

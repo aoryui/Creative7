@@ -34,7 +34,7 @@ foreach ($displayed_questions as $key => $question_id) {
 
     $row = mysqli_fetch_assoc($result);
     $correct_choice_id = $row['correct_choice_id'];
-    $correct_choices[$question_id] = $correct_choice_id;
+    $correct_choices[] = $correct_choice_id;
 
     // 選択された選択肢IDを取得
     $selected_choice_id = $selected_choice[$key];
@@ -68,6 +68,7 @@ $_SESSION['selected_choice'] = $selected_choice;
 // ログ表示
 echo '<script>console.log('.json_encode($displayed_questions).')</script>';
 echo '<script>console.log('.json_encode($selected_choice).')</script>';
+echo '<script>console.log('.json_encode($correct_choices).')</script>';
 ?>
 
 <!DOCTYPE html>
@@ -106,7 +107,7 @@ echo '<script>console.log('.json_encode($selected_choice).')</script>';
                 <td><?php echo $key + 1; ?></td>
                 <td><?php echo $correct_answers[$question] ? '○' : '×'; ?></td>
                 <td><?php echo htmlspecialchars($genres[$question], ENT_QUOTES, 'UTF-8'); ?></td>
-                <td id="tri"><a href="kaitoukaisetu.php?question_id=<?php echo $question; ?>">解説リンク</a></td>
+                <td id="tri"><a href="kaitoukaisetu.php?question_id=<?php echo $key + 1; ?>">解説リンク</a></td>
             </tr>
         <?php endforeach; ?>
     </table>
