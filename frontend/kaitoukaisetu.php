@@ -4,7 +4,6 @@ require_once __DIR__ . '/../backend/class.php';
 
 // $kaisetuID を最初に取得
 $kaisetuID = isset($_GET['question_id']) ? $_GET['question_id'] : null;
-$kaisetuID = -1;
 
 // セッションから選択肢と正解の情報を取得
 $displayed_questions = isset($_SESSION['displayed_questions']) ? $_SESSION['displayed_questions'] : [];
@@ -96,6 +95,7 @@ $kaisetu = $form->getQues($kaisetuID);
             <section class="container">
                 <div class="kaitou">
                     <b>あなたの回答:</b>
+                    <span id="user-kaitou"><?php echo $kaisetuID; ?></span>
                     <span id="user-kaitou"><?php echo htmlspecialchars($user_choice_text, ENT_QUOTES, 'UTF-8'); ?></span>
                 </div>
                 <div class="kaitou">

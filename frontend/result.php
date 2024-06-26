@@ -107,7 +107,7 @@ echo '<script>console.log('.json_encode($correct_choices).')</script>';
                 <td><?php echo $key + 1; ?></td>
                 <td><?php echo $correct_answers[$question] ? '○' : '×'; ?></td>
                 <td><?php echo htmlspecialchars($genres[$question], ENT_QUOTES, 'UTF-8'); ?></td>
-                <td id="tri"><a href="kaitoukaisetu.php?question_id=<?php echo $key + 1; ?>">解説リンク</a></td>
+                <td id="tri"><a href="kaitoukaisetu.php?question_id=<?php echo $key; ?>">解説リンク</a></td>
             </tr>
         <?php endforeach; ?>
     </table>
