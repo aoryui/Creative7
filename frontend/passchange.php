@@ -18,7 +18,6 @@ if (isset($_SESSION['userId'])) {
 
 ?>
 
-<h1>現在のパスワードと新しいパスワードを入力してください</h1>
 <?php
 // URLからメッセージを取得
 $message = isset($_GET['message']) ? $_GET['message'] : '';
@@ -31,17 +30,20 @@ if (!empty($message)) {
 <head>
 <link rel="stylesheet" href="../css/passchange.css">
 </head>
+<div class="container">
+<h2>パスワード変更</h2>
 <form action="../backend/changepass.php" method="POST" class="form-groupa">
     <div class="form-group">
-        <label for="old_password">現在のパスワード：</label>
+        <label for="old_password">現在のパスワード</label>
         <input type="password" id="old_password" name="old_password" required />
     </div>
     <div class="form-group">
-        <label for="new_password">新しいパスワード：</label>
+        <label for="new_password">新しいパスワード</label>
         <input type="password" id="new_password" name="new_password" required />
     </div>
-    <button type="submit">変更</button>
+    <button type="submit">パスワード変更</button>
 </form>
+</div>
 </body>
 
 </html>
