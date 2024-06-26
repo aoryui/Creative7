@@ -40,7 +40,6 @@ echo '<script>console.log('.json_encode($selected_choice).')</script>'; // 選�
 
 // 既に表示した question_id の数が10つに達したらリセット
 if (count($displayed_questions) >= 10) {
-
     echo '<script>window.location.href = "result.php";</script>';
 }
 
@@ -86,6 +85,9 @@ $question_text = nl2br(htmlspecialchars($question['question_text'], ENT_QUOTES, 
 
 // セッションに現在のquestion_idを保存
 $_SESSION['displayed_questions'][] = $question_id;
+
+// 選択した秒数を取得
+$interval = isset($_POST['interval']) ? (int)$_POST['interval'] : 30; // デフォルトは30秒
 ?>
 
 <!DOCTYPE html>
@@ -135,7 +137,7 @@ $_SESSION['displayed_questions'][] = $question_id;
     </div>
     <script>
         const timerBar = document.getElementById('timer-bar');
-        const totalSegments = 30;
+        const totalSegments = <?php echo $interval; ?>;
         const segmentTime = 1000; // 1秒
         const lightColors = [
             '#dcedc8', '#dcedc8', '#dcedc8', '#dcedc8', '#dcedc8',
@@ -157,7 +159,7 @@ $_SESSION['displayed_questions'][] = $question_id;
         function createSegments() {
             for (let i = 0; i < totalSegments; i++) {
                 const segment = document.createElement('div');
-                segment.style.backgroundColor = lightColors[i];
+                segment.style.backgroundColor = lightColors[i % lightColors.length];
                 timerBar.appendChild(segment);
             }
         }
@@ -170,7 +172,7 @@ $_SESSION['displayed_questions'][] = $question_id;
                     clearInterval(interval);
                     goToNextQuestion(); // タイムアップ後の処理をここに書く
                 } else {
-                    segments[currentSegment].style.backgroundColor = darkColors[currentSegment];
+                    segments[currentSegment].style.backgroundColor = darkColors[currentSegment % darkColors.length];
                     currentSegment++;
                 }
             }, segmentTime);

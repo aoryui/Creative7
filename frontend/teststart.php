@@ -18,8 +18,6 @@ $_SESSION['selected_choice'] = [];
                 <div class="content">
                     <p>ランダムで想定された問題が20個出題されます。
                     <p></p>
-                       問題は1問30秒です。
-                    <p></p>
                        時間までに解いてください。
                     <p></p>
                        時間が過ぎると次の問題に自動的に飛ばされます。</p>
@@ -28,6 +26,12 @@ $_SESSION['selected_choice'] = [];
                 </div>
                 <div class="button-container">
                     <form method="post" action="test.php">
+                        <label for="interval">問題の移り変わる時間を選択してください:</label>
+                        <select name="interval" id="interval">
+                            <option value="20">20秒</option>
+                            <option value="30">30秒</option>
+                            <option value="60">60秒</option>
+                        </select>
                         <input type="hidden" name="displayed_questions" value='<?php echo json_encode($_SESSION['displayed_questions']); ?>'>
                         <input type="hidden" name="selected_choice" value='<?php echo json_encode($_SESSION['selected_choice']); ?>'>
                         <input type="submit" value="模擬試験を開始する">
