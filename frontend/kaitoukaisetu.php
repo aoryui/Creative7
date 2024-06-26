@@ -73,13 +73,13 @@ $kaisetu = $form->getQues($kaisetuID);
     <div class="kaisetu1">
         <main>
             <h2>問題</h2>
-            <section>
-                <div>
-                    <strong>ジャンル:</strong>
+            <section class="container">
+                <div div class="kaitou">
+                    <b>ジャンル:</b>
                     <span><?php echo htmlspecialchars($question_info['genre_text'], ENT_QUOTES, 'UTF-8'); ?></span>
                 </div>
                 <div>
-                    <strong>問題文:</strong>
+                    <b>問題文:</b>
                     <?php
                     $image_path1 = "../image/問題集/" . $question_info['question_text'] . ".jpg";
                     //HTMLで画像を表示
@@ -88,18 +88,18 @@ $kaisetu = $form->getQues($kaisetuID);
                 </div>
             </section>
             <h2>回答</h2>
-            <section class="kaitouran">
+            <section class="container">
                 <div class="kaitou">
-                    <strong>貴方の回答:</strong>
+                    <b>あなたの回答:</b>
                     <span id="user-kaitou"><?php echo htmlspecialchars($user_choice_text, ENT_QUOTES, 'UTF-8'); ?></span>
                 </div>
                 <div class="kaitou">
-                    <strong>正解:</strong>
+                    <b>正解:</b>
                     <span id="correct-kaitou"><?php echo htmlspecialchars($correct_choice_text, ENT_QUOTES, 'UTF-8'); ?></span>
                 </div>
             </section>
             <h2>解説</h2>
-            <section class="kaiseturan">
+            <section class="container">
                 <p id="kaisetu">
                     <p><?php
                         // 画像のパスを作成
