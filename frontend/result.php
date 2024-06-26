@@ -76,12 +76,14 @@ echo '<script>console.log('.json_encode($selected_choice).')</script>';
     <link rel="stylesheet" href="../css/result.css">
 </head>
 <body>
-    <div class="bar-graph-wrap">
+    <div class="border-frame">
+<!-- <div class="bar-graph-wrap">
         <div class="graph">
             <span class="name">Graph 01</span>
             <span class="number">70%</span>
         </div>
     </div>
+
     <h2 class="level">Lv.10</h2>
     <h2 class="exp">700/1000 exp</h2>
     <h2 class="addition">+100exp</h2>
@@ -89,8 +91,8 @@ echo '<script>console.log('.json_encode($selected_choice).')</script>';
     <h2 class="rate">20%</h2>
     <h2 class="response-time">平均回答時間：</h2>
     <h2 class="time">180秒</h2>
-
-    <h3 class="answer">回答</h3>
+-->
+    <h2 class="answer">回答</h2>
 
     <table border="1" id="table">
         <tr>
@@ -108,5 +110,6 @@ echo '<script>console.log('.json_encode($selected_choice).')</script>';
             </tr>
         <?php endforeach; ?>
     </table>
+    </div>
 </body>
 </html>
