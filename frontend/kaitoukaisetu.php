@@ -27,7 +27,7 @@ function getChoiceText($choice_id, $pdo) {
     } catch (PDOException $e) {
         echo 'データベースエラー: ' . $e->getMessage();
     }
-    return 'N/A'; // テキストが取得できない場合は N/A を返す
+    return '無回答'; // テキストが取得できない場合は 無回答 を返す
 }
 
 // データベース接続情報を設定
