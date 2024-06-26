@@ -14,8 +14,11 @@ echo '<script>console.log('.json_encode($selected_choices).')</script>';
 echo '<script>console.log('.json_encode($correct_choices).')</script>';
 
 // ユーザーの回答と正解の選択肢IDを取得
+$question_num = $displayed_questions[$kaisetuID];
 $user_choice_id = isset($selected_choices[$kaisetuID]) ? $selected_choices[$kaisetuID] : 'N/A';
 $correct_choice_id = isset($correct_choices[$kaisetuID]) ? $correct_choices[$kaisetuID] : 'N/A';
+echo '<script>console.log('.json_encode($user_choice_id).')</script>';
+echo '<script>console.log('.json_encode($correct_choice_id).')</script>';
 
 // 正解の選択肢のテキストを取得する関数
 function getChoiceText($choice_id, $pdo) {
@@ -52,7 +55,7 @@ try {
 
     // 質問の情報を取得
     $stmt = $pdo->prepare('SELECT genre_text, question_text FROM questions WHERE question_id = :question_id');
-    $stmt->bindParam(':question_id', $kaisetuID, PDO::PARAM_INT);
+    $stmt->bindParam(':question_id', $question_num, PDO::PARAM_INT);
     $stmt->execute();
     $question_info = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -61,7 +64,7 @@ try {
 }
 
 $form = new form();
-$kaisetu = $form->getQues($kaisetuID);
+$kaisetu = $form->getQues($question_num);
 
 ?>
 
