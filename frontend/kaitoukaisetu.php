@@ -98,7 +98,6 @@ $kaisetu = $form->getQues($question_num);
             <section class="container">
                 <div class="kaitou">
                     <b>あなたの回答:</b>
-                    <span id="user-kaitou"><?php echo $kaisetuID; ?></span>
                     <span id="user-kaitou"><?php echo htmlspecialchars($user_choice_text, ENT_QUOTES, 'UTF-8'); ?></span>
                 </div>
                 <div class="kaitou">
