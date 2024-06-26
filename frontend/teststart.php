@@ -16,7 +16,7 @@ $_SESSION['selected_choice'] = [];
         <div class="honbanmain">
             <div class="container">
                 <div class="content">
-                    <p>ランダムで想定された問題が20個出題されます。
+                    <p>ランダムで想定された問題が10個出題されます。
                     <p></p>
                        時間までに解いてください。
                     <p></p>
