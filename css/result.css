@@ -62,7 +62,7 @@ body {
 }
 
 #tri {
-    color: rgb(0, 0, 0);
+    color: rgb(63, 119, 232);
 }
 
 .level {
@@ -109,11 +109,4 @@ body {
 
 .answer {
     font-size: 38px;
-}
-
-a {
-    text-decoration: none;
-    /* 下線をなくす */
-    color: inherit;
-    /* 親要素の色を継承 */
 }
