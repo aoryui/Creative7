@@ -136,7 +136,7 @@ $interval = isset($_SESSION['interval']) ? $_SESSION['interval'] : 30; // デフ
         </div>
     </div>
     <div class="footer">
-        <p>時間超過した場合次の問題に行きます</p>
+        ※時間超過した場合次の問題に行きます
         <a href="#" class="next-button" id="next-button">次に進む</a>
     </div>
     <script>
