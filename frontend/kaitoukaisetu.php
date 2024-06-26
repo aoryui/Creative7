@@ -2,7 +2,6 @@
 require_once __DIR__ . '/header.php';
 require_once __DIR__ . '/../backend/class.php';
 
-
 // $kaisetuID を最初に取得
 $kaisetuID = isset($_GET['question_id']) ? $_GET['question_id'] : null;
 
@@ -47,14 +46,18 @@ try {
     // ユーザーの回答のテキストを取得
     $user_choice_text = getChoiceText($user_choice_id, $pdo);
 
+    // 質問の情報を取得
+    $stmt = $pdo->prepare('SELECT genre_text, question_text FROM questions WHERE question_id = :question_id');
+    $stmt->bindParam(':question_id', $kaisetuID, PDO::PARAM_INT);
+    $stmt->execute();
+    $question_info = $stmt->fetch(PDO::FETCH_ASSOC);
+
 } catch (PDOException $e) {
     echo 'データベース接続エラー: ' . $e->getMessage();
 }
 
 $form = new form();
 $kaisetu = $form->getQues($kaisetuID);
-
-
 
 ?>
 
@@ -70,6 +73,20 @@ $kaisetu = $form->getQues($kaisetuID);
     <div class="kaisetu1">
         <main>
             <h2>問題</h2>
+            <section>
+                <div>
+                    <strong>ジャンル:</strong>
+                    <span><?php echo htmlspecialchars($question_info['genre_text'], ENT_QUOTES, 'UTF-8'); ?></span>
+                </div>
+                <div>
+                    <strong>問題文:</strong>
+                    <?php
+                    $image_path1 = "../image/問題集/" . $question_info['question_text'] . ".jpg";
+                    //HTMLで画像を表示
+                    echo '<img src="' . $image_path1 . '" alt="問題画像" class="question_img">';
+                    ?>
+                </div>
+            </section>
             <h2>回答</h2>
             <section class="kaitouran">
                 <div class="kaitou">
