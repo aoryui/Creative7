@@ -146,12 +146,3 @@ INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (7, 37,
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (8, 47, '1_1_8');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (9, 54, '1_1_9');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (10, 58, '1_1_10');
-
-
-
-INSERT INTO choices (question_id, choice_text) VALUES (6, 'A.アだけ');
-INSERT INTO choices (question_id, choice_text) VALUES (6, 'B.イだけ');
-INSERT INTO choices (question_id, choice_text) VALUES (6, 'C.ウだけ');
-INSERT INTO choices (question_id, choice_text) VALUES (6, 'D.アとイ');
-INSERT INTO choices (question_id, choice_text) VALUES (6, 'E.アとウ');
-INSERT INTO choices (question_id, choice_text) VA
