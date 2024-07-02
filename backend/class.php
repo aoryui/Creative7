@@ -71,7 +71,7 @@ class form extends Dbdata
         return $result;
     }
 
-    public function insertseikabutu($userid, $question_id)
+    public function insert ($userid, $question_id)
     {
         $sql = "INSERT INTO wrong VALUES (null, ?, ?)";
         $this->exec($sql, [$userid, $question_id]);
