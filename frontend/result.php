@@ -116,6 +116,7 @@ echo '<script>console.log('.json_encode($correct_choices).')</script>';
             <th>正誤</th>
             <th>分野</th>
             <th>解説</th>
+            <th>復習</th>
         </tr>
         <?php foreach ($displayed_questions as $key => $question): ?>
             <tr>
@@ -123,6 +124,7 @@ echo '<script>console.log('.json_encode($correct_choices).')</script>';
                 <td><?php echo $correct_answers[$question] ? '○' : '×'; ?></td>
                 <td><?php echo htmlspecialchars($genres[$question], ENT_QUOTES, 'UTF-8'); ?></td>
                 <td id="tri"><a href="kaitoukaisetu.php?question_id=<?php echo $key; ?>">解説リンク</a></td>
+                <td id="tri"><a href="review_questions.php?question_id=<?php echo $key; ?>">復習リンク</a></td>
             </tr>
         <?php endforeach; ?>
     </table>

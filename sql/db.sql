@@ -98,7 +98,13 @@ INSERT INTO choices (question_id, choice_text) VALUES (5, 'C.ウだけ');
 INSERT INTO choices (question_id, choice_text) VALUES (5, 'D.アとイ');
 INSERT INTO choices (question_id, choice_text) VALUES (5, 'E.アとウ');
 INSERT INTO choices (question_id, choice_text) VALUES (5, 'F.イとウ');
-LUES (6, 'F.イとウ');
+
+INSERT INTO choices (question_id, choice_text) VALUES (6, 'A.アだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (6, 'B.イだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (6, 'C.ウだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (6, 'D.アとイ');
+INSERT INTO choices (question_id, choice_text) VALUES (6, 'E.アとウ');
+INSERT INTO choices (question_id, choice_text) VALUES (6, 'F.イとウ');
 
 INSERT INTO choices (question_id, choice_text) VALUES (7, 'A.アだけ');
 INSERT INTO choices (question_id, choice_text) VALUES (7, 'B.イだけ');
@@ -143,9 +149,5 @@ INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (10, 58
 
 
 
-INSERT INTO choices (question_id, choice_text) VALUES (6, 'A.アだけ');
-INSERT INTO choices (question_id, choice_text) VALUES (6, 'B.イだけ');
-INSERT INTO choices (question_id, choice_text) VALUES (6, 'C.ウだけ');
-INSERT INTO choices (question_id, choice_text) VALUES (6, 'D.アとイ');
-INSERT INTO choices (question_id, choice_text) VALUES (6, 'E.アとウ');
-INSERT INTO choices (question_id, choice_text) VA
+
+
