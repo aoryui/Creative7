@@ -199,6 +199,15 @@ $interval = isset($_SESSION['interval']) ? $_SESSION['interval'] : 30; // デフ
             goToNextQuestion();
         });
 
+        document.querySelectorAll('.choice').forEach(choice => { // 選択肢の当たり判定をclass="choice"にも反映
+            choice.addEventListener('click', () => {
+                const radio = choice.querySelector('input[type="radio"]');
+                if (radio) {
+                    radio.checked = true;
+                }
+            });
+        });
+
         window.addEventListener('load', function() { // ページリロードされたらteststart.phpに遷移
             if (performance.navigation.type === 1) {
                 window.location.href = 'teststart.php';
