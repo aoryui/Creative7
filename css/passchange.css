@@ -44,7 +44,12 @@ input {
     font-size: 16px;
   }
 
-  input:focus {
+  input::placeholder {
+    color: #ffb6c1;
+  }
+  
+
+input:focus {
     outline: none;
     border-color: rgb(89, 208, 247);
     box-shadow: 0 0 5px rgba(72, 70, 71, 0.5);
