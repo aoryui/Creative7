@@ -71,11 +71,22 @@ class form extends Dbdata
         return $result;
     }
 
-    public function insert ($userid, $question_id)
+    public function insert($userid, $question_id) // 間違えた問題を保存
     {
-        $sql = "INSERT INTO wrong VALUES (NULL,?, ?)";
-        $this->exec($sql, [$userid, $question_id]);
-        $seikaid = $this->pdo->lastInsertId();
-        return $seikaid;
-    }
+        // 重複確認クエリ
+        $checkSql = "SELECT COUNT(*) FROM wrong WHERE userid = ? AND question_id = ?";
+        $stmt = $this->pdo->prepare($checkSql);
+        $stmt->execute([$userid, $question_id]);
+        $count = $stmt->fetchColumn();
+    
+        // 重複していない場合にデータを挿入
+        if ($count == 0) {
+            $sql = "INSERT INTO wrong VALUES (NULL, ?, ?)";
+            $this->exec($sql, [$userid, $question_id]);
+            $seikaid = $this->pdo->lastInsertId();
+            return $seikaid;
+        } else {
+            return false; // 既に存在する場合は false を返す
+        }
+    }    
 }    
