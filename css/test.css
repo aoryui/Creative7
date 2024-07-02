@@ -52,15 +52,18 @@ img.question_img{
     background-color: #d3d3d3;
     padding: 5px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .choice input {
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .choice label {
     margin: 0;
     flex-grow: 1;
+    cursor: pointer;
 }
 
 .timer {
