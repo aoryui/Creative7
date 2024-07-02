@@ -46,9 +46,9 @@ CREATE TABLE answers (
 
 DROP TABLE IF EXISTS wrong;
 CREATE TABLE wrong (
-    userid int(255) NOT NULL PRIMARY KEY,
-    question_id int(255) NOT NULL
-    
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    userid int(255) NOT NULL ,
+    question_id int(255) NOT NULL 
 );
 
 -- 問題を挿入
@@ -98,13 +98,7 @@ INSERT INTO choices (question_id, choice_text) VALUES (5, 'C.ウだけ');
 INSERT INTO choices (question_id, choice_text) VALUES (5, 'D.アとイ');
 INSERT INTO choices (question_id, choice_text) VALUES (5, 'E.アとウ');
 INSERT INTO choices (question_id, choice_text) VALUES (5, 'F.イとウ');
-
-INSERT INTO choices (question_id, choice_text) VALUES (6, 'A.アだけ');
-INSERT INTO choices (question_id, choice_text) VALUES (6, 'B.イだけ');
-INSERT INTO choices (question_id, choice_text) VALUES (6, 'C.ウだけ');
-INSERT INTO choices (question_id, choice_text) VALUES (6, 'D.アとイ');
-INSERT INTO choices (question_id, choice_text) VALUES (6, 'E.アとウ');
-INSERT INTO choices (question_id, choice_text) VALUES (6, 'F.イとウ');
+LUES (6, 'F.イとウ');
 
 INSERT INTO choices (question_id, choice_text) VALUES (7, 'A.アだけ');
 INSERT INTO choices (question_id, choice_text) VALUES (7, 'B.イだけ');
@@ -146,3 +140,12 @@ INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (7, 37,
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (8, 47, '1_1_8');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (9, 54, '1_1_9');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (10, 58, '1_1_10');
+
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (6, 'A.アだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (6, 'B.イだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (6, 'C.ウだけ');
+INSERT INTO choices (question_id, choice_text) VALUES (6, 'D.アとイ');
+INSERT INTO choices (question_id, choice_text) VALUES (6, 'E.アとウ');
+INSERT INTO choices (question_id, choice_text) VA

@@ -73,7 +73,7 @@ class form extends Dbdata
 
     public function insert ($userid, $question_id)
     {
-        $sql = "INSERT INTO wrong VALUES (?, ?)";
+        $sql = "INSERT INTO wrong VALUES (NULL,?, ?)";
         $this->exec($sql, [$userid, $question_id]);
         $seikaid = $this->pdo->lastInsertId();
         return $seikaid;

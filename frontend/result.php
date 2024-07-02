@@ -68,7 +68,10 @@ $incorrect_questions = array_keys(array_filter($correct_answers, function($value
 sort($incorrect_questions); // 問題番号を昇順にソート
 echo '<script>console.log('.json_encode($incorrect_questions).')</script>';
 
-$quesid = $form->insert($userid,'1');
+
+foreach ($incorrect_questions as $index => $question_id) {
+    $quesid = $form->insert($userid, $incorrect_questions[$index]);
+}
 
 // データベース接続をクローズ
 mysqli_close($conn);
