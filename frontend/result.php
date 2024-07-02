@@ -1,5 +1,11 @@
 <?php
 require_once __DIR__ . '/header.php';
+require_once __DIR__ . '/../backend/class.php';
+$form = new form();
+require_once __DIR__ . '/../backend/pre.php';
+if (isset($_SESSION['userid'])) {
+    $userid = $_SESSION['userid'];
+}
 
 // データベースに接続するための情報
 $host = 'localhost';
@@ -61,6 +67,8 @@ foreach ($displayed_questions as $key => $question_id) {
 $incorrect_questions = array_keys(array_filter($correct_answers, function($value) {return $value === false;}));
 sort($incorrect_questions); // 問題番号を昇順にソート
 echo '<script>console.log('.json_encode($incorrect_questions).')</script>';
+
+$quesid = $form->insert($userid,'1');
 
 // データベース接続をクローズ
 mysqli_close($conn);
