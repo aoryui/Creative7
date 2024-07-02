@@ -57,6 +57,10 @@ foreach ($displayed_questions as $key => $question_id) {
     $genre_row = mysqli_fetch_assoc($genre_result);
     $genres[$question_id] = $genre_row['genre_text'];
 }
+// 間違えた問題を取得
+$incorrect_questions = array_keys(array_filter($correct_answers, function($value) {return $value === false;}));
+sort($incorrect_questions); // 問題番号を昇順にソート
+echo '<script>console.log('.json_encode($incorrect_questions).')</script>';
 
 // データベース接続をクローズ
 mysqli_close($conn);
