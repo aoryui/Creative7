@@ -44,6 +44,13 @@ CREATE TABLE answers (
     FOREIGN KEY (correct_choice_id) REFERENCES choices(choice_id) ON DELETE CASCADE
 );
 
+DROP TABLE IF EXISTS wrong;
+CREATE TABLE wrong (
+    userid int(255) NOT NULL PRIMARY KEY,
+    question_id int(255) NOT NULL
+    
+);
+
 -- 問題を挿入
 INSERT INTO questions (question_id,genre_text,question_text) VALUES (1,'二語の関係','1_1_1');
 INSERT INTO questions (question_id,genre_text,question_text) VALUES (2,'二語の関係','1_1_2');
