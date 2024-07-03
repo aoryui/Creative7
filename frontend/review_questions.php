@@ -1,4 +1,6 @@
 <?php
+session_start(); // セッションを開始
+
 require_once __DIR__ . '/header.php';
 
 $servername = "localhost";
@@ -44,12 +46,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // 指定した位置に選択肢IDを設定
         $selected_choices[$position] = $choice_id;
         // 選択肢の配列をセッションに保存
-        $_SESSION['selected_choice'][$position] = $selected_choices;
+        $_SESSION['selected_choice'][$position] = $choice_id;
     }
 
     if (isset($_POST['interval'])) {
         $_SESSION['interval'] = (int)$_POST['interval'];
     }
+    
+    // デバッグ情報を表示
+    echo '<pre>';
+    echo '$_POST: ';
+    print_r($_POST);
+    echo '$_SESSION: ';
+    print_r($_SESSION);
+    echo '</pre>';
 }
 
 $conn->close();
@@ -77,7 +87,7 @@ $question_text = nl2br(htmlspecialchars($question['question_text'], ENT_QUOTES, 
             echo '<img src="' . $image_path . '" alt="問題画像" class="question_img">';
             ?></p>
         </div>
-        <form id="choiceForm" method="post" action="test.php">
+        <form id="choiceForm" method="post" action="result2.php">
             <div class="choices">
                 <?php
                 while ($choice = $choices_result->fetch_assoc()) {
@@ -124,4 +134,3 @@ $question_text = nl2br(htmlspecialchars($question['question_text'], ENT_QUOTES, 
     </script>
 </body>
 </html>
-
