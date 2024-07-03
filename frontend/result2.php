@@ -1,5 +1,7 @@
 <?php
-session_start(); // セッションを開始
+require_once __DIR__ . '/../backend/class.php';
+require_once __DIR__ . '/../backend/pre.php';
+$form = new form();
 
 // フォームから送信されたデータを受け取る
 $choice_id = isset($_POST['choice']) ? $_POST['choice'] : null;
@@ -17,6 +19,15 @@ if ($position !== false && $choice_id !== null) {
     $selected_choices[$position] = $choice_id;
     $_SESSION['selected_choice'][$position] = $choice_id;
 }
+
+if ($selected_choice_id == $correct_choice_id) {
+    $correct_answers[$question_id] = true; // 正解の場合
+} else {
+    $correct_answers[$question_id] = false; // 不正解の場合
+}
+
+$incorrect_questions = array_keys(array_filter($correct_answers, function($value) {return $value === true;}));
+$quesid = $form->wrongdelete($userid, $incorrect_questions[0]);
 
 // セッションに保存された選択肢をデバッグ表示
 echo '<pre>';

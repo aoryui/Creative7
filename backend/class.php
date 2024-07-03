@@ -88,5 +88,12 @@ class form extends Dbdata
         } else {
             return false; // 既に存在する場合は false を返す
         }
-    }    
+    }   
+    
+    public function wrongdelete($userid, $question_id) // 間違えた問題を保存
+    {
+        $checkSql = "DELETE * FROM wrong WHERE userid = ? AND question_id = ?";
+        $stmt = $this->pdo->prepare($checkSql);
+        $stmt->execute([$userid, $question_id]);
+    } 
 }    
