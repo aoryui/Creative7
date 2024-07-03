@@ -92,7 +92,7 @@ class form extends Dbdata
     
     public function wrongdelete($userid, $question_id) // 間違えた問題を保存
     {
-        $checkSql = "DELETE * FROM wrong WHERE userid = ? AND question_id = ?";
+        $checkSql = "DELETE FROM wrong WHERE userid = ? AND question_id = ?";
         $stmt = $this->pdo->prepare($checkSql);
         $stmt->execute([$userid, $question_id]);
     } 

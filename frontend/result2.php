@@ -2,17 +2,34 @@
 require_once __DIR__ . '/../backend/class.php';
 require_once __DIR__ . '/../backend/pre.php';
 $form = new form();
+if (isset($_SESSION['userid'])) {
+    $userid = $_SESSION['userid'];
+}
+// データベースに接続するための情報
+$host = 'localhost';
+$username = 'Creative7';
+$password = '11111';
+$database = 'creative7';
+
+// データベースに接続
+$conn = mysqli_connect($host, $username, $password, $database);
+
+if (!$conn) {
+    die('データベースに接続できませんでした: ' . mysqli_connect_error());
+}
 
 // フォームから送信されたデータを受け取る
 $choice_id = isset($_POST['choice']) ? $_POST['choice'] : null;
 $question_id = isset($_POST['question_id']) ? $_POST['question_id'] : null;
 
-// セッションから表示された質問のリストを取得
+// セッションから表示された質問、選択、を取得
 $displayed_questions = isset($_SESSION['displayed_questions']) ? $_SESSION['displayed_questions'] : [];
 $selected_choices = isset($_SESSION['selected_choice']) ? $_SESSION['selected_choice'] : [];
-
+$correct_choices = isset($_SESSION['correct_choices']) ? $_SESSION['correct_choices'] : [];
 // 表示された質問リストから現在の質問の位置を取得
 $position = array_search($question_id, $displayed_questions);
+$selected_choice_id = $selected_choices[$position];
+$correct_choice_id = $correct_choices[$position];
 
 // 選択された選択肢IDをセッションに保存
 if ($position !== false && $choice_id !== null) {
@@ -20,14 +37,14 @@ if ($position !== false && $choice_id !== null) {
     $_SESSION['selected_choice'][$position] = $choice_id;
 }
 
+echo '<script>console.log('.json_encode($selected_choices).')</script>';
+echo '<script>console.log('.json_encode($correct_choices).')</script>';
+echo '<script>console.log('.json_encode($selected_choice_id).')</script>';
+echo '<script>console.log('.json_encode($correct_choice_id).')</script>';
+$displayed_questions_id = $displayed_questions[$position];
 if ($selected_choice_id == $correct_choice_id) {
-    $correct_answers[$question_id] = true; // 正解の場合
-} else {
-    $correct_answers[$question_id] = false; // 不正解の場合
+    $quesid = $form->wrongdelete($userid, $displayed_questions[$position]);
 }
-
-$incorrect_questions = array_keys(array_filter($correct_answers, function($value) {return $value === true;}));
-$quesid = $form->wrongdelete($userid, $incorrect_questions[0]);
 
 // セッションに保存された選択肢をデバッグ表示
 echo '<pre>';
