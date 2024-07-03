@@ -15,6 +15,16 @@ if ($conn->connect_error) {
 }
 // question_idを取得
 $question_id = isset($_GET['question_id']) ? $_GET['question_id'] : null;
+
+// セッションから選択肢と正解の情報を取得
+$displayed_questions = isset($_SESSION['displayed_questions']) ? $_SESSION['displayed_questions'] : [];
+$selected_choices = isset($_SESSION['selected_choice']) ? $_SESSION['selected_choice'] : [];
+$correct_choices = isset($_SESSION['correct_choices']) ? $_SESSION['correct_choices'] : [];
+
+// リストの番号を取得
+$position = array_search($question_id, $displayed_questions);
+echo '<script>console.log('.json_encode($selected_choices).')</script>'; // 選択した答えを表示
+
 // 問題を取得
 $question_sql = "SELECT * FROM questions WHERE question_id = $question_id";
 $question_result = $conn->query($question_sql);
@@ -26,6 +36,21 @@ if ($question_result->num_rows > 0) {
 // 選択肢を取得
 $choices_sql = "SELECT * FROM choices WHERE question_id=" . $question['question_id'];
 $choices_result = $conn->query($choices_sql);
+
+// フォーム送信時の処理
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['choice'])) {
+        $choice_id = $_POST['choice'];
+        // 指定した位置に選択肢IDを設定
+        $selected_choices[$position] = $choice_id;
+        // 選択肢の配列をセッションに保存
+        $_SESSION['selected_choice'][$position] = $selected_choices;
+    }
+
+    if (isset($_POST['interval'])) {
+        $_SESSION['interval'] = (int)$_POST['interval'];
+    }
+}
 
 $conn->close();
 // 改行を HTML 改行タグに変換
