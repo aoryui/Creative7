@@ -116,7 +116,7 @@ $kaisetu = $form->getQues($question_num);
                     ?></p>
                 </p>
             </section>
-            <p><a href="result.php">リザルトに戻る</a></p>
+            <p><a href="result.php" class="btn">リザルトに戻る</a></p>
         </main>
     </div>
 </body>

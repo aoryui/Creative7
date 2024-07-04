@@ -64,6 +64,6 @@ echo '</pre>';
 
 // データベース接続を閉じる
 mysqli_close($conn);
-header('Location: result.php'); // original_page.phpを実際の元のページに置き
+header('Location: kaitoukaisetu.php?question_id='.$position); // original_page.phpを実際の元のページに置き
 exit();
 ?>

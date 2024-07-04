@@ -19,6 +19,21 @@ body {
     background-color: #fafafa;
 }
 
+/*リンクにボタンをつける*/
+.btn{
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(89, 208, 247);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/*リンクの下線を消す*/
+a{
+    text-decoration: none;
+}
+
 .kaitou {
     margin-bottom: 10px;
     font-size: 18px;
