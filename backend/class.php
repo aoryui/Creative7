@@ -90,10 +90,18 @@ class form extends Dbdata
         }
     }   
     
-    public function wrongdelete($userid, $question_id) // 間違えた問題を保存
-    {
-        $checkSql = "DELETE FROM wrong WHERE userid = ? AND question_id = ?";
-        $stmt = $this->pdo->prepare($checkSql);
-        $stmt->execute([$userid, $question_id]);
-    } 
+    public function wrongdelete($userid, $question_id) {
+        try {
+            $checkSql = "DELETE FROM wrong WHERE userid = ? AND question_id = ?";
+            $stmt = $this->pdo->prepare($checkSql);
+            $stmt->execute([$userid, $question_id]);
+            
+            return true; // 成功した場合、trueを返します
+        } catch (PDOException $e) {
+            // エラーハンドリング（必要に応じて）
+            die('削除に失敗しました: ' . $e->getMessage());
+        }
+        
+        return false; // 失敗した場合、falseを返します
+    }
 }    

@@ -1,4 +1,6 @@
 <?php
+session_start(); // セッションを開始
+
 require_once __DIR__ . '/../backend/class.php';
 require_once __DIR__ . '/../backend/pre.php';
 $form = new form();
@@ -26,10 +28,9 @@ $question_id = isset($_POST['question_id']) ? $_POST['question_id'] : null;
 $displayed_questions = isset($_SESSION['displayed_questions']) ? $_SESSION['displayed_questions'] : [];
 $selected_choices = isset($_SESSION['selected_choice']) ? $_SESSION['selected_choice'] : [];
 $correct_choices = isset($_SESSION['correct_choices']) ? $_SESSION['correct_choices'] : [];
+
 // 表示された質問リストから現在の質問の位置を取得
 $position = array_search($question_id, $displayed_questions);
-$selected_choice_id = $selected_choices[$position];
-$correct_choice_id = $correct_choices[$position];
 
 // 選択された選択肢IDをセッションに保存
 if ($position !== false && $choice_id !== null) {
@@ -37,13 +38,20 @@ if ($position !== false && $choice_id !== null) {
     $_SESSION['selected_choice'][$position] = $choice_id;
 }
 
+// セッションデータの更新後に表示されるデータを取得
+$selected_choice_id = $selected_choices[$position];
+$correct_choice_id = $correct_choices[$position];
+$displayed_questions_id = $displayed_questions[$position];
+
+// デバッグ情報を表示
 echo '<script>console.log('.json_encode($selected_choices).')</script>';
 echo '<script>console.log('.json_encode($correct_choices).')</script>';
 echo '<script>console.log('.json_encode($selected_choice_id).')</script>';
 echo '<script>console.log('.json_encode($correct_choice_id).')</script>';
-$displayed_questions_id = $displayed_questions[$position];
+echo '<script>console.log('.json_encode($displayed_questions_id).')</script>';
+
 if ($selected_choice_id == $correct_choice_id) {
-    $quesid = $form->wrongdelete($userid, $displayed_questions[$position]);
+    $quesid = $form->wrongdelete($userid, $displayed_questions_id);
 }
 
 // セッションに保存された選択肢をデバッグ表示
@@ -54,7 +62,8 @@ echo '$_SESSION: ';
 print_r($_SESSION);
 echo '</pre>';
 
-// 次のページにリダイレクト（ここでは元のページに戻る例）
-header('Location: result.php'); // original_page.phpを実際の元のページに置き換える
+// データベース接続を閉じる
+mysqli_close($conn);
+header('Location: result.php'); // original_page.phpを実際の元のページに置き
 exit();
 ?>
