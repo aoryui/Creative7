@@ -16,13 +16,16 @@ $_SESSION['selected_choice'] = [];
         <div class="honbanmain">
             <div class="container">
                 <div class="content">
-                    <p>ランダムで想定された問題が10個出題されます。
-                    <p></p>
+                    <p>ランダムで想定された問題が10個出題されます。</p>
+                    <p>
                        時間までに解いてください。
-                    <p></p>
-                       時間が過ぎると次の問題に自動的に飛ばされます。</p>
-                    <p></p>
+                    </p>
+                    <p>
+                       時間が過ぎると次の問題に自動的に飛ばされます。
+                    </p>
+                    <p>
                     メモ用紙と筆記用具を用意してください。
+                    </p>
                 </div>
                 <div class="button-container">
                     <form method="post" action="test.php">
