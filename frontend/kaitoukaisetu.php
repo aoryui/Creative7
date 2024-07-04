@@ -77,6 +77,18 @@ $kaisetu = $form->getQues($question_num);
     <link rel="stylesheet" href="../css/kaitoukaisetu.css">
 </head>
 <body>
+<script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const result = urlParams.get('result');
+
+        // Display appropriate alert based on the result
+        if (result === 'correct') {
+            alert('正解');
+        } else if (result === 'incorrect') {
+            alert('不正解');
+        }
+    </script>
     <div class="kaisetu1">
         <main>
             <h2>問題</h2>
