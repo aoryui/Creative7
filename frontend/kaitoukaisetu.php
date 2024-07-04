@@ -75,6 +75,19 @@ $kaisetu = $form->getQues($question_num);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>回答と解説画面</title>
     <link rel="stylesheet" href="../css/kaitoukaisetu.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                var userChoiceId = "<?php echo $user_choice_id; ?>";
+                var correctChoiceId = "<?php echo $correct_choice_id; ?>";
+                if (userChoiceId === correctChoiceId) {
+                    alert("正解です！");
+                } else {
+                    alert("不正解です！");
+                }
+            }, 500); // 500ミリ秒 (0.5秒) 後にアラートを表示
+        });
+    </script>
 </head>
 <body>
 <script>
@@ -93,7 +106,7 @@ $kaisetu = $form->getQues($question_num);
         <main>
             <h2>問題</h2>
             <section class="container">
-                <div div class="kaitou">
+                <div class="kaitou">
                     <b>ジャンル:</b>
                     <span><?php echo htmlspecialchars($question_info['genre_text'], ENT_QUOTES, 'UTF-8'); ?></span>
                 </div>
