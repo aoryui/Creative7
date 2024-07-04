@@ -27,6 +27,7 @@ $selected_choice = isset($_SESSION['selected_choice']) ? $_SESSION['selected_cho
 $correct_answers = [];  // 各問題の正誤を格納する配列
 $genres = [];  // 各問題の分野を格納する配列
 $correct_choices = [];  // 各問題の正解選択肢IDを格納する配列
+$questionTexts = []; // 問題のテキストを格納する配列
 
 // 各問題の正誤を判定する
 foreach ($displayed_questions as $key => $question_id) {
@@ -62,6 +63,17 @@ foreach ($displayed_questions as $key => $question_id) {
 
     $genre_row = mysqli_fetch_assoc($genre_result);
     $genres[$question_id] = $genre_row['genre_text'];
+
+    // 問題名を取得するクエリ
+    $questionText_query = "SELECT sentence FROM questions WHERE question_id = $question_id";
+    $questionText_result = mysqli_query($conn, $questionText_query);
+
+    if (!$questionText_result) {
+        die('クエリ実行に失敗しました: ' . mysqli_error($conn));
+    }
+
+    $questionText_row = mysqli_fetch_assoc($questionText_result);
+    $questionTexts[$question_id] = $questionText_row['sentence'];
 }
 // 間違えた問題を取得
 $incorrect_questions = array_keys(array_filter($correct_answers, function($value) {return $value === false;}));
@@ -115,6 +127,7 @@ echo '<script>console.log('.json_encode($correct_choices).')</script>';
             <th>問題No.</th>
             <th>正誤</th>
             <th>分野</th>
+            <th>問題文</th>
             <th>解説</th>
             <th>復習</th>
         </tr>
@@ -123,6 +136,7 @@ echo '<script>console.log('.json_encode($correct_choices).')</script>';
                 <td><?php echo $key + 1; ?></td>
                 <td><?php echo $correct_answers[$question] ? '○' : '×'; ?></td>
                 <td><?php echo htmlspecialchars($genres[$question], ENT_QUOTES, 'UTF-8'); ?></td>
+                <td><?php echo htmlspecialchars($questionTexts[$question], ENT_QUOTES, 'UTF-8'); ?></td>
                 <td id="tri"><a href="kaitoukaisetu.php?question_id=<?php echo $key; ?>">解説リンク</a></td>
                 <td id="tri"><a href="review_questions.php?question_id=<?php echo $displayed_questions[$key]; ?>">復習リンク</a></td>
             </tr>
