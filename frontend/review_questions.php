@@ -102,7 +102,7 @@ $question_text = nl2br(htmlspecialchars($question['question_text'], ENT_QUOTES, 
         </form>
     </div>
     <div class="footer">
-        <a href="#" class="next-button" id="next-button">次に進む</a>
+        <a href="#" class="next-button" id="next-button">判定する</a>
     </div>
     <script>
         function goToNextQuestion() {

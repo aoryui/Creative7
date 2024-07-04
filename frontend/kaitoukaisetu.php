@@ -90,6 +90,18 @@ $kaisetu = $form->getQues($question_num);
     </script>
 </head>
 <body>
+<script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const result = urlParams.get('result');
+
+        // Display appropriate alert based on the result
+        if (result === 'correct') {
+            alert('正解');
+        } else if (result === 'incorrect') {
+            alert('不正解');
+        }
+    </script>
     <div class="kaisetu1">
         <main>
             <h2>問題</h2>
@@ -129,7 +141,7 @@ $kaisetu = $form->getQues($question_num);
                     ?></p>
                 </p>
             </section>
-            <p><a href="result.php">リザルトに戻る</a></p>
+            <p><a href="result.php" class="btn">リザルトに戻る</a></p>
         </main>
     </div>
 </body>

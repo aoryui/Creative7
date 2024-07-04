@@ -52,6 +52,9 @@ echo '<script>console.log('.json_encode($displayed_questions_id).')</script>';
 
 if ($selected_choice_id == $correct_choice_id) {
     $quesid = $form->wrongdelete($userid, $displayed_questions_id);
+    $result = 'correct';
+} else {
+    $result = 'incorrect';
 }
 
 // セッションに保存された選択肢をデバッグ表示
@@ -64,6 +67,6 @@ echo '</pre>';
 
 // データベース接続を閉じる
 mysqli_close($conn);
-header('Location: kaitoukaisetu.php?question_id='.$position); // original_page.phpを実際の元のページに置き
+header('Location: kaitoukaisetu.php?question_id=' . $position . '&result=' . $result); // original_page.phpを実際の元のページに置き
 exit();
 ?>

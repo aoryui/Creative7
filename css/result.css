@@ -58,7 +58,10 @@ body {
 #table {
     width: 1000px;
     background-color: rgb(244, 242, 242);
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #tri {
