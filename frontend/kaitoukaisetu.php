@@ -77,12 +77,12 @@ $kaisetu = $form->getQues($question_num);
     <link rel="stylesheet" href="../css/kaitoukaisetu.css">
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const result = urlParams.get('result');
             setTimeout(function() {
-                var userChoiceId = "<?php echo $user_choice_id; ?>";
-                var correctChoiceId = "<?php echo $correct_choice_id; ?>";
-                if (userChoiceId === correctChoiceId) {
+                if (result === 'correct') {
                     alert("正解です！");
-                } else {
+                } else if (result === 'incorrect') {
                     alert("不正解です！");
                 }
             }, 500); // 500ミリ秒 (0.5秒) 後にアラートを表示
@@ -90,18 +90,6 @@ $kaisetu = $form->getQues($question_num);
     </script>
 </head>
 <body>
-<script>
-        // Get URL parameters
-        const urlParams = new URLSearchParams(window.location.search);
-        const result = urlParams.get('result');
-
-        // Display appropriate alert based on the result
-        if (result === 'correct') {
-            alert('正解');
-        } else if (result === 'incorrect') {
-            alert('不正解');
-        }
-    </script>
     <div class="kaisetu1">
         <main>
             <h2>問題</h2>
