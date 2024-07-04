@@ -132,5 +132,6 @@ $question_text = nl2br(htmlspecialchars($question['question_text'], ENT_QUOTES, 
         });
 
     </script>
+    
 </body>
 </html>
