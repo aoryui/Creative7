@@ -1,4 +1,10 @@
+html {
+    height: 100%;
+}
+
+
 body {
+    min-height: 100%;
     background-color: #ffefd5;
 }
 
@@ -34,8 +40,10 @@ body {
     margin-left: 310px;
 }
 
-img.question_img{
+.question_img{
     width: 500px;
+    position: absolute;
+    top: 200px; left: 180px;
 }
 
 .question p {
@@ -48,7 +56,7 @@ img.question_img{
     margin-bottom: 40px;
     margin-top: 100px;
     /* 上側のマージンを追加 */
-    margin-right: 70px;
+    margin-right: 200px;
     width: 200px;
     /* 適切な幅を設定 */
 }
@@ -74,11 +82,20 @@ img.question_img{
     cursor: pointer;
 }
 
+
+.timer-label {
+    position: relative;
+    top: -410px;
+    left: 700px;
+    bottom: 30px;
+}
 .timer-container {
-    width: 100%;
+    width: 50%;
     height: 20px;
     margin-top: 20px;
     position: relative;
+    top: -450px;
+    left: 40px;
     border: 1px solid #aaa;
     transition: background-color 0.1s linear;
 }
@@ -140,17 +157,7 @@ img:active {
 }
 */
 
-#timer-bar {
-    position: relative;
-    bottom: 30px;
-}
 
-.timer-label {
-    position: relative;
-    bottom: 30px;
-}
 
-.choice {
-    position: relative;
-    bottom: 50px;
-}
+
+

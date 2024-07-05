@@ -2,6 +2,7 @@
 session_start();
 require_once __DIR__ . '/header.php';
 
+
 $servername = "localhost";
 $username = "Creative7";
 $password = "11111";
@@ -105,9 +106,7 @@ $interval = $question['interval_num'];
 <body>
     <div class="content">
         <div class="question">
-            <?php
-            echo '<div class="question-text">問題番号'.$question_id.'次の文章を読んで問いに答えなさい</div>';
-            ?>
+           
             <p><?php
             // 画像のパスを作成
             $image_path = "../image/問題集/" . $question_text . ".jpg";
@@ -135,9 +134,7 @@ $interval = $question['interval_num'];
             <div class="timer-bar" id="timer-bar"></div>
         </div>
     </div>
-    <div class="footer">
-        <a href="#" class="next-button" id="next-button">次に進む</a>
-    </div>
+    <a href="#" class="next-button" id="next-button">次に進む</a>
     <script>
         const totalSegments = <?php echo $interval; ?>;
 
