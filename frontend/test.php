@@ -114,7 +114,7 @@ $interval = $question['interval_num'];
     <title>SPIタイサくん</title>
     <link rel="stylesheet" href="../css/test.css">
 </head>
-<body>
+<body scroll="no">
     <div class="content">
         <div class="question">
             <p><?php

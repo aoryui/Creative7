@@ -1,12 +1,15 @@
 html {
     height: 100%;
+    overflow: hidden;
 }
 
 
 body {
     min-height: 100%;
     background-color: #ffefd5;
+    overflow: hidden;
 }
+
 
 .content {
     display: flex;

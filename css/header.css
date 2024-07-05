@@ -5,9 +5,9 @@ header{
     padding: 10px;
 }
 
-/* 無難な書き方 */
+
 body,html {
-    margin: 0;  /* 解決するため */
-    padding: 0; /* 入れておくと無難 */
+    margin: 0;  
+    padding: 0; 
   }
   
