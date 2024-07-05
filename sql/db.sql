@@ -21,6 +21,7 @@ CREATE TABLE userinfo (
 DROP TABLE IF EXISTS questions;
 CREATE TABLE questions (
     question_id INT AUTO_INCREMENT PRIMARY KEY,
+    interval_num INT NOT NULL,
     genre_text TEXT NOT NULL,
     question_text TEXT NOT NULL,
     sentence TEXT NOT NULL
@@ -53,16 +54,16 @@ CREATE TABLE wrong (
 );
 
 -- 問題を挿入
-INSERT INTO questions (question_id,genre_text,question_text,sentence) VALUES (1,'二語の関係','1_1_1','努力：成功');
-INSERT INTO questions (question_id,genre_text,question_text,sentence) VALUES (2,'二語の関係','1_1_2','勤勉：怠惰');
-INSERT INTO questions (question_id,genre_text,question_text,sentence) VALUES (3,'二語の関係','1_1_3','医者：患者');
-INSERT INTO questions (question_id,genre_text,question_text,sentence) VALUES (4,'二語の関係','1_1_4','花：種');
-INSERT INTO questions (question_id,genre_text,question_text,sentence) VALUES (5,'二語の関係','1_1_5','映画：劇場');
-INSERT INTO questions (question_id,genre_text,question_text,sentence) VALUES (6,'二語の関係','1_1_6','知識：学問');
-INSERT INTO questions (question_id,genre_text,question_text,sentence) VALUES (7,'二語の関係','1_1_7','車：道路');
-INSERT INTO questions (question_id,genre_text,question_text,sentence) VALUES (8,'二語の関係','1_1_8','天気予報：天気');
-INSERT INTO questions (question_id,genre_text,question_text,sentence) VALUES (9,'二語の関係','1_1_9','昼：夜');
-INSERT INTO questions (question_id,genre_text,question_text,sentence) VALUES (10,'二語の関係','1_1_10','数学：算数');
+INSERT INTO questions (question_id,interval_num,genre_text,question_text,sentence) VALUES (1,30,'二語の関係','1_1_1','努力：成功');
+INSERT INTO questions (question_id,interval_num,genre_text,question_text,sentence) VALUES (2,30,'二語の関係','1_1_2','勤勉：怠惰');
+INSERT INTO questions (question_id,interval_num,genre_text,question_text,sentence) VALUES (3,30,'二語の関係','1_1_3','医者：患者');
+INSERT INTO questions (question_id,interval_num,genre_text,question_text,sentence) VALUES (4,30,'二語の関係','1_1_4','花：種');
+INSERT INTO questions (question_id,interval_num,genre_text,question_text,sentence) VALUES (5,30,'二語の関係','1_1_5','映画：劇場');
+INSERT INTO questions (question_id,interval_num,genre_text,question_text,sentence) VALUES (6,30,'二語の関係','1_1_6','知識：学問');
+INSERT INTO questions (question_id,interval_num,genre_text,question_text,sentence) VALUES (7,30,'二語の関係','1_1_7','車：道路');
+INSERT INTO questions (question_id,interval_num,genre_text,question_text,sentence) VALUES (8,30,'二語の関係','1_1_8','天気予報：天気');
+INSERT INTO questions (question_id,interval_num,genre_text,question_text,sentence) VALUES (9,30,'二語の関係','1_1_9','昼：夜');
+INSERT INTO questions (question_id,interval_num,genre_text,question_text,sentence) VALUES (10,30,'二語の関係','1_1_10','数学：算数');
 
 -- 選択肢を挿入
 INSERT INTO choices (question_id, choice_text) VALUES (1, 'A.アだけ');

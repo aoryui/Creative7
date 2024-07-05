@@ -90,8 +90,8 @@ $question_text = nl2br(htmlspecialchars($question['question_text'], ENT_QUOTES, 
 // セッションに現在のquestion_idを保存
 $_SESSION['displayed_questions'][] = $question_id;
 
-// 選択した秒数を取得
-$interval = isset($_SESSION['interval']) ? $_SESSION['interval'] : 30; // デフォルトは30秒
+// 制限時間を取得
+$interval = $question['interval_num'];
 ?>
 
 <!DOCTYPE html>
@@ -130,57 +130,16 @@ $interval = isset($_SESSION['interval']) ? $_SESSION['interval'] : 30; // デフ
         </form>
     </div>
     <div class="timer">
-        <div class="timer-label">回答時間</div>
-        <div class="timer-bar" id="timer-bar">
-            <!-- タイマーバーの色の部分をJavaScriptで生成 -->
+        <div class="timer-label">回答時間 <span id="remaining-time"></span></div>
+        <div class="timer-container" id="timer-container">
+            <div class="timer-bar" id="timer-bar"></div>
         </div>
     </div>
     <div class="footer">
-        ※時間超過した場合次の問題に行きます
         <a href="#" class="next-button" id="next-button">次に進む</a>
     </div>
     <script>
-        const timerBar = document.getElementById('timer-bar');
         const totalSegments = <?php echo $interval; ?>;
-        const segmentTime = 1000; // 1秒
-        const lightColors = [
-            '#dcedc8', '#dcedc8', '#dcedc8', '#dcedc8', '#dcedc8',
-            '#f0f4c3', '#f0f4c3', '#f0f4c3', '#f0f4c3', '#f0f4c3',
-            '#fff9c4', '#fff9c4', '#fff9c4', '#fff9c4', '#fff9c4',
-            '#ffecb3', '#ffecb3', '#ffecb3', '#ffecb3', '#ffecb3',
-            '#ffe0b2', '#ffe0b2', '#ffe0b2', '#ffe0b2', '#ffe0b2',
-            '#ffccbc', '#ffccbc', '#ffccbc', '#ffccbc', '#ffcdd2'
-        ];
-        const darkColors = [
-            '#8bc34a', '#8bc34a', '#8bc34a', '#8bc34a', '#8bc34a',
-            '#cddc39', '#cddc39', '#cddc39', '#cddc39', '#cddc39',
-            '#ffeb3b', '#ffeb3b', '#ffeb3b', '#ffeb3b', '#ffeb3b',
-            '#ffc107', '#ffc107', '#ffc107', '#ffc107', '#ffc107',
-            '#ff9800', '#ff9800', '#ff9800', '#ff9800', '#ff9800',
-            '#ff5722', '#ff5722', '#ff5722', '#ff5722', '#f44336'
-        ];
-
-        function createSegments() {
-            for (let i = 0; i < totalSegments; i++) {
-                const segment = document.createElement('div');
-                segment.style.backgroundColor = lightColors[i % lightColors.length];
-                timerBar.appendChild(segment);
-            }
-        }
-
-        function startTimer() {
-            let currentSegment = 0;
-            const segments = timerBar.children;
-            const interval = setInterval(() => {
-                if (currentSegment >= totalSegments) {
-                    clearInterval(interval);
-                    goToNextQuestion(); // タイムアップ後の処理をここに書く
-                } else {
-                    segments[currentSegment].style.backgroundColor = darkColors[currentSegment % darkColors.length];
-                    currentSegment++;
-                }
-            }, segmentTime);
-        }
 
         function goToNextQuestion() {
             // 次の問題に進む処理をここに書く
@@ -214,8 +173,46 @@ $interval = isset($_SESSION['interval']) ? $_SESSION['interval'] : 30; // デフ
             }
         });
 
-        createSegments();
-        startTimer();
+        document.addEventListener('DOMContentLoaded', function () { // ページが表示されたら実行される
+            const timerBar = document.getElementById('timer-bar'); // バーの時間経過で右へ延びる部分
+            const timerContainer = document.getElementById('timer-container'); // バーの背景
+            const remainingTimeElement = document.getElementById('remaining-time'); // 残り時間表示
+            const intervalDuration = totalSegments * 1000; // 制限時間をミリ秒に変換
+            const startTime = Date.now();
+            const endTime = startTime + intervalDuration;
+
+            function updateTimer() {
+                const currentTime = Date.now();
+                const timeElapsed = currentTime - startTime;
+                const timeRemaining = Math.max(0, endTime - currentTime);
+                const percentage = (timeElapsed / intervalDuration) * 100;
+
+                // バーの長さを更新
+                timerBar.style.width = percentage + '%';
+
+                // 背景の色を更新
+                if (percentage < 50) {
+                    timerContainer.style.backgroundColor = '#339966'; // 緑
+                } else if (percentage < 80) {
+                    timerContainer.style.backgroundColor = '#ffcc00'; // 黄
+                } else {
+                    timerContainer.style.backgroundColor = '#ff0000'; // 赤
+                }
+
+                // 残り時間を更新
+                remainingTimeElement.textContent = Math.ceil(timeRemaining / 1000) + ' / '+ totalSegments +' 秒';
+
+                if (currentTime >= endTime) { //　時間切れ
+                    goToNextQuestion();
+                } else {
+                    requestAnimationFrame(updateTimer);
+                }
+            }
+
+            // 初期化
+            timerBar.style.transition = 'width 0.1s linear'; // バーの動きのアニメーション設定
+            updateTimer();
+        });
     </script>
 </body>
 </html>

@@ -12,6 +12,14 @@ body {
 
 }
 
+.footer{
+    bottom: auto;
+}
+
+#timer-container{
+    bottom: 100px;
+}
+
 .question {
     flex-grow: 1;
     margin: 0 0 0 auto;
@@ -66,29 +74,22 @@ img.question_img{
     cursor: pointer;
 }
 
-.timer {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+.timer-container {
     width: 100%;
-}
-
-.timer-label {
-    margin-right: 10px;
-}
-
-.timer-bar {
-    display: flex;
-    width: 80%;
     height: 20px;
-    overflow: hidden;
+    margin-top: 20px;
+    position: relative;
+    border: 1px solid #aaa;
+    transition: background-color 0.1s linear;
 }
-
-.timer-bar div {
-    flex: 1;
-    background-color: #e0e0e0;
-    margin: 0 1px;
-    opacity: 1;
+.timer-bar {
+    width: 0;
+    height: 100%;
+    background-color: #ddd;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: width 0.1s linear;
 }
 
 .next-button {
