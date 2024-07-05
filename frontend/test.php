@@ -136,7 +136,6 @@ $interval = $question['interval_num'];
         </div>
     </div>
     <div class="footer">
-        ※時間超過した場合次の問題に行きます
         <a href="#" class="next-button" id="next-button">次に進む</a>
     </div>
     <script>
