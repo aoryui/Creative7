@@ -5,6 +5,7 @@ require_once __DIR__ . '/header.php';
 // Initialize the lists
 $_SESSION['displayed_questions'] = [];
 $_SESSION['selected_choice'] = [];
+$_SESSION['interval_time'] = [];
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -25,6 +26,7 @@ $_SESSION['selected_choice'] = [];
                     <form method="post" action="test.php">
                         <input type="hidden" name="displayed_questions" value='<?php echo json_encode($_SESSION['displayed_questions']); ?>'>
                         <input type="hidden" name="selected_choice" value='<?php echo json_encode($_SESSION['selected_choice']); ?>'>
+                        <input type="hidden" name="interval_time" value='<?php echo json_encode($_SESSION['interval_time']); ?>'>
                         <input type="submit" value="模擬試験を開始する">
                     </form>
                 </div>

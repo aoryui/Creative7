@@ -2,7 +2,6 @@
 session_start();
 require_once __DIR__ . '/header.php';
 
-
 $servername = "localhost";
 $username = "Creative7";
 $password = "11111";
@@ -20,9 +19,12 @@ if ($conn->connect_error) {
 $displayed_questions = isset($_SESSION['displayed_questions']) ? $_SESSION['displayed_questions'] : [];
 // 選択したchoice_id を取得
 $selected_choice = isset($_SESSION['selected_choice']) ? $_SESSION['selected_choice'] : [];
+// 回答時間を取得
+$interval_time = isset($_SESSION['interval_time']) ? $_SESSION['interval_time'] : [];
 // $displayed_questions をセッションに保存
 $_SESSION['displayed_questions'] = $displayed_questions;
 $_SESSION['selected_choice'] = $selected_choice;
+$_SESSION['interval_time'] = $interval_time;
 
 // フォーム送信時の処理
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -34,14 +36,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['selected_choice'] = $selected_choice;
     }
 
-    if (isset($_POST['interval'])) {
-        $_SESSION['interval'] = (int)$_POST['interval'];
+    if (isset($_POST['time_taken'])) {
+        $time_taken = $_POST['time_taken'];
+
+        // 時間切れになると「時間切れ」を入れる
+        if ($time_taken === 'timeout') {
+            $interval_time[] = '時間切れ';
+        } else {
+            $interval_time[] = (int)$time_taken;
+        }
+        $_SESSION['interval_time'] = $interval_time;
     }
 }
 
 // ログ表示
 echo '<script>console.log('.json_encode($displayed_questions).')</script>'; // 既に表示した問題IDをコンソールに表示
 echo '<script>console.log('.json_encode($selected_choice).')</script>'; // 選択した答えを表示
+echo '<script>console.log('.json_encode($interval_time).')</script>'; // 回答時間を表示
 
 // 既に表示した question_id の数が10つに達したらリセット
 if (count($displayed_questions) >= 10) {
@@ -106,7 +117,6 @@ $interval = $question['interval_num'];
 <body>
     <div class="content">
         <div class="question">
-           
             <p><?php
             // 画像のパスを作成
             $image_path = "../image/問題集/" . $question_text . ".jpg";
@@ -126,6 +136,7 @@ $interval = $question['interval_num'];
                 ?>
             </div>
             <input type="hidden" name="question_id" value="<?php echo $question_id; ?>">
+            <input type="hidden" name="time_taken" id="time_taken" value="">
         </form>
     </div>
     <div class="timer">
@@ -137,9 +148,21 @@ $interval = $question['interval_num'];
     <a href="#" class="next-button" id="next-button">次に進む</a>
     <script>
         const totalSegments = <?php echo $interval; ?>;
+        let startTime;
 
         function goToNextQuestion() {
-            // 次の問題に進む処理をここに書く
+            const timeTakenInput = document.getElementById('time_taken');
+            const endTime = Date.now();
+            const timeTaken = Math.ceil((endTime - startTime) / 1000);
+            
+            // Check if the timer has reached its end
+            if (timeTaken >= totalSegments) {
+                timeTakenInput.value = 'timeout'; // Indicate timeout
+            } else {
+                timeTakenInput.value = timeTaken; // Normal time taken
+            }
+            
+            // Handle choice selection
             if (!document.querySelector('input[name="choice"]:checked')) { // 時間切れの場合は0を格納する
                 const hiddenInput = document.createElement('input');
                 hiddenInput.type = 'hidden';
@@ -147,7 +170,7 @@ $interval = $question['interval_num'];
                 hiddenInput.value = '0';
                 document.getElementById('choiceForm').appendChild(hiddenInput);
             }
-            document.getElementById('choiceForm').submit(); // フォームを送信
+            document.getElementById('choiceForm').submit();
         }
 
         document.getElementById('next-button').addEventListener('click', (e) => {
@@ -175,7 +198,7 @@ $interval = $question['interval_num'];
             const timerContainer = document.getElementById('timer-container'); // バーの背景
             const remainingTimeElement = document.getElementById('remaining-time'); // 残り時間表示
             const intervalDuration = totalSegments * 1000; // 制限時間をミリ秒に変換
-            const startTime = Date.now();
+            startTime = Date.now();
             const endTime = startTime + intervalDuration;
 
             function updateTimer() {
@@ -199,7 +222,7 @@ $interval = $question['interval_num'];
                 // 残り時間を更新
                 remainingTimeElement.textContent = Math.ceil(timeRemaining / 1000) + ' / '+ totalSegments +' 秒';
 
-                if (currentTime >= endTime) { //　時間切れ
+                if (currentTime >= endTime) { // 時間切れ
                     goToNextQuestion();
                 } else {
                     requestAnimationFrame(updateTimer);

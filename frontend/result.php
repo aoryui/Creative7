@@ -22,6 +22,7 @@ if (!$conn) {
 
 $displayed_questions = isset($_SESSION['displayed_questions']) ? $_SESSION['displayed_questions'] : [];
 $selected_choice = isset($_SESSION['selected_choice']) ? $_SESSION['selected_choice'] : [];
+$interval_time = isset($_SESSION['interval_time']) ? $_SESSION['interval_time'] : [];
 
 // 正誤判定用の配列を初期化
 $correct_answers = [];  // 各問題の正誤を格納する配列
@@ -128,6 +129,7 @@ echo '<script>console.log('.json_encode($correct_choices).')</script>';
             <th>正誤</th>
             <th>分野</th>
             <th>問題文</th>
+            <th>回答時間</th>
             <th>解説</th>
             <th>復習</th>
         </tr>
@@ -137,6 +139,7 @@ echo '<script>console.log('.json_encode($correct_choices).')</script>';
                 <td><?php echo $correct_answers[$question] ? '○' : '×'; ?></td>
                 <td><?php echo htmlspecialchars($genres[$question], ENT_QUOTES, 'UTF-8'); ?></td>
                 <td><?php echo htmlspecialchars($questionTexts[$question], ENT_QUOTES, 'UTF-8'); ?></td>
+                <td><?php echo ($interval_time[$key] === '時間切れ') ? $interval_time[$key] : $interval_time[$key] . '秒'; ?></td>
                 <td id="tri"><a href="kaitoukaisetu.php?question_id=<?php echo $key; ?>">解説リンク</a></td>
                 <td id="tri"><a href="review_questions.php?question_id=<?php echo $displayed_questions[$key]; ?>">復習リンク</a></td>
             </tr>
