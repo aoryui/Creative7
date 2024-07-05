@@ -120,7 +120,7 @@ echo '<script>console.log('.json_encode($correct_choices).')</script>';
     <h2 class="response-time">平均回答時間：</h2>
     <h2 class="time">180秒</h2>
 -->
-    <h2 class="answer">回答</h2>
+    <h2 class="answer">試験回別レポート</h2>
 
     <table border="1" id="table">
         <tr>
