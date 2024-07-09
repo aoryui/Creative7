@@ -30,6 +30,10 @@ $genres = [];  // 各問題の分野を格納する配列
 $correct_choices = [];  // 各問題の正解選択肢IDを格納する配列
 $questionTexts = []; // 問題のテキストを格納する配列
 
+$total_time = 0; // 合計回答時間
+$total_questions = count($displayed_questions); // 問題数
+$correct_count = 0; // 正解数
+
 // 各問題の正誤を判定する
 foreach ($displayed_questions as $key => $question_id) {
     // 問題IDに対応する正解の選択肢IDを取得するクエリ
@@ -50,6 +54,7 @@ foreach ($displayed_questions as $key => $question_id) {
     // 正誤判定
     if ($selected_choice_id == $correct_choice_id) {
         $correct_answers[$question_id] = true; // 正解の場合
+        $correct_count++; // 正解数をカウント
     } else {
         $correct_answers[$question_id] = false; // 不正解の場合
     }
@@ -75,12 +80,17 @@ foreach ($displayed_questions as $key => $question_id) {
 
     $questionText_row = mysqli_fetch_assoc($questionText_result);
     $questionTexts[$question_id] = $questionText_row['sentence'];
+
+    // 回答時間を合計に追加
+    if ($interval_time[$key] !== '時間切れ') {
+        $total_time += intval($interval_time[$key]);
+    }
 }
+
 // 間違えた問題を取得
 $incorrect_questions = array_keys(array_filter($correct_answers, function($value) {return $value === false;}));
 sort($incorrect_questions); // 問題番号を昇順にソート
 echo '<script>console.log('.json_encode($incorrect_questions).')</script>';
-
 
 foreach ($incorrect_questions as $index => $question_id) {
     $quesid = $form->insert($userid, $incorrect_questions[$index]);
@@ -92,6 +102,10 @@ mysqli_close($conn);
 // 正解と選択肢のセッション保存
 $_SESSION['correct_choices'] = $correct_choices;
 $_SESSION['selected_choice'] = $selected_choice;
+
+// 平均回答時間を計算
+$average_time = $total_time / $total_questions;
+$correct_rate = ($correct_count / $total_questions) * 100; // 正答率を計算
 
 // ログ表示
 echo '<script>console.log('.json_encode($displayed_questions).')</script>';
@@ -106,22 +120,10 @@ echo '<script>console.log('.json_encode($correct_choices).')</script>';
 </head>
 <body>
     <div class="border-frame">
-<!-- <div class="bar-graph-wrap">
-        <div class="graph">
-            <span class="name">Graph 01</span>
-            <span class="number">70%</span>
-        </div>
-    </div>
-
-    <h2 class="level">Lv.10</h2>
-    <h2 class="exp">700/1000 exp</h2>
-    <h2 class="addition">+100exp</h2>
-    <h2 class="correct-answer-rate">正答率:</h2>
-    <h2 class="rate">20%</h2>
-    <h2 class="response-time">平均回答時間：</h2>
-    <h2 class="time">180秒</h2>
--->
     <h2 class="answer">試験回別レポート</h2>
+
+    <h2 class="average-time">平均回答時間: <?php echo intval($average_time); ?>秒</h2>
+    <h2 class="correct-rate">正答率: <?php echo round($correct_rate, 2); ?>%</h2>
 
     <table border="1" id="table">
         <tr>
