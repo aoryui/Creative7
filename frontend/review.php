@@ -87,15 +87,6 @@ foreach ($displayed_questions as $key => $question_id) {
     }
 }
 
-// 間違えた問題を取得
-$incorrect_questions = array_keys(array_filter($correct_answers, function($value) {return $value === false;}));
-sort($incorrect_questions); // 問題番号を昇順にソート
-echo '<script>console.log('.json_encode($incorrect_questions).')</script>';
-
-foreach ($incorrect_questions as $index => $question_id) {
-    $quesid = $form->insert($userid, $incorrect_questions[$index]);
-}
-
 // データベース接続をクローズ
 mysqli_close($conn);
 
@@ -103,10 +94,24 @@ mysqli_close($conn);
 $_SESSION['correct_choices'] = $correct_choices;
 $_SESSION['selected_choice'] = $selected_choice;
 
-// ログ表示
-echo '<script>console.log('.json_encode($displayed_questions).')</script>';
-echo '<script>console.log('.json_encode($selected_choice).')</script>';
-echo '<script>console.log('.json_encode($correct_choices).')</script>';
+// 間違えた問題を取得
+$conn = mysqli_connect($host, $username, $password, $database);
+if (!$conn) {
+    die('データベースに接続できませんでした: ' . mysqli_connect_error());
+}
+
+$wrong_questions = [];
+$wrong_query = "SELECT question_id FROM wrong WHERE userid = $userid";
+$wrong_result = mysqli_query($conn, $wrong_query);
+if (!$wrong_result) {
+    die('クエリ実行に失敗しました: ' . mysqli_error($conn));
+}
+
+while ($row = mysqli_fetch_assoc($wrong_result)) {
+    $wrong_questions[] = $row['question_id'];
+}
+
+mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
@@ -117,8 +122,6 @@ echo '<script>console.log('.json_encode($correct_choices).')</script>';
 <body>
     <div class="border-frame">
     <h2 class="answer">復習問題</h2>
-
-
     <table border="1" id="table">
         <tr>
             <th>分野</th>
@@ -126,12 +129,31 @@ echo '<script>console.log('.json_encode($correct_choices).')</script>';
             <th>解説</th>
             <th>復習</th>
         </tr>
-        <?php foreach ($displayed_questions as $key => $question): ?>
+        <?php foreach ($wrong_questions as $question_id): ?>
+            <?php
+                // 問題の詳細を取得
+                $conn = mysqli_connect($host, $username, $password, $database);
+                if (!$conn) {
+                    die('データベースに接続できませんでした: ' . mysqli_connect_error());
+                }
+
+                $query = "SELECT genre_text, sentence FROM questions WHERE question_id = $question_id";
+                $result = mysqli_query($conn, $query);
+                if (!$result) {
+                    die('クエリ実行に失敗しました: ' . mysqli_error($conn));
+                }
+
+                $row = mysqli_fetch_assoc($result);
+                $genre = $row['genre_text'];
+                $sentence = $row['sentence'];
+
+                mysqli_close($conn);
+            ?>
             <tr>
-                <td><?php echo htmlspecialchars($genres[$question], ENT_QUOTES, 'UTF-8'); ?></td>
-                <td><?php echo htmlspecialchars($questionTexts[$question], ENT_QUOTES, 'UTF-8'); ?></td>
-                <td id="tri"><a href="kaitoukaisetu.php?question_id=<?php echo $key; ?>">解説リンク</a></td>
-                <td id="tri"><a href="review_questions.php?question_id=<?php echo $displayed_questions[$key]; ?>">問題</a></td>
+                <td><?php echo htmlspecialchars($genre, ENT_QUOTES, 'UTF-8'); ?></td>
+                <td><?php echo htmlspecialchars($sentence, ENT_QUOTES, 'UTF-8'); ?></td>
+                <td id="tri"><a href="kaitoukaisetu.php?question_id=<?php echo $question_id; ?>">解説リンク</a></td>
+                <td id="tri"><a href="review_questions.php?question_id=<?php echo $question_id; ?>">問題</a></td>
             </tr>
         <?php endforeach; ?>
     </table>
