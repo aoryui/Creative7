@@ -20,21 +20,11 @@ $username = $_SESSION['userName'];
 <h1>SPIタイサくん</h1>
         <nav id="menuContent">
             <ul>
-                <?php
-                if ($username === "ゲスト") {
-                ?>
-                    <li><a href="login.php">ログインページへ</a></li>
-                <?php
-                } else {
-                ?>
-                    <li><a href="mypage.php">マイページへ</a></li>
-                <?php
-                }
-                ?>
-                <li><a href="index.php">質問一覧ページへ</a></li>
-                <li><a href="seikabutuitirann.php">成果物一覧ページへ</a></li>
-                <li><a href="otoiawase.php">お問い合わせページへ</a></li>
-                <li><a href="rule.php">利用規約へ</a></li>
+                <li><a href="mypage.php">マイページへ</a></li>
+                <li><a href="login.php">ログインページへ</a></li>
+                <li><a href="genre_selection.php">ジャンル選択画面へ</a></li>
+                <li><a href="teststart.php">模擬試験開始画面へ</a></li>
+                <li><a href="review.php">復習ページへ</a></li>
             </ul>
             </nav>
         <script>
