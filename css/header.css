@@ -99,3 +99,7 @@ img:active {
     top: 3px;
     /* 画像を少し下に移動させる */
 }
+
+h1 {
+    text-align: center;
+}

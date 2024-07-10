@@ -13,11 +13,17 @@ $username = $_SESSION['userName'];
 <link rel="icon" type="../image/x-icon" href="../image/icon.png" />
 <title>SPIタイサくんのページ</title>
 <header>
-
+        <?php
+        if (basename($_SERVER['PHP_SELF']) == 'test.php') {?>
+            <h1>SPIタイサくん</h1>
+        <?php
+        }
+        else{
+        ?>
         <button id="menuBtn">
             <img id="menubutton" src="../image/menubutton.png" alt="ボタン画像">
         </button>
-<h1>SPIタイサくん</h1>
+        <h1>SPIタイサくん</h1>
         <nav id="menuContent">
             <ul>
                 <li><a href="mypage.php">マイページへ</a></li>
@@ -42,7 +48,9 @@ $username = $_SESSION['userName'];
                 }
             });
         </script>
-
+        <?php
+        }
+        ?>
 </header>
 </head>
 </html>
