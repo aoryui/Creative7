@@ -13,12 +13,44 @@ $username = $_SESSION['userName'];
 <link rel="icon" type="../image/x-icon" href="../image/icon.png" />
 <title>SPIタイサくんのページ</title>
 <header>
-<!--<div class="menu-container">
-        <button id="menuButton">
-            <img src="image/menubutton.png">
-</button>
-</div> -->
-<h1>SPIタイサくん</h1>
+        <?php
+        if (basename($_SERVER['PHP_SELF']) == 'test.php') {?>
+            <h1>SPIタイサくん</h1>
+        <?php
+        }
+        else{
+        ?>
+        <button id="menuBtn">
+            <img id="menubutton" src="../image/menubutton.png" alt="ボタン画像">
+        </button>
+        <h1>SPIタイサくん</h1>
+        <nav id="menuContent">
+            <ul>
+                <li><a href="mypage.php">マイページへ</a></li>
+                <li><a href="genre_selection.php">ジャンル選択画面へ</a></li>
+                <li><a href="teststart.php">模擬試験開始画面へ</a></li>
+                <li><a href="review.php">復習ページへ</a></li>
+                <li><a href="../backend/logout.php">ログアウト</a></li>
+            </ul>
+            </nav>
+        <script>
+            document.getElementById("menuBtn").addEventListener("click", function() {
+                var menu = document.getElementById("menuContent");
+                if (menu.style.display === "block") {
+                    menu.style.display = "none";
+                } else {
+                    menu.style.display = "block";
+                }
+            });
+            document.addEventListener('click', function(event) { //全体にクリックイベントを設定
+                if (!document.getElementById('menuBtn').contains(event.target)) { // メニューバー以外をクリックしたとき
+                    document.getElementById('menuContent').style.display = 'none'; // メニューバーを閉じる
+                }
+            });
+        </script>
+        <?php
+        }
+        ?>
 </header>
 </head>
 </html>

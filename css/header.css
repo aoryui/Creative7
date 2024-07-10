@@ -1,13 +1,105 @@
-header{
+header {
+    display: flex;
     background-color: rgb(89, 208, 247);
     color: white;
-    text-align: center;
-    padding: 10px;
+    padding: 5px;
 }
 
 
-body,html {
-    margin: 0;  
-    padding: 0; 
-  }
-  
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+#menuContent {
+    display: none;
+    position: fixed;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 998;
+}
+
+#menuBtn {
+    height: auto;
+    width: auto;
+    background-color: transparent;
+    /* ボタンの背景色を透明に */
+    border: none;
+    /* ボタンの枠をなくす */
+    padding: 0;
+    /* パディングをなくす */
+    cursor: pointer;
+    /* カーソルをポインタに */
+    margin-right: 425px;
+}
+
+#menuContent ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#menuContent li a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: black;
+}
+
+#menuContent li a:hover {
+    background-color: #f1f1f1;
+}
+
+nav {
+    background-color: #f4f4f4;
+    width: 250px;
+    height: calc(100% - 100px);
+    /* ヘッダーの高さに合わせてメニューバーの高さを調整 */
+    position: fixed;
+    top: 100px;
+    left: 0;
+    overflow-y: none;
+    z-index: 999;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+nav ul li:last-child {
+    border-bottom: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+}
+
+img:hover {
+    /*画像にポインタが触られたとき*/
+    opacity: 0.5;
+    /*アイコンを薄くする*/
+    cursor: pointer;
+    /* カーソルをポインターに変更 */
+}
+
+img:active {
+    /*画像がクリックされたとき*/
+    position: relative;
+    /*画像の位置を元に戻す*/
+    top: 3px;
+    /* 画像を少し下に移動させる */
+}
+
+h1 {
+    text-align: center;
+}
