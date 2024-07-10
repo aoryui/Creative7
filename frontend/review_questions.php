@@ -87,7 +87,7 @@ $question_text = nl2br(htmlspecialchars($question['question_text'], ENT_QUOTES, 
             echo '<img src="' . $image_path . '" alt="問題画像" class="question_img">';
             ?></p>
         </div>
-        <form id="choiceForm" method="post" action="result2.php">
+        <form id="choiceForm" method="post" action="review2.php">
             <div class="choices">
                 <?php
                 while ($choice = $choices_result->fetch_assoc()) {
