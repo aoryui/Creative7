@@ -368,10 +368,10 @@ INSERT INTO choices (question_id, choice_text) VALUES (40, 'C.企業や個人の
 INSERT INTO choices (question_id, choice_text) VALUES (40, 'D.脅威に対する');
 INSERT INTO choices (question_id, choice_text) VALUES (40, 'E.適切な');
 
-INSERT INTO choices (question_id, choice_text) VALUES (41, 'A.インターネットの');
-INSERT INTO choices (question_id, choice_text) VALUES (41, 'B.利用が増加する中で');
-INSERT INTO choices (question_id, choice_text) VALUES (41, 'C.企業や個人の');
-INSERT INTO choices (question_id, choice_text) VALUES (41, 'D.脅威に対する');
+INSERT INTO choices (question_id, choice_text) VALUES (41, 'A.防災教育の');
+INSERT INTO choices (question_id, choice_text) VALUES (41, 'B.地域住民への');
+INSERT INTO choices (question_id, choice_text) VALUES (41, 'C.実施が');
+INSERT INTO choices (question_id, choice_text) VALUES (41, 'D.大切であり');
 INSERT INTO choices (question_id, choice_text) VALUES (41, 'E.早急な');
 
 INSERT INTO choices (question_id, choice_text) VALUES (42, 'A.対話と');
@@ -434,10 +434,10 @@ INSERT INTO choices (question_id, choice_text) VALUES (51, 'C.交渉');
 INSERT INTO choices (question_id, choice_text) VALUES (51, 'D.交渉中');
 INSERT INTO choices (question_id, choice_text) VALUES (51, 'E.貢献者');
 
-INSERT INTO choices (question_id, choice_text) VALUES (52, 'A.インターネットの');
-INSERT INTO choices (question_id, choice_text) VALUES (52, 'B.利用が増加する中で');
-INSERT INTO choices (question_id, choice_text) VALUES (52, 'C.企業や個人の');
-INSERT INTO choices (question_id, choice_text) VALUES (52, 'D.脅威に対する');
+INSERT INTO choices (question_id, choice_text) VALUES (52, 'A.行方');
+INSERT INTO choices (question_id, choice_text) VALUES (52, 'B.方向');
+INSERT INTO choices (question_id, choice_text) VALUES (52, 'C.道筋');
+INSERT INTO choices (question_id, choice_text) VALUES (52, 'D.行程');
 INSERT INTO choices (question_id, choice_text) VALUES (52, 'E.推移');
 
 -- 正解と解説を挿入
@@ -452,6 +452,48 @@ INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (7, 37,
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (8, 47, '1_1_8');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (9, 54, '1_1_9');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (10, 58, '1_1_10');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (11, 61, '1_2_1');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (12, 72, '1_2_2');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (13, 79, '1_2_3');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (14, 83, '1_2_4');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (15, 89, '1_2_5');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (16, 91, '1_2_6');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (17, 96, '1_2_7');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (18, 102, '1_2_8');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (19, 105, '1_2_19');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (20, 111, '1_2_10');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (21, 118, '1_2_11');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (22, 122, '1_2_12');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (23, 129, '1_3_1');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (24, 134, '1_3_2');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (25, 136, '1_3_3');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (26, 144, '1_3_4');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (27, 148, '1_3_5');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (28, 152, '1_3_6');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (29, 157, '1_3_7');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (30, 163, '1_3_8');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (31, 169, '1_3_9');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (32, 170, '1_3_10');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (33, 176, '1_4_1');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (34, 182, '1_4_2');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (35, 189, '1_4_3');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (36, 190, '1_4_4');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (37, 196, '1_4_5');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (38, 203, '1_4_6');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (39, 205, '1_4_7');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (40, 209, '1_4_8');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (41, 215, '1_4_9');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (42, 220, '1_4_10');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (43, 225, '1_5_1');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (44, 233, '1_5_2');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (45, 237, '1_5_3');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (46, 241, '1_5_4');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (47, 245, '1_5_5');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (48, 250, '1_5_6');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (49, 255, '1_5_7');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (50, 260, '1_5_8');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (51, 265, '1_5_9');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (52, 270, '1_5_2');
 
 
 
