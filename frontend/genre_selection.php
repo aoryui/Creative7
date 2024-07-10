@@ -2,42 +2,89 @@
 require_once __DIR__ . '/header.php';
 ?>
 <!DOCTYPE html>
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPIタイサくん</title>
     <link rel="stylesheet" href="../css/genre_selection.css">
 </head>
-<div class="genresentaku-body">
-<div class="genresentaku-container">
-<div class="genresentaku-ji"></div>
-
-    <h2>ジャンル選択</h2>
-            
-            <div class="categories">
-                <div class="left-content">
-                    <h3>言語系</h3>
+<body>
+    <div class="border-frame">
+        <div class="container">
+            <div class="categorie-box">
+                <div class="categorie">
                     <ul>
-                        <li>二語の関係</li>
-                        <li>文章整序</li>
-                        <li>空欄補充</li>
-                        <li>語句の意味</li>
-                        <li>語句の用法</li>
-                    </ul>
-                </div>
-                <div class="right-content">
-                    <h3>非言語系</h3>
-                    <ul>
-                        <li>速度の計算</li>
-                        <li>確率の計算</li>
-                        <li>税率の計算</li>
-                        <li>濃度の計算</li>
-                        <li>表計算</li>
+                        <li><label><input type="radio" name="language" value="二語の関係"> 二語の関係</label></li>
+                        <li><label><input type="radio" name="language" value="文章整序"> 文章整序</label></li>
+                        <li><label><input type="radio" name="language" value="空欄補充"> 空欄補充</label></li>
+                        <li><label><input type="radio" name="language" value="語句の意味"> 語句の意味</label></li>
+                        <li><label><input type="radio" name="language" value="語句の用法"> 語句の用法</label></li>
                     </ul>
                 </div>
             </div>
+            <div class="categorie-boxes">
+                <div class="categorie">
+                    <ul>
+                        <li><label><input type="radio" name="non-language" value="速度の計算"> 速度の計算</label></li>
+                        <li><label><input type="radio" name="non-language" value="確率の計算"> 確率の計算</label></li>
+                        <li><label><input type="radio" name="non-language" value="税率の計算"> 税率の計算</label></li>
+                        <li><label><input type="radio" name="non-language" value="濃度の計算"> 濃度の計算</label></li>
+                        <li><label><input type="radio" name="non-language" value="表計算"> 表計算</label></li>
+                    </ul>
+                </div>
             </div>
-        </main>
+        </div>
+        <button class="start-button" onclick="startQuiz()">スタート</button>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const radioButtons = document.querySelectorAll('input[type="radio"]');
+            radioButtons.forEach(radio => {
+                radio.addEventListener('click', function() {
+                    if (this.previousChecked) {
+                        this.checked = false;
+                        this.previousChecked = false;
+                    } else {
+                        radioButtons.forEach(rb => rb.previousChecked = false);
+                        this.previousChecked = true;
+                    }
+                });
+            });
+        });
+
+        function startQuiz() {
+            const languageInputs = document.querySelectorAll('input[name="language"]');
+            const nonLanguageInputs = document.querySelectorAll('input[name="non-language"]');
+            let selectedCategory = '';
+
+            // 言語系のラジオボタンが選択されているかチェック
+            for (let i = 0; i < languageInputs.length; i++) {
+                if (languageInputs[i].checked) {
+                    selectedCategory = languageInputs[i].value;
+                    break;
+                }
+            }
+
+            // 非言語系のラジオボタンが選択されているかチェック
+            if (!selectedCategory) {
+                for (let i = 0; i < nonLanguageInputs.length; i++) {
+                    if (nonLanguageInputs[i].checked) {
+                        selectedCategory = nonLanguageInputs[i].value;
+                        break;
+                    }
+                }
+            }
+
+            // 選択されたカテゴリに基づいて次のページにリダイレクト
+            if (selectedCategory) {
+                // 次のページのURLを 'quiz.php' と仮定しています。実際のプロジェクトに合わせてこのURLを変更してください。
+                window.location.href = 'quiz.php?category=' + encodeURIComponent(selectedCategory);
+            } else {
+                alert('カテゴリを選択してください');
+            }
+        }
+    </script>
 </body>
 </html>

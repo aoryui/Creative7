@@ -1,45 +1,96 @@
-.genresentaku-body {
+body {
     background-color: #ffefd5;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    color: #ff6b6b;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+.border-frame{
+    max-width: 1200px;
+    margin: 50px auto; /* 上に40pxの余白を追加 */
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    width: 1000px;
+    background-color: #fff;
+    position: absolute;
+    top: 55%;
+    left: 55%;
+    transform: translate(-50%, -50%);
 }
 
 html{
     overflow-y: scroll;
 }
-
-.genresentaku-container{
-    background-color: #fff;
-    padding: 50px;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
- }
-
-  .genresentaku-ji{
-    text-align: center;
-  }
   
-
-.left-content{
-    flex: 1;
-    background-color: #90ee90;
-    text-align: left;
-    margin-right: 5px;
-}
-.right-content{
-    flex: 1;
-    background-color: #90ee90;
-    text-align: left;
-    margin-right: 5px;
+.container {
+    display: flex;
+    gap: 20px;
 }
 
+.categorie-box, .categorie-boxes {
+    flex: 1;
+    margin: 10px;
+    min-width: 200px; /* カテゴリーの最小幅を設定 */
+    border: 2px solid #000; /* 枠のスタイルを設定 */
+    border-radius: 10px; /* 枠の角を丸める */
+    padding: 10px; /* 内側の余白を設定 */
+    position: relative;
+    background-color: #fff; /* 背景色を白に設定 */
+}
 
+.categorie-box::before {
+    background-color: #fff;
+    color: #333;
+    content: "言語系";
+    font-weight: bold;
+    padding: 3px 10px;
+    position: absolute;
+    top: -20px; /* タイトルを枠の上に配置 */
+    left: 50%;
+    transform: translateX(-50%);
+}
 
+.categorie-boxes::before {
+    background-color: #fff;
+    color: #333;
+    content: "非言語系";
+    font-weight: bold;
+    padding: 3px 10px;
+    position: absolute;
+    top: -20px; /* タイトルを枠の上に配置 */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.categorie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+}
+
+li {
+    margin: 5px 0;
+    text-align: left;
+}
+
+label {
+    display: flex;
+    align-items: center;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
 
 /*
 img:hover {
