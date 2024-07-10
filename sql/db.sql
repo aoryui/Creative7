@@ -109,6 +109,9 @@ INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,que
 INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (51,1,5,30,'空欄補充','1_5_9','彼はチームの一員として[ ]している。');
 INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (52,1,5,30,'空欄補充','1_5_10','彼の発言は会議の[ ]を左右した。');
 
+-- 非言語問題
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (53,2,1,30,'場合の数','2_1_1','6 人のグループから 3 人を選ぶ方法は何通りありますか？');
+
 
 
 
