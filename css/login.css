@@ -51,7 +51,7 @@ input:focus {
   box-shadow: 0 0 5px rgba(255, 192, 203, 0.5);
 }
 
-button {
+#login {
   width: 100%;
   padding: 10px;
   background-color: rgb(89, 208, 247);
@@ -64,7 +64,7 @@ button {
 
 }
 
-button:hover {
+#login:hover {
   background-color: #68B7F0;
 }
 
@@ -76,29 +76,3 @@ button:hover {
 .message-red {
   color: red;
 }
-
-/*
-img:hover {
-    opacity: 0.5;
-    cursor: pointer;
-}
-
-img:active {
-    position: relative;
-    top: 3px;
-}
-
-#menuButton {
-    margin-right: 400px;
-    width: auto;
-    height: auto;
-    padding: 0;
-    border: none;
-    background-color: transparent;
-}
-
-.menu-container {
-    display: flex;
-    align-items: center;
-}
-*/

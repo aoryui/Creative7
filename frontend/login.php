@@ -32,7 +32,7 @@ if (isset($_SESSION['login_error'])) {
         <label for="password">パスワード</label>
         <input type="password" id="password" name="password" required />
     </div>
-    <button type="submit">ログイン</button>
+    <button type="submit" id="login">ログイン</button>
 </form>
 <div class="signup button">
 <p><a href="signup.php">新規登録はこちら</a></p>
