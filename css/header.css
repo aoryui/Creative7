@@ -1,8 +1,13 @@
 header {
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     background-color: rgb(89, 208, 247);
     color: white;
-    padding: 5px;
+    height: 100px;
+    width: auto;
+    position: relative;
 }
 
 
@@ -22,17 +27,13 @@ html {
 }
 
 #menuBtn {
-    height: auto;
-    width: auto;
+    margin-right: auto;
     background-color: transparent;
     /* ボタンの背景色を透明に */
     border: none;
     /* ボタンの枠をなくす */
-    padding: 0;
-    /* パディングをなくす */
     cursor: pointer;
     /* カーソルをポインタに */
-    margin-right: 425px;
 }
 
 #menuContent ul {
@@ -100,6 +101,10 @@ img:active {
     /* 画像を少し下に移動させる */
 }
 
-h1 {
-    text-align: center;
+#free-h1 {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* 自身の幅と高さの50%を移動し中央揃え */
 }

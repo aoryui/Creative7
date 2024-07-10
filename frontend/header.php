@@ -15,7 +15,7 @@ $username = $_SESSION['userName'];
 <header>
         <?php
         if (basename($_SERVER['PHP_SELF']) == 'test.php') {?>
-            <h1>SPIタイサくん</h1>
+            <h1 id="test-h1">SPIタイサくん</h1>
         <?php
         }
         else{
@@ -23,7 +23,7 @@ $username = $_SESSION['userName'];
         <button id="menuBtn">
             <img id="menubutton" src="../image/menubutton.png" alt="ボタン画像">
         </button>
-        <h1>SPIタイサくん</h1>
+        <h1 id="free-h1">SPIタイサくん</h1>
         <nav id="menuContent">
             <ul>
                 <li><a href="mypage.php">マイページへ</a></li>
