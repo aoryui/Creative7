@@ -160,6 +160,56 @@ INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,que
 INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (100,2,5,30,'金額計算','2_5_8','1 つ 500 円のステーキを 2 枚と、1 つ 300 円のスープを 3 杯買いました。合計金額はいくらですか？');
 INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (101,2,5,30,'金額計算','2_5_9','1 つ 400 円のパスタを 2 皿と、1 つ 150 円のドリンクを 4 杯買いました。合計金額はいくらですか？');
 INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (102,2,5,30,'金額計算','2_5_10','1 つ 350 円のハンバーガーを 3 個と、1 つ 200 円のポテトを 4 つ買いました。合計金額はいくらですか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (103,2,6,30,'分担計算','2_6_1','ある学校の生徒 150 人に対して、サッカーが好きな生徒が 90 人、バスケットボールが好きな生徒が 70 人いるとします。このうち、サッカーとバスケットボールの両方が好きな生徒が 30 人いる場合、どちらかのスポーツしか好きではない生徒の人数を求めなさい。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (104,2,6,30,'分担計算','2_6_2','12 人で 300 枚の書類を処理する場合、1 人あたり何枚の書類を処理する必要がありますか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (105,2,6,30,'分担計算','2_6_3','8 人で 240 個のボールを仕分ける場合、1 人あたり何個のボールを仕分ける必要がありますか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (106,2,6,30,'分担計算','2_6_4','15 人で 450 冊の本を分類する場合、1 人あたり何冊の本を分類する必要がありますか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (107,2,6,30,'分担計算','2_6_5','9 人で 540 ページの書類を読む場合、1 人あたり何ページの書類を読む必要がありますか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (108,2,6,30,'分担計算','2_6_6','20 人で 1000 個の部品を組み立てる場合、1 人あたり何個の部品を組み立てる必要がありますか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (109,2,6,30,'分担計算','2_6_7','6 人で 180 個のファイルを整理する場合、1 人あたり何個のファイルを整理する必要がありますか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (110,2,6,30,'分担計算','2_6_8','7 人で 350 個のピースをパズルにはめる場合、1 人あたり何個のピースをはめる必要がありますか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (111,2,6,30,'分担計算','2_6_9','4 人で 360 個のパーツを検査する場合、1 人あたり何個のパーツを検査する必要がありますか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (112,2,6,30,'分担計算','2_6_10','5 人で 400 本のペンをチェックする場合、1 人あたり何本のペンをチェックする必要がありますか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (113,2,7,30,'速度算','2_7_1','A 駅から B 駅までの距離は 120km である。A 駅を午前 9 時に出発し、B 駅に正午に到着するためには、どの速度で走行する必要があるか。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (114,2,7,30,'速度算','2_7_2','X さんは毎朝自転車で通勤している。家から駅までの距離は 8km で、平均速度は 16km/時である。駅から会社までは電車で移動し、平均速度は 60km/時である。X さんが家を出てから会社に着くまでにかかる時間は 40 分である。駅から会社までの距離は何 km か。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (115,2,7,30,'速度算','2_7_3','A 地点から B 地点までの距離は 60km である。A 地点を時速 40km で出発し、B 地点で時速 30km に減速してさらに 40km 進むと、全体で 3 時間かかった。A 地点から B 地点までの距離を求めよ。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (116,2,7,30,'速度算','2_7_4','A 駅から B 駅までの距離は 75km で、B 駅から C 駅までの距離は 25km である。A 駅から C 駅までを時速 50km で移動する場合、所要時間は何時間か。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (117,2,7,30,'速度算','2_7_5','X さんと Y さんは同じ場所を同時に出発し、X さんは時速 10km、Y さんは時速 8km で歩く。X さんが出発してから 30 分後に Y さんが出発した場合、Y さんが X さんに追いつくまでにかかる時間は何時間か。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (118,2,7,30,'速度算','2_7_6','A 駅から B 駅までの距離は 30km で、A 駅を出発してから B 駅に着くまでにかかった時間は 1 時間 30 分である。途中で休憩を 15 分した場合、平均速度は何 km/時か。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (119,2,7,30,'速度算','2_7_7','A 地点から B 地点までの距離は 150km である。A 地点から B 地点までを時速 50km で移動し、B 地点で 1 時間休憩した後、時速 60km で C 地点までさらに 90km 移動した。全体でかかった時間は何時間か。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (120,2,7,30,'速度算','2_7_8','X さんは毎朝自宅から学校まで自転車で通学している。家から学校までの距離は 18km で、平均速度は 12km/時である。学校に遅刻しないためには 8 時 30 分までに到着する必要がある。X さんは何時までに家を出発しなければならないか。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (121,2,7,30,'速度算','2_7_9','A 地点から B 地点までの距離は 90km である。A 地点を時速 60km で出発し、B 地点で 30 分休憩した後、時速 80km でさらに C 地点まで 60km 進むと、全体で 3 時間かかった。A 地点から C 地点までの平均速度を求めよ。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (122,2,7,30,'速度算','2_7_10','X さんと Y さんは互いに離れた場所から同時に出発し、X さんは時速 12km、Y さんは時速 8km で歩く。出発後 2 時間で X さんと Y さんが出会った場合、X さんと Y さんの出発点の距離は何 km か。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (123,2,8,30,'集合','2_8_1','ある学校の生徒 150 人に対して、サッカーが好きな生徒が 90 人、バスケットボールが好きな生徒が 70 人いるとします。このうち、サッカーとバスケットボールの両方が好きな生徒が 30 人いる場合、どちらかのスポーツしか好きではない生徒の人数を求めなさい。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (124,2,8,30,'集合','2_8_2','美術部のメンバー 45 人のうち、絵を描くのが好きな人が 30 人、彫刻をするのが好きな人が 25 人います。このうち、絵も彫刻も好きな人が 10 人いる場合、絵か彫刻のどちらかしか好きでない人の人数を求めなさい。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (125,2,8,30,'集合','2_8_3','ある会社の社員 300 人にアンケートを実施したところ、テニスが好きな人が 180 人、ゴルフが好きな人が 150 人いました。このうち、テニスとゴルフの両方が好きな人が 90 人いる場合、テニスかゴルフのどちらかしか好きでない人の人数を求めなさい。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (126,2,8,30,'集合','2_8_4','100 人の学生のうち、数学が好きな学生が 60 人、物理が好きな学生が 50 人いるとします。このうち、数学と物理の両方が好きな学生が 20 人いる場合、数学か物理のどちらかしか好きでない学生の人数を求めなさい。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (127,2,8,30,'集合','2_8_5','あるイベントに参加した 200 人のうち、ジャズが好きな人が 120 人、クラシックが好きな人が 80 人いました。このうち、ジャズとクラシックの両方が好きな人が 40 人いる場合、ジャズかクラシックのどちらかしか好きでない人の人数を求めなさい。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (128,2,8,30,'集合','2_8_6','ある地域の住民 500 人に調査を行ったところ、ランニングが好きな人が 300 人、サイクリングが好きな人が 200 人いました。このうち、ランニングとサイクリングの両方が好きな人が 100 人いる場合、ランニングかサイクリングのどちらかしか好きでない人の人数を求めなさい。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (129,2,8,30,'集合','2_8_7','あるクラスの生徒 50 人のうち、音楽が好きな生徒が 35 人、美術が好きな生徒が 25 人います。このうち、音楽と美術の両方が好きな生徒が 15 人いる場合、音楽か美術のどちらかしか好きでない生徒の人数を求めなさい。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (130,2,8,30,'集合','2_8_8','ある企業の社員 200 人に調査を行ったところ、読書が好きな社員が 120 人、映画が好きな社員が 90 人いました。このうち、読書と映画の両方が好きな社員が 60 人いる場合、読書か映画のどちらかしか好きでない社員の人数を求めなさい。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (131,2,8,30,'集合','2_8_9','ある地域の住民 1000 人にアンケートを行ったところ、コーヒーが好きな人が 600 人、紅茶が好きな人が 400 人いました。このうち、コーヒーと紅茶の両方が好きな人が 200 人いる場合、コーヒーか紅茶のどちらかしか好きでない人の人数を求めなさい。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (132,2,8,30,'集合','2_8_10','ある大学の学生 300 人に調査を行ったところ、数学が得意な学生が 150 人、科学が得意な学生が 120 人いました。このうち、数学と科学の両方が得意な学生が 70 人いる場合、数学か科学のどちらかしか得意でない学生の人数を求めなさい。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (133,2,9,30,'表の読み取り','2_9_1','化合物 A、B、C は H、N、O の 3 種類の原子でできている。A、B、C の 1 分子あたりの原子の個数比は以下の表の通りである。化合物 C の分子に占める H、N、O の各元素のうちで、重さが最も重い元素はどれか。ただし、H の重さを 1 とすると、N は 14、O は 16 であるとする。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (134,2,9,30,'表の読み取り','2_9_2','店 A、店 B、店 C の 3 つの店舗で販売されている商品 X の売上数量の割合は以下の表の通りである。店 A の売上数量は 1000 個、店 B の売上数量は 800 個である。店 C の売上数量はいくらか。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (135,2,9,30,'表の読み取り','2_9_3','ある企業の部門 A、B、C の社員数の割合は以下の表の通りである。部門 A の社員数は 250 人、部門 B の社員数は 300 人である。部門 C の社員数はいくらか。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (136,2,9,30,'表の読み取り','2_9_4','製品 P、Q、R の生産量はそれぞれ 1000 個、1500 個、2000 個である。これらの製品の売上構成比は以下の表の通りである。製品 R の売上構成比は何%か。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (137,2,9,30,'表の読み取り','2_9_5','企業 X、Y、Z の 3 社が共同で新製品を開発した。開発費用の負担割合は以下の表の通りである。企業 X の負担額は 500 万円、企業 Y の負担額は 300 万円である。企業 Z の負担額はいくらか。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (138,2,9,30,'表の読み取り','2_9_6','化合物 P、Q、R は Na、Cl、K の 3 種類の原子でできている。P、Q、R の 1 分子あたりの原子の個数比は以下の表の通りである。化合物 P の分子に占める Na、Cl、K の各元素のうちで、重さが最も重い元素はどれか。ただし、Na の重さを 1 とすると、Cl は 35、K は 39 であるとする。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (139,2,9,30,'表の読み取り','2_9_7','ある会社の部門 X、Y、Z の予算配分の割合は以下の表の通りである。部門 X の予算は 500 万円、部門 Y の予算は 300 万円である。部門 Z の予算はいくらか。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (140,2,9,30,'表の読み取り','2_9_8','ある企業の部門 A、B、C の売上高の割合は以下の表の通りである。部門 A の売上高は 2000 万円、部門 B の売上高は 3000 万円である。部門 C の売上高はいくらか。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (141,2,9,30,'表の読み取り','2_9_9','化合物 X、Y、Z は H、O、N の 3 種類の原子でできている。X、Y、Z の 1 分子あたりの原子の個数比は以下の表の通りである。化合物 X の分子に占める H、O、N の各元素のうちで、重さが最も重い元素はどれか。ただし、H の重さを 1 とすると、O は 16、N は 14 であるとする。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (142,2,9,30,'表の読み取り','2_9_10','ある学校のクラス A、B、C の生徒数の割合は以下の表の通りである。クラス A の生徒数は 40 人、クラス B の生徒数は 60 人である。クラス C の生徒数はいくらか。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (143,2,10,30,'特殊計算','2_10_1','500 円と 300 円の 2 種類の定食がある。合計で 4000 円以内となるように 8 個買いたい。500 円の定食は一番多くて何個買えるか。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (144,2,10,30,'特殊計算','2_10_2','700 円と 400 円の 2 種類のスニーカーがある。合計で 7000 円以内となるように 10 足買いたい。700 円のスニーカーは一番多くて何足買えるか。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (145,2,10,30,'特殊計算','2_10_3','600 円と 250 円の 2 種類の鉛筆がある。合計で 3500 円以内となるように 9 本買いたい。600 円の鉛筆は一番多くて何本買えるか。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (146,2,10,30,'特殊計算','2_10_4','800 円と 500 円の 2 種類のバッグがある。合計で 6000 円以内となるように 10 個買いたい。800 円のバッグは一番多くて何個買えるか。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (147,2,10,30,'特殊計算','2_10_5','1000 円と 600 円の 2 種類のノートがある。合計で 7200 円以内となるように 10 冊買いたい。1000 円のノートは一番多くて何冊買えるか。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (148,2,10,30,'特殊計算','2_10_6','3000 円と 2000 円の 2 種類の靴がある。合計で 20000 円以内となるように 8 足買いたい。3000 円の靴は一番多くて何足買えるか。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (149,2,10,30,'特殊計算','2_10_7','1500 円と 1000 円の 2 種類のバッグがある。合計で 10000 円以内となるように 7 個買いたい。1500 円のバッグは一番多くて何個買えるか。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (150,2,10,30,'特殊計算','2_10_8','1200 円と 800 円の 2 種類のシャツがある。合計で 9600 円以内となるように 10 枚買いたい。1200 円のシャツは一番多くて何枚買えるか。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (151,2,10,30,'特殊計算','2_10_9','1800 円と 1100 円の 2 種類の帽子がある。合計で 12000 円以内となるように 8 個買いたい。1800 円の帽子は一番多くて何個買えるか。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (152,2,10,30,'特殊計算','2_10_10','2200 円と 1500 円の 2 種類のズボンがある。合計で 15000 円以内となるように 8 本買いたい。2200 円のズボンは一番多くて何本買えるか。');
 
 
 
@@ -228,11 +278,11 @@ INSERT INTO choices (question_id, choice_text) VALUES (9, 'D.アとイ');
 INSERT INTO choices (question_id, choice_text) VALUES (9, 'E.アとウ');
 INSERT INTO choices (question_id, choice_text) VALUES (9, 'F.イとウ');
 
-INSERT INTO choices (question_id, choice_text) VALUES (10, 'F.イとウ');
-INSERT INTO choices (question_id, choice_text) VALUES (10, 'F.イとウ');
-INSERT INTO choices (question_id, choice_text) VALUES (10, 'F.イとウ');
-INSERT INTO choices (question_id, choice_text) VALUES (10, 'F.イとウ');
-INSERT INTO choices (question_id, choice_text) VALUES (10, 'F.イとウ');
+INSERT INTO choices (question_id, choice_text) VALUES (10, 'A.イとウ');
+INSERT INTO choices (question_id, choice_text) VALUES (10, 'B.イとウ');
+INSERT INTO choices (question_id, choice_text) VALUES (10, 'C.イとウ');
+INSERT INTO choices (question_id, choice_text) VALUES (10, 'D.イとウ');
+INSERT INTO choices (question_id, choice_text) VALUES (10, 'E.イとウ');
 
 INSERT INTO choices (question_id, choice_text) VALUES (11, 'A.花を持たせる');
 INSERT INTO choices (question_id, choice_text) VALUES (11, 'B.頭角を現す');
@@ -240,17 +290,11 @@ INSERT INTO choices (question_id, choice_text) VALUES (11, 'C.手を焼く');
 INSERT INTO choices (question_id, choice_text) VALUES (11, 'D.道を開く');
 INSERT INTO choices (question_id, choice_text) VALUES (11, 'E.目をかける');
 
-INSERT INTO choices (question_id, choice_text) VALUES (12, 'A.花を持たせる');
-INSERT INTO choices (question_id, choice_text) VALUES (12, 'B.頭角を現す');
-INSERT INTO choices (question_id, choice_text) VALUES (12, 'C.手を焼く');
-INSERT INTO choices (question_id, choice_text) VALUES (12, 'D.道を開く');
-INSERT INTO choices (question_id, choice_text) VALUES (12, 'E.目をかける');
-
-INSERT INTO choices (question_id, choice_text) VALUES (13, 'A.逸脱する');
-INSERT INTO choices (question_id, choice_text) VALUES (13, 'B.話が弾む');
-INSERT INTO choices (question_id, choice_text) VALUES (13, 'C.脱線する');
-INSERT INTO choices (question_id, choice_text) VALUES (13, 'D.切り出す');
-INSERT INTO choices (question_id, choice_text) VALUES (13, 'E.一矢報いる');
+INSERT INTO choices (question_id, choice_text) VALUES (12, 'A.逸脱する');
+INSERT INTO choices (question_id, choice_text) VALUES (12, 'B.話が弾む');
+INSERT INTO choices (question_id, choice_text) VALUES (12, 'C.脱線する');
+INSERT INTO choices (question_id, choice_text) VALUES (12, 'D.切り出す');
+INSERT INTO choices (question_id, choice_text) VALUES (12, 'E.一矢報いる');
 
 INSERT INTO choices (question_id, choice_text) VALUES (13, 'A.一世を風靡する');
 INSERT INTO choices (question_id, choice_text) VALUES (13, 'B.言い古される');
@@ -492,6 +536,536 @@ INSERT INTO choices (question_id, choice_text) VALUES (52, 'C.道筋');
 INSERT INTO choices (question_id, choice_text) VALUES (52, 'D.行程');
 INSERT INTO choices (question_id, choice_text) VALUES (52, 'E.推移');
 
+INSERT INTO choices (question_id, choice_text) VALUES (53, 'A. 15 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (53, 'B. 20 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (53, 'C. 30 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (53, 'D. 40 通り');
+
+INSERT INTO choices (question_id, choice_text) VALUES (54, 'A. 6 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (54, 'B. 8 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (54, 'C. 10 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (54, 'D. 12 通り');
+
+INSERT INTO choices (question_id, choice_text) VALUES (55, 'A. 10 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (55, 'B. 20 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (55, 'C. 30 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (55, 'D. 40 通り');
+
+INSERT INTO choices (question_id, choice_text) VALUES (56, 'A. 12 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (56, 'B. 24 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (56, 'C. 36 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (56, 'D. 48 通り');
+
+INSERT INTO choices (question_id, choice_text) VALUES (57, 'A. 15 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (57, 'B. 30 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (57, 'C. 60 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (57, 'D. 120 通り');
+
+INSERT INTO choices (question_id, choice_text) VALUES (58, 'A. 6 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (58, 'B. 12 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (58, 'C. 18 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (58, 'D. 24 通り');
+
+INSERT INTO choices (question_id, choice_text) VALUES (59, 'A. 10 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (59, 'B. 15 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (59, 'C. 20 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (59, 'D. 25 通り');
+
+INSERT INTO choices (question_id, choice_text) VALUES (60, 'A. 30 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (60, 'B. 60 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (60, 'C. 120 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (60, 'D. 240 通り');
+
+INSERT INTO choices (question_id, choice_text) VALUES (61, 'A. 800 人');
+INSERT INTO choices (question_id, choice_text) VALUES (61, 'B. 900 人');
+INSERT INTO choices (question_id, choice_text) VALUES (61, 'C. 1000 人');
+INSERT INTO choices (question_id, choice_text) VALUES (61, 'D. 1100 人');
+
+INSERT INTO choices (question_id, choice_text) VALUES (62, 'A. 85%');
+INSERT INTO choices (question_id, choice_text) VALUES (62, 'B. 90%');
+INSERT INTO choices (question_id, choice_text) VALUES (62, 'C. 92%');
+INSERT INTO choices (question_id, choice_text) VALUES (62, 'D. 95%');
+
+INSERT INTO choices (question_id, choice_text) VALUES (63, 'A. 全ての動物は猫である。');
+INSERT INTO choices (question_id, choice_text) VALUES (63, 'B. 全ての黒猫は動物である。');
+INSERT INTO choices (question_id, choice_text) VALUES (63, 'C. 一部の動物は猫でない。');
+INSERT INTO choices (question_id, choice_text) VALUES (63, 'D. 一部の黒猫は動物でない。');
+
+INSERT INTO choices (question_id, choice_text) VALUES (64, 'A. 花は植物ではない。');
+INSERT INTO choices (question_id, choice_text) VALUES (64, 'B. 全ての植物は花を咲かせる。');
+INSERT INTO choices (question_id, choice_text) VALUES (64, 'C. 一部の植物は花を咲かせない。');
+INSERT INTO choices (question_id, choice_text) VALUES (64, 'D. 一部の花は植物ではない。');
+
+INSERT INTO choices (question_id, choice_text) VALUES (65, 'A. 全ての乗り物は車である。');
+INSERT INTO choices (question_id, choice_text) VALUES (65, 'B. 全ての電気自動車は乗り物である。');
+INSERT INTO choices (question_id, choice_text) VALUES (65, 'C. 一部の電気自動車は車でない。');
+INSERT INTO choices (question_id, choice_text) VALUES (65, 'D. 一部の乗り物は車でない。');
+
+INSERT INTO choices (question_id, choice_text) VALUES (66, 'A. 全ての紙は本である。');
+INSERT INTO choices (question_id, choice_text) VALUES (66, 'B. 全ての小説は紙で作られている。');
+INSERT INTO choices (question_id, choice_text) VALUES (66, 'C. 一部の紙は本でない。');
+INSERT INTO choices (question_id, choice_text) VALUES (66, 'D. 一部の本は紙でない。');
+
+INSERT INTO choices (question_id, choice_text) VALUES (67, 'A. 全ての試験を受ける人は学生である。');
+INSERT INTO choices (question_id, choice_text) VALUES (67, 'B. 全ての部活動をしている学生は試験を受ける。');
+INSERT INTO choices (question_id, choice_text) VALUES (67, 'C. 一部の部活動をしている学生は試験を受けない。');
+INSERT INTO choices (question_id, choice_text) VALUES (67, 'D. 一部の試験を受ける人は学生でない。');
+
+INSERT INTO choices (question_id, choice_text) VALUES (68, 'A. 全ての卵を産む動物は鳥である。');
+INSERT INTO choices (question_id, choice_text) VALUES (68, 'B. 全ての飛べない鳥は卵を産まない。');
+INSERT INTO choices (question_id, choice_text) VALUES (68, 'C. 一部の飛べない鳥は卵を産む。');
+INSERT INTO choices (question_id, choice_text) VALUES (68, 'D. 一部の卵を産む動物は鳥でない。');
+
+INSERT INTO choices (question_id, choice_text) VALUES (69, 'A. 全ての酸っぱいものは果物である。');
+INSERT INTO choices (question_id, choice_text) VALUES (69, 'B. 全ての食べられるものは果物である。');
+INSERT INTO choices (question_id, choice_text) VALUES (69, 'C. 一部の酸っぱいものは果物である。');
+INSERT INTO choices (question_id, choice_text) VALUES (69, 'D. 一部の果物は食べられない。');
+
+INSERT INTO choices (question_id, choice_text) VALUES (70, 'A. 全ての盲導犬は哺乳類である。');
+INSERT INTO choices (question_id, choice_text) VALUES (70, 'B. 全ての哺乳類は犬である。');
+INSERT INTO choices (question_id, choice_text) VALUES (70, 'C. 一部の哺乳類は犬でない。');
+INSERT INTO choices (question_id, choice_text) VALUES (70, 'D. 一部の盲導犬は哺乳類でない。');
+
+INSERT INTO choices (question_id, choice_text) VALUES (71, 'A. 全てのドキュメンタリーはフィクションである。');
+INSERT INTO choices (question_id, choice_text) VALUES (71, 'B. 全てのフィクションは映画である。');
+INSERT INTO choices (question_id, choice_text) VALUES (71, 'C. 一部のドキュメンタリーはフィクションでない。');
+INSERT INTO choices (question_id, choice_text) VALUES (71, 'D. 一部の映画はフィクションでない。');
+
+INSERT INTO choices (question_id, choice_text) VALUES (72, 'A. 全ての家具は椅子である。');
+INSERT INTO choices (question_id, choice_text) VALUES (72, 'B. 全ての木製のものは椅子である。');
+INSERT INTO choices (question_id, choice_text) VALUES (72, 'C. 一部の木製の椅子は家具でない。');
+INSERT INTO choices (question_id, choice_text) VALUES (72, 'D. 一部の家具は椅子でない。');
+
+INSERT INTO choices (question_id, choice_text) VALUES (73, 'A. 50%');
+INSERT INTO choices (question_id, choice_text) VALUES (73, 'B. 60%');
+INSERT INTO choices (question_id, choice_text) VALUES (73, 'C. 70%');
+INSERT INTO choices (question_id, choice_text) VALUES (73, 'D. 80%');
+
+INSERT INTO choices (question_id, choice_text) VALUES (74, 'A. 10%');
+INSERT INTO choices (question_id, choice_text) VALUES (74, 'B. 15%');
+INSERT INTO choices (question_id, choice_text) VALUES (74, 'C. 20%');
+INSERT INTO choices (question_id, choice_text) VALUES (74, 'D. 25%');
+
+INSERT INTO choices (question_id, choice_text) VALUES (75, 'A. 10 人');
+INSERT INTO choices (question_id, choice_text) VALUES (75, 'B. 15 人');
+INSERT INTO choices (question_id, choice_text) VALUES (75, 'C. 20 人');
+INSERT INTO choices (question_id, choice_text) VALUES (75, 'D. 25 人');
+
+INSERT INTO choices (question_id, choice_text) VALUES (76, 'A. 600 円');
+INSERT INTO choices (question_id, choice_text) VALUES (76, 'B. 620 円');
+INSERT INTO choices (question_id, choice_text) VALUES (76, 'C. 640 円');
+INSERT INTO choices (question_id, choice_text) VALUES (76, 'D. 660 円');
+
+INSERT INTO choices (question_id, choice_text) VALUES (77, 'A. 70%');
+INSERT INTO choices (question_id, choice_text) VALUES (77, 'B. 75%');
+INSERT INTO choices (question_id, choice_text) VALUES (77, 'C. 80%');
+INSERT INTO choices (question_id, choice_text) VALUES (77, 'D. 85%');
+
+INSERT INTO choices (question_id, choice_text) VALUES (78, 'A. 60%');
+INSERT INTO choices (question_id, choice_text) VALUES (78, 'B. 65%');
+INSERT INTO choices (question_id, choice_text) VALUES (78, 'C. 70%');
+INSERT INTO choices (question_id, choice_text) VALUES (78, 'D. 75%');
+
+INSERT INTO choices (question_id, choice_text) VALUES (79, 'A. 2500 人');
+INSERT INTO choices (question_id, choice_text) VALUES (79, 'B. 3000 人');
+INSERT INTO choices (question_id, choice_text) VALUES (79, 'C. 3500 人');
+INSERT INTO choices (question_id, choice_text) VALUES (79, 'D. 4000 人');
+
+INSERT INTO choices (question_id, choice_text) VALUES (80, 'A. 800 円');
+INSERT INTO choices (question_id, choice_text) VALUES (80, 'B. 820 円');
+INSERT INTO choices (question_id, choice_text) VALUES (80, 'C. 840 円');
+INSERT INTO choices (question_id, choice_text) VALUES (80, 'D. 850 円');
+
+INSERT INTO choices (question_id, choice_text) VALUES (81, 'A. 800 人');
+INSERT INTO choices (question_id, choice_text) VALUES (81, 'B. 900 人');
+INSERT INTO choices (question_id, choice_text) VALUES (81, 'C. 1000 人');
+INSERT INTO choices (question_id, choice_text) VALUES (81, 'D. 1100 人');
+
+INSERT INTO choices (question_id, choice_text) VALUES (82, 'A. 85%');
+INSERT INTO choices (question_id, choice_text) VALUES (82, 'B. 90%');
+INSERT INTO choices (question_id, choice_text) VALUES (82, 'C. 92%');
+INSERT INTO choices (question_id, choice_text) VALUES (82, 'D. 95%');
+
+INSERT INTO choices (question_id, choice_text) VALUES (83, 'A. 0.1');
+INSERT INTO choices (question_id, choice_text) VALUES (83, 'B. 0.25');
+INSERT INTO choices (question_id, choice_text) VALUES (83, 'C. 0.5');
+INSERT INTO choices (question_id, choice_text) VALUES (83, 'D. 1');
+
+INSERT INTO choices (question_id, choice_text) VALUES (84, 'A. 6 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (84, 'B. 8 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (84, 'C. 10 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (84, 'D. 12 通り');
+
+INSERT INTO choices (question_id, choice_text) VALUES (85, 'A. 10 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (85, 'B. 20 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (85, 'C. 30 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (85, 'D. 40 通り');
+
+INSERT INTO choices (question_id, choice_text) VALUES (86, 'A. 12 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (86, 'B. 24 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (86, 'C. 36 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (86, 'D. 48 通り');
+
+INSERT INTO choices (question_id, choice_text) VALUES (87, 'A. 15 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (87, 'B. 30 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (87, 'C. 60 通り');
+INSERT INTO choices (question_id, choice_text) VALUES (87, 'D. 120 通り');
+
+INSERT INTO choices (question_id, choice_text) VALUES (88, 'A. 60%');
+INSERT INTO choices (question_id, choice_text) VALUES (88, 'B. 65%');
+INSERT INTO choices (question_id, choice_text) VALUES (88, 'C. 70%');
+INSERT INTO choices (question_id, choice_text) VALUES (88, 'D. 75%');
+
+INSERT INTO choices (question_id, choice_text) VALUES (89, 'A. 2500 人');
+INSERT INTO choices (question_id, choice_text) VALUES (89, 'B. 3000 人');
+INSERT INTO choices (question_id, choice_text) VALUES (89, 'C. 3500 人');
+INSERT INTO choices (question_id, choice_text) VALUES (89, 'D. 4000 人');
+
+INSERT INTO choices (question_id, choice_text) VALUES (90, 'A. 800 円');
+INSERT INTO choices (question_id, choice_text) VALUES (90, 'B. 820 円');
+INSERT INTO choices (question_id, choice_text) VALUES (90, 'C. 840 円');
+INSERT INTO choices (question_id, choice_text) VALUES (90, 'D. 850 円');
+
+INSERT INTO choices (question_id, choice_text) VALUES (91, 'A. 800 人');
+INSERT INTO choices (question_id, choice_text) VALUES (91, 'B. 900 人');
+INSERT INTO choices (question_id, choice_text) VALUES (91, 'C. 1000 人');
+INSERT INTO choices (question_id, choice_text) VALUES (91, 'D. 1100 人');
+
+INSERT INTO choices (question_id, choice_text) VALUES (92, 'A. 85%');
+INSERT INTO choices (question_id, choice_text) VALUES (92, 'B. 90%');
+INSERT INTO choices (question_id, choice_text) VALUES (92, 'C. 92%');
+INSERT INTO choices (question_id, choice_text) VALUES (92, 'D. 95%');
+
+INSERT INTO choices (question_id, choice_text) VALUES (93, 'A. 1050 円');
+INSERT INTO choices (question_id, choice_text) VALUES (93, 'B. 1140 円');
+INSERT INTO choices (question_id, choice_text) VALUES (93, 'C. 1230 円');
+INSERT INTO choices (question_id, choice_text) VALUES (93, 'D. 1320 円');
+
+INSERT INTO choices (question_id, choice_text) VALUES (94, 'A. 950 円');
+INSERT INTO choices (question_id, choice_text) VALUES (94, 'B. 1000 円');
+INSERT INTO choices (question_id, choice_text) VALUES (94, 'C. 1050 円');
+INSERT INTO choices (question_id, choice_text) VALUES (94, 'D. 1100 円');
+
+INSERT INTO choices (question_id, choice_text) VALUES (95, 'A. 1040 円');
+INSERT INTO choices (question_id, choice_text) VALUES (95, 'B. 1050 円');
+INSERT INTO choices (question_id, choice_text) VALUES (95, 'C. 1060 円');
+INSERT INTO choices (question_id, choice_text) VALUES (95, 'D. 1070 円');
+
+INSERT INTO choices (question_id, choice_text) VALUES (96, 'A. 1040 円');
+INSERT INTO choices (question_id, choice_text) VALUES (96, 'B. 1060 円');
+INSERT INTO choices (question_id, choice_text) VALUES (96, 'C. 1080 円');
+INSERT INTO choices (question_id, choice_text) VALUES (96, 'D. 1100 円');
+
+INSERT INTO choices (question_id, choice_text) VALUES (97, 'A. 700 円');
+INSERT INTO choices (question_id, choice_text) VALUES (97, 'B. 750 円');
+INSERT INTO choices (question_id, choice_text) VALUES (97, 'C. 800 円');
+INSERT INTO choices (question_id, choice_text) VALUES (97, 'D. 850 円');
+
+INSERT INTO choices (question_id, choice_text) VALUES (98, 'A. 1200 円');
+INSERT INTO choices (question_id, choice_text) VALUES (98, 'B. 1350 円');
+INSERT INTO choices (question_id, choice_text) VALUES (98, 'C. 1500 円');
+INSERT INTO choices (question_id, choice_text) VALUES (98, 'D. 1650 円');
+
+INSERT INTO choices (question_id, choice_text) VALUES (99, 'A. 1500 円');
+INSERT INTO choices (question_id, choice_text) VALUES (99, 'B. 1550 円');
+INSERT INTO choices (question_id, choice_text) VALUES (99, 'C. 1600 円');
+INSERT INTO choices (question_id, choice_text) VALUES (99, 'D. 1650 円');
+
+INSERT INTO choices (question_id, choice_text) VALUES (100, 'A. 1800 円');
+INSERT INTO choices (question_id, choice_text) VALUES (100, 'B. 1900 円');
+INSERT INTO choices (question_id, choice_text) VALUES (100, 'C. 2000 円');
+INSERT INTO choices (question_id, choice_text) VALUES (100, 'D. 2100 円');
+
+INSERT INTO choices (question_id, choice_text) VALUES (101, 'A. 1300 円');
+INSERT INTO choices (question_id, choice_text) VALUES (101, 'B. 1400 円');
+INSERT INTO choices (question_id, choice_text) VALUES (101, 'C. 1500 円');
+INSERT INTO choices (question_id, choice_text) VALUES (101, 'D. 1600 円');
+
+INSERT INTO choices (question_id, choice_text) VALUES (102, 'A. 1450 円');
+INSERT INTO choices (question_id, choice_text) VALUES (102, 'B. 1550 円');
+INSERT INTO choices (question_id, choice_text) VALUES (102, 'C. 1650 円');
+INSERT INTO choices (question_id, choice_text) VALUES (102, 'D. 1850 円');
+
+INSERT INTO choices (question_id, choice_text) VALUES (103, 'A. 100');
+INSERT INTO choices (question_id, choice_text) VALUES (103, 'B. 110');
+INSERT INTO choices (question_id, choice_text) VALUES (103, 'C. 120');
+INSERT INTO choices (question_id, choice_text) VALUES (103, 'D. 130');
+
+INSERT INTO choices (question_id, choice_text) VALUES (104, 'A. 20枚');
+INSERT INTO choices (question_id, choice_text) VALUES (104, 'B. 25枚');
+INSERT INTO choices (question_id, choice_text) VALUES (104, 'C. 30枚');
+INSERT INTO choices (question_id, choice_text) VALUES (104, 'D. 35枚');
+
+INSERT INTO choices (question_id, choice_text) VALUES (105, 'A. 20個');
+INSERT INTO choices (question_id, choice_text) VALUES (105, 'B. 25個');
+INSERT INTO choices (question_id, choice_text) VALUES (105, 'C. 30個');
+INSERT INTO choices (question_id, choice_text) VALUES (105, 'D. 35個');
+
+INSERT INTO choices (question_id, choice_text) VALUES (106, 'A. 25冊');
+INSERT INTO choices (question_id, choice_text) VALUES (106, 'B. 30冊');
+INSERT INTO choices (question_id, choice_text) VALUES (106, 'C. 35冊');
+INSERT INTO choices (question_id, choice_text) VALUES (106, 'D. 40冊');
+
+INSERT INTO choices (question_id, choice_text) VALUES (107, 'A. 50ページ');
+INSERT INTO choices (question_id, choice_text) VALUES (107, 'B. 55ページ');
+INSERT INTO choices (question_id, choice_text) VALUES (107, 'C. 60ページ');
+INSERT INTO choices (question_id, choice_text) VALUES (107, 'D. 65ページ');
+
+INSERT INTO choices (question_id, choice_text) VALUES (108, 'A. 40個');
+INSERT INTO choices (question_id, choice_text) VALUES (108, 'B. 45個');
+INSERT INTO choices (question_id, choice_text) VALUES (108, 'C. 50個');
+INSERT INTO choices (question_id, choice_text) VALUES (108, 'D. 55個');
+
+INSERT INTO choices (question_id, choice_text) VALUES (109, 'A. 25個');
+INSERT INTO choices (question_id, choice_text) VALUES (109, 'B. 30個');
+INSERT INTO choices (question_id, choice_text) VALUES (109, 'C. 35個');
+INSERT INTO choices (question_id, choice_text) VALUES (109, 'D. 40個');
+
+INSERT INTO choices (question_id, choice_text) VALUES (110, 'A. 45個');
+INSERT INTO choices (question_id, choice_text) VALUES (110, 'B. 50個');
+INSERT INTO choices (question_id, choice_text) VALUES (110, 'C. 55個');
+INSERT INTO choices (question_id, choice_text) VALUES (110, 'D. 60個');
+
+INSERT INTO choices (question_id, choice_text) VALUES (111, 'A. 80個');
+INSERT INTO choices (question_id, choice_text) VALUES (111, 'B. 85個');
+INSERT INTO choices (question_id, choice_text) VALUES (111, 'C. 90個');
+INSERT INTO choices (question_id, choice_text) VALUES (111, 'D. 95個');
+
+INSERT INTO choices (question_id, choice_text) VALUES (112, 'A. 70本');
+INSERT INTO choices (question_id, choice_text) VALUES (112, 'B. 75本');
+INSERT INTO choices (question_id, choice_text) VALUES (112, 'C. 80本');
+INSERT INTO choices (question_id, choice_text) VALUES (112, 'D. 85本');
+
+INSERT INTO choices (question_id, choice_text) VALUES (113, 'A. 30km/時');
+INSERT INTO choices (question_id, choice_text) VALUES (113, 'B. 40km/時');
+INSERT INTO choices (question_id, choice_text) VALUES (113, 'C. 50km/時');
+INSERT INTO choices (question_id, choice_text) VALUES (113, 'D. 60km/時');
+
+INSERT INTO choices (question_id, choice_text) VALUES (114, 'A. 6km');
+INSERT INTO choices (question_id, choice_text) VALUES (114, 'B. 10km');
+INSERT INTO choices (question_id, choice_text) VALUES (114, 'C. 12km');
+INSERT INTO choices (question_id, choice_text) VALUES (114, 'D. 16km');
+
+INSERT INTO choices (question_id, choice_text) VALUES (115, 'A. 80km');
+INSERT INTO choices (question_id, choice_text) VALUES (115, 'B. 100km');
+INSERT INTO choices (question_id, choice_text) VALUES (115, 'C. 120km');
+INSERT INTO choices (question_id, choice_text) VALUES (115, 'D. 140km');
+
+INSERT INTO choices (question_id, choice_text) VALUES (116, 'A. 1.5時間');
+INSERT INTO choices (question_id, choice_text) VALUES (116, 'B. 2時間');
+INSERT INTO choices (question_id, choice_text) VALUES (116, 'C. 2.5時間');
+INSERT INTO choices (question_id, choice_text) VALUES (116, 'D. 3時間');
+
+INSERT INTO choices (question_id, choice_text) VALUES (117, 'A. 2時間');
+INSERT INTO choices (question_id, choice_text) VALUES (117, 'B. 2.5時間');
+INSERT INTO choices (question_id, choice_text) VALUES (117, 'C. 3時間');
+INSERT INTO choices (question_id, choice_text) VALUES (117, 'D. 3.5時間');
+
+INSERT INTO choices (question_id, choice_text) VALUES (118, 'A. 15km/時');
+INSERT INTO choices (question_id, choice_text) VALUES (118, 'B. 18km/時');
+INSERT INTO choices (question_id, choice_text) VALUES (118, 'C. 20km/時');
+INSERT INTO choices (question_id, choice_text) VALUES (118, 'D. 24km/時');
+
+INSERT INTO choices (question_id, choice_text) VALUES (119, 'A. 3時間');
+INSERT INTO choices (question_id, choice_text) VALUES (119, 'B. 4時間');
+INSERT INTO choices (question_id, choice_text) VALUES (119, 'C. 5時間');
+INSERT INTO choices (question_id, choice_text) VALUES (119, 'D. 6時間');
+
+INSERT INTO choices (question_id, choice_text) VALUES (120, 'A. 7時45分');
+INSERT INTO choices (question_id, choice_text) VALUES (120, 'B. 8時00分');
+INSERT INTO choices (question_id, choice_text) VALUES (120, 'C. 8時15分');
+INSERT INTO choices (question_id, choice_text) VALUES (120, 'D. 8時20分');
+
+INSERT INTO choices (question_id, choice_text) VALUES (121, 'A. 50km/時');
+INSERT INTO choices (question_id, choice_text) VALUES (121, 'B. 60km/時');
+INSERT INTO choices (question_id, choice_text) VALUES (121, 'C. 70km/時');
+INSERT INTO choices (question_id, choice_text) VALUES (121, 'D. 80km/時');
+
+INSERT INTO choices (question_id, choice_text) VALUES (122, 'A. 30km');
+INSERT INTO choices (question_id, choice_text) VALUES (122, 'B. 35km');
+INSERT INTO choices (question_id, choice_text) VALUES (122, 'C. 40km');
+INSERT INTO choices (question_id, choice_text) VALUES (122, 'D. 45km');
+
+INSERT INTO choices (question_id, choice_text) VALUES (123, 'A. 100');
+INSERT INTO choices (question_id, choice_text) VALUES (123, 'B. 110');
+INSERT INTO choices (question_id, choice_text) VALUES (123, 'C. 120');
+INSERT INTO choices (question_id, choice_text) VALUES (123, 'D. 130');
+INSERT INTO choices (question_id, choice_text) VALUES (123, 'E. 140');
+
+INSERT INTO choices (question_id, choice_text) VALUES (124, 'A. 35');
+INSERT INTO choices (question_id, choice_text) VALUES (124, 'B. 30');
+INSERT INTO choices (question_id, choice_text) VALUES (124, 'C. 25');
+INSERT INTO choices (question_id, choice_text) VALUES (124, 'D. 20');
+INSERT INTO choices (question_id, choice_text) VALUES (124, 'E. 15');
+
+INSERT INTO choices (question_id, choice_text) VALUES (125, 'A. 150');
+INSERT INTO choices (question_id, choice_text) VALUES (125, 'B. 180');
+INSERT INTO choices (question_id, choice_text) VALUES (125, 'C. 200');
+INSERT INTO choices (question_id, choice_text) VALUES (125, 'D. 240');
+INSERT INTO choices (question_id, choice_text) VALUES (125, 'E. 270');
+
+INSERT INTO choices (question_id, choice_text) VALUES (126, 'A. 70');
+INSERT INTO choices (question_id, choice_text) VALUES (126, 'B. 80');
+INSERT INTO choices (question_id, choice_text) VALUES (126, 'C. 90');
+INSERT INTO choices (question_id, choice_text) VALUES (126, 'D. 100');
+INSERT INTO choices (question_id, choice_text) VALUES (126, 'E. 110');
+
+INSERT INTO choices (question_id, choice_text) VALUES (127, 'A. 100');
+INSERT INTO choices (question_id, choice_text) VALUES (127, 'B. 120');
+INSERT INTO choices (question_id, choice_text) VALUES (127, 'C. 140');
+INSERT INTO choices (question_id, choice_text) VALUES (127, 'D. 160');
+INSERT INTO choices (question_id, choice_text) VALUES (127, 'E. 180');
+
+INSERT INTO choices (question_id, choice_text) VALUES (128, 'A. 300');
+INSERT INTO choices (question_id, choice_text) VALUES (128, 'B. 350');
+INSERT INTO choices (question_id, choice_text) VALUES (128, 'C. 400');
+INSERT INTO choices (question_id, choice_text) VALUES (128, 'D. 450');
+INSERT INTO choices (question_id, choice_text) VALUES (128, 'E. 500');
+
+INSERT INTO choices (question_id, choice_text) VALUES (129, 'A. 20');
+INSERT INTO choices (question_id, choice_text) VALUES (129, 'B. 25');
+INSERT INTO choices (question_id, choice_text) VALUES (129, 'C. 30');
+INSERT INTO choices (question_id, choice_text) VALUES (129, 'D. 35');
+INSERT INTO choices (question_id, choice_text) VALUES (129, 'E. 40');
+
+INSERT INTO choices (question_id, choice_text) VALUES (130, 'A. 70');
+INSERT INTO choices (question_id, choice_text) VALUES (130, 'B. 80');
+INSERT INTO choices (question_id, choice_text) VALUES (130, 'C. 90');
+INSERT INTO choices (question_id, choice_text) VALUES (130, 'D. 100');
+INSERT INTO choices (question_id, choice_text) VALUES (130, 'E. 110');
+
+INSERT INTO choices (question_id, choice_text) VALUES (131, 'A. 600');
+INSERT INTO choices (question_id, choice_text) VALUES (131, 'B. 700');
+INSERT INTO choices (question_id, choice_text) VALUES (131, 'C. 800');
+INSERT INTO choices (question_id, choice_text) VALUES (131, 'D. 900');
+INSERT INTO choices (question_id, choice_text) VALUES (131, 'E. 1000');
+
+INSERT INTO choices (question_id, choice_text) VALUES (132, 'A. 110');
+INSERT INTO choices (question_id, choice_text) VALUES (132, 'B. 120');
+INSERT INTO choices (question_id, choice_text) VALUES (132, 'C. 130');
+INSERT INTO choices (question_id, choice_text) VALUES (132, 'D. 140');
+INSERT INTO choices (question_id, choice_text) VALUES (132, 'E. 150');
+
+INSERT INTO choices (question_id, choice_text) VALUES (133, 'A. H');
+INSERT INTO choices (question_id, choice_text) VALUES (133, 'B. N');
+INSERT INTO choices (question_id, choice_text) VALUES (133, 'C. O');
+INSERT INTO choices (question_id, choice_text) VALUES (133, 'D. 上の表からは決まらない');
+
+INSERT INTO choices (question_id, choice_text) VALUES (134, 'A. 600個');
+INSERT INTO choices (question_id, choice_text) VALUES (134, 'B. 500個');
+INSERT INTO choices (question_id, choice_text) VALUES (134, 'C. 700個');
+INSERT INTO choices (question_id, choice_text) VALUES (134, 'D. 800個');
+
+INSERT INTO choices (question_id, choice_text) VALUES (135, 'A. 200人');
+INSERT INTO choices (question_id, choice_text) VALUES (135, 'B. 150人');
+INSERT INTO choices (question_id, choice_text) VALUES (135, 'C. 250人');
+INSERT INTO choices (question_id, choice_text) VALUES (135, 'D. 300人');
+
+INSERT INTO choices (question_id, choice_text) VALUES (136, 'A. 25%');
+INSERT INTO choices (question_id, choice_text) VALUES (136, 'B. 30%');
+INSERT INTO choices (question_id, choice_text) VALUES (136, 'C. 45%');
+INSERT INTO choices (question_id, choice_text) VALUES (136, 'D. 50%');
+
+INSERT INTO choices (question_id, choice_text) VALUES (137, 'A. 200万円');
+INSERT INTO choices (question_id, choice_text) VALUES (137, 'B. 300万円');
+INSERT INTO choices (question_id, choice_text) VALUES (137, 'C. 400万円');
+INSERT INTO choices (question_id, choice_text) VALUES (137, 'D. 500万円');
+
+INSERT INTO choices (question_id, choice_text) VALUES (138, 'A. Na');
+INSERT INTO choices (question_id, choice_text) VALUES (138, 'B. Cl');
+INSERT INTO choices (question_id, choice_text) VALUES (138, 'C. K');
+INSERT INTO choices (question_id, choice_text) VALUES (138, 'D. 上の表からは決まらない');
+
+INSERT INTO choices (question_id, choice_text) VALUES (139, 'A. 600個');
+INSERT INTO choices (question_id, choice_text) VALUES (139, 'B. 500個');
+INSERT INTO choices (question_id, choice_text) VALUES (139, 'C. 700個');
+INSERT INTO choices (question_id, choice_text) VALUES (139, 'D. 800個');
+
+INSERT INTO choices (question_id, choice_text) VALUES (140, 'A. 1000万円');
+INSERT INTO choices (question_id, choice_text) VALUES (140, 'B. 2000万円');
+INSERT INTO choices (question_id, choice_text) VALUES (140, 'C. 3000万円');
+INSERT INTO choices (question_id, choice_text) VALUES (140, 'D. 4000万円');
+
+INSERT INTO choices (question_id, choice_text) VALUES (141, 'A. H');
+INSERT INTO choices (question_id, choice_text) VALUES (141, 'B. O');
+INSERT INTO choices (question_id, choice_text) VALUES (141, 'C. N');
+INSERT INTO choices (question_id, choice_text) VALUES (141, 'D. 上の表からは決まらない');
+
+INSERT INTO choices (question_id, choice_text) VALUES (142, 'A. 20人');
+INSERT INTO choices (question_id, choice_text) VALUES (142, 'B. 30人');
+INSERT INTO choices (question_id, choice_text) VALUES (142, 'C. 40人');
+INSERT INTO choices (question_id, choice_text) VALUES (142, 'D. 50人');
+
+INSERT INTO choices (question_id, choice_text) VALUES (143, 'A. 2個');
+INSERT INTO choices (question_id, choice_text) VALUES (143, 'B. 3個');
+INSERT INTO choices (question_id, choice_text) VALUES (143, 'C. 4個');
+INSERT INTO choices (question_id, choice_text) VALUES (143, 'D. 5個');
+INSERT INTO choices (question_id, choice_text) VALUES (143, 'A. 6個');
+INSERT INTO choices (question_id, choice_text) VALUES (143, 'B. AからEのいずれでもない');
+
+INSERT INTO choices (question_id, choice_text) VALUES (144, 'A. 5足');
+INSERT INTO choices (question_id, choice_text) VALUES (144, 'B. 6足');
+INSERT INTO choices (question_id, choice_text) VALUES (144, 'C. 7足');
+INSERT INTO choices (question_id, choice_text) VALUES (144, 'D. 8足');
+INSERT INTO choices (question_id, choice_text) VALUES (144, 'A. 9足');
+INSERT INTO choices (question_id, choice_text) VALUES (144, 'B. AからEのいずれでもない');
+
+INSERT INTO choices (question_id, choice_text) VALUES (145, 'A. 2本');
+INSERT INTO choices (question_id, choice_text) VALUES (145, 'B. 3本');
+INSERT INTO choices (question_id, choice_text) VALUES (145, 'C. 4本 ');
+INSERT INTO choices (question_id, choice_text) VALUES (145, 'D. 5本');
+INSERT INTO choices (question_id, choice_text) VALUES (145, 'A. 6本');
+INSERT INTO choices (question_id, choice_text) VALUES (145, 'B. AからEのいずれでもない');
+
+INSERT INTO choices (question_id, choice_text) VALUES (146, 'A. 5個');
+INSERT INTO choices (question_id, choice_text) VALUES (146, 'B. 6個');
+INSERT INTO choices (question_id, choice_text) VALUES (146, 'C. 7個');
+INSERT INTO choices (question_id, choice_text) VALUES (146, 'D. 8個');
+INSERT INTO choices (question_id, choice_text) VALUES (146, 'A. 9個');
+INSERT INTO choices (question_id, choice_text) VALUES (146, 'B. AからEのいずれでもない');
+
+INSERT INTO choices (question_id, choice_text) VALUES (147, 'A. 4冊');
+INSERT INTO choices (question_id, choice_text) VALUES (147, 'B. 5冊');
+INSERT INTO choices (question_id, choice_text) VALUES (147, 'C. 6冊');
+INSERT INTO choices (question_id, choice_text) VALUES (147, 'D. 7冊');
+INSERT INTO choices (question_id, choice_text) VALUES (147, 'A. 8冊');
+INSERT INTO choices (question_id, choice_text) VALUES (147, 'B. AからEのいずれでもない');
+
+INSERT INTO choices (question_id, choice_text) VALUES (148, 'A. 3足');
+INSERT INTO choices (question_id, choice_text) VALUES (148, 'B. 4足');
+INSERT INTO choices (question_id, choice_text) VALUES (148, 'C. 5足');
+INSERT INTO choices (question_id, choice_text) VALUES (148, 'D. 6足');
+INSERT INTO choices (question_id, choice_text) VALUES (148, 'A. 7足');
+INSERT INTO choices (question_id, choice_text) VALUES (148, 'B. AからEのいずれでもない');
+
+INSERT INTO choices (question_id, choice_text) VALUES (149, 'A. 2個');
+INSERT INTO choices (question_id, choice_text) VALUES (149, 'B. 3個');
+INSERT INTO choices (question_id, choice_text) VALUES (149, 'C. 4個');
+INSERT INTO choices (question_id, choice_text) VALUES (149, 'D. 5個');
+INSERT INTO choices (question_id, choice_text) VALUES (149, 'A. 6個');
+INSERT INTO choices (question_id, choice_text) VALUES (149, 'B. AからEのいずれでもない');
+
+INSERT INTO choices (question_id, choice_text) VALUES (150, 'A. 5枚');
+INSERT INTO choices (question_id, choice_text) VALUES (150, 'B. 6枚');
+INSERT INTO choices (question_id, choice_text) VALUES (150, 'C. 7枚');
+INSERT INTO choices (question_id, choice_text) VALUES (150, 'D. 8枚');
+INSERT INTO choices (question_id, choice_text) VALUES (150, 'A. 9枚');
+INSERT INTO choices (question_id, choice_text) VALUES (150, 'B. AからEのいずれでもない');
+
+INSERT INTO choices (question_id, choice_text) VALUES (151, 'A. 3個');
+INSERT INTO choices (question_id, choice_text) VALUES (151, 'B. 4個');
+INSERT INTO choices (question_id, choice_text) VALUES (151, 'C. 5個');
+INSERT INTO choices (question_id, choice_text) VALUES (151, 'D. 6個');
+INSERT INTO choices (question_id, choice_text) VALUES (151, 'A. 7個');
+INSERT INTO choices (question_id, choice_text) VALUES (151, 'B. AからEのいずれでもない');
+
+INSERT INTO choices (question_id, choice_text) VALUES (152, 'A. 3本');
+INSERT INTO choices (question_id, choice_text) VALUES (152, 'B. 4本');
+INSERT INTO choices (question_id, choice_text) VALUES (152, 'C. 5本');
+INSERT INTO choices (question_id, choice_text) VALUES (152, 'D. 6本');
+INSERT INTO choices (question_id, choice_text) VALUES (152, 'A. 7本');
+INSERT INTO choices (question_id, choice_text) VALUES (152, 'B. AからEのいずれでもない');
+
 -- 正解と解説を挿入
 -- 正解の番号が違うので後で修正
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (1, 5, '1_1_1');
@@ -512,7 +1086,7 @@ INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (15, 89
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (16, 91, '1_2_6');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (17, 96, '1_2_7');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (18, 102, '1_2_8');
-INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (19, 105, '1_2_19');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (19, 105, '1_2_9');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (20, 111, '1_2_10');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (21, 118, '1_2_11');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (22, 122, '1_2_12');
@@ -545,7 +1119,7 @@ INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (48, 25
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (49, 255, '1_5_7');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (50, 260, '1_5_8');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (51, 265, '1_5_9');
-INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (52, 270, '1_5_2');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (52, 270, '1_5_10');
 
 
 
