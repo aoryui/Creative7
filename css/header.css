@@ -8,6 +8,10 @@ header {
     height: 100px;
     width: auto;
     position: relative;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
 }
 
 
