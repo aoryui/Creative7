@@ -85,7 +85,7 @@ nav ul li a {
     font-size: 18px;
 }
 
-img:hover {
+#menubutton:hover {
     /*画像にポインタが触られたとき*/
     opacity: 0.5;
     /*アイコンを薄くする*/
@@ -93,7 +93,7 @@ img:hover {
     /* カーソルをポインターに変更 */
 }
 
-img:active {
+#menubutton:active {
     /*画像がクリックされたとき*/
     position: relative;
     /*画像の位置を元に戻す*/
