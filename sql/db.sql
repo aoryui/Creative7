@@ -110,7 +110,56 @@ INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,que
 INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (52,1,5,30,'空欄補充','1_5_10','彼の発言は会議の[ ]を左右した。');
 
 -- 非言語問題
-INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (53,2,1,30,'場合の数','2_1_1','6 人のグループから 3 人を選ぶ方法は何通りありますか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (53,2,1,30,'場合の数','2_1_1','6人のグループから3人を選ぶ方法は何通りありますか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (54,2,1,30,'場合の数','2_1_2','4人の中から1位と2位を選ぶ方法は何通りありますか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (55,2,1,30,'場合の数','2_1_3','5つの異なる本を2列に並べる方法は何通りありますか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (56,2,1,30,'場合の数','2_1_4','赤、青、緑、黄の4色のボールを一列に並べる方法は何通りありますか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (57,2,1,30,'場合の数','2_1_5','6人の中から2人を選び、さらにその2人の中で役割（リーダーとサブリーダー）を決める方法は何通りありますか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (58,2,1,30,'場合の数','2_1_6','A、B、C、D の4人を一列に並べる方法で、Aが常に最初に来るとすると何通りありますか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (59,2,1,30,'場合の数','2_1_7','5種類の異なるジュースから3つを選ぶ方法は何通りありますか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (60,2,1,30,'場合の数','2_1_8','5人の中から3人を選び、さらにその3人の中で役割（リーダー、副リーダー、メンバー）を決める方法は何通りありますか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (61,2,1,30,'場合の数','2_1_9','ある町の住民の70%がインターネットを使用しています。インターネットを使用していない住民が300人いる場合、この町の総人口は何人ですか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (62,2,1,30,'場合の数','2_1_10','ある試験で、全体の得点が200点中、180点を獲得した場合の得点率は何％ですか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (63,2,2,30,'推論','2_2_1','全ての猫は動物である。一部の猫は黒猫である。以下のうち正しいものはどれか。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (64,2,2,30,'推論','2_2_2','全ての花は植物である。一部の植物は花を咲かせない。以下のうち正しいものはどれか。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (65,2,2,30,'推論','2_2_3','全ての車は乗り物である。一部の車は電気自動車である。以下のうち正しいものはどれか。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (66,2,2,30,'推論','2_2_4','全ての本は紙で作られている。一部の本は小説である。以下のうち正しいものはどれか。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (67,2,2,30,'推論','2_2_5','全ての学生は試験を受ける。一部の学生は部活動をしている。以下のうち正しいものはどれか。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (68,2,2,30,'推論','2_2_6','全ての鳥は卵を産む。一部の鳥は飛べない。以下のうち正しいものはどれか。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (69,2,2,30,'推論','2_2_7','全ての果物は食べられる。一部の果物は酸っぱい。以下のうち正しいものはどれか。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (70,2,2,30,'推論','2_2_8','全ての犬は哺乳類である。一部の犬は盲導犬である。以下のうち正しいものはどれか。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (71,2,2,30,'推論','2_2_9','全ての映画はフィクションである。一部の映画はドキュメンタリーである。以下のうち正しいものはどれか。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (72,2,2,30,'推論','2_2_10','全ての椅子は家具である。一部の椅子は木製である。以下のうち正しいものはどれか。');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (73,2,3,30,'割合','2_3_1','あるクラスに 30人の生徒がいます。そのうち18人が女性です。このクラスの生徒の何％が女性ですか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (74,2,3,30,'割合','2_3_2','100個のリンゴのうち20個が腐っていました。腐っているリンゴの割合は何％ですか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (75,2,3,30,'割合','2_3_3','ある会社には50人の従業員がいます。そのうち40%が管理職です。管理職は何人いますか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (76,2,3,30,'割合','2_3_4','ある製品の価格は800円です。これに25%の割引が適用されました。割引後の価格はいくらですか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (77,2,3,30,'割合','2_3_5','200人の学生のうち、150人が数学の試験に合格しました。合格率は何％ですか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (78,2,3,30,'割合','2_3_6','あるプロジェクトに60時間が割り当てられましたが、実際には45時間で完了しました。割り当て時間に対する実際の作業時間の割合は何％ですか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (79,2,3,30,'割合','2_3_7','ある町には5000人の住民がいます。そのうち60%が成人です。成人の人数は何人ですか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (80,2,3,30,'割合','2_3_8','ある商品の価格が15%上昇して、920円になりました。価格上昇前の価格はいくらですか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (81,2,3,30,'割合','2_3_9','ある町の住民の 70%がインターネットを使用しています。インターネットを使用していない住民が 300 人いる場合、この町の総人口は何人ですか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (82,2,3,30,'割合','2_3_10','ある試験で、全体の得点が200点中、180点を獲得した場合の得点率は何％ですか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (83,2,4,30,'確率','2_4_1','1枚の公正なコインを1回投げたとき、表が出る確率は何ですか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (84,2,4,30,'確率','2_4_2','4人の中から1位と2位を選ぶ方法は何通りありますか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (85,2,4,30,'確率','2_4_3','5つの異なる本を2列に並べる方法は何通りありますか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (86,2,4,30,'確率','2_4_4','赤、青、緑、黄の4色のボールを一列に並べる方法は何通りありますか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (87,2,4,30,'確率','2_4_5','6人の中から2人を選び、さらにその2人の中で役割（リーダーとサブリーダー）を決める方法は何通りありますか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (88,2,4,30,'確率','2_4_6','あるプロジェクトに60時間が割り当てられましたが、実際には45時間で完了しました。割り当て時間に対する実際の作業時間の割合は何％ですか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (89,2,4,30,'確率','2_4_7','ある町には5000人の住民がいます。そのうち60%が成人です。成人の人数は何人ですか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (90,2,4,30,'確率','2_4_8','ある商品の価格が15%上昇して、920円になりました。価格上昇前の価格はいくらですか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (91,2,4,30,'確率','2_4_9','ある町の住民の70%がインターネットを使用しています。インターネットを使用していない住民が300人いる場合、この町の総人口は何人ですか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (92,2,4,30,'確率','2_4_10','ある試験で、全体の得点が200点中、180点を獲得した場合の得点率は何％ですか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (93,2,5,30,'金額計算','2_5_1','1 つ 150 円のリンゴを 5 個と、1 つ 120 円のオレンジを 3 個買いました。合計金額はいくらですか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (94,2,5,30,'金額計算','2_5_2','1 つ 200 円のケーキを 3 個と、1 つ 100 円のドーナツを 4 個買いました。合計金額はいくらですか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (95,2,5,30,'金額計算','2_5_3','1 つ 250 円のサンドイッチを 2 個と、1 つ 180 円のジュースを 3 本買いました。合計金額はいくらですか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (96,2,5,30,'金額計算','2_5_4','1 つ 180 円のパンを 4 個と、1 つ 250 円のコーヒーを 2 杯買いました。合計金額はいくらですか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (97,2,5,30,'金額計算','2_5_5','1 つ 350 円のピザを 1 枚と、1 つ 200 円のサラダを 2 つ買いました。合計金額はいくらですか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (98,2,5,30,'金額計算','2_5_6','1 つ 120 円のアイスクリームを 5 個と、1 つ 300 円のケーキを 3 個買いました。合計金額はいくらですか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (99,2,5,30,'金額計算','2_5_7','1 つ 90 円のチョコレートを 10 個と、1 つ 150 円のクッキーを 5 個買いました。合計金額はいくらですか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (100,2,5,30,'金額計算','2_5_8','1 つ 500 円のステーキを 2 枚と、1 つ 300 円のスープを 3 杯買いました。合計金額はいくらですか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (101,2,5,30,'金額計算','2_5_9','1 つ 400 円のパスタを 2 皿と、1 つ 150 円のドリンクを 4 杯買いました。合計金額はいくらですか？');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (102,2,5,30,'金額計算','2_5_10','1 つ 350 円のハンバーガーを 3 個と、1 つ 200 円のポテトを 4 つ買いました。合計金額はいくらですか？');
 
 
 
