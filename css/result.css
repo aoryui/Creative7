@@ -58,7 +58,7 @@ body {
     position: absolute;
     top: 60%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -35%);
 }
 
 td,th {
@@ -148,3 +148,12 @@ table{
 #table tr:nth-child(even) {
     background-color: #f9f9f9;
 }
+
+#custom-question {
+    text-align: left !important; /* 左寄せ */
+    white-space: pre-wrap; /* 改行を維持 */
+    width: 40ch; /* 10文字分の幅を設定 */
+    word-wrap: break-word; /* 単語を折り返す */
+  }
+  
+

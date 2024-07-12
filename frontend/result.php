@@ -140,7 +140,7 @@ echo '<script>console.log('.json_encode($correct_choices).')</script>';
                 <td><?php echo $key + 1; ?></td>
                 <td><?php echo $correct_answers[$question] ? '○' : '×'; ?></td>
                 <td><?php echo htmlspecialchars($genres[$question], ENT_QUOTES, 'UTF-8'); ?></td>
-                <td><?php echo htmlspecialchars($questionTexts[$question], ENT_QUOTES, 'UTF-8'); ?></td>
+                <td id="custom-question"><?php echo htmlspecialchars($questionTexts[$question], ENT_QUOTES, 'UTF-8'); ?></td>
                 <td><?php echo ($interval_time[$key] === '時間切れ') ? $interval_time[$key] : $interval_time[$key] . '秒'; ?></td>
                 <td id="tri"><a href="kaitoukaisetu.php?question_id=<?php echo $key; ?>">解説リンク</a></td>
                 <td id="tri"><a href="review_questions.php?question_id=<?php echo $displayed_questions[$key]; ?>">復習リンク</a></td>
