@@ -15,7 +15,7 @@ body {
 }
 
 .border-frame {
-    max-width: 1200px;
+    max-width: 600px;
     margin: 40px ; /* 上に40pxの余白を追加 */
     padding: 20px;
     background: #fff;
@@ -30,11 +30,18 @@ body {
 }
 
 .language{
-
+  display:block;
+  width: 100px;
 }
   
 .non_language{
-  
+  display:block;
+  margin-left: 120px;
+  width: 100px;
+}
+
+.genre3{
+  top: 30px;
 }
 
 
