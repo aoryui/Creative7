@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo implode(",", $genres);
 
     // ページをリダイレクト
-    header('Location: ../frontend/practicestart.php');
+    header('Location: ../frontend/practice_start.php');
     exit(); // リダイレクト後にスクリプトの実行を停止する
 } else {
     echo "POSTリクエストではありません";

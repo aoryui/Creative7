@@ -59,8 +59,8 @@ $conn->close();
 
 // セッションに問題を保存
 $_SESSION['displayed_questions'] = $question_ids; 
-$_SESSION['displayed_questions'] = [];
 $_SESSION['selected_choice'] = [];
+$_SESSION['current_question_index'] = 0;
 // 問題をコンソールに表示
 echo '<script>console.log('.json_encode($question_ids).')</script>';
 ?>

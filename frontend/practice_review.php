@@ -1,5 +1,6 @@
 <?php
-session_start();
+session_start(); // セッションを開始
+
 require_once __DIR__ . '/header.php';
 
 $servername = "localhost";
@@ -14,66 +15,57 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+// question_idを取得
+$question_id = isset($_GET['question_id']) ? $_GET['question_id'] : null;
 
-// displayed_questions と current_question_index をセッションから取得
-$displayed_questions = isset($_SESSION['displayed_questions']) && is_array($_SESSION['displayed_questions']) ? $_SESSION['displayed_questions'] : [];
-$current_question_index = isset($_SESSION['current_question_index']) && is_int($_SESSION['current_question_index']) ? $_SESSION['current_question_index'] : 0;
+// セッションから選択肢と正解の情報を取得
+$displayed_questions = isset($_SESSION['displayed_questions']) ? $_SESSION['displayed_questions'] : [];
+$selected_choices = isset($_SESSION['selected_choice']) ? $_SESSION['selected_choice'] : [];
+$correct_choices = isset($_SESSION['correct_choices']) ? $_SESSION['correct_choices'] : [];
 
-// 選択した choice_id を取得
-$selected_choice = isset($_SESSION['selected_choice']) && is_array($_SESSION['selected_choice']) ? $_SESSION['selected_choice'] : [];
-
-// フォーム送信時の処理
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['choice'])) {
-        $choice_id = $_POST['choice'];
-
-        // 選択肢IDをセッションに保存
-        $selected_choice[] = $choice_id;
-        $_SESSION['selected_choice'] = $selected_choice;
-
-        // 次の問題に進むためにインデックスを更新
-        $current_question_index++;
-        $_SESSION['current_question_index'] = $current_question_index;
-
-        // 全ての問題が表示されたら終了メッセージを表示（例として）
-        if ($current_question_index >= count($displayed_questions)) {
-            echo '<script>window.location.href = "practice_result.php";</script>';
-            exit;
-        }
-    }
-}
-
-// 現在の question_id を取得
-if (isset($displayed_questions[$current_question_index])) {
-    $question_id = $displayed_questions[$current_question_index];
-} else {
-    die("No more questions available.");
-}
-
-// ログ表示
-echo '<script>console.log('.json_encode($displayed_questions).')</script>'; // 既に表示した問題IDをコンソールに表示
-echo '<script>console.log('.json_encode($selected_choice).')</script>'; // 選択した答えを表示
+// リストの番号を取得
+$position = array_search($question_id, $displayed_questions);
+echo '<script>console.log('.json_encode($selected_choices).')</script>'; // 選択した答えを表示
 
 // 問題を取得
 $question_sql = "SELECT * FROM questions WHERE question_id = $question_id";
 $question_result = $conn->query($question_sql);
-
 if ($question_result->num_rows > 0) {
     $question = $question_result->fetch_assoc();
 } else {
     die("No question found with the given ID.");
 }
-
 // 選択肢を取得
 $choices_sql = "SELECT * FROM choices WHERE question_id=" . $question['question_id'];
 $choices_result = $conn->query($choices_sql);
 
-$conn->close();
+// フォーム送信時の処理
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['choice'])) {
+        $choice_id = $_POST['choice'];
+        // 指定した位置に選択肢IDを設定
+        $selected_choices[$position] = $choice_id;
+        // 選択肢の配列をセッションに保存
+        $_SESSION['selected_choice'][$position] = $choice_id;
+    }
 
+    if (isset($_POST['interval'])) {
+        $_SESSION['interval'] = (int)$_POST['interval'];
+    }
+    
+    // デバッグ情報を表示
+    echo '<pre>';
+    echo '$_POST: ';
+    print_r($_POST);
+    echo '$_SESSION: ';
+    print_r($_SESSION);
+    echo '</pre>';
+}
+
+$conn->close();
 // 改行を HTML 改行タグに変換
 $question_text = nl2br(htmlspecialchars($question['question_text'], ENT_QUOTES, 'UTF-8'));
 ?>
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -82,7 +74,7 @@ $question_text = nl2br(htmlspecialchars($question['question_text'], ENT_QUOTES, 
     <title>SPIタイサくん</title>
     <link rel="stylesheet" href="../css/test.css">
 </head>
-<body scroll="no">
+<body>
     <div class="content">
         <div class="question">
             <p><?php
@@ -92,7 +84,7 @@ $question_text = nl2br(htmlspecialchars($question['question_text'], ENT_QUOTES, 
             echo '<img src="' . $image_path . '" alt="問題画像" class="question_img">';
             ?></p>
         </div>
-        <form id="choiceForm" method="post" action="practice.php">
+        <form id="choiceForm" method="post" action="../backend/review_db.php">
             <div class="choices">
                 <?php
                 while ($choice = $choices_result->fetch_assoc()) {
@@ -104,13 +96,22 @@ $question_text = nl2br(htmlspecialchars($question['question_text'], ENT_QUOTES, 
                 ?>
             </div>
             <input type="hidden" name="question_id" value="<?php echo $question_id; ?>">
-            <input type="hidden" name="time_taken" id="time_taken" value="">
         </form>
     </div>
-    <a href="#" class="next-button" id="next-button">次に進む</a>
+    <div class="footer">
+        <a href="#" class="next-button" id="next-button">判定する</a>
+    </div>
     <script>
         function goToNextQuestion() {
-            document.getElementById('choiceForm').submit();
+            // 次の問題に進む処理をここに書く
+            if (!document.querySelector('input[name="choice"]:checked')) { // 時間切れの場合は0を格納する
+                const hiddenInput = document.createElement('input');
+                hiddenInput.type = 'hidden';
+                hiddenInput.name = 'choice';
+                hiddenInput.value = '0';
+                document.getElementById('choiceForm').appendChild(hiddenInput);
+            }
+            document.getElementById('choiceForm').submit(); // フォームを送信
         }
 
         document.getElementById('next-button').addEventListener('click', (e) => {
@@ -127,12 +128,7 @@ $question_text = nl2br(htmlspecialchars($question['question_text'], ENT_QUOTES, 
             });
         });
 
-        window.addEventListener('load', function() { // ページリロードされたらpracticestart.phpに遷移
-            if (performance.navigation.type === 1) {
-                window.location.href = 'practicestart.php';
-            }
-        });
-
     </script>
+    
 </body>
 </html>
