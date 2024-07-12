@@ -48,7 +48,7 @@ body {
 
 .border-frame {
     max-width: 1200px;
-    margin-top: 100px auto;
+    margin: 350px auto;
     padding: 20px;
     background: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -151,3 +151,9 @@ table {
 #table tr:nth-child(even) {
     background-color: #f9f9f9;
 }
+#custom-question {
+    text-align: left !important; /* 左寄せ */
+    white-space: pre-wrap; /* 改行を維持 */
+    width: 40ch; /* 10文字分の幅を設定 */
+    word-wrap: break-word; /* 単語を折り返す */
+  }

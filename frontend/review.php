@@ -151,7 +151,7 @@ mysqli_close($conn);
             ?>
             <tr>
                 <td><?php echo htmlspecialchars($genre, ENT_QUOTES, 'UTF-8'); ?></td>
-                <td><?php echo htmlspecialchars($sentence, ENT_QUOTES, 'UTF-8'); ?></td>
+                <td id="custom-question"><?php echo htmlspecialchars($sentence, ENT_QUOTES, 'UTF-8'); ?></td>
                 <td id="tri"><a href="kaitoukaisetu3.php?question_id=<?php echo $question_id; ?>">解説リンク</a></td>
                 <td id="tri"><a href="review_questions.php?question_id=<?php echo $question_id; ?>">問題</a></td>
             </tr>
