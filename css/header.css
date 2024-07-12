@@ -6,8 +6,13 @@ header {
     background-color: rgb(89, 208, 247);
     color: white;
     height: 100px;
-    width: auto;
+    width: 100%;
     position: relative;
+    overflow-x: hidden;
+    position: fixed;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 999;
 }
 
 
