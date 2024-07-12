@@ -47,6 +47,9 @@ body {
 
 
 .border-frame {
+    margin-top: calc(100px + 20px);
+    margin-left: auto;
+    margin-right: auto;
     max-width: 1200px;
     margin: 350px auto;
     padding: 20px;
@@ -55,10 +58,6 @@ body {
     border-radius: 8px;
     width: 1000px;
     background-color: rgb(244, 242, 242);
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 td,
@@ -151,9 +150,14 @@ table {
 #table tr:nth-child(even) {
     background-color: #f9f9f9;
 }
+
 #custom-question {
-    text-align: left !important; /* 左寄せ */
-    white-space: pre-wrap; /* 改行を維持 */
-    width: 40ch; /* 10文字分の幅を設定 */
-    word-wrap: break-word; /* 単語を折り返す */
-  }
+    text-align: left !important;
+    /* 左寄せ */
+    white-space: pre-wrap;
+    /* 改行を維持 */
+    width: 40ch;
+    /* 10文字分の幅を設定 */
+    word-wrap: break-word;
+    /* 単語を折り返す */
+}
