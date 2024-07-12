@@ -47,17 +47,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         $_SESSION['interval_time'] = $interval_time;
     }
+
+    // 既に表示した question_id の数が10つに達したらリセット
+    if (count($displayed_questions) >= 10) {
+        echo '<script>window.location.href = "result.php";</script>';
+        exit();
+    }
 }
 
 // ログ表示
 echo '<script>console.log('.json_encode($displayed_questions).')</script>'; // 既に表示した問題IDをコンソールに表示
 echo '<script>console.log('.json_encode($selected_choice).')</script>'; // 選択した答えを表示
 echo '<script>console.log('.json_encode($interval_time).')</script>'; // 回答時間を表示
-
-// 既に表示した question_id の数が10つに達したらリセット
-if (count($displayed_questions) >= 10) {
-    echo '<script>window.location.href = "result.php";</script>';
-}
 
 // パラメータから question_id を取得。無ければランダムに選択
 $question_id = isset($_GET['question_id']) ? (int)$_GET['question_id'] : null;
