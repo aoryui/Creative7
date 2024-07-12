@@ -4,8 +4,9 @@ body {
 
 .profile-container {
     display: flex;
+    height: auto;
     max-width: 1200px;
-    margin: 20px auto;
+    margin: 130px auto;
     background-color: #ffefd5;
     border-radius: 8px;
     overflow: hidden;

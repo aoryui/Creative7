@@ -1,122 +1,57 @@
+html {
+    overflow-y: scroll;
+  /*スクロールバー非表示（IE・Edge）*/
+  -ms-overflow-style: none;
+  /*スクロールバー非表示（Firefox）*/
+  scrollbar-width: none;
+  }
+/*スクロールバー非表示（Chrome・Safari）*/
+.html::-webkit-scrollbar{
+    display:none;
+  } 
+
 body {
     background-color: #ffefd5;
 }
 
-.border-frame{
+.border-frame {
     max-width: 1200px;
-    margin: 50px auto; /* 上に40pxの余白を追加 */
+    margin: 40px ; /* 上に40pxの余白を追加 */
     padding: 20px;
     background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     border-radius: 8px;
-    width: 1000px;
-    background-color: #fff;
+    width: 800px;
+    background-color: rgb(244, 242, 242);
     position: absolute;
-    top: 55%;
-    left: 55%;
+    top: 150px;
+    left: 50%;
     transform: translate(-50%, -50%);
 }
 
-html{
-    overflow-y: scroll;
+.language{
+
 }
   
-.container {
-    display: flex;
-    gap: 20px;
+.non_language{
+  
 }
 
-.categorie-box, .categorie-boxes {
-            flex: 1;
-            margin: 10px;
-            min-width: 50px; /* カテゴリーボックスの最小幅を設定 */
-            border: 2px solid #000;
-            border-radius: 10px;
-            padding: 10px;
-            position: relative;
-            background-color: #fff;
-}
 
-.categorie-box::before {
-    background-color: #fff;
-    color: #333;
-    content: "言語系";
-    font-weight: bold;
-    padding: 3px 10px;
-    position: absolute;
-    top: -20px; /* タイトルを枠の上に配置 */
-    left: 50%;
-    transform: translateX(-50%);
-}
 
-.categorie-boxes::before {
-    background-color: #fff;
-    color: #333;
-    content: "非言語系";
-    font-weight: bold;
-    padding: 3px 10px;
-    position: absolute;
-    top: -20px; /* タイトルを枠の上に配置 */
-    left: 50%;
-    transform: translateX(-50%);
-}
 
-.categorie {
-    display: inline-block;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
 
-}
 
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100%;
-}
 
-li {
-    margin: 5px 0;
-    text-align: left;
-}
 
-label {
-    display: flex;
-    align-items: center;
-}
 
-input[type="radio"] {
-    margin-right: 10px;
-}
 
-/*
-img:hover {
-    opacity: 0.5;
-    cursor: pointer;
-}
 
-img:active {
-    position: relative;
-    top: 3px;
-}
 
-#menuButton {
-    margin-right: 400px;
-    width: auto;
-    height: auto;
-    padding: 0;
-    border: none;
-    background-color: transparent;
-}
 
-.menu-container {
-    display: flex;
-    align-items: center;
-}
-*/
 
-    
+
+
+
+
+

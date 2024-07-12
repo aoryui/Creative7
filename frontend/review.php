@@ -117,7 +117,7 @@ mysqli_close($conn);
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="../css/result.css">
+    <link rel="stylesheet" href="../css/review.css">
 </head>
 <body>
     <div class="border-frame">
