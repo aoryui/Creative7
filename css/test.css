@@ -3,13 +3,11 @@ html {
     overflow: hidden;
 }
 
-
 body {
     min-height: 100%;
     background-color: #ffefd5;
     overflow: hidden;
 }
-
 
 .content {
     display: flex;
@@ -18,6 +16,7 @@ body {
     padding: 20px;
     flex-grow: 1;
     box-sizing: border-box;
+    position: relative; /* コンテナの相対位置を指定 */
 }
 
 .footer{
@@ -45,7 +44,7 @@ body {
 .question_img{
     width: 500px;
     position: absolute;
-    top: 200px; left: 180px;
+    top: 150px; left: 180px;
 }
 
 .question p {
@@ -84,20 +83,18 @@ body {
     cursor: pointer;
 }
 
-
 .timer-label {
-    position: relative;
-    top: -410px;
-    left: 700px;
-    bottom: 30px;
+    position: absolute; /* 絶対位置に変更 */
+    top: 120px; /* 調整が必要なら変更 */
+    right: 440px; /* 調整が必要なら変更 */
 }
 .timer-container {
     width: 50%;
     height: 20px;
     margin-top: 20px;
-    position: relative;
-    top: -450px;
-    left: 40px;
+    position: absolute; /* 絶対位置に変更 */
+    top: 100px; /* 調整が必要なら変更 */
+    left: 20px; /* 調整が必要なら変更 */
     border: 1px solid #aaa;
     transition: background-color 0.1s linear;
 }
@@ -118,8 +115,7 @@ body {
     text-decoration: none;
     border-radius: 5px;
     position: absolute;
-    bottom: 10px;
-    /* ボタンの位置を調整 */
+    bottom: 10px; /* ボタンの位置を調整 */
     right: 15px;
 }
 
@@ -130,36 +126,3 @@ body {
 #next-button {
     margin: 10px 50px 10px 50px;
 }
-
-/*mondaikaito以上*/
-
-/*
-img:hover {
-    opacity: 0.5;
-    cursor: pointer;
-}
-
-img:active {
-    position: relative;
-    top: 3px;
-}
-
-#menuButton {
-    margin-right: 400px;
-    width: auto;
-    height: auto;
-    padding: 0;
-    border: none;
-    background-color: transparent;
-}
-
-.menu-container {
-    display: flex;
-    align-items: center;
-}
-*/
-
-
-
-
-
