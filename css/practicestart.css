@@ -22,6 +22,17 @@ body {
     text-align: center;
 }
 
+.genre{
+    display: flex;
+    list-style: none;
+}
+.genre_lang{
+    width: 50%;
+}
+.genre_non_lang{
+    width: 50%;
+}
+
 .button-container {
     text-align: center;
 }

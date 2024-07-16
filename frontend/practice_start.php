@@ -37,7 +37,7 @@ for ($i = 0; $i < count($field); $i++) {
     $params[] = $genre[$i];
 }
 
-$sql = "SELECT question_id FROM questions WHERE " . implode(" OR ", $conditions) . " ORDER BY RAND()";
+$sql = "SELECT DISTINCT field_id, genre_text FROM questions WHERE " . implode(" OR ", $conditions);
 
 // パラメータを準備しバインド
 $stmt = $conn->prepare($sql);
@@ -48,22 +48,24 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 // 結果を取得
-$question_ids = [];
+$genre_texts = ['field_1' => [], 'field_2' => []];
 while ($row = $result->fetch_assoc()) {
-    $question_ids[] = $row['question_id'];
+    if ($row['field_id'] == 1) {
+        $genre_texts['field_1'][] = $row['genre_text'];
+    } elseif ($row['field_id'] == 2) {
+        $genre_texts['field_2'][] = $row['genre_text'];
+    }
 }
 
 // ステートメントと接続を閉じる
 $stmt->close();
 $conn->close();
 
-// セッションに問題を保存
-$_SESSION['displayed_questions'] = $question_ids; 
-$_SESSION['selected_choice'] = [];
-$_SESSION['current_question_index'] = 0;
-$_SESSION['interval_time'] = [];
-// 問題をコンソールに表示
-echo '<script>console.log('.json_encode($question_ids).')</script>';
+// セッションにジャンル名を保存
+$_SESSION['genre_texts'] = $genre_texts;
+
+// ジャンル名をコンソールに表示
+echo '<script>console.log('.json_encode($genre_texts).')</script>';
 ?>
 
 <!DOCTYPE html>
@@ -76,10 +78,33 @@ echo '<script>console.log('.json_encode($question_ids).')</script>';
         <div class="practicestartmain">
             <div class="container">
                 <div class="content">
-                    <p>ランダムで想定された問題が10個出題されます。</p>
-                    <p>時間までに解いてください。</p>
-                    <p>時間が過ぎると次の問題に自動的に飛ばされます。</p>
-                    <p>メモ用紙と筆記用具を用意してください。</p>
+                    <p>選択されたジャンルから問題がランダムに表示されます。</p>
+                    <div class="genre">
+                        <div class="genre_lang">
+                            <p>言語</p>
+                            <?php
+                            if (empty($_SESSION['genre_texts']['field_1'])) {
+                                echo "<li>なし</li>";
+                            } else {
+                                foreach ($_SESSION['genre_texts']['field_1'] as $genre_text) {
+                                    echo "<li>{$genre_text}</li>";
+                                }
+                            }
+                            ?>
+                        </div>
+                        <div class="genre_non_lang">
+                            <p>非言語</p>
+                            <?php
+                            if (empty($_SESSION['genre_texts']['field_2'])) {
+                                echo "<li>なし</li>";
+                            } else {
+                                foreach ($_SESSION['genre_texts']['field_2'] as $genre_text) {
+                                    echo "<li>{$genre_text}</li>";
+                                }
+                            }
+                            ?>
+                        </div>
+                    </div>
                 </div>
                 <div class="button-container">
                     <input type="button" onclick="location.href='practice.php'" value="練習問題を開始する">
