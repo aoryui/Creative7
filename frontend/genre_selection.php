@@ -24,16 +24,16 @@ require_once __DIR__ . '/header.php'; //ヘッダー指定
             <input type="checkbox"  class="language-checkbox" id="genre1" name="language[]" value="1">二語の関係
         </label>
         <label class="language">
-            <input type="checkbox"  class="language-checkbox" id="genre2" name="language[]" value="2">文章の整序
+            <input type="checkbox"  class="language-checkbox" id="genre2" name="language[]" value="2">語句の意味
         </label>
         <label class="language">
-            <input type="checkbox"  class="language-checkbox" id="genre3" name="language[]" value="2">文章の整序
+            <input type="checkbox"  class="language-checkbox" id="genre3" name="language[]" value="3">語句の用法
         </label>
         <label class="language">
-            <input type="checkbox"  class="language-checkbox" id="genre4" name="language[]" value="2">文章の整序
+            <input type="checkbox"  class="language-checkbox" id="genre4" name="language[]" value="4">文章の整序
         </label>
         <label class="language">
-            <input type="checkbox"  class="language-checkbox" id="genre5" name="language[]" value="2">文章の整序
+            <input type="checkbox"  class="language-checkbox" id="genre5" name="language[]" value="5">空欄補充
         </label>
 </div>
     <!-- 非言語系 -->
@@ -42,25 +42,34 @@ require_once __DIR__ . '/header.php'; //ヘッダー指定
             <input type="checkbox" id="ChecksAllNonLanguage">非言語系
         </label>
         <label class="non_language">
-            <input type="checkbox" class="non-language-checkbox" id="genre6" name="non_language[]" value="1">速度の計算
+            <input type="checkbox" class="non-language-checkbox" id="genre6" name="non_language[]" value="1">場合の数
         </label>
         <label class="non_language">
-            <input type="checkbox" class="non-language-checkbox" id="genre7" name="non_language[]" value="2">確率の計算
+            <input type="checkbox" class="non-language-checkbox" id="genre7" name="non_language[]" value="2">推論
         </label>
         <label class="non_language">
-            <input type="checkbox" class="non-language-checkbox" id="genre8" name="non_language[]" value="1">速度の計算
+            <input type="checkbox" class="non-language-checkbox" id="genre8" name="non_language[]" value="3">割合
         </label>
         <label class="non_language">
-            <input type="checkbox" class="non-language-checkbox" id="genre9" name="non_language[]" value="1">速度の計算
+            <input type="checkbox" class="non-language-checkbox" id="genre9" name="non_language[]" value="4">確率
         </label>
         <label class="non_language">
-            <input type="checkbox" class="non-language-checkbox" id="genre10" name="non_language[]" value="1">速度の計算
+            <input type="checkbox" class="non-language-checkbox" id="genre10" name="non_language[]" value="5">金額計算
         </label>
         <label class="non_language">
-            <input type="checkbox" class="non-language-checkbox" id="genre11" name="non_language[]" value="1">速度の計算
+            <input type="checkbox" class="non-language-checkbox" id="genre11" name="non_language[]" value="6">分担計算
         </label>
         <label class="non_language">
-            <input type="checkbox" class="non-language-checkbox" id="genre12" name="non_language[]" value="1">速度の計算
+            <input type="checkbox" class="non-language-checkbox" id="genre12" name="non_language[]" value="7">速度算
+        </label>
+        <label class="non_language">
+            <input type="checkbox" class="non-language-checkbox" id="genre12" name="non_language[]" value="8">集合
+        </label>
+        <label class="non_language">
+            <input type="checkbox" class="non-language-checkbox" id="genre12" name="non_language[]" value="9">表の読み取り
+        </label>
+        <label class="non_language">
+            <input type="checkbox" class="non-language-checkbox" id="genre12" name="non_language[]" value="10">特殊計算
         </label>
     </div>
     <button class="button" type="submit">選択</button>
