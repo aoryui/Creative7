@@ -61,6 +61,7 @@ $conn->close();
 $_SESSION['displayed_questions'] = $question_ids; 
 $_SESSION['selected_choice'] = [];
 $_SESSION['current_question_index'] = 0;
+$_SESSION['interval_time'] = [];
 // 問題をコンソールに表示
 echo '<script>console.log('.json_encode($question_ids).')</script>';
 ?>

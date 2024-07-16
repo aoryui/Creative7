@@ -5,6 +5,9 @@ require_once __DIR__ . '/../backend/class.php';
 // $kaisetuID を最初に取得
 $kaisetuID = isset($_GET['question_id']) ? $_GET['question_id'] : null;
 
+// セッションから開いたページのファイル名を取得
+$before_display = isset($_SESSION['result_display']) ? $_SESSION['result_display'] : [];
+
 // セッションから選択肢と正解の情報を取得
 $displayed_questions = isset($_SESSION['displayed_questions']) ? $_SESSION['displayed_questions'] : [];
 $selected_choices = isset($_SESSION['selected_choice']) ? $_SESSION['selected_choice'] : [];
@@ -66,6 +69,9 @@ try {
 $form = new form();
 $kaisetu = $form->getQues($question_num);
 
+// 復習ページから表示した場合は自分の回答を非表示にする
+$display_user_choice = !($before_display === 'review' && $user_choice_text === '無回答');
+
 ?>
 
 <!DOCTYPE html>
@@ -109,10 +115,12 @@ $kaisetu = $form->getQues($question_num);
             </section>
             <h2>回答</h2>
             <section class="container">
+                <?php if ($display_user_choice) : ?> <!-- 復習ページから表示した場合は自分の回答を非表示にする -->
                 <div class="kaitou">
                     <b>あなたの回答:</b>
                     <span id="user-kaitou"><?php echo htmlspecialchars($user_choice_text, ENT_QUOTES, 'UTF-8'); ?></span>
                 </div>
+                <?php endif; ?>
                 <div class="kaitou">
                     <b>正解:</b>
                     <span id="correct-kaitou"><?php echo htmlspecialchars($correct_choice_text, ENT_QUOTES, 'UTF-8'); ?></span>
@@ -129,7 +137,11 @@ $kaisetu = $form->getQues($question_num);
                     ?></p>
                 </p>
             </section>
-            <a href="result.php" class="btn">リザルトに戻る</a>
+            <?php if ($before_display === 'review') : ?> 
+                <a href="review.php" class="btn">復習問題一覧に戻る</a> <!-- 復習ページから開いた場合のボタンテキスト -->
+            <?php else : ?>
+                <a href="<?php echo $before_display ?>.php" class="btn">リザルトに戻る</a>
+            <?php endif; ?>
         </main>
     </div>
 </body>

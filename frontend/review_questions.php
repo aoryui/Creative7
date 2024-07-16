@@ -77,9 +77,6 @@ $question_text = nl2br(htmlspecialchars($question['question_text'], ENT_QUOTES, 
 <body>
     <div class="content">
         <div class="question">
-            <?php
-            echo '<div class="question-text">問題番号'.$question_id.'次の文章を読んで問いに答えなさい</div>';
-            ?>
             <p><?php
             // 画像のパスを作成
             $image_path = "../image/問題集/" . $question_text . ".jpg";
@@ -87,7 +84,7 @@ $question_text = nl2br(htmlspecialchars($question['question_text'], ENT_QUOTES, 
             echo '<img src="' . $image_path . '" alt="問題画像" class="question_img">';
             ?></p>
         </div>
-        <form id="choiceForm" method="post" action="review2.php">
+        <form id="choiceForm" method="post" action="../backend/review_db.php">
             <div class="choices">
                 <?php
                 while ($choice = $choices_result->fetch_assoc()) {

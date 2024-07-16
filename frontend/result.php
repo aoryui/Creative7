@@ -20,6 +20,9 @@ if (!$conn) {
     die('データベースに接続できませんでした: ' . mysqli_connect_error());
 }
 
+// リザルト画面のファイル場所をセッションに保存
+$_SESSION['result_display'] = 'result';
+
 $displayed_questions = isset($_SESSION['displayed_questions']) ? $_SESSION['displayed_questions'] : [];
 $selected_choice = isset($_SESSION['selected_choice']) ? $_SESSION['selected_choice'] : [];
 $interval_time = isset($_SESSION['interval_time']) ? $_SESSION['interval_time'] : [];
@@ -49,7 +52,7 @@ foreach ($displayed_questions as $key => $question_id) {
     $correct_choices[] = $correct_choice_id;
 
     // 選択された選択肢IDを取得
-    $selected_choice_id = $selected_choice[$key];
+    $selected_choice_id = isset($selected_choice[$key]) ? $selected_choice[$key] : null;
 
     // 正誤判定
     if ($selected_choice_id == $correct_choice_id) {
@@ -82,10 +85,13 @@ foreach ($displayed_questions as $key => $question_id) {
     $questionTexts[$question_id] = $questionText_row['sentence'];
 
     // 回答時間を合計に追加
-    if ($interval_time[$key] !== '時間切れ') {
+    if (isset($interval_time[$key]) && $interval_time[$key] !== '時間切れ') {
         $total_time += intval($interval_time[$key]);
     }
 }
+
+// 制限時間があるか判定
+$interval_time_empty = empty($interval_time);
 
 // 間違えた問題を取得
 $incorrect_questions = array_keys(array_filter($correct_answers, function($value) {return $value === false;}));
@@ -104,7 +110,9 @@ $_SESSION['correct_choices'] = $correct_choices;
 $_SESSION['selected_choice'] = $selected_choice;
 
 // 平均回答時間を計算
-$average_time = $total_time / $total_questions;
+if (!$interval_time_empty) { // 制限時間がない場合は計算しない
+    $average_time = $total_time / $total_questions;
+}
 $correct_rate = ($correct_count / $total_questions) * 100; // 正答率を計算
 
 // ログ表示
@@ -117,36 +125,52 @@ echo '<script>console.log('.json_encode($correct_choices).')</script>';
 <html>
 <head>
     <link rel="stylesheet" href="../css/result.css">
+    <!-- 制限時間がない場合はcssで非表示にするやつ -->
+    <style>
+        <?php if ($interval_time_empty): ?>
+        .interval-time-header,
+        .interval-time-cell,
+        .average-time {
+            display: none;
+        }
+        <?php endif; ?>
+    </style>
 </head>
 <body>
     <div class="border-frame">
-    <h2 class="answer">試験回別レポート</h2>
+        <h2 class="answer">試験回別レポート</h2>
 
-    <h2 class="average-time">平均回答時間: <?php echo intval($average_time); ?>秒</h2>
-    <h2 class="correct-rate">正答率: <?php echo round($correct_rate, 2); ?>%</h2>
+        <?php if (!$interval_time_empty): ?> <!-- 制限時間がない場合は実行しない -->
+            <h2 class="average-time">平均回答時間: <?php echo intval($average_time); ?>秒</h2>
+        <?php endif; ?>
+        <h2 class="correct-rate">正答率: <?php echo round($correct_rate, 2); ?>%</h2>
 
-    <table border="1" id="table">
-        <tr>
-            <th>問題No.</th>
-            <th>正誤</th>
-            <th>分野</th>
-            <th>問題文</th>
-            <th>回答時間</th>
-            <th>解説</th>
-            <th>復習</th>
-        </tr>
-        <?php foreach ($displayed_questions as $key => $question): ?>
+        <table border="1" id="table">
             <tr>
-                <td><?php echo $key + 1; ?></td>
-                <td><?php echo $correct_answers[$question] ? '○' : '×'; ?></td>
-                <td><?php echo htmlspecialchars($genres[$question], ENT_QUOTES, 'UTF-8'); ?></td>
-                <td id="custom-question"><?php echo htmlspecialchars($questionTexts[$question], ENT_QUOTES, 'UTF-8'); ?></td>
-                <td><?php echo ($interval_time[$key] === '時間切れ') ? $interval_time[$key] : $interval_time[$key] . '秒'; ?></td>
-                <td id="tri"><a href="kaitoukaisetu.php?question_id=<?php echo $key; ?>">解説リンク</a></td>
-                <td id="tri"><a href="review_questions.php?question_id=<?php echo $displayed_questions[$key]; ?>">復習リンク</a></td>
+                <th>問題No.</th>
+                <th>正誤</th>
+                <th>分野</th>
+                <th>問題文</th>
+                <?php if (!$interval_time_empty): ?><!-- 制限時間がない場合は非表示 -->
+                    <th class="interval-time-header">回答時間</th>
+                <?php endif; ?>
+                <th>解説</th>
+                <th>復習</th>
             </tr>
-        <?php endforeach; ?>
-    </table>
+            <?php foreach ($displayed_questions as $key => $question): ?>
+                <tr>
+                    <td><?php echo $key + 1; ?></td>
+                    <td><?php echo $correct_answers[$question] ? '○' : '×'; ?></td>
+                    <td><?php echo htmlspecialchars($genres[$question], ENT_QUOTES, 'UTF-8'); ?></td>
+                    <td id="custom-question"><?php echo htmlspecialchars($questionTexts[$question], ENT_QUOTES, 'UTF-8'); ?></td>
+                    <?php if (!$interval_time_empty): ?> <!-- 制限時間がない場合は非表示 -->
+                        <td class="interval-time-cell"><?php echo (isset($interval_time[$key]) && $interval_time[$key] === '時間切れ') ? $interval_time[$key] : (isset($interval_time[$key]) ? $interval_time[$key] . '秒' : ''); ?></td>
+                    <?php endif; ?>
+                    <td id="tri"><a href="kaitoukaisetu.php?question_id=<?php echo $key; ?>">解説リンク</a></td>
+                    <td id="tri"><a href="review_questions.php?question_id=<?php echo $displayed_questions[$key]; ?>">復習リンク</a></td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
     </div>
 </body>
 </html>

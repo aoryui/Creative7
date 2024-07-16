@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // 全ての問題が表示されたら終了メッセージを表示（例として）
         if ($current_question_index >= count($displayed_questions)) {
-            echo '<script>window.location.href = "practice_result.php";</script>';
+            echo '<script>window.location.href = "result.php";</script>';
             exit;
         }
     }

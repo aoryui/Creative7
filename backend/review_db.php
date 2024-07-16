@@ -57,16 +57,8 @@ if ($selected_choice_id == $correct_choice_id) {
     $result = 'incorrect';
 }
 
-// セッションに保存された選択肢をデバッグ表示
-echo '<pre>';
-echo '$_POST: ';
-print_r($_POST);
-echo '$_SESSION: ';
-print_r($_SESSION);
-echo '</pre>';
-
 // データベース接続を閉じる
 mysqli_close($conn);
-header('Location: ../frontend/practice_kaitoukaisetu.php?question_id=' . $position . '&result=' . $result); // original_page.phpを実際の元のページに置き
+header('Location: ../frontend/kaitoukaisetu.php?question_id=' . $position . '&result=' . $result); // original_page.phpを実際の元のページに置き
 exit();
 ?>
