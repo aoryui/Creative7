@@ -50,6 +50,7 @@ body {
     margin-top: calc(100px + 20px);
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 20px;
     max-width: 1200px;
     padding: 20px;
     background: #fff;

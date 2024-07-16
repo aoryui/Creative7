@@ -1,4 +1,6 @@
 .practicestartmain {
+    margin-top: calc(100px);
+    margin-bottom: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,12 +9,15 @@
 }
 
 .container {
+    margin-top: calc(100px);
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
     border: 2px solid black;
     padding: 20px;
     height: 400px;
     box-sizing: border-box;
     width: 50%;
-    margin: auto;
     background-color: aliceblue;
     display: flex;
     flex-direction: column;

@@ -46,26 +46,29 @@ body {
 
 
 
-.border-frame{
+.border-frame {
     max-width: 1200px;
-    margin: 150px auto; /* 上に40pxの余白を追加 */
+    margin-top: calc(100px + 20px);
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 20px;
     background: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     width: 1000px;
     background-color: rgb(244, 242, 242);
-    position: absolute;
     top: 60%;
     left: 50%;
-    transform: translate(-50%, -50%);
 }
 
-td,th {
-    text-align:  center;        /* 文字の揃え位置指定 */
+td,
+th {
+    text-align: center;
+    /* 文字の揃え位置指定 */
 }
 
-table{
+table {
     width: 800px;
     margin: auto;
 }
@@ -135,7 +138,8 @@ table{
     margin-top: 20px;
 }
 
-#table th, #table td {
+#table th,
+#table td {
     border: 1px solid #ccc;
     padding: 10px;
     text-align: center;
@@ -150,10 +154,12 @@ table{
 }
 
 #custom-question {
-    text-align: left !important; /* 左寄せ */
-    white-space: pre-wrap; /* 改行を維持 */
-    width: 40ch; /* 10文字分の幅を設定 */
-    word-wrap: break-word; /* 単語を折り返す */
-  }
-  
-
+    text-align: left !important;
+    /* 左寄せ */
+    white-space: pre-wrap;
+    /* 改行を維持 */
+    width: 40ch;
+    /* 10文字分の幅を設定 */
+    word-wrap: break-word;
+    /* 単語を折り返す */
+}

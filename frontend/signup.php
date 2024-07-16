@@ -31,7 +31,7 @@ if (isset($_SESSION['signup_error'])) {
         <label for="password">パスワード:</label>
         <input type="password" id="password" name="password" required>
     </div>
-    <button type="submit">登録</button>
+    <button type="submit" id="submit">登録</button>
 </form>
 </div>
 </div>

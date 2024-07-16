@@ -9,9 +9,17 @@
 }
 
 .login-container {
+  height: 500px;
+  margin-top: calc(100px + 20px);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
   background-color: #fff;
-  padding: 40px;
-  border-radius: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
@@ -30,7 +38,6 @@ label {
 }
 
 input {
-  width: 100%;
   padding: 10px 10px;
   border: 2px solid #ffc0cb;
   border-radius: 25px;
@@ -47,7 +54,7 @@ input:focus {
   box-shadow: 0 0 5px rgba(255, 192, 203, 0.5);
 }
 
-button {
+#submit {
   width: 80%;
   padding: 10px;
   background-color: rgb(89, 208, 247);
@@ -60,7 +67,7 @@ button {
 
 }
 
-button:hover {
+#submit:hover {
   background-color: #68B7F0;
 }
 
@@ -68,29 +75,3 @@ button:hover {
   width: 150px;
   margin-bottom: 20px;
 }
-
-/*
-img:hover {
-    opacity: 0.5;
-    cursor: pointer;
-}
-
-img:active {
-    position: relative;
-    top: 3px;
-}
-
-#menuButton {
-    margin-right: 400px;
-    width: auto;
-    height: auto;
-    padding: 0;
-    border: none;
-    background-color: transparent;
-}
-
-.menu-container {
-    display: flex;
-    align-items: center;
-}
-*/
