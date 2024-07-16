@@ -1,49 +1,98 @@
 html {
     overflow-y: scroll;
-  /*スクロールバー非表示（IE・Edge）*/
-  -ms-overflow-style: none;
-  /*スクロールバー非表示（Firefox）*/
-  scrollbar-width: none;
-  }
-/*スクロールバー非表示（Chrome・Safari）*/
-.html::-webkit-scrollbar{
-    display:none;
-  } 
+}
 
 body {
     background-color: #ffefd5;
 }
 
-.border-frame {
-    max-width: 600px;
-    margin: 40px ; /* 上に40pxの余白を追加 */
-    padding: 20px;
+.border-frame{
+  max-width: 1000px;
+  margin: 20px auto; /* 上に20pxの余白を追加 */
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  width: 900px;
+  height: 350px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 上下左右中央に配置 */
+}
+
+
+.contain {
+    max-width: 250px;
+    margin: 40px; /* 上に40pxの余白を追加 */
     background: #fff;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     border-radius: 8px;
-    width: 800px;
+    width: 200px;
     background-color: rgb(244, 242, 242);
     position: absolute;
-    top: 150px;
-    left: 50%;
+    top: 100px;
+    left: 150px;
     transform: translate(-50%, -50%);
+    padding: 10px; 
+    margin-bottom: 10px; 
+    border: 1px solid #333333;
+}
+
+
+.contains {
+  max-width: 250px;
+  margin: 40px; /* 上に40pxの余白を追加 */
+  padding: 10px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  width: 800px;
+  background-color: rgb(244, 242, 242);
+  position: absolute;
+  top: 140px;
+  left: 500px;
+  transform: translate(-50%, -50%);
+  padding: 10px; 
+    margin-bottom: 10px; 
+    border: 1px solid #333333;
 }
 
 .language{
   display:block;
-  width: 100px;
+  text-align: right;
+  padding: 5px;
+
 }
   
 .non_language{
   display:block;
-  margin-left: 120px;
-  width: 100px;
+  text-align: right;
+  padding: 5px;
 }
 
-.genre3{
-  top: 30px;
+.button{
+  position: absolute;
+  top: 280px;
+  left: 700px;
+  display: block;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	width: 180px;
+	margin: auto;
+	padding: 1rem 4rem;
+	font-weight: bold;
+	border: 2px solid #27acd9;
+	background: #27acd9;
+	color: #fff;
+	border-radius: 100vh;
+	transition: 0.5s;
 }
-
+a.button:hover {
+	color: #27acd9;
+	background: #fff;
+}
 
 
 

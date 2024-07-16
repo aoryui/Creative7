@@ -1,3 +1,6 @@
+html {
+    overflow-y: scroll;
+}
 .honbanmain {
     display: flex;
     justify-content: center;
