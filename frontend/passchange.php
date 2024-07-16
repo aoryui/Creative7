@@ -41,7 +41,7 @@ if (!empty($message)) {
         <label for="new_password">新しいパスワード</label>
         <input type="password" id="new_password" name="new_password" required />
     </div>
-    <button type="submit">パスワード変更</button>
+    <button type="submit" id="submit">パスワード変更</button>
 </form>
 </div>
 </body>
