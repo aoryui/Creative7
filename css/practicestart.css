@@ -1,18 +1,12 @@
-.practicestartmain {
-    margin-top: calc(100px);
-    margin-bottom: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 80vh;
+body {
     background-color: #ffefd5;
 }
 
 .container {
-    margin-top: calc(100px);
-    margin-bottom: 30px;
+    margin-top: calc(100px + 70px);
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: auto;
     border: 2px solid black;
     padding: 20px;
     height: 400px;
@@ -36,7 +30,7 @@
     padding: 30px 20px;
     font-size: 30px;
     cursor: pointer;
-    background-color: rgb(226, 46, 46);
+    background-color: rgb(235, 118, 46);
     color: white;
     border: none;
     border-radius: 5px;
@@ -70,29 +64,3 @@ img:active {
     display: flex;
     align-items: center;
 }
-
-/*
-img:hover {
-    opacity: 0.5;
-    cursor: pointer;
-}
-
-img:active {
-    position: relative;
-    top: 3px;
-}
-
-#menuButton {
-    margin-right: 400px;
-    width: auto;
-    height: auto;
-    padding: 0;
-    border: none;
-    background-color: transparent;
-}
-
-.menu-container {
-    display: flex;
-    align-items: center;
-}
-*/

@@ -13,7 +13,7 @@ html {
 }
 
 .login-container {
-  margin-top: 130px;
+  margin-top: 120px;
   margin-bottom: auto;
   background-color: #fff;
   padding: 50px;
@@ -36,7 +36,6 @@ label {
 }
 
 input {
-  width: 100%;
   padding: 10px 10px;
   border: 2px solid #ffc0cb;
   border-radius: 25px;
@@ -54,7 +53,8 @@ input:focus {
 }
 
 #login {
-  width: 100%;
+  margin-top: 20px;
+  width: 90%;
   padding: 10px;
   background-color: rgb(89, 208, 247);
   color: white;
@@ -63,7 +63,6 @@ input:focus {
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.3s ease;
-
 }
 
 #login:hover {
