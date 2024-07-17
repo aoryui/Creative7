@@ -37,6 +37,24 @@ for ($i = 0; $i < count($field); $i++) {
     $params[] = $genre[$i];
 }
 
+// question_idを取得
+$sql = "SELECT question_id FROM questions WHERE " . implode(" OR ", $conditions) . " ORDER BY RAND()";
+
+// パラメータを準備しバインド
+$stmt = $conn->prepare($sql);
+$stmt->bind_param($types, ...$params);
+
+// クエリを実行
+$stmt->execute();
+$result = $stmt->get_result();
+
+// 結果を取得
+$question_ids = [];
+while ($row = $result->fetch_assoc()) {
+    $question_ids[] = $row['question_id'];
+}
+
+// genre_textを取得
 $sql = "SELECT DISTINCT field_id, genre_text FROM questions WHERE " . implode(" OR ", $conditions);
 
 // パラメータを準備しバインド
@@ -61,10 +79,15 @@ while ($row = $result->fetch_assoc()) {
 $stmt->close();
 $conn->close();
 
-// セッションにジャンル名を保存
+// セッションに解く問題とジャンル名を保存し、リザルト表示に不必要セッションを初期化
+$_SESSION['displayed_questions'] = $question_ids; 
 $_SESSION['genre_texts'] = $genre_texts;
+$_SESSION['selected_choice'] = [];
+$_SESSION['current_question_index'] = 0;
+$_SESSION['interval_time'] = [];
 
-// ジャンル名をコンソールに表示
+// 問題とジャンル名をコンソールに表示
+echo '<script>console.log('.json_encode($question_ids).')</script>';
 echo '<script>console.log('.json_encode($genre_texts).')</script>';
 ?>
 
