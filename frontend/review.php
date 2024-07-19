@@ -37,7 +37,6 @@ sort($wrong_questions);
 
 echo '<script>console.log('.json_encode($wrong_questions).')</script>';
 
-
 // 正誤判定用の配列を初期化
 $selected_choice = array();
 $correct_answers = [];  // 各問題の正誤を格納する配列
@@ -86,7 +85,6 @@ foreach ($wrong_questions as $key => $question_id) {
 }
 echo '<script>console.log('.json_encode($correct_choices).')</script>';
 
-
 $_SESSION['displayed_questions'] = $wrong_questions;
 $_SESSION['selected_choice'] = $selected_choice;
 $_SESSION['correct_choices'] = $correct_choices;
@@ -102,42 +100,49 @@ mysqli_close($conn);
 </head>
 <body>
     <div class="border-frame">
-    <h2 class="answer">復習問題</h2>
-    <table border="1" id="table">
-        <tr>
-            <th>分野</th>
-            <th>問題文</th>
-            <th>解説</th>
-            <th>復習</th>
-        </tr>
-        <?php foreach ($wrong_questions as $key=>$question_id): ?>
-            <?php
-                // 問題の詳細を取得
-                $conn = mysqli_connect($host, $username, $password, $database);
-                if (!$conn) {
-                    die('データベースに接続できませんでした: ' . mysqli_connect_error());
-                }
-
-                $query = "SELECT genre_text, sentence FROM questions WHERE question_id = $question_id";
-                $result = mysqli_query($conn, $query);
-                if (!$result) {
-                    die('クエリ実行に失敗しました: ' . mysqli_error($conn));
-                }
-
-                $row = mysqli_fetch_assoc($result);
-                $genre = $row['genre_text'];
-                $sentence = $row['sentence'];
-
-                mysqli_close($conn);
-            ?>
+        <h2 class="answer">復習問題</h2>
+        <table border="1" id="table">
             <tr>
-                <td><?php echo htmlspecialchars($genre, ENT_QUOTES, 'UTF-8'); ?></td>
-                <td id="custom-question"><?php echo htmlspecialchars($sentence, ENT_QUOTES, 'UTF-8'); ?></td>
-                <td id="tri"><a href="kaitoukaisetu.php?question_id=<?php echo $key; ?>">解説リンク</a></td>
-                <td id="tri"><a href="review_questions.php?question_id=<?php echo $question_id; ?>">問題</a></td>
+                <th>分野</th>
+                <th>問題文</th>
+                <th>解説</th>
+                <th>復習</th>
+                <th>削除</th>
             </tr>
-        <?php endforeach; ?>
-    </table>
+            <?php foreach ($wrong_questions as $key=>$question_id): ?>
+                <?php
+                    // 問題の詳細を取得
+                    $conn = mysqli_connect($host, $username, $password, $database);
+                    if (!$conn) {
+                        die('データベースに接続できませんでした: ' . mysqli_connect_error());
+                    }
+
+                    $query = "SELECT genre_text, sentence FROM questions WHERE question_id = $question_id";
+                    $result = mysqli_query($conn, $query);
+                    if (!$result) {
+                        die('クエリ実行に失敗しました: ' . mysqli_error($conn));
+                    }
+
+                    $row = mysqli_fetch_assoc($result);
+                    $genre = $row['genre_text'];
+                    $sentence = $row['sentence'];
+
+                    mysqli_close($conn);
+                ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($genre, ENT_QUOTES, 'UTF-8'); ?></td>
+                    <td id="custom-question"><?php echo htmlspecialchars($sentence, ENT_QUOTES, 'UTF-8'); ?></td>
+                    <td id="tri"><a href="kaitoukaisetu.php?question_id=<?php echo $key; ?>">解説リンク</a></td>
+                    <td id="tri"><a href="review_questions.php?question_id=<?php echo $question_id; ?>">問題</a></td>
+                    <td>
+                        <form method="post" action="../backend/delete_question.php">
+                            <input type="hidden" name="question_id" value="<?php echo $question_id; ?>">
+                            <button type="submit">削除</button>
+                        </form>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
     </div>
 </body>
 </html>

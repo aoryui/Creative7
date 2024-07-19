@@ -2,7 +2,6 @@ set names utf8;
 drop database if exists creative7;
 create database creative7 character set utf8 collate utf8_general_ci;
 
-grant all privileges on creative7.* to Creative7@localhost identified by '11111';
 
 use creative7;
 

@@ -51,7 +51,6 @@ echo '<script>console.log('.json_encode($correct_choice_id).')</script>';
 echo '<script>console.log('.json_encode($displayed_questions_id).')</script>';
 
 if ($selected_choice_id == $correct_choice_id) {
-    $quesid = $form->wrongdelete($userid, $displayed_questions_id);
     $result = 'correct';
 } else {
     $result = 'incorrect';
