@@ -72,6 +72,7 @@ $conn->close();
 
 // 改行を HTML 改行タグに変換
 $question_text = nl2br(htmlspecialchars($question['question_text'], ENT_QUOTES, 'UTF-8'));
+$genre_text = nl2br(htmlspecialchars($question['genre_text'], ENT_QUOTES, 'UTF-8'));
 ?>
 
 <!DOCTYPE html>
@@ -102,6 +103,8 @@ $question_text = nl2br(htmlspecialchars($question['question_text'], ENT_QUOTES, 
                     echo '</div>';
                 }
                 ?>
+                <p><?php echo $genre_text ?></p> <!-- ジャンル名のやつ -->
+                <p><?php echo '問題数'.($current_question_index+1).'/'.count($displayed_questions).'問目'?></p> <!-- 問題数ののやつ -->
             </div>
             <input type="hidden" name="question_id" value="<?php echo $question_id; ?>">
             <input type="hidden" name="time_taken" id="time_taken" value="">

@@ -15,6 +15,9 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+// 出題する問題数を設定
+$max_question = 10;
+
 // 既に表示した question_id を取得
 $displayed_questions = isset($_SESSION['displayed_questions']) ? $_SESSION['displayed_questions'] : [];
 // 選択したchoice_id を取得
@@ -49,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // 既に表示した question_id の数が10つに達したらリセット
-    if (count($displayed_questions) >= 10) {
+    if (count($displayed_questions) >= $max_question) {
         echo '<script>window.location.href = "result.php";</script>';
         exit();
     }
@@ -99,6 +102,7 @@ $conn->close();
 
 // 改行を HTML 改行タグに変換
 $question_text = nl2br(htmlspecialchars($question['question_text'], ENT_QUOTES, 'UTF-8'));
+$genre_text = nl2br(htmlspecialchars($question['genre_text'], ENT_QUOTES, 'UTF-8'));
 
 // セッションに現在のquestion_idを保存
 $_SESSION['displayed_questions'][] = $question_id;
@@ -140,6 +144,8 @@ $interval = $question['interval_num'];
             <input type="hidden" name="time_taken" id="time_taken" value="">
         </form>
     </div>
+    <p><?php echo $genre_text ?></p> <!-- ジャンル名のやつ -->
+    <p><?php echo '問題数'.(count($displayed_questions)+1).'/'.$max_question.'問目'?></p> <!-- 問題数ののやつ -->
     <div class="timer">
         <div class="timer-label">回答時間 <span id="remaining-time"></span></div>
         <div class="timer-container" id="timer-container">
