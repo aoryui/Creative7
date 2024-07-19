@@ -24,7 +24,7 @@ if (isset($_POST['question_id'])) {
         header('Location: ../frontend/review.php');
         exit();
     } else {
-        die('クエリ実行に失敗しました: ' . mysqli_error($conn));
+        die('クエリ実行に失敗しました: ' . mysqli_error($conn));//a
     }
 }
 
