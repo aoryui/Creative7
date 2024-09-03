@@ -1,3 +1,12 @@
+/* スクロールバーを隠す */
+html {
+  overflow: hidden; /* 全体のスクロールバーを隠す */
+}
+
+body {
+  overflow-y: hidden; /* 垂直スクロールバーを隠す */
+}
+
 .login-body {
   background-color: #ffefd5;
   font-family: 'Comic Sans MS', cursive, sans-serif;
@@ -9,7 +18,8 @@
 }
 
 .login-container {
-  height: 500px;
+  height: 475px;
+  width: 400px;
   margin-top: calc(100px + 20px);
   margin-left: auto;
   margin-right: auto;
@@ -26,6 +36,7 @@
 
 .login-ji {
   text-align: center;
+  font-size: 15px;
 }
 
 .form-group {
@@ -55,7 +66,7 @@ input:focus {
 }
 
 #submit {
-  width: 80%;
+  width: 200px;
   padding: 10px;
   background-color: rgb(89, 208, 247);
   color: white;
@@ -64,7 +75,9 @@ input:focus {
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.3s ease;
-
+  position: relative;
+  top: -85px;
+  font-size: 20px;
 }
 
 #submit:hover {
@@ -75,3 +88,59 @@ input:focus {
   width: 150px;
   margin-bottom: 20px;
 }
+
+.h1{
+  font-size: 28px;
+}
+
+#username{
+  position: relative;
+  top: -40px;
+  left: 80px;
+}
+
+#usernames{
+  position: relative;
+  left: -150px;
+  font-size: 20px;
+}
+
+#school{
+  position: relative;
+  top: -60px;
+  left: 80px;
+}
+
+#schools{
+  position: relative;
+  font-size: 20px;
+  left: -150px;
+  top: -20px;
+}
+
+#address{
+  position: relative;
+  top: -80px;
+  left: 80px;
+}
+
+#addresses{
+  position: relative;
+  left: -150px;
+  font-size: 20px;
+  top: -40px;
+}
+
+#password{
+  position: relative;
+  top: -100px;
+  left: 80px;
+}
+
+#passwords{
+  position: relative;
+  left: -150px;
+  font-size: 20px;
+  top: -60px;
+}
+

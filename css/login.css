@@ -17,7 +17,9 @@ html {
   margin-top: 120px;
   margin-bottom: auto;
   background-color: #fff;
-  padding: 50px;
+  padding: 20px;
+  height: 380px;
+  width: 450px;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -25,6 +27,7 @@ html {
 
 .login-ji {
   text-align: center;
+  margin: 0px 20px 5px 10px;
 }
 
 .form-group {
@@ -54,8 +57,8 @@ input:focus {
 }
 
 #login {
-  margin-top: 20px;
-  width: 90%;
+  margin-top: 10px;
+  width: 50%;
   padding: 10px;
   background-color: rgb(89, 208, 247);
   color: white;
@@ -64,7 +67,9 @@ input:focus {
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.3s ease;
+  font-size: 20px;
 }
+
 
 #login:hover {
   background-color: #68B7F0;
