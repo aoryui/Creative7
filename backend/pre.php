@@ -7,7 +7,8 @@ $userid = isset($_SESSION['userid']) ? $_SESSION['userid'] : '';
 $username = isset($_SESSION['userName']) ? $_SESSION['userName'] : '';
 
 if (empty($userid) || empty($username)) {
-    if (isset($_COOKIE['userid']) && isset($_COOKIE['userName'])) {
+    // 修正：isset($_COOKIE['subject']) のチェックが抜けていた
+    if (isset($_COOKIE['userid']) && isset($_COOKIE['userName']) && isset($_COOKIE['subject'])) {
         $userid = $_COOKIE['userid'];
         $username = $_COOKIE['userName'];
     } else {

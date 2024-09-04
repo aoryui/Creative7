@@ -1,7 +1,8 @@
 <?php
 require_once __DIR__ . '/../backend/pre.php';
 $userid = $_SESSION['userid'];
-$username = $_SESSION['userName'];
+$username1 = $_SESSION['userName'];
+$subject = $_SESSION['subject']
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +31,17 @@ $username = $_SESSION['userName'];
                 <li><a href="genre_selection.php">ジャンル選択画面へ</a></li>
                 <li><a href="teststart.php">模擬試験開始画面へ</a></li>
                 <li><a href="review.php">復習ページへ</a></li>
-                <li><a href="../backend/logout.php">ログアウト</a></li>
+                <?php
+                if ($username === "ゲスト") {
+                ?>
+                    <li><a href="login.php">ログイン</a></li>
+                <?php
+                } else {
+                ?>
+                    <li><a href="mypage.php">ログアウト</a></li>
+                <?php
+                }
+                ?>
             </ul>
             </nav>
         <script>

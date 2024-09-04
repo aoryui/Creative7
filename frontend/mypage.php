@@ -1,5 +1,32 @@
 <?php
+session_start(); // セッションを開始
+
 require_once __DIR__ . '/header.php';
+
+$servername = "localhost";
+$username = "Creative7";
+$password = "11111";
+$dbname = "creative7";
+
+
+// データベース接続
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// 接続確認
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$user_sql = "SELECT * FROM userinfo WHERE userid = $userid";
+$user_result = $conn->query($user_sql);
+
+if ($user_result->num_rows > 0) {
+    $user = $user_result->fetch_assoc();
+
+    // subjectを取り出してHTMLで表示
+    $subject = $user['subject'];
+} else {
+}
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -14,14 +41,8 @@ require_once __DIR__ . '/header.php';
         <div class="profile-sidebar">
             <img src="path/to/icon.png" alt="Icon" class="profile-icon">
             <div class="profile-info">
-                <h2>名前</h2>
-                <p>学科：</p>
-                <p>Lv.10</p>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 70%;"></div>
-                </div>
-                <p class="progress-text">700/1000 exp</p>
-                <p>SPI合格するぞ<br>テニスやろうぜ！</p>
+            <label>名前：</label><h2 id="name"><?= htmlspecialchars($username1, ENT_QUOTES, 'UTF-8') ?></h2>
+                <p>学科：</p><h2 id="subject"><?= htmlspecialchars($subject, ENT_QUOTES, 'UTF-8') ?></h2>
                 <button class="edit-profile-btn">プロフィール編集</button>
                 
             </div>
