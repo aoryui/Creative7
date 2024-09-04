@@ -6,6 +6,7 @@ body {
   background-color: #ffefd5;
 }
 
+
 .border-frame{
 max-width: 1000px;
 margin: 20px auto; /* 上に20pxの余白を追加 */
@@ -13,18 +14,27 @@ background: #fff;
 box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 border-radius: 8px;
 width: 900px;
-height: 350px;
+height: 400px;
 background-color: #fff;
 position: absolute;
+text-align: center;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%); /* 上下左右中央に配置 */
 }
 
 .checksAll{
-position: absolute;
-top: 30px;
+position: relative;
+top: 5px;
+left: -50px;
 }
+
+.checksAlls{
+  position: relative;
+top: 5px;
+left: -170px;
+}
+
 
 .contain {
   max-width: 250px;
@@ -35,14 +45,13 @@ top: 30px;
   width: 200px;
   background-color: rgb(244, 242, 242);
   position: absolute;
-  top: 130px;
+  top: 150px;
   left: 150px;
   transform: translate(-50%, -50%);
   padding: 10px; 
   margin-bottom: 10px; 
   border: 1px solid #333333;
 }
-
 
 .contains {
 max-width: 450px;
@@ -51,17 +60,18 @@ padding: 10px;
 background: #fff;
 box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 border-radius: 8px;
-width: 800px;
-height: 165px;
+width: 900px;
+height: 190px;
 background-color: rgb(244, 242, 242);
-position: absolute;
-top: 130px;
+position: relative;
+top: 90px;
 left: 550px;
 transform: translate(-50%, -50%);
 padding: 10px; 
-  margin-bottom: 10px; 
-  border: 1px solid #333333;
+margin-bottom: 10px; 
+border: 1px solid #333333;
 }
+
 
 .language{
 display:block;
@@ -70,16 +80,36 @@ padding: 5px;
 
 }
 
-.non_language{
+.non_language1{
 display:block;
-text-align: right;
+text-align: left;
+position: relative;
+left: 90px;
 padding: 5px;
 }
 
+.non_language2{
+  display:block;
+  text-align: left;
+  position: relative;
+  left: 200px;
+  top: -162px;
+  padding: 5px;
+  }
+
+  .non_language3{
+    display:block;
+    text-align: left;
+    position: relative;
+    left: 320px;
+    top: -300px;
+    padding: 5px;
+    }
+    
+
 .button{
-position: absolute;
-top: 280px;
-left: 700px;
+position: relative;
+left: 300px;
 display: block;
 text-align: center;
 vertical-align: middle;
@@ -99,21 +129,5 @@ color: #27acd9;
 background: #fff;
 }
 
-.one_line{
-display:inline-block;
-position: relative;
-left: 190px
-}
 
-.two_line{
-display:inline-block;
-position: absolute;
-left: 100px
-}
 
-.three_line{
-display:inline-block;
-position: relative;
-left: 210px;
-top: -60px;
-}
