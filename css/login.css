@@ -1,7 +1,7 @@
 .login-body {
   background-color: #ffefd5;
   font-family: 'Comic Sans MS', cursive, sans-serif;
-  color: #ff6b6b;
+  color: rgb(89, 208, 247);
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -18,7 +18,6 @@ html {
   margin-bottom: auto;
   background-color: #fff;
   padding: 20px;
-  height: 380px;
   width: 450px;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -35,24 +34,25 @@ html {
 }
 
 label {
+  color: black;
   display: block;
   margin-bottom: 5px;
 }
 
 input {
   padding: 10px 10px;
-  border: 2px solid #ffc0cb;
-  border-radius: 25px;
+  border: 2px solid rgb(89, 208, 247);
+  border-radius: 10px;
   font-size: 16px;
 }
 
 input::placeholder {
-  color: #ffb6c1;
+  color: rgb(89, 208, 247);
 }
 
 input:focus {
   outline: none;
-  border-color: rgb(89, 208, 247);
+  border-color: rgb(89, 160, 247);
   box-shadow: 0 0 5px rgba(255, 192, 203, 0.5);
 }
 
