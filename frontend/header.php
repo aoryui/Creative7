@@ -38,7 +38,7 @@ $subject = $_SESSION['subject']
                 <?php
                 } else {
                 ?>
-                    <li><a href="mypage.php">ログアウト</a></li>
+                    <li><a href="../backend/logout.php">ログアウト</a></li>
                 <?php
                 }
                 ?>
