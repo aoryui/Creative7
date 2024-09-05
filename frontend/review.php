@@ -135,9 +135,9 @@ mysqli_close($conn);
                     <td id="tri"><a href="kaitoukaisetu.php?question_id=<?php echo $key; ?>">解説リンク</a></td>
                     <td id="tri"><a href="review_questions.php?question_id=<?php echo $question_id; ?>">問題</a></td>
                     <td>
-                        <form method="post" action="../backend/delete_question.php">
+                        <form method="post" action="../backend/delete_question.php" onsubmit="return confirmDelete();">
                             <input type="hidden" name="question_id" value="<?php echo $question_id; ?>">
-                            <button type="submit">削除</button>
+                            <button class="btn btn-danger" id="deleteButton" type="submit">削除</button>
                         </form>
                     </td>
                 </tr>
@@ -145,4 +145,9 @@ mysqli_close($conn);
         </table>
     </div>
 </body>
+<script>
+    function confirmDelete() {
+        return confirm("本当に削除しますか？");
+    }
+</script>
 </html>
