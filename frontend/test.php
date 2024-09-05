@@ -124,6 +124,8 @@ $interval = $question['interval_num'];
 <body scroll="no">
     <div class="content">
         <div class="question">
+        <p id="question_count"><?php echo $genre_text ?></p> <!-- ジャンル名のやつ -->
+        <p><?php echo '問題数'.(count($displayed_questions)+1).'/'.$max_question.'問目'?></p> <!-- 問題数ののやつ -->
             <p><?php
             // 画像のパスを作成
             $image_path = "../image/問題集/" . $question_text . ".jpg";
@@ -146,8 +148,7 @@ $interval = $question['interval_num'];
             <input type="hidden" name="time_taken" id="time_taken" value="">
         </form>
     </div>
-    <p><?php echo $genre_text ?></p> <!-- ジャンル名のやつ -->
-    <p><?php echo '問題数'.(count($displayed_questions)+1).'/'.$max_question.'問目'?></p> <!-- 問題数ののやつ -->
+    
     <div class="timer">
         <div class="timer-label">回答時間 <span id="remaining-time"></span></div>
         <div class="timer-container" id="timer-container">
