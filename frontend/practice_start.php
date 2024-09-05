@@ -94,7 +94,7 @@ echo '<script>console.log('.json_encode($genre_texts).')</script>';
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <link rel="stylesheet" href="../css/practicestart.css">
+    <link rel="stylesheet" href="../css/practice_start.css">
 </head>
 <body>
     <main>
@@ -103,31 +103,49 @@ echo '<script>console.log('.json_encode($genre_texts).')</script>';
                 <div class="content">
                     <p>選択されたジャンルから問題がランダムに表示されます。</p>
                     <div class="genre">
-                        <div class="genre_lang">
-                            <p>言語</p>
-                            <?php
-                            if (empty($_SESSION['genre_texts']['field_1'])) {
-                                echo "<li>なし</li>";
-                            } else {
-                                foreach ($_SESSION['genre_texts']['field_1'] as $genre_text) {
-                                    echo "<li>{$genre_text}</li>";
-                                }
-                            }
-                            ?>
-                        </div>
-                        <div class="genre_non_lang">
-                            <p>非言語</p>
-                            <?php
-                            if (empty($_SESSION['genre_texts']['field_2'])) {
-                                echo "<li>なし</li>";
-                            } else {
-                                foreach ($_SESSION['genre_texts']['field_2'] as $genre_text) {
-                                    echo "<li>{$genre_text}</li>";
-                                }
-                            }
-                            ?>
-                        </div>
-                    </div>
+    <div class="genre_lang">
+    <div class="p1">
+        <p>言語</p>
+    </div>
+        <?php
+        if (empty($_SESSION['genre_texts']['field_1'])) {
+            echo "<li>なし</li>";
+        } else {
+            $count = 0; // カウンターを初期化
+            echo '<div class="genre-row">'; // 最初の行を開始
+            foreach ($_SESSION['genre_texts']['field_1'] as $genre_text) {
+                echo "<li>{$genre_text}</li>";
+                $count++;
+                if ($count % 2 == 0) { // 4つごとに新しい行を開始
+                    echo '</div><div class="genre-row">';
+                }
+            }
+            echo '</div>'; // 最後の行を閉じる
+        }
+        ?>
+    </div>
+    <div class="genre_non_lang">
+        <div class="p2">
+        <p>非言語</p>
+    </div>   
+       <?php
+        if (empty($_SESSION['genre_texts']['field_2'])) {
+            echo "<li>なし</li>";
+        } else {
+            $count = 0; // カウンターを初期化
+            echo '<div class="genre-row">'; // 最初の行を開始
+            foreach ($_SESSION['genre_texts']['field_2'] as $genre_text) {
+                echo "<li>{$genre_text}</li>";
+                $count++;
+                if ($count % 3 == 0) { // 4つごとに新しい行を開始
+                    echo '</div><div class="genre-row">';
+                }
+            }
+            echo '</div>'; // 最後の行を閉じる
+        }
+        ?>
+    </div>
+</div>
                 </div>
                 <div class="button-container">
                     <input type="button" onclick="location.href='practice.php'" value="練習問題を開始する">

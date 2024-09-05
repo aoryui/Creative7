@@ -14,7 +14,9 @@ require_once __DIR__ . '/header.php'; //ヘッダー指定
 
 <body>
     <div class="border-frame">
+        <div class="h2">
         <h2>ジャンルを選択してください</h2>
+        </div>
     <form method="post" action="../backend/genre.php">
     <!-- 言語系 -->
     <div class="contain">

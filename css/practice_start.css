@@ -3,11 +3,11 @@ body {
 }
 
 .container {
-    margin-top: calc(100px + 70px);
+    margin-top: calc(100px + 20px);
     margin-left: auto;
     margin-right: auto;
     margin-bottom: auto;
-    border: 2px solid black;
+    border: 2px solid #000000;
     padding: 20px;
     height: 400px;
     box-sizing: border-box;
@@ -22,19 +22,41 @@ body {
     text-align: center;
 }
 
-.genre{
+.genre {
     display: flex;
     list-style: none;
+    gap: 10px; /* 各ジャンルリスト間の隙間を追加 */
 }
+
 .genre_lang{
     width: 50%;
+position: relative;
+left: 60px;
 }
+
 .genre_non_lang{
     width: 50%;
 }
 
+.genre-row {
+    display: flex;
+    gap: 0px; /* 各ジャンルアイテム間の隙間を追加 */
+    flex-wrap: wrap; /* ジャンルアイテムを折り返す */
+}
+
+.genre-row li {
+    width: 30%; /* 4つ並べるための幅調整 */
+    list-style: none; /* リストのデフォルトのマーカーを非表示 */
+    text-align: center; /* テキストを中央に配置 */
+    padding: 3px;
+    position: relative;
+    left: 35px;
+}
 .button-container {
-    text-align: center;
+   
+    position: absolute;
+    top: 20px;
+    left: 30px;
 }
 
 .button-container input[type="button"] {
@@ -74,4 +96,18 @@ img:active {
 .menu-container {
     display: flex;
     align-items: center;
+}
+
+.p1{
+    position:relative;
+    left: -50px;
+}
+.p2{
+    position:relative;
+    left: -50px;
+
+}
+.li{position: relative;
+    left: -30px;    
+    
 }

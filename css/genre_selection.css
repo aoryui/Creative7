@@ -1,9 +1,14 @@
 html {
   overflow-y: scroll;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 body {
   background-color: #ffefd5;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  overflow-y: hidden;
 }
 
 
@@ -16,11 +21,10 @@ border-radius: 8px;
 width: 900px;
 height: 400px;
 background-color: #fff;
-position: absolute;
+position: relative;
 text-align: center;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%); /* 上下左右中央に配置 */
+top: 60px;
+
 }
 
 .checksAll{
@@ -64,7 +68,7 @@ width: 900px;
 height: 190px;
 background-color: rgb(244, 242, 242);
 position: relative;
-top: 90px;
+top: 113px;
 left: 550px;
 transform: translate(-50%, -50%);
 padding: 10px; 
@@ -110,6 +114,7 @@ padding: 5px;
 .button{
 position: relative;
 left: 300px;
+top: 20px;
 display: block;
 text-align: center;
 vertical-align: middle;
@@ -129,5 +134,8 @@ color: #27acd9;
 background: #fff;
 }
 
-
+.h2{
+  position: relative;
+  top: 20px;
+}
 
