@@ -127,9 +127,8 @@ color: #fff;
 border-radius: 100vh;
 transition: 0.5s;
 }
-a.button:hover {
-color: #27acd9;
-background: #fff;
+.button:hover {
+  cursor: pointer;
 }
 
 .h2{
