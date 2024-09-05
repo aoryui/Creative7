@@ -6,9 +6,7 @@ html {
 
 body {
   background-color: #ffefd5;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  overflow-y: hidden;
+ 
 }
 
 
@@ -23,7 +21,7 @@ height: 400px;
 background-color: #fff;
 position: relative;
 text-align: center;
-top: 60px;
+top: 100px;
 
 }
 
