@@ -25,6 +25,9 @@ if ($user_result->num_rows > 0) {
 
     // subjectを取り出してHTMLで表示
     $subject = $user['subject'];
+    $correct_rate = $user['correct_rate'];
+    $average_time = $user['average_time'];
+    $total_questions = $user['total_questions'];
 } else {
 }
 ?>
@@ -53,9 +56,9 @@ if ($user_result->num_rows > 0) {
                 <h3>学習進捗</h3>
                 <div class="progress-item">
                     <h4>言語 非言語</h4>
-                    <p>正答率：</p>
-                    <p>平均回答時間：</p>
-                    <p>学習問題数：</p>
+                    <p>平均正答率：<?= htmlspecialchars($correct_rate, ENT_QUOTES, 'UTF-8') ?>%</p>
+                    <p>平均回答時間：<?= htmlspecialchars($average_time, ENT_QUOTES, 'UTF-8') ?>秒</p>
+                    <p>学習問題数：<?= htmlspecialchars($total_questions, ENT_QUOTES, 'UTF-8') ?>問</p>
                 </div>
             </div>
             <div class="growth-record">
