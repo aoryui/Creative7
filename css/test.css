@@ -18,14 +18,15 @@ body {
     padding: 20px;
     flex-grow: 1;
     box-sizing: border-box;
-    position: relative; /* コンテナの相対位置を指定 */
+    position: relative;
+    /* コンテナの相対位置を指定 */
 }
 
-.footer{
+.footer {
     bottom: auto;
 }
 
-#timer-container{
+#timer-container {
     bottom: 100px;
 }
 
@@ -43,14 +44,15 @@ body {
     margin-left: 310px;
 }
 
-.question_img{
+.question_img {
     width: 500px;
     position: absolute;
-    top: 200px; left: 180px;
+    top: 200px;
+    left: 180px;
 }
 
 .question p {
-    margin-right: 390px;
+    left: 300px;
 }
 
 .choices {
@@ -86,20 +88,28 @@ body {
 }
 
 .timer-label {
-    position: absolute; /* 絶対位置に変更 */
-    top: 120px; /* 調整が必要なら変更 */
-    right: 440px; /* 調整が必要なら変更 */
+    position: absolute;
+    /* 絶対位置に変更 */
+    top: 120px;
+    /* 調整が必要なら変更 */
+    right: 300px;
+    /* 調整が必要なら変更 */
 }
+
 .timer-container {
     width: 50%;
     height: 20px;
     margin-top: 20px;
-    position: absolute; /* 絶対位置に変更 */
-    top: 100px; /* 調整が必要なら変更 */
-    left: 20px; /* 調整が必要なら変更 */
+    position: absolute;
+    /* 絶対位置に変更 */
+    top: 100px;
+    /* 調整が必要なら変更 */
+    left: 180px;
+    /* 調整が必要なら変更 */
     border: 1px solid #aaa;
     transition: background-color 0.1s linear;
 }
+
 .timer-bar {
     width: 0;
     height: 100%;
@@ -117,7 +127,8 @@ body {
     text-decoration: none;
     border-radius: 5px;
     position: absolute;
-    bottom: 10px; /* ボタンの位置を調整 */
+    bottom: 10px;
+    /* ボタンの位置を調整 */
     right: 15px;
 }
 
@@ -127,4 +138,8 @@ body {
 
 #next-button {
     margin: 10px 50px 10px 50px;
+}
+
+#question_count {
+    margin-top: 100px;
 }

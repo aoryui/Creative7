@@ -2,7 +2,7 @@
 require_once __DIR__ . '/../backend/pre.php';
 $userid = $_SESSION['userid'];
 $username1 = $_SESSION['userName'];
-$subject = $_SESSION['subject']
+$subject = $_SESSION['subject'];
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +27,17 @@ $subject = $_SESSION['subject']
         <h1 id="free-h1">SPIタイサくん</h1>
         <nav id="menuContent">
             <ul>
-                <li><a href="mypage.php">マイページへ</a></li>
+                <?php
+                if ($username === "ゲスト") {
+                ?>
+                    <li><a href="login.php">マイページへ</a></li>
+                <?php
+                } else {
+                ?>
+                    <li><a href="mypage.php">マイページへ</a></li>
+                <?php
+                }
+                ?>
                 <li><a href="genre_selection.php">ジャンル選択画面へ</a></li>
                 <li><a href="teststart.php">模擬試験開始画面へ</a></li>
                 <li><a href="review.php">復習ページへ</a></li>

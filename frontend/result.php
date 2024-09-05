@@ -96,13 +96,16 @@ foreach ($displayed_questions as $key => $question_id) {
 // 制限時間があるか判定
 $interval_time_empty = empty($interval_time);
 
-// 間違えた問題を取得
-$incorrect_questions = array_keys(array_filter($correct_answers, function($value) {return $value === false;}));
-sort($incorrect_questions); // 問題番号を昇順にソート
-echo '<script>console.log('.json_encode($incorrect_questions).')</script>';
+$getUser = $form->getUser($userid); // ユーザーが存在するか確認
+if($getUser === true){ // ログインしている時のみ間違えた問題を保存
+    // 間違えた問題を取得
+    $incorrect_questions = array_keys(array_filter($correct_answers, function($value) {return $value === false;}));
+    sort($incorrect_questions); // 問題番号を昇順にソート
+    echo '<script>console.log('.json_encode($incorrect_questions).')</script>';
 
-foreach ($incorrect_questions as $index => $question_id) {
-    $quesid = $form->insert($userid, $incorrect_questions[$index]);
+    foreach ($incorrect_questions as $index => $question_id) {
+        $quesid = $form->insert($userid, $incorrect_questions[$index]);
+    }
 }
 
 // 正解と選択肢のセッション保存
@@ -116,7 +119,6 @@ if (!$interval_time_empty) { // 制限時間がない場合は計算しない
 }
 $correct_rate = ($correct_count / $total_questions) * 100; // 正答率を計算
 
-$getUser = $form->getUser($userid); // ユーザーが存在するか確認
 // データベースに正答率、平均回答時間、学習問題数を保存
 if ($test_display === 'test' && $getUser === true){ // ログイン状態で模擬試験の時だけ学習記録を更新
     $result = $form->getStatus($userid);    // 学習記録を取得

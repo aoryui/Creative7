@@ -88,6 +88,8 @@ $genre_text = nl2br(htmlspecialchars($question['genre_text'], ENT_QUOTES, 'UTF-8
 <body scroll="no">
     <div class="content">
         <div class="question">
+        <p id="question_count"><?php echo $genre_text ?></p> <!-- ジャンル名のやつ -->
+        <p><?php echo '問題数'.($current_question_index+1).'/'.count($displayed_questions).'問目'?></p> <!-- 問題数ののやつ -->
             <p><?php
             // 画像のパスを作成
             $image_path = "../image/問題集/" . $question_text . ".jpg";
@@ -105,8 +107,7 @@ $genre_text = nl2br(htmlspecialchars($question['genre_text'], ENT_QUOTES, 'UTF-8
                     echo '</div>';
                 }
                 ?>
-                <p><?php echo $genre_text ?></p> <!-- ジャンル名のやつ -->
-                <p><?php echo '問題数'.($current_question_index+1).'/'.count($displayed_questions).'問目'?></p> <!-- 問題数ののやつ -->
+                
             </div>
             <input type="hidden" name="question_id" value="<?php echo $question_id; ?>">
             <input type="hidden" name="time_taken" id="time_taken" value="">
