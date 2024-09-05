@@ -2,7 +2,7 @@
 require_once __DIR__ . '/../backend/pre.php';
 $userid = $_SESSION['userid'];
 $username1 = $_SESSION['userName'];
-$subject = $_SESSION['subject']
+$subject = $_SESSION['subject'];
 ?>
 
 <!DOCTYPE html>
