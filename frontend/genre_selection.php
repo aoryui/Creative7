@@ -17,7 +17,7 @@ require_once __DIR__ . '/header.php'; //ヘッダー指定
         <div class="h2">
         <h2>ジャンルを選択してください</h2>
         </div>
-    <form method="post" action="../backend/genre.php">
+    <form method="post" action="../backend/genre.php"  onsubmit="return validateForm()">
     <!-- 言語系 -->
     <div class="contain">
         <label class="checksAll">
@@ -131,5 +131,17 @@ for (let checkbox of nonLanguageCheckboxes) {
             checkAllNonLanguage.checked = true;
         }
     });
+}
+
+// フォーム送信時にチェックボックスが選択されているか確認
+function validateForm() {
+    const languageChecked = document.querySelectorAll('.language-checkbox:checked').length > 0;
+    const nonLanguageChecked = document.querySelectorAll('.non-language-checkbox:checked').length > 0;
+
+    if (!languageChecked && !nonLanguageChecked) {
+        alert("ジャンルを選択してください");
+        return false; // フォーム送信を中止
+    }
+    return true; // フォーム送信を許可
 }
 </script>
