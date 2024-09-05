@@ -37,6 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // 全ての問題が表示されたら終了メッセージを表示（例として）
         if ($current_question_index >= count($displayed_questions)) {
+            // 模擬試験か練習問題かを判別させるセッション
+            $_SESSION['test_display'] = 'practice';
             echo '<script>window.location.href = "result.php";</script>';
             exit;
         }
@@ -81,7 +83,7 @@ $genre_text = nl2br(htmlspecialchars($question['genre_text'], ENT_QUOTES, 'UTF-8
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPIタイサくん</title>
-    <link rel="stylesheet" href="../css/test.css">
+    <link rel="stylesheet" href="../css/practice.css">
 </head>
 <body scroll="no">
     <div class="content">

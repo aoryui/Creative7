@@ -53,6 +53,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // 既に表示した question_id の数が10つに達したらリセット
     if (count($displayed_questions) >= $max_question) {
+        // 模擬試験か練習問題かを判別させるセッション
+        $_SESSION['test_display'] = 'test';
         echo '<script>window.location.href = "result.php";</script>';
         exit();
     }

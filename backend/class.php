@@ -22,7 +22,7 @@ class form extends Dbdata
             return 'この' . $email . 'は既に登録されています。';
         }
 
-        $sql = "INSERT INTO userinfo VALUES (NULL, ?, ?, ?, ?)";
+        $sql = "INSERT INTO userinfo (username, subject, email, password) VALUES (?, ?, ?, ?)";
         $this->exec($sql, [$username, $subject, $email, $password]);
 
         $sql = "SELECT userid FROM userinfo WHERE email = ?";
@@ -69,6 +69,29 @@ class form extends Dbdata
         $stmt = $this->query($sql, [$question_id]);
         $result = $stmt->fetch();
         return $result;
+    }
+
+    public function getUser($userId){ // ユーザーが存在するかを取得
+        $sql = "SELECT COUNT(*) FROM userinfo WHERE userid = ?";
+        $stmt = $this->query($sql, [$userId]);
+        $count = $stmt->fetchColumn();
+        // ユーザーが存在すれば true、存在しなければ false を返す
+        return $count > 0;
+    }
+
+    public function getStatus($userid) // データベースの正答率、平均回答時間、学習問題数を取得
+    {
+        $sql = "SELECT correct_rate, average_time, total_questions FROM userinfo WHERE userid = ?";
+        $stmt = $this->query($sql, [$userid]);
+        $result = $stmt->fetch();
+        // 結果を返す（連想配列として）
+        return $result;
+    }
+
+    public function updateStatus($userid, $new_correctRate, $new_averageTime, $new_totalQuestions) // データベースに正答率、平均回答時間、学習問題数を保存
+    {
+        $sql = "UPDATE userinfo SET correct_rate = ?, average_time = ? , total_questions = ? WHERE userid = ?";
+        $this->exec($sql, [$new_correctRate, $new_averageTime, $new_totalQuestions, $userid]);
     }
 
     public function insert($userid, $question_id) // 間違えた問題を保存

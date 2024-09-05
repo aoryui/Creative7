@@ -20,6 +20,9 @@ if (!$conn) {
     die('データベースに接続できませんでした: ' . mysqli_connect_error());
 }
 
+// セッションから開いたページのファイル名を取得
+$test_display = isset($_SESSION['test_display']) ? $_SESSION['test_display'] : [];
+
 // リザルト画面のファイル場所をセッションに保存
 $_SESSION['result_display'] = 'result';
 
@@ -102,9 +105,6 @@ foreach ($incorrect_questions as $index => $question_id) {
     $quesid = $form->insert($userid, $incorrect_questions[$index]);
 }
 
-// データベース接続をクローズ
-mysqli_close($conn);
-
 // 正解と選択肢のセッション保存
 $_SESSION['correct_choices'] = $correct_choices;
 $_SESSION['selected_choice'] = $selected_choice;
@@ -112,13 +112,41 @@ $_SESSION['selected_choice'] = $selected_choice;
 // 平均回答時間を計算
 if (!$interval_time_empty) { // 制限時間がない場合は計算しない
     $average_time = $total_time / $total_questions;
+    $average_time=round($average_time);
 }
 $correct_rate = ($correct_count / $total_questions) * 100; // 正答率を計算
+
+$getUser = $form->getUser($userid); // ユーザーが存在するか確認
+// データベースに正答率、平均回答時間、学習問題数を保存
+if ($test_display === 'test' && $getUser === true){ // ログイン状態で模擬試験の時だけ学習記録を更新
+    $result = $form->getStatus($userid);    // 学習記録を取得
+    $correctRate = $result['correct_rate'];      // 正答率
+    $averageTime = $result['average_time'];      // 平均回答時間
+    $totalQuestions = $result['total_questions']; // 学習問題数
+
+    // 回答率の計算
+    $correct_rate_num = $correct_rate / 100; // %を小数に変換
+    $correctRate_num = $correctRate / 100;
+    // 正答率を計算
+    $new_correctRate = (($correctRate_num*$totalQuestions + $correct_rate_num*$total_questions) / ($totalQuestions+$total_questions))*100;
+    $new_correctRate = round($new_correctRate); // 四捨五入
+
+    // 回答時間の計算
+    $new_averageTime = ($average_time*$total_questions + $averageTime*$totalQuestions) / ($total_questions+$totalQuestions);
+    $new_averageTime = round($new_averageTime); // 四捨五入
+
+    // 問題数の合計を計算
+    $new_totalQuestions = $totalQuestions+$total_questions;
+    // ここにclass.phpのupdateStatusを実行するコード
+    $form->updateStatus($userid, $new_correctRate, $new_averageTime, $new_totalQuestions);
+}
 
 // ログ表示
 echo '<script>console.log('.json_encode($displayed_questions).')</script>';
 echo '<script>console.log('.json_encode($selected_choice).')</script>';
 echo '<script>console.log('.json_encode($correct_choices).')</script>';
+// データベース接続をクローズ
+mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
@@ -141,7 +169,7 @@ echo '<script>console.log('.json_encode($correct_choices).')</script>';
         <h2 class="answer">試験回別レポート</h2>
 
         <?php if (!$interval_time_empty): ?> <!-- 制限時間がない場合は実行しない -->
-            <h2 class="average-time">平均回答時間: <?php echo intval($average_time); ?>秒</h2>
+            <h2 class="average-time">平均回答時間: <?php echo $average_time; ?>秒</h2>
         <?php endif; ?>
         <h2 class="correct-rate">正答率: <?php echo round($correct_rate, 2); ?>%</h2>
 
