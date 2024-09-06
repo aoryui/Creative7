@@ -71,6 +71,7 @@ $kaisetu = $form->getQues($question_num);
 
 // 復習ページから表示した場合は自分の回答を非表示にする
 $display_user_choice = !($before_display === 'review' && $user_choice_text === '無回答');
+$_SESSION['test_display'] = ''; //test_displayを初期化
 
 ?>
 

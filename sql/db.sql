@@ -15,7 +15,15 @@ CREATE TABLE userinfo (
     password  varchar(100) NOT NULL,
     correct_rate INT NOT NULL DEFAULT 0, -- 正答率 (初期値0)
     average_time INT NOT NULL DEFAULT 0, -- 平均回答時間
-    total_questions INT NOT NULL DEFAULT 0 -- 問題数
+    total_questions INT NOT NULL DEFAULT 0, -- 問題数
+    -- 言語
+    correct_rate_lang INT NOT NULL DEFAULT 0, -- 正答率 (初期値0)
+    average_time_lang INT NOT NULL DEFAULT 0, -- 平均回答時間
+    total_questions_lang INT NOT NULL DEFAULT 0, -- 問題数
+    -- 非言語
+    correct_rate_nonlang INT NOT NULL DEFAULT 0, -- 正答率 (初期値0)
+    average_time_nonlang INT NOT NULL DEFAULT 0, -- 平均回答時間
+    total_questions_nonlang INT NOT NULL DEFAULT 0 -- 問題数
 );
 
 

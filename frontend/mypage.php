@@ -28,6 +28,12 @@ if ($user_result->num_rows > 0) {
     $correct_rate = $user['correct_rate'];
     $average_time = $user['average_time'];
     $total_questions = $user['total_questions'];
+    $correct_rate_lang = $user['correct_rate_lang'];
+    $average_time_lang = $user['average_time_lang'];
+    $total_questions_lang = $user['total_questions_lang'];
+    $correct_rate_nonlang = $user['correct_rate_nonlang'];
+    $average_time_nonlang = $user['average_time_nonlang'];
+    $total_questions_nonlang = $user['total_questions_nonlang'];
 } else {
 }
 ?>
@@ -55,10 +61,18 @@ if ($user_result->num_rows > 0) {
             <div class="learning-progress">
                 <h3>学習進捗</h3>
                 <div class="progress-item">
-                    <h4>言語 非言語</h4>
+                    <h4>総合</h4>
                     <p>平均正答率：<?= htmlspecialchars($correct_rate, ENT_QUOTES, 'UTF-8') ?>%</p>
                     <p>平均回答時間：<?= htmlspecialchars($average_time, ENT_QUOTES, 'UTF-8') ?>秒</p>
                     <p>学習問題数：<?= htmlspecialchars($total_questions, ENT_QUOTES, 'UTF-8') ?>問</p>
+                    <h4>言語</h4>
+                    <p>平均正答率：<?= htmlspecialchars($correct_rate_lang, ENT_QUOTES, 'UTF-8') ?>%</p>
+                    <p>平均回答時間：<?= htmlspecialchars($average_time_lang, ENT_QUOTES, 'UTF-8') ?>秒</p>
+                    <p>学習問題数：<?= htmlspecialchars($total_questions_lang, ENT_QUOTES, 'UTF-8') ?>問</p>
+                    <h4>非言語</h4>
+                    <p>平均正答率：<?= htmlspecialchars($correct_rate_nonlang, ENT_QUOTES, 'UTF-8') ?>%</p>
+                    <p>平均回答時間：<?= htmlspecialchars($average_time_nonlang, ENT_QUOTES, 'UTF-8') ?>秒</p>
+                    <p>学習問題数：<?= htmlspecialchars($total_questions_nonlang, ENT_QUOTES, 'UTF-8') ?>問</p>
                 </div>
             </div>
             <div class="growth-record">

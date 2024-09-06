@@ -22,6 +22,7 @@ $question_id = isset($_GET['question_id']) ? $_GET['question_id'] : null;
 $displayed_questions = isset($_SESSION['displayed_questions']) ? $_SESSION['displayed_questions'] : [];
 $selected_choices = isset($_SESSION['selected_choice']) ? $_SESSION['selected_choice'] : [];
 $correct_choices = isset($_SESSION['correct_choices']) ? $_SESSION['correct_choices'] : [];
+$_SESSION['test_display'] = 'test'; //test_displayを初期化
 
 // リストの番号を取得
 $position = array_search($question_id, $displayed_questions);

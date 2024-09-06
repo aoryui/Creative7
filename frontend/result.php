@@ -37,8 +37,14 @@ $correct_choices = [];  // 各問題の正解選択肢IDを格納する配列
 $questionTexts = []; // 問題のテキストを格納する配列
 
 $total_time = 0; // 合計回答時間
+$total_time_lang = 0;
+$total_time_nonlang = 0;
 $total_questions = count($displayed_questions); // 問題数
+$total_questions_lang = 0;
+$total_questions_nonlang = 0;
 $correct_count = 0; // 正解数
+$correct_count_lang = 0;
+$correct_count_nonlang = 0;
 
 // 各問題の正誤を判定する
 foreach ($displayed_questions as $key => $question_id) {
@@ -91,6 +97,32 @@ foreach ($displayed_questions as $key => $question_id) {
     if (isset($interval_time[$key]) && $interval_time[$key] !== '時間切れ') {
         $total_time += intval($interval_time[$key]);
     }
+
+    // 言語非言語カウント
+    $field_query = "SELECT field_id FROM questions WHERE question_id = $question_id";
+    $field_result = mysqli_query($conn, $field_query);
+    if (!$field_result) {
+        die('クエリ実行に失敗しました: ' . mysqli_error($conn));
+    }
+    $field_row = mysqli_fetch_assoc($field_result);
+    if($field_row['field_id'] === '1'){
+        $total_questions_lang++; // 問題数をカウント
+        if (isset($interval_time[$key]) && $interval_time[$key] !== '時間切れ') {
+            $total_time_lang += intval($interval_time[$key]); // 回答時間をカウント
+        }
+        if ($selected_choice_id == $correct_choice_id) {
+            $correct_count_lang++; // 正解数をカウント
+        }
+    }
+    elseif($field_row['field_id'] === '2'){
+        $total_questions_nonlang++; // 問題数をカウント
+        if (isset($interval_time[$key]) && $interval_time[$key] !== '時間切れ') {
+            $total_time_nonlang += intval($interval_time[$key]); // 回答時間をカウント
+        }
+        if ($selected_choice_id == $correct_choice_id) {
+            $correct_count_nonlang++; // 正解数をカウント
+        }
+    }
 }
 
 // 制限時間があるか判定
@@ -115,9 +147,15 @@ $_SESSION['selected_choice'] = $selected_choice;
 // 平均回答時間を計算
 if (!$interval_time_empty) { // 制限時間がない場合は計算しない
     $average_time = $total_time / $total_questions;
-    $average_time=round($average_time);
+    $average_time = round($average_time);
+    $average_time_lang = $total_time_lang / $total_questions_lang;
+    $average_time_lang = round($average_time_lang);
+    $average_time_nonlang = $total_time_nonlang / $total_questions_nonlang;
+    $average_time_nonlang = round($average_time_nonlang);        
 }
 $correct_rate = ($correct_count / $total_questions) * 100; // 正答率を計算
+$correct_rate_lang = ($correct_count_lang / $total_questions_lang) * 100;
+$correct_rate_nonlang = ($correct_count_nonlang / $total_questions_nonlang) * 100;
 
 // データベースに正答率、平均回答時間、学習問題数を保存
 if ($test_display === 'test' && $getUser === true){ // ログイン状態で模擬試験の時だけ学習記録を更新
@@ -125,22 +163,54 @@ if ($test_display === 'test' && $getUser === true){ // ログイン状態で模�
     $correctRate = $result['correct_rate'];      // 正答率
     $averageTime = $result['average_time'];      // 平均回答時間
     $totalQuestions = $result['total_questions']; // 学習問題数
+    $correctRate_lang = $result['correct_rate_lang'];
+    $averageTime_lang = $result['average_time_lang'];
+    $totalQuestions_lang = $result['total_questions_lang'];
+    $correctRate_nonlang = $result['correct_rate_nonlang'];
+    $averageTime_nonlang = $result['average_time_nonlang'];
+    $totalQuestions_nonlang = $result['total_questions_nonlang'];
 
+    // 全体の結果
     // 回答率の計算
     $correct_rate_num = $correct_rate / 100; // %を小数に変換
     $correctRate_num = $correctRate / 100;
     // 正答率を計算
     $new_correctRate = (($correctRate_num*$totalQuestions + $correct_rate_num*$total_questions) / ($totalQuestions+$total_questions))*100;
     $new_correctRate = round($new_correctRate); // 四捨五入
-
     // 回答時間の計算
     $new_averageTime = ($average_time*$total_questions + $averageTime*$totalQuestions) / ($total_questions+$totalQuestions);
     $new_averageTime = round($new_averageTime); // 四捨五入
-
     // 問題数の合計を計算
     $new_totalQuestions = $totalQuestions+$total_questions;
+
+    // 言語の結果
+    // 回答率の計算
+    $correct_rate_num_lang = $correct_rate_lang / 100; // %を小数に変換
+    $correctRate_num_lang = $correctRate_lang / 100;
+    // 正答率を計算
+    $new_correctRate_lang = (($correctRate_num_lang*$totalQuestions_lang + $correct_rate_num_lang*$total_questions_lang) / ($totalQuestions_lang+$total_questions_lang))*100;
+    $new_correctRate_lang = round($new_correctRate_lang); // 四捨五入
+    // 回答時間の計算
+    $new_averageTime_lang = ($average_time_lang*$total_questions_lang + $averageTime_lang*$totalQuestions_lang) / ($total_questions_lang+$totalQuestions_lang);
+    $new_averageTime_lang = round($new_averageTime_lang); // 四捨五入
+    // 問題数の合計を計算
+    $new_totalQuestions_lang = $totalQuestions_lang+$total_questions_lang;
+    
+    // 非言語の結果
+    // 回答率の計算
+    $correct_rate_num_nonlang = $correct_rate_nonlang / 100; // %を小数に変換
+    $correctRate_num_nonlang = $correctRate_nonlang / 100;
+    // 正答率を計算
+    $new_correctRate_nonlang = (($correctRate_num_nonlang*$totalQuestions_nonlang + $correct_rate_num_nonlang*$total_questions_nonlang) / ($totalQuestions_nonlang+$total_questions_nonlang))*100;
+    $new_correctRate_nonlang = round($new_correctRate_nonlang); // 四捨五入
+    // 回答時間の計算
+    $new_averageTime_nonlang = ($average_time_nonlang*$total_questions_nonlang + $averageTime_nonlang*$totalQuestions_nonlang) / ($total_questions_nonlang+$totalQuestions_nonlang);
+    $new_averageTime_nonlang = round($new_averageTime_nonlang); // 四捨五入
+    // 問題数の合計を計算
+    $new_totalQuestions_nonlang = $totalQuestions_nonlang+$total_questions_nonlang;
+
     // ここにclass.phpのupdateStatusを実行するコード
-    $form->updateStatus($userid, $new_correctRate, $new_averageTime, $new_totalQuestions);
+    $form->updateStatus($userid, $new_correctRate, $new_averageTime, $new_totalQuestions, $new_correctRate_lang, $new_averageTime_lang, $new_totalQuestions_lang, $new_correctRate_nonlang, $new_averageTime_nonlang, $new_totalQuestions_nonlang);
 }
 
 // ログ表示
