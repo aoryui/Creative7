@@ -25,7 +25,7 @@ body {
 .genre {
     display: flex;
     list-style: none;
-    gap: 10px; /* 各ジャンルリスト間の隙間を追加 */
+    gap: 5px; /* 各ジャンルリスト間の隙間を追加 */
 }
 
 .genre_lang{
@@ -35,32 +35,34 @@ left: 60px;
 }
 
 .genre_non_lang{
-    width: 50%;
+    width: 60%;
+    position: relative;
+    left: 8%;
+    list-style: none;
 }
 
 .genre-row {
     display: flex;
-    gap: 0px; /* 各ジャンルアイテム間の隙間を追加 */
-    flex-wrap: wrap; /* ジャンルアイテムを折り返す */
+    gap: 2px; /* 各ジャンルアイテム間の隙間を追加 */
+    flex-wrap: wrap; /* ジャンルアイテムを折り返す */ 
 }
 
 .genre-row li {
     width: 30%; /* 4つ並べるための幅調整 */
-    list-style: none; /* リストのデフォルトのマーカーを非表示 */
-    text-align: center; /* テキストを中央に配置 */
-    padding: 3px;
+    list-style: none; /* リストのデフォルトのマーカーを非表示 */ /* テキストを中央に配置 */
+    padding: 2px;
     position: relative;
-    left: 35px;
+    left: -40px;
 }
 .button-container {
    
-    position: absolute;
-    top: 20px;
-    left: 30px;
+    position: relative;
+    top: 0%;
+    left: 150px;
 }
 
 .button-container input[type="button"] {
-    padding: 30px 20px;
+    padding: 20px 10px;
     font-size: 30px;
     cursor: pointer;
     background-color: rgb(235, 118, 46);
@@ -100,7 +102,7 @@ img:active {
 
 .p1{
     position:relative;
-    left: -50px;
+    left: -60px;
 }
 .p2{
     position:relative;
