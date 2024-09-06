@@ -152,11 +152,10 @@ if (!$interval_time_empty) { // 制限時間がない場合は計算しない
     $average_time_lang = round($average_time_lang);
     $average_time_nonlang = $total_time_nonlang / $total_questions_nonlang;
     $average_time_nonlang = round($average_time_nonlang);        
+    $correct_rate_lang = ($correct_count_lang / $total_questions_lang) * 100;
+    $correct_rate_nonlang = ($correct_count_nonlang / $total_questions_nonlang) * 100;
 }
 $correct_rate = ($correct_count / $total_questions) * 100; // 正答率を計算
-$correct_rate_lang = ($correct_count_lang / $total_questions_lang) * 100;
-$correct_rate_nonlang = ($correct_count_nonlang / $total_questions_nonlang) * 100;
-
 // データベースに正答率、平均回答時間、学習問題数を保存
 if ($test_display === 'test' && $getUser === true){ // ログイン状態で模擬試験の時だけ学習記録を更新
     $result = $form->getStatus($userid);    // 学習記録を取得
