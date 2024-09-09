@@ -848,10 +848,10 @@ INSERT INTO choices (question_id, choice_text) VALUES (112, 'B. 75本');
 INSERT INTO choices (question_id, choice_text) VALUES (112, 'C. 80本');
 INSERT INTO choices (question_id, choice_text) VALUES (112, 'D. 85本');
 
-INSERT INTO choices (question_id, choice_text) VALUES (113, 'A. 30km/時');
-INSERT INTO choices (question_id, choice_text) VALUES (113, 'B. 40km/時');
-INSERT INTO choices (question_id, choice_text) VALUES (113, 'C. 50km/時');
-INSERT INTO choices (question_id, choice_text) VALUES (113, 'D. 60km/時');
+INSERT INTO choices (question_id, choice_text) VALUES (113, 'A. 30km/h');
+INSERT INTO choices (question_id, choice_text) VALUES (113, 'B. 40km/h');
+INSERT INTO choices (question_id, choice_text) VALUES (113, 'C. 50km/h');
+INSERT INTO choices (question_id, choice_text) VALUES (113, 'D. 60km/h');
 
 INSERT INTO choices (question_id, choice_text) VALUES (114, 'A. 6km');
 INSERT INTO choices (question_id, choice_text) VALUES (114, 'B. 10km');
@@ -873,25 +873,25 @@ INSERT INTO choices (question_id, choice_text) VALUES (117, 'B. 2.5時間');
 INSERT INTO choices (question_id, choice_text) VALUES (117, 'C. 3時間');
 INSERT INTO choices (question_id, choice_text) VALUES (117, 'D. 3.5時間');
 
-INSERT INTO choices (question_id, choice_text) VALUES (118, 'A. 15km/時');
-INSERT INTO choices (question_id, choice_text) VALUES (118, 'B. 18km/時');
-INSERT INTO choices (question_id, choice_text) VALUES (118, 'C. 20km/時');
-INSERT INTO choices (question_id, choice_text) VALUES (118, 'D. 24km/時');
+INSERT INTO choices (question_id, choice_text) VALUES (118, 'A. 15km/h');
+INSERT INTO choices (question_id, choice_text) VALUES (118, 'B. 18km/h');
+INSERT INTO choices (question_id, choice_text) VALUES (118, 'C. 20km/h');
+INSERT INTO choices (question_id, choice_text) VALUES (118, 'D. 24km/h');
 
-INSERT INTO choices (question_id, choice_text) VALUES (119, 'A. 3時間');
-INSERT INTO choices (question_id, choice_text) VALUES (119, 'B. 4時間');
-INSERT INTO choices (question_id, choice_text) VALUES (119, 'C. 5時間');
-INSERT INTO choices (question_id, choice_text) VALUES (119, 'D. 6時間');
+INSERT INTO choices (question_id, choice_text) VALUES (119, 'A. 3.5時間');
+INSERT INTO choices (question_id, choice_text) VALUES (119, 'B. 4.5時間');
+INSERT INTO choices (question_id, choice_text) VALUES (119, 'C. 5.5時間');
+INSERT INTO choices (question_id, choice_text) VALUES (119, 'D. 6.5時間');
 
 INSERT INTO choices (question_id, choice_text) VALUES (120, 'A. 7時45分');
 INSERT INTO choices (question_id, choice_text) VALUES (120, 'B. 8時00分');
 INSERT INTO choices (question_id, choice_text) VALUES (120, 'C. 8時15分');
 INSERT INTO choices (question_id, choice_text) VALUES (120, 'D. 8時20分');
 
-INSERT INTO choices (question_id, choice_text) VALUES (121, 'A. 50km/時');
-INSERT INTO choices (question_id, choice_text) VALUES (121, 'B. 60km/時');
-INSERT INTO choices (question_id, choice_text) VALUES (121, 'C. 70km/時');
-INSERT INTO choices (question_id, choice_text) VALUES (121, 'D. 80km/時');
+INSERT INTO choices (question_id, choice_text) VALUES (121, 'A. 44.5km/h');
+INSERT INTO choices (question_id, choice_text) VALUES (121, 'B. 54.5km/h');
+INSERT INTO choices (question_id, choice_text) VALUES (121, 'C. 64.5km/h');
+INSERT INTO choices (question_id, choice_text) VALUES (121, 'D. 74.5km/h');
 
 INSERT INTO choices (question_id, choice_text) VALUES (122, 'A. 30km');
 INSERT INTO choices (question_id, choice_text) VALUES (122, 'B. 35km');
