@@ -93,3 +93,36 @@ body {
     height: auto;
     border-radius: 5px;
 }
+
+#language{
+    position: relative;
+    left: 220px;
+    top: -170px;
+}
+
+.language1{
+    position: relative;
+    left: 300px;
+    top: -170px;
+}
+
+#nonverbal{
+    position: relative;
+    left: 500px;
+    top: -340px;
+}
+
+.nonverbal1{
+    position: relative;
+    left: 550px;
+    top: -340px;
+}
+
+.progress-item{
+    position: relative;
+    
+}
+.sougo1{
+    position: relative;
+    left: 70px;
+}
