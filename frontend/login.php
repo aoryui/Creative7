@@ -19,10 +19,21 @@ if (!empty($message)) {
 <!-- ログインフォーム -->
 <?php
 if (isset($_SESSION['login_error'])) {
-    echo '<p class="message-red">' . $_SESSION['login_error'] . '</p>';
+    $loginError = $_SESSION['login_error'];
+//     echo '<p class="message-red">' . $_SESSION['login_error'] . '</p>';
     unset($_SESSION['login_error']);
 }
 ?>
+
+<script>
+        window.onload = function() {
+            const loginError = "<?php echo $loginError; ?>";
+            if (loginError) {
+                alert(loginError);
+            }
+        };
+    </script>
+
 <form action="../backend/login_db.php" method="post" class="form-group">
     <div class="form-group">
         <label for="username">メールアドレス</label>
