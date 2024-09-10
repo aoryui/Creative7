@@ -49,7 +49,7 @@ if ($user_result->num_rows > 0) {
 <body>
     <div class="profile-container">
         <div class="profile-sidebar">
-            <img src="path/to/icon.png" alt="Icon" class="profile-icon">
+            
             <div class="profile-info">
                 <label>名前：</label><h2 id="name"><?= htmlspecialchars($user['username'], ENT_QUOTES, 'UTF-8') ?></h2>
                 <p>学科：</p><h2 id="subject"><?= htmlspecialchars($subject, ENT_QUOTES, 'UTF-8') ?></h2>
@@ -82,8 +82,6 @@ if ($user_result->num_rows > 0) {
                 </div>
             </div>
             <div class="growth-record">
-                <h3>成長記録</h3>
-                <img src="path/to/chart.png" alt="gakusyu" class="gakusyu">
             </div>
         </div>
     </div>
@@ -92,7 +90,9 @@ if ($user_result->num_rows > 0) {
     <div id="editModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
+            <div class="pro">
             <h2>プロフィール編集</h2>
+            </div>
             <form id="editForm" action="../backend/edit_profile.php" method="POST">
                 <label for="editOption">編集する項目を選択してください:</label>
                 <select id="editOption" name="editOption" required>
@@ -104,7 +104,9 @@ if ($user_result->num_rows > 0) {
                     <label for="newValue">新しい値を入力してください:</label>
                     <input type="text" id="newValue" name="newValue" required>
                 </div>
-                <button type="submit">変更</button>
+                <div class="change-btn">
+                <button class="edit-profile-btn" type="submit">変更</button>
+                </div>
             </form>
         </div>
     </div>
