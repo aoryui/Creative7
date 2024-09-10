@@ -9,6 +9,7 @@
   overflow: hidden;
 }
 
+
 html {
   overflow: hidden;
 }
@@ -26,7 +27,6 @@ html {
 
 .login-ji {
   text-align: center;
-  margin: 0px 20px 5px 10px;
 }
 
 .form-group {
