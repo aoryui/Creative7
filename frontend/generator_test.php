@@ -20,6 +20,7 @@
             margin-top: 20px;
         }
     </style>
+    <link rel="stylesheet" href="../css/generator_test.css">
 </head>
 <body>
 
