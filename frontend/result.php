@@ -209,7 +209,7 @@ if ($test_display === 'test' && $getUser === true){ // ログイン状態で模�
     $new_totalQuestions_nonlang = $totalQuestions_nonlang+$total_questions_nonlang;
 
     // ここにclass.phpのupdateStatusを実行するコード
-    $form->updateStatus($userid, $new_correctRate, $new_averageTime, $new_totalQuestions, $new_correctRate_lang, $new_averageTime_lang, $new_totalQuestions_lang, $new_correctRate_nonlang, $new_averageTime_nonlang, $new_totalQuestions_nonlang);
+    $form->updateStatus($userid, $correct_count, $new_correctRate, $new_averageTime, $new_totalQuestions, $new_correctRate_lang, $new_averageTime_lang, $new_totalQuestions_lang, $new_correctRate_nonlang, $new_averageTime_nonlang, $new_totalQuestions_nonlang);
 }
 
 // ログ表示

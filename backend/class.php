@@ -88,10 +88,10 @@ class form extends Dbdata
         return $result;
     }
 
-    public function updateStatus($userid, $new_correctRate, $new_averageTime, $new_totalQuestions, $new_correctRate_lang, $new_averageTime_lang, $new_totalQuestions_lang, $new_correctRate_nonlang, $new_averageTime_nonlang, $new_totalQuestions_nonlang) // データベースに正答率、平均回答時間、学習問題数を保存
+    public function updateStatus($userid, $exp, $new_correctRate, $new_averageTime, $new_totalQuestions, $new_correctRate_lang, $new_averageTime_lang, $new_totalQuestions_lang, $new_correctRate_nonlang, $new_averageTime_nonlang, $new_totalQuestions_nonlang) // データベースに正答率、平均回答時間、学習問題数を保存
     {
-        $sql = "UPDATE userinfo SET correct_rate = ?, average_time = ?, total_questions = ?, correct_rate_lang = ?, average_time_lang = ?, total_questions_lang  = ?, correct_rate_nonlang = ?, average_time_nonlang = ?, total_questions_nonlang = ? WHERE userid = ?";
-        $this->exec($sql, [$new_correctRate, $new_averageTime, $new_totalQuestions, $new_correctRate_lang, $new_averageTime_lang, $new_totalQuestions_lang, $new_correctRate_nonlang, $new_averageTime_nonlang, $new_totalQuestions_nonlang, $userid]);
+        $sql = "UPDATE userinfo SET exp = exp + ?, correct_rate = ?, average_time = ?, total_questions = ?, correct_rate_lang = ?, average_time_lang = ?, total_questions_lang  = ?, correct_rate_nonlang = ?, average_time_nonlang = ?, total_questions_nonlang = ? WHERE userid = ?";
+        $this->exec($sql, [$exp, $new_correctRate, $new_averageTime, $new_totalQuestions, $new_correctRate_lang, $new_averageTime_lang, $new_totalQuestions_lang, $new_correctRate_nonlang, $new_averageTime_nonlang, $new_totalQuestions_nonlang, $userid]);
     }
 
     public function insert($userid, $question_id) // 間違えた問題を保存
