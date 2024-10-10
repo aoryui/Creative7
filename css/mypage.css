@@ -223,7 +223,7 @@ body {
     overflow: hidden;
   }
   
-  /* スキルバー本体 */
+  /* レベルバー本体 */
   .level-bar {
     position:relative;
     top: 0;
