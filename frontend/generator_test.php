@@ -20,7 +20,6 @@
             margin-top: 20px;
         }
     </style>
-    <link rel="stylesheet" href="../css/generator_test.css">
 </head>
 <body>
 
@@ -47,7 +46,7 @@
 
             // フォントの設定
             const fontSize = 40;
-            const fontFamily = "Meiryo, sans-serif";
+            const fontFamily = '"Yu Mincho", "游明朝", serif';
             ctx.font = `${fontSize}px ${fontFamily}`;
             ctx.fillStyle = "#000000";
 
@@ -55,11 +54,11 @@
             const lineSpacing = fontSize * 1.08;
 
             let yOffset = 100; // 上部のマージン
-            const xOffset = 90; // 左側のマージン
+            const xOffset = 50; // 左側のマージン（固定値）
 
             // 各行をキャンバスに描画
             lines.forEach(line => {
-                ctx.fillText(line, xOffset, yOffset);
+                ctx.fillText(line, xOffset, yOffset); // 左寄せ
                 yOffset += lineSpacing;
             });
 
