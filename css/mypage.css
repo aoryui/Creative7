@@ -198,3 +198,41 @@ body {
     position: relative;
     text-align: center;
 }
+
+/* スキルの情報 */
+.level-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  
+  /* レベルの熟練度（パーセンテージ） */
+  .level-percentage {
+    opacity: 0; /* 初期状態では透明に */
+    transition: opacity 0.6s;
+  }
+  
+  /* レベルバーの親要素 */
+  .level-bar-container {
+    position: relative;
+    width: 100%;
+    height: 15px; /* スキルバーの高さ */
+    background-color: #f3f3f3; /* スキルバーの背景色 */
+    overflow: hidden;
+  }
+  
+  /* スキルバー本体 */
+  .level-bar {
+    position:relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0; /* 初期状態では0 */
+    background-color: #34e8d7; /* スキルバーの色 */
+    transition: width 3s cubic-bezier(0.22, 1, 0.36, 1); /* スキルバーが伸びる速度を調整 */
+  }
+
+
+

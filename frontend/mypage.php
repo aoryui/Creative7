@@ -53,6 +53,14 @@ if ($user_result->num_rows > 0) {
             <div class="profile-info">
                 <label>名前：</label><h2 id="name"><?= htmlspecialchars($user['username'], ENT_QUOTES, 'UTF-8') ?></h2>
                 <p>学科：</p><h2 id="subject"><?= htmlspecialchars($subject, ENT_QUOTES, 'UTF-8') ?></h2>
+                <div class="level" data-proficiency="100"><!-- レベル全体を囲う要素。熟練度を0~100の間で記入 -->
+                 <div class="level-info">
+                 <p class="level-name">Lv.</p><!-- レベル -->
+                </div>
+                <div class="level-bar-container"><!-- レベルバーの親要素 -->
+                <div class="level-bar"></div><!-- レベルバー本体 -->
+                </div>
+                </div>
                 <button class="edit-profile-btn" onclick="openEditModal()">プロフィール編集</button>
             </div>
         </div>
@@ -131,6 +139,7 @@ if ($user_result->num_rows > 0) {
                 closeEditModal();
             }
         }
+        
     </script>
 </body>
 </html>
