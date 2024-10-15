@@ -8,53 +8,11 @@ require_once __DIR__ . '/header.php'; //ヘッダー指定
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>テキストから画像へ</title>
-    <style>
-        body {
-            font-family: 'Meiryo', sans-serif;
-            margin: 0;
-            background-color: #ffefd5;
-        }
-        h1 {
-            text-align: center;
-        }
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            gap: 30px;
-            padding-top: 100px; /* ヘッダーの下にスペースを確保する */
-        }
-        .text-area, .canvas-area {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        textarea, canvas {
-            width: 591px;
-            height: 354px;
-            padding: 10px;
-            box-sizing: border-box;
-            border: 1px solid black;
-            background-color: #ffff;
-        }
-        textarea {
-            font-size: 14px;
-            resize: none;
-        }
-        button {
-            margin-top: 10px;
-            padding: 10px 20px;
-            font-size: 16px;
-        }
-        a {
-            margin-top: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/generator_test.css">
 </head>
 <body>
 
-<h1>作成したい解説文を入力してください</h1>
+<h1 id="bun">作成したい解説文を入力してください</h1>
 
     <div class="container">
         <!-- 左側: テキスト入力エリア -->

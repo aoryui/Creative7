@@ -8,11 +8,11 @@ header {
     height: 100px;
     width: 100%;
     position: relative;
-    overflow-x: hidden;
     position: fixed;
     position: -webkit-sticky;
     top: 0;
     z-index: 999;
+    overflow: visible;
 }
 
 
