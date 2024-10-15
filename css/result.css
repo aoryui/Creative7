@@ -166,20 +166,35 @@ table {
 
 /* レベルバー全体のスタイル */
 .level-bar-container {
-    width: 300px; /* レベルバーの幅 */
-    height: 20px; /* レベルバーの高さ */
-    background-color: #ddd; /* バックグラウンドの色 */
-    overflow: hidden; /* バーの外側に溢れないようにする */
-    border: 1.5px solid #333; /* バーに境界線を追加 */
+    /* width: 300px; /* レベルバーの幅 
+    height: 20px; /* レベルバーの高さ 
+    background-color: #ddd; /* バックグラウンドの色 
+    overflow: hidden; /* バーの外側に溢れないようにする 
+    border: 1.5px solid #333; /* バーに境界線を追加 
     margin: 20px 0; /* 上下に余白 */
+    display: flex;
+    justify-items: center;
+    width: 300px; /* 全幅 */
+    overflow: hidden; /* バーの外側に溢れないようにする */
+    background-color: #ffffff; /* バーの背景色 */
+    border: 1.5px solid #333;
+    position: relative; /* 中の要素を絶対配置できるようにする */
+    height: 30px; /* 高さ */
+    margin: 10px 0; /* 上下マージン */
+    align-items: center; /* 縦方向の中央揃え */
+    
 }
 
 /* 実際のレベルバー（経験値の増減を示す部分） */
 .level-bar {
-    height: 100%; /* 親要素の高さに合わせる */
-    width: 0; /* デフォルトの幅は0（経験値0） */
-    background-color: #0070f7; /* レベルバーの色 */
-    transition: width 0.5s ease; /* アニメーションで滑らかに変化 */
+    /* height: 100%; /* 親要素の高さに合わせる 
+    width: 0; /* デフォルトの幅は0（経験値0） 
+    background-color: #0070f7; /* レベルバーの色 
+    transition: width 0.5s ease; アニメーションで滑らかに変化 */
+    height: 100%; /* 高さを親要素に合わせる */
+    background-color: #0070f7; /* 進行状況の色 */
+    transition: width 0.5s ease; /*アニメーションで滑らかに変化 */
+
 }
 
 /* レベルバーの数値（表示用） */
