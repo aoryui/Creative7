@@ -11,7 +11,6 @@ require_once __DIR__ . '/header.php'; //ヘッダー指定
     <style>
         body {
             font-family: 'Meiryo', sans-serif;
-            padding: 20px;
             margin: 0;
             background-color: #ffefd5;
         }
