@@ -5,6 +5,7 @@ $form = new form();
 require_once __DIR__ . '/../backend/pre.php';
 if (isset($_SESSION['userid'])) {
     $userid = $_SESSION['userid'];
+    $username1 = $_SESSION['userName'];
 }
 
 // データベースに接続するための情報
@@ -29,6 +30,7 @@ $_SESSION['result_display'] = 'result';
 $displayed_questions = isset($_SESSION['displayed_questions']) ? $_SESSION['displayed_questions'] : [];
 $selected_choice = isset($_SESSION['selected_choice']) ? $_SESSION['selected_choice'] : [];
 $interval_time = isset($_SESSION['interval_time']) ? $_SESSION['interval_time'] : [];
+$already_saved = isset($_SESSION['already_saved']) ? $_SESSION['already_saved'] : [];
 
 // 正誤判定用の配列を初期化
 $correct_answers = [];  // 各問題の正誤を格納する配列
@@ -157,10 +159,11 @@ if (!$interval_time_empty) { // 制限時間がない場合は計算しない
 }
 $correct_rate = ($correct_count / $total_questions) * 100; // 正答率を計算
 // データベースに正答率、平均回答時間、学習問題数を保存
-if ($test_display === 'test' && $getUser === true){ // ログイン状態で模擬試験の時だけ学習記録を更新
-    $result = $form->getStatus($userid);    // 学習記録を取得
-    $exp = $result['exp']; // 経験値
-    $maxExp = 1000;
+$result = $form->getStatus($userid);    // 学習記録を取得
+$exp = $result['exp']; // 経験値
+$maxExp = 10;
+
+if ( $test_display === 'test' && $getUser === true){ // result初表示、ログイン状態、模擬試験、の時だけDBに保存
     $correctRate = $result['correct_rate'];      // 正答率
     $averageTime = $result['average_time'];      // 平均回答時間
     $totalQuestions = $result['total_questions']; // 学習問題数
@@ -212,6 +215,18 @@ if ($test_display === 'test' && $getUser === true){ // ログイン状態で模�
 
     // ここにclass.phpのupdateStatusを実行するコード
     $form->updateStatus($userid, $correct_count, $new_correctRate, $new_averageTime, $new_totalQuestions, $new_correctRate_lang, $new_averageTime_lang, $new_totalQuestions_lang, $new_correctRate_nonlang, $new_averageTime_nonlang, $new_totalQuestions_nonlang);
+    $_SESSION['already_saved'] = true; // DBに保存したことをセッションに保存
+    $exp = $exp + $correct_count; // 経験値表示のズレを修正
+}
+// レベルの計算
+$level = floor($exp / $maxExp) + 1;
+// 経験値が最大経験値に到達またはそれを超えた場合の処理
+if ($exp >= $maxExp) {
+    // レベルアップ時に余剰経験値を計算し、$expをリセット
+    $exp = $exp % $maxExp; 
+    // データベースのexpフィールドを更新
+    $update_sql = "UPDATE userinfo SET exp = $exp WHERE userid = $userid";
+    $conn->query($update_sql);
 }
 
 // ログ表示
@@ -239,9 +254,18 @@ mysqli_close($conn);
 </head>
 <body>
     <div class="border-frame">
-        <?php if (!$interval_time_empty): ?> <!-- 制限時間がない場合は実行しない -->
-            <div>経験値<?php echo $exp ,"/", $maxExp, ":", $correct_count, "exp獲得！" ?> </div>
-
+        <?php if (!$interval_time_empty): // 制限時間がない場合は実行しない -->
+            if ($username1 !== "ゲスト") { // ゲストアカウントは経験値表示しない
+        ?>
+            <div><?php echo "レベル", $level?></div>
+            <div class="level-bar-container">
+                <div class="level-bar"></div>
+            </div>
+            <div><?php echo "exp", $exp ,"/", $maxExp?></div>
+            <div><?php echo $correct_count,"exp獲得！" ?> </div>
+        <?php
+            }
+        ?>
             <h2 class="average-time">平均回答時間: <?php echo $average_time; ?>秒</h2>
         <?php endif; ?>
         <h2 class="correct-rate">正答率: <?php echo round($correct_rate, 2); ?>%</h2>
@@ -273,5 +297,22 @@ mysqli_close($conn);
             <?php endforeach; ?>
         </table>
     </div>
+    <script>
+        // PHPから取得した経験値をJSに渡す
+        const currentExp = <?= $exp ?>; // 経験値
+        const maxExp = <?= $maxExp ?>; // 最大経験値
+
+        // レベルバーを更新する関数
+        function updateLevelBar(exp, maxExp) {
+            const levelBar = document.querySelector('.level-bar');
+            const percentage = (exp / maxExp) * 100;
+            levelBar.style.width = percentage + '%'; // 経験値に応じてバーの幅を調整
+        }
+
+        // ページ読み込み時に経験値バーを更新
+        window.onload = function() {
+            updateLevelBar(currentExp, maxExp);
+        }
+    </script>
 </body>
 </html>

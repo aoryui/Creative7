@@ -6,6 +6,7 @@ require_once __DIR__ . '/header.php';
 $_SESSION['displayed_questions'] = [];
 $_SESSION['selected_choice'] = [];
 $_SESSION['interval_time'] = [];
+$_SESSION['already_saved'] = false;
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -27,6 +28,7 @@ $_SESSION['interval_time'] = [];
                         <input type="hidden" name="displayed_questions" value='<?php echo json_encode($_SESSION['displayed_questions']); ?>'>
                         <input type="hidden" name="selected_choice" value='<?php echo json_encode($_SESSION['selected_choice']); ?>'>
                         <input type="hidden" name="interval_time" value='<?php echo json_encode($_SESSION['interval_time']); ?>'>
+                        <input type="hidden" name="already_saved" value='<?php echo json_encode($_SESSION['already_saved']); ?>'>
                         <input type="submit" value="模擬試験を開始する">
                     </form>
                 </div>

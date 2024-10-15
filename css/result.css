@@ -163,3 +163,28 @@ table {
     word-wrap: break-word;
     /* 単語を折り返す */
 }
+
+/* レベルバー全体のスタイル */
+.level-bar-container {
+    width: 300px; /* レベルバーの幅 */
+    height: 20px; /* レベルバーの高さ */
+    background-color: #ddd; /* バックグラウンドの色 */
+    overflow: hidden; /* バーの外側に溢れないようにする */
+    border: 1.5px solid #333; /* バーに境界線を追加 */
+    margin: 20px 0; /* 上下に余白 */
+}
+
+/* 実際のレベルバー（経験値の増減を示す部分） */
+.level-bar {
+    height: 100%; /* 親要素の高さに合わせる */
+    width: 0; /* デフォルトの幅は0（経験値0） */
+    background-color: #0070f7; /* レベルバーの色 */
+    transition: width 0.5s ease; /* アニメーションで滑らかに変化 */
+}
+
+/* レベルバーの数値（表示用） */
+.level-bar-text {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 10px;
+}
