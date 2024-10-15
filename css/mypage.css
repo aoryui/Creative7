@@ -181,6 +181,11 @@ body {
     left: 20px;
 }
 
+.level-bar-container{
+    position: relative;
+    left: 22px;
+}
+
 /* モーダルのスタイル */
 .modal {
     display: none;
