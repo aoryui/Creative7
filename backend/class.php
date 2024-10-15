@@ -81,7 +81,7 @@ class form extends Dbdata
 
     public function getStatus($userid) // データベースの正答率、平均回答時間、学習問題数を取得
     {
-        $sql = "SELECT exp, correct_rate, average_time, total_questions, correct_rate_lang, average_time_lang, total_questions_lang, correct_rate_nonlang, average_time_nonlang, total_questions_nonlang FROM userinfo WHERE userid = ?";
+        $sql = "SELECT exp, level, correct_rate, average_time, total_questions, correct_rate_lang, average_time_lang, total_questions_lang, correct_rate_nonlang, average_time_nonlang, total_questions_nonlang FROM userinfo WHERE userid = ?";
         $stmt = $this->query($sql, [$userid]);
         $result = $stmt->fetch();
         // 結果を返す（連想配列として）
