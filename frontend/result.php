@@ -159,6 +159,8 @@ $correct_rate = ($correct_count / $total_questions) * 100; // 正答率を計算
 // データベースに正答率、平均回答時間、学習問題数を保存
 if ($test_display === 'test' && $getUser === true){ // ログイン状態で模擬試験の時だけ学習記録を更新
     $result = $form->getStatus($userid);    // 学習記録を取得
+    $exp = $result['exp']; // 経験値
+    $maxExp = 1000;
     $correctRate = $result['correct_rate'];      // 正答率
     $averageTime = $result['average_time'];      // 平均回答時間
     $totalQuestions = $result['total_questions']; // 学習問題数
@@ -237,9 +239,9 @@ mysqli_close($conn);
 </head>
 <body>
     <div class="border-frame">
-        <h2 class="answer">試験回別レポート</h2>
-
         <?php if (!$interval_time_empty): ?> <!-- 制限時間がない場合は実行しない -->
+            <div>経験値<?php echo $exp ,"/", $maxExp, ":", $correct_count, "exp獲得！" ?> </div>
+
             <h2 class="average-time">平均回答時間: <?php echo $average_time; ?>秒</h2>
         <?php endif; ?>
         <h2 class="correct-rate">正答率: <?php echo round($correct_rate, 2); ?>%</h2>

@@ -25,6 +25,8 @@ if ($user_result->num_rows > 0) {
 
     // subjectを取り出してHTMLで表示
     $subject = $user['subject'];
+    $exp = $user['exp'];
+    $maxExp = 1000;
     $correct_rate = $user['correct_rate'];
     $average_time = $user['average_time'];
     $total_questions = $user['total_questions'];
@@ -54,12 +56,17 @@ if ($user_result->num_rows > 0) {
                 <label>名前：</label><h2 id="name"><?= htmlspecialchars($user['username'], ENT_QUOTES, 'UTF-8') ?></h2>
                 <p>学科：</p><h2 id="subject"><?= htmlspecialchars($subject, ENT_QUOTES, 'UTF-8') ?></h2>
                 <div class="level" data-proficiency="100"><!-- レベル全体を囲う要素。熟練度を0~100の間で記入 -->
-                 <div class="level-info">
-                 <p class="level-name">Lv.</p><!-- レベル -->
-                </div>
-                <div class="level-bar-container"><!-- レベルバーの親要素 -->
-                <div class="level-bar"></div><!-- レベルバー本体 -->
-                </div>
+                    <div class="level-info">
+                        <p class="level-name">Lv.</p><!-- レベル -->
+                    </div>
+                    <!-- レベルバーの表示 -->
+                    <div class="level-bar-container">
+                        <div class="level-bar"></div>
+                    </div>
+                    <div class="level-name">exp
+                        <?= htmlspecialchars($exp, ENT_QUOTES, 'UTF-8') ?>
+                        /<?php echo $maxExp ?>
+                    </div>
                 </div>
                 <button class="edit-profile-btn" onclick="openEditModal()">プロフィール編集</button>
             </div>
@@ -139,7 +146,22 @@ if ($user_result->num_rows > 0) {
                 closeEditModal();
             }
         }
-        
+
+        // PHPから取得した経験値をJSに渡す
+        const currentExp = <?= $exp ?>; // 経験値
+        const maxExp = <?= $maxExp ?>; // 最大経験値
+
+        // レベルバーを更新する関数
+        function updateLevelBar(exp, maxExp) {
+            const levelBar = document.querySelector('.level-bar');
+            const percentage = (exp / maxExp) * 100;
+            levelBar.style.width = percentage + '%'; // 経験値に応じてバーの幅を調整
+        }
+
+        // ページ読み込み時に経験値バーを更新
+        window.onload = function() {
+            updateLevelBar(currentExp, maxExp);
+        }
     </script>
 </body>
 </html>
