@@ -99,7 +99,6 @@ if ($user_result->num_rows > 0) {
             </div>
         </div>
         <div class="profile-main">
-            <h2>プロフィール</h2>
             <div class="learning-progress">
                 <h3>学習進捗</h3>
                 <div class="progress-item">
@@ -123,8 +122,7 @@ if ($user_result->num_rows > 0) {
                     </div>
                 </div>
             </div>
-            <div class="growth-record">
-            </div>
+           
         </div>
     </div>
 

@@ -1,6 +1,15 @@
 body {
     background-color: #ffefd5;
+    width: 100%;
+    height: 100%;
 }
+
+.profile{
+    position: relative;
+    left: 20px;
+}
+
+
 
 .profile-container {
     display: flex;
@@ -11,15 +20,17 @@ body {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   
 }
 
 
 
 .profile-sidebar {
-    width: 30%;
     background-color: #e9e9e9;
-    padding: 20px;
+    padding: 50px;
     text-align: center;
+    display: flex;
+    height: auto;
 }
 
 .profile-icon {
@@ -101,12 +112,13 @@ body {
 .profile-main {
     background-color: #ffffff;
     width: 70%;
-    height: 10%;
-    padding: 20px;
+    height: 100%;
+    padding: 100px;
 }
 
 .profile-main h2 {
     margin-top: 0;
+
 }
 
 .learning-progress,
@@ -117,6 +129,10 @@ body {
 .learning-progress h3,
 .growth-record h3 {
     margin-bottom: 10px;
+    position: relative;
+    left: -40px;
+    top: -50px;
+    font-size: 2.0em;
 }
 
 .gakusyu {
@@ -125,27 +141,34 @@ body {
     border-radius: 5px;
 }
 
+#sougo{
+    position: relative;
+    left: -20px;
+}
+
+
+
 #language{
     position: relative;
-    left: 220px;
+    left: 180px;
     top: -170px;
 }
 
 .language1{
     position: relative;
-    left: 300px;
+    left: 240px;
     top: -170px;
 }
 
 #nonverbal{
     position: relative;
-    left: 500px;
+    left: 400px;
     top: -340px;
 }
 
 .nonverbal1{
     position: relative;
-    left: 550px;
+    left: 480px;
     top: -340px;
 }
 
@@ -155,7 +178,7 @@ body {
 }
 .sougo1{
     position: relative;
-    left: 70px;
+    left: 20px;
 }
 
 /* モーダルのスタイル */
@@ -223,3 +246,5 @@ body {
     font-size: 16px;
     margin-top: 10px;
 }
+
+
