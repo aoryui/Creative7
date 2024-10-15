@@ -28,16 +28,19 @@ if ($user_result->num_rows > 0) {
     $exp = $user['exp'];
     $maxExp = 10;
 
-    // レベルの計算
-    $level = floor($exp / $maxExp) + 1;
+    // levelをデータベースから取得
+    $level = $user['level']; // データベースからレベルを取得
 
     // 経験値が最大経験値に到達またはそれを超えた場合の処理
     if ($exp >= $maxExp) {
         // レベルアップ時に余剰経験値を計算し、$expをリセット
         $exp = $exp % $maxExp;
 
-        // データベースのexpフィールドを更新
-        $update_sql = "UPDATE userinfo SET exp = $exp WHERE userid = $userid";
+        // レベルを更新
+        $level += floor($user['exp'] / $maxExp); // 余剰経験値に応じてレベルを更新
+
+        // データベースのexpフィールドとlevelフィールドを更新
+        $update_sql = "UPDATE userinfo SET exp = $exp, level = $level WHERE userid = $userid";
         $conn->query($update_sql);
     }
 
@@ -67,7 +70,16 @@ if ($user_result->num_rows > 0) {
         <div class="profile-sidebar">
             
             <div class="profile-info">
-                <img src="../image/character/shitake1.png" alt="説明文" width="350" height="300">
+                <?php if ($level >= 100): ?>
+                    <img src="../image/character/shitake4.png" alt="シイタケ最終形態" width="350" height="300">
+                <?php elseif ($level >= 50): ?>
+                    <img src="../image/character/shitake3.png" alt="シイタケ進化後" width="350" height="300">
+                <?php elseif ($level >= 2): ?>
+                    <img src="../image/character/shitake2.png" alt="シイタケ成長後" width="350" height="300">
+                <?php else: ?>
+                    <img src="../image/character/shitake1.png" alt="シイタケ原木" width="350" height="300">
+                <?php endif; ?>
+                
                 <label>名前：</label><h2 id="name"><?= htmlspecialchars($user['username'], ENT_QUOTES, 'UTF-8') ?></h2>
                 <p>学科：</p><h2 id="subject"><?= htmlspecialchars($subject, ENT_QUOTES, 'UTF-8') ?></h2>
                 <div class="level" data-proficiency="100">

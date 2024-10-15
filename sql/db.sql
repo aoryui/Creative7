@@ -14,6 +14,7 @@ CREATE TABLE userinfo (
     email     varchar(100) NOT NULL,
     password  varchar(100) NOT NULL,
     exp INT NOT NULL DEFAULT 0, -- 正解した問題数
+    ADD COLUMN level INT NOT NULL DEFAULT 1, -- レベル
     correct_rate INT NOT NULL DEFAULT 0, -- 正答率 (初期値0)
     average_time INT NOT NULL DEFAULT 0, -- 平均回答時間
     total_questions INT NOT NULL DEFAULT 0, -- 問題数
