@@ -10,12 +10,16 @@ require_once __DIR__ . '/header.php';
     <title>SPIタイサくん</title>
     <link rel="stylesheet" href="../css/ranking.css">
 </head>
-<body>
-<div class="xp-container">
-  <div class="xp-bar" id="xp-bar"></div>
-</div>
-<p id="xp-text">XP: 0/100</p>
 
+<body>
+<div class="border-frame">
+<table border="1" id="table">
+            <tr>
+                <th>順位</th>
+                <th>ユーザ名</th>
+                <th>総獲得経験値</th>
+            </tr>
+   </div>
 </body>
 
 </html>
