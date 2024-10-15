@@ -26,7 +26,21 @@ if ($user_result->num_rows > 0) {
     // subjectを取り出してHTMLで表示
     $subject = $user['subject'];
     $exp = $user['exp'];
-    $maxExp = 1000;
+    $maxExp = 10;
+
+    // レベルの計算
+    $level = floor($exp / $maxExp) + 1;
+
+    // 経験値が最大経験値に到達またはそれを超えた場合の処理
+    if ($exp >= $maxExp) {
+        // レベルアップ時に余剰経験値を計算し、$expをリセット
+        $exp = $exp % $maxExp;
+
+        // データベースのexpフィールドを更新
+        $update_sql = "UPDATE userinfo SET exp = $exp WHERE userid = $userid";
+        $conn->query($update_sql);
+    }
+
     $correct_rate = $user['correct_rate'];
     $average_time = $user['average_time'];
     $total_questions = $user['total_questions'];
@@ -53,11 +67,12 @@ if ($user_result->num_rows > 0) {
         <div class="profile-sidebar">
             
             <div class="profile-info">
+                <img src="../image/character/shitake1.png" alt="説明文" width="350" height="300">
                 <label>名前：</label><h2 id="name"><?= htmlspecialchars($user['username'], ENT_QUOTES, 'UTF-8') ?></h2>
                 <p>学科：</p><h2 id="subject"><?= htmlspecialchars($subject, ENT_QUOTES, 'UTF-8') ?></h2>
-                <div class="level" data-proficiency="100"><!-- レベル全体を囲う要素。熟練度を0~100の間で記入 -->
+                <div class="level" data-proficiency="100">
                     <div class="level-info">
-                        <p class="level-name">Lv.</p><!-- レベル -->
+                        <p class="level-name">Lv. <?= htmlspecialchars($level, ENT_QUOTES, 'UTF-8') ?></p> <!-- レベルを表示 -->
                     </div>
                     <!-- レベルバーの表示 -->
                     <div class="level-bar-container">
