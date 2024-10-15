@@ -12,7 +12,7 @@ require_once __DIR__ . '/header.php'; //ヘッダー指定
 </head>
 <body>
 
-<h1 id="bun">作成したい解説文を入力してください</h1>
+<h1 id="bun">作成したい問題文を入力してください</h1>
 
     <div class="container">
         <!-- 左側: テキスト入力エリア -->

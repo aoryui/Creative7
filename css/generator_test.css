@@ -26,8 +26,8 @@ body {
 
 textarea,
 canvas {
-    width: 591px;
-    height: 354px;
+    width: 450px; /* 591px から縮小 */
+    height: 270px; /* 354px から縮小 */
     padding: 10px;
     box-sizing: border-box;
     border: 1px solid black;
