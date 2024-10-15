@@ -25,37 +25,28 @@ require_once __DIR__ . '/header.php'; //ヘッダー指定
             gap: 30px;
             padding-top: 100px; /* ヘッダーの下にスペースを確保する */
         }
-        .text-area {
+        .text-area, .canvas-area {
             flex: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        textarea {
-            width: 591px; /* キャンバスと同じ幅 */
-            height: 354px; /* キャンバスと同じ高さ */
-            font-size: 14px;
-            resize: none;
+        textarea, canvas {
+            width: 591px;
+            height: 354px;
             padding: 10px;
             box-sizing: border-box;
+            border: 1px solid black;
+            background-color: #ffff;
+        }
+        textarea {
+            font-size: 14px;
+            resize: none;
         }
         button {
             margin-top: 10px;
             padding: 10px 20px;
             font-size: 16px;
-        }
-        .canvas-area {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        canvas {
-            border: 1px solid black;
-            margin-top: 20px;
-            width: 591px;
-            height: 354px;
-            background-color: #ffff;
         }
         a {
             margin-top: 10px;
@@ -122,6 +113,7 @@ require_once __DIR__ . '/header.php'; //ヘッダー指定
 
 </body>
 </html>
+
 
 
 
