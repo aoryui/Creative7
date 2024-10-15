@@ -163,7 +163,7 @@ $result = $form->getStatus($userid);    // 学習記録を取得
 $exp = $result['exp']; // 経験値
 $maxExp = 10;
 
-if ( $test_display === 'test' && $getUser === true){ // result初表示、ログイン状態、模擬試験、の時だけDBに保存
+if ($already_saved === false && $test_display === 'test' && $getUser === true){ // result初表示、ログイン状態、模擬試験、の時だけDBに保存
     $correctRate = $result['correct_rate'];      // 正答率
     $averageTime = $result['average_time'];      // 平均回答時間
     $totalQuestions = $result['total_questions']; // 学習問題数
