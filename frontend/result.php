@@ -160,6 +160,7 @@ if (!$interval_time_empty) { // 制限時間がない場合は計算しない
 $correct_rate = ($correct_count / $total_questions) * 100; // 正答率を計算
 // データベースに正答率、平均回答時間、学習問題数を保存
 $result = $form->getStatus($userid);    // 学習記録を取得
+$level = $result['level']; 
 $exp = $result['exp']; // 経験値
 $maxExp = 10;
 
@@ -218,15 +219,15 @@ if ($already_saved === false && $test_display === 'test' && $getUser === true){ 
     $_SESSION['already_saved'] = true; // DBに保存したことをセッションに保存
     $exp = $exp + $correct_count; // 経験値表示のズレを修正
 }
-// レベルの計算
-$level = floor($exp / $maxExp) + 1;
+
 // 経験値が最大経験値に到達またはそれを超えた場合の処理
 if ($exp >= $maxExp) {
     // レベルアップ時に余剰経験値を計算し、$expをリセット
     $exp = $exp % $maxExp; 
+    $level = $level + floor($exp / $maxExp); // レベルアップ
     // データベースのexpフィールドを更新
-    $update_sql = "UPDATE userinfo SET exp = $exp WHERE userid = $userid";
-    $conn->query($update_sql);
+    $update_sql = "UPDATE userinfo SET exp = $exp, level = $level WHERE userid = $userid";
+    $conn->query($update_sql);   
 }
 
 // ログ表示
