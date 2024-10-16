@@ -223,8 +223,8 @@ if ($already_saved === false && $test_display === 'test' && $getUser === true){ 
 // 経験値が最大経験値に到達またはそれを超えた場合の処理
 if ($exp >= $maxExp) {
     // レベルアップ時に余剰経験値を計算し、$expをリセット
-    $exp = $exp % $maxExp; 
     $level = $level + floor($exp / $maxExp); // レベルアップ
+    $exp = $exp % $maxExp; 
     // データベースのexpフィールドを更新
     $update_sql = "UPDATE userinfo SET exp = $exp, level = $level WHERE userid = $userid";
     $conn->query($update_sql);   

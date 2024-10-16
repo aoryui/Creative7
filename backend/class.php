@@ -138,7 +138,7 @@ class form extends Dbdata
         $limit = 10;  // 1ページに10位ごと表示
         $offset = ($startRank - 1);  // OFFSETを計算(1位から探すなら0スタート)
 
-        $sql = "SELECT username, exp, level, (exp + (level * 10)) AS total 
+        $sql = "SELECT username, exp, level, (exp + ((level-1) * 10)) AS total 
                 FROM userinfo 
                 ORDER BY total DESC 
                 LIMIT :limit OFFSET :offset";
@@ -149,6 +149,19 @@ class form extends Dbdata
         $stmt->execute();
 
         return $stmt->fetchAll();
+    }
+
+    public function getUserRank($userid) { // 自分のランクを取得
+        $sql = "SELECT COUNT(*) + 1 AS rank
+                FROM userinfo
+                WHERE (exp + ((level-1) * 10)) > (
+                    SELECT (exp + ((level-1) * 10))
+                    FROM userinfo
+                    WHERE userid = ?
+                )";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$userid]);
+        return $stmt->fetchColumn();
     }
     
 }    
