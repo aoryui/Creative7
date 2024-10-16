@@ -1,7 +1,11 @@
 <?php
+session_start(); // セッションを開始
 require_once __DIR__ . '/header.php';
 require_once __DIR__ . '/../backend/class.php';
 $rankingClass = new form();
+
+// ログイン中のユーザーIDを取得
+$userid = isset($_SESSION['userid']) ? $_SESSION['userid'] : null;
 
 // 1ページあたりの表示件数
 $itemsPerPage = 10;
@@ -32,6 +36,19 @@ $totalPages = ceil($totalUsers / $itemsPerPage);
 <body>
     <div class="border-frame">
         <h1>ランキング</h1>
+        
+        <!-- 自分のランキングを表示 -->
+        <div class="my-ranking">
+            <?php
+            if (isset($userid)) {
+                $userRank = $rankingClass->getUserRank($userid);
+                echo "<p>あなたの順位: " . $userRank . " 位</p>";
+            } else {
+                echo "<p>ログインしてください。</p>";
+            }
+            ?>
+        </div>
+
         <table border="1" id="table">
             <tr>
                 <th>順位</th>
