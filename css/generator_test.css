@@ -43,6 +43,32 @@ button {
     margin-top: 10px;
     padding: 10px 20px;
     font-size: 16px;
+    font-family: 'Noto Sans JP', sans-serif; /* フォントを変更 */
+    color: #fff;
+    background-color: #27acd9;
+    border: none;
+    border-radius: 50px; /* 丸みのあるボタン */
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.button-container {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
+
+.button-container input[type="submit"] {
+    background-color: #27acd9;
+    color: white; /* テキスト色を白に */
+    padding: 12px 24px; 
+    border: none; /* 境界線なし */
+    border-radius: 5px; /* 角丸 */
+    font-size: 16px; /* フォントサイズ */
+    cursor: pointer; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease; /* ホバー時の色変化をスムーズに */
 }
 
 a {

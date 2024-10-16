@@ -43,6 +43,13 @@ button {
     margin-top: 10px;
     padding: 10px 20px;
     font-size: 16px;
+    font-family: 'Noto Sans JP', sans-serif; /* フォントを変更 */
+    color: #fff;
+    background-color: #27acd9;
+    border: none;
+    border-radius: 50px; /* 丸みのあるボタン */
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
 }
 
 a {

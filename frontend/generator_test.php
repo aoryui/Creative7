@@ -68,6 +68,9 @@ require_once __DIR__ . '/header.php'; //ヘッダー指定
         }
     </script>
 
+        <div class="button-container">
+        <form method="post" action="generator_answer.php">
+        <input type="submit" value="解説文作成ページヘ">
 </body>
 </html>
 
