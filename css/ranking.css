@@ -122,6 +122,11 @@ table {
     background-color: #F0E7C9; /* 3位の背景色 */
 }
 
+.pagination {
+    margin-top: 20px; /* 要素を下に移動 */
+    text-align: center; /* 中央揃え */
+}
+
 .pagination a {
     margin: 0 5px;
     padding: 5px 10px;
