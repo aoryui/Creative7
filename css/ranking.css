@@ -99,10 +99,6 @@ table {
         background-color: #f2f2f2;
     }
     
-    #table tr:nth-child(even) {
-        background-color: #f9f9f9;
-    }
-    
     #custom-question {
         text-align: left !important;
         /* 左寄せ */
@@ -113,3 +109,31 @@ table {
         word-wrap: break-word;
         /* 単語を折り返す */
     }
+
+.first-place {
+    background-color: #F9F4AF; /* 1位の背景色 */
+}
+
+.second-place {
+    background-color: #F0F0F0; /* 2位の背景色 */
+}
+
+.third-place {
+    background-color: #F0E7C9; /* 3位の背景色 */
+}
+
+.pagination a {
+    margin: 0 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #000;
+    border: 1px solid #ccc;
+}
+
+.pagination .current-page {
+    margin: 0 5px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+}

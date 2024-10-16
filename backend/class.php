@@ -127,4 +127,28 @@ class form extends Dbdata
         
         return false; // 失敗した場合、falseを返します
     }
+    
+    public function getTotalUsers() { //全ユーザーをカウント
+        $sql = "SELECT COUNT(*) FROM userinfo";
+        $stmt = $this->pdo->query($sql);
+        return $stmt->fetchColumn();
+    }
+
+    public function ranking($startRank) {
+        $limit = 10;  // 1ページに10位ごと表示
+        $offset = ($startRank - 1);  // OFFSETを計算(1位から探すなら0スタート)
+
+        $sql = "SELECT username, exp, level, (exp + (level * 10)) AS total 
+                FROM userinfo 
+                ORDER BY total DESC 
+                LIMIT :limit OFFSET :offset";
+        
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(':limit', (int)$limit, PDO::PARAM_INT);
+        $stmt->bindValue(':offset', (int)$offset, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
+    
 }    
