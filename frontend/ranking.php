@@ -42,7 +42,13 @@ $totalPages = ceil($totalUsers / $itemsPerPage);
             <?php
             if (isset($userid)) {
                 $userRank = $rankingClass->getUserRank($userid);
+                
+                // ユーザーの経験値を取得
+                $userData = $rankingClass->getInfo($userid);
+                $userTotalExp = $userData['exp'] + (($userData['level'] - 1) * 10); // 総獲得経験値を計算
+
                 echo "<p>あなたの順位: " . $userRank . " 位</p>";
+                echo "<p>総獲得経験値: " . htmlspecialchars($userTotalExp, ENT_QUOTES, 'UTF-8') . "</p>";
             } else {
                 echo "<p>ログインしてください。</p>";
             }
@@ -59,22 +65,39 @@ $totalPages = ceil($totalUsers / $itemsPerPage);
             // 結果がある場合、ランキングを表示
             if (!empty($rankingData)) {
                 $rank = $startRank; // 開始順位を設定
+                $prevTotal = null; // 前のユーザーの総獲得経験値
+                $sameRankCount = 0; // 同じ順位のユーザー数
+                $prevRank = $startRank - 1; // 前のユーザーのランクを記録
+
                 foreach ($rankingData as $row) {
-                    // ランクに応じてクラスを決定
-                    $class = '';
-                    if ($rank == 1) {
-                        $class = 'first-place'; // 1位のクラス
-                    } elseif ($rank == 2) {
-                        $class = 'second-place'; // 2位のクラス
-                    } elseif ($rank == 3) {
-                        $class = 'third-place'; // 3位のクラス
+                    // 総獲得経験値が前回と同じか確認
+                    if ($row['total'] === $prevTotal) {
+                        $sameRankCount++;
+                    } else {
+                        // 異なる場合、現在の順位に同じ順位のユーザー数を加算して更新
+                        $rank = $prevRank + $sameRankCount + 1;
+                        $sameRankCount = 0;
                     }
-                    echo "<tr class='$class'>";
-                    echo "<td>" . $rank . "</td>";
+
+                    // 王冠画像を表示
+                    $crown = '';
+                    if ($rank == 1) {
+                        $crown = '<img src="../image/crown1.png"  class="crown-icon">';
+                    } elseif ($rank == 2) {
+                        $crown = '<img src="../image/crown2.png" alt="2位" class="crown-icon">';
+                    } elseif ($rank == 3) {
+                        $crown = '<img src="../image/crown3.png" alt="3位" class="crown-icon">';
+                    }
+
+                    echo "<tr>";
+                    echo "<td>" . $rank . $crown . "</td>"; // 王冠を順位の隣に表示
                     echo "<td>" . htmlspecialchars($row['username'], ENT_QUOTES, 'UTF-8') . "</td>";
                     echo "<td>" . htmlspecialchars($row['total'], ENT_QUOTES, 'UTF-8') . "</td>";
                     echo "</tr>";
-                    $rank++;
+
+                    // 前回の経験値とランクを更新
+                    $prevTotal = $row['total'];
+                    $prevRank = $rank;
                 }
             } else {
                 // データがない場合のメッセージ
