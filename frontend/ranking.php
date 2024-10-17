@@ -79,18 +79,18 @@ $totalPages = ceil($totalUsers / $itemsPerPage);
                         $sameRankCount = 0;
                     }
 
-                    // ランクに応じてクラスを決定
-                    $class = '';
+                    // 王冠画像を表示
+                    $crown = '';
                     if ($rank == 1) {
-                        $class = 'first-place'; // 1位のクラス
+                        $crown = '<img src="../image/crown1.png"  class="crown-icon">';
                     } elseif ($rank == 2) {
-                        $class = 'second-place'; // 2位のクラス
+                        $crown = '<img src="../image/crown2.png" alt="2位" class="crown-icon">';
                     } elseif ($rank == 3) {
-                        $class = 'third-place'; // 3位のクラス
+                        $crown = '<img src="../image/crown3.png" alt="3位" class="crown-icon">';
                     }
 
-                    echo "<tr class='$class'>";
-                    echo "<td>" . $rank . "</td>";
+                    echo "<tr>";
+                    echo "<td>" . $rank . $crown . "</td>"; // 王冠を順位の隣に表示
                     echo "<td>" . htmlspecialchars($row['username'], ENT_QUOTES, 'UTF-8') . "</td>";
                     echo "<td>" . htmlspecialchars($row['total'], ENT_QUOTES, 'UTF-8') . "</td>";
                     echo "</tr>";
