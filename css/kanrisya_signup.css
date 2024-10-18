@@ -1,0 +1,137 @@
+/* スクロールバーを隠す */
+html {
+    overflow: hidden;
+    /* 全体のスクロールバーを隠す */
+  }
+  
+  body {
+    overflow-y: hidden;
+    /* 垂直スクロールバーを隠す */
+  }
+  
+  .login-body {
+    background-color: #ffefd5;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: rgb(84, 196, 99);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .login-container {
+    height: 440px;
+    width: 400px;
+    margin-top: calc(100px + 20px);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    background-color: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .login-ji {
+    font-size: 15px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    padding: 10px 10px;
+    border: 2px solid rgb(84, 196, 99);
+    border-radius: 10px;
+    font-size: 16px;
+  }
+  
+  input::placeholder {
+    color: #ffb6c1;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color:rgb(84, 196, 99);
+    box-shadow: 0 0 5px rgba(255, 192, 203, 0.5);
+  }
+  
+  #submit {
+    width: 200px;
+    padding: 10px;
+    background-color:rgb(84, 196, 99);
+    color: white;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    position: relative;
+    top: -85px;
+    font-size: 20px;
+  }
+  
+  #submit:hover {
+    background-color:rgb(84, 196, 99);
+  }
+  
+  .character {
+    width: 150px;
+    margin-bottom: 20px;
+  }
+  
+  .h1 {
+    font-size: 28px;
+  }
+  
+  #username {
+    position: relative;
+    top: -40px;
+    left: 80px;
+  }
+  
+  #usernames {
+    color: black;
+    position: relative;
+    left: -150px;
+    font-size: 20px;
+  }
+  
+  
+  #address {
+    position: relative;
+    top: -80px;
+    left: 80px;
+  }
+  
+  #addresses {
+    color: black;
+    position: relative;
+    left: -130px;
+    font-size: 20px;
+    top: -40px;
+  }
+  
+  #password {
+    position: relative;
+    top: -100px;
+    left: 80px;
+  }
+  
+  #passwords {
+    color: black;
+    position: relative;
+    left: -150px;
+    font-size: 20px;
+    top: -60px;
+  }

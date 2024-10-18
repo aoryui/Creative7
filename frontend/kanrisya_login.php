@@ -46,7 +46,7 @@ if (isset($_SESSION['login_error'])) {
     <button type="submit" id="login">ログイン</button>
 </form>
 <div class="signup button">
-<p><a href="signup.php"><br>管理者の新規登録はこちら</a></p>
+<p><a href="kanrisya_signup.php"><br>管理者の新規登録はこちら</a></p>
 </div>
 </div>
 
