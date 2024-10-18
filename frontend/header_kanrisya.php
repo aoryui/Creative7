@@ -35,7 +35,7 @@ $subject = $_SESSION['subject'];
                 <?php
                 if ($username === "ゲスト") {
                 ?>
-                    <li><a href="">ログイン</a></li>
+                    <li><a href="kanrisya_login.php">ログイン</a></li>
                 <?php
                 } else {
                 ?>

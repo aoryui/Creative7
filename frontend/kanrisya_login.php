@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/header.php';
+require_once __DIR__ . '/header_kanrisya.php';
 
 // URLからメッセージを取得
 $message = isset($_GET['message']) ? $_GET['message'] : '';
@@ -10,11 +10,11 @@ if (!empty($message)) {
 }
 ?>
 <!DOCTYPE html>
-<link rel="stylesheet" href="../css/login.css">
+<link rel="stylesheet" href="../css/kanrisya_login.css">
 <div class="login-body">
 <div class="login-container">
 <div class="login-ji">
-<h1>ログイン</h1>
+<h1>管理者ログイン</h1>
 </div>
 <!-- ログインフォーム -->
 <?php
@@ -46,7 +46,7 @@ if (isset($_SESSION['login_error'])) {
     <button type="submit" id="login">ログイン</button>
 </form>
 <div class="signup button">
-<p><a href="signup.php"><br>新規登録はこちら</a></p>
+<p><a href="signup.php"><br>管理者の新規登録はこちら</a></p>
 </div>
 </div>
 
