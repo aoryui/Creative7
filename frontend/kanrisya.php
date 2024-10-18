@@ -169,7 +169,7 @@ $result = $conn->query($sql);
         <tbody>
             <?php
             // ソート条件に基づいてデータベースから情報を取得
-            $sql = "SELECT username, subject, email, password FROM userinfo";
+            $sql = "SELECT userid, username, subject, email, password FROM userinfo";
             
             if (isset($_GET['subject']) && $_GET['subject'] !== '') {
                 $selected_subject = $_GET['subject'];
@@ -181,11 +181,18 @@ $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                 // データをテーブルに出力
                 while($row = $result->fetch_assoc()) {
+                    $userid = htmlspecialchars($row['userid']);
+                    $username = htmlspecialchars($row['username']);
+                    $subject = htmlspecialchars($row['subject']);
+                    $email = htmlspecialchars($row['email']);
+                    $password = htmlspecialchars($row['password']);
+
                     echo "<tr>";
-                    echo "<td>" . htmlspecialchars($row['username']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['subject']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['email']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['password']) . "</td>";
+                    // ユーザー名をリンク化し、クリックすると該当ユーザーのマイページへ
+                    echo "<td><a href='user.php?userid={$userid}'>{$username}</a></td>";
+                    echo "<td>{$subject}</td>";
+                    echo "<td>{$email}</td>";
+                    echo "<td>{$password}</td>";
                     echo "</tr>";
                 }
             } else {
