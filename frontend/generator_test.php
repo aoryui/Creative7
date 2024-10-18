@@ -9,6 +9,7 @@ require_once __DIR__ . '/header.php'; //ヘッダー指定
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>テキストから画像へ</title>
     <link rel="stylesheet" href="../css/generator_test.css">
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script> <!-- markdown-itライブラリの読み込み -->
 </head>
 <body>
 
@@ -17,7 +18,7 @@ require_once __DIR__ . '/header.php'; //ヘッダー指定
     <div class="container">
         <!-- 左側: テキスト入力エリア -->
         <div class="text-area">
-            <textarea id="textInput" placeholder="ここにテキストを入力してください"></textarea>
+            <textarea id="textInput" placeholder="ここにマークダウン形式で入力してください"></textarea>
             <button onclick="textToImage()">画像を作成</button>
         </div>
 
@@ -37,9 +38,17 @@ require_once __DIR__ . '/header.php'; //ヘッダー指定
             ctx.fillStyle = "#FFFFFF";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            // テキストの取得
+            // markdown-itを使ってマークダウンをHTMLに変換
+            const md = window.markdownit();
             const text = document.getElementById("textInput").value;
-            const lines = text.split('\n');
+            const renderedHTML = md.render(text); // マークダウンをHTMLに変換
+
+            // HTMLをテキストとして扱うために一時的にdivに入れて、プレーンテキストに戻す
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = renderedHTML;
+            const plainText = tempDiv.textContent || tempDiv.innerText || ""; // プレーンテキスト取得
+
+            const lines = plainText.split('\n'); // テキストを行に分割
 
             // フォントの設定
             const fontSize = 20;
@@ -52,11 +61,32 @@ require_once __DIR__ . '/header.php'; //ヘッダー指定
 
             let yOffset = 50; // 上部のマージン
             const xOffset = 20; // 左側のマージン
+            const maxWidth = canvas.width - 2 * xOffset; // テキストの最大幅（左右のマージンを引いた幅）
 
-            // 各行をキャンバスに描画
+            // テキストを描画する関数（自動改行対応）
+            function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+                const chars = text.split(''); // 文字を一つずつ取得
+                let line = '';
+
+                for (let i = 0; i < chars.length; i++) {
+                    const testLine = line + chars[i];
+                    const testWidth = ctx.measureText(testLine).width;
+
+                    if (testWidth > maxWidth && line.length > 0) {
+                        ctx.fillText(line, x, y); // 現在の行を描画
+                        line = chars[i]; // 新しい行を開始
+                        y += lineHeight; // Y位置を更新
+                    } else {
+                        line = testLine;
+                    }
+                }
+                ctx.fillText(line, x, y); // 最後の行を描画
+                return y + lineHeight; // 次の行のY位置を返す
+            }
+
+            // 各行を処理してキャンバスに描画
             lines.forEach(line => {
-                ctx.fillText(line, xOffset, yOffset);
-                yOffset += lineSpacing;
+                yOffset = wrapText(ctx, line, xOffset, yOffset, maxWidth, lineSpacing);
             });
 
             // 画像をダウンロードできるリンクを作成
@@ -73,7 +103,3 @@ require_once __DIR__ . '/header.php'; //ヘッダー指定
         <input type="submit" value="解説文作成ページヘ">
 </body>
 </html>
-
-
-
-
