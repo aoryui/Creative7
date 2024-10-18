@@ -28,6 +28,13 @@ CREATE TABLE userinfo (
     total_questions_nonlang INT NOT NULL DEFAULT 0 -- 問題数
 );
 
+CREATE TABLE kanrisyainfo (
+    userid    int(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    username  varchar(100) NOT NULL,
+    email     varchar(100) NOT NULL,
+    password  varchar(100) NOT NULL,
+);
+
 
 -- 以下問題
 -- 問題テーブルを作成

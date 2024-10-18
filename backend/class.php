@@ -37,9 +37,45 @@ class form extends Dbdata
         }
     }
 
+    public function signUP2($username, $email, $password)
+    {
+        $sql = "SELECT userid FROM kanrisyainfo WHERE email = ?";
+        $stmt = $this->query($sql, [$email]);
+        $result = $stmt->fetch();
+        if ($result) {
+            return 'この' . $email . 'は既に登録されています。';
+        }
+
+        $sql = "INSERT INTO kanrisyainfo (username, email, password) VALUES (?, ?, ?)";
+        $this->exec($sql, [$username,$email, $password]);
+
+        $sql = "SELECT userid FROM kanrisyainfo WHERE email = ?";
+        $stmt = $this->query($sql, [$email]);
+        $userid = $stmt->fetch();
+        $result = $this->exec($sql, [$userid['userid']]);
+
+        if ($result) {
+            return '';
+        } else {
+            return '新規登録できませんでした。管理者にお問い合わせください。';
+        }
+    }
+
     public function authUser($email, $password)
     {
         $sql = "SELECT * FROM userinfo WHERE email = ?";
+        $stmt = $this->query($sql, [$email]);
+        $result = $stmt->fetch();
+        if (password_verify($password, $result['password'])) {
+            return $result;
+        } else {
+            return false;
+        }
+    }
+
+    public function authUser2($email, $password)
+    {
+        $sql = "SELECT * FROM kanrisyainfo WHERE email = ?";
         $stmt = $this->query($sql, [$email]);
         $result = $stmt->fetch();
         if (password_verify($password, $result['password'])) {

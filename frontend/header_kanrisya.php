@@ -1,8 +1,7 @@
 <?php
-require_once __DIR__ . '/../backend/pre.php';
+require_once __DIR__ . '/../backend/kanrisya_pre.php';
 $userid = $_SESSION['userid'];
 $username1 = $_SESSION['userName'];
-$subject = $_SESSION['subject'];
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +38,7 @@ $subject = $_SESSION['subject'];
                 <?php
                 } else {
                 ?>
-                    <li><a href="">ログアウト</a></li>
+                    <li><a href="../backend/logout.php">ログアウト</a></li>
                 <?php
                 }
                 ?>

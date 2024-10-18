@@ -10,11 +10,11 @@
     <h1>SPIタイサくん</h1>
     <p>どちらのボタンをクリックしますか？</p>
     
-    <form action="page1.php" method="get">
+    <form action="kanrisya_login.php" method="get">
         <button type="submit">管理者画面へ</button>
     </form>
     
-    <form action="page2.php" method="get">
+    <form action="login.php" method="get">
         <button type="submit">ユーザー画面へ</button>
     </form>
 </body>
