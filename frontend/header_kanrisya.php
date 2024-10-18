@@ -29,16 +29,17 @@ $subject = $_SESSION['subject'];
             <ul>
                 
                 <li><a href="kanrisya_mypage.php">利用者管理</a></li>
+                <li><a href="kanrisya.php">ユーザー情報一覧</a></li>
                 <li><a href="generator_test.php">問題作成へ</a></li>
                 
                 <?php
                 if ($username === "ゲスト") {
                 ?>
-                    <li><a href="login.php">ログイン</a></li>
+                    <li><a href="">ログイン</a></li>
                 <?php
                 } else {
                 ?>
-                    <li><a href="../backend/logout.php">ログアウト</a></li>
+                    <li><a href="">ログアウト</a></li>
                 <?php
                 }
                 ?>
