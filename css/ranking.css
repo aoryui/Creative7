@@ -3,8 +3,6 @@ body {
 }
 
 .border-frame {
-
-.border-frame {
     max-width: 1200px;
     margin: 100px auto 30px;
     margin: 100px auto 30px;
@@ -18,10 +16,6 @@ body {
 }
     
 table {
-    width: 90%; /* テーブルも全体に合わせてレスポンシブ対応 */
-    margin: 20px auto; /* 上部に余白を追加し中央寄せ */
-    border-collapse: collapse; /* ボーダーを1本にまとめる */
-}
     width: 90%; /* テーブルも全体に合わせてレスポンシブ対応 */
     margin: 20px auto; /* 上部に余白を追加し中央寄せ */
     border-collapse: collapse; /* ボーダーを1本にまとめる */
