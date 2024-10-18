@@ -133,25 +133,49 @@ if ($user_result->num_rows > 0) {
             <div class="pro">
             <h2>プロフィール編集</h2>
             </div>
-            <form id="editForm" action="../backend/edit_profile.php" method="POST">
-                <label for="editOption">編集する項目を選択してください:</label>
-                <select id="editOption" name="editOption" required>
-                    <option value="name">名前</option>
-                    <option value="subject">学科</option>
-                </select>
-                <!-- 入力欄を最初から表示 -->
-                <div id="editInputContainer">
-                    <label for="newValue">新しい値を入力してください:</label>
-                    <input type="text" id="newValue" name="newValue" required>
-                </div>
-                <div class="change-btn">
-                <button class="edit-profile-btn" type="submit">変更</button>
-                </div>
-            </form>
+                <form id="editForm" action="../backend/edit_profile.php" method="POST">
+                    <label for="editOption">編集する項目を選択してください:</label>
+                    <select id="editOption" name="editOption" required onchange="handleOptionChange()">
+                        <option value="name">名前</option>
+                        <option value="subject">学科</option>
+                    </select>
+
+                    <!-- 入力欄またはプルダウンメニュー -->
+                    <div id="editInputContainer">
+                        <label for="newValue">新しい値を入力してください:</label>
+                        <input type="text" id="newValue" name="newValue" required>
+                    </div>
+                    <div class="change-btn">
+                        <button class="edit-profile-btn" type="submit">変更</button>
+                    </div>
+                </form>
         </div>
     </div>
 
     <script>
+        function handleOptionChange() {
+        const editOption = document.getElementById('editOption').value;
+        const editInputContainer = document.getElementById('editInputContainer');
+        
+        if (editOption === 'subject') {
+            // 学科選択肢用のプルダウンメニューを表示
+            editInputContainer.innerHTML = `
+                <label for="newValue">学科を選択してください:</label>
+                <select id="newValue" name="newValue" required>
+                    <option value="ITエキスパート学科">ITエキスパート学科</option>
+                    <option value="ITスペシャリスト学科">ITスペシャリスト学科</option>
+                    <option value="情報処理学科">情報処理学科</option>
+                    <option value="AIシステム開発学科">AIシステム開発学科</option>
+                </select>
+            `;
+        } else {
+            // 名前用のテキスト入力フィールドを表示
+            editInputContainer.innerHTML = `
+                <label for="newValue">新しい値を入力してください:</label>
+                <input type="text" id="newValue" name="newValue" required>
+            `;
+        }
+    }
         // モーダルを開く関数
         function openEditModal() {
             document.getElementById("editModal").style.display = "block";

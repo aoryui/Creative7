@@ -3,17 +3,25 @@ body {
 }
 
 .border-frame {
+
+.border-frame {
     max-width: 1200px;
+    margin: 100px auto 30px;
     margin: 100px auto 30px;
     padding: 20px;
     background: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     width: 80%; /* widthを%で設定し、レスポンシブに対応 */
+    width: 80%; /* widthを%で設定し、レスポンシブに対応 */
     background-color: rgb(244, 242, 242);
 }
     
 table {
+    width: 90%; /* テーブルも全体に合わせてレスポンシブ対応 */
+    margin: 20px auto; /* 上部に余白を追加し中央寄せ */
+    border-collapse: collapse; /* ボーダーを1本にまとめる */
+}
     width: 90%; /* テーブルも全体に合わせてレスポンシブ対応 */
     margin: 20px auto; /* 上部に余白を追加し中央寄せ */
     border-collapse: collapse; /* ボーダーを1本にまとめる */
@@ -96,9 +104,17 @@ form {
     height: 20px;
 }
 
+/* 王冠アイコン */
+.crown-icon {
+    margin-left: 10px; /* 王冠アイコンと順位数字の間にスペースを追加 */
+    vertical-align: middle; /* アイコンをテキストの中央に揃える */
+    width: 20px; /* 王冠アイコンの大きさを適切に設定 */
+    height: 20px;
+}
+
 .pagination {
-    margin-top: 20px; /* 要素を下に移動 */
-    text-align: center; /* 中央揃え */
+    margin-top: 20px;
+    text-align: center;
 }
 
 .pagination a {

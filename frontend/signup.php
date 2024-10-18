@@ -21,11 +21,17 @@ if (isset($_SESSION['signup_error'])) {
     </div>
     <div class="form-group">
         <label for="school" id="schools">所属学科:</label>
-        <input type="school" id="school" name="school" required>
+        <select id="school" name="school" required>
+            <option value="">学科を選択</option>
+            <option value="ITエキスパート学科">ITエキスパート学科</option>
+            <option value="ITスペシャリスト学科">ITスペシャリスト学科</option>
+            <option value="情報処理学科">情報処理学科</option>
+            <option value="AIシステム開発学科">AIシステム開発学科</option>
+        </select>
     </div>
     <div class="form-group">
         <label for="address" id="addresses">メールアドレス:</label>
-        <input type="address" id="address" name="address" required>
+        <input type="email" id="address" name="address" required>
     </div>
     <div class="form-group">
         <label for="password" id="passwords">パスワード:</label>
