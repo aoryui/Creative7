@@ -4,8 +4,12 @@ body {
     background-color: #ffefd5;
 }
 
+html {
+    overflow: hidden;
+  }
+
 #bun {
-    margin-top: 130px;
+    margin-top: 120px;
     text-align: center;
 }
 
@@ -53,9 +57,9 @@ button {
 }
 
 .button-container {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
+    position: relative;
+    right: -900px;
+    bottom: 10px;
 }
 
 

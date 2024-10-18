@@ -10,7 +10,7 @@ $subject = $_SESSION['subject'];
 <html lang="ja">
 <meta charset="UTF-8">    
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="../css/header_kanrisya.css">
 <link rel="icon" type="../image/x-icon" href="../image/icon.png" />
 <title>SPIタイサくんのページ</title>
 <header>
@@ -24,21 +24,22 @@ $subject = $_SESSION['subject'];
         <button id="menuBtn">
             <img id="menubutton" src="../image/menubutton.png" alt="ボタン画像">
         </button>
-        <h1 id="free-h1">SPIタイサくん</h1>
+        <h1 id="free-h1">SPIタイサくん・管理者画面</h1>
         <nav id="menuContent">
             <ul>
                 
                 <li><a href="kanrisya_mypage.php">利用者管理</a></li>
+                <li><a href="kanrisya.php">ユーザー情報一覧</a></li>
                 <li><a href="generator_test.php">問題作成へ</a></li>
                 
                 <?php
                 if ($username === "ゲスト") {
                 ?>
-                    <li><a href="login.php">ログイン</a></li>
+                    <li><a href="kanrisya_login.php">ログイン</a></li>
                 <?php
                 } else {
                 ?>
-                    <li><a href="../backend/logout.php">ログアウト</a></li>
+                    <li><a href="">ログアウト</a></li>
                 <?php
                 }
                 ?>
