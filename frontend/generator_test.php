@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/header.php'; //ヘッダー指定
+require_once __DIR__ . '/header_kanrisya.php'; //ヘッダー指定
 ?>
 
 <!DOCTYPE html>
