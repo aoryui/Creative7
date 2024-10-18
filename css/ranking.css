@@ -1,114 +1,80 @@
 body {
     background-color: #ffefd5;
 }
-.border-frame{
+
+.border-frame {
     max-width: 1200px;
-    margin-top: calc(100px + 20px);
-    margin-bottom: 30px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 100px auto 30px;
     padding: 20px;
     background: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    width: 1000px;
+    width: 80%; /* widthを%で設定し、レスポンシブに対応 */
     background-color: rgb(244, 242, 242);
-    top: 60%;
-    left: 50%;
-    }
-    
+}
     
 table {
-        width: 800px;
-        margin: auto;
-    }
+    width: 90%; /* テーブルも全体に合わせてレスポンシブ対応 */
+    margin: 20px auto; /* 上部に余白を追加し中央寄せ */
+    border-collapse: collapse; /* ボーダーを1本にまとめる */
+}
 
-    #tri {
-        color: rgb(63, 119, 232);
-    }
-    
-    .level {
-        position: relative;
-        top: -300px;
-        left: 50px;
-    }
-    
-    .exp {
-        position: relative;
-        top: -300px;
-        left: 800px;
-    }
-    
-    .addition {
-        position: relative;
-        top: -320px;
-        left: 900px;
-    }
-    
-    .correct-answer-rate {
-        position: relative;
-        top: -320px;
-        left: 600px;
-    }
-    
-    .rate {
-        position: relative;
-        top: -375px;
-        left: 725px;
-    }
-    
-    .response-time {
-        position: relative;
-        top: -375px;
-        left: 575px;
-    }
-    
-    .time {
-        position: relative;
-        top: -430px;
-        left: 775px;
-    }
-    
-    .answer {
-        font-size: 38px;
-    }
-    
-    
-    
-    .average-time,
-    .correct-rate {
-        font-size: 1.2em;
-        margin: 10px 0;
-        color: #333;
-    }
-    
-    #table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 20px;
-    }
-    
-    #table th,
-    #table td {
-        border: 1px solid #ccc;
-        padding: 10px;
-        text-align: center;
-    }
-    
-    #table th {
-        background-color: #f2f2f2;
-    }
-    
-    #custom-question {
-        text-align: left !important;
-        /* 左寄せ */
-        white-space: pre-wrap;
-        /* 改行を維持 */
-        width: 40ch;
-        /* 10文字分の幅を設定 */
-        word-wrap: break-word;
-        /* 単語を折り返す */
-    }
+#tri {
+    color: rgb(63, 119, 232);
+}
+
+.level, .exp, .addition, .correct-answer-rate, .rate, .response-time, .time {
+    position: relative;
+}
+
+.answer {
+    font-size: 38px;
+}
+
+.average-time,
+.correct-rate {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #333;
+}
+
+#table {
+    width: 100%; /* テーブルは全幅を使用 */
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#table th,
+#table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+#table th {
+    background-color: #f2f2f2;
+}
+
+#custom-question {
+    text-align: left !important;
+    white-space: pre-wrap;
+    width: 40ch;
+    word-wrap: break-word;
+}
+
+form {
+    float: right;
+}
+.update-button{
+    background: none; /* ボタンの背景をなしに */
+    border: none; /* ボタンの枠線をなしに */
+    padding: 0; /* ボタン内の余白をリセット */
+    cursor: pointer; /* カーソルをポインタに変更 */
+}
+.update-button img {
+    width: 30px; /* 横幅を設定 */
+    height: auto; /* 縦幅は自動調整 */
+}
 
 .first-place {
     background-color: #F9F4AF; /* 1位の背景色 */
@@ -122,6 +88,14 @@ table {
     background-color: #F0E7C9; /* 3位の背景色 */
 }
 
+/* 王冠アイコン */
+.crown-icon {
+    margin-left: 10px; /* 王冠アイコンと順位数字の間にスペースを追加 */
+    vertical-align: middle; /* アイコンをテキストの中央に揃える */
+    width: 20px; /* 王冠アイコンの大きさを適切に設定 */
+    height: 20px;
+}
+
 .pagination {
     margin-top: 20px; /* 要素を下に移動 */
     text-align: center; /* 中央揃え */
@@ -133,6 +107,8 @@ table {
     text-decoration: none;
     color: #000;
     border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: background-color 0.3s;
 }
 
 .pagination .current-page {
@@ -141,4 +117,9 @@ table {
     background-color: #007bff;
     color: white;
     border: 1px solid #007bff;
+    border-radius: 4px;
+}
+
+.hidden {
+    visibility: hidden; /* 要素を非表示にし、レイアウト上には残す */
 }

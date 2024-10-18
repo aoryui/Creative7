@@ -127,41 +127,44 @@ class form extends Dbdata
         
         return false; // 失敗した場合、falseを返します
     }
-    
-    public function getTotalUsers() { //全ユーザーをカウント
-        $sql = "SELECT COUNT(*) FROM userinfo";
-        $stmt = $this->pdo->query($sql);
-        return $stmt->fetchColumn();
-    }
 
-    public function ranking($startRank) {
-        $limit = 10;  // 1ページに10位ごと表示
-        $offset = ($startRank - 1);  // OFFSETを計算(1位から探すなら0スタート)
-
-        $sql = "SELECT username, exp, level, (exp + ((level-1) * 10)) AS total 
-                FROM userinfo 
-                ORDER BY total DESC 
-                LIMIT :limit OFFSET :offset";
-        
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->bindValue(':limit', (int)$limit, PDO::PARAM_INT);
-        $stmt->bindValue(':offset', (int)$offset, PDO::PARAM_INT);
-        $stmt->execute();
-
-        return $stmt->fetchAll();
-    }
-
-    public function getUserRank($userid) { // 自分のランクを取得
-        $sql = "SELECT COUNT(*) + 1 AS rank
+    public function getRanking()
+    {
+        // Retrieve all rankings in one go
+        $sql = "SELECT userid, username, ((level - 1) * 10 + exp) AS score
                 FROM userinfo
-                WHERE (exp + ((level-1) * 10)) > (
-                    SELECT (exp + ((level-1) * 10))
-                    FROM userinfo
-                    WHERE userid = ?
-                )";
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->execute([$userid]);
-        return $stmt->fetchColumn();
+                ORDER BY score DESC, userid ASC";
+        $stmt = $this->query($sql, []);
+        
+        $rankings = [];
+        $rank = 1;
+        $previousScore = null;
+        $skipCount = 0;
+    
+        while ($row = $stmt->fetch()) {
+            $userid = $row['userid'];
+            $username = $row['username'];
+            $score = $row['score'];
+    
+            // Handle same score users getting the same rank
+            if ($previousScore !== null && $score == $previousScore) {
+                $skipCount++;
+            } else {
+                $rank += $skipCount;
+                $skipCount = 1;
+            }
+    
+            $rankings[] = [
+                'rank' => $rank,
+                'userid' => $userid,
+                'username' => $username,
+                'score' => $score
+            ];
+    
+            $previousScore = $score;
+        }
+    
+        return $rankings; // Return all rankings at once
     }
     
 }    

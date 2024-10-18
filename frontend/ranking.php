@@ -1,27 +1,50 @@
 <?php
-session_start(); // セッションを開始
+session_start();
 require_once __DIR__ . '/header.php';
 require_once __DIR__ . '/../backend/class.php';
-$rankingClass = new form();
 
-// ログイン中のユーザーIDを取得
-$userid = isset($_SESSION['userid']) ? $_SESSION['userid'] : null;
+$form = new form();
+$userid = $_SESSION['userid'];
 
-// 1ページあたりの表示件数
+// 1ページ目にアクセスした場合、またはランキングがまだセッションに保存されていない場合、データベースから取得
+if (!isset($_SESSION['rankings']) || (isset($_GET['page']) && $_GET['page'] == 1)) {
+    $rankings = $form->getRanking();
+    $_SESSION['rankings'] = $rankings; // セッションにランキングを保存
+} else {
+    // 2ページ目以降はセッションからランキングを取得
+    $rankings = $_SESSION['rankings'];
+}
+
+// ランキングの手動更新処理
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $rankings = $form->getRanking();
+    $_SESSION['rankings'] = $rankings;
+    // 現在のページにリダイレクト
+    header("Location: " . $_SERVER['REQUEST_URI']); // 現在のページにリダイレクト
+    exit();
+}
+
+//ページネーションの処理
 $itemsPerPage = 10;
+$totalRankings = count($rankings);
+$totalPages = ceil($totalRankings / $itemsPerPage);
 
-// 現在のページを取得 (デフォルトは1ページ目)
+// 何ページ目かを取得(デフォは1)
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$page = max(1, min($totalPages, $page));
 
-// 表示を開始する順位を計算
-$startRank = ($page - 1) * $itemsPerPage + 1;
+// 表示するランキングを決める処理
+$startIndex = ($page - 1) * $itemsPerPage;
+$paginatedRankings = array_slice($rankings, $startIndex, $itemsPerPage);
 
-// ランキングデータを取得
-$rankingData = $rankingClass->ranking($startRank);
-
-// 総ユーザー数に基づいて、ページ数を計算 (例: 100件の場合は10ページ)
-$totalUsers = $rankingClass->getTotalUsers(); // ランキング全体の件数を取得するメソッド
-$totalPages = ceil($totalUsers / $itemsPerPage);
+// ログイン中のユーザーのランキングを取り出す
+$index = null;
+foreach ($rankings as $key => $value) {
+    if ($value['userid'] === $userid) {
+        $index = $key;
+        break;
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -35,25 +58,28 @@ $totalPages = ceil($totalUsers / $itemsPerPage);
 
 <body>
     <div class="border-frame">
-        <h1>ランキング</h1>
-        
-        <!-- 自分のランキングを表示 -->
-        <div class="my-ranking">
-            <?php
-            if (isset($userid)) {
-                $userRank = $rankingClass->getUserRank($userid);
-                
-                // ユーザーの経験値を取得
-                $userData = $rankingClass->getInfo($userid);
-                $userTotalExp = $userData['exp'] + (($userData['level'] - 1) * 10); // 総獲得経験値を計算
+        <!-- ユーザーのランキングを表示 -->
+        <?php 
+        if ($index !== null) {
+            $user = $rankings[$index];
+            $user_name = $user['username'];
+            $user_rank = $user['rank'];
+            $user_score = $user['score'];
+            echo "<p>ユーザー名:".$username."</p>";
+            echo "<p>順位:".$user_rank."位</p>";
+            echo "<p>総獲得経験値:".$user_score."</p>";
+        } else {
+            echo "ランキングに登録するにはログインする必要があります";
+        }
+        ?>
 
-                echo "<p>あなたの順位: " . $userRank . " 位</p>";
-                echo "<p>総獲得経験値: " . htmlspecialchars($userTotalExp, ENT_QUOTES, 'UTF-8') . "</p>";
-            } else {
-                echo "<p>ログインしてください。</p>";
-            }
-            ?>
-        </div>
+        <!-- ランキングを手動で更新 -->
+        <form method="post">
+            ランキングの更新
+            <button type="submit" name="update" class="update-button">
+                <img src="../image/icon.png" alt="更新">
+            </button>
+        </form>
 
         <table border="1" id="table">
             <tr>
@@ -61,67 +87,50 @@ $totalPages = ceil($totalUsers / $itemsPerPage);
                 <th>ユーザ名</th>
                 <th>総獲得経験値</th>
             </tr>
-            <?php
-            // 結果がある場合、ランキングを表示
-            if (!empty($rankingData)) {
-                $rank = $startRank; // 開始順位を設定
-                $prevTotal = null; // 前のユーザーの総獲得経験値
-                $sameRankCount = 0; // 同じ順位のユーザー数
-                $prevRank = $startRank - 1; // 前のユーザーのランクを記録
-
-                foreach ($rankingData as $row) {
-                    // 総獲得経験値が前回と同じか確認
-                    if ($row['total'] === $prevTotal) {
-                        $sameRankCount++;
-                    } else {
-                        // 異なる場合、現在の順位に同じ順位のユーザー数を加算して更新
-                        $rank = $prevRank + $sameRankCount + 1;
-                        $sameRankCount = 0;
-                    }
-
-                    // ランクに応じてクラスを決定
-                    $class = '';
-                    if ($rank == 1) {
-                        $class = 'first-place'; // 1位のクラス
-                    } elseif ($rank == 2) {
-                        $class = 'second-place'; // 2位のクラス
-                    } elseif ($rank == 3) {
-                        $class = 'third-place'; // 3位のクラス
-                    }
-
-                    echo "<tr class='$class'>";
-                    echo "<td>" . $rank . "</td>";
-                    echo "<td>" . htmlspecialchars($row['username'], ENT_QUOTES, 'UTF-8') . "</td>";
-                    echo "<td>" . htmlspecialchars($row['total'], ENT_QUOTES, 'UTF-8') . "</td>";
-                    echo "</tr>";
-
-                    // 前回の経験値とランクを更新
-                    $prevTotal = $row['total'];
-                    $prevRank = $rank;
+            <?php foreach ($paginatedRankings as $ranking): ?>
+            <tr class="<?php 
+                // 1~3位は行に色を付ける
+                if ($ranking['rank'] == 1){
+                    echo 'first-place">'; 
+                    echo '<td>';
+                    echo '<img src="../image/crown1.png" alt="1位" class="crown-icon">';
+                    //echo '<span>'.htmlspecialchars($ranking['rank'], ENT_QUOTES, 'UTF-8').'</span>';
+                    echo '</td>';
+                }elseif ($ranking['rank'] == 2){
+                    echo 'second-place">'; 
+                    echo '<td>';
+                    echo '<img src="../image/crown2.png" alt="2位" class="crown-icon">';
+                    //echo '<span>'.htmlspecialchars($ranking['rank'], ENT_QUOTES, 'UTF-8').'</span>';
+                    echo '</td>';
+                }elseif ($ranking['rank'] == 3){
+                    echo 'third-place">'; 
+                    echo '<td>';
+                    echo '<img src="../image/crown3.png" alt="3位" class="crown-icon">';
+                    //echo '<span>'.htmlspecialchars($ranking['rank'], ENT_QUOTES, 'UTF-8').'</span>';
+                    echo '</td>';
+                }else{
+                    echo 'below-place">';
+                    echo '<td>';
+                    echo '<span>'.htmlspecialchars($ranking['rank'], ENT_QUOTES, 'UTF-8').'</spna>';
+                    echo '</td>';
                 }
-            } else {
-                // データがない場合のメッセージ
-                echo "<tr><td colspan='3'>ランキングデータがありません。</td></tr>";
-            }
             ?>
+                <td><?php echo htmlspecialchars($ranking['username'], ENT_QUOTES, 'UTF-8'); ?></td>
+                <td><?php echo htmlspecialchars($ranking['score'], ENT_QUOTES, 'UTF-8'); ?></td>
+            </tr>
+            <?php endforeach; ?>
         </table>
 
         <!-- ページネーション -->
         <div class="pagination">
-            <?php
-            // ページネーションリンクを生成
-            if ($totalPages > 1) {
-                for ($i = 1; $i <= $totalPages; $i++) {
-                    // 現在のページにはリンクを貼らない
-                    if ($i == $page) {
-                        echo "<span class='current-page'>$i</span>";
-                    } else {
-                        echo "<a href='?page=$i'>$i</a>";
-                    }
-                }
-            }
-            ?>
-        </div>
+    <a href="?page=<?php echo $page - 1; ?>" class="prev <?php echo ($page <= 1) ? 'hidden' : ''; ?>">&laquo; 前</a>
+
+    <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+        <a href="?page=<?php echo $i; ?>" class="<?php echo ($i == $page) ? 'current-page' : ''; ?>"><?php echo $i; ?></a>
+    <?php endfor; ?>
+
+    <a href="?page=<?php echo $page + 1; ?>" class="next <?php echo ($page >= $totalPages) ? 'hidden' : ''; ?>">次 &raquo;</a>
+</div>
     </div>
 </body>
 </html>
