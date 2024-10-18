@@ -34,7 +34,7 @@ if (isset($_SESSION['login_error'])) {
         };
     </script>
 
-<form action="../backend/login_db.php" method="post" class="form-group">
+<form action="../backend/kanrisya_login_db.php" method="post" class="form-group">
     <div class="form-group">
         <label for="username">メールアドレス</label>
         <input type="text" id="username" name="username" required />
