@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/header_kanrisya.php';
+require_once __DIR__ . '/header_login_signup.php';
 ?>
 <!DOCTYPE html>
 <link rel="stylesheet" href="../css/kanrisya_signup.css">
@@ -22,14 +22,16 @@ if (isset($_SESSION['signup_error'])) {
     <div class="form-group">
         <label for="address" id="addresses">メールアドレス:</label>
         <input type="email" id="address" name="address" required>
-    </div>
-    <div class="form-group">
+
         <label for="password" id="passwords">パスワード:</label>
         <input type="password" id="password" name="password" required>
     </div>
     <button type="submit" id="submit">登録</button>
 </form>
+<div class="signup button">
+<p><a href="kanrisya_login.php"><br>管理者ログインに戻る</a></p>
 </div>
+
 </div>
 </body>
 

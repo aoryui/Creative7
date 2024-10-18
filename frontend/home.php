@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="../css/home.css">
 </head>
 <body>
-    <h1>SPIタイサくん</h1>
-    <p>どちらのボタンをクリックしますか？</p>
-    
+    <h1>SPIタイサくん</h1>    
     <form action="kanrisya_login.php" method="get">
         <button type="submit">管理者画面へ</button>
     </form>

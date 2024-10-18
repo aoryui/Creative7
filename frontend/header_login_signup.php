@@ -26,19 +26,7 @@ $username1 = $_SESSION['userName'];
         <h1 id="free-h1">SPIタイサくん・管理者画面</h1>
         <nav id="menuContent">
             <ul>
-                
-                <li><a href="kanrisya_mypage.php">利用者管理</a></li>
-                <li><a href="kanrisya.php">ユーザー情報一覧</a></li>
-                <li><a href="generator_test.php">問題作成へ</a></li>
-                
-                <?php
-                if ($username === "ゲスト") {
-                ?>
-                    <li><a href="kanrisya_login.php">ログイン</a></li>
-                <?php
-                } else {
-                ?>
-                    <li><a href="../backend/logout.php">ログアウト</a></li>
+                    <li><a href="home.php">ホーム画面</a></li>
                 <?php
                 }
                 ?>
@@ -59,9 +47,6 @@ $username1 = $_SESSION['userName'];
                 }
             });
         </script>
-        <?php
-        }
-        ?>
 </header>
 </head>
 </html>

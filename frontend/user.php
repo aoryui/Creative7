@@ -148,7 +148,20 @@ if ($user_result->num_rows > 0) {
 
     <footer>
         <div class="footer-content">
-            <a href="kanrisya.php" class="back-to-kanrisya">管理者画面に戻る</a>
+        <a href="kanrisya.php" class="back-to-kanrisya">管理者画面に戻る</a>
+        <style>
+    .back-to-kanrisya {
+    display: inline-block;    /* ボタンのように表示 */
+    padding: 10px 20px;       /* ボタンの内側余白 */
+    background-color: #007BFF; /* 背景色（青） */
+    color: white;             /* 文字色（白） */
+    text-decoration: none;    /* リンクの下線を消す */
+    border-radius: 5px;       /* 角を丸める */
+    font-size: 16px;          /* 文字サイズ */
+    transition: background-color 0.3s; /* 背景色の変化にアニメーションを追加 */
+    }
+
+        </style>
         </div>
     </footer>
 

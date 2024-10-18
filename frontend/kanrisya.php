@@ -26,119 +26,12 @@ $result = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
+<link rel="stylesheet" href="../css/kanrisya.css">
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>管理者画面</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #ffefd5;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1000px;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            margin-top: calc(100px + 30px);
-        }
-
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 1.5em;
-            color: #333;
-        }
-
-        form {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        label {
-            font-weight: bold;
-            margin-right: 10px;
-        }
-
-        select, button {
-            padding: 8px 12px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            font-size: 1em;
-        }
-
-        button {
-            background-color: #27acd9;
-            color: white;
-            border: none;
-            margin-left: 10px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #27acd9;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            background-color: #f4f4f4;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        tr:hover {
-            background-color: #f1f1f1;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
-
-            .container {
-                padding: 15px;
-            }
-
-            form {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            select, button {
-                width: 100%;
-                margin-bottom: 10px;
-            }
-
-            table {
-                font-size: 0.9em;
-            }
-        }
-    </style>
 </head>
 <body>
 

@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/header_kanrisya.php';
+require_once __DIR__ . '/header_login_signup.php';
 
 // URLからメッセージを取得
 $message = isset($_GET['message']) ? $_GET['message'] : '';
