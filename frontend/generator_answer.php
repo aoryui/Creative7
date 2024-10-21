@@ -124,7 +124,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </script>
 
         <div class="button-container">
-            <button onclick="location.href='generator_test.php'">問題文作成ページヘ</button>
+            <button id="button-container" onclick="location.href='generator_test.php'">問題文作成ページヘ</button>
         </div>
 </body>
 </html>

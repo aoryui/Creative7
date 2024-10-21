@@ -72,3 +72,8 @@ a {
     display: none; /* 初期状態で非表示 */
     margin-top: 10px;
 }
+#button-container{
+    position: relative;
+    left: 900px;
+    bottom: 50px;
+}
