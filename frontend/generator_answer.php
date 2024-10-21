@@ -46,13 +46,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <!-- 左側: テキスト入力エリア -->
         <div class="text-area">
             <textarea id="markdown-input" rows="10" cols="50" placeholder="テキストを入力してください(MarkDownを使用できます)"></textarea><br>
-            <button id="generate-button">画像生成</button>
+            <button id="generate-button">画像をダウンロード</button>
         </div>
 
         <!-- 右側: キャンバスとダウンロードリンク -->
         <div class="canvas-area">
             <div id="preview"></div>
-            <a id="downloadLink">画像をダウンロード</a>
         </div>
     </div>
 
@@ -64,7 +63,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         const textarea = document.getElementById('markdown-input');
         const preview = document.getElementById('preview');
         const generateButton = document.getElementById('generate-button');
-        const downloadLink = document.getElementById('downloadLink');
 
         // プレビューの最大サイズを取得
         const maxPreviewHeight = preview.clientHeight;
@@ -97,14 +95,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // キャンバスを画像データURLに変換
                 const imageData = canvas.toDataURL('image/jpg');
 
-                // 画像のダウンロードリンクを作成
+                // 画像を自動的にダウンロード
+                const a = document.createElement('a');
+                a.href = imageData;
                 const currentTime = new Date().toISOString().slice(0, 19).replace(/:/g, '-'); // 現在の日時をファイル名に
-                const fileName = `text_image_${currentTime}.jpg`;
-                downloadLink.download = fileName;
-                downloadLink.href = imageData;
-
-                // ダウンロードリンクを表示
-                downloadLink.style.display = 'inline';
+                a.download = `text_image_${currentTime}.jpg`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
             });
         });
 
