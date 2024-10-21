@@ -26,7 +26,7 @@ $username1 = $_SESSION['userName'];
         <h1 id="free-h1">SPIタイサくん・管理者画面</h1>
         <nav id="menuContent">
             <ul>
-                    <li><a href="home.php">ホーム画面</a></li>
+                    <li><a href="index.php">ホーム画面</a></li>
                     <li><a href="kanrisya_login.php">ログイン画面へ戻る</a></li>
                 <?php
                 }
