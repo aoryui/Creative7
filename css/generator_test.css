@@ -88,6 +88,7 @@ a {
     white-space: pre-wrap; /* 改行を保持する */
     overflow-wrap: break-word; /* テキストがはみ出さないようにする */
     background-color: #FFFFFF; /* 背景色を白に設定 */
+    border: 1px solid black;
     zoom: 40%;
     line-height: 1; /* 行間を縮める */
 }
