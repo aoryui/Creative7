@@ -87,9 +87,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             preview.style.zoom = "100%";  // 画像生成前にズーム解除
 
             html2canvas(preview, {
-                width: 1182,  // 画像の幅を指定
-                height: 709,  // 画像の高さを指定
-                scale: 2      // 高解像度で生成するためのスケール
+                width: 1477,  // 画像の幅を指定
+                height: 591,  // 画像の高さを指定
+                scale: 1      // 高解像度で生成するためのスケール
             }).then(canvas => {
                 // zoomを元に戻す
                 preview.style.zoom = originalZoom;

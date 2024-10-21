@@ -26,8 +26,8 @@ body {
 
 textarea,
 canvas {
-    width: 450px; /* 591px から縮小 */
-    height: 270px; /* 354px から縮小 */
+    width: 590.8px; /* 1477px から縮小 */
+    height: 236.4px; /* 591px から縮小 */
     padding: 10px;
     box-sizing: border-box;
     border: 1px solid black;
@@ -57,8 +57,8 @@ a {
 }
 
 #preview {
-    width: 1182px;
-    height: 709px;
+    width: 1477px;
+    height: 591px;
     padding: 10px;
     font-family: 'Yu Mincho', '游明朝', serif; /* 明朝体を指定 */
     font-size: 20px;
