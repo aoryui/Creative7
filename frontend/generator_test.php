@@ -37,25 +37,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="../css/generator_test.css">
     <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-
-    <style>
-        #preview {
-            width: 1182px;
-            height: 709px;
-            padding: 10px;
-            font-family: 'Yu Mincho', '游明朝', serif; /* 明朝体を指定 */
-            font-size: 20px;
-            white-space: pre-wrap; /* 改行を保持する */
-            overflow-wrap: break-word; /* テキストがはみ出さないようにする */
-            background-color: #FFFFFF; /* 背景色を白に設定 */
-            zoom: 40%;
-            line-height: 1; /* 行間を縮める */
-        }
-        #downloadLink {
-            display: none; /* 初期状態で非表示 */
-            margin-top: 10px;
-        }
-    </style>
 </head>
 <body>
 
@@ -143,7 +124,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
     </script>
-
 
     <div class="button-container">
         <form method="post" action="generator_answer.php">
