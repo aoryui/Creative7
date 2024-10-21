@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* 白に近い背景色 */
+    color: #1f1f1f; /* 明るいグレーで文字を表示 */
+}
+
+header {
+    background-color: #1f1f1f; /* ダークグレーのヘッダー */
+    color: #fff;
+    padding: 10px 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #f4f4f4; /* リンクも白で */
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    color: #90caf9; /* ホバーでアクセントカラーをつける */
+}
+
+.hero {
+    background: url('spi-background.jpg') no-repeat center center/cover;
+    height: 400px;
+    color: #000000;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #ffffff; /* ヒーローセクションの文字は白 */
+}
+
+.hero p {
+    font-size: 1.2em;
+    color: #e0e0e0;
+}
+
+.hero .btn {
+    background-color: #90caf9; /* アクセントカラー */
+    color: #121212;
+    padding: 20px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    top: 50px;
+}
+
+.hero .btn:hover {
+    background-color: #42a5f5;
+}
+
+.kan {
+    background-color: #81c784; /* 成功を意味するグリーン */
+    color: #121212;
+    padding: 20px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    position: relative;
+    top: 50px;
+    transition: background-color 0.3s ease;
+}
+
+.kan:hover {
+    background-color: #66bb6a;
+}
+
+.feature-section {
+    background-color: #1f1f1f;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.feature-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #90caf9; /* タイトルをアクセントカラーに */
+}
+
+.feature-section p {
+    font-size: 1.1em;
+    color: #e0e0e0;
+}
+
+footer {
+    background-color: #1f1f1f;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+.spi-link:hover {
+    text-decoration: underline;
+}

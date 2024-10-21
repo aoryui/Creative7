@@ -82,14 +82,6 @@ nav ul li a {
     top: 80px;  /* 現在の位置から50px下に移動 */
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 50px;
-}
-
 .spi-link:hover {
     text-decoration: underline;
 }
