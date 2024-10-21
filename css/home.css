@@ -45,7 +45,7 @@ nav ul li a {
 .hero {
     background: url('spi-background.jpg') no-repeat center center/cover;
     height: 400px;
-    color: #fff;
+    color: #000000;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -63,33 +63,23 @@ nav ul li a {
 }
 
 .hero .btn {
-    background-color: #ff4500;
+    background-color: rgb(89, 208, 247);
     color: #fff;
-    padding: 10px 20px;
+    padding: 30px 40px;
     text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
+    border-radius: 10px;
+    position: relative;
+    top: 80px;  /* 現在の位置から50px下に移動 */
 }
 
-.about-spi {
-    padding: 50px 0;
-    background-color: #fff;
-    text-align: center;
-}
-
-.about-spi h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-.about-spi p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-}
-
-.about-spi .diagram {
-    max-width: 100%;
-    height: auto;
+.kan {
+    background-color: rgb(84, 196, 99);
+    color: #fff;
+    padding: 30px 40px;
+    text-decoration: none;
+    border-radius: 10px;
+    position: relative;
+    top: 80px;  /* 現在の位置から50px下に移動 */
 }
 
 footer {
