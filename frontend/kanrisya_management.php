@@ -17,12 +17,12 @@ require_once __DIR__ . '/header_kanrisya.php'; //ヘッダー指定
     <div class="introduce-container1">        
     <img src="../image/icon/kanrisya.png" class="kanrisya1">       
     <div class="kanrisyakanri">ユーザー情報一覧</div>
-    <button class="button1" onclick="window.location.href='http://localhost/creative7-4/frontend/kanrisya.php'"></button>
+    <button class="button1" onclick="window.location.href='kanrisya.php'"></button>
 
     <div class="introduce-container2">
     <img src="../image/icon/test-icon.png" class="test">
     <div class="problem">問題作成</div>
-    <button class="button2" onclick="window.location.href='http://localhost/creative7-4/frontend/generator_test.php'"></button>
+    <button class="button2" onclick="window.location.href='generator_test.php'"></button>
 
 
     </div>
