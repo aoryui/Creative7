@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
 
-<h1 id="bun">作成したい問題文を入力してください</h1>
+<h1 id="bun">作成したい解説文を入力してください</h1>
 
     <div class="container">
         <!-- 左側: テキスト入力エリア -->
@@ -126,9 +126,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </script>
 
         <div class="button-container">
-        <form method="post" action="generator_test.php">
-            <input type="submit" value="問題文作成ページヘ">
-        </form>
+            <button onclick="location.href='generator_test.php'">問題文作成ページヘ</button>
         </div>
 </body>
 </html>

@@ -126,9 +126,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </script>
 
     <div class="button-container">
-        <form method="post" action="generator_answer.php">
-            <input type="submit" value="解説文作成ページヘ">
-        </form>
+        <button onclick="location.href='generator_answer.php'">解説文作成ページヘ</button>
     </div>
 </body>
 </html>
