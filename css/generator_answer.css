@@ -65,10 +65,16 @@ a {
     white-space: pre-wrap; /* 改行を保持する */
     overflow-wrap: break-word; /* テキストがはみ出さないようにする */
     background-color: #FFFFFF; /* 背景色を白に設定 */
+    border: 1px solid black;
     zoom: 40%;
     line-height: 1; /* 行間を縮める */
 }
 #downloadLink {
     display: none; /* 初期状態で非表示 */
     margin-top: 10px;
+}
+#button-container{
+    position: relative;
+    left: 900px;
+    bottom: 50px;
 }
