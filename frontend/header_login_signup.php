@@ -27,6 +27,7 @@ $username1 = $_SESSION['userName'];
         <nav id="menuContent">
             <ul>
                     <li><a href="home.php">ホーム画面</a></li>
+                    <li><a href="kanrisya_login.php">ログイン画面へ戻る</a></li>
                 <?php
                 }
                 ?>

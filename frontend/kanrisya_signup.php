@@ -28,9 +28,6 @@ if (isset($_SESSION['signup_error'])) {
     </div>
     <button type="submit" id="submit">登録</button>
 </form>
-<div class="signup button">
-<p><a href="kanrisya_login.php"><br>管理者ログインに戻る</a></p>
-</div>
 
 </div>
 </body>
