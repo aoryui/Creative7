@@ -8,7 +8,7 @@
 /* ページ全体のスタイル */
 body {
     font-family: Arial, sans-serif;
-    font-size: 32px; /* 全体のフォントサイズを2倍に */
+    font-size: 14px; /* 全体のフォントサイズを2倍に */
     line-height: 1.6;
     background-color: #f4f4f4;
     padding: 20px;

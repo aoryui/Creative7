@@ -18,11 +18,11 @@ html {
   margin-top: 120px;
   margin-bottom: auto;
   background-color: #fff;
-  padding: 20px;
   width: 450px;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
+  height: 400px;
 }
 
 .login-ji {
@@ -58,12 +58,12 @@ input:focus {
 
 #login {
   margin-top: 10px;
-  width: 50%;
+  width: 180px;
   padding: 10px;
   background-color: rgb(89, 208, 247);
   color: white;
   border: none;
-  border-radius: 2px;
+  border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.3s ease;
