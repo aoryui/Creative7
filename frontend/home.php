@@ -18,8 +18,6 @@
                     <li><a href="#">SPIとは</a></li>
                     <li><a href="#">ドキュメント</a></li>
                     <li><a href="#">製品とサービス</a></li>
-                    <li><a href="#">サポート</a></li>
-                    <li><a href="#">お問い合わせ</a></li>
                 </ul>
             </nav>
         </div>
@@ -30,7 +28,8 @@
         <div class="container">
             <h1>SPIソリューションで次世代の通信を実現</h1>
             <p>高速でシンプルなデバイス間通信プロトコル</p>
-            <a href="#" class="btn">詳細を見る</a>
+            <a href="kanrisya_login.php" class="btn">管理者ログイン</a>
+            <a href="login.php" class="btn">ユーザーログイン</a>
         </div>
     </section>
 
