@@ -11,10 +11,10 @@
     <!-- ヘッダー -->
     <header>
         <div class="container">
-            <div class="logo">SPIロゴ</div>
+            <div class="logo">SPIタイサくん</div>
             <nav>
                 <ul>
-                    <li><a href="#">ホーム</a></li>
+                    <li><a href="home.php">ホーム</a></li>
                     <li><a href="SPI.php" class="spi-link">SPIとは</a></li>
                     <li><a href="#">ドキュメント</a></li>
                     <li><a href="seihin.php">製品とサービス</a></li>
@@ -32,13 +32,6 @@
             <a href="login.php" class="btn">ユーザーログイン</a>
         </div>
     </section>
-
-    <!-- フッター -->
-    <footer>
-        <div class="container">
-            <p>&copy;SPIタイサくん</p>
-        </div>
-    </footer>
 
 </body>
 </html>
