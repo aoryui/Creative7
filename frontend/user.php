@@ -153,7 +153,7 @@ if ($user_result->num_rows > 0) {
     .back-to-kanrisya {
     display: inline-block;    /* ボタンのように表示 */
     padding: 10px 20px;       /* ボタンの内側余白 */
-    background-color: #007BFF; /* 背景色（青） */
+    background-color: rgb(84, 196, 99); /* 背景色（青） */
     color: white;             /* 文字色（白） */
     text-decoration: none;    /* リンクの下線を消す */
     border-radius: 5px;       /* 角を丸める */
