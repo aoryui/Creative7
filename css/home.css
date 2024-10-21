@@ -99,3 +99,7 @@ footer {
     padding: 20px 0;
     margin-top: 50px;
 }
+
+.spi-link:hover {
+    text-decoration: underline;
+}
