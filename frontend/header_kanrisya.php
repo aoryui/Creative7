@@ -27,7 +27,7 @@ $username1 = $_SESSION['userName'];
         <nav id="menuContent">
             <ul>
                 
-                <li><a href="kanrisya_mypage.php">利用者管理</a></li>
+                <li><a href="kanrisya_management.php">利用者管理</a></li>
                 <li><a href="kanrisya.php">ユーザー情報一覧</a></li>
                 <li><a href="generator_test.php">問題作成へ</a></li>
                 
