@@ -34,11 +34,43 @@ body {
     position: relative;
     width: 230px;
     height: 230px;
-    top: -150px;
+    top: -385px;
     left: 120%;
     background-color: #e3e3e6;
     z-index: 1;
     font-size: 30px
+}
+
+.button1{
+    position: relative;
+    top: -150px;
+    background-color:  #e3e3e600;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 230px;
+    height: 230px;
+    cursor: pointer;
+}
+
+.button2{
+    position: relative;
+    top: -160px;
+    background-color:  #e3e3e600;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 230px;
+    height: 230px;
+    cursor: pointer;
 }
 
 
