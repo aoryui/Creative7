@@ -17,7 +17,7 @@
                     <li><a href="#">ホーム</a></li>
                     <li><a href="SPI.php" class="spi-link">SPIとは</a></li>
                     <li><a href="#">ドキュメント</a></li>
-                    <li><a href="#">製品とサービス</a></li>
+                    <li><a href="seihin.php">製品とサービス</a></li>
                 </ul>
             </nav>
         </div>
