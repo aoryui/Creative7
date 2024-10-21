@@ -71,27 +71,6 @@ nav ul li a {
     margin-top: 20px;
 }
 
-.about-spi {
-    padding: 50px 0;
-    background-color: #fff;
-    text-align: center;
-}
-
-.about-spi h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-.about-spi p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-}
-
-.about-spi .diagram {
-    max-width: 100%;
-    height: auto;
-}
-
 footer {
     background-color: #333;
     color: #fff;

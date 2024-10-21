@@ -33,16 +33,6 @@
         </div>
     </section>
 
-    <!-- SPIとは -->
-    <section class="about-spi">
-        <div class="container">
-            <h2>SPIとは？</h2>
-            <p>SPI (Serial Peripheral Interface) は、マイクロコントローラーと周辺機器を接続するためのシリアル通信プロトコルです。</p>
-            <p>主にマスター・スレーブ構成で動作し、シンプルかつ高速な通信が可能です。</p>
-            <img src="spi-diagram.png" alt="SPIの仕組み" class="diagram">
-        </div>
-    </section>
-
     <!-- フッター -->
     <footer>
         <div class="container">
