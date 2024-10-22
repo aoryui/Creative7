@@ -3,6 +3,7 @@ require_once __DIR__ . '/header_login_signup.php';
 ?>
 <!DOCTYPE html>
 <link rel="stylesheet" href="../css/kanrisya_signup.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <div class="login-body">
 <div class="login-container">
 <div class="login-ji">
@@ -28,9 +29,6 @@ if (isset($_SESSION['signup_error'])) {
     </div>
     <button type="submit" id="submit">登録</button>
 </form>
-<div class="signup button">
-<p><a href="kanrisya_login.php"><br>管理者ログインに戻る</a></p>
-</div>
 
 </div>
 </body>

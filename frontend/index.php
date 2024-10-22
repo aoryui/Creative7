@@ -16,7 +16,6 @@
                 <ul>
                     <li><a href="">ホーム</a></li>
                     <li><a href="SPI.php" class="spi-link">SPIとは</a></li>
-                    <li><a href="#">ドキュメント</a></li>
                     <li><a href="seihin.php">製品とサービス</a></li>
                 </ul>
             </nav>
@@ -26,8 +25,8 @@
     <!-- メインビジュアル -->
     <section class="hero">
         <div class="container">
-            <h1>SPIソリューションで次世代の通信を実現</h1>
-            <p>高速でシンプルなデバイス間通信プロトコル</p>
+            <h1>SPI対策して試験合格を確実に</h1>
+            <p>シンプルでゲーム性溢れるSPIサイト</p>
             <a href="kanrisya_login.php" class="kan">管理者ログイン</a>
             <a href="login.php" class="btn">ユーザーログイン</a>
         </div>

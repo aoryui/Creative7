@@ -11,6 +11,7 @@ if (!empty($message)) {
 ?>
 <!DOCTYPE html>
 <link rel="stylesheet" href="../css/kanrisya_login.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <div class="login-body">
 <div class="login-container">
 <div class="login-ji">
