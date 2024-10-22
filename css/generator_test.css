@@ -36,6 +36,8 @@ canvas {
     box-sizing: border-box;
     border: 1px solid black;
     background-color: #ffff;
+    transform: scale(0.87) translate(400px, 10px); /* 微調整 */
+    transform-origin: top left; /* スケールの基準点を左上に設定 */
 }
 
 textarea {
@@ -89,7 +91,9 @@ a {
     overflow-wrap: break-word; /* テキストがはみ出さないようにする */
     background-color: #FFFFFF; /* 背景色を白に設定 */
     border: 1px solid black;
-    zoom: 40%;
+    transform: scale(0.35) translate(1200px, 30px); /* 微調整 */
+    transform-origin: top left; /* スケールの基準点を左上に設定 */
+
     line-height: 1; /* 行間を縮める */
 }
 #downloadLink {

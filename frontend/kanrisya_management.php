@@ -1,5 +1,12 @@
 <?php
 require_once __DIR__ . '/header_kanrisya.php'; //ヘッダー指定
+require_once __DIR__ . '/../backend/class.php';
+$form = new form();
+require_once __DIR__ . '/../backend/pre.php';
+if (isset($_SESSION['userid'])) {
+    $userid = $_SESSION['userid'];
+}
+
 ?>
 
 
