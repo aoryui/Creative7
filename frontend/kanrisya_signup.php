@@ -3,6 +3,7 @@ require_once __DIR__ . '/header_login_signup.php';
 ?>
 <!DOCTYPE html>
 <link rel="stylesheet" href="../css/kanrisya_signup.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <div class="login-body">
 <div class="login-container">
 <div class="login-ji">
