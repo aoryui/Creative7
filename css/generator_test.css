@@ -60,8 +60,9 @@ button {
 
 .button-container {
     position: relative;
-    right: -900px;
-    bottom: 60px;
+    right: -840px;
+    bottom: 450px;
+
 }
 
 
@@ -97,6 +98,11 @@ a {
     line-height: 1; /* 行間を縮める */
 }
 #downloadLink {
-    display: none; /* 初期状態で非表示 */
+    display: none; /* 初期状態で非表示 */    
     margin-top: 10px;
+}
+#generate-button{
+    position: relative;
+    left: 300px;
+    bottom: 40px;
 }
