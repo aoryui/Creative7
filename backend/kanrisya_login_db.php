@@ -23,4 +23,4 @@ $_SESSION['userEmail'] = $result['email'];
 setcookie("userid", $userid, time() + 60 * 60 * 24 * 14, '/');
 setcookie("userName", $username, time() + 60 * 60 * 24 * 14, '/');
 
-header(('Location:' . '../frontend/kanrisya.php'));
+header(('Location:' . '../frontend/kanrisya_management.php'));

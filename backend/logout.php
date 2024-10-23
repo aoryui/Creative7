@@ -10,6 +10,6 @@ session_destroy();
 setcookie("userid", '', time() - 1000, '/');
 setcookie("userName", '', time() - 1000, '/');
 
-header('Location: ../frontend/home.php');
+header('Location: ../frontend/index.php');
 exit();
 ?>

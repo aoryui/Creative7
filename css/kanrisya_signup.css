@@ -20,7 +20,6 @@ html {
   }
   
   .login-container {
-    height: 440px;
     width: 400px;
     margin-top: calc(100px + 20px);
     margin-left: auto;

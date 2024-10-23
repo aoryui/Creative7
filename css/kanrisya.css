@@ -1,5 +1,4 @@
          body {
-            font-family: 'Arial', sans-serif;
             background-color: #ffefd5;
             margin: 0;
             padding: 0;
@@ -11,6 +10,7 @@
         }
 
         .container {
+            font-family: 'Arial', sans-serif;
             width: 100%;
             max-width: 1000px;
             background-color: #fff;

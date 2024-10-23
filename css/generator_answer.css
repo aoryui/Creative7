@@ -4,8 +4,12 @@ body {
     background-color: #ffefd5;
 }
 
+html {
+    overflow: hidden;
+  }
+
 #bun {
-    margin-top: 130px;
+    margin-top: 120px;
     text-align: center;
 }
 
@@ -26,12 +30,14 @@ body {
 
 textarea,
 canvas {
-    width: 590.8px; /* 1477px から縮小 */
-    height: 236.4px; /* 591px から縮小 */
+    width: 450px; /* 591px から縮小 */
+    height: 295px; /* 354px から縮小 */
     padding: 10px;
     box-sizing: border-box;
     border: 1px solid black;
     background-color: #ffff;
+    transform: scale(0.87) translate(400px, 10px); /* 微調整 */
+    transform-origin: top left; /* スケールの基準点を左上に設定 */
 }
 
 textarea {
@@ -52,13 +58,33 @@ button {
     transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
 }
 
+.button-container {
+    position: relative;
+    right: -840px;
+    bottom: 450px;
+
+}
+
+
+.button-container input[type="submit"] {
+    background-color: #27acd9;
+    color: white; /* テキスト色を白に */
+    padding: 12px 24px; 
+    border: none; /* 境界線なし */
+    border-radius: 5px; /* 角丸 */
+    font-size: 16px; /* フォントサイズ */
+    cursor: pointer; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease; /* ホバー時の色変化をスムーズに */
+}
+
 a {
     margin-top: 10px;
 }
 
 #preview {
-    width: 1477px;
-    height: 591px;
+    width: 1182px;
+    height: 709px;
     padding: 10px;
     font-family: 'Yu Mincho', '游明朝', serif; /* 明朝体を指定 */
     font-size: 20px;
@@ -66,15 +92,17 @@ a {
     overflow-wrap: break-word; /* テキストがはみ出さないようにする */
     background-color: #FFFFFF; /* 背景色を白に設定 */
     border: 1px solid black;
-    zoom: 40%;
+    transform: scale(0.35) translate(1200px, 30px); /* 微調整 */
+    transform-origin: top left; /* スケールの基準点を左上に設定 */
+
     line-height: 1; /* 行間を縮める */
 }
 #downloadLink {
-    display: none; /* 初期状態で非表示 */
+    display: none; /* 初期状態で非表示 */    
     margin-top: 10px;
 }
-#button-container{
+#generate-button{
     position: relative;
-    left: 900px;
-    bottom: 50px;
+    left: 300px;
+    bottom: 40px;
 }
