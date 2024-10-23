@@ -11,7 +11,6 @@
     <!-- ヘッダー -->
     <header>
         <div class="container">
-            <div class="logo">SPIタイサくん</div>
             <nav>
                 <ul>
                     <li><a href="">ホーム</a></li> <!-- ""は更新　-->

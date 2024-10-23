@@ -13,7 +13,7 @@ body {
 header {
     background-color: #333;
     color: #fff;
-    padding: 10px 0;
+    padding: 25px 0;
 }
 
 .container {
@@ -93,4 +93,9 @@ nav ul li a {
 
 .hero .kan:hover {
     background-color: rgb(60, 148, 74);
+}
+
+img {
+    width: 50%;
+    height: 50%;
 }
