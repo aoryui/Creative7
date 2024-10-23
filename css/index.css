@@ -19,6 +19,7 @@ header {
 .container {
     width: 80%;
     margin: 0 auto;
+    text-align: center;  /* コンテナ内の要素を中央に揃える */
 }
 
 .logo {
@@ -30,10 +31,6 @@ nav ul {
     list-style: none;
     display: flex;
     justify-content: space-around;
-}
-
-nav ul li {
-    display: inline;
 }
 
 nav ul li a {
@@ -51,6 +48,7 @@ nav ul li a {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: calc(100px + 20px);
 }
 
 .hero h1 {
@@ -60,28 +58,39 @@ nav ul li a {
 
 .hero p {
     font-size: 1.2em;
+    margin-bottom: 20px;
 }
 
-.hero .btn {
+.hero img {
+    display: block;
+    margin: 0 auto;
+    width: 350px;
+    height: 300px;
+}
+
+/* ボタンのスタイル */
+.hero .btn, .hero .kan {
     background-color: rgb(89, 208, 247);
     color: #fff;
-    padding: 30px 40px;
+    padding: 15px 30px;
     text-decoration: none;
     border-radius: 10px;
-    position: relative;
-    top: 80px;  /* 現在の位置から50px下に移動 */
+    font-size: 1.2em;
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-bottom: auto;
 }
 
-.kan {
+.hero .kan {
     background-color: rgb(84, 196, 99);
-    color: #fff;
-    padding: 30px 40px;
-    text-decoration: none;
-    border-radius: 10px;
-    position: relative;
-    top: 80px;  /* 現在の位置から50px下に移動 */
 }
 
-.spi-link:hover {
-    text-decoration: underline;
+/* ボタンをホバーした時の色の変化 */
+.hero .btn:hover {
+    background-color: rgb(60, 158, 202);
+}
+
+.hero .kan:hover {
+    background-color: rgb(60, 148, 74);
 }
