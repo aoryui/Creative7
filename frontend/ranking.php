@@ -77,7 +77,7 @@ foreach ($rankings as $key => $value) {
         <form method="post">
             ランキングの更新
             <button type="submit" name="update" class="update-button">
-                <img src="../image/icon.png" alt="更新">
+                <img src="../image/icon/reload.png" alt="更新">
             </button>
         </form>
 
