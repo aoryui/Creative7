@@ -27,7 +27,7 @@
         <div class="container">
             <h1>SPI対策して試験合格を確実に</h1>
             <p>シンプルでゲーム性溢れるSPIサイト</p>
-            <img src="../image/icon/logo.png" alt="タイサくんロゴ" width="350" height="300">
+            <img src="../image/icon/logo.png" alt="タイサくんロゴ">
             <a href="kanrisya_login.php" class="kan">管理者ログイン</a>
             <a href="login.php" class="btn">ユーザーログイン</a>
         </div>
