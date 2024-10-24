@@ -13,14 +13,14 @@ html {
     text-align: center;
 }
 
-.container {
+.container {  
     display: flex;
     justify-content: center;
     align-items: flex-start;
     gap: 30px;
 }
 
-.text-area,
+.text-area,  /*入力エリア*/
 .canvas-area {
     flex: 1;
     display: flex;
@@ -28,7 +28,7 @@ html {
     align-items: center;
 }
 
-textarea,
+textarea, /*入力エリア*/
 canvas {
     width: 450px; /* 591px から縮小 */
     height: 295px; /* 354px から縮小 */
@@ -40,12 +40,12 @@ canvas {
     transform-origin: top left; /* スケールの基準点を左上に設定 */
 }
 
-textarea {
+textarea {  
     font-size: 14px;
     resize: none;
 }
 
-button {
+button {  /*この画面のボタン*/
     margin-top: 10px;
     padding: 10px 20px;
     font-size: 16px;
@@ -58,7 +58,7 @@ button {
     transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
 }
 
-.button-container {
+.button-container { /*ボタンの外形*/
     position: relative;
     right: -840px;
     bottom: 450px;
@@ -82,7 +82,7 @@ a {
     margin-top: 10px;
 }
 
-#preview {
+#preview { /*右側のプレビュー画面*/
     width: 1182px;
     height: 709px;
     padding: 10px;
@@ -97,11 +97,11 @@ a {
 
     line-height: 1; /* 行間を縮める */
 }
-#downloadLink {
+#downloadLink {  /*ダウンロードリンク*/
     display: none; /* 初期状態で非表示 */    
     margin-top: 10px;
 }
-#generate-button{
+#generate-button{ /*画面遷移のボタン*/
     position: relative;
     left: 300px;
     bottom: 40px;

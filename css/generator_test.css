@@ -82,7 +82,7 @@ a {
     margin-top: 10px;
 }
 
-#preview {
+#preview { /*プレビュー画面*/
     width: 1182px;
     height: 709px;
     padding: 10px;
@@ -97,11 +97,11 @@ a {
 
     line-height: 1; /* 行間を縮める */
 }
-#downloadLink {
+#downloadLink { /*ダウンロードリンクの高さの位置*/
     display: none; /* 初期状態で非表示 */    
     margin-top: 10px;
 }
-#generate-button{
+#generate-button{ /*遷移ボタン*/
     position: relative;
     left: 300px;
     bottom: 40px;

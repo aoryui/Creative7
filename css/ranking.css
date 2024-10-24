@@ -2,7 +2,7 @@ body {
     background-color: #ffefd5;
 }
 
-.border-frame {
+.border-frame { /*ユーザー名、ランキングなど*/
     max-width: 1200px;
     margin: 100px auto 30px;
     margin: 100px auto 30px;
@@ -16,7 +16,7 @@ body {
     margin-top: calc(100px + 30px);
 }
     
-table {
+table { /*表*/
     width: 90%; /* テーブルも全体に合わせてレスポンシブ対応 */
     margin: 20px auto; /* 上部に余白を追加し中央寄せ */
     border-collapse: collapse; /* ボーダーを1本にまとめる */
@@ -54,7 +54,7 @@ table {
     text-align: center;
 }
 
-#table th {
+#table th { /*ランキング表*/
     background-color: #f2f2f2;
 }
 
