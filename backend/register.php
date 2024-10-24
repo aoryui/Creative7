@@ -22,15 +22,15 @@ $target_dir = '/member/';
 if (strpos($request_uri, $target_dir) !== false) {
     $file_path = $_SERVER['DOCUMENT_ROOT'] . $request_uri;
 
-    // リクエストされたパスがディレクトリである場合、index.php ファイルを表示する
+    // リクエストされたパスがディレクトリである場合、home.php ファイルを表示する
     if (is_dir($file_path)) {
-        $index_file_path = rtrim($file_path, '/') . '/index.php';
+        $index_file_path = rtrim($file_path, '/') . '/home.php';
         if (file_exists($index_file_path) && is_file($index_file_path)) {
             readfile($index_file_path);
             exit;
         } else {
             http_response_code(404);
-            echo "index.php ファイルが見つかりません";
+            echo "home.php ファイルが見つかりません";
             exit;
         }
     }

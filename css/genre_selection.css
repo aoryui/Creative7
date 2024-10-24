@@ -10,7 +10,7 @@ body {
 }
 
 
-.border-frame{
+.border-frame{ /*言語非言語ジャンルの枠線*/
 max-width: 1000px;
 margin: 20px auto; /* 上に20pxの余白を追加 */
 background: #fff;
@@ -24,7 +24,7 @@ text-align: center;
 top: 100px;
 }
 
-.checksAll{
+.checksAll{ /*チェック機能のデザイン*/
 position: relative;
 top: 5px;
 left: -50px;
@@ -37,7 +37,7 @@ left: -170px;
 }
 
 
-.contain {
+.contain { /*言語非言語ジャンルの枠線*/
   max-width: 250px;
   margin: 40px; /* 上に40pxの余白を追加 */
   background: #fff;
@@ -54,7 +54,7 @@ left: -170px;
   border: 1px solid #333333;
 }
 
-.contains {
+.contains { /*言語非言語ジャンルの枠線*/
 max-width: 450px;
 margin: 40px; /* 上に40pxの余白を追加 */
 padding: 10px;
@@ -74,14 +74,14 @@ border: 1px solid #333333;
 }
 
 
-.language{
+.language{ /*言語*/
 display:block;
 text-align: right;
 padding: 5px;
 
 }
 
-.non_language1{
+.non_language1{ /*非言語*/
 display:block;
 text-align: left;
 position: relative;
@@ -89,7 +89,7 @@ left: 90px;
 padding: 5px;
 }
 
-.non_language2{
+.non_language2{ /*非言語2*/
   display:block;
   text-align: left;
   position: relative;
@@ -98,7 +98,7 @@ padding: 5px;
   padding: 5px;
   }
 
-  .non_language3{
+  .non_language3{ /*非言語3*/
     display:block;
     text-align: left;
     position: relative;
@@ -108,7 +108,7 @@ padding: 5px;
     }
     
 
-.button{
+.button{ /*選択ボタン*/
 position: relative;
 left: 300px;
 top: 20px;

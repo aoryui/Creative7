@@ -1,4 +1,4 @@
-.login-body {
+.login-body { /*管理者全体のボディ*/
     background-color: #ffefd5;
     font-family: 'Comic Sans MS', cursive, sans-serif;
     color: rgb(84, 196, 99);
@@ -11,10 +11,10 @@
   
   
   html {
-    overflow: hidden;
+    overflow: hidden; /*隠す*/
   }
   
-  .login-container {
+  .login-container { /*ログインの白枠*/
     margin-top: 120px;
     margin-bottom: auto;
     background-color: #fff;
@@ -39,14 +39,14 @@
     margin-bottom: 5px;
   }
   
-  input {
+  input { /*入力欄*/
     padding: 10px 10px;
     border: 2px solid rgb(84, 196, 99);;
     border-radius: 10px;
     font-size: 16px;
   }
   
-  input::placeholder {
+  input::placeholder { /*リンクと思われし場所*/
     color: rgb(89, 208, 247);
   }
   

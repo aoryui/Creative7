@@ -9,7 +9,7 @@ html {
     /* 垂直スクロールバーを隠す */
   }
   
-  .login-body {
+  .login-body { /*全体のボデイ*/ 
     background-color: #ffefd5;
     font-family: 'Comic Sans MS', cursive, sans-serif;
     color: rgb(84, 196, 99);
@@ -19,7 +19,7 @@ html {
     align-items: center;
   }
   
-  .login-container {
+  .login-container { /*大きい枠*/
     width: 400px;
     margin-top: calc(100px + 20px);
     margin-left: auto;
@@ -65,7 +65,7 @@ html {
     box-shadow: 0 0 5px rgba(255, 192, 203, 0.5);
   }
   
-  #submit {
+  #submit { /*登録ボタン*/
     width: 200px;
     padding: 10px;
     background-color:rgb(84, 196, 99);
@@ -93,7 +93,7 @@ html {
     font-size: 28px;
   }
   
-  #username {
+  #username { /*ユーザー名*/
     position: relative;
     top: -40px;
     left: 80px;
@@ -107,7 +107,7 @@ html {
   }
   
   
-  #address {
+  #address { /*アドレス*/
     position: relative;
     top: -80px;
     left: 80px;
@@ -121,7 +121,7 @@ html {
     top: -40px;
   }
   
-  #password {
+  #password { /*パスワード*/
     position: relative;
     top: -100px;
     left: 80px;
