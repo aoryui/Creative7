@@ -1,4 +1,4 @@
-header {
+header { /*ヘッダー設定*/
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -22,7 +22,7 @@ html {
     padding: 0;
 }
 
-#menuContent {
+#menuContent { /*メニューコンテンツ*/
     display: none;
     position: fixed;
     background-color: #f9f9f9;
@@ -31,7 +31,7 @@ html {
     z-index: 998;
 }
 
-#menuBtn {
+#menuBtn { /*メニューボタン*/
     margin-right: auto;
     background-color: transparent;
     /* ボタンの背景色を透明に */
@@ -41,7 +41,7 @@ html {
     /* カーソルをポインタに */
 }
 
-#menuContent ul {
+#menuContent ul { 
     list-style-type: none;
     padding: 0;
 }

@@ -1,4 +1,4 @@
-         body {
+         body { /*ページ全体*/
             background-color: #ffefd5;
             margin: 0;
             padding: 0;
@@ -9,7 +9,7 @@
             padding: 20px;
         }
 
-        .container {
+        .container { /*白枠*/
             font-family: 'Arial', sans-serif;
             width: 100%;
             max-width: 1000px;
@@ -20,32 +20,32 @@
             margin-top: calc(100px + 30px);
         }
 
-        h2 {
+        h2 { /*テキスト*/
             text-align: center;
             margin-bottom: 20px;
             font-size: 1.5em;
             color: #333;
         }
 
-        form {
+        form { /*ソートの同じ横列のエリア*/
             display: flex;
             justify-content: center;
             margin-bottom: 20px;
         }
 
-        label {
+        label { /*表の頭の項目*/
             font-weight: bold;
             margin-right: 10px;
         }
 
-        select, button {
+        select, button { /*プルダウンメニュー*/
             padding: 8px 12px;
             border-radius: 4px;
             border: 1px solid #ccc;
             font-size: 1em;
         }
 
-        button {
+        button { /*ソートボタン*/
             background-color: rgb(84, 196, 99);
             color: white;
             border: none;
@@ -53,11 +53,11 @@
             cursor: pointer;
         }
 
-        button:hover {
+        button:hover { 
             background-color: rgb(48, 158, 63);
         }
 
-        table {
+        table { /*管理表*/
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
