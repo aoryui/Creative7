@@ -62,16 +62,17 @@ foreach ($rankings as $key => $value) {
         <?php 
         if ($index !== null) {
             $user = $rankings[$index];
-            $user_name = $user['username'];
             $user_rank = $user['rank'];
             $user_score = $user['score'];
-            echo "<p>ユーザー名:".$username."</p>";
-            echo "<p>順位:".$user_rank."位</p>";
-            echo "<p>総獲得経験値:".$user_score."</p>";
+            echo '<p id="ranking"><img src="../image/icon/rank_icon.png" class="ranking_icon"> ランキング</p>';
+            echo '<p id="precedence">あなたの順位は: <span style="color: red; font-size: 24px; font-weight: bold;">' . $user_rank . '位</span> です</p>';
+            echo '<p id="total">総獲得経験値: <span style="color: black; font-size: 24px; font-weight: bold;"> ' . $user_score . '</span></p>';
         } else {
             echo "ランキングに登録するにはログインする必要があります";
         }
         ?>
+
+        
 
         <!-- ランキングを手動で更新 -->
         <form method="post">
@@ -111,7 +112,7 @@ foreach ($rankings as $key => $value) {
                 }else{
                     echo 'below-place">';
                     echo '<td>';
-                    echo '<span>'.htmlspecialchars($ranking['rank'], ENT_QUOTES, 'UTF-8').'</spna>';
+                    echo '<span>'.htmlspecialchars($ranking['rank'], ENT_QUOTES, 'UTF-8').'</span>';
                     echo '</td>';
                 }
             ?>

@@ -45,6 +45,8 @@ table { /*表*/
     width: 100%; /* テーブルは全幅を使用 */
     border-collapse: collapse;
     margin-top: 20px;
+    position: relative;
+    top: -100px;
 }
 
 #table th,
@@ -108,7 +110,9 @@ form {
 }
 
 .pagination {
-    margin-top: 20px;
+    position: relative;
+    top: -40px;
+    margin-top: 0px;
     text-align: center;
 }
 
@@ -134,3 +138,38 @@ form {
 .hidden {
     visibility: hidden; /* 要素を非表示にし、レイアウト上には残す */
 }
+
+
+/*ランキングアイコン大きさ指定とフォント指定*/
+#ranking {
+    font-size: 25px; /* テキストサイズを調整 */
+    font-weight: bold; /* 太字にする */
+    max-width: 250px;
+    position: relative;
+    top: -10px;
+  }
+  
+  .ranking_icon {
+    width: 70px; /* アイコンの幅 */
+    height: 50px; /* アイコンの高さ */
+    margin-right: 10px; /* アイコンと文字の間隔 */
+    vertical-align: middle; /* 画像をテキストの中央に揃える */
+
+  }
+
+#precedence{
+    max-width: 250px;
+    position: relative;
+    left: 775px;
+    top: -65px;
+}
+
+
+#total{
+    position: relative;
+    left: 775px;
+    max-width: 250px;
+    top: -80px;
+    
+}
+
