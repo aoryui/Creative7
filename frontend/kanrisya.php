@@ -15,7 +15,13 @@ if (!$conn) {
 }
 
 // データベースから情報を取得
-$sql = "SELECT username, subject, email, password FROM userinfo";
+$sql = "SELECT userid, username, subject, email, password, last_login FROM userinfo"; // last_login を追加
+
+if (isset($_GET['subject']) && $_GET['subject'] !== '') {
+    $selected_subject = $_GET['subject'];
+    $sql .= " WHERE subject = '" . mysqli_real_escape_string($conn, $selected_subject) . "'";
+}
+
 $result = $conn->query($sql);
 ?>
 
@@ -50,21 +56,11 @@ $result = $conn->query($sql);
                 <th>ユーザー名</th>
                 <th>科目</th>
                 <th>メールアドレス</th>
-                <th>パスワード</th>
+                <th>最終ログイン</th>
             </tr>
         </thead>
         <tbody>
             <?php
-            // ソート条件に基づいてデータベースから情報を取得
-            $sql = "SELECT userid, username, subject, email, password FROM userinfo";
-            
-            if (isset($_GET['subject']) && $_GET['subject'] !== '') {
-                $selected_subject = $_GET['subject'];
-                $sql .= " WHERE subject = '" . mysqli_real_escape_string($conn, $selected_subject) . "'";
-            }
-
-            $result = $conn->query($sql);
-
             if ($result->num_rows > 0) {
                 // データをテーブルに出力
                 while($row = $result->fetch_assoc()) {
@@ -72,18 +68,17 @@ $result = $conn->query($sql);
                     $username = htmlspecialchars($row['username']);
                     $subject = htmlspecialchars($row['subject']);
                     $email = htmlspecialchars($row['email']);
-                    $password = htmlspecialchars($row['password']);
+                    $last_login = htmlspecialchars($row['last_login']);
 
                     echo "<tr>";
-                    // ユーザー名をリンク化し、クリックすると該当ユーザーのマイページへ
                     echo "<td><a href='user.php?userid={$userid}'>{$username}</a></td>";
                     echo "<td>{$subject}</td>";
                     echo "<td>{$email}</td>";
-                    echo "<td>{$password}</td>";
+                    echo "<td>{$last_login}</td>";
                     echo "</tr>";
                 }
             } else {
-                echo "<tr><td colspan='4'>データがありません</td></tr>";
+                echo "<tr><td colspan='5'>データがありません</td></tr>"; // カラム数を調整
             }
             ?>
         </tbody>

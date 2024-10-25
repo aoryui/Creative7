@@ -13,6 +13,7 @@ CREATE TABLE userinfo (
     subject   varchar(100) NOT NULL,
     email     varchar(100) NOT NULL,
     password  varchar(100) NOT NULL,
+    last_login DATETIME,
     exp INT NOT NULL DEFAULT 0, -- 正解した問題数
     level INT NOT NULL DEFAULT 1, -- レベル
     correct_rate INT NOT NULL DEFAULT 0, -- 正答率 (初期値0)
