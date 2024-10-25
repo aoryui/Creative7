@@ -14,18 +14,13 @@ header { /*ヘッダー部分*/
     background-color: #333;
     color: #fff;
     padding: 25px 0;
+    position: relative; /* 管理者ログインの位置決めに必要 */
 }
 
 .container {
     width: 80%;
     margin: 0 auto;
     text-align: center;
-    /* コンテナ内の要素を中央に揃える */
-}
-
-.logo { /*ロゴの位置設定*/
-    font-size: 1.5em;
-    font-weight: bold;
 }
 
 nav ul { /*ナビ部分*/
@@ -38,6 +33,24 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     padding: 10px;
+}
+
+/* 管理者ログインボタンを右上に固定 */
+.kan-right {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background-color: rgb(84, 196, 99);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9em; /* 文字サイズを少し小さく */
+    padding: 8px 18px; /* サイズ調整 */
+}
+
+
+.kan-right:hover {
+    background-color: rgb(60, 148, 74);
 }
 
 .hero { /*画像挿入*/
@@ -68,8 +81,7 @@ nav ul li a {
 }
 
 /* ボタンのスタイル */
-.hero .btn,
-.hero .kan {
+.hero .btn {
     background-color: rgb(89, 208, 247);
     color: #fff;
     padding: 15px 30px;
@@ -79,20 +91,10 @@ nav ul li a {
     display: inline-block;
     margin-top: 20px;
     margin-right: 10px;
-    margin-bottom: auto;
 }
 
-.hero .kan {
-    background-color: rgb(84, 196, 99);
-}
-
-/* ボタンをホバーした時の色の変化 */
 .hero .btn:hover {
     background-color: rgb(60, 158, 202);
-}
-
-.hero .kan:hover {
-    background-color: rgb(60, 148, 74);
 }
 
 img {
