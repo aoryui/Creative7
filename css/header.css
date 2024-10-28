@@ -107,9 +107,8 @@ nav ul li a {
 }
 
 #free-h1 {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* 自身の幅と高さの50%を移動し中央揃え */
+    position: fixed;
+    object-fit: cover;
+    width: 400px;
+    height: 100px;
 }

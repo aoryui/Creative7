@@ -24,7 +24,7 @@ $subject = $_SESSION['subject'];
         <button id="menuBtn">
             <img id="menubutton" src="../image/menubutton.png" alt="ボタン画像">
         </button>
-        <h1 id="free-h1">SPIタイサくん</h1>
+        <img id="free-h1" src="../image/icon/headerlogo.png">
         <nav id="menuContent">
             <ul>
                 <?php
