@@ -4,15 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>画像アップロードと問題作成</title>
-    <style>
-        /* cssを別ファイルに移しといてください */
-        input[type="file"] {
-            display: block;
-        }
-        .preview {
-            width: 300px;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/question_insert.css">
 </head>
 <body>
     <a href="question_list.php">問題一覧</a>

@@ -35,14 +35,12 @@ $explanation_img = "../image/解説/" . $explanation . ".jpg";
 
 <!DOCTYPE html>
 <html lang="ja">
-    <style> /* cssを別ファイルに移しといてください */
-        img {
-            width: 500px; /* test.phpと同じ大きさにしています */
-        }
-        .correct-choice { /* 正しい選択肢 */
-            background-color: #ff0000;
-        }
-    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>問題表</title>
+    <link rel="stylesheet" href="../css/question_preview.css">
+</head>
     <body>
         <a href="question_list.php">問題一覧</a>
         <?php

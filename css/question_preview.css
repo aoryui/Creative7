@@ -1,0 +1,6 @@
+img {
+    width: 500px; /* test.phpと同じ大きさにしています */
+}
+.correct-choice { /* 正しい選択肢 */
+    background-color: #ff0000;
+}

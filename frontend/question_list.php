@@ -18,14 +18,7 @@ $list_questions = $form->getQuestion_fieldgenre($field, $genre);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>問題表</title>
-    <style>
-        table { /* cssを別ファイルに移しといてください */
-            border-collapse: collapse;
-        }
-        table, th, td {
-            border: 1px solid black;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/question_list.css">
 </head>
 <body>
 <a href="question_insert.php">問題作成</a>
