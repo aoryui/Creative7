@@ -202,5 +202,67 @@ class form extends Dbdata
     
         return $rankings; // Return all rankings at once
     }
+
+    // question_idを使ってquestionsテーブルからデータをリストで取り出す
+    public function getQuestion_fieldgenre($field, $genre){
+        $sql = "SELECT * FROM questions WHERE field_id = ? AND genre_id = ?";
+        $stmt = $this->exec($sql, array_params: [$field, $genre]);
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+    }
+
+    // question_idを使ってquestionsテーブルからデータをリストで取り出す
+    public function getQuestion($question_id){
+        $sql = "SELECT * FROM questions WHERE question_id = ?";
+        $stmt = $this->exec($sql, array_params: [$question_id]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
     
+    // choicesテーブルからデータをリストで取り出す
+    public function getChoices($question_id){ 
+        $sql = "SELECT choice_id, choice_text FROM choices WHERE question_id = ?";
+        $stmt = $this->exec($sql, array_params: [$question_id]);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+        // choice_idをキー、choice_textを値にした連想配列を生成
+        $choices = [];
+        foreach ($result as $row) {
+            $choices[$row['choice_id']] = $row['choice_text'];
+        }
+    
+        return $choices;
+    }
+    
+    public function getAnswer($question_id){
+        $sql = "SELECT * FROM answers WHERE question_id = ?";
+        $stmt = $this->exec($sql, array_params: [$question_id]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    // 問題を投稿する関数
+    public function insertQuestion($field_id, $genre_id, $interval_num, $genre_text, $question_text, $sentence){
+        $sql = "INSERT INTO questions (field_id, genre_id, interval_num, genre_text, question_text, sentence) VALUES (?, ?, ?, ?, ?, ?)";
+        $this->exec($sql, array_params: [$field_id, $genre_id, $interval_num, $genre_text, $question_text, $sentence]);
+        $lastId = $this->pdo->lastInsertId();
+        return $lastId; // 問題の主キーを返す
+    }
+
+    // 問題の選択肢を投稿する関数
+    public function insertChoices($question_id, $choice_text, $correct, $count){
+        $sql = "INSERT INTO choices (question_id, choice_text) VALUES (?, ?)";
+        $this->exec($sql, [$question_id, $choice_text]);
+        if ($correct == $count) { //正解の時だけ戻り値を返す
+            return $this->pdo->lastInsertId();
+        }
+        return null;
+    }
+    
+    // 問題の正解を投稿する関数
+    public function insertAnswers($question_id, $correct_choice_id, $explanation){
+        $sql = "INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (?, ?, ?)";
+        $this->exec($sql, [$question_id, $correct_choice_id, $explanation]);
+        return true;
+    }
 }    
