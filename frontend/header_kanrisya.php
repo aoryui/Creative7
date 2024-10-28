@@ -29,8 +29,8 @@ $username1 = $_SESSION['userName'];
                 
                 <li><a href="kanrisya_management.php">利用者管理</a></li>
                 <li><a href="kanrisya.php">ユーザー情報一覧</a></li>
-                <li><a href="generator_test.php">問題作成へ</a></li>
-                
+                <li><a href="generator_test.php">画像作成へ</a></li>
+                <li><a href="question_list.php">問題作成</a></li>
                 <?php
                 if ($username === "ゲスト") {
                 ?>

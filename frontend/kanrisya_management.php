@@ -27,11 +27,14 @@ if (isset($_SESSION['userid'])) {
     <button class="button1" onclick="window.location.href='kanrisya.php'"></button>
 
     <div class="introduce-container2">
-    <img src="../image/icon/test-icon.png" class="test">
-    <div class="problem">問題作成</div>
+    <img src="../image/icon/test-icon.png" class="kanrisya2">
+    <div class="problem">画像作成</div>
     <button class="button2" onclick="window.location.href='generator_test.php'"></button>
 
-
+    <div class="introduce-container3">
+    <img src="../image/icon/sinki.png" class="kanrisya3">
+    <div class="problem">問題作成</div>
+    <button class="button2" onclick="window.location.href='question_list.php'"></button>
     </div>
 
 

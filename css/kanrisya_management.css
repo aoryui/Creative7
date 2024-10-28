@@ -24,7 +24,7 @@ body {
     width: 230px;
     height: 230px;
     top: 80px;
-    left: 10%;
+    left: 7%;
     background-color: #e3e3e6;
     z-index: 1;
     font-size: 30px
@@ -41,6 +41,17 @@ body {
     font-size: 30px
 }
 
+.introduce-container3{
+    position: relative;
+    width: 230px;
+    height: 230px;
+    top: -392px;
+    left: 120%;
+    background-color: #e3e3e6;
+    z-index: 1;
+    font-size: 30px
+
+}
 .button1{ /*ユーザー管理*/
     position: relative;
     top: -150px;
@@ -87,7 +98,14 @@ body {
     top: 20px;
 }
 
-.test{
+.kanrisya2{
+    width: 100px;/*80pxに画像の縮小*/
+    position: relative;
+    left: 27%;
+    top: 20px;
+}
+.kanrisya3
+{
     width: 100px;/*80pxに画像の縮小*/
     position: relative;
     left: 27%;
