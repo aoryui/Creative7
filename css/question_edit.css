@@ -5,6 +5,15 @@ table, th, td {
     border: 1px solid black;
 }
 
+img {
+    width: 500px; /* test.phpと同じ大きさにしています */
+}
+
+.correct-choice { /* 正しい選択肢 */
+    background-color: #ff0000;
+}
+
+/* モーダル */
 .modal {
     display: none;
     position: fixed;
