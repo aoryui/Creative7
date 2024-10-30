@@ -16,7 +16,7 @@
                     <li><a href="">ホーム</a></li> <!-- ""は更新　-->
                     <li><a href="SPI.php" class="spi-link">SPIとは</a></li>
                     <li><a href="seihin.php">製品とサービス</a></li>
-                    <li><a href="">お問い合わせ</a></li>
+                    <li><a href="https://forms.gle/oMCuBp2MY42qXyEu8">お問い合わせ</a></li>
                 </ul>
             </nav>
         </div>

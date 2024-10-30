@@ -42,89 +42,109 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <h1 id="bun">作成したい問題文を入力してください</h1>
 
-    <div class="container">
-        <!-- 左側: テキスト入力エリア -->
-        <div class="text-area">
-            <textarea id="markdown-input" rows="10" cols="50" placeholder="テキストを入力してください(MarkDownを使用できます)"></textarea><br>
-            <button id="generate-button">画像をダウンロード</button>
-        </div>
-
-        <!-- 右側: キャンバスとダウンロードリンク -->
-        <div class="canvas-area">
-            <div id="preview"></div>
-        </div>
+<div class="container">
+    <div class="text-area">
+        <textarea id="markdown-input" rows="10" cols="50" placeholder="テキストを入力してください(MarkDownを使用できます)"></textarea><br>
+        <input type="file" id="image-upload" accept="image/*"><br>
+        <button id="generate-button">画像をダウンロード</button>
     </div>
 
-    <script>
-        // markdown-it のインスタンスを作成し、改行を許可するオプションを追加
-        const md = window.markdownit({
-            breaks: true  // 改行を <br> に変換するオプション
-        });
-        const textarea = document.getElementById('markdown-input');
-        const preview = document.getElementById('preview');
-        const generateButton = document.getElementById('generate-button');
+    <div class="canvas-area">
+        <div id="preview"></div>
+    </div>
+</div>
 
-        // プレビューの最大サイズを取得
-        const maxPreviewHeight = preview.clientHeight;
-        const maxPreviewWidth = preview.clientWidth;
+<script>
+    const md = window.markdownit({ breaks: true });
+    const textarea = document.getElementById('markdown-input');
+    const preview = document.getElementById('preview');
+    const generateButton = document.getElementById('generate-button');
+    const imageUpload = document.getElementById('image-upload');
 
-        // MarkdownをHTMLに変換し、プレビューに表示
-        textarea.addEventListener('input', () => {
-            updatePreview();
-        });
+    textarea.addEventListener('input', () => {
+        updatePreview();
+    });
 
-        function updatePreview() {
-            preview.innerHTML = md.render(textarea.value);
-            adjustFontSize();
+    imageUpload.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                img.style.maxWidth = '100%'; // プレビュー内での画像の最大幅を指定
+                img.style.height = 'auto'; // 高さを自動で調整
+                preview.appendChild(img); // プレビューに画像を追加
+            };
+            reader.readAsDataURL(file);
         }
+    });
 
-        // プレビューされたHTMLを画像として生成
-        generateButton.addEventListener('click', () => {
-            // 一時的にzoomを解除
-            const originalZoom = preview.style.zoom;
-            preview.style.zoom = "100%";  // 画像生成前にズーム解除
+    function updatePreview() {
+        preview.innerHTML = md.render(textarea.value);
+        adjustFontSize();
+    }
 
-            html2canvas(preview, {
-                width: 1182,  // 画像の幅を指定
-                height: 709,  // 画像の高さを指定
-                scale: 2      // 高解像度で生成するためのスケール
-            }).then(canvas => {
-                // zoomを元に戻す
-                preview.style.zoom = originalZoom;
+    generateButton.addEventListener('click', () => {
+        const originalZoom = preview.style.zoom;
+        preview.style.zoom = "100%";  // 画像生成前にズーム解除
 
-                // キャンバスを画像データURLに変換
-                const imageData = canvas.toDataURL('image/jpg');
+        html2canvas(preview, { scale: 2 }).then(canvas => {
+            preview.style.zoom = originalZoom;
 
-                // 画像を自動的にダウンロード
-                const a = document.createElement('a');
-                a.href = imageData;
-                const currentTime = new Date().toISOString().slice(0, 19).replace(/:/g, '-'); // 現在の日時をファイル名に
-                a.download = `text_image_${currentTime}.jpg`;
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
+            // キャンバスを画像データURLに変換
+            const imageData = canvas.toDataURL('image/jpg');
+
+            // 画像を自動的にダウンロード
+            const a = document.createElement('a');
+            a.href = imageData;
+            const currentTime = new Date().toISOString().slice(0, 19).replace(/:/g, '-');
+            a.download = `text_image_${currentTime}.jpg`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+
+            // PHPに画像データを送信
+            fetch('your_php_script.php', { // PHPスクリプトのパスを指定
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ image: imageData })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    console.log('Image saved as:', data.filename);
+                } else {
+                    console.error('Error:', data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
             });
         });
+    });
 
-        function adjustFontSize() {
-            let fontSize = 50; // 初期フォントサイズ
+    function adjustFontSize() {
+        let fontSize = 50; // 初期フォントサイズ
+        preview.style.fontSize = fontSize + 'px';
+
+        // コンテンツが枠内に収まるまでフォントサイズを調整
+        while (preview.scrollHeight > preview.clientHeight || preview.scrollWidth > preview.clientWidth) {
+            fontSize -= 1; // フォントサイズを1pxずつ減らす
             preview.style.fontSize = fontSize + 'px';
 
-            // コンテンツが枠内に収まるまでフォントサイズを調整
-            while (preview.scrollHeight > maxPreviewHeight || preview.scrollWidth > maxPreviewWidth) {
-                fontSize -= 1; // フォントサイズを1pxずつ減らす
-                preview.style.fontSize = fontSize + 'px';
-
-                // フォントサイズが小さすぎる場合は停止
-                if (fontSize <= 10) {
-                    break;
-                }
+            // フォントサイズが小さすぎる場合は停止
+            if (fontSize <= 10) {
+                break;
             }
         }
-    </script>
+    }
+</script>
 
-    <div class="button-container">
-        <button onclick="location.href='generator_answer.php'">解説文作成ページヘ</button>
-    </div>
+<div class="button-container">
+    <button onclick="location.href='generator_answer.php'">解説文作成ページヘ</button>
+</div>
 </body>
 </html>

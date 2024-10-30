@@ -23,6 +23,7 @@ html {
 .text-area,
 .canvas-area {
     flex: 1;
+    max-width: 600px; /* 最大幅を指定 */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,7 +61,7 @@ button {
 
 .button-container {
     position: relative;
-    right: -840px;
+    right: -770px;
     bottom: 450px;
 
 }
@@ -83,6 +84,8 @@ a {
 }
 
 #preview { /*プレビュー画面*/
+    display: flex;
+    position: relative;
     width: 1182px;
     height: 709px;
     padding: 10px;
@@ -94,15 +97,50 @@ a {
     border: 1px solid black;
     transform: scale(0.35) translate(1200px, 30px); /* 微調整 */
     transform-origin: top left; /* スケールの基準点を左上に設定 */
-
     line-height: 1; /* 行間を縮める */
-}
+    justify-content: center;
+    align-items: center;
+    left: -100px;
+    max-width: 1182px; /* 最大幅を指定 */
+    max-height: 709px; /* 最大幅を指定 */
+    overflow: auto; /* スクロールバーを表示 */
+    border: 1px solid #ccc; /* 枠線を追加 */
+    word-wrap: break-word; /* 長い単語を改行 */
+    overflow-wrap: break-word; /* 長い単語を改行 */
+    }
+
 #downloadLink { /*ダウンロードリンクの高さの位置*/
-    display: none; /* 初期状態で非表示 */    
+    display: none; /* 初期状態で非表示 */
+    position: relative;
+    bottom: 30px;    
     margin-top: 10px;
 }
 #generate-button{ /*遷移ボタン*/
     position: relative;
     left: 300px;
-    bottom: 40px;
+    bottom: 100px;
+}
+
+.container {
+    display: flex; /* フレックスボックスを使用 */
+    max-width: 1200px; /* コンテナの最大幅 */
+    margin: 0 auto; /* 中央寄せ */
+}
+
+.text-area {
+    flex: 1; /* テキストエリアが残りのスペースを占有 */
+    margin-right: 20px; /* テキストエリアとキャンバスの間にスペースを追加 */
+    position: relative;
+    left: -250px;
+}
+
+#image-upload {
+    margin-top: 10px;
+    position: relative;
+    left: 70px;
+}
+
+#preview img {
+    max-width: 100%; /* プレビュー内で幅いっぱいに収める */
+    height: auto;
 }

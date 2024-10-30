@@ -47,7 +47,6 @@ if (isset($_SESSION['login_error'])) {
 </form>
 <div class="signup button">
 <p><a href="signup.php"><br>新規登録はこちら</a></p>
-<p><a href="home.php"><br>ホームに戻る</a></p>
 </div>
 </div>
 
