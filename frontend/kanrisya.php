@@ -14,8 +14,17 @@ if (!$conn) {
     die('データベースに接続できませんでした: ' . mysqli_connect_error());
 }
 
+// 新規登録者数をカウント
+$newUsersCount = 0; // 初期化
+$sqlNewUsers = "SELECT COUNT(*) as new_users FROM userinfo";
+$newUsersResult = $conn->query($sqlNewUsers);
+
+if ($newUsersResult && $row = $newUsersResult->fetch_assoc()) {
+    $newUsersCount = $row['new_users'];
+}
+
 // データベースから情報を取得
-$sql = "SELECT userid, username, subject, email, password, last_login FROM userinfo"; // last_login を追加
+$sql = "SELECT userid, username, subject, email, password, last_login FROM userinfo";
 
 // 学科フィルタ
 $selected_subject = isset($_GET['subject']) ? $_GET['subject'] : '';
@@ -25,16 +34,14 @@ if ($selected_subject !== '') {
 
 // 総ユーザー数を取得
 $total_result = $conn->query($sql);
-$totaluser = $total_result->num_rows; // 総ユーザー数を取得
+$totaluser = $total_result->num_rows;
 
 // ページネーションの処理
-$itemsPerPage = 10; // 1ページあたりの表示件数
-$totalPages = ceil($totaluser / $itemsPerPage); // 総ページ数
-
-// 何ページ目かを取得(デフォは1)
+$itemsPerPage = 10;
+$totalPages = ceil($totaluser / $itemsPerPage);
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-$page = max(1, min($totalPages, $page)); // ページ数を制限
-$offset = ($page - 1) * $itemsPerPage; // データのオフセット
+$page = max(1, min($totalPages, $page));
+$offset = ($page - 1) * $itemsPerPage;
 
 // LIMIT句を追加して、データを取得
 $sql .= " LIMIT $itemsPerPage OFFSET $offset";
@@ -53,7 +60,14 @@ $result = $conn->query($sql);
 
 <div class="container">
     <h2>ユーザー情報一覧</h2>
+    
+    <!-- 独自の新規登録者数ボックス -->
+    <div class="new-users-box">
+        <span class="icon">👤</span>
+        <span>総新規登録者数: <span class="count"><?php echo $newUsersCount; ?></span> 人</span>
+    </div>
 
+    <!-- 検索フォームとテーブル表示部分はそのまま -->
     <form method="GET" action="">
         <label for="subject">学科で検索:</label>
         <select id="subject" name="subject">
@@ -78,7 +92,6 @@ $result = $conn->query($sql);
         <tbody>
             <?php
             if ($result->num_rows > 0) {
-                // データをテーブルに出力
                 while($row = $result->fetch_assoc()) {
                     $userid = htmlspecialchars($row['userid']);
                     $username = htmlspecialchars($row['username']);
@@ -94,7 +107,7 @@ $result = $conn->query($sql);
                     echo "</tr>";
                 }
             } else {
-                echo "<tr><td colspan='4'>データがありません</td></tr>"; // カラム数を調整
+                echo "<tr><td colspan='4'>データがありません</td></tr>";
             }
             ?>
         </tbody>
