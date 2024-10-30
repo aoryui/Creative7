@@ -19,10 +19,10 @@ if (!empty($message)) {
     <link rel="stylesheet" href="../css/question_insert.css">
 </head>
 <body>
-    <a href="question_list.php">問題一覧</a>
-    <h2 id="text">問題ジャンル選択</h2>
+    <a href="question_list.php" id="text">問題一覧</a>
+    <h2 class="text">問題ジャンル選択</h2>
     <form id="questionForm" action="../backend/question_insert_db.php" method="post" enctype="multipart/form-data">
-        <fieldset>
+        <fieldset class="language">
             <legend>言語</legend>
             <div>
                 <input type="radio" id="lang_1" name="field" value="1_1" required />
@@ -41,9 +41,9 @@ if (!empty($message)) {
                 <label for="lang_5">空欄補充</label>
             </div>
         </fieldset>
-        <fieldset>
+        <fieldset class="language2">
             <legend>非言語</legend>
-            <div>
+            <div">
                 <input type="radio" id="non-lang_1" name="field" value="2_1" required />
                 <label for="non-lang_1">場合の数</label>
 

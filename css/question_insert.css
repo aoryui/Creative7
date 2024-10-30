@@ -5,25 +5,38 @@ input[type="file"] {
     width: 300px;
 }
 
-a{
-    position: absolute;
-    margin-top: 100px;
+#text{ /*問題作成のリンク*/
+    position: relative;
+    top: -20px;
 }
 
-#text{
-    margin-top: 150px;
+.text{  /*問題ジャンル一覧 */
+    position: relative;
+    top: -10px;
 }
 
-html {
-    overflow-y: scroll;
-    overflow-x: hidden;
-    overflow-y: hidden;
-  }
+.language{
+    margin-bottom: 1px;
+    width: 530px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.language2{
+    margin-bottom: 1px;
+    width: 850px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
   
 body {
     position: relative;
     background-color: #ffefd5;
-    padding-top: 20px;
+    top: 130px;
 }
 
 #questionForm{
