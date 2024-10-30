@@ -4,3 +4,28 @@ input[type="file"] {
 .preview {
     width: 300px;
 }
+
+a{
+    position: absolute;
+    margin-top: 100px;
+}
+
+#text{
+    margin-top: 150px;
+}
+
+html {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  
+body {
+    position: relative;
+    background-color: #ffefd5;
+    padding-top: 20px;
+}
+
+#questionForm{
+    margin-top: 50px;
+}

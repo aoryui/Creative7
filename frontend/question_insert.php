@@ -1,3 +1,15 @@
+<?php
+require_once __DIR__ . '/header_login_signup.php';
+
+// URLからメッセージを取得
+$message = isset($_GET['message']) ? $_GET['message'] : '';
+
+// メッセージが空でない場合に表示
+if (!empty($message)) {
+    echo '<span class="message">' . htmlspecialchars($message, ENT_QUOTES, 'UTF-8') . '</span>';
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -8,7 +20,7 @@
 </head>
 <body>
     <a href="question_list.php">問題一覧</a>
-    <h2>問題ジャンル選択</h2>
+    <h2 id="text">問題ジャンル選択</h2>
     <form id="questionForm" action="../backend/question_insert_db.php" method="post" enctype="multipart/form-data">
         <fieldset>
             <legend>言語</legend>
