@@ -1,4 +1,5 @@
 <?php 
+require_once __DIR__ . '/header_kanrisya.php'; //ヘッダー指定
 require_once __DIR__ . '/../backend/class.php';
 session_start();
 $form = new form();
@@ -21,11 +22,11 @@ $list_questions = $form->getQuestion_fieldgenre($field, $genre);
     <link rel="stylesheet" href="../css/question_list.css">
 </head>
 <body>
-<a href="question_insert.php">問題作成</a>
-<h2>問題リスト</h2>
-<form method="GET" action="">
-    <label>ジャンル</label>
-    <select name="genre">  
+<div class="border-frame">
+<a class="question_make" href="question_insert.php">問題作成</a>
+<h2 class="question_list">問題リスト</h2>
+<form method="GET" action="" class="content-form">
+    <select id="genre" name="genre"> 
         <option disabled="disabled">-- 言語 --</option>
         <option value="1,1" <?= $question_id === "1,1" ? 'selected' : ''; ?>>二語の関係</option>
         <option value="1,2" <?= $question_id === "1,2" ? 'selected' : ''; ?>>語句の意味</option>
@@ -52,8 +53,8 @@ $list_questions = $form->getQuestion_fieldgenre($field, $genre);
             <th>言語非言語</th>
             <th>ジャンル</th>
             <th>問題文</th>
-            <th>&nbsp;</th>
-            <th>&nbsp;</th>
+            <th>編集</th>
+            <th>詳細</th>
         </tr>
     </thead>
     <tbody>
@@ -72,6 +73,5 @@ $list_questions = $form->getQuestion_fieldgenre($field, $genre);
         <?php endforeach; ?>
     </tbody>
 </table>
-
 </body>
 </html>

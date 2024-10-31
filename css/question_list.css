@@ -4,3 +4,81 @@ table {
 table, th, td {
     border: 1px solid black;
 }
+
+body {
+    background-color: #ffefd5;
+}
+.border-frame { /*ユーザー名、ランキングなど*/
+    max-width: 1200px;
+    margin: 100px auto 30px;
+    margin: 100px auto 30px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 100%; /* widthを%で設定し、レスポンシブに対応 */
+    width: 80%; /* widthを%で設定し、レスポンシブに対応 */
+    background-color: #fff;
+    
+}
+
+.question_list{
+    /* 水平方向の中央揃え */
+  position: relative;
+  top: -70px;
+  text-align: center;
+}
+
+.question_make{
+    display: inline-block; /* ボタン全体をクリック可能にする */
+    position: relative;
+    left: 920px;
+    top: 10px;
+    width: 85px;
+    padding: 10px;
+    background-color: rgb(84, 196, 99);
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+table {
+    position: relative;
+    top: -80px;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th,
+table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background-color: #f2f2f2;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.content-form{
+    position: relative;
+    top: -120px;
+    left: 40px;
+}
+
+label{
+    font-weight: bold;
+    margin-right: 10px;
+}
+#genre{
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
