@@ -19,6 +19,7 @@
                     <li><a href="https://forms.gle/oMCuBp2MY42qXyEu8">お問い合わせ</a></li>
                 </ul>
             </nav>
+            
         </div>
         <a href="kanrisya_login.php" class="kan-right">管理者ログイン</a>
     </header>
