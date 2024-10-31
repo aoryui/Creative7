@@ -23,7 +23,7 @@ $username1 = $_SESSION['userName'];
         <button id="menuBtn">
             <img id="menubutton" src="../image/menubutton2.png" alt="ボタン画像">
         </button>
-        <h1 id="free-h1">SPIタイサくん・管理者画面</h1>
+        <img id="free-h1" src="../image/icon/headerlogogreen.png">
         <nav id="menuContent">
             <ul>
                 
