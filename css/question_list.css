@@ -1,84 +1,97 @@
+/* テーブル全体のスタイル */
 table {
-    border-collapse: collapse;
+    border-collapse: collapse; /* テーブルのボーダーを重ねて表示 */
 }
+
+/* テーブル、ヘッダー、データセルにボーダーを追加 */
 table, th, td {
-    border: 1px solid black;
+    border: 1px solid black; /* ボーダーを黒色で指定 */
 }
 
+/* ボディの背景色を設定 */
 body {
-    background-color: #ffefd5;
-}
-.border-frame { /*ユーザー名、ランキングなど*/
-    max-width: 1200px;
-    margin: 100px auto 30px;
-    margin: 100px auto 30px;
-    padding: 20px;
-    background: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    width: 100%; /* widthを%で設定し、レスポンシブに対応 */
-    width: 80%; /* widthを%で設定し、レスポンシブに対応 */
-    background-color: #fff;
-    
+    background-color: #ffefd5; /* 背景色を淡いピンクに設定 */
 }
 
-.question_list{
-    /* 水平方向の中央揃え */
-  position: relative;
-  top: -70px;
-  text-align: center;
+/* ユーザー名やランキング表示用のフレーム */
+.border-frame { 
+    max-width: 1200px; /* 最大幅を1200pxに設定 */
+    margin: 100px auto 30px; /* 上下のマージンを設定し、中央揃え */
+    padding: 20px; /* 内側の余白を20pxに設定 */
+    background: #fff; /* 背景色を白に設定 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 影をつけて立体感を演出 */
+    border-radius: 8px; /* 角を丸くする */
+    width: 80%; /* 幅を80%に設定し、レスポンシブ対応 */
 }
 
-.question_make{
-    display: inline-block; /* ボタン全体をクリック可能にする */
-    position: relative;
-    left: 920px;
-    top: 10px;
-    width: 85px;
-    padding: 10px;
-    background-color: rgb(84, 196, 99);
-    color: white;
-    cursor: pointer;
-    border-radius: 10px;
-    font-size: 20px;
+/* 質問リストのスタイル */
+.question_list {
+    position: relative; /* 相対位置を設定 */
+    top: -70px; /* 上に70px移動 */
+    left: 450px; /* 左に450px移動 */
+    max-width: 200px; /* 最大幅を200pxに設定 */
 }
 
+/* 質問作成ボタンのスタイル */
+.question_make {
+    display: inline-block; /* ボタンをインラインブロックに設定 */
+    position: relative; /* 相対位置を設定 */
+    left: 920px; /* 左に920px移動 */
+    top: 10px; /* 上に10px移動 */
+    width: 85px; /* ボタンの幅を85pxに設定 */
+    padding: 10px; /* 内側の余白を10pxに設定 */
+    background-color: rgb(84, 196, 99); /* 背景色を緑に設定 */
+    color: white; /* テキストの色を白に設定 */
+    cursor: pointer; /* マウスカーソルをポインタに設定 */
+    border-radius: 10px; /* 角を丸くする */
+    font-size: 20px; /* フォントサイズを20pxに設定 */
+}
+
+/* テーブルのスタイル */
 table {
-    position: relative;
-    top: -80px;
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+    position: relative; /* 相対位置を設定 */
+    top: -80px; /* 上に80px移動 */
+    width: 100%; /* 幅を100%に設定 */
+    border-collapse: collapse; /* ボーダーを重ねて表示 */
+    margin-top: 20px; /* 上に20pxのマージンを追加 */
 }
 
+/* テーブルのヘッダーとデータセルのスタイル */
 table th,
 table td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
+    border: 1px solid #ccc; /* ボーダーを薄いグレーで設定 */
+    padding: 10px; /* 内側の余白を10pxに設定 */
+    text-align: center; /* テキストを中央揃え */
 }
 
+/* テーブルのヘッダーに背景色を設定 */
 table th {
-    background-color: #f2f2f2;
+    background-color: #f2f2f2; /* ヘッダーの背景色を淡いグレーに設定 */
 }
 
+/* 偶数行の背景色を設定 */
 table tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #f9f9f9; /* 偶数行の背景色をさらに淡いグレーに設定 */
 }
 
-.content-form{
-    position: relative;
-    top: -120px;
-    left: 40px;
+/* コンテンツフォームのスタイル */
+.content-form {
+    position: relative; /* 相対位置を設定 */
+    top: -120px; /* 上に120px移動 */
+    left: 40px; /* 左に40px移動 */
+    max-width: 400px; /* 最大幅を400pxに設定 */
 }
 
-label{
-    font-weight: bold;
-    margin-right: 10px;
+/* ラベルのスタイル */
+label {
+    font-weight: bold; /* テキストを太字に設定 */
+    margin-right: 10px; /* 右側のマージンを10pxに設定 */
 }
-#genre{
-    padding: 8px 12px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    font-size: 1em;
+
+/* ジャンル選択のドロップダウンのスタイル */
+#genre {
+    padding: 8px 12px; /* 内側の余白を上下8px、左右12pxに設定 */
+    border-radius: 4px; /* 角を丸くする */
+    border: 1px solid #ccc; /* ボーダーを薄いグレーで設定 */
+    font-size: 1em; /* フォントサイズを1emに設定 */
 }

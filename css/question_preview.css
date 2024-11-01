@@ -1,6 +1,136 @@
-img {
-    width: 500px; /* test.phpと同じ大きさにしています */
+body{
+    background-color: #ffefd5;  /* ページ全体の背景色を薄いパープルに設定 */
 }
-.correct-choice { /* 正しい選択肢 */
-    background-color: #ff0000;
+html{
+    overflow-y: hidden;  /* 縦スクロールを非表示にする */
+    overflow-x: hidden;  /* 横スクロールを非表示にする */
+}
+
+/* 選択された言語 */
+.language{
+    position: relative;  /* 親要素に対する相対位置 */
+    top: 40px;  /* 上に40px移動 */
+    left: 50px;  /* 左に50px移動 */
+    font-size: 1.5em;  /* フォントサイズを1.5倍に設定 */
+    font-weight: bold;  /* 太字に設定 */
+}
+
+/* ジャンル名 */
+.genre_name{
+    position: relative;  /* 親要素に対する相対位置 */
+    top: -20px;  /* 上に20px移動 */
+    left: 300px;  /* 左に300px移動 */
+    font-size: 1.5em;  /* フォントサイズを1.5倍に設定 */
+    font-weight: bold;  /* 太字に設定 */
+}
+
+/* 制限時間 */
+.interval_time{
+    position: relative;  /* 親要素に対する相対位置 */
+    top: -80px;  /* 上に80px移動 */
+    left: 650px;  /* 左に650px移動 */
+    font-size: 1.5em;  /* フォントサイズを1.5倍に設定 */
+    font-weight: bold;  /* 太字に設定 */ 
+}
+
+/* 問題一覧ボタン */
+.question_list{
+    position: relative;  /* 親要素に対する相対位置 */
+    top: 175px;  /* 下に175px移動 */
+    left: 970px;  /* 左に970px移動 */
+    font-size: 1.5em;  /* フォントサイズを1.5倍に設定 */
+    font-weight: bold;  /* 太字に設定 */
+    padding: 10px;  /* 内側に10pxの余白を追加 */
+    background-color: rgb(161, 255, 174);  /* 背景色を薄いグリーンに設定 */
+    cursor: pointer;  /* カーソルをポインタに変更 */
+    border-radius: 10px;  /* 角を10pxの丸みを持たせる */
+}
+
+/* 要約文 */
+.summary{
+    position: relative;  /* 親要素に対する相対位置 */
+    top: -140px;  /* 上に140px移動 */
+    left: 850px;  /* 左に850px移動 */
+    font-size: 1.5em;  /* フォントサイズを1.5倍に設定 */
+    font-weight: bold;  /* 太字に設定 */    
+}
+
+/* 言語非言語 */
+.choice{
+    position: relative;  /* 親要素に対する相対位置 */
+    top: -260px;  /* 上に260px移動 */
+    left: 180px;  /* 左に180px移動 */
+    font-size: 1.5em;  /* フォントサイズを1.5倍に設定 */
+    font-weight: bold;  /* 太字に設定 */
+}
+
+/* ジャンル名 (例: 二語の関係など) */ 
+.genre{
+    position: relative;  /* 親要素に対する相対位置 */
+    top: -320px;  /* 上に320px移動 */
+    left: 450px;  /* 左に450px移動 */
+    font-size: 1.5em;  /* フォントサイズを1.5倍に設定 */
+    font-weight: bold;  /* 太字に設定 */
+}
+
+/* 制限時間 */
+.interval{
+    position: relative;  /* 親要素に対する相対位置 */
+    top: -380px;  /* 上に380px移動 */
+    left: 770px;  /* 左に770px移動 */
+    font-size: 1.5em;  /* フォントサイズを1.5倍に設定 */
+    font-weight: bold;  /* 太字に設定 */
+}
+
+/* 問題の要約文 */
+.sentence{
+    position: relative;  /* 親要素に対する相対位置 */
+    top: -440px;  /* 上に440px移動 */
+    left: 960px;  /* 左に960px移動 */
+    font-size: 1.5em;  /* フォントサイズを1.5倍に設定 */
+    font-weight: bold;  /* 太字に設定 */
+}
+
+/* 問題画像 */
+.question_image{
+    position: relative;  /* 親要素に対する相対位置 */
+    top: -425px;  /* 上に425px移動 */
+    left: 40px;  /* 左に40px移動 */
+    width: 500px;  /* 画像の幅を500pxに設定（test.phpと同じ大きさ） */
+}
+
+/* 解説画像 */
+.explanation_image{
+    position: relative;  /* 親要素に対する相対位置 */
+    top: -525px;  /* 上に525px移動 */
+    left: 70px;  /* 左に70px移動 */
+    width: 500px;  /* 画像の幅を500pxに設定（test.phpと同じ大きさ） */
+}
+
+/* 正しい選択肢 */
+.correct-choice { 
+    max-width: 150px;  /* 選択肢の最大幅を150pxに設定 */
+    position: relative;  /* 親要素に対する相対位置 */
+    top: -725px;  /* 上に725px移動 */
+    left: 1100px;  /* 左に1100px移動 */
+    margin-bottom: 10px;  /* 下に10pxの余白を追加 */
+    display: flex;  /* 子要素をフレックスで配置 */
+    align-items: center;  /* 子要素を中央に配置 */
+    background-color: #ff000076;  /* 背景色を半透明の赤に設定 */
+    padding: 5px;  /* 内側に5pxの余白を追加 */
+    border-radius: 5px;  /* 角を5pxの丸みを持たせる */
+}
+
+/* 間違えた選択肢 */
+.correct-choice1{
+    max-width: 150px;  /* 選択肢の最大幅を150pxに設定 */
+    position: relative;  /* 親要素に対する相対位置 */
+    top: -725px;  /* 上に725px移動 */
+    left: 1100px;  /* 左に1100px移動 */
+    margin-bottom: 10px;  /* 下に10pxの余白を追加 */
+    display: flex;  /* 子要素をフレックスで配置 */
+    align-items: center;  /* 子要素を中央に配置 */
+    background-color: #d3d3d3;  /* 背景色を薄いグレーに設定 */
+    padding: 5px;  /* 内側に5pxの余白を追加 */
+    border-radius: 5px;  /* 角を5pxの丸みを持たせる */
 }

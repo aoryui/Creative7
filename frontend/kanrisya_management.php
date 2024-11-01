@@ -33,7 +33,7 @@ if (isset($_SESSION['userid'])) {
 
     <div class="introduce-container3">
     <img src="../image/icon/sinki.png" class="kanrisya3">
-    <div class="problem">問題作成</div>
+    <div class="problem">問題確認</div>
     <button class="button2" onclick="window.location.href='question_list.php'"></button>
     </div>
 

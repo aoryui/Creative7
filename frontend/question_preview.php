@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/header_kanrisya.php'; //ヘッダー指定
 require_once __DIR__ . '/../backend/class.php';
 $form = new form();
 // 問題idをセッションから取得
@@ -42,23 +43,27 @@ $explanation_img = "../image/解説/" . $explanation . ".jpg";
     <link rel="stylesheet" href="../css/question_preview.css">
 </head>
     <body>
-        <a href="question_list.php">問題一覧</a>
+        <p class="language">選択言語:</p>
+        <p class="genre_name">ジャンル名:</p>
+        <p class="interval_time">制限時間:</p>
+        <p class="summary">要約文:</p>
+        <a href="question_list.php" class="question_list">問題一覧</a>
         <?php
-        echo '<p>'.$field_name.'</p>'; // 言語非言語
-        echo '<p>'.$genre_text.'</p>'; // ジャンル名(二語の関係など)
-        echo '<p>'.$interval_num.'</p>'; // 制限時間
-        echo '<p>'.$sentence.'</p>'; // 問題の要約文
-        echo '<img src="' . $question_img . '" alt="問題画像">';
-        echo '<img src="' . $explanation_img . '" alt="解説画像">';
+        echo '<p class="choice">'.$field_name.'</p>'; // 言語非言語
+        echo '<p class="genre">'.$genre_text.'</p>'; // ジャンル名(二語の関係など)
+        echo '<p class="interval">'.$interval_num.'</p>'; // 制限時間
+        echo '<p class="sentence">'.$sentence.'</p>'; // 問題の要約文
+        echo '<img src="' . $question_img . '" alt="問題画像"  class="question_image">';
+        echo '<img src="' . $explanation_img . '" alt="解説画像" class="explanation_image">';
         foreach ($list_choices as $choice_id => $choice_text) { // 選択肢を繰り返し処理で表示
             if ($choice_id == $correct_choice_id) {
                 // 正しい選択肢だけ強調表示
                 echo "<p class='correct-choice'>$choice_text</p>";
             } else {
-                echo "<p>$choice_text</p>";
+                echo "<p  class='correct-choice1'>$choice_text</p>";
             }
         }
         ?>
-
+</div>
     </body>
 </html>
