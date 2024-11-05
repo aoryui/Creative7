@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/header_login_signup.php';
+require_once __DIR__ . '/header_kanrisya.php';
 
 // URLからメッセージを取得
 $message = isset($_GET['message']) ? $_GET['message'] : '';
@@ -19,7 +19,7 @@ if (!empty($message)) {
     <link rel="stylesheet" href="../css/question_insert.css">
 </head>
 <body>
-    <a href="question_list.php" id="text">問題一覧</a>
+    <button onclick="location.href='question_list.php'">問題一覧</button>
     <h2 class="text">問題ジャンル選択</h2>
     <form id="questionForm" action="../backend/question_insert_db.php" method="post" enctype="multipart/form-data">
         <fieldset class="language">

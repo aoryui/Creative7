@@ -1,4 +1,6 @@
 body {
+    position: relative;
+    top: -10px;
     font-family: 'Meiryo', sans-serif;
     margin: 0;
     background-color: #ffefd5;
@@ -7,6 +9,12 @@ body {
 html {
     overflow: hidden;
   }
+
+.button{
+    position: relative;
+    top: -30px;
+} 
+
 
 #bun {
     margin-top: 120px;

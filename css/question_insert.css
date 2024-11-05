@@ -10,12 +10,20 @@ input[type="file"] {
     top: -20px;
 }
 
+button{  /*ボタン*/
+    background-color: rgb(84, 196, 99);
+            color: white;
+            border: none;
+            margin-left: 10px;
+            cursor: pointer;
+}
+
 .text{  /*問題ジャンル一覧 */
     position: relative;
     top: -10px;
 }
 
-.language{
+.language{ /*言語*/
     margin-bottom: 1px;
     width: 530px;
     border-top-left-radius: 20px;
@@ -24,7 +32,7 @@ input[type="file"] {
     border-bottom-left-radius: 20px;
 }
 
-.language2{
+.language2{ /*非言語*/
     margin-bottom: 1px;
     width: 850px;
     border-top-left-radius: 20px;
@@ -33,12 +41,12 @@ input[type="file"] {
     border-bottom-left-radius: 20px;
 }
   
-body {
+body { /*全体のボディ*/
     position: relative;
     background-color: #ffefd5;
     top: 130px;
 }
 
-#questionForm{
+#questionForm{ /*リンク*/
     margin-top: 50px;
 }

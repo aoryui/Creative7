@@ -1,5 +1,6 @@
 <?php
-require_once __DIR__ . '/header_kanrisya.php'; //ヘッダー指定
+require_once __DIR__ . '/header_kanrisya.php';
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = json_decode(file_get_contents('php://input'), true);
 
@@ -34,13 +35,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>テキストから画像へ</title>
-    <link rel="stylesheet" href="../css/generator_answer.css">
+    <link rel="stylesheet" href="../css/generator_test.css">
     <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
 
 <h1 id="bun">作成したい問題文を入力してください</h1>
+<button class="button" id="add-heading">拡大</button>
+<button class="button" id="add-bold">太字</button>
+<button class="button" id="add-list">リスト</button>
+<button class="button" id="add-line-break">改行</button> <!-- 改行ボタンを追加 -->
 
 <div class="container">
     <div class="text-area">
@@ -60,6 +65,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     const preview = document.getElementById('preview');
     const generateButton = document.getElementById('generate-button');
     const imageUpload = document.getElementById('image-upload');
+    const addHeadingButton = document.getElementById('add-heading');
+    const addBoldButton = document.getElementById('add-bold');
+    const addListButton = document.getElementById('add-list');
+    const addLineBreakButton = document.getElementById('add-line-break'); // 改行ボタンを取得
 
     textarea.addEventListener('input', () => {
         updatePreview();
@@ -72,12 +81,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             reader.onload = function(e) {
                 const img = document.createElement('img');
                 img.src = e.target.result;
-                img.style.maxWidth = '100%'; // プレビュー内での画像の最大幅を指定
-                img.style.height = 'auto'; // 高さを自動で調整
-                preview.appendChild(img); // プレビューに画像を追加
+                img.style.maxWidth = '100%';
+                img.style.height = 'auto';
+                preview.appendChild(img);
             };
             reader.readAsDataURL(file);
         }
+    });
+
+    addHeadingButton.addEventListener('click', () => {
+        const currentText = textarea.value;
+        textarea.value = `# ${currentText}`;
+        updatePreview();
+    });
+
+    addBoldButton.addEventListener('click', () => {
+        const selectedText = textarea.value.substring(textarea.selectionStart, textarea.selectionEnd) || "太字にしたいテキスト";
+        const currentText = textarea.value;
+        textarea.value = `${currentText} **${selectedText}**`;
+        updatePreview();
+    });
+
+    addListButton.addEventListener('click', () => {
+        const currentText = textarea.value;
+        textarea.value = `${currentText}- `;
+        updatePreview();
+    });
+
+    // 改行ボタンのクリックで `  \n` を追加
+    addLineBreakButton.addEventListener('click', () => {
+        const currentText = textarea.value;
+        textarea.value = `${currentText}  \n`;
+        updatePreview();
     });
 
     function updatePreview() {
@@ -87,15 +122,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     generateButton.addEventListener('click', () => {
         const originalZoom = preview.style.zoom;
-        preview.style.zoom = "100%";  // 画像生成前にズーム解除
+        preview.style.zoom = "100%";
 
         html2canvas(preview, { scale: 2 }).then(canvas => {
             preview.style.zoom = originalZoom;
 
-            // キャンバスを画像データURLに変換
             const imageData = canvas.toDataURL('image/jpg');
 
-            // 画像を自動的にダウンロード
             const a = document.createElement('a');
             a.href = imageData;
             const currentTime = new Date().toISOString().slice(0, 19).replace(/:/g, '-');
@@ -104,8 +137,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             a.click();
             document.body.removeChild(a);
 
-            // PHPに画像データを送信
-            fetch('your_php_script.php', { // PHPスクリプトのパスを指定
+            fetch('your_php_script.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -127,15 +159,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     });
 
     function adjustFontSize() {
-        let fontSize = 50; // 初期フォントサイズ
+        let fontSize = 50;
         preview.style.fontSize = fontSize + 'px';
 
-        // コンテンツが枠内に収まるまでフォントサイズを調整
         while (preview.scrollHeight > preview.clientHeight || preview.scrollWidth > preview.clientWidth) {
-            fontSize -= 1; // フォントサイズを1pxずつ減らす
+            fontSize -= 1;
             preview.style.fontSize = fontSize + 'px';
 
-            // フォントサイズが小さすぎる場合は停止
             if (fontSize <= 10) {
                 break;
             }
@@ -144,7 +174,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </script>
 
 <div class="button-container">
-    <button onclick="location.href='generator_test.php'">解説文作成ページヘ</button>
+    <button onclick="location.href='generator_test.php'">問題文作成ページヘ</button>
 </div>
 </body>
 </html>
