@@ -16,7 +16,7 @@ $subject = $_SESSION['subject'];
 <header>
         <?php
         if (basename($_SERVER['PHP_SELF']) == 'test.php') {?>
-            <h1 id="test-h1">SPIタイサくん</h1>
+            <img id="free-h1" src="../image/icon/headerlogo.png">
         <?php
         }
         else{
