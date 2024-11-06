@@ -42,7 +42,6 @@ $subject = $_SESSION['subject'];
                 <li><a href="teststart.php">模擬試験開始画面へ</a></li>
                 <li><a href="review.php">復習ページへ</a></li>
                 <li><a href="ranking.php">ランキング</a></li>
-                <li><a href="home.php">ホームに戻る</a></li>
                 <?php
                 if ($username === "ゲスト") {
                 ?>
