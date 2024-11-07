@@ -19,7 +19,7 @@ if (!empty($message)) {
     <link rel="stylesheet" href="../css/question_insert.css">
 </head>
 <body>
-    <button onclick="location.href='question_list.php'">問題一覧</button>
+    <button onclick="location.href='question_list.php'" class="btn btn--orange btn--radius">問題一覧</button>
     <h2 class="text">問題ジャンル選択</h2>
     <form id="questionForm" action="../backend/question_insert_db.php" method="post" enctype="multipart/form-data">
         <fieldset class="language">
@@ -41,7 +41,7 @@ if (!empty($message)) {
                 <label for="lang_5">空欄補充</label>
             </div>
         </fieldset>
-        <fieldset class="language2">
+        <fieldset class="language2 ow-normal">
             <legend>非言語</legend>
             <div">
                 <input type="radio" id="non-lang_1" name="field" value="2_1" required />
@@ -77,7 +77,7 @@ if (!empty($message)) {
         </fieldset>
         <input type="hidden" name="genre_name" id="genre_name" />
 
-        <h2>問題画像</h2>
+        <h2 class="question_photo">問題画像</h2>
         <label for="image1">問題の画像を選択:</label>
         <input type="file" name="image1" id="image1" accept=".jpg" required>
         <img id="preview1" class="preview" src="#" alt="プレビュー" style="display: none;">

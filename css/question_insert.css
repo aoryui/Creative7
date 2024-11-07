@@ -1,3 +1,6 @@
+/* Google FontsからNoto Sans JPをインポート */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400&display=swap');
+
 input[type="file"] {
     display: block;
 }
@@ -5,25 +8,31 @@ input[type="file"] {
     width: 300px;
 }
 
-#text{ /*問題作成のリンク*/
+/*問題ジャンル一覧 */
+.btn--orange,
+a.btn--orange {
     position: relative;
-    top: -20px;
+    left: 1110px;
+  color: #fff;
+  background-color: #898989;
+   font-size: 20px;
+  
+}
+.btn--orange:hover,
+a.btn--orange:hover {
+  color: #fff;
+  background-color: #898989;
 }
 
-button{  /*ボタン*/
-    background-color: rgb(84, 196, 99);
-            color: white;
-            border: none;
-            margin-left: 10px;
-            cursor: pointer;
+a.btn--radius {
+   border-radius: 100vh;
 }
 
-.text{  /*問題ジャンル一覧 */
+/*言語*/
+.language {
     position: relative;
-    top: -10px;
-}
-
-.language{ /*言語*/
+    left: 15px;
+   background-color: #fff;
     margin-bottom: 1px;
     width: 530px;
     border-top-left-radius: 20px;
@@ -32,21 +41,47 @@ button{  /*ボタン*/
     border-bottom-left-radius: 20px;
 }
 
-.language2{ /*非言語*/
+/*非言語*/
+.language2{
+    position: relative;
+    top: -65px;
+    left: 650px;
+    background-color: #FFF;
     margin-bottom: 1px;
-    width: 850px;
+    width: 200px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
+    flex-direction: column;
+    text-align: center;
 }
+.ow-normal {
+    word-wrap: normal;
+  }
   
-body { /*全体のボディ*/
+body {
     position: relative;
     background-color: #ffefd5;
     top: 130px;
 }
 
-#questionForm{ /*リンク*/
+#questionForm{
     margin-top: 50px;
+}
+
+#text{ /*問題作成のリンク*/
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+legend{
+    text-align: center;
+    font-size: 18px;
+    font-family: "メイリオ", Arial, sans-serif; /* 複数フォント指定 */
+}
+
+.question_photo{
+    text-align: center;
 }
