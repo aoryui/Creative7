@@ -27,17 +27,7 @@ $subject = $_SESSION['subject'];
         <img id="free-h1" src="../image/icon/headerlogo.png">
         <nav id="menuContent">
             <ul>
-                <?php
-                if ($username === "ゲスト") {
-                ?>
-                    <li><a href="login.php">マイページへ</a></li>
-                <?php
-                } else {
-                ?>
-                    <li><a href="mypage.php">マイページへ</a></li>
-                <?php
-                }
-                ?>
+                <li><a href="mypage.php">マイページへ</a></li>
                 <li><a href="genre_selection.php">ジャンル選択画面へ</a></li>
                 <li><a href="teststart.php">模擬試験開始画面へ</a></li>
                 <li><a href="review.php">復習ページへ</a></li>

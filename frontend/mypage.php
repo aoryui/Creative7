@@ -17,6 +17,15 @@ if ($conn->connect_error) {
 }
 
 $userid = $_SESSION['userid']; // セッションからユーザーIDを取得
+echo '<script>console.log('.json_encode($userid).')</script>';
+
+if ($userid >= 10000000 && $userid <= 99999999) {
+    echo "<script>
+            alert('ログインしてください');
+            window.location.href = 'login.php';
+        </script>";
+    exit();
+}
 $user_sql = "SELECT * FROM userinfo WHERE userid = $userid";
 $user_result = $conn->query($user_sql);
 
