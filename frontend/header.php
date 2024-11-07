@@ -16,7 +16,7 @@ $subject = $_SESSION['subject'];
 <header>
         <?php
         if (basename($_SERVER['PHP_SELF']) == 'test.php') {?>
-            <h1 id="test-h1">SPIタイサくん</h1>
+            <img id="free-h1" src="../image/icon/headerlogo.png">
         <?php
         }
         else{
@@ -32,7 +32,6 @@ $subject = $_SESSION['subject'];
                 <li><a href="teststart.php">模擬試験開始画面へ</a></li>
                 <li><a href="review.php">復習ページへ</a></li>
                 <li><a href="ranking.php">ランキング</a></li>
-                <li><a href="home.php">ホームに戻る</a></li>
                 <?php
                 if ($username === "ゲスト") {
                 ?>
