@@ -8,6 +8,17 @@ $username = "Creative7";
 $password = "11111";
 $dbname = "creative7";
 
+if (isset($_SESSION['userid'])) {
+    $userid = $_SESSION['userid'];
+}
+if ($userid >= 10000000 && $userid <= 99999999) {
+    echo "<script>
+            alert('ログインしてください');
+            window.location.href = 'login.php';
+        </script>";
+    exit();
+}
+
 // データベース接続
 $conn = new mysqli($servername, $username, $password, $dbname);
 

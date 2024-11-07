@@ -7,6 +7,14 @@ if (isset($_SESSION['userid'])) {
     $userid = $_SESSION['userid'];
 }
 
+if ($userid >= 10000000 && $userid <= 99999999) {
+    echo "<script>
+            alert('ログインしてください');
+            window.location.href = 'login.php';
+        </script>";
+    exit();
+}
+
 // データベースに接続するための情報
 $host = 'localhost';
 $username = 'Creative7';
