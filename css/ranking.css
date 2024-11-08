@@ -5,7 +5,6 @@ body {
 .border-frame { /*ユーザー名、ランキングなど*/
     max-width: 1200px;
     margin: 100px auto 30px;
-    margin: 100px auto 30px;
     padding: 20px;
     background: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -20,16 +19,11 @@ body {
     width: 90%; /* テーブルも全体に合わせてレスポンシブ対応 */
     margin: 20px auto; /* 上部に余白を追加し中央寄せ */
     border-collapse: collapse; /* ボーダーを1本にまとめる */
-    position: relative;
     top: 90px;
 }
 
 #tri {
     color: rgb(63, 119, 232);
-}
-
-.level, .exp, .addition, .correct-answer-rate, .rate, .response-time, .time {
-    position: relative;
 }
 
 .answer {
@@ -46,9 +40,7 @@ body {
 #table {
     width: 100%; /* テーブルは全幅を使用 */
     border-collapse: collapse;
-    margin-top: 20px;
-    position: relative;
-    top: -120px;
+
 }
 
 #table th,
@@ -62,15 +54,6 @@ body {
     background-color: #f2f2f2;
 }
 
-#ranking_update{ /*ランキングテキスト*/
-    position: relative;
-    top: -75px;
-    left: -100px;
-}
-
-
-
-
 #custom-question {
     text-align: left !important;
     white-space: pre-wrap;
@@ -78,21 +61,34 @@ body {
     word-wrap: break-word;
 }
 
-form {
+#user_data{
+    display: flex;
+}
+
+#precedence{
+    margin: 10px;
+}
+
+#total{
+    margin: 10px;
+}
+
+#ranking_update{
+    display: flex;
+    align-items: center;
     float: right;
 }
-.update-button{
-    position: relative;
-    top: -120px;
-    left: 50px;
-    background: none; /* ボタンの背景をなしに */
-    border: none; /* ボタンの枠線をなしに */
-    padding: 0; /* ボタン内の余白をリセット */
-    cursor: pointer; /* カーソルをポインタに変更 */
+
+.update-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
 }
+
 .update-button img {
-    width: 30px; /* 横幅を設定 */
-    height: auto; /* 縦幅は自動調整 */
+    width: 30px; /* 画像の幅 */
+    height: 30px; /* 画像の高さ */
 }
 
 .first-place {
@@ -124,9 +120,7 @@ form {
 }
 
 .pagination {
-    position: relative;
-    top: -10px;
-    margin-top: 0px;
+    margin: 10px;
     text-align: center;
 }
 
@@ -159,7 +153,6 @@ form {
     font-size: 25px; /* テキストサイズを調整 */
     font-weight: bold; /* 太字にする */
     max-width: 250px;
-    position: relative;
     top: -10px;
   }
   
@@ -171,19 +164,4 @@ form {
 
   }
 
-#precedence{
-    max-width: 250px;
-    position: relative;
-    left: 775px;
-    top: -65px;
-}
-
-
-#total{
-    position: relative;
-    left: 775px;
-    max-width: 250px;
-    top: -80px;
-    
-}
 
