@@ -7,7 +7,7 @@ $form = new form();
 $userid = $_SESSION['userid'];
 
 // 1ページ目にアクセスした場合、またはランキングがまだセッションに保存されていない場合、データベースから取得
-if (!isset($_SESSION['rankings']) || (isset($_GET['page']) && $_GET['page'] == 1)) {
+if (!isset($_GET['page']) || $_GET['page'] == 1) {
     $rankings = $form->getRanking();
     $_SESSION['rankings'] = $rankings; // セッションにランキングを保存
 } else {
