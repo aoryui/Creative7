@@ -95,3 +95,21 @@ label {
     border: 1px solid #ccc; /* ボーダーを薄いグレーで設定 */
     font-size: 1em; /* フォントサイズを1emに設定 */
 }
+
+/* 問題ジャンル一覧ボタン */
+.btn--orange,
+a.btn--orange {
+    position: relative;
+    left: 900px;
+    color: #fff;
+    background-color: rgb(84, 196, 99); /* 背景色を緑に設定 */
+    font-size: 20px;
+    border: 2px solid black;
+}
+
+/* ボタンホバー時の色変更 */
+.btn--orange:hover,
+a.btn--orange:hover {
+    color: #fff;
+    background-color: #898989;
+}
