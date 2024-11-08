@@ -14,7 +14,7 @@ a.btn--orange {
     position: relative;
     left: 1110px;
   color: #fff;
-  background-color: #898989;
+  background-color: rgb(84, 196, 99); /* 背景色を緑に設定 */
    font-size: 20px;
   
 }
@@ -28,34 +28,6 @@ a.btn--radius {
    border-radius: 100vh;
 }
 
-/*言語*/
-.language {
-    position: relative;
-    left: 15px;
-   background-color: #fff;
-    margin-bottom: 1px;
-    width: 530px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-}
-
-/*非言語*/
-.language2{
-    position: relative;
-    top: -65px;
-    left: 650px;
-    background-color: #FFF;
-    margin-bottom: 1px;
-    width: 200px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    flex-direction: column;
-    text-align: center;
-}
 .ow-normal {
     word-wrap: normal;
   }
@@ -83,5 +55,67 @@ legend{
 }
 
 .question_photo{
+    text-align: center;
+}
+
+
+.list{
+    text-align: left;
+    list-style-type: none;
+    padding-left: 0%;
+    margin-left: 0%;
+}
+
+.text{
+    position: relative;
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    
+}
+
+
+/* ユーザー名やランキング表示用のフレーム */
+.border-frame { 
+    position: relative;
+    top: 0px;
+    left: 0px;
+    max-width: 470px; /* 最大幅を1200pxに設定 */
+    height: 350px;
+    margin:30px; /* 上下のマージンを設定し、中央揃え */
+    padding: 20px; /* 内側の余白を20pxに設定 */
+    background: #fff; /* 背景色を白に設定 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 影をつけて立体感を演出 */
+    border-radius: 8px; /* 角を丸くする */
+
+}
+
+/*言語*/
+.language {
+    position: relative;
+    top: -30px;
+    left: 15px;
+   background-color: #fff;
+    margin-bottom: 1px;
+    width: 150px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+/*非言語*/
+.language2{
+    position: relative;
+    top: -195px;
+    left: 270px;
+    background-color: #FFF;
+    margin-bottom: 1px;
+    width: 130px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    flex-direction: column;
     text-align: center;
 }

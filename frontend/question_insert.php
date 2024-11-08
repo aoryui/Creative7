@@ -20,61 +20,81 @@ if (!empty($message)) {
 </head>
 <body>
     <button onclick="location.href='question_list.php'" class="btn btn--orange btn--radius">問題一覧</button>
+    <div class="border-frame">
     <h2 class="text">問題ジャンル選択</h2>
     <form id="questionForm" action="../backend/question_insert_db.php" method="post" enctype="multipart/form-data">
         <fieldset class="language">
             <legend>言語</legend>
-            <div>
+            <div class="list">
+                <li>
                 <input type="radio" id="lang_1" name="field" value="1_1" required />
                 <label for="lang_1">二語の関係</label>
-
+                </li>
+                <li>
                 <input type="radio" id="lang_2" name="field" value="1_2" required />
                 <label for="lang_2">語句の意味</label>
-
+                </li>
+                <li>
                 <input type="radio" id="lang_3" name="field" value="1_3" required />
                 <label for="lang_3">語句の用法</label>
-                
+                </li>
+                <li>
                 <input type="radio" id="lang_4" name="field" value="1_4" required />
                 <label for="lang_4">文章整序</label>
-
+                </li>
+                <li>
                 <input type="radio" id="lang_5" name="field" value="1_5" required />
                 <label for="lang_5">空欄補充</label>
+                </li>
             </div>
         </fieldset>
         <fieldset class="language2 ow-normal">
             <legend>非言語</legend>
-            <div">
+            <div class="list">
+                <li>
                 <input type="radio" id="non-lang_1" name="field" value="2_1" required />
                 <label for="non-lang_1">場合の数</label>
-
+                </li>
+                <li>
                 <input type="radio" id="non-lang_2" name="field" value="2_2" required />
                 <label for="non-lang_2">推論</label>
-
+                </li>
+                <li>
                 <input type="radio" id="non-lang_3" name="field" value="2_3" required />
                 <label for="non-lang_3">割合</label>
-
+                </li>
+                <li>
                 <input type="radio" id="non-lang_4" name="field" value="2_4" required />
                 <label for="non-lang_4">確率</label>
-
+                </li>
+                <li>
                 <input type="radio" id="non-lang_5" name="field" value="2_5" required />
                 <label for="non-lang_5">金額計算</label>
-
+                </li>
+                <li>
                 <input type="radio" id="non-lang_6" name="field" value="2_6" required />
                 <label for="non-lang_6">分担計算</label>
-
+                </li>
+                <li>
                 <input type="radio" id="non-lang_7" name="field" value="2_7" required />
                 <label for="non-lang_7">速度算</label>
-
+                </li>
+                <li>
                 <input type="radio" id="non-lang_8" name="field" value="2_8" required />
                 <label for="non-lang_8">集合</label>
-
+                </li>
+                <li>
                 <input type="radio" id="non-lang_9" name="field" value="2_9" required />
                 <label for="non-lang_9">表の読み取り</label>
-
+                </li>
+                <li>
                 <input type="radio" id="non-lang_10" name="field" value="2_10" required />
                 <label for="non-lang_10">特殊計算</label>
-            </div>
+                </li>
+            </div> 
         </fieldset>
+</div>
+
         <input type="hidden" name="genre_name" id="genre_name" />
 
         <h2 class="question_photo">問題画像</h2>
@@ -118,7 +138,7 @@ if (!empty($message)) {
 
         <button type="button" onclick="addChoice()">選択肢を追加</button>
         <button type="button" onclick="removeChoice()">選択肢を削除</button><br>
-
+<div class="border-frame">
         <h2>制限時間</h2>
         <label for="time_limit">制限時間を入力（秒）:</label>
         <input type="number" id="time_limit" name="time_limit" min="1" value="30" required>
@@ -128,7 +148,7 @@ if (!empty($message)) {
 
         <input type="submit" value="問題を作成し画像をアップロード">
     </form>
-
+</div>
     <script>
         document.getElementById('questionForm').addEventListener('submit', function(event) {
             const selectedRadio = document.querySelector('input[name="field"]:checked');
