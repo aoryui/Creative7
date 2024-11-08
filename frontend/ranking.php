@@ -7,7 +7,7 @@ $form = new form();
 $userid = $_SESSION['userid'];
 
 // 1ページ目にアクセスした場合、またはランキングがまだセッションに保存されていない場合、データベースから取得
-if (!isset($_SESSION['rankings']) || (isset($_GET['page']) && $_GET['page'] == 1)) {
+if (!isset($_GET['page']) || $_GET['page'] == 1) {
     $rankings = $form->getRanking();
     $_SESSION['rankings'] = $rankings; // セッションにランキングを保存
 } else {
@@ -60,26 +60,28 @@ foreach ($rankings as $key => $value) {
     <div class="border-frame">
         <!-- ユーザーのランキングを表示 -->
         <?php 
+        echo '<p id="ranking"><img src="../image/icon/rank_icon.png" class="ranking_icon"> ランキング</p>';
+        echo '<div id="user_data">';
         if ($index !== null) {
             $user = $rankings[$index];
             $user_rank = $user['rank'];
             $user_score = $user['score'];
-            echo '<p id="ranking"><img src="../image/icon/rank_icon.png" class="ranking_icon"> ランキング</p>';
             echo '<p id="precedence">あなたの順位は: <span style="color: red; font-size: 24px; font-weight: bold;">' . $user_rank . '位</span> です</p>';
             echo '<p id="total">総獲得経験値: <span style="color: black; font-size: 24px; font-weight: bold;"> ' . $user_score . '</span></p>';
         } else {
             echo "ランキングに登録するにはログインする必要があります";
         }
+        echo '</div>'
         ?>
-
-        
 
         <!-- ランキングを手動で更新 -->
         <form method="post">
-            <p id="ranking_update">ランキングの更新</p>
-            <button type="submit" name="update" class="update-button">
-                <img src="../image/icon/reload.png" alt="更新">
-            </button>
+            <div id="ranking_update">
+                <div id="update_text">ランキングの更新</div>
+                <button type="submit" name="update" class="update-button">
+                    <img src="../image/icon/reload.png" alt="更新">
+                </button>
+            </div>
         </form>
 
         <table border="1" id="table">
@@ -132,6 +134,6 @@ foreach ($rankings as $key => $value) {
 
     <a href="?page=<?php echo $page + 1; ?>" class="next <?php echo ($page >= $totalPages) ? 'hidden' : ''; ?>">次 &raquo;</a>
 </div>
-    </div>
+    </>
 </body>
 </html>
