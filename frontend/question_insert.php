@@ -96,18 +96,20 @@ if (!empty($message)) {
 </div>
 
         <input type="hidden" name="genre_name" id="genre_name" />
-
+<div class="border-frame1">
         <h2 class="question_photo">問題画像</h2>
         <label for="image1">問題の画像を選択:</label>
         <input type="file" name="image1" id="image1" accept=".jpg" required>
         <img id="preview1" class="preview" src="#" alt="プレビュー" style="display: none;">
         <a href="generator_test.php">問題画像を作成</a>
-        
+        <div class="kaisetu">
         <label for="image2">解説の画像を選択:</label>
         <input type="file" name="image2" id="image2" accept=".jpg" required>
         <img id="preview2" class="preview" src="#" alt="プレビュー" style="display: none;">
         <a href="generator_answer.php">回答画像を作成</a>
-
+        </div>
+</div>
+<div class="border-frame3">
         <h2>選択肢</h2>
         <div id="choice">
             <div class="choice">
@@ -138,17 +140,19 @@ if (!empty($message)) {
 
         <button type="button" onclick="addChoice()">選択肢を追加</button>
         <button type="button" onclick="removeChoice()">選択肢を削除</button><br>
-<div class="border-frame">
+</div>
+<div class="border-frame2">
         <h2>制限時間</h2>
         <label for="time_limit">制限時間を入力（秒）:</label>
         <input type="number" id="time_limit" name="time_limit" min="1" value="30" required>
 
         <h2>問題文の要約(文字数20文字)</h2>
         <input type="text" id="sentence" name="sentence" maxlength="20" required><br>
-
-        <input type="submit" value="問題を作成し画像をアップロード">
-    </form>
 </div>
+        <input type="submit" class="upload" value="問題を作成し画像をアップロード">
+    </form>
+
+
     <script>
         document.getElementById('questionForm').addEventListener('submit', function(event) {
             const selectedRadio = document.querySelector('input[name="field"]:checked');

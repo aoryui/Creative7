@@ -77,9 +77,10 @@ legend{
 
 /* ユーザー名やランキング表示用のフレーム */
 .border-frame { 
-    position: relative;
-    top: 0px;
+    position: absolute;
+    top: 20px;
     left: 0px;
+    width: 470px;
     max-width: 470px; /* 最大幅を1200pxに設定 */
     height: 350px;
     margin:30px; /* 上下のマージンを設定し、中央揃え */
@@ -87,7 +88,49 @@ legend{
     background: #fff; /* 背景色を白に設定 */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 影をつけて立体感を演出 */
     border-radius: 8px; /* 角を丸くする */
+}
 
+.border-frame1 { 
+    position: absolute;
+    top: 20px;
+    left: 550px;
+    width: 630px;
+    max-width: 1000px; /* 最大幅を1200pxに設定 */
+    height: auto;
+    margin:30px; /* 上下のマージンを設定し、中央揃え */
+    padding: 20px; /* 内側の余白を20pxに設定 */
+    background: #fff; /* 背景色を白に設定 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 影をつけて立体感を演出 */
+    border-radius: 8px; /* 角を丸くする */
+}
+
+.border-frame2 { 
+    position: absolute;
+    top: 450px;
+    left: 450px;
+    max-width: 470px; /* 最大幅を1200pxに設定 */
+    height: 250px;
+    margin:30px; /* 上下のマージンを設定し、中央揃え */
+    padding: 20px; /* 内側の余白を20pxに設定 */
+    background: #fff; /* 背景色を白に設定 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 影をつけて立体感を演出 */
+    border-radius: 8px; /* 角を丸くする */
+}
+
+
+.border-frame3 { 
+    position: absolute;
+    top: 450px;
+    left: 0px;
+    width: 300px;
+    max-width: 470px; /* 最大幅を1200pxに設定 */
+    height: 250px;
+    margin:30px; /* 上下のマージンを設定し、中央揃え */
+    padding: 20px; /* 内側の余白を20pxに設定 */
+    background: #fff; /* 背景色を白に設定 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 影をつけて立体感を演出 */
+    border-radius: 8px; /* 角を丸くする */
+    text-align: center;
 }
 
 /*言語*/
@@ -118,4 +161,24 @@ legend{
     border-bottom-left-radius: 20px;
     flex-direction: column;
     text-align: center;
+}
+
+.kaisetu{
+    position: absolute;
+    left: 350px;
+    top: 90px;
+}
+
+.upload{
+    position: absolute;
+    top: 700px;
+    left: 1000px;
+    color: #fff;
+    background-color: #eb6100;
+    cursor: pointer; /* マウスカーソルをポインタに設定 */
+    width: 250px; /* ボタンの幅を85pxに設定 */
+    height: 70px;
+    border-radius: 5px;
+    color: #fff;
+  background: #f56500;
 }
