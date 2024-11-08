@@ -423,656 +423,711 @@ INSERT INTO choices (question_id, choice_text) VALUES (30, 'C.コートは軽い
 INSERT INTO choices (question_id, choice_text) VALUES (30, 'D.私「の」なくしたコートが見つかった'); -- 154
 INSERT INTO choices (question_id, choice_text) VALUES (30, 'E.コートがない「の」、マフラーがない「の」と騒ぐ'); -- 155
 
-INSERT INTO choices (question_id, choice_text) VALUES (31, 'A.トップの座に「のぼる」');--156
-INSERT INTO choices (question_id, choice_text) VALUES (31, 'B.話題に「のぼる」');--157
-INSERT INTO choices (question_id, choice_text) VALUES (31, 'C.猫が木に「のぼる」');--158
-INSERT INTO choices (question_id, choice_text) VALUES (31, 'D.来場者が100万人に「のぼる」');--159
-INSERT INTO choices (question_id, choice_text) VALUES (31, 'E.煙が「のぼる」');--160
+INSERT INTO choices (question_id, choice_text) VALUES (31, 'A.トップの座に「のぼる」'); -- 156
+INSERT INTO choices (question_id, choice_text) VALUES (31, 'B.話題に「のぼる」'); -- 157
+INSERT INTO choices (question_id, choice_text) VALUES (31, 'C.猫が木に「のぼる」'); -- 158
+INSERT INTO choices (question_id, choice_text) VALUES (31, 'D.来場者が100万人に「のぼる」'); -- 159
+INSERT INTO choices (question_id, choice_text) VALUES (31, 'E.煙が「のぼる」'); -- 160
 
-INSERT INTO choices (question_id, choice_text) VALUES (32, 'A.あっちもおもしろ「そうだ」');--161
-INSERT INTO choices (question_id, choice_text) VALUES (32, 'B.雨でも降り「そうだ」');--162
-INSERT INTO choices (question_id, choice_text) VALUES (32, 'C.今年は黒字になり「そうだ」');--163
-INSERT INTO choices (question_id, choice_text) VALUES (32, 'D.少しも悲しくなさ「そうだ」');--164
-INSERT INTO choices (question_id, choice_text) VALUES (32, 'E.夜更けから雪になる「そうだ」');--165
+INSERT INTO choices (question_id, choice_text) VALUES (32, 'A.あっちもおもしろ「そうだ」'); -- 161
+INSERT INTO choices (question_id, choice_text) VALUES (32, 'B.雨でも降り「そうだ」'); -- 162
+INSERT INTO choices (question_id, choice_text) VALUES (32, 'C.今年は黒字になり「そうだ」'); -- 163
+INSERT INTO choices (question_id, choice_text) VALUES (32, 'D.少しも悲しくなさ「そうだ」'); -- 164
+INSERT INTO choices (question_id, choice_text) VALUES (32, 'E.夜更けから雪になる「そうだ」'); -- 165
 
-INSERT INTO choices (question_id, choice_text) VALUES (33, 'A.ベジタリアン増加の');--166
-INSERT INTO choices (question_id, choice_text) VALUES (33, 'B.具体的に扱うのは');--167
-INSERT INTO choices (question_id, choice_text) VALUES (33, 'C.人と動物との本来あるべき関係や');--168
-INSERT INTO choices (question_id, choice_text) VALUES (33, 'D.動物の権利を問う学問であり');--169
-INSERT INTO choices (question_id, choice_text) VALUES (33, 'E.肉食といった問題であるため');--170
+INSERT INTO choices (question_id, choice_text) VALUES (33, 'A.ベジタリアン増加の'); -- 166
+INSERT INTO choices (question_id, choice_text) VALUES (33, 'B.具体的に扱うのは'); -- 167
+INSERT INTO choices (question_id, choice_text) VALUES (33, 'C.人と動物との本来あるべき関係や'); -- 168
+INSERT INTO choices (question_id, choice_text) VALUES (33, 'D.動物の権利を問う学問であり'); -- 169
+INSERT INTO choices (question_id, choice_text) VALUES (33, 'E.肉食といった問題であるため'); -- 170
 
-INSERT INTO choices (question_id, choice_text) VALUES (34, 'A.さらにそのデータを');--171
-INSERT INTO choices (question_id, choice_text) VALUES (34, 'B.あらゆる情報がデジタル化され');--172
-INSERT INTO choices (question_id, choice_text) VALUES (34, 'C.生活がより便利になった一方で');--173
-INSERT INTO choices (question_id, choice_text) VALUES (34, 'D.膨大な個人情報が広がっていくことへの');--174
-INSERT INTO choices (question_id, choice_text) VALUES (34, 'E.分析できるようになったおかげで');--175
+INSERT INTO choices (question_id, choice_text) VALUES (34, 'A.さらにそのデータを'); -- 171
+INSERT INTO choices (question_id, choice_text) VALUES (34, 'B.あらゆる情報がデジタル化され'); -- 172
+INSERT INTO choices (question_id, choice_text) VALUES (34, 'C.生活がより便利になった一方で'); -- 173
+INSERT INTO choices (question_id, choice_text) VALUES (34, 'D.膨大な個人情報が広がっていくことへの'); -- 174
+INSERT INTO choices (question_id, choice_text) VALUES (34, 'E.分析できるようになったおかげで'); -- 175
 
-INSERT INTO choices (question_id, choice_text) VALUES (35, 'A.細菌は一つの細胞でできており');--176
-INSERT INTO choices (question_id, choice_text) VALUES (35, 'B.ウイルスは細菌の50分の1ほどの大きさで');--177
-INSERT INTO choices (question_id, choice_text) VALUES (35, 'C.単細胞生物と呼ばれるのに対し');--178
-INSERT INTO choices (question_id, choice_text) VALUES (35, 'D.自分で細胞を持たず');--179
-INSERT INTO choices (question_id, choice_text) VALUES (35, 'E.どちらも微生物だが');--180
+INSERT INTO choices (question_id, choice_text) VALUES (35, 'A.細菌は一つの細胞でできており'); -- 176
+INSERT INTO choices (question_id, choice_text) VALUES (35, 'B.ウイルスは細菌の50分の1ほどの大きさで'); -- 177
+INSERT INTO choices (question_id, choice_text) VALUES (35, 'C.単細胞生物と呼ばれるのに対し'); -- 178
+INSERT INTO choices (question_id, choice_text) VALUES (35, 'D.自分で細胞を持たず'); -- 179
+INSERT INTO choices (question_id, choice_text) VALUES (35, 'E.どちらも微生物だが'); -- 180
 
-INSERT INTO choices (question_id, choice_text) VALUES (36, 'A.日本においては軍事や国防と密接に結びつけられてきた');--181
-INSERT INTO choices (question_id, choice_text) VALUES (36, 'B.この条約の改正は大きな反対運動、いわゆる安保闘争を招いた');--182
-INSERT INTO choices (question_id, choice_text) VALUES (36, 'C.契機は「日米安全保障条約」の締結だと考えられる');--183
-INSERT INTO choices (question_id, choice_text) VALUES (36, 'D.その結果、“Security”は「安全保障」よりも「安保」として定着した');--184
-INSERT INTO choices (question_id, choice_text) VALUES (36, 'E.「安全保障」という言葉は英語の“Security”の訳語であるが');--185
+INSERT INTO choices (question_id, choice_text) VALUES (36, 'A.日本においては軍事や国防と密接に結びつけられてきた'); -- 181
+INSERT INTO choices (question_id, choice_text) VALUES (36, 'B.この条約の改正は大きな反対運動、いわゆる安保闘争を招いた'); -- 182
+INSERT INTO choices (question_id, choice_text) VALUES (36, 'C.契機は「日米安全保障条約」の締結だと考えられる'); -- 183
+INSERT INTO choices (question_id, choice_text) VALUES (36, 'D.その結果、“Security”は「安全保障」よりも「安保」として定着した'); -- 184
+INSERT INTO choices (question_id, choice_text) VALUES (36, 'E.「安全保障」という言葉は英語の“Security”の訳語であるが'); -- 185
 
-INSERT INTO choices (question_id, choice_text) VALUES (37, 'A.自宅などの生活の場で');--186
-INSERT INTO choices (question_id, choice_text) VALUES (37, 'B.第３の医療提供形態として');--187
-INSERT INTO choices (question_id, choice_text) VALUES (37, 'C.入院医療、外来医療に次ぐ');--188
-INSERT INTO choices (question_id, choice_text) VALUES (37, 'D.通院が困難な患者が');--189
-INSERT INTO choices (question_id, choice_text) VALUES (37, 'E.療養を行えるようにする医療であり');--190
+INSERT INTO choices (question_id, choice_text) VALUES (37, 'A.自宅などの生活の場で'); -- 186
+INSERT INTO choices (question_id, choice_text) VALUES (37, 'B.第３の医療提供形態として'); -- 187
+INSERT INTO choices (question_id, choice_text) VALUES (37, 'C.入院医療、外来医療に次ぐ'); -- 188
+INSERT INTO choices (question_id, choice_text) VALUES (37, 'D.通院が困難な患者が'); -- 189
+INSERT INTO choices (question_id, choice_text) VALUES (37, 'E.療養を行えるようにする医療であり'); -- 190
 
-INSERT INTO choices (question_id, choice_text) VALUES (38, 'A.この状態をプラズマと呼びます。');--191
-INSERT INTO choices (question_id, choice_text) VALUES (38, 'B.マイナスの電荷を持った電子に解離します。');--192
-INSERT INTO choices (question_id, choice_text) VALUES (38, 'C.またプラズマが運動すると電場や磁場が生まれ、');--193
-INSERT INTO choices (question_id, choice_text) VALUES (38, 'D.プラズマは電場や磁場を感じると運動が変化します。');--194
-INSERT INTO choices (question_id, choice_text) VALUES (38, 'E.原子がプラスの電荷を持つイオンと、');--195
+INSERT INTO choices (question_id, choice_text) VALUES (38, 'A.この状態をプラズマと呼びます。'); -- 191
+INSERT INTO choices (question_id, choice_text) VALUES (38, 'B.マイナスの電荷を持った電子に解離します。'); -- 192
+INSERT INTO choices (question_id, choice_text) VALUES (38, 'C.またプラズマが運動すると電場や磁場が生まれ、'); -- 193
+INSERT INTO choices (question_id, choice_text) VALUES (38, 'D.プラズマは電場や磁場を感じると運動が変化します。'); -- 194
+INSERT INTO choices (question_id, choice_text) VALUES (38, 'E.原子がプラスの電荷を持つイオンと、'); -- 195
 
-INSERT INTO choices (question_id, choice_text) VALUES (39, 'A.しかし過去の生物を直接知る手がかりは、化石記録しかありません。');--196
-INSERT INTO choices (question_id, choice_text) VALUES (39, 'B.古代の生物の様子がまるで見てきたかのような');--197
-INSERT INTO choices (question_id, choice_text) VALUES (39, 'C.ですから、その生物の姿勢や動き、色や模様は、');--198
-INSERT INTO choices (question_id, choice_text) VALUES (39, 'D.カラーイラストで描かれているのをよく目にします。');--199
+INSERT INTO choices (question_id, choice_text) VALUES (39, 'A.しかし過去の生物を直接知る手がかりは、化石記録しかありません。'); -- 196
+INSERT INTO choices (question_id, choice_text) VALUES (39, 'B.古代の生物の様子がまるで見てきたかのような'); -- 197
+INSERT INTO choices (question_id, choice_text) VALUES (39, 'C.ですから、その生物の姿勢や動き、色や模様は、'); -- 198
+INSERT INTO choices (question_id, choice_text) VALUES (39, 'D.カラーイラストで描かれているのをよく目にします。'); -- 199
 
-INSERT INTO choices (question_id, choice_text) VALUES (40, 'A.職場の仕事の他に、家事育児や介護といった労働を「ケア労働」という');--200
-INSERT INTO choices (question_id, choice_text) VALUES (40, 'B.日本では有償労働は男性に');--201
-INSERT INTO choices (question_id, choice_text) VALUES (40, 'C.働く女性はダブルワークを担わなくてはならないという問題がある');--202
-INSERT INTO choices (question_id, choice_text) VALUES (40, 'D.無償のケア労働は女性に偏っている');--203
-INSERT INTO choices (question_id, choice_text) VALUES (40, 'E.そのため、女性の社会進出が叫ばれている一方で');--204
+INSERT INTO choices (question_id, choice_text) VALUES (40, 'A.職場の仕事の他に、家事育児や介護といった労働を「ケア労働」という'); -- 200
+INSERT INTO choices (question_id, choice_text) VALUES (40, 'B.日本では有償労働は男性に'); -- 201
+INSERT INTO choices (question_id, choice_text) VALUES (40, 'C.働く女性はダブルワークを担わなくてはならないという問題がある'); -- 202
+INSERT INTO choices (question_id, choice_text) VALUES (40, 'D.無償のケア労働は女性に偏っている'); -- 203
+INSERT INTO choices (question_id, choice_text) VALUES (40, 'E.そのため、女性の社会進出が叫ばれている一方で'); -- 204
 
-INSERT INTO choices (question_id, choice_text) VALUES (41, 'A.「二院制」がとられているのは、');--205 
-INSERT INTO choices (question_id, choice_text) VALUES (41, 'B.その二つとは「衆議院」と「参議院」です。');--206 
-INSERT INTO choices (question_id, choice_text) VALUES (41, 'C.国会は二つの議会からなる「二院制」がとられていて、');--207
-INSERT INTO choices (question_id, choice_text) VALUES (41, 'D.さまざまな意見を取り入れて慎重に話し合うという目的のためです。');--208
-INSERT INTO choices (question_id, choice_text) VALUES (41, 'E.「唯一の立法機関」と定められています。');--209
+INSERT INTO choices (question_id, choice_text) VALUES (41, 'A.「二院制」がとられているのは、'); -- 205 
+INSERT INTO choices (question_id, choice_text) VALUES (41, 'B.その二つとは「衆議院」と「参議院」です。'); -- 206 
+INSERT INTO choices (question_id, choice_text) VALUES (41, 'C.国会は二つの議会からなる「二院制」がとられていて、'); -- 207
+INSERT INTO choices (question_id, choice_text) VALUES (41, 'D.さまざまな意見を取り入れて慎重に話し合うという目的のためです。'); -- 208
+INSERT INTO choices (question_id, choice_text) VALUES (41, 'E.「唯一の立法機関」と定められています。'); -- 209
 
-INSERT INTO choices (question_id, choice_text) VALUES (42, 'A.「冷蔵庫」「洗濯機」「白黒テレビ」が、');--210
-INSERT INTO choices (question_id, choice_text) VALUES (42, 'B.「三種の神器」と呼ばれました。');--211
-INSERT INTO choices (question_id, choice_text) VALUES (42, 'C.一般の家庭でも使える電化製品が次々と現れました。');--212
-INSERT INTO choices (question_id, choice_text) VALUES (42, 'D.例えば高度経済成長期のさなか登場した');--213
-INSERT INTO choices (question_id, choice_text) VALUES (42, 'E.人々の生活を豊かにするための');--214
+INSERT INTO choices (question_id, choice_text) VALUES (42, 'A.「冷蔵庫」「洗濯機」「白黒テレビ」が、'); -- 210
+INSERT INTO choices (question_id, choice_text) VALUES (42, 'B.「三種の神器」と呼ばれました。'); -- 211
+INSERT INTO choices (question_id, choice_text) VALUES (42, 'C.一般の家庭でも使える電化製品が次々と現れました。'); -- 212
+INSERT INTO choices (question_id, choice_text) VALUES (42, 'D.例えば高度経済成長期のさなか登場した'); -- 213
+INSERT INTO choices (question_id, choice_text) VALUES (42, 'E.人々の生活を豊かにするための'); -- 214
 
-INSERT INTO choices (question_id, choice_text) VALUES (43, 'A.才能');--215
-INSERT INTO choices (question_id, choice_text) VALUES (43, 'B.幻想');--216
-INSERT INTO choices (question_id, choice_text) VALUES (43, 'C.夢');--217
-INSERT INTO choices (question_id, choice_text) VALUES (43, 'D.怠惰');--218
-INSERT INTO choices (question_id, choice_text) VALUES (43, 'E.力み');--219
-INSERT INTO choices (question_id, choice_text) VALUES (43, 'F.迷い');--220
+INSERT INTO choices (question_id, choice_text) VALUES (43, 'A.才能'); -- 215
+INSERT INTO choices (question_id, choice_text) VALUES (43, 'B.幻想'); -- 216
+INSERT INTO choices (question_id, choice_text) VALUES (43, 'C.夢'); -- 217
+INSERT INTO choices (question_id, choice_text) VALUES (43, 'D.怠惰'); -- 218
+INSERT INTO choices (question_id, choice_text) VALUES (43, 'E.力み'); -- 219
+INSERT INTO choices (question_id, choice_text) VALUES (43, 'F.迷い'); -- 220
 
-INSERT INTO choices (question_id, choice_text) VALUES (44, 'A.躍起');--221
-INSERT INTO choices (question_id, choice_text) VALUES (44, 'B.一筋');--222
-INSERT INTO choices (question_id, choice_text) VALUES (44, 'C.強引');--223
-INSERT INTO choices (question_id, choice_text) VALUES (44, 'D.本腰');--224
-INSERT INTO choices (question_id, choice_text) VALUES (44, 'E.一向');--225
+INSERT INTO choices (question_id, choice_text) VALUES (44, 'A.躍起'); -- 221
+INSERT INTO choices (question_id, choice_text) VALUES (44, 'B.一筋'); -- 222
+INSERT INTO choices (question_id, choice_text) VALUES (44, 'C.強引'); -- 223
+INSERT INTO choices (question_id, choice_text) VALUES (44, 'D.本腰'); -- 224
+INSERT INTO choices (question_id, choice_text) VALUES (44, 'E.一向'); -- 225
 
-INSERT INTO choices (question_id, choice_text) VALUES (45, 'A.苦虫');--226
-INSERT INTO choices (question_id, choice_text) VALUES (45, 'B.眉唾');--227
-INSERT INTO choices (question_id, choice_text) VALUES (45, 'C.言葉');--228
-INSERT INTO choices (question_id, choice_text) VALUES (45, 'D.良薬');--229
-INSERT INTO choices (question_id, choice_text) VALUES (45, 'E.固唾');--230
+INSERT INTO choices (question_id, choice_text) VALUES (45, 'A.苦虫'); -- 226
+INSERT INTO choices (question_id, choice_text) VALUES (45, 'B.眉唾'); -- 227
+INSERT INTO choices (question_id, choice_text) VALUES (45, 'C.言葉'); -- 228
+INSERT INTO choices (question_id, choice_text) VALUES (45, 'D.良薬'); -- 229
+INSERT INTO choices (question_id, choice_text) VALUES (45, 'E.固唾'); -- 230
 
-INSERT INTO choices (question_id, choice_text) VALUES (46, 'A.丹精');--231
-INSERT INTO choices (question_id, choice_text) VALUES (46, 'B.手塩');--232
-INSERT INTO choices (question_id, choice_text) VALUES (46, 'C.拍車');--233
-INSERT INTO choices (question_id, choice_text) VALUES (46, 'D.腕');--234
-INSERT INTO choices (question_id, choice_text) VALUES (46, 'E.輪');--235
+INSERT INTO choices (question_id, choice_text) VALUES (46, 'A.丹精'); -- 231
+INSERT INTO choices (question_id, choice_text) VALUES (46, 'B.手塩'); -- 232
+INSERT INTO choices (question_id, choice_text) VALUES (46, 'C.拍車'); -- 233
+INSERT INTO choices (question_id, choice_text) VALUES (46, 'D.腕'); -- 234
+INSERT INTO choices (question_id, choice_text) VALUES (46, 'E.輪'); -- 235
 
-INSERT INTO choices (question_id, choice_text) VALUES (47, 'A.ふける');--236
-INSERT INTO choices (question_id, choice_text) VALUES (47, 'B.寄せる');--237
-INSERT INTO choices (question_id, choice_text) VALUES (47, 'C.つきる');--238
-INSERT INTO choices (question_id, choice_text) VALUES (47, 'D.むせぶ');--239
-INSERT INTO choices (question_id, choice_text) VALUES (47, 'E.徹する');--240
+INSERT INTO choices (question_id, choice_text) VALUES (47, 'A.ふける'); -- 236
+INSERT INTO choices (question_id, choice_text) VALUES (47, 'B.寄せる'); -- 237
+INSERT INTO choices (question_id, choice_text) VALUES (47, 'C.つきる'); -- 238
+INSERT INTO choices (question_id, choice_text) VALUES (47, 'D.むせぶ'); -- 239
+INSERT INTO choices (question_id, choice_text) VALUES (47, 'E.徹する'); -- 240
 
-INSERT INTO choices (question_id, choice_text) VALUES (48, 'A.新しいことにチャレンジする意欲がある');--241
-INSERT INTO choices (question_id, choice_text) VALUES (48, 'B.失敗だと気づかずに通り過ぎてきた');--242
-INSERT INTO choices (question_id, choice_text) VALUES (48, 'C.どんなに失敗を繰り返しても許される状況だった');--243
-INSERT INTO choices (question_id, choice_text) VALUES (48, 'D.過去の失敗事例から回避する手段がわかっている');--244
+INSERT INTO choices (question_id, choice_text) VALUES (48, 'A.新しいことにチャレンジする意欲がある'); -- 241
+INSERT INTO choices (question_id, choice_text) VALUES (48, 'B.失敗だと気づかずに通り過ぎてきた'); -- 242
+INSERT INTO choices (question_id, choice_text) VALUES (48, 'C.どんなに失敗を繰り返しても許される状況だった'); -- 243
+INSERT INTO choices (question_id, choice_text) VALUES (48, 'D.過去の失敗事例から回避する手段がわかっている'); -- 244
 
-INSERT INTO choices (question_id, choice_text) VALUES (49, 'A.批判的');--245
-INSERT INTO choices (question_id, choice_text) VALUES (49, 'B.論理的');--246
-INSERT INTO choices (question_id, choice_text) VALUES (49, 'C.普遍的');--247
-INSERT INTO choices (question_id, choice_text) VALUES (49, 'D.哲学的');--248
-INSERT INTO choices (question_id, choice_text) VALUES (49, 'E.感覚的');--249
-INSERT INTO choices (question_id, choice_text) VALUES (49, 'F.実証的');--250
+INSERT INTO choices (question_id, choice_text) VALUES (49, 'A.批判的'); -- 245
+INSERT INTO choices (question_id, choice_text) VALUES (49, 'B.論理的'); -- 246
+INSERT INTO choices (question_id, choice_text) VALUES (49, 'C.普遍的'); -- 247
+INSERT INTO choices (question_id, choice_text) VALUES (49, 'D.哲学的'); -- 248
+INSERT INTO choices (question_id, choice_text) VALUES (49, 'E.感覚的'); -- 249
+INSERT INTO choices (question_id, choice_text) VALUES (49, 'F.実証的'); -- 250
 
-INSERT INTO choices (question_id, choice_text) VALUES (50, 'A.余所');--251
-INSERT INTO choices (question_id, choice_text) VALUES (50, 'B.底辺');--252
-INSERT INTO choices (question_id, choice_text) VALUES (50, 'C.道中');--253
-INSERT INTO choices (question_id, choice_text) VALUES (50, 'D.風上');--254
-INSERT INTO choices (question_id, choice_text) VALUES (50, 'E.一角');--255
+INSERT INTO choices (question_id, choice_text) VALUES (50, 'A.余所'); -- 251
+INSERT INTO choices (question_id, choice_text) VALUES (50, 'B.底辺'); -- 252
+INSERT INTO choices (question_id, choice_text) VALUES (50, 'C.道中'); -- 253
+INSERT INTO choices (question_id, choice_text) VALUES (50, 'D.風上'); -- 254
+INSERT INTO choices (question_id, choice_text) VALUES (50, 'E.一角'); -- 255
 
-INSERT INTO choices (question_id, choice_text) VALUES (51, 'A.本腰');--256
-INSERT INTO choices (question_id, choice_text) VALUES (51, 'B.年季');--257
-INSERT INTO choices (question_id, choice_text) VALUES (51, 'C.本気');--258
-INSERT INTO choices (question_id, choice_text) VALUES (51, 'D.念頭');--259
-INSERT INTO choices (question_id, choice_text) VALUES (51, 'E.故障');--260
+INSERT INTO choices (question_id, choice_text) VALUES (51, 'A.本腰'); -- 256
+INSERT INTO choices (question_id, choice_text) VALUES (51, 'B.年季'); -- 257
+INSERT INTO choices (question_id, choice_text) VALUES (51, 'C.本気'); -- 258
+INSERT INTO choices (question_id, choice_text) VALUES (51, 'D.念頭'); -- 259
+INSERT INTO choices (question_id, choice_text) VALUES (51, 'E.故障'); -- 260
 
-INSERT INTO choices (question_id, choice_text) VALUES (52, 'A.さしずめ');--261
-INSERT INTO choices (question_id, choice_text) VALUES (52, 'B.ともすれば');--262
-INSERT INTO choices (question_id, choice_text) VALUES (52, 'C.ひっきょう');--263
-INSERT INTO choices (question_id, choice_text) VALUES (52, 'D.ようとして');--264
-INSERT INTO choices (question_id, choice_text) VALUES (52, 'E.なまじっか');--265
+INSERT INTO choices (question_id, choice_text) VALUES (52, 'A.さしずめ'); -- 261
+INSERT INTO choices (question_id, choice_text) VALUES (52, 'B.ともすれば'); -- 262
+INSERT INTO choices (question_id, choice_text) VALUES (52, 'C.ひっきょう'); -- 263
+INSERT INTO choices (question_id, choice_text) VALUES (52, 'D.ようとして'); -- 264
+INSERT INTO choices (question_id, choice_text) VALUES (52, 'E.なまじっか'); -- 265
 
 -- 非言語問題
-INSERT INTO choices (question_id, choice_text) VALUES (53, 'A. 13 通り');--266
-INSERT INTO choices (question_id, choice_text) VALUES (53, 'B. 18 通り');--267
-INSERT INTO choices (question_id, choice_text) VALUES (53, 'C. 24 通り');--268
-INSERT INTO choices (question_id, choice_text) VALUES (53, 'D. 40 通り');--269
-INSERT INTO choices (question_id, choice_text) VALUES (53, 'E. 80 通り');--270
-
-INSERT INTO choices (question_id, choice_text) VALUES (54, 'A. 7 通り');--271
-INSERT INTO choices (question_id, choice_text) VALUES (54, 'B. 21 通り');--272
-INSERT INTO choices (question_id, choice_text) VALUES (54, 'C. 35 通り');--273
-INSERT INTO choices (question_id, choice_text) VALUES (54, 'D. 91 通り');--274
-INSERT INTO choices (question_id, choice_text) VALUES (54, 'E. 140 通り');--275
-
-INSERT INTO choices (question_id, choice_text) VALUES (55, 'A. 100 通り');--276
-INSERT INTO choices (question_id, choice_text) VALUES (55, 'B. 700 通り');--277
-INSERT INTO choices (question_id, choice_text) VALUES (55, 'C. 1600 通り');--278
-INSERT INTO choices (question_id, choice_text) VALUES (55, 'D. 4200 通り');--279
-INSERT INTO choices (question_id, choice_text) VALUES (55, 'E. 7200 通り');--280
-
-INSERT INTO choices (question_id, choice_text) VALUES (56, 'A. 12 通り');--281
-INSERT INTO choices (question_id, choice_text) VALUES (56, 'B. 24 通り');--282
-INSERT INTO choices (question_id, choice_text) VALUES (56, 'C. 48 通り');--283
-INSERT INTO choices (question_id, choice_text) VALUES (56, 'D. 80 通り');--284
-INSERT INTO choices (question_id, choice_text) VALUES (56, 'E. 120 通り');--285
-
-INSERT INTO choices (question_id, choice_text) VALUES (57, 'A. 4 通り');--286
-INSERT INTO choices (question_id, choice_text) VALUES (57, 'B. 6 通り');--287
-INSERT INTO choices (question_id, choice_text) VALUES (57, 'C. 10 通り');--288
-INSERT INTO choices (question_id, choice_text) VALUES (57, 'D. 12 通り');--289
-INSERT INTO choices (question_id, choice_text) VALUES (57, 'E. AからDのいずれでもない');--290
-
-INSERT INTO choices (question_id, choice_text) VALUES (58, 'A. 5 通り');--291
-INSERT INTO choices (question_id, choice_text) VALUES (58, 'B. 6 通り');--292
-INSERT INTO choices (question_id, choice_text) VALUES (58, 'C. 12 通り');--293
-INSERT INTO choices (question_id, choice_text) VALUES (58, 'D. 20 通り');--294
-INSERT INTO choices (question_id, choice_text) VALUES (58, 'E. AからDのいずれでもない');--295
-
-INSERT INTO choices (question_id, choice_text) VALUES (59, 'A. 3 通り');--296
-INSERT INTO choices (question_id, choice_text) VALUES (59, 'B. 5 通り');--297
-INSERT INTO choices (question_id, choice_text) VALUES (59, 'C. 6 通り');--298
-INSERT INTO choices (question_id, choice_text) VALUES (59, 'D. 10 通り');--299
-INSERT INTO choices (question_id, choice_text) VALUES (59, 'E. AからDのいずれでもない');--300
-
-INSERT INTO choices (question_id, choice_text) VALUES (60, 'A. 3');--301
-INSERT INTO choices (question_id, choice_text) VALUES (60, 'B. 6');--302
-INSERT INTO choices (question_id, choice_text) VALUES (60, 'C. 21');--303
-INSERT INTO choices (question_id, choice_text) VALUES (60, 'D. 27');--304
-
-INSERT INTO choices (question_id, choice_text) VALUES (61, 'A. 3 通り');--305
-INSERT INTO choices (question_id, choice_text) VALUES (61, 'B. 4 通り');--306
-INSERT INTO choices (question_id, choice_text) VALUES (61, 'C. 8 通り');--307
-INSERT INTO choices (question_id, choice_text) VALUES (61, 'D. 12 通り');--308
-
-INSERT INTO choices (question_id, choice_text) VALUES (62, 'A. 5 通り');--309
-INSERT INTO choices (question_id, choice_text) VALUES (62, 'B. 6 通り');--310
-INSERT INTO choices (question_id, choice_text) VALUES (62, 'C. 9 通り');--311
-INSERT INTO choices (question_id, choice_text) VALUES (62, 'D. 10 通り');--312
-INSERT INTO choices (question_id, choice_text) VALUES (62, 'E. AからDのいずれでもない');--313
-
-INSERT INTO choices (question_id, choice_text) VALUES (63, 'A. 1');--314
-INSERT INTO choices (question_id, choice_text) VALUES (63, 'B. 2');--315
-INSERT INTO choices (question_id, choice_text) VALUES (63, 'C. 3');--316
-INSERT INTO choices (question_id, choice_text) VALUES (63, 'D. 4');--317
-INSERT INTO choices (question_id, choice_text) VALUES (63, 'E. 5');--318
-
-INSERT INTO choices (question_id, choice_text) VALUES (64, 'A. SRPQ');--319
-INSERT INTO choices (question_id, choice_text) VALUES (64, 'B. SRQP');--320
-INSERT INTO choices (question_id, choice_text) VALUES (64, 'C. PRSQ');--321
-INSERT INTO choices (question_id, choice_text) VALUES (64, 'D. RPQS');--322
-
-INSERT INTO choices (question_id, choice_text) VALUES (65, 'A. アもイも正しい');--323
-INSERT INTO choices (question_id, choice_text) VALUES (65, 'B. アは正しいがイは誤り');--324
-INSERT INTO choices (question_id, choice_text) VALUES (65, 'C. アはどちらとも言えないがイは誤り');--325
-INSERT INTO choices (question_id, choice_text) VALUES (65, 'D. アは誤りだがイは正しい');--326
-INSERT INTO choices (question_id, choice_text) VALUES (65, 'E. アもイもどちらとも言えない');--327
-
-INSERT INTO choices (question_id, choice_text) VALUES (66, 'A. 5');--328
-INSERT INTO choices (question_id, choice_text) VALUES (66, 'B. 10');--329
-INSERT INTO choices (question_id, choice_text) VALUES (66, 'C. 15');--330
-INSERT INTO choices (question_id, choice_text) VALUES (66, 'D. 20');--331
-INSERT INTO choices (question_id, choice_text) VALUES (66, 'E. 25');--332
-
-INSERT INTO choices (question_id, choice_text) VALUES (67, 'A. 2');--333
-INSERT INTO choices (question_id, choice_text) VALUES (67, 'B. 3');--334
-INSERT INTO choices (question_id, choice_text) VALUES (67, 'C. 4');--335
-INSERT INTO choices (question_id, choice_text) VALUES (67, 'D. 5');--336
-INSERT INTO choices (question_id, choice_text) VALUES (67, 'E. 6');--337
-
-INSERT INTO choices (question_id, choice_text) VALUES (68, 'A. A-C-D-E-B');--338
-INSERT INTO choices (question_id, choice_text) VALUES (68, 'B. B-D-E-A-C');--339
-INSERT INTO choices (question_id, choice_text) VALUES (68, 'C. D-E-A-C-B');--340
-INSERT INTO choices (question_id, choice_text) VALUES (68, 'D. E-D-C-B-A');--341
-INSERT INTO choices (question_id, choice_text) VALUES (68, 'E. D-A-E-B-C');--342
-
-INSERT INTO choices (question_id, choice_text) VALUES (69, 'A. A');--343
-INSERT INTO choices (question_id, choice_text) VALUES (69, 'B. B');--344
-INSERT INTO choices (question_id, choice_text) VALUES (69, 'C. C');--345
-INSERT INTO choices (question_id, choice_text) VALUES (69, 'D. D');--346
-INSERT INTO choices (question_id, choice_text) VALUES (69, 'E. E');--347
-
-INSERT INTO choices (question_id, choice_text) VALUES (70, 'A. 1');--348
-INSERT INTO choices (question_id, choice_text) VALUES (70, 'B. 2');--349
-INSERT INTO choices (question_id, choice_text) VALUES (70, 'C. 3');--350
-INSERT INTO choices (question_id, choice_text) VALUES (70, 'D. 4');--351
-
-INSERT INTO choices (question_id, choice_text) VALUES (71, 'A. アだけ');--352
-INSERT INTO choices (question_id, choice_text) VALUES (71, 'B. イだけ');--353
-INSERT INTO choices (question_id, choice_text) VALUES (71, 'C. ウだけ');--354
-INSERT INTO choices (question_id, choice_text) VALUES (71, 'D. アとイ');--355
-
-INSERT INTO choices (question_id, choice_text) VALUES (72, 'C. アとイの両方');--356
-INSERT INTO choices (question_id, choice_text) VALUES (72, 'D. アとウの両方');--357
-INSERT INTO choices (question_id, choice_text) VALUES (72, 'E. アとエの両方');--358
-INSERT INTO choices (question_id, choice_text) VALUES (72, 'F. イとウの両方');--359
-INSERT INTO choices (question_id, choice_text) VALUES (72, 'G. イとエの両方');--360
-
-INSERT INTO choices (question_id, choice_text) VALUES (73, 'A. 21%');--361
-INSERT INTO choices (question_id, choice_text) VALUES (73, 'B. 24%');--362
-INSERT INTO choices (question_id, choice_text) VALUES (73, 'C. 27%');--363
-INSERT INTO choices (question_id, choice_text) VALUES (73, 'D. 29%');--364
-
-INSERT INTO choices (question_id, choice_text) VALUES (74, 'A. 15%');--365
-INSERT INTO choices (question_id, choice_text) VALUES (74, 'B. 17%');--366
-INSERT INTO choices (question_id, choice_text) VALUES (74, 'C. 21%');--367
-INSERT INTO choices (question_id, choice_text) VALUES (74, 'D. 25%');--368
-
-INSERT INTO choices (question_id, choice_text) VALUES (75, 'A. 25%');--369
-INSERT INTO choices (question_id, choice_text) VALUES (75, 'B. 35%');--370
-INSERT INTO choices (question_id, choice_text) VALUES (75, 'C. 45%');--371
-INSERT INTO choices (question_id, choice_text) VALUES (75, 'D. 50%');--372
-
-INSERT INTO choices (question_id, choice_text) VALUES (76, 'A. 60人');--373
-INSERT INTO choices (question_id, choice_text) VALUES (76, 'B. 80人');--374
-INSERT INTO choices (question_id, choice_text) VALUES (76, 'C. 100人');--375
-INSERT INTO choices (question_id, choice_text) VALUES (76, 'D. 110人');--376
-
-INSERT INTO choices (question_id, choice_text) VALUES (77, 'A. 70%');--377
-INSERT INTO choices (question_id, choice_text) VALUES (77, 'B. 80%');--378
-INSERT INTO choices (question_id, choice_text) VALUES (77, 'C. 87%');--379
-INSERT INTO choices (question_id, choice_text) VALUES (77, 'D. 93%');--380
-
-INSERT INTO choices (question_id, choice_text) VALUES (78, 'A. 3/5');--381
-INSERT INTO choices (question_id, choice_text) VALUES (78, 'B. 3/11');--382
-INSERT INTO choices (question_id, choice_text) VALUES (78, 'C. 9/20');--383
-INSERT INTO choices (question_id, choice_text) VALUES (78, 'D. 17/20');--384
-
-INSERT INTO choices (question_id, choice_text) VALUES (79, 'A. 3%');--385
-INSERT INTO choices (question_id, choice_text) VALUES (79, 'B. 9%');--386
-INSERT INTO choices (question_id, choice_text) VALUES (79, 'C. 15%');--387
-INSERT INTO choices (question_id, choice_text) VALUES (79, 'D. 18%');--388
-
-INSERT INTO choices (question_id, choice_text) VALUES (80, 'A. 1%');--389
-INSERT INTO choices (question_id, choice_text) VALUES (80, 'B. 3%');--390
-INSERT INTO choices (question_id, choice_text) VALUES (80, 'C. 5%');--391
-INSERT INTO choices (question_id, choice_text) VALUES (80, 'D. 8%');--392
-
-INSERT INTO choices (question_id, choice_text) VALUES (81, 'A. 18%');--393
-INSERT INTO choices (question_id, choice_text) VALUES (81, 'B. 20%');--394
-INSERT INTO choices (question_id, choice_text) VALUES (81, 'C. 22%');--395
-INSERT INTO choices (question_id, choice_text) VALUES (81, 'D. 24%');--396
-
-INSERT INTO choices (question_id, choice_text) VALUES (82, 'A. 60人');--397
-INSERT INTO choices (question_id, choice_text) VALUES (82, 'B. 80人');--398
-INSERT INTO choices (question_id, choice_text) VALUES (82, 'C. 100人');--399
-INSERT INTO choices (question_id, choice_text) VALUES (82, 'D. 120人');--400
-
-INSERT INTO choices (question_id, choice_text) VALUES (83, 'A. 2/25');--401
-INSERT INTO choices (question_id, choice_text) VALUES (83, 'B. 2/5');--402
-INSERT INTO choices (question_id, choice_text) VALUES (83, 'C. 1/10');--403
-INSERT INTO choices (question_id, choice_text) VALUES (83, 'D. 3/5');--404
-
-INSERT INTO choices (question_id, choice_text) VALUES (84, 'A. 5/26');--405
-INSERT INTO choices (question_id, choice_text) VALUES (84, 'B. 5/13');--406
-INSERT INTO choices (question_id, choice_text) VALUES (84, 'C. 109/169');--407
-INSERT INTO choices (question_id, choice_text) VALUES (84, 'D. 60/169');--408
-
-INSERT INTO choices (question_id, choice_text) VALUES (85, 'A. 0.42');--409
-INSERT INTO choices (question_id, choice_text) VALUES (85, 'B. 0.54');--410
-INSERT INTO choices (question_id, choice_text) VALUES (85, 'C. 0.72');--411
-INSERT INTO choices (question_id, choice_text) VALUES (85, 'D. 0.90');--412
-
-INSERT INTO choices (question_id, choice_text) VALUES (86, 'A. 6人');--413
-INSERT INTO choices (question_id, choice_text) VALUES (86, 'B. 7人');--414
-INSERT INTO choices (question_id, choice_text) VALUES (86, 'C. 8人');--415
-INSERT INTO choices (question_id, choice_text) VALUES (86, 'D. 9人');--416
-
-INSERT INTO choices (question_id, choice_text) VALUES (87, 'A. 2/16');--417
-INSERT INTO choices (question_id, choice_text) VALUES (87, 'B. 8/21');--418
-INSERT INTO choices (question_id, choice_text) VALUES (87, 'C. 11/13');--419
-INSERT INTO choices (question_id, choice_text) VALUES (87, 'D. 5/32');--420
-
-INSERT INTO choices (question_id, choice_text) VALUES (88, 'A. 7/16');--421
-INSERT INTO choices (question_id, choice_text) VALUES (88, 'B. 7/8');--422
-INSERT INTO choices (question_id, choice_text) VALUES (88, 'C. 3/8');--423
-INSERT INTO choices (question_id, choice_text) VALUES (88, 'D. 4/5');--424
-
-INSERT INTO choices (question_id, choice_text) VALUES (89, 'A. 4/9');--425
-INSERT INTO choices (question_id, choice_text) VALUES (89, 'B. 5/8');--426
-INSERT INTO choices (question_id, choice_text) VALUES (89, 'C. 3/7');--427
-INSERT INTO choices (question_id, choice_text) VALUES (89, 'D. 1/6');--428
-
-INSERT INTO choices (question_id, choice_text) VALUES (90, 'A. 1/5');--429
-INSERT INTO choices (question_id, choice_text) VALUES (90, 'B. 1/6');--430
-INSERT INTO choices (question_id, choice_text) VALUES (90, 'C. 1/18');--431
-INSERT INTO choices (question_id, choice_text) VALUES (90, 'D. 1/30');--432
-
-INSERT INTO choices (question_id, choice_text) VALUES (91, 'A. 0.15');--433
-INSERT INTO choices (question_id, choice_text) VALUES (91, 'B. 0.45');--434
-INSERT INTO choices (question_id, choice_text) VALUES (91, 'C. 0.56');--435
-INSERT INTO choices (question_id, choice_text) VALUES (91, 'D. 0.67');--436
-
-INSERT INTO choices (question_id, choice_text) VALUES (92, 'A. 0.12');--437
-INSERT INTO choices (question_id, choice_text) VALUES (92, 'B. 0.13');--438
-INSERT INTO choices (question_id, choice_text) VALUES (92, 'C. 0.23');--439
-INSERT INTO choices (question_id, choice_text) VALUES (92, 'D. 0.42');--440
-
-INSERT INTO choices (question_id, choice_text) VALUES (93, 'A. Xに4600円Yは3000円支払う');--441
-INSERT INTO choices (question_id, choice_text) VALUES (93, 'B. Xに5400円Yは2100円支払う');--442
-INSERT INTO choices (question_id, choice_text) VALUES (93, 'C. Xに5400円Yは2900円支払う');--443
-INSERT INTO choices (question_id, choice_text) VALUES (93, 'D. Xに7500円支払う');--444
-INSERT INTO choices (question_id, choice_text) VALUES (93, 'E. Yに9600円支払う');--445
-
-INSERT INTO choices (question_id, choice_text) VALUES (94, 'A. 5600円');--446
-INSERT INTO choices (question_id, choice_text) VALUES (94, 'B. 5350円');--447
-INSERT INTO choices (question_id, choice_text) VALUES (94, 'C. 5950円');--448
-INSERT INTO choices (question_id, choice_text) VALUES (94, 'D. 5550円');--449
-
-INSERT INTO choices (question_id, choice_text) VALUES (95, 'A. 3850円');--450
-INSERT INTO choices (question_id, choice_text) VALUES (95, 'B. 115000円');--451
-INSERT INTO choices (question_id, choice_text) VALUES (95, 'C. 45000円');--452
-INSERT INTO choices (question_id, choice_text) VALUES (95, 'D. 38500円');--453
-
-INSERT INTO choices (question_id, choice_text) VALUES (96, 'A. 15000円');--454
-INSERT INTO choices (question_id, choice_text) VALUES (96, 'B. 13800円');--455
-INSERT INTO choices (question_id, choice_text) VALUES (96, 'C. 10000円');--456
-INSERT INTO choices (question_id, choice_text) VALUES (96, 'D. 13200円');--457
-INSERT INTO choices (question_id, choice_text) VALUES (96, 'E. 9600円');--458
-
-INSERT INTO choices (question_id, choice_text) VALUES (97, 'A. 負担額は揃っている');--459
-INSERT INTO choices (question_id, choice_text) VALUES (97, 'B. PにQが4900円 Rが2500円');--460
-INSERT INTO choices (question_id, choice_text) VALUES (97, 'C. PにQが2500円 Rも2500円');--461
-INSERT INTO choices (question_id, choice_text) VALUES (97, 'D. PがQとRに450円ずつ');--462
-
-INSERT INTO choices (question_id, choice_text) VALUES (98, 'A. 12時〜18時');--463
-INSERT INTO choices (question_id, choice_text) VALUES (98, 'B. 9時〜15時');--464
-INSERT INTO choices (question_id, choice_text) VALUES (98, 'C. 10時〜16時');--465
-INSERT INTO choices (question_id, choice_text) VALUES (98, 'D. 11時〜17時');--466
-
-INSERT INTO choices (question_id, choice_text) VALUES (99, 'A. P：475円 Q：450円');--467
-INSERT INTO choices (question_id, choice_text) VALUES (99, 'B. P：500円 Q：450円');--468
-INSERT INTO choices (question_id, choice_text) VALUES (99, 'C. P：470円 Q：425円');--469
-INSERT INTO choices (question_id, choice_text) VALUES (99, 'D. P：525円 Q：425円');--470
-
-INSERT INTO choices (question_id, choice_text) VALUES (100, 'A. 1200円');--471
-INSERT INTO choices (question_id, choice_text) VALUES (100, 'B. 400円');--472
-INSERT INTO choices (question_id, choice_text) VALUES (100, 'C. 200円');--473
-INSERT INTO choices (question_id, choice_text) VALUES (100, 'D. 500円');--474
-
-INSERT INTO choices (question_id, choice_text) VALUES (101, 'A. 25人');--475
-INSERT INTO choices (question_id, choice_text) VALUES (101, 'B. 28人');--476
-INSERT INTO choices (question_id, choice_text) VALUES (101, 'C. 35人');--477
-INSERT INTO choices (question_id, choice_text) VALUES (101, 'D. 70人');--478
-
-INSERT INTO choices (question_id, choice_text) VALUES (102, 'A. 150円');--479
-INSERT INTO choices (question_id, choice_text) VALUES (102, 'B. 200円');--480
-INSERT INTO choices (question_id, choice_text) VALUES (102, 'C. 220円');--481
-INSERT INTO choices (question_id, choice_text) VALUES (102, 'D. 300円');--482
-
-INSERT INTO choices (question_id, choice_text) VALUES (103, 'A. 5/21');--483
-INSERT INTO choices (question_id, choice_text) VALUES (103, 'B. 2/3');--484
-INSERT INTO choices (question_id, choice_text) VALUES (103, 'C. 31/51');--485
-INSERT INTO choices (question_id, choice_text) VALUES (103, 'D. 46/51');--486
-
-INSERT INTO choices (question_id, choice_text) VALUES (104, 'A. 4/21');--487
-INSERT INTO choices (question_id, choice_text) VALUES (104, 'B. 1/21');--488
-INSERT INTO choices (question_id, choice_text) VALUES (104, 'C. 1/7');--489
-INSERT INTO choices (question_id, choice_text) VALUES (104, 'D. 12/35');--490
-
-INSERT INTO choices (question_id, choice_text) VALUES (105, 'A. 1/14');--491
-INSERT INTO choices (question_id, choice_text) VALUES (105, 'B. 17/24');--492
-INSERT INTO choices (question_id, choice_text) VALUES (105, 'C. 10/21');--493
-INSERT INTO choices (question_id, choice_text) VALUES (105, 'D. 7/12');--494
-
-INSERT INTO choices (question_id, choice_text) VALUES (106, 'A. 1.5');--495
-INSERT INTO choices (question_id, choice_text) VALUES (106, 'B. 1.6');--496
-INSERT INTO choices (question_id, choice_text) VALUES (106, 'C. 1.7');--497
-INSERT INTO choices (question_id, choice_text) VALUES (106, 'D. 1.8');--498
-
-INSERT INTO choices (question_id, choice_text) VALUES (107, 'A. 3時間');--499
-INSERT INTO choices (question_id, choice_text) VALUES (107, 'B. 4時間');--500
-INSERT INTO choices (question_id, choice_text) VALUES (107, 'C. 5時間');--501
-INSERT INTO choices (question_id, choice_text) VALUES (107, 'D. 6時間');--502
-
-INSERT INTO choices (question_id, choice_text) VALUES (108, 'A. 5分');--503
-INSERT INTO choices (question_id, choice_text) VALUES (108, 'B. 10分');--504
-INSERT INTO choices (question_id, choice_text) VALUES (108, 'C. 15分');--505
-INSERT INTO choices (question_id, choice_text) VALUES (108, 'D. 20分');--506
-
-INSERT INTO choices (question_id, choice_text) VALUES (109, 'A. 3時間');--507
-INSERT INTO choices (question_id, choice_text) VALUES (109, 'B. 5時間');--508
-INSERT INTO choices (question_id, choice_text) VALUES (109, 'C. 8時間');--509
-INSERT INTO choices (question_id, choice_text) VALUES (109, 'D. 10時間');--510
-
-INSERT INTO choices (question_id, choice_text) VALUES (110, 'A. 13000円');--511
-INSERT INTO choices (question_id, choice_text) VALUES (110, 'B. 15000円');--512
-INSERT INTO choices (question_id, choice_text) VALUES (110, 'C. 18000円');--513
-INSERT INTO choices (question_id, choice_text) VALUES (110, 'D. 20000円');--514
-
-INSERT INTO choices (question_id, choice_text) VALUES (111, 'A. 15分後');--515
-INSERT INTO choices (question_id, choice_text) VALUES (111, 'B. 20分後');--516
-INSERT INTO choices (question_id, choice_text) VALUES (111, 'C. 25分後');--517
-INSERT INTO choices (question_id, choice_text) VALUES (111, 'D. 30分後');--518
-
-INSERT INTO choices (question_id, choice_text) VALUES (112, 'A. 5日目');--519
-INSERT INTO choices (question_id, choice_text) VALUES (112, 'B. 6日目');--520
-INSERT INTO choices (question_id, choice_text) VALUES (112, 'C. 7日目');--521
-INSERT INTO choices (question_id, choice_text) VALUES (112, 'D. 8日目');--522
-
-INSERT INTO choices (question_id, choice_text) VALUES (113, 'A. 0.3km/時');--523
-INSERT INTO choices (question_id, choice_text) VALUES (113, 'B. 18.0km/時');--524
-INSERT INTO choices (question_id, choice_text) VALUES (113, 'C. 10.5km/時');--525
-INSERT INTO choices (question_id, choice_text) VALUES (113, 'D. 12.5km/時');--526
-
-INSERT INTO choices (question_id, choice_text) VALUES (114, 'A. 10.0km/時');--527
-INSERT INTO choices (question_id, choice_text) VALUES (114, 'B. 12.0km/時');--528
-INSERT INTO choices (question_id, choice_text) VALUES (114, 'C. 12.5km/時');--529
-INSERT INTO choices (question_id, choice_text) VALUES (114, 'D. 13.5km/時');--530
-
-INSERT INTO choices (question_id, choice_text) VALUES (115, 'A. 12.0km/時');--531
-INSERT INTO choices (question_id, choice_text) VALUES (115, 'B. 14.0km/時');--532
-INSERT INTO choices (question_id, choice_text) VALUES (115, 'C. 16.0km/時');--533
-INSERT INTO choices (question_id, choice_text) VALUES (115, 'D. 18.0km/時');--534
-
-INSERT INTO choices (question_id, choice_text) VALUES (116, 'A. 72.0');--535
-INSERT INTO choices (question_id, choice_text) VALUES (116, 'B. 128.0');--536
-INSERT INTO choices (question_id, choice_text) VALUES (116, 'C. 164.0');--537
-INSERT INTO choices (question_id, choice_text) VALUES (116, 'D. 218.0');--538
-
-INSERT INTO choices (question_id, choice_text) VALUES (117, 'A. 45km/時');--539
-INSERT INTO choices (question_id, choice_text) VALUES (117, 'B. 78km/時');--540
-INSERT INTO choices (question_id, choice_text) VALUES (117, 'C. 120km/時');--541
-INSERT INTO choices (question_id, choice_text) VALUES (117, 'D. 135km/時');--542
-
-INSERT INTO choices (question_id, choice_text) VALUES (118, 'A. 9');--543
-INSERT INTO choices (question_id, choice_text) VALUES (118, 'B. 10');--544
-INSERT INTO choices (question_id, choice_text) VALUES (118, 'C. 11');--545
-INSERT INTO choices (question_id, choice_text) VALUES (118, 'D. 12');--546
-
-INSERT INTO choices (question_id, choice_text) VALUES (119, 'A. 6分');--547
-INSERT INTO choices (question_id, choice_text) VALUES (119, 'B. 7分');--548
-INSERT INTO choices (question_id, choice_text) VALUES (119, 'C. 8分');--549
-INSERT INTO choices (question_id, choice_text) VALUES (119, 'D. 9分');--550
-
-INSERT INTO choices (question_id, choice_text) VALUES (120, 'A. 12分');--551
-INSERT INTO choices (question_id, choice_text) VALUES (120, 'B. 15分');--552
-INSERT INTO choices (question_id, choice_text) VALUES (120, 'C. 20分');--553
-INSERT INTO choices (question_id, choice_text) VALUES (120, 'D. 25分');--554
-
-INSERT INTO choices (question_id, choice_text) VALUES (121, 'A. 12分');--555
-INSERT INTO choices (question_id, choice_text) VALUES (121, 'B. 15分');--556
-INSERT INTO choices (question_id, choice_text) VALUES (121, 'C. 20分');--557
-INSERT INTO choices (question_id, choice_text) VALUES (121, 'D. 25分');--558
-
-INSERT INTO choices (question_id, choice_text) VALUES (122, 'A. 12分');--559
-INSERT INTO choices (question_id, choice_text) VALUES (122, 'B. 15分');--560
-INSERT INTO choices (question_id, choice_text) VALUES (122, 'C. 20分');--561
-INSERT INTO choices (question_id, choice_text) VALUES (122, 'D. 25分');--562
-
-INSERT INTO choices (question_id, choice_text) VALUES (123, 'A. 34人');--563
-INSERT INTO choices (question_id, choice_text) VALUES (123, 'B. 36人');--564
-INSERT INTO choices (question_id, choice_text) VALUES (123, 'C. 38人');--565
-INSERT INTO choices (question_id, choice_text) VALUES (123, 'D. 40人');--566
-
-INSERT INTO choices (question_id, choice_text) VALUES (124, 'A. 70人');--567
-INSERT INTO choices (question_id, choice_text) VALUES (124, 'B. 75人');--568
-INSERT INTO choices (question_id, choice_text) VALUES (124, 'C. 80人');--569
-INSERT INTO choices (question_id, choice_text) VALUES (124, 'D. 85人');--570
-
-INSERT INTO choices (question_id, choice_text) VALUES (125, 'A. 51人');--571
-INSERT INTO choices (question_id, choice_text) VALUES (125, 'B. 53人');--572
-INSERT INTO choices (question_id, choice_text) VALUES (125, 'C. 55人');--573
-INSERT INTO choices (question_id, choice_text) VALUES (125, 'D. 57人');--574
-
-INSERT INTO choices (question_id, choice_text) VALUES (126, 'A. 6人');--575
-INSERT INTO choices (question_id, choice_text) VALUES (126, 'B. 7人');--576
-INSERT INTO choices (question_id, choice_text) VALUES (126, 'C. 8人');--577
-INSERT INTO choices (question_id, choice_text) VALUES (126, 'D. 9人');--578
-
-INSERT INTO choices (question_id, choice_text) VALUES (127, 'A. 50人');--579
-INSERT INTO choices (question_id, choice_text) VALUES (127, 'B. 60人');--580
-INSERT INTO choices (question_id, choice_text) VALUES (127, 'C. 70人');--581
-INSERT INTO choices (question_id, choice_text) VALUES (127, 'D. 80人');--582
-
-INSERT INTO choices (question_id, choice_text) VALUES (128, 'A. 5人');--583
-INSERT INTO choices (question_id, choice_text) VALUES (128, 'B. 10人');--584
-INSERT INTO choices (question_id, choice_text) VALUES (128, 'C. 15人');--585
-INSERT INTO choices (question_id, choice_text) VALUES (128, 'D. 20人');--586
-
-INSERT INTO choices (question_id, choice_text) VALUES (129, 'A. 10人');--587
-INSERT INTO choices (question_id, choice_text) VALUES (129, 'B. 11人');--588
-INSERT INTO choices (question_id, choice_text) VALUES (129, 'C. 12人');--589
-INSERT INTO choices (question_id, choice_text) VALUES (129, 'D. 13人');--590
-
-INSERT INTO choices (question_id, choice_text) VALUES (130, 'A. 13人');--591
-INSERT INTO choices (question_id, choice_text) VALUES (130, 'B. 14人');--592
-INSERT INTO choices (question_id, choice_text) VALUES (130, 'C. 15人');--593
-INSERT INTO choices (question_id, choice_text) VALUES (130, 'D. 16人');--594
-
-INSERT INTO choices (question_id, choice_text) VALUES (131, 'A. 30人');--595
-INSERT INTO choices (question_id, choice_text) VALUES (131, 'B. 35人');--596
-INSERT INTO choices (question_id, choice_text) VALUES (131, 'C. 40人');--597
-INSERT INTO choices (question_id, choice_text) VALUES (131, 'D. 45人');--598
-
-INSERT INTO choices (question_id, choice_text) VALUES (132, 'A. 135人');--599
-INSERT INTO choices (question_id, choice_text) VALUES (132, 'B. 140人');--600
-INSERT INTO choices (question_id, choice_text) VALUES (132, 'C. 145人');--601
-INSERT INTO choices (question_id, choice_text) VALUES (132, 'D. 150人');--602
-
-INSERT INTO choices (question_id, choice_text) VALUES (133, 'A. 38.3%');--603
-INSERT INTO choices (question_id, choice_text) VALUES (133, 'B. 42.3%');--604
-INSERT INTO choices (question_id, choice_text) VALUES (133, 'C. 44.3%');--605
-INSERT INTO choices (question_id, choice_text) VALUES (133, 'D. 45.3%');--606
-
-INSERT INTO choices (question_id, choice_text) VALUES (134, 'A. 38.3%');--607
-INSERT INTO choices (question_id, choice_text) VALUES (134, 'B. 40.3%');--608
-INSERT INTO choices (question_id, choice_text) VALUES (134, 'C. 42.3%');--609
-INSERT INTO choices (question_id, choice_text) VALUES (134, 'D. 44.3%');--610
-
-INSERT INTO choices (question_id, choice_text) VALUES (135, 'A. 5%');--611
-INSERT INTO choices (question_id, choice_text) VALUES (135, 'B. 10%');--612
-INSERT INTO choices (question_id, choice_text) VALUES (135, 'C. 15%');--613
-INSERT INTO choices (question_id, choice_text) VALUES (135, 'D. 20%');--614
-
-INSERT INTO choices (question_id, choice_text) VALUES (136, 'A. 1.4倍');--615
-INSERT INTO choices (question_id, choice_text) VALUES (136, 'B. 2.9倍');--616
-INSERT INTO choices (question_id, choice_text) VALUES (136, 'C. 7.9倍');--617
-INSERT INTO choices (question_id, choice_text) VALUES (136, 'D. 9.4倍');--618
-
-INSERT INTO choices (question_id, choice_text) VALUES (137, 'A. 60人');--619
-INSERT INTO choices (question_id, choice_text) VALUES (137, 'B. 65人');--620
-INSERT INTO choices (question_id, choice_text) VALUES (137, 'C. 70人');--621
-INSERT INTO choices (question_id, choice_text) VALUES (137, 'D. 75人');--622
-
-INSERT INTO choices (question_id, choice_text) VALUES (138, 'A. 20%');--623
-INSERT INTO choices (question_id, choice_text) VALUES (138, 'B. 24%');--624
-INSERT INTO choices (question_id, choice_text) VALUES (138, 'C. 28%');--625
-INSERT INTO choices (question_id, choice_text) VALUES (138, 'D. 32%');--626
-
-INSERT INTO choices (question_id, choice_text) VALUES (139, 'A. 9.0%');--627
-INSERT INTO choices (question_id, choice_text) VALUES (139, 'B. 9.1%');--628
-INSERT INTO choices (question_id, choice_text) VALUES (139, 'C. 9.2%');--629
-INSERT INTO choices (question_id, choice_text) VALUES (139, 'D. 9.3%');--630
-
-INSERT INTO choices (question_id, choice_text) VALUES (140, 'A. 377人');--631
-INSERT INTO choices (question_id, choice_text) VALUES (140, 'B. 778人');--632
-INSERT INTO choices (question_id, choice_text) VALUES (140, 'C. 868人');--633
-INSERT INTO choices (question_id, choice_text) VALUES (140, 'D. 948人');--634
-
-INSERT INTO choices (question_id, choice_text) VALUES (141, 'A. 10人');--635
-INSERT INTO choices (question_id, choice_text) VALUES (141, 'B. 17人');--636
-INSERT INTO choices (question_id, choice_text) VALUES (141, 'C. 18人');--637
-INSERT INTO choices (question_id, choice_text) VALUES (141, 'D. 19人');--638
-
-INSERT INTO choices (question_id, choice_text) VALUES (142, 'A. 1150人');--639
-INSERT INTO choices (question_id, choice_text) VALUES (142, 'B. 1170人');--640
-INSERT INTO choices (question_id, choice_text) VALUES (142, 'C. 1190人');--641
-INSERT INTO choices (question_id, choice_text) VALUES (142, 'D. 1210人');--642
-
-INSERT INTO choices (question_id, choice_text) VALUES (143, 'A. 5年後');--643
-INSERT INTO choices (question_id, choice_text) VALUES (143, 'B. 12年後');--644
-INSERT INTO choices (question_id, choice_text) VALUES (143, 'C. 18年後');--645
-INSERT INTO choices (question_id, choice_text) VALUES (143, 'D. 24年後');--646
-
-INSERT INTO choices (question_id, choice_text) VALUES (144, 'A. 0個');--647
-INSERT INTO choices (question_id, choice_text) VALUES (144, 'B. 1個');--648
-INSERT INTO choices (question_id, choice_text) VALUES (144, 'C. 2個');--649
-INSERT INTO choices (question_id, choice_text) VALUES (144, 'D. 3個');--650
-
-INSERT INTO choices (question_id, choice_text) VALUES (145, 'A. 200個');--651
-INSERT INTO choices (question_id, choice_text) VALUES (145, 'B. 300個');--652
-INSERT INTO choices (question_id, choice_text) VALUES (145, 'C. 400個');--653
-INSERT INTO choices (question_id, choice_text) VALUES (145, 'D. 600個');--654
-
-INSERT INTO choices (question_id, choice_text) VALUES (146, 'A. 5個');--655
-INSERT INTO choices (question_id, choice_text) VALUES (146, 'B. 6個');--656
-INSERT INTO choices (question_id, choice_text) VALUES (146, 'C. 7個');--657
-INSERT INTO choices (question_id, choice_text) VALUES (146, 'D. 8個');--658
-
-INSERT INTO choices (question_id, choice_text) VALUES (147, 'A. 1枚');--659
-INSERT INTO choices (question_id, choice_text) VALUES (147, 'B. 2枚');--660
-INSERT INTO choices (question_id, choice_text) VALUES (147, 'C. 3枚');--661
-INSERT INTO choices (question_id, choice_text) VALUES (147, 'D. 4枚');--662
-
-INSERT INTO choices (question_id, choice_text) VALUES (148, 'A. 1個');--663
-INSERT INTO choices (question_id, choice_text) VALUES (148, 'B. 3個');--664
-INSERT INTO choices (question_id, choice_text) VALUES (148, 'C. 5個');--665
-INSERT INTO choices (question_id, choice_text) VALUES (148, 'D. 7個');--666
-
-INSERT INTO choices (question_id, choice_text) VALUES (149, 'A. 2年後');--667
-INSERT INTO choices (question_id, choice_text) VALUES (149, 'B. 4年後');--668
-INSERT INTO choices (question_id, choice_text) VALUES (149, 'C. 8年後');--669
-INSERT INTO choices (question_id, choice_text) VALUES (149, 'D. 12年後');--670
-
-INSERT INTO choices (question_id, choice_text) VALUES (150, 'A. 18本');--671
-INSERT INTO choices (question_id, choice_text) VALUES (150, 'B. 19本');--672
-INSERT INTO choices (question_id, choice_text) VALUES (150, 'C. 20本');--673
-INSERT INTO choices (question_id, choice_text) VALUES (150, 'D. 21本');--674
-
-INSERT INTO choices (question_id, choice_text) VALUES (151, 'A. 38本');--675
-INSERT INTO choices (question_id, choice_text) VALUES (151, 'B. 39本');--676
-INSERT INTO choices (question_id, choice_text) VALUES (151, 'C. 40本');--677
-INSERT INTO choices (question_id, choice_text) VALUES (151, 'D. 41本');--678
-
-INSERT INTO choices (question_id, choice_text) VALUES (152, 'A. 50人');--679
-INSERT INTO choices (question_id, choice_text) VALUES (152, 'B. 55人');--680
-INSERT INTO choices (question_id, choice_text) VALUES (152, 'C. 65人');--681
-INSERT INTO choices (question_id, choice_text) VALUES (152, 'D. 80人');--682
+INSERT INTO choices (question_id, choice_text) VALUES (53, 'A. 13 通り'); -- 266
+INSERT INTO choices (question_id, choice_text) VALUES (53, 'B. 18 通り'); -- 267
+INSERT INTO choices (question_id, choice_text) VALUES (53, 'C. 24 通り'); -- 268
+INSERT INTO choices (question_id, choice_text) VALUES (53, 'D. 40 通り'); -- 269
+INSERT INTO choices (question_id, choice_text) VALUES (53, 'E. 80 通り'); -- 270
+
+INSERT INTO choices (question_id, choice_text) VALUES (54, 'A. 7 通り'); -- 271
+INSERT INTO choices (question_id, choice_text) VALUES (54, 'B. 21 通り'); -- 272
+INSERT INTO choices (question_id, choice_text) VALUES (54, 'C. 35 通り'); -- 273
+INSERT INTO choices (question_id, choice_text) VALUES (54, 'D. 91 通り'); -- 274
+INSERT INTO choices (question_id, choice_text) VALUES (54, 'E. 140 通り'); -- 275
+
+INSERT INTO choices (question_id, choice_text) VALUES (55, 'A. 100 通り'); -- 276
+INSERT INTO choices (question_id, choice_text) VALUES (55, 'B. 700 通り'); -- 277
+INSERT INTO choices (question_id, choice_text) VALUES (55, 'C. 1600 通り'); -- 278
+INSERT INTO choices (question_id, choice_text) VALUES (55, 'D. 4200 通り'); -- 279
+INSERT INTO choices (question_id, choice_text) VALUES (55, 'E. 7200 通り'); -- 280
+
+INSERT INTO choices (question_id, choice_text) VALUES (56, 'A. 12 通り'); -- 281
+INSERT INTO choices (question_id, choice_text) VALUES (56, 'B. 24 通り'); -- 282
+INSERT INTO choices (question_id, choice_text) VALUES (56, 'C. 48 通り'); -- 283
+INSERT INTO choices (question_id, choice_text) VALUES (56, 'D. 80 通り'); -- 284
+INSERT INTO choices (question_id, choice_text) VALUES (56, 'E. 120 通り'); -- 285
+
+INSERT INTO choices (question_id, choice_text) VALUES (57, 'A. 4 通り'); -- 286
+INSERT INTO choices (question_id, choice_text) VALUES (57, 'B. 6 通り'); -- 287
+INSERT INTO choices (question_id, choice_text) VALUES (57, 'C. 10 通り'); -- 288
+INSERT INTO choices (question_id, choice_text) VALUES (57, 'D. 12 通り'); -- 289
+INSERT INTO choices (question_id, choice_text) VALUES (57, 'E. AからDのいずれでもない'); -- 290
+
+INSERT INTO choices (question_id, choice_text) VALUES (58, 'A. 5 通り'); -- 291
+INSERT INTO choices (question_id, choice_text) VALUES (58, 'B. 6 通り'); -- 292
+INSERT INTO choices (question_id, choice_text) VALUES (58, 'C. 12 通り'); -- 293
+INSERT INTO choices (question_id, choice_text) VALUES (58, 'D. 20 通り'); -- 294
+INSERT INTO choices (question_id, choice_text) VALUES (58, 'E. AからDのいずれでもない'); -- 295
+
+INSERT INTO choices (question_id, choice_text) VALUES (59, 'A. 3 通り'); -- 296
+INSERT INTO choices (question_id, choice_text) VALUES (59, 'B. 5 通り'); -- 297
+INSERT INTO choices (question_id, choice_text) VALUES (59, 'C. 6 通り'); -- 298
+INSERT INTO choices (question_id, choice_text) VALUES (59, 'D. 10 通り'); -- 299
+INSERT INTO choices (question_id, choice_text) VALUES (59, 'E. AからDのいずれでもない'); -- 300
+
+INSERT INTO choices (question_id, choice_text) VALUES (60, 'A. 3'); -- 301
+INSERT INTO choices (question_id, choice_text) VALUES (60, 'B. 6'); -- 302
+INSERT INTO choices (question_id, choice_text) VALUES (60, 'C. 21'); -- 303
+INSERT INTO choices (question_id, choice_text) VALUES (60, 'D. 27'); -- 304
+
+INSERT INTO choices (question_id, choice_text) VALUES (61, 'A. 3 通り'); -- 305
+INSERT INTO choices (question_id, choice_text) VALUES (61, 'B. 4 通り'); -- 306
+INSERT INTO choices (question_id, choice_text) VALUES (61, 'C. 8 通り'); -- 307
+INSERT INTO choices (question_id, choice_text) VALUES (61, 'D. 12 通り'); -- 308
+
+INSERT INTO choices (question_id, choice_text) VALUES (62, 'A. 5 通り'); -- 309
+INSERT INTO choices (question_id, choice_text) VALUES (62, 'B. 6 通り'); -- 310
+INSERT INTO choices (question_id, choice_text) VALUES (62, 'C. 9 通り'); -- 311
+INSERT INTO choices (question_id, choice_text) VALUES (62, 'D. 10 通り'); -- 312
+INSERT INTO choices (question_id, choice_text) VALUES (62, 'E. AからDのいずれでもない'); -- 313
+
+INSERT INTO choices (question_id, choice_text) VALUES (63, 'A. 1'); -- 314
+INSERT INTO choices (question_id, choice_text) VALUES (63, 'B. 2'); -- 315
+INSERT INTO choices (question_id, choice_text) VALUES (63, 'C. 3'); -- 316
+INSERT INTO choices (question_id, choice_text) VALUES (63, 'D. 4'); -- 317
+INSERT INTO choices (question_id, choice_text) VALUES (63, 'E. 5'); -- 318
+
+INSERT INTO choices (question_id, choice_text) VALUES (64, 'A. SRPQ'); -- 319
+INSERT INTO choices (question_id, choice_text) VALUES (64, 'B. SRQP'); -- 320
+INSERT INTO choices (question_id, choice_text) VALUES (64, 'C. PRSQ'); -- 321
+INSERT INTO choices (question_id, choice_text) VALUES (64, 'D. RPQS'); -- 322
+
+INSERT INTO choices (question_id, choice_text) VALUES (65, 'A. アもイも正しい'); -- 323
+INSERT INTO choices (question_id, choice_text) VALUES (65, 'B. アは正しいがイは誤り'); -- 324
+INSERT INTO choices (question_id, choice_text) VALUES (65, 'C. アはどちらとも言えないがイは誤り'); -- 325
+INSERT INTO choices (question_id, choice_text) VALUES (65, 'D. アは誤りだがイは正しい'); -- 326
+INSERT INTO choices (question_id, choice_text) VALUES (65, 'E. アもイもどちらとも言えない'); -- 327
+
+INSERT INTO choices (question_id, choice_text) VALUES (66, 'A. 5'); -- 328
+INSERT INTO choices (question_id, choice_text) VALUES (66, 'B. 10'); -- 329
+INSERT INTO choices (question_id, choice_text) VALUES (66, 'C. 15'); -- 330
+INSERT INTO choices (question_id, choice_text) VALUES (66, 'D. 20'); -- 331
+INSERT INTO choices (question_id, choice_text) VALUES (66, 'E. 25'); -- 332
 
+INSERT INTO choices (question_id, choice_text) VALUES (67, 'A. 2'); -- 333
+INSERT INTO choices (question_id, choice_text) VALUES (67, 'B. 3'); -- 334
+INSERT INTO choices (question_id, choice_text) VALUES (67, 'C. 4'); -- 335
+INSERT INTO choices (question_id, choice_text) VALUES (67, 'D. 5'); -- 336
+INSERT INTO choices (question_id, choice_text) VALUES (67, 'E. 6'); -- 337
+
+INSERT INTO choices (question_id, choice_text) VALUES (68, 'A. A-C-D-E-B'); -- 338
+INSERT INTO choices (question_id, choice_text) VALUES (68, 'B. B-D-E-A-C'); -- 339
+INSERT INTO choices (question_id, choice_text) VALUES (68, 'C. D-E-A-C-B'); -- 340
+INSERT INTO choices (question_id, choice_text) VALUES (68, 'D. E-D-C-B-A'); -- 341
+INSERT INTO choices (question_id, choice_text) VALUES (68, 'E. D-A-E-B-C'); -- 342
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (69, 'A. A'); -- 343
+INSERT INTO choices (question_id, choice_text) VALUES (69, 'B. B'); -- 344
+INSERT INTO choices (question_id, choice_text) VALUES (69, 'C. C'); -- 345
+INSERT INTO choices (question_id, choice_text) VALUES (69, 'D. D'); -- 346
+INSERT INTO choices (question_id, choice_text) VALUES (69, 'E. E'); -- 347
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (70, 'A. 1'); -- 348
+INSERT INTO choices (question_id, choice_text) VALUES (70, 'B. 2'); -- 349
+INSERT INTO choices (question_id, choice_text) VALUES (70, 'C. 3'); -- 350
+INSERT INTO choices (question_id, choice_text) VALUES (70, 'D. 4'); -- 351
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (71, 'A. アだけ'); -- 352
+INSERT INTO choices (question_id, choice_text) VALUES (71, 'B. イだけ'); -- 353
+INSERT INTO choices (question_id, choice_text) VALUES (71, 'C. ウだけ'); -- 354
+INSERT INTO choices (question_id, choice_text) VALUES (71, 'D. アとイ'); -- 355
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (72, 'C. アとイの両方'); -- 356
+INSERT INTO choices (question_id, choice_text) VALUES (72, 'D. アとウの両方'); -- 357
+INSERT INTO choices (question_id, choice_text) VALUES (72, 'E. アとエの両方'); -- 358
+INSERT INTO choices (question_id, choice_text) VALUES (72, 'F. イとウの両方'); -- 359
+INSERT INTO choices (question_id, choice_text) VALUES (72, 'G. イとエの両方'); -- 360
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (73, 'A. 21%'); -- 361
+INSERT INTO choices (question_id, choice_text) VALUES (73, 'B. 24%'); -- 362
+INSERT INTO choices (question_id, choice_text) VALUES (73, 'C. 27%'); -- 363
+INSERT INTO choices (question_id, choice_text) VALUES (73, 'D. 29%'); -- 364
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (74, 'A. 15%'); -- 365
+INSERT INTO choices (question_id, choice_text) VALUES (74, 'B. 17%'); -- 366
+INSERT INTO choices (question_id, choice_text) VALUES (74, 'C. 21%'); -- 367
+INSERT INTO choices (question_id, choice_text) VALUES (74, 'D. 25%'); -- 368
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (75, 'A. 25%'); -- 369
+INSERT INTO choices (question_id, choice_text) VALUES (75, 'B. 35%'); -- 370
+INSERT INTO choices (question_id, choice_text) VALUES (75, 'C. 45%'); -- 371
+INSERT INTO choices (question_id, choice_text) VALUES (75, 'D. 50%'); -- 372
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (76, 'A. 60人'); -- 373
+INSERT INTO choices (question_id, choice_text) VALUES (76, 'B. 80人'); -- 374
+INSERT INTO choices (question_id, choice_text) VALUES (76, 'C. 100人'); -- 375
+INSERT INTO choices (question_id, choice_text) VALUES (76, 'D. 110人'); -- 376
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (77, 'A. 70%'); -- 377
+INSERT INTO choices (question_id, choice_text) VALUES (77, 'B. 80%'); -- 378
+INSERT INTO choices (question_id, choice_text) VALUES (77, 'C. 87%'); -- 379
+INSERT INTO choices (question_id, choice_text) VALUES (77, 'D. 93%'); -- 380
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (78, 'A. 3/5'); -- 381
+INSERT INTO choices (question_id, choice_text) VALUES (78, 'B. 3/11'); -- 382
+INSERT INTO choices (question_id, choice_text) VALUES (78, 'C. 9/20'); -- 383
+INSERT INTO choices (question_id, choice_text) VALUES (78, 'D. 17/20'); -- 384
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (79, 'A. 3%'); -- 385
+INSERT INTO choices (question_id, choice_text) VALUES (79, 'B. 9%'); -- 386
+INSERT INTO choices (question_id, choice_text) VALUES (79, 'C. 15%'); -- 387
+INSERT INTO choices (question_id, choice_text) VALUES (79, 'D. 18%'); -- 388
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (80, 'A. 1%'); -- 389
+INSERT INTO choices (question_id, choice_text) VALUES (80, 'B. 3%'); -- 390
+INSERT INTO choices (question_id, choice_text) VALUES (80, 'C. 5%'); -- 391
+INSERT INTO choices (question_id, choice_text) VALUES (80, 'D. 8%'); -- 392
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (81, 'A. 18%'); -- 393
+INSERT INTO choices (question_id, choice_text) VALUES (81, 'B. 20%'); -- 394
+INSERT INTO choices (question_id, choice_text) VALUES (81, 'C. 22%'); -- 395
+INSERT INTO choices (question_id, choice_text) VALUES (81, 'D. 24%'); -- 396
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (82, 'A. 60人'); -- 397
+INSERT INTO choices (question_id, choice_text) VALUES (82, 'B. 80人'); -- 398
+INSERT INTO choices (question_id, choice_text) VALUES (82, 'C. 100人'); -- 399
+INSERT INTO choices (question_id, choice_text) VALUES (82, 'D. 120人'); -- 400
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (83, 'A. 2/25'); -- 401
+INSERT INTO choices (question_id, choice_text) VALUES (83, 'B. 2/5'); -- 402
+INSERT INTO choices (question_id, choice_text) VALUES (83, 'C. 1/10'); -- 403
+INSERT INTO choices (question_id, choice_text) VALUES (83, 'D. 3/5'); -- 404
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (84, 'A. 5/26'); -- 405
+INSERT INTO choices (question_id, choice_text) VALUES (84, 'B. 5/13'); -- 406
+INSERT INTO choices (question_id, choice_text) VALUES (84, 'C. 109/169'); -- 407
+INSERT INTO choices (question_id, choice_text) VALUES (84, 'D. 60/169'); -- 408
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (85, 'A. 0.42'); -- 409
+INSERT INTO choices (question_id, choice_text) VALUES (85, 'B. 0.54'); -- 410
+INSERT INTO choices (question_id, choice_text) VALUES (85, 'C. 0.72'); -- 411
+INSERT INTO choices (question_id, choice_text) VALUES (85, 'D. 0.90'); -- 412
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (86, 'A. 6人'); -- 413
+INSERT INTO choices (question_id, choice_text) VALUES (86, 'B. 7人'); -- 414
+INSERT INTO choices (question_id, choice_text) VALUES (86, 'C. 8人'); -- 415
+INSERT INTO choices (question_id, choice_text) VALUES (86, 'D. 9人'); -- 416
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (87, 'A. 2/16'); -- 417
+INSERT INTO choices (question_id, choice_text) VALUES (87, 'B. 8/21'); -- 418
+INSERT INTO choices (question_id, choice_text) VALUES (87, 'C. 11/13'); -- 419
+INSERT INTO choices (question_id, choice_text) VALUES (87, 'D. 5/32'); -- 420
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (88, 'A. 7/16'); -- 421
+INSERT INTO choices (question_id, choice_text) VALUES (88, 'B. 7/8'); -- 422
+INSERT INTO choices (question_id, choice_text) VALUES (88, 'C. 3/8'); -- 423
+INSERT INTO choices (question_id, choice_text) VALUES (88, 'D. 4/5'); -- 424
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (89, 'A. 4/9'); -- 425
+INSERT INTO choices (question_id, choice_text) VALUES (89, 'B. 5/8'); -- 426
+INSERT INTO choices (question_id, choice_text) VALUES (89, 'C. 3/7'); -- 427
+INSERT INTO choices (question_id, choice_text) VALUES (89, 'D. 1/6'); -- 428
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (90, 'A. 1/5'); -- 429
+INSERT INTO choices (question_id, choice_text) VALUES (90, 'B. 1/6'); -- 430
+INSERT INTO choices (question_id, choice_text) VALUES (90, 'C. 1/18'); -- 431
+INSERT INTO choices (question_id, choice_text) VALUES (90, 'D. 1/30'); -- 432
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (91, 'A. 0.15'); -- 433
+INSERT INTO choices (question_id, choice_text) VALUES (91, 'B. 0.45'); -- 434
+INSERT INTO choices (question_id, choice_text) VALUES (91, 'C. 0.56'); -- 435
+INSERT INTO choices (question_id, choice_text) VALUES (91, 'D. 0.67'); -- 436
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (92, 'A. 0.12'); -- 437
+INSERT INTO choices (question_id, choice_text) VALUES (92, 'B. 0.13'); -- 438
+INSERT INTO choices (question_id, choice_text) VALUES (92, 'C. 0.23'); -- 439
+INSERT INTO choices (question_id, choice_text) VALUES (92, 'D. 0.42'); -- 440
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (93, 'A. Xに4600円Yは3000円支払う'); -- 441
+INSERT INTO choices (question_id, choice_text) VALUES (93, 'B. Xに5400円Yは2100円支払う'); -- 442
+INSERT INTO choices (question_id, choice_text) VALUES (93, 'C. Xに5400円Yは2900円支払う'); -- 443
+INSERT INTO choices (question_id, choice_text) VALUES (93, 'D. Xに7500円支払う'); -- 444
+INSERT INTO choices (question_id, choice_text) VALUES (93, 'E. Yに9600円支払う'); -- 445
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (94, 'A. 5600円'); -- 446
+INSERT INTO choices (question_id, choice_text) VALUES (94, 'B. 5350円'); -- 447
+INSERT INTO choices (question_id, choice_text) VALUES (94, 'C. 5950円'); -- 448
+INSERT INTO choices (question_id, choice_text) VALUES (94, 'D. 5550円'); -- 449
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (95, 'A. 3850円'); -- 450
+INSERT INTO choices (question_id, choice_text) VALUES (95, 'B. 115000円'); -- 451
+INSERT INTO choices (question_id, choice_text) VALUES (95, 'C. 45000円'); -- 452
+INSERT INTO choices (question_id, choice_text) VALUES (95, 'D. 38500円'); -- 453
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (96, 'A. 15000円'); -- 454
+INSERT INTO choices (question_id, choice_text) VALUES (96, 'B. 13800円'); -- 455
+INSERT INTO choices (question_id, choice_text) VALUES (96, 'C. 10000円'); -- 456
+INSERT INTO choices (question_id, choice_text) VALUES (96, 'D. 13200円'); -- 457
+INSERT INTO choices (question_id, choice_text) VALUES (96, 'E. 9600円'); -- 458
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (97, 'A. 負担額は揃っている'); -- 459
+INSERT INTO choices (question_id, choice_text) VALUES (97, 'B. PにQが4900円 Rが2500円'); -- 460
+INSERT INTO choices (question_id, choice_text) VALUES (97, 'C. PにQが2500円 Rも2500円'); -- 461
+INSERT INTO choices (question_id, choice_text) VALUES (97, 'D. PがQとRに450円ずつ'); -- 462
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (98, 'A. 12時〜18時'); -- 463
+INSERT INTO choices (question_id, choice_text) VALUES (98, 'B. 9時〜15時'); -- 464
+INSERT INTO choices (question_id, choice_text) VALUES (98, 'C. 10時〜16時'); -- 465
+INSERT INTO choices (question_id, choice_text) VALUES (98, 'D. 11時〜17時'); -- 466
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (99, 'A. P：475円 Q：450円'); -- 467
+INSERT INTO choices (question_id, choice_text) VALUES (99, 'B. P：500円 Q：450円'); -- 468
+INSERT INTO choices (question_id, choice_text) VALUES (99, 'C. P：470円 Q：425円'); -- 469
+INSERT INTO choices (question_id, choice_text) VALUES (99, 'D. P：525円 Q：425円'); -- 470
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (100, 'A. 1200円'); -- 471
+INSERT INTO choices (question_id, choice_text) VALUES (100, 'B. 400円'); -- 472
+INSERT INTO choices (question_id, choice_text) VALUES (100, 'C. 200円'); -- 473
+INSERT INTO choices (question_id, choice_text) VALUES (100, 'D. 500円'); -- 474
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (101, 'A. 25人'); -- 475
+INSERT INTO choices (question_id, choice_text) VALUES (101, 'B. 28人'); -- 476
+INSERT INTO choices (question_id, choice_text) VALUES (101, 'C. 35人'); -- 477
+INSERT INTO choices (question_id, choice_text) VALUES (101, 'D. 70人'); -- 478
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (102, 'A. 150円'); -- 479
+INSERT INTO choices (question_id, choice_text) VALUES (102, 'B. 200円'); -- 480
+INSERT INTO choices (question_id, choice_text) VALUES (102, 'C. 220円'); -- 481
+INSERT INTO choices (question_id, choice_text) VALUES (102, 'D. 300円'); -- 482
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (103, 'A. 5/21'); -- 483
+INSERT INTO choices (question_id, choice_text) VALUES (103, 'B. 2/3'); -- 484
+INSERT INTO choices (question_id, choice_text) VALUES (103, 'C. 31/51'); -- 485
+INSERT INTO choices (question_id, choice_text) VALUES (103, 'D. 46/51'); -- 486
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (104, 'A. 4/21'); -- 487
+INSERT INTO choices (question_id, choice_text) VALUES (104, 'B. 1/21'); -- 488
+INSERT INTO choices (question_id, choice_text) VALUES (104, 'C. 1/7'); -- 489
+INSERT INTO choices (question_id, choice_text) VALUES (104, 'D. 12/35'); -- 490
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (105, 'A. 1/14'); -- 491
+INSERT INTO choices (question_id, choice_text) VALUES (105, 'B. 17/24'); -- 492
+INSERT INTO choices (question_id, choice_text) VALUES (105, 'C. 10/21'); -- 493
+INSERT INTO choices (question_id, choice_text) VALUES (105, 'D. 7/12'); -- 494
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (106, 'A. 1.5'); -- 495
+INSERT INTO choices (question_id, choice_text) VALUES (106, 'B. 1.6'); -- 496
+INSERT INTO choices (question_id, choice_text) VALUES (106, 'C. 1.7'); -- 497
+INSERT INTO choices (question_id, choice_text) VALUES (106, 'D. 1.8'); -- 498
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (107, 'A. 3時間'); -- 499
+INSERT INTO choices (question_id, choice_text) VALUES (107, 'B. 4時間'); -- 500
+INSERT INTO choices (question_id, choice_text) VALUES (107, 'C. 5時間'); -- 501
+INSERT INTO choices (question_id, choice_text) VALUES (107, 'D. 6時間'); -- 502
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (108, 'A. 5分'); -- 503
+INSERT INTO choices (question_id, choice_text) VALUES (108, 'B. 10分'); -- 504
+INSERT INTO choices (question_id, choice_text) VALUES (108, 'C. 15分'); -- 505
+INSERT INTO choices (question_id, choice_text) VALUES (108, 'D. 20分'); -- 506
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (109, 'A. 3時間'); -- 507
+INSERT INTO choices (question_id, choice_text) VALUES (109, 'B. 5時間'); -- 508
+INSERT INTO choices (question_id, choice_text) VALUES (109, 'C. 8時間'); -- 509
+INSERT INTO choices (question_id, choice_text) VALUES (109, 'D. 10時間'); -- 510
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (110, 'A. 13000円'); -- 511
+INSERT INTO choices (question_id, choice_text) VALUES (110, 'B. 15000円'); -- 512
+INSERT INTO choices (question_id, choice_text) VALUES (110, 'C. 18000円'); -- 513
+INSERT INTO choices (question_id, choice_text) VALUES (110, 'D. 20000円'); -- 514
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (111, 'A. 15分後'); -- 515
+INSERT INTO choices (question_id, choice_text) VALUES (111, 'B. 20分後'); -- 516
+INSERT INTO choices (question_id, choice_text) VALUES (111, 'C. 25分後'); -- 517
+INSERT INTO choices (question_id, choice_text) VALUES (111, 'D. 30分後'); -- 518
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (112, 'A. 5日目'); -- 519
+INSERT INTO choices (question_id, choice_text) VALUES (112, 'B. 6日目'); -- 520
+INSERT INTO choices (question_id, choice_text) VALUES (112, 'C. 7日目'); -- 521
+INSERT INTO choices (question_id, choice_text) VALUES (112, 'D. 8日目'); -- 522
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (113, 'A. 0.3km/時'); -- 523
+INSERT INTO choices (question_id, choice_text) VALUES (113, 'B. 18.0km/時'); -- 524
+INSERT INTO choices (question_id, choice_text) VALUES (113, 'C. 10.5km/時'); -- 525
+INSERT INTO choices (question_id, choice_text) VALUES (113, 'D. 12.5km/時'); -- 526
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (114, 'A. 10.0km/時'); -- 527
+INSERT INTO choices (question_id, choice_text) VALUES (114, 'B. 12.0km/時'); -- 528
+INSERT INTO choices (question_id, choice_text) VALUES (114, 'C. 12.5km/時'); -- 529
+INSERT INTO choices (question_id, choice_text) VALUES (114, 'D. 13.5km/時'); -- 530
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (115, 'A. 12.0km/時'); -- 531
+INSERT INTO choices (question_id, choice_text) VALUES (115, 'B. 14.0km/時'); -- 532
+INSERT INTO choices (question_id, choice_text) VALUES (115, 'C. 16.0km/時'); -- 533
+INSERT INTO choices (question_id, choice_text) VALUES (115, 'D. 18.0km/時'); -- 534
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (116, 'A. 72.0'); -- 535
+INSERT INTO choices (question_id, choice_text) VALUES (116, 'B. 128.0'); -- 536
+INSERT INTO choices (question_id, choice_text) VALUES (116, 'C. 164.0'); -- 537
+INSERT INTO choices (question_id, choice_text) VALUES (116, 'D. 218.0'); -- 538
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (117, 'A. 45km/時'); -- 539
+INSERT INTO choices (question_id, choice_text) VALUES (117, 'B. 78km/時'); -- 540
+INSERT INTO choices (question_id, choice_text) VALUES (117, 'C. 120km/時'); -- 541
+INSERT INTO choices (question_id, choice_text) VALUES (117, 'D. 135km/時'); -- 542
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (118, 'A. 9'); -- 543
+INSERT INTO choices (question_id, choice_text) VALUES (118, 'B. 10'); -- 544
+INSERT INTO choices (question_id, choice_text) VALUES (118, 'C. 11'); -- 545
+INSERT INTO choices (question_id, choice_text) VALUES (118, 'D. 12'); -- 546
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (119, 'A. 6分'); -- 547
+INSERT INTO choices (question_id, choice_text) VALUES (119, 'B. 7分'); -- 548
+INSERT INTO choices (question_id, choice_text) VALUES (119, 'C. 8分'); -- 549
+INSERT INTO choices (question_id, choice_text) VALUES (119, 'D. 9分'); -- 550
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (120, 'A. 12分'); -- 551
+INSERT INTO choices (question_id, choice_text) VALUES (120, 'B. 15分'); -- 552
+INSERT INTO choices (question_id, choice_text) VALUES (120, 'C. 20分'); -- 553
+INSERT INTO choices (question_id, choice_text) VALUES (120, 'D. 25分'); -- 554
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (121, 'A. 12分'); -- 555
+INSERT INTO choices (question_id, choice_text) VALUES (121, 'B. 15分'); -- 556
+INSERT INTO choices (question_id, choice_text) VALUES (121, 'C. 20分'); -- 557
+INSERT INTO choices (question_id, choice_text) VALUES (121, 'D. 25分'); -- 558
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (122, 'A. 12分'); -- 559
+INSERT INTO choices (question_id, choice_text) VALUES (122, 'B. 15分'); -- 560
+INSERT INTO choices (question_id, choice_text) VALUES (122, 'C. 20分'); -- 561
+INSERT INTO choices (question_id, choice_text) VALUES (122, 'D. 25分'); -- 562
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (123, 'A. 34人'); -- 563
+INSERT INTO choices (question_id, choice_text) VALUES (123, 'B. 36人'); -- 564
+INSERT INTO choices (question_id, choice_text) VALUES (123, 'C. 38人'); -- 565
+INSERT INTO choices (question_id, choice_text) VALUES (123, 'D. 40人'); -- 566
+
+
+INSERT INTO choices (question_id, choice_text) VALUES (124, 'A. 70人'); -- 567
+INSERT INTO choices (question_id, choice_text) VALUES (124, 'B. 75人'); -- 568
+INSERT INTO choices (question_id, choice_text) VALUES (124, 'C. 80人'); -- 569
+INSERT INTO choices (question_id, choice_text) VALUES (124, 'D. 85人'); -- 570
+
+INSERT INTO choices (question_id, choice_text) VALUES (125, 'A. 51人'); -- 571
+INSERT INTO choices (question_id, choice_text) VALUES (125, 'B. 53人'); -- 572
+INSERT INTO choices (question_id, choice_text) VALUES (125, 'C. 55人'); -- 573
+INSERT INTO choices (question_id, choice_text) VALUES (125, 'D. 57人'); -- 574
+
+INSERT INTO choices (question_id, choice_text) VALUES (126, 'A. 6人'); -- 575
+INSERT INTO choices (question_id, choice_text) VALUES (126, 'B. 7人'); -- 576
+INSERT INTO choices (question_id, choice_text) VALUES (126, 'C. 8人'); -- 577
+INSERT INTO choices (question_id, choice_text) VALUES (126, 'D. 9人'); -- 578
+
+INSERT INTO choices (question_id, choice_text) VALUES (127, 'A. 50人'); -- 579
+INSERT INTO choices (question_id, choice_text) VALUES (127, 'B. 60人'); -- 580
+INSERT INTO choices (question_id, choice_text) VALUES (127, 'C. 70人'); -- 581
+INSERT INTO choices (question_id, choice_text) VALUES (127, 'D. 80人'); -- 582
+
+INSERT INTO choices (question_id, choice_text) VALUES (128, 'A. 5人'); -- 583
+INSERT INTO choices (question_id, choice_text) VALUES (128, 'B. 10人'); -- 584
+INSERT INTO choices (question_id, choice_text) VALUES (128, 'C. 15人'); -- 585
+INSERT INTO choices (question_id, choice_text) VALUES (128, 'D. 20人'); -- 586
+
+INSERT INTO choices (question_id, choice_text) VALUES (129, 'A. 10人'); -- 587
+INSERT INTO choices (question_id, choice_text) VALUES (129, 'B. 11人'); -- 588
+INSERT INTO choices (question_id, choice_text) VALUES (129, 'C. 12人'); -- 589
+INSERT INTO choices (question_id, choice_text) VALUES (129, 'D. 13人'); -- 590
+
+INSERT INTO choices (question_id, choice_text) VALUES (130, 'A. 13人'); -- 591
+INSERT INTO choices (question_id, choice_text) VALUES (130, 'B. 14人'); -- 592
+INSERT INTO choices (question_id, choice_text) VALUES (130, 'C. 15人'); -- 593
+INSERT INTO choices (question_id, choice_text) VALUES (130, 'D. 16人'); -- 594
+
+INSERT INTO choices (question_id, choice_text) VALUES (131, 'A. 30人'); -- 595
+INSERT INTO choices (question_id, choice_text) VALUES (131, 'B. 35人'); -- 596
+INSERT INTO choices (question_id, choice_text) VALUES (131, 'C. 40人'); -- 597
+INSERT INTO choices (question_id, choice_text) VALUES (131, 'D. 45人'); -- 598
+
+INSERT INTO choices (question_id, choice_text) VALUES (132, 'A. 135人'); -- 599
+INSERT INTO choices (question_id, choice_text) VALUES (132, 'B. 140人'); -- 600
+INSERT INTO choices (question_id, choice_text) VALUES (132, 'C. 145人'); -- 601
+INSERT INTO choices (question_id, choice_text) VALUES (132, 'D. 150人'); -- 602
+
+INSERT INTO choices (question_id, choice_text) VALUES (133, 'A. 38.3%'); -- 603
+INSERT INTO choices (question_id, choice_text) VALUES (133, 'B. 42.3%'); -- 604
+INSERT INTO choices (question_id, choice_text) VALUES (133, 'C. 44.3%'); -- 605
+INSERT INTO choices (question_id, choice_text) VALUES (133, 'D. 45.3%'); -- 606
+
+INSERT INTO choices (question_id, choice_text) VALUES (134, 'A. 38.3%'); -- 607
+INSERT INTO choices (question_id, choice_text) VALUES (134, 'B. 40.3%'); -- 608
+INSERT INTO choices (question_id, choice_text) VALUES (134, 'C. 42.3%'); -- 609
+INSERT INTO choices (question_id, choice_text) VALUES (134, 'D. 44.3%'); -- 610
+
+INSERT INTO choices (question_id, choice_text) VALUES (135, 'A. 5%'); -- 611
+INSERT INTO choices (question_id, choice_text) VALUES (135, 'B. 10%'); -- 612
+INSERT INTO choices (question_id, choice_text) VALUES (135, 'C. 15%'); -- 613
+INSERT INTO choices (question_id, choice_text) VALUES (135, 'D. 20%'); -- 614
+
+INSERT INTO choices (question_id, choice_text) VALUES (136, 'A. 1.4倍'); -- 615
+INSERT INTO choices (question_id, choice_text) VALUES (136, 'B. 2.9倍'); -- 616
+INSERT INTO choices (question_id, choice_text) VALUES (136, 'C. 7.9倍'); -- 617
+INSERT INTO choices (question_id, choice_text) VALUES (136, 'D. 9.4倍'); -- 618
+
+INSERT INTO choices (question_id, choice_text) VALUES (137, 'A. 60人'); -- 619
+INSERT INTO choices (question_id, choice_text) VALUES (137, 'B. 65人'); -- 620
+INSERT INTO choices (question_id, choice_text) VALUES (137, 'C. 70人'); -- 621
+INSERT INTO choices (question_id, choice_text) VALUES (137, 'D. 75人'); -- 622
+
+INSERT INTO choices (question_id, choice_text) VALUES (138, 'A. 20%'); -- 623
+INSERT INTO choices (question_id, choice_text) VALUES (138, 'B. 24%'); -- 624
+INSERT INTO choices (question_id, choice_text) VALUES (138, 'C. 28%'); -- 625
+INSERT INTO choices (question_id, choice_text) VALUES (138, 'D. 32%'); -- 626
+
+INSERT INTO choices (question_id, choice_text) VALUES (139, 'A. 9.0%'); -- 627
+INSERT INTO choices (question_id, choice_text) VALUES (139, 'B. 9.1%'); -- 628
+INSERT INTO choices (question_id, choice_text) VALUES (139, 'C. 9.2%'); -- 629
+INSERT INTO choices (question_id, choice_text) VALUES (139, 'D. 9.3%'); -- 630
+
+INSERT INTO choices (question_id, choice_text) VALUES (140, 'A. 377人'); -- 631
+INSERT INTO choices (question_id, choice_text) VALUES (140, 'B. 778人'); -- 632
+INSERT INTO choices (question_id, choice_text) VALUES (140, 'C. 868人'); -- 633
+INSERT INTO choices (question_id, choice_text) VALUES (140, 'D. 948人'); -- 634
+
+INSERT INTO choices (question_id, choice_text) VALUES (141, 'A. 10人'); -- 635
+INSERT INTO choices (question_id, choice_text) VALUES (141, 'B. 17人'); -- 636
+INSERT INTO choices (question_id, choice_text) VALUES (141, 'C. 18人'); -- 637
+INSERT INTO choices (question_id, choice_text) VALUES (141, 'D. 19人'); -- 638
+
+INSERT INTO choices (question_id, choice_text) VALUES (142, 'A. 1150人'); -- 639
+INSERT INTO choices (question_id, choice_text) VALUES (142, 'B. 1170人'); -- 640
+INSERT INTO choices (question_id, choice_text) VALUES (142, 'C. 1190人'); -- 641
+INSERT INTO choices (question_id, choice_text) VALUES (142, 'D. 1210人'); -- 642
+
+INSERT INTO choices (question_id, choice_text) VALUES (143, 'A. 5年後'); -- 643
+INSERT INTO choices (question_id, choice_text) VALUES (143, 'B. 12年後'); -- 644
+INSERT INTO choices (question_id, choice_text) VALUES (143, 'C. 18年後'); -- 645
+INSERT INTO choices (question_id, choice_text) VALUES (143, 'D. 24年後'); -- 646
+
+INSERT INTO choices (question_id, choice_text) VALUES (144, 'A. 0個'); -- 647
+INSERT INTO choices (question_id, choice_text) VALUES (144, 'B. 1個'); -- 648
+INSERT INTO choices (question_id, choice_text) VALUES (144, 'C. 2個'); -- 649
+INSERT INTO choices (question_id, choice_text) VALUES (144, 'D. 3個'); -- 650
+
+INSERT INTO choices (question_id, choice_text) VALUES (145, 'A. 200個'); -- 651
+INSERT INTO choices (question_id, choice_text) VALUES (145, 'B. 300個'); -- 652
+INSERT INTO choices (question_id, choice_text) VALUES (145, 'C. 400個'); -- 653
+INSERT INTO choices (question_id, choice_text) VALUES (145, 'D. 600個'); -- 654
+
+INSERT INTO choices (question_id, choice_text) VALUES (146, 'A. 5個'); -- 655
+INSERT INTO choices (question_id, choice_text) VALUES (146, 'B. 6個'); -- 656
+INSERT INTO choices (question_id, choice_text) VALUES (146, 'C. 7個'); -- 657
+INSERT INTO choices (question_id, choice_text) VALUES (146, 'D. 8個'); -- 658
+
+INSERT INTO choices (question_id, choice_text) VALUES (147, 'A. 1枚'); -- 659
+INSERT INTO choices (question_id, choice_text) VALUES (147, 'B. 2枚'); -- 660
+INSERT INTO choices (question_id, choice_text) VALUES (147, 'C. 3枚'); -- 661
+INSERT INTO choices (question_id, choice_text) VALUES (147, 'D. 4枚'); -- 662
+
+INSERT INTO choices (question_id, choice_text) VALUES (148, 'A. 1個'); -- 663
+INSERT INTO choices (question_id, choice_text) VALUES (148, 'B. 3個'); -- 664
+INSERT INTO choices (question_id, choice_text) VALUES (148, 'C. 5個'); -- 665
+INSERT INTO choices (question_id, choice_text) VALUES (148, 'D. 7個'); -- 666
+
+INSERT INTO choices (question_id, choice_text) VALUES (149, 'A. 2年後'); -- 667
+INSERT INTO choices (question_id, choice_text) VALUES (149, 'B. 4年後'); -- 668
+INSERT INTO choices (question_id, choice_text) VALUES (149, 'C. 8年後'); -- 669
+INSERT INTO choices (question_id, choice_text) VALUES (149, 'D. 12年後'); -- 670
+
+INSERT INTO choices (question_id, choice_text) VALUES (150, 'A. 18本'); -- 671
+INSERT INTO choices (question_id, choice_text) VALUES (150, 'B. 19本'); -- 672
+INSERT INTO choices (question_id, choice_text) VALUES (150, 'C. 20本'); -- 673
+INSERT INTO choices (question_id, choice_text) VALUES (150, 'D. 21本'); -- 674
+
+INSERT INTO choices (question_id, choice_text) VALUES (151, 'A. 38本'); -- 675
+INSERT INTO choices (question_id, choice_text) VALUES (151, 'B. 39本'); -- 676
+INSERT INTO choices (question_id, choice_text) VALUES (151, 'C. 40本'); -- 677
+INSERT INTO choices (question_id, choice_text) VALUES (151, 'D. 41本'); -- 678
+
+INSERT INTO choices (question_id, choice_text) VALUES (152, 'A. 50人'); -- 679
+INSERT INTO choices (question_id, choice_text) VALUES (152, 'B. 55人'); -- 680
+INSERT INTO choices (question_id, choice_text) VALUES (152, 'C. 65人'); -- 681
+INSERT INTO choices (question_id, choice_text) VALUES (152, 'D. 80人'); -- 682
 -- 正解と解説を挿入
 -- 正解の番号が違うので後で修正
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (1, 5, '1_1_1');
@@ -1236,7 +1291,4 @@ INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (149, 6
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (150, 673, '2_10_8');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (151, 678, '2_10_9');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (152, 682, '2_10_10');
-
-
-
 
