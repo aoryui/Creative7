@@ -29,7 +29,7 @@
         <div class="container">
             <h1>SPI対策して試験合格を確実に</h1>
             <p>シンプルでゲーム性溢れるSPIサイト</p>
-            <img src="../image/icon/logo.png" alt="タイサくんロゴ">
+            <img src="../image/icon/logo.png" class=logo.img alt="タイサくんロゴ">
             <a href="javascript:void(0);" class="btn" onclick="openMaximizedWindow()">ユーザーログイン</a>
         </div>
     </section>

@@ -56,8 +56,10 @@ nav ul li a {
 }
 
 .hero {
-    background: url('spi-background.jpg') no-repeat center center/cover;
+    position: relative;
+    top: -10px;
     height: 400px;
+    max-height: 600px;
     color: #000;
     text-align: center;
     display: flex;
@@ -67,6 +69,7 @@ nav ul li a {
     margin-top: 50px;
     padding: 0 15px;
 }
+
 
 .hero h1 {
     font-size: 2.5em;
@@ -78,13 +81,18 @@ nav ul li a {
     margin-bottom: 20px;
 }
 
-.hero img {
-    width: 100%;
-    max-width: 500px;
+img {
+    position: relative;
+    top: -20px;
+    left: 100px;
+    max-width: 400px;
     height: auto;
 }
 
 .hero .btn {
+    position: relative;
+    top: 20px;
+    left: -200px;
     background-color: rgb(89, 208, 247);
     color: #fff;
     padding: 12px 25px;
@@ -112,6 +120,8 @@ nav ul li a {
     }
 
     .hero {
+        position: relative;
+        top: 50px;
         height: 300px; /* メインビジュアルの高さを小さく */
     }
 
@@ -121,13 +131,20 @@ nav ul li a {
         margin-left: 20px; /* 右に配置 */
     }
 
+    img{
+        position: relative;
+        left: -45px;
+    }
     
     .hero p {
         font-size: 1em; /* 説明文の文字サイズを縮小 */
     }
 
     .hero .btn {
-        font-size: 1em; /* ボタンの文字サイズを小さく */
+        position: relative;
+        left: 0px;
+        top: -10px;
+        font-size: 1.2em; /* ボタンの文字サイズを小さく */
         padding: 10px 20px;
     }
 
