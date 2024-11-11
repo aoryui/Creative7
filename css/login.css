@@ -1,3 +1,4 @@
+/* 背景色とフォントスタイル */
 .login-body {
   background-color: #ffefd5;
   font-family: 'Comic Sans MS', cursive, sans-serif;
@@ -9,11 +10,11 @@
   overflow: hidden;
 }
 
-
 html {
   overflow: hidden;
 }
 
+/* ログインコンテナのスタイル */
 .login-container {
   margin-top: 120px;
   margin-bottom: auto;
@@ -28,6 +29,7 @@ html {
   text-align: center;
 }
 
+/* フォームグループの設定 */
 .form-group {
   margin-bottom: 15px;
 }
@@ -55,6 +57,7 @@ input:focus {
   box-shadow: 0 0 5px rgba(255, 192, 203, 0.5);
 }
 
+/* ログインボタンのスタイル */
 #login {
   margin-top: 10px;
   width: 180px;
@@ -69,7 +72,6 @@ input:focus {
   font-size: 20px;
 }
 
-
 #login:hover {
   background-color: #68B7F0;
 }
@@ -81,4 +83,27 @@ input:focus {
 
 .message-red {
   color: red;
+}
+
+/* iPhone 14対応のスタイル調整 */
+@media (max-width: 390px) {
+  .login-container {
+    width: 80%; /* コンテナの幅を画面に合わせる */
+    padding: 20px;
+  }
+
+  #login {
+    width: 40%; /* ログインボタンをコンテナに合わせて広げる */
+    font-size: 18px; /* ボタン文字サイズを少し縮小 */
+  }
+
+  input {
+    font-size: 14px; /* 入力欄のフォントサイズを小さく */
+    padding: 8px; /* 入力欄のパディングを調整 */
+  }
+
+  .character {
+    width: 120px; /* キャラクター画像のサイズを縮小 */
+  }
+
 }

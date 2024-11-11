@@ -1,3 +1,4 @@
+/* 基本レイアウトのスタイル */
 * {
     margin: 0;
     padding: 0;
@@ -10,59 +11,61 @@ body {
     color: #333;
 }
 
-header { /*ヘッダー部分*/
+header {
     background-color: #333;
     color: #fff;
-    padding: 25px 0;
-    position: relative; /* 管理者ログインの位置決めに必要 */
+    padding: 20px 0;
+    position: relative;
 }
 
 .container {
-    width: 80%;
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0 15px;
     text-align: center;
 }
 
-nav ul { /*ナビ部分*/
+nav ul {
     list-style: none;
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-nav ul li a { 
+nav ul li a {
     color: #fff;
     text-decoration: none;
     padding: 10px;
 }
 
-/* 管理者ログインボタンを右上に固定 */
 .kan-right {
     position: absolute;
     top: 20px;
-    right: 30px;
+    right: 20px;
     background-color: rgb(84, 196, 99);
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 0.9em; /* 文字サイズを少し小さく */
-    padding: 8px 18px; /* サイズ調整 */
+    font-size: 0.9em;
+    padding: 8px 18px;
 }
-
 
 .kan-right:hover {
     background-color: rgb(60, 148, 74);
 }
 
-.hero { /*画像挿入*/
+.hero {
     background: url('spi-background.jpg') no-repeat center center/cover;
     height: 400px;
-    color: #000000;
+    color: #000;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 70px;
+    margin-top: 50px;
+    padding: 0 15px;
 }
 
 .hero h1 {
@@ -76,29 +79,62 @@ nav ul li a {
 }
 
 .hero img {
-    display: block;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
 }
 
-/* ボタンのスタイル */
 .hero .btn {
     background-color: rgb(89, 208, 247);
     color: #fff;
-    padding: 15px 30px;
+    padding: 12px 25px;
     text-decoration: none;
     border-radius: 10px;
     font-size: 1.2em;
-    display: inline-block;
     margin-top: 20px;
-    margin-right: 10px;
 }
 
 .hero .btn:hover {
     background-color: rgb(60, 158, 202);
 }
 
-img {
-    width: 500px;
-    height: 150px;
-    object-fit: cover;
+
+
+/* レスポンシブデザイン: iPhone 14（画面幅390px）対応 */
+@media (max-width: 390px) {
+    .container {
+        width: 90%; /* 横幅の余白を調整 */
+        padding: 0 10px;
+    }
+
+    nav ul {
+        flex-direction: column; /* ナビゲーションを縦並びに */
+    }
+
+    .hero {
+        height: 300px; /* メインビジュアルの高さを小さく */
+    }
+
+    .hero h1 {
+        font-size: 2em; /* タイトルの文字サイズを小さく */
+        width: 270px;
+        margin-left: 20px; /* 右に配置 */
+    }
+
+    
+    .hero p {
+        font-size: 1em; /* 説明文の文字サイズを縮小 */
+    }
+
+    .hero .btn {
+        font-size: 1em; /* ボタンの文字サイズを小さく */
+        padding: 10px 20px;
+    }
+
+    .kan-right {
+        top: 15px;
+        right: 15px;
+        font-size: 0.8em;
+        padding: 6px 14px; /* 管理者ログインボタンのサイズ縮小 */
+    }
 }

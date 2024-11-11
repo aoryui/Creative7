@@ -1,3 +1,4 @@
+/* ベーシックなリセット */
 * {
     margin: 0;
     padding: 0;
@@ -6,25 +7,25 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #ffffff; /* 白に近い背景色 */
-    color: #1f1f1f; /* 明るいグレーで文字を表示 */
-    font-size: 14px; /* 全体的に小さめのフォントサイズ */
+    background-color: #ffffff;
+    color: #1f1f1f;
+    font-size: 14px; /* 基本のフォントサイズ */
 }
 
 header {
-    background-color: #1f1f1f; /* ダークグレーのヘッダー */
+    background-color: #1f1f1f;
     color: #fff;
-    padding: 8px 0; /* ヘッダーのパディングを少し縮小 */
+    padding: 8px 0;
 }
 
 .container {
     width: 80%;
     margin: 0 auto;
-    padding: 15px; /* コンテナのパディングを縮小 */
+    padding: 15px;
 }
 
 .logo {
-    font-size: 1.2em; /* ロゴのフォントサイズを縮小 */
+    font-size: 1.2em;
     font-weight: bold;
 }
 
@@ -39,19 +40,19 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #f4f4f4; /* リンクも白で */
+    color: #f4f4f4;
     text-decoration: none;
-    padding: 8px; /* リンクのパディングを縮小 */
-    font-size: 0.9em; /* リンクのフォントサイズを縮小 */
+    padding: 8px;
+    font-size: 0.9em;
 }
 
 nav ul li a:hover {
-    color: #90caf9; /* ホバーでアクセントカラーをつける */
+    color: #90caf9;
 }
 
 .hero {
     background: url('spi-background.jpg') no-repeat center center/cover;
-    height: 300px; /* ヒーローセクションの高さを縮小 */
+    height: 300px;
     color: #000000;
     text-align: center;
     display: flex;
@@ -61,25 +62,25 @@ nav ul li a:hover {
 }
 
 .hero h1 {
-    font-size: 2em; /* タイトルのフォントサイズを縮小 */
+    font-size: 2em;
     margin-bottom: 8px;
-    color: #ffffff; /* ヒーローセクションの文字は白 */
+    color: #ffffff;
 }
 
 .hero p {
-    font-size: 1em; /* 段落のフォントサイズを縮小 */
+    font-size: 1em;
     color: #e0e0e0;
 }
 
 .hero .btn {
-    background-color: #90caf9; /* アクセントカラー */
+    background-color: #90caf9;
     color: #121212;
-    padding: 15px 25px; /* ボタンのパディングを縮小 */
+    padding: 15px 25px;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
     top: 30px;
-    font-size: 0.9em; /* ボタンのフォントサイズを縮小 */
+    font-size: 0.9em;
 }
 
 .hero .btn:hover {
@@ -87,15 +88,15 @@ nav ul li a:hover {
 }
 
 .kan {
-    background-color: #81c784; /* 成功を意味するグリーン */
+    background-color: #81c784;
     color: #121212;
-    padding: 15px 25px; /* ボタンのパディングを縮小 */
+    padding: 15px 25px;
     text-decoration: none;
     border-radius: 5px;
     position: relative;
     top: 30px;
     transition: background-color 0.3s ease;
-    font-size: 0.9em; /* ボタンのフォントサイズを縮小 */
+    font-size: 0.9em;
 }
 
 .kan:hover {
@@ -104,19 +105,19 @@ nav ul li a:hover {
 
 .feature-section {
     background-color: #1f1f1f;
-    padding: 15px; /* セクションのパディングを縮小 */
-    margin: 15px 0; /* セクションのマージンを縮小 */
+    padding: 15px;
+    margin: 15px 0;
     border-radius: 10px;
 }
 
 .feature-section h2 {
-    font-size: 1.5em; /* タイトルのフォントサイズを縮小 */
+    font-size: 1.5em;
     margin-bottom: 8px;
-    color: #90caf9; /* タイトルをアクセントカラーに */
+    color: #90caf9;
 }
 
 .feature-section p {
-    font-size: 1em; /* 段落のフォントサイズを縮小 */
+    font-size: 1em;
     color: #e0e0e0;
 }
 
@@ -124,11 +125,78 @@ footer {
     background-color: #1f1f1f;
     color: #fff;
     text-align: center;
-    padding: 15px 0; /* フッターのパディングを縮小 */
+    padding: 15px 0;
     margin-top: 40px;
-    font-size: 0.9em; /* フッターのフォントサイズを縮小 */
+    font-size: 0.9em;
 }
 
 .spi-link:hover {
     text-decoration: underline;
+}
+
+/* iPhone 14などのスマートフォン対応のレスポンシブスタイル */
+@media (max-width: 390px) {
+    h1{
+        width: 320px;
+    }
+
+    body {
+        font-size: 16px; /* フォントサイズを少し大きく */
+        padding: 10px;
+    }
+
+    .container {
+        width: 90%; /* コンテナ幅を広げる */
+        padding: 10px;
+    }
+
+    header {
+        padding: 10px 0;
+    }
+
+    .logo {
+        font-size: 1.1em; /* ロゴのフォントサイズを縮小 */
+    }
+
+    nav ul {
+        flex-direction: column; /* ナビゲーションの項目を縦並びに */
+        align-items: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .hero {
+        height: 250px; /* ヒーローセクションの高さを縮小 */
+        padding: 10px;
+    }
+
+    .hero h1 {
+        font-size: 1.6em; /* タイトルのフォントサイズを縮小 */
+    }
+
+    .hero p {
+        font-size: 0.9em; /* 段落のフォントサイズを縮小 */
+    }
+
+    .hero .btn, .kan {
+        padding: 10px 20px; /* ボタンのパディングを縮小 */
+        font-size: 0.8em; /* ボタンのフォントサイズを縮小 */
+    }
+
+    .feature-section {
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    .feature-section h2 {
+        font-size: 1.3em; /* セクションタイトルのフォントサイズを縮小 */
+    }
+
+    footer {
+        padding: 10px 0;
+        font-size: 0.8em; /* フッターのフォントサイズを縮小 */
+    }
 }
