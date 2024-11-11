@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
 
-<h1 id="bun">作成したい問題文を入力してください</h1>
+<h1 id="bun">作成したい解説文を入力してください</h1>
 <button class="button" id="add-heading">拡大</button>
 <button class="button" id="add-bold">太字</button>
 <button class="button" id="add-list">リスト</button>

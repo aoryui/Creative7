@@ -6,6 +6,11 @@ body {
     background-color: #ffefd5;
 }
 
+#image-upload {
+    position: relative;
+    bottom: 30px;
+}
+
 html {
     overflow: hidden;
   }
@@ -13,6 +18,9 @@ html {
 .button{
     position: relative;
     top: -30px;
+    left: 30px;
+    display: flex;
+    justify-content:space-around;
 } 
 
 
@@ -60,11 +68,16 @@ button {
     font-size: 16px;
     font-family: 'Noto Sans JP', sans-serif; /* フォントを変更 */
     color: #fff;
-    background-color: #27acd9;
+    background-color: rgb(84, 196, 99); /* 背景色を緑に設定 */
     border: none;
     border-radius: 50px; /* 丸みのあるボタン */
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover{
+    color: #fff; /* ホバー時の背景色 */
+    background-color: #898989;  /* ホバー時のテキスト色 */
 }
 
 .button-container {
@@ -74,9 +87,14 @@ button {
 
 }
 
+.button-container :hover{
+    color: #fff; /* ホバー時の背景色 */
+    background-color: #898989;  /* ホバー時のテキスト色 */
+}
+
 
 .button-container input[type="submit"] {
-    background-color: #27acd9;
+    background-color: rgb(84, 196, 99); /* 背景色を緑に設定 */
     color: white; /* テキスト色を白に */
     padding: 12px 24px; 
     border: none; /* 境界線なし */
@@ -115,6 +133,8 @@ a {
     border: 1px solid #ccc; /* 枠線を追加 */
     word-wrap: break-word; /* 長い単語を改行 */
     overflow-wrap: break-word; /* 長い単語を改行 */
+    word-break: break-word; /* テキストが幅を超えたら改行 */
+    white-space: pre-wrap; /* 改行や空白を維持して自動で改行 */
     }
 
 #downloadLink { /*ダウンロードリンクの高さの位置*/
@@ -127,6 +147,11 @@ a {
     position: relative;
     left: 300px;
     bottom: 100px;
+}
+
+#generate-button:hover{
+    color: #0c0c0c; /* ホバー時の背景色 */
+    background-color: #898989;  /* ホバー時のテキスト色 */
 }
 
 .container {

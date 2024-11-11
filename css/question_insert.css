@@ -1,121 +1,191 @@
 /* Google FontsからNoto Sans JPをインポート */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400&display=swap');
 
+/* ファイル入力ボタンのスタイル */
 input[type="file"] {
     display: block;
 }
+
+/* 画像プレビューのサイズ設定 */
 .preview {
     width: 300px;
 }
 
-/*問題ジャンル一覧 */
+/* 問題ジャンル一覧ボタン */
 .btn--orange,
 a.btn--orange {
     position: relative;
     left: 1110px;
-  color: #fff;
-  background-color: rgb(84, 196, 99); /* 背景色を緑に設定 */
-   font-size: 20px;
-  
+    color: #fff;
+    background-color: rgb(84, 196, 99); /* 背景色を緑に設定 */
+    font-size: 20px;
 }
+
+/* ボタンホバー時の色変更 */
 .btn--orange:hover,
 a.btn--orange:hover {
-  color: #fff;
-  background-color: #898989;
+    color: #fff;
+    background-color: #898989;
 }
 
+/* 角丸ボタン */
 a.btn--radius {
-   border-radius: 100vh;
+    border-radius: 100vh;
 }
 
+/* テキストの折り返し設定 */
 .ow-normal {
     word-wrap: normal;
-  }
-  
+}
+
+/* ページ全体のスタイル */
 body {
     position: relative;
     background-color: #ffefd5;
     top: 130px;
 }
 
-#questionForm{
+/* 問題作成フォームのマージン設定 */
+#questionForm {
     margin-top: 50px;
 }
 
-#text{ /*問題作成のリンク*/
+/* 問題作成リンクのテキスト位置 */
+#text { 
     text-align: center;
     margin-bottom: 0px;
     margin-top: 0px;
 }
 
-legend{
+/* フィールドセットのタイトル (legend) のスタイル */
+legend {
     text-align: center;
     font-size: 18px;
     font-family: "メイリオ", Arial, sans-serif; /* 複数フォント指定 */
 }
 
-.question_photo{
+/* 問題の画像表示用 */
+.question_photo {
     text-align: center;
 }
 
-
-.list{
+/* リストのスタイル (マージンとパディングをリセット) */
+.list {
     text-align: left;
     list-style-type: none;
     padding-left: 0%;
     margin-left: 0%;
 }
 
-.text{
+/* テキストのセンタリング */
+.text {
     position: relative;
     text-align: center;
     margin-top: 2%;
     margin-bottom: 2%;
-    
 }
-
 
 /* ユーザー名やランキング表示用のフレーム */
 .border-frame { 
-    position: relative;
-    top: 0px;
+    position: absolute;
+    top: 20px;
     left: 0px;
-    max-width: 470px; /* 最大幅を1200pxに設定 */
+    width: 470px;
+    max-width: 470px;
     height: 350px;
-    margin:30px; /* 上下のマージンを設定し、中央揃え */
-    padding: 20px; /* 内側の余白を20pxに設定 */
-    background: #fff; /* 背景色を白に設定 */
+    margin: 30px;
+    padding: 20px;
+    background: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 影をつけて立体感を演出 */
     border-radius: 8px; /* 角を丸くする */
-
 }
 
-/*言語*/
+/* 内容表示用の広いフレーム */
+.border-frame1 { 
+    position: absolute;
+    top: 20px;
+    left: 550px;
+    width: 630px;
+    max-width: 1000px;
+    height: auto;
+    margin: 30px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* フレーム2: 一部の内容表示用 */
+.border-frame2 { 
+    position: absolute;
+    top: 450px;
+    left: 450px;
+    max-width: 470px;
+    height: 250px;
+    margin: 30px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* フレーム3: 別の内容表示用 */
+.border-frame3 { 
+    position: absolute;
+    top: 450px;
+    left: 0px;
+    width: 300px;
+    max-width: 470px;
+    height: 250px;
+    margin: 30px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* 言語ボタン */
 .language {
     position: relative;
     top: -30px;
     left: 15px;
-   background-color: #fff;
+    background-color: #fff;
     margin-bottom: 1px;
     width: 150px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
+    border-radius: 20px; /* 角を丸く */
 }
 
-/*非言語*/
-.language2{
+/* 非言語ボタン */
+.language2 {
     position: relative;
     top: -195px;
     left: 270px;
     background-color: #FFF;
     margin-bottom: 1px;
     width: 130px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    flex-direction: column;
+    border-radius: 20px;
     text-align: center;
+}
+
+/* 解説テキストの位置設定 */
+.kaisetu {
+    position: absolute;
+    left: 350px;
+    top: 90px;
+}
+
+/* アップロードボタンのスタイル */
+.upload {
+    position: absolute;
+    top: 700px;
+    left: 1000px;
+    color: #fff;
+    background-color: #eb6100;
+    cursor: pointer; /* マウスカーソルをポインタに設定 */
+    width: 250px;
+    height: 70px;
+    border-radius: 5px;
+    color: #fff;
+    background: #f56500;
 }

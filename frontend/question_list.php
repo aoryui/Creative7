@@ -23,7 +23,7 @@ $list_questions = $form->getQuestion_fieldgenre($field, $genre);
 </head>
 <body>
 <div class="border-frame">
-<a class="question_make" href="question_insert.php">問題作成</a>
+<a class="btn btn--orange btn--radius" href="question_insert.php">問題作成</a>
 <h2 class="question_list">問題リスト</h2>
 <form method="GET" action="" class="content-form">
     <select id="genre" name="genre"> 

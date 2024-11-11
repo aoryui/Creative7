@@ -121,7 +121,7 @@ body {
 
 .problem{
     position: relative;
-    left: 50px;
-    top: 10%;
+    text-align: center;
+    top: 20px;
     font-size: 30px;
 }
