@@ -85,35 +85,41 @@ $genre_text = nl2br(htmlspecialchars($question['genre_text'], ENT_QUOTES, 'UTF-8
     <title>SPIタイサくん</title>
     <link rel="stylesheet" href="../css/practice.css">
 </head>
-<body scroll="no">
-    <div class="content">
-        <div class="question">
-        <p id="question_count"><?php echo $genre_text ?></p> <!-- ジャンル名のやつ -->
-        <p><?php echo '問題数'.($current_question_index+1).'/'.count($displayed_questions).'問目'?></p> <!-- 問題数ののやつ -->
-            <p><?php
-            // 画像のパスを作成
-            $image_path = "../image/問題集/" . $question_text . ".jpg";
-            // HTMLで画像を表示
-            echo '<img src="' . $image_path . '" alt="問題画像" class="question_img">';
-            ?></p>
+<body>
+    <div class="content"> <!-- 全体の要素 -->
+        <div class="top-contents"><!-- 上のやつ -->
+            <?php echo '<div id="question_genre">'.$genre_text.'</div>' ?> <!-- ジャンル名のやつ -->
+            <?php echo '<div id="question_count">問題数'.($current_question_index+1).'/'.count($displayed_questions).'問目</div>'?> <!-- 問題数ののやつ -->
         </div>
-        <form id="choiceForm" method="post" action="practice.php">
-            <div class="choices">
-                <?php
-                while ($choice = $choices_result->fetch_assoc()) {
-                    echo '<div class="choice">';
-                    echo '<input type="radio" name="choice" value="' . $choice['choice_id'] . '" id="option' . $choice['choice_id'] . '">';
-                    echo '<label for="option' . $choice['choice_id'] . '">' . htmlspecialchars($choice['choice_text'], ENT_QUOTES, 'UTF-8') . '</label>';
-                    echo '</div>';
-                }
-                ?>
-                
+        <div class="center-contents">
+            <?php
+                // 画像のパスを作成
+                $image_path = "../image/問題集/" . $question_text . ".jpg";
+                // HTMLで画像を表示
+                echo '<img src="' . $image_path . '" alt="問題画像" class="question_img">';
+            ?>
+            <!-- 選択form -->
+            <div id="question_form">
+                <form id="choiceForm" method="post" action="practice.php">
+                    <div class="choices">
+                        <?php
+                        while ($choice = $choices_result->fetch_assoc()) {
+                            echo '<div class="choice">';
+                            echo '<input type="radio" name="choice" value="' . $choice['choice_id'] . '" id="option' . $choice['choice_id'] . '">';
+                            echo '<label for="option' . $choice['choice_id'] . '">' . htmlspecialchars($choice['choice_text'], ENT_QUOTES, 'UTF-8') . '</label>';
+                            echo '</div>';
+                        }
+                        ?>
+                        
+                    </div>
+                    <input type="hidden" name="question_id" value="<?php echo $question_id; ?>">
+                    <input type="hidden" name="time_taken" id="time_taken" value="">
+                </form>
             </div>
-            <input type="hidden" name="question_id" value="<?php echo $question_id; ?>">
-            <input type="hidden" name="time_taken" id="time_taken" value="">
-        </form>
+            
+        </div>
+        <a href="#" class="next-button" id="next-button">次に進む</a>
     </div>
-    <a href="#" class="next-button" id="next-button">次に進む</a>
     <script>
         function goToNextQuestion() {
             document.getElementById('choiceForm').submit();
@@ -135,7 +141,7 @@ $genre_text = nl2br(htmlspecialchars($question['genre_text'], ENT_QUOTES, 'UTF-8
 
         window.addEventListener('load', function() { // ページリロードされたらpracticestart.phpに遷移
             if (performance.navigation.type === 1) {
-                window.location.href = 'practicestart.php';
+                window.location.href = 'practice_start.php';
             }
         });
 
