@@ -144,7 +144,7 @@ INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,que
 INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (62,2,1,30,'場合の数','2_1_10','大きいボール、');
 INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (63,2,2,30,'推論','2_2_1','7枚のカードに1〜7の数字が');
 INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (64,2,2,30,'推論','2_2_2','PQRSの4人チームで');
-INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (65,2,2,30,'推論','2_2_3','以下の表に、P、Q、Rの3つの学校');--要修正
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (65,2,2,30,'推論','2_2_3','以下の表に、P、Q、Rの3つの学校'); -- 要修正
 INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (66,2,2,30,'推論','2_2_4','ある高校の学生180人の');
 INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (67,2,2,30,'推論','2_2_5','1個150円のパンと1個100円のおにぎり');
 INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (68,2,2,30,'推論','2_2_6','A~Eの5人が50m走を行った結果、');
