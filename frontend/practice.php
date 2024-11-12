@@ -116,9 +116,10 @@ $genre_text = nl2br(htmlspecialchars($question['genre_text'], ENT_QUOTES, 'UTF-8
                     <input type="hidden" name="time_taken" id="time_taken" value="">
                 </form>
             </div>
-            
+            <div class="next">
+                <a href="#" class="next-button" id="next-button">次に進む</a>
+            </div>
         </div>
-        <a href="#" class="next-button" id="next-button">次に進む</a>
     </div>
     <script>
         function goToNextQuestion() {
