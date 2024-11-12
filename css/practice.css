@@ -1,73 +1,48 @@
-html {
-    height: 100%;
-    overflow: hidden;
-}
-
-
-
 body {
-    min-height: 100%;
     background-color: #ffefd5;
+    margin-top: calc(100px + 20px);
+}
+
+/* 親要素の幅を制限して、画像の拡大を防ぐ */
+.center-contents {
+    max-width: 100%;
     overflow: hidden;
-}
-
-.content {
     display: flex;
-    justify-content: center;
-    width: 100%;
-    padding: 20px;
-    flex-grow: 1;
-    box-sizing: border-box;
-    position: relative;
-    /* コンテナの相対位置を指定 */
 }
 
-.footer {
-    bottom: auto;
-}
-
-#timer-container {
-    bottom: 100px;
-}
-
-.question {
-    flex-grow: 1;
-    margin: 0 0 0 auto;
-}
-
-.question-text {
-    background-color: #e0e0e0;
-    padding: 10px;
-    border-radius: 30px;
-    text-align: center;
-    /* テキストを右揃え */
-    margin-left: 310px;
-}
-
+/* 画像が画面幅に応じて縮小するように設定 */
 .question_img {
-    width: 500px;
-    position: absolute;
-    top: 200px;
-    left: 180px;
+    width: 100%;
+    max-width: 500px;
+    margin-left: 180px;
+
 }
 
-.question p {
-    margin-right: 390px;
+/* デバイスに応じて画像の幅を変更 */
+@media (max-width: 768px) {
+    .question_img {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+#choiceForm{
+    float: right;
+    display: flex;
+    margin: 30px;
 }
 
 .choices {
+    width: 200px;
+}
+
+#question_form{
     display: flex;
     flex-direction: column;
-    margin-bottom: 40px;
-    margin-top: 170px;
-    /* 上側のマージンを追加 */
-    margin-right: 200px;
-    width: 200px;
-    /* 適切な幅を設定 */
 }
 
 .choice {
-    margin-bottom: 10px;
+    margin: 10px;
     display: flex;
     align-items: center;
     background-color: #d3d3d3;
@@ -76,38 +51,14 @@ body {
     cursor: pointer;
 }
 
-.choice input {
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-.choice label {
-    margin: 0;
-    flex-grow: 1;
-    cursor: pointer;
-}
-
-
 .next-button {
     padding: 10px 20px;
     background-color: #00aaff;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
-    position: absolute;
-    bottom: 10px;
-    /* ボタンの位置を調整 */
-    right: 15px;
-}
-
-.footer p {
-    margin-left: 920px;
-}
-
-#next-button {
-    margin: 10px 50px 10px 50px;
-}
-
-#question_count {
-    margin-top: 100px;
+    height: 20px;
+    text-align: center;
+    font-size: 16px; /* フォントサイズを調整 */
+    margin: 20px;
 }
