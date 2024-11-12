@@ -3,7 +3,10 @@ html {
     overflow: hidden;
 }
 
-
+.top-contents{
+    margin: 10 0 0 16px;
+    line-height: 5px;
+}
 
 body {
     min-height: 100%;
@@ -21,6 +24,17 @@ body {
     position: relative;
     /* コンテナの相対位置を指定 */
 }
+
+/* 親要素の幅を制限して、画像の拡大を防ぐ */
+.center-contents {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* 全体は上寄せ */
+    padding-top: 20px;
+    padding: 30px 40px;
+}
+
+
 
 .footer {
     bottom: auto;
@@ -48,7 +62,7 @@ body {
     width: 500px;
     position: absolute;
     top: 200px;
-    left: 180px;
+    left: 70px;
 }
 
 .question p {
@@ -129,7 +143,13 @@ body {
     position: absolute;
     bottom: 10px;
     /* ボタンの位置を調整 */
-    right: 15px;
+    position: relative;
+    left: 1000px;
+}
+
+.next-button:hover{
+    color: #0c0c0c; /* ホバー時の背景色 */
+    background-color: #898989;  /* ホバー時のテキスト色 */
 }
 
 .footer p {
