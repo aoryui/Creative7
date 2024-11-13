@@ -116,4 +116,10 @@ ul {
   margin: 0;
 }
 
+ul li {
+  text-align: left;
+  display: inline-block; /* 1~4個目まで横並び */
+  width: 100%;
+}
+
 
