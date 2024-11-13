@@ -10,7 +10,7 @@
 /* ボディのスタイル */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #ffefd5;
     padding-top: 50px; /* ヘッダー分の余白 */
     padding-bottom: 30px; /* ボトムボタンの余白 */
 }
@@ -161,4 +161,8 @@ img.preview1, img.preview2 {
 
 .submit1{
     margin-left: 245px;
+}
+
+.correct-choice{
+    background-color: #83E64E;
 }
