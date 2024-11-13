@@ -17,7 +17,7 @@ background: #fff;
 box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 border-radius: 8px;
 width: 900px;
-height: 400px;
+height: 420px;
 background-color: #fff;
 position: relative;
 text-align: center;
@@ -38,15 +38,15 @@ left: -170px;
 
 
 .contain { /*言語非言語ジャンルの枠線*/
-  max-width: 250px;
+  max-width: 220px;
   margin: 40px; /* 上に40pxの余白を追加 */
   background: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   border-radius: 8px;
-  width: 200px;
+  width: 140px;
   background-color: rgb(244, 242, 242);
-  position: absolute;
-  top: 150px;
+  position: relative;
+  top: 110px;
   left: 150px;
   transform: translate(-50%, -50%);
   padding: 10px; 
@@ -56,62 +56,36 @@ left: -170px;
 
 .contains { /*言語非言語ジャンルの枠線*/
 max-width: 450px;
-margin: 40px; /* 上に40pxの余白を追加 */
-padding: 10px;
 background: #fff;
 box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 border-radius: 8px;
-width: 900px;
-height: 190px;
+width: 130px;
+height: 320px;
 background-color: rgb(244, 242, 242);
 position: relative;
-top: 113px;
-left: 550px;
-transform: translate(-50%, -50%);
-padding: 10px; 
-margin-bottom: 10px; 
+top: -90px;
+left: 450px;
+transform: translate(-50%, -50%); 
 border: 1px solid #333333;
 }
 
 
 .language{ /*言語*/
 display:block;
-text-align: right;
 padding: 5px;
 
 }
 
-.non_language1{ /*非言語*/
-display:block;
-text-align: left;
-position: relative;
-left: 90px;
-padding: 5px;
-}
-
-.non_language2{ /*非言語2*/
+.non_language{ /*非言語*/
   display:block;
-  text-align: left;
-  position: relative;
-  left: 200px;
-  top: -162px;
-  padding: 5px;
-  }
+  padding: 2px;
+}
 
-  .non_language3{ /*非言語3*/
-    display:block;
-    text-align: left;
-    position: relative;
-    left: 320px;
-    top: -300px;
-    padding: 5px;
-    }
-    
 
 .button{ /*選択ボタン*/
 position: relative;
 left: 300px;
-top: 20px;
+top: -350px;
 display: block;
 text-align: center;
 vertical-align: middle;
@@ -126,6 +100,7 @@ color: #fff;
 border-radius: 100vh;
 transition: 0.5s;
 }
+
 .button:hover {
   cursor: pointer;
 }
@@ -133,5 +108,22 @@ transition: 0.5s;
 .h2{
   position: relative;
   top: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  text-align: left;
+  display: inline-block; /* 1~4個目まで横並び */
+  width: 100%;
+}
+
+ul li:nth-child(n+5) {
+  text-align: right; /* 5つ目以降を右揃え */
+  display: block; /* ブロック表示で改行 */
 }
 
