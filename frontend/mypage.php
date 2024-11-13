@@ -80,13 +80,13 @@ if ($user_result->num_rows > 0) {
             
             <div class="profile-info">
                 <?php if ($level >= 100): ?>
-                    <img src="../image/character/shitake4.png" alt="シイタケ最終形態" width="350" height="300">
+                    <img src="../image/character/human4.png" alt="破壊ロボット" width="300" height="300">
                 <?php elseif ($level >= 50): ?>
-                    <img src="../image/character/shitake3.png" alt="シイタケ進化後" width="350" height="300">
+                    <img src="../image/character/human3.png" alt="黄金の騎士" width="300" height="300">
                 <?php elseif ($level >= 2): ?>
-                    <img src="../image/character/shitake2.png" alt="シイタケ成長後" width="350" height="300">
+                    <img src="../image/character/human2.png" alt="騎士" width="300" height="300">
                 <?php else: ?>
-                    <img src="../image/character/shitake1.png" alt="シイタケ原木" width="350" height="300">
+                    <img src="../image/character/human1.png" alt="普通の村人" width="300" height="300">
                 <?php endif; ?>
                 
                 <label>名前：</label><h2 id="name"><?= htmlspecialchars($user['username'], ENT_QUOTES, 'UTF-8') ?></h2>
