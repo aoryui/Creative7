@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/header_kanrisya.php'; //ヘッダー指定
 require_once __DIR__ . '/../backend/class.php';
 $form = new form();
 
@@ -35,7 +36,7 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
 </head>
 <body>
 <a href="question_list.php">問題一覧</a>
-<h2>問題編集</h2>
+<h2 class="question-edit-title">問題編集</h2>
 <table>
     <tbody>
         <tr>
@@ -53,13 +54,13 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
 
         <tr>
             <th>問題画像</th>
-            <td><img src="<?php echo $question_img; ?>" alt="問題画像"></td>
+            <td><img class="img1" src="<?php echo $question_img; ?>" alt="問題画像"></td>
             <td><img id="preview1" class="preview1" src="#" alt="プレビュー" style="display: none;"></td>
             <td><button onclick="openModal('modal2')">編集</button></td>
         </tr>
         <tr>
             <th>回答画像</th>
-            <td><img src="<?php echo $explanation_img; ?>" alt="解説画像"></td>
+            <td><img class="img1" src="<?php echo $explanation_img; ?>" alt="解説画像"></td>
             <td><img id="preview2" class="preview2" src="#" alt="プレビュー" style="display: none;"></td>
             <td><button onclick="openModal('modal3')">編集</button></td>
         </tr>
@@ -94,7 +95,11 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
         </tr>
     </tbody>
 </table>
-<button>問題を更新</button>
+<!-- 他のボタンとは別に配置 -->
+<div class="update-button-container">
+    <button type="button">問題を更新</button>
+</div>
+
 <!-- モーダル -->
 <div id="modal1" class="modal">
     <div class="modal-content">
@@ -155,7 +160,7 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
                 </div>
             </fieldset>
             <input type="hidden" name="genre_name" id="genre_name" />
-            <input type="submit" value="決定">
+            <input class="submit1" type="submit" value="決定">
         </form>
         
     </div>
@@ -218,7 +223,7 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
             </div>
             <button type="button" onclick="addChoice()">選択肢を追加</button>
             <button type="button" onclick="removeChoice()">選択肢を削除</button><br>
-            <input type="submit" value="決定">
+            <input class="submit1" type="submit" value="決定">
         </form>
     </div>
 </div>
@@ -229,7 +234,7 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
         <h2 for="time_limit">制限時間を入力（秒）:</h2>
         <form id="timesForm">
             <input type="number" id="time_limit" name="time_limit" min="1" value="30" required>
-            <input type="submit" value="決定">
+            <input class="submit1" type="submit" value="決定">
         </form>
     </div>
 </div>
@@ -240,7 +245,7 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
         <h2>問題の要約文を編集</h2>
         <form id="sentenceForm">
             <input type="text" id="sentence" name="sentence" maxlength="20" required><br>
-            <input type="submit" value="決定">
+            <input class="submit1" type="submit" value="決定">
         </form>
     </div>
 </div>
