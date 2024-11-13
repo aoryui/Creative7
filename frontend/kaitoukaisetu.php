@@ -23,51 +23,21 @@ $correct_choice_id = isset($correct_choices[$kaisetuID]) ? $correct_choices[$kai
 echo '<script>console.log('.json_encode($user_choice_id).')</script>';
 echo '<script>console.log('.json_encode($correct_choice_id).')</script>';
 
-// 正解の選択肢のテキストを取得する関数
-function getChoiceText($choice_id, $pdo) {
-    try {
-        // クエリを準備して実行
-        $stmt = $pdo->prepare('SELECT choice_text FROM choices WHERE choice_id = :choice_id');
-        $stmt->bindParam(':choice_id', $choice_id, PDO::PARAM_INT);
-        $stmt->execute();
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        if ($result) {
-            return $result['choice_text'];
-        }
-    } catch (PDOException $e) {
-        echo 'データベースエラー: ' . $e->getMessage();
-    }
-    return '無回答'; // テキストが取得できない場合は 無回答 を返す
-}
-
-// データベース接続情報を設定
-$dsn = 'mysql:host=localhost;dbname=creative7;charset=utf8';
-$username = 'Creative7'; // データベースのユーザー名
-$password = '11111'; // データベースのパスワード
-
-try {
-    // PDOインスタンスを作成
-    $pdo = new PDO($dsn, $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    // 正解の選択肢のテキストを取得
-    $correct_choice_text = getChoiceText($correct_choice_id, $pdo);
-
-    // ユーザーの回答のテキストを取得
-    $user_choice_text = getChoiceText($user_choice_id, $pdo);
-
-    // 質問の情報を取得
-    $stmt = $pdo->prepare('SELECT genre_text, question_text FROM questions WHERE question_id = :question_id');
-    $stmt->bindParam(':question_id', $question_num, PDO::PARAM_INT);
-    $stmt->execute();
-    $question_info = $stmt->fetch(PDO::FETCH_ASSOC);
-
-} catch (PDOException $e) {
-    echo 'データベース接続エラー: ' . $e->getMessage();
-}
-
 $form = new form();
-$kaisetu = $form->getQues($question_num);
+$list_choices = $form->getChoices($question_num); // choicesテーブルから選択肢データを全て取り出す
+$kaisetu = $form->getQuestion($question_num); // questionテーブルから問題データを全て取り出す
+
+echo '<script>console.log('.json_encode($list_choices).')</script>';
+echo '<script>console.log("あ",'.json_encode($user_choice_id).')</script>';
+
+// ユーザーが選択した選択肢のテキストを取得
+if($user_choice_id === 0 || $user_choice_id === "0"){ // choice_idが0の場合(無回答)
+    $user_choice_text = '無回答';
+}else{
+    $user_choice_text = $list_choices[$user_choice_id];
+}
+
+$correct_choice_text = $list_choices[$correct_choice_id];
 
 // 復習ページから表示した場合は自分の回答を非表示にする
 $display_user_choice = !($before_display === 'review' && $user_choice_text === '無回答');
@@ -97,53 +67,62 @@ $_SESSION['test_display'] = ''; //test_displayを初期化
     </script>
 </head>
 <body>
-    <div class="kaisetu1">
-        <main>
-            <h2>問題</h2>
-            <section class="container">
-                <div class="kaitou">
-                    <b>ジャンル:</b>
-                    <span><?php echo htmlspecialchars($question_info['genre_text'], ENT_QUOTES, 'UTF-8'); ?></span>
-                </div>
-                <div>
-                    <b>問題文:</b>
-                    <?php
-                    $image_path1 = "../image/問題集/" . $question_info['question_text'] . ".jpg";
-                    //HTMLで画像を表示
-                    echo '<img src="' . $image_path1 . '" alt="問題画像" class="question_img" width="100%" height="50%">';
-                    ?>
-                </div>
-            </section>
+    <div class="top-contents">
+        <b>ジャンル:</b>
+        <span><?php echo htmlspecialchars($kaisetu['genre_text'], ENT_QUOTES, 'UTF-8'); ?></span>
+    </div>
+    <div class="center-contents">
+        <div class="img-contents">
+            <div>
+                <h2>問題</h2>
+                <?php
+                $image_path1 = "../image/問題集/" . $kaisetu['question_text'] . ".jpg";
+                //HTMLで画像を表示
+                echo '<img src="' . $image_path1 . '" alt="問題画像" class="question_img">';
+                ?>
+            </div>
+            
+            <div>
+                <h2>解説</h2>
+                <?php
+                    // 画像のパスを作成
+                    $image_path = "../image/解説/" .$kaisetu['question_text'] . ".jpg";
+                    // HTMLで画像を表示
+                    echo '<img src="' . $image_path . '" alt="問題画像" class="answer_img">';
+                ?>
+            </div>
+        </div>
+
+        <div class="kaitou">
             <h2>回答</h2>
-            <section class="container">
-                <?php if ($display_user_choice) : ?> <!-- 復習ページから表示した場合は自分の回答を非表示にする -->
-                <div class="kaitou">
-                    <b>あなたの回答:</b>
-                    <span id="user-kaitou"><?php echo htmlspecialchars($user_choice_text, ENT_QUOTES, 'UTF-8'); ?></span>
-                </div>
-                <?php endif; ?>
-                <div class="kaitou">
-                    <b>正解:</b>
-                    <span id="correct-kaitou"><?php echo htmlspecialchars($correct_choice_text, ENT_QUOTES, 'UTF-8'); ?></span>
-                </div>
-            </section>
-            <h2>解説</h2>
-            <section class="container">
-                <p id="kaisetu">
-                    <p><?php
-                        // 画像のパスを作成
-                        $image_path = "../image/解説/" . $kaisetu['explanation'] . ".jpg";
-                        // HTMLで画像を表示
-                        echo '<img src="' . $image_path . '" alt="問題画像" class="question_img" width="100%" height="50%">';
-                    ?></p>
-                </p>
-            </section>
-            <?php if ($before_display === 'review') : ?> 
-                <a href="review.php" class="btn">復習問題一覧に戻る</a> <!-- 復習ページから開いた場合のボタンテキスト -->
-            <?php else : ?>
-                <a href="<?php echo $before_display ?>.php" class="btn">リザルトに戻る</a>
-            <?php endif; ?>
-        </main>
+            <?php
+            foreach ($list_choices as $choice_id => $choice_text) { // 選択肢を繰り返し処理で表示
+                $id_attribute = ($choice_id == $user_choice_id) ? ' id="user-choice"' : ''; // ユーザーの選択肢にid属性を付与
+                if ($choice_id == $correct_choice_id) {
+                    // 正しい選択肢だけ強調表示
+                    echo "<p class='correct-choice'$id_attribute>$choice_text</p>";
+                } else {
+                    echo "<p class='correct-choice1'$id_attribute>$choice_text</p>";
+                }
+            }
+            ?>
+            <?php if ($display_user_choice) : ?> <!-- 復習ページから表示した場合は自分の回答を非表示にする -->               
+                <div class="choice-collar">
+                あなたの回答
+                <div class="choice-preview"></div>
+            </div>
+            <?php endif; ?>  
+            <div class="correct-collar">
+                正しい回答
+                <div class="color-preview"></div>
+            </div>
+        </div>
+
+        <?php if ($before_display === 'review') : ?> 
+            <a href="review.php" class="btn">復習問題一覧に戻る</a> <!-- 復習ページから開いた場合のボタンテキスト -->
+        <?php else : ?>
+            <a href="<?php echo $before_display ?>.php" class="btn">リザルトに戻る</a>
+        <?php endif; ?>
     </div>
 </body>
 </html>

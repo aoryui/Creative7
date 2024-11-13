@@ -1,56 +1,101 @@
 body {
     background-color: #ffefd5;
-    /* クリーム色の背景 */
-}
-
-.kaisetu1 {
     margin-top: calc(100px + 20px);
-    margin-bottom: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 800px;
-    padding: 20px;
-    background: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
 }
 
-.container {
-    border: 1px solid #e0e0e0;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    background-color: #fafafa;
+.top-contents{
+    margin: 0 0 0 20px;
 }
 
-/*リンクにボタンをつける*/
+h2{
+    margin: 0 0 0 20px;
+}
+
+.question_img{
+    width: 500px;
+    margin: 20px;
+}
+
+.answer_img{
+    width: 500px;
+    margin: 20px;
+}
+
+.center-contents{
+    display: flex;
+    justify-content: space-between;
+}
+
+.img-contents{
+    display: flex;
+    flex-direction : column;
+}
+
+/* 正しい選択肢 */
+.correct-choice { 
+    max-width: 150px;  /* 選択肢の最大幅を150pxに設定 */
+    top: -725px;  /* 上に725px移動 */
+    left: 1100px;  /* 左に1100px移動 */
+    margin-bottom: 10px;  /* 下に10pxの余白を追加 */
+    display: flex;  /* 子要素をフレックスで配置 */
+    align-items: center;  /* 子要素を中央に配置 */
+    color: #ffffff;
+    background-color: #ff000076;  /* 背景色を半透明の赤に設定 */
+    padding: 5px;  /* 内側に5pxの余白を追加 */
+    border-radius: 5px;  /* 角を5pxの丸みを持たせる */
+}
+
+/* 間違えた選択肢 */
+.correct-choice1{
+    max-width: 150px;  /* 選択肢の最大幅を150pxに設定 */
+    top: -725px;  /* 上に725px移動 */
+    left: 1100px;  /* 左に1100px移動 */
+    margin-bottom: 10px;  /* 下に10pxの余白を追加 */
+    display: flex;  /* 子要素をフレックスで配置 */
+    align-items: center;  /* 子要素を中央に配置 */
+    background-color: #d3d3d3;  /* 背景色を薄いグレーに設定 */
+    padding: 5px;  /* 内側に5pxの余白を追加 */
+    border-radius: 5px;  /* 角を5pxの丸みを持たせる */
+}
+
+#user-choice{
+    border: 3px solid #00CCFF;
+
+}
+
+.color-preview {
+    width: 20px;           /* 四角い幅 */
+    height: 20px;          /* 四角い高さ */
+    background-color: #ff000076; /* 色の設定 */
+    vertical-align: middle; /* テキストと垂直方向を揃える */
+    border-radius: 3px;  /* 角を5pxの丸みを持たせる */
+    float: right;
+}
+
+.choice-preview {
+    width: 16px;                /* 四角い幅 */
+    height: 16px;               /* 四角い高さ */
+    border: 2px solid #00CCFF;  /* 色の設定 */
+    vertical-align: middle;     /* テキストと垂直方向を揃える */
+    border-radius: 3px;         /* 角を3pxの丸みを持たせる */
+    float: right;
+    background-color: transparent; /* 背景色を透明にする */
+}
+
 .btn {
-    width: 100%;
+    display: flex;
+    margin: 0 20px 0 0;
+    width: fit-content;
+    height: fit-content;
     padding: 10px;
     background-color: rgb(89, 208, 247);
     color: white;
     cursor: pointer;
     font-weight: bold;
+    border-radius: 5px;  /* 角を5pxの丸みを持たせる */
 }
 
 /*リンクの下線を消す*/
 a {
     text-decoration: none;
-}
-
-.kaitou {
-    margin-bottom: 10px;
-    font-size: 18px;
-}
-
-#user-kaitou,
-#correct-kaitou {
-    color: #000;
-}
-
-#kaisetu {
-    font-size: 18px;
-    color: #333;
-    line-height: 1.6;
-
 }
