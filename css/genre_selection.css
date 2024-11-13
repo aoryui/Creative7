@@ -116,14 +116,4 @@ ul {
   margin: 0;
 }
 
-ul li {
-  text-align: left;
-  display: inline-block; /* 1~4個目まで横並び */
-  width: 100%;
-}
-
-ul li:nth-child(n+5) {
-  text-align: right; /* 5つ目以降を右揃え */
-  display: block; /* ブロック表示で改行 */
-}
 
