@@ -3,7 +3,8 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between; /* ロゴとメニューボタンの間隔を調整 */
+    justify-content: space-between;
+    /* ロゴとメニューボタンの間隔を調整 */
     background-color: rgb(89, 208, 247);
     color: white;
     height: 100px;
@@ -12,7 +13,7 @@ header {
     top: 0;
     z-index: 999;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    
+
 }
 
 body,
@@ -25,7 +26,8 @@ html {
 #free-h1 {
     width: 100px;
     height: auto;
-    object-fit: contain; /* ロゴ画像が切れないように調整 */
+    object-fit: contain;
+    /* ロゴ画像が切れないように調整 */
 }
 
 /* ドロップダウンメニュー */
@@ -113,13 +115,28 @@ nav ul li a {
     height: 50px;
 }
 
+#submit {
+    appearance: none;
+    background: none;
+    /* 背景を透明に */
+    border: none;
+    /* ボーダーを消す */
+    padding: 0;
+    /* パディングをリセット */
+    cursor: pointer;
+    /* ポインターを手のアイコンに */
+    font-size: 18px;
+}
+
 /* iPhone 14対応のレスポンシブスタイル */
 @media (max-width: 390px) {
+
     /* ヘッダーをコンパクトに */
     header {
         height: 80px;
         justify-content: space-between;
-        padding: 0 10px; /* ヘッダー内のパディングを縮小 */
+        padding: 0 10px;
+        /* ヘッダー内のパディングを縮小 */
     }
 
     /* ロゴサイズ調整 */
@@ -134,7 +151,8 @@ nav ul li a {
     /* ナビゲーションメニューの幅とフォントサイズの調整 */
     nav {
         width: 100%;
-        height: calc(100% - 70px); /* ヘッダーの高さに合わせる */
+        height: calc(100% - 70px);
+        /* ヘッダーの高さに合わせる */
         top: 70px;
     }
 
@@ -145,7 +163,8 @@ nav ul li a {
     /* メニューアイコンとボタンを調整 */
     #menuBtn {
         padding-left: -22px;
-        font-size: 1px; /* メニューボタンのアイコンサイズをさらに大きく */
+        font-size: 1px;
+        /* メニューボタンのアイコンサイズをさらに大きく */
         width: 60px;
     }
 
