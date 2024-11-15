@@ -43,6 +43,7 @@ $subject = $_SESSION['subject'];
                 <?php
                 }
                 ?>
+                <input type="submit" onclick="window.close();" value="ウィンドウを閉じる">
             </ul>
             </nav>
         <script>
