@@ -87,6 +87,7 @@ $genre_text = nl2br(htmlspecialchars($question['genre_text'], ENT_QUOTES, 'UTF-8
 </head>
 <body>
     <div class="content"> <!-- 全体の要素 -->
+    <button class="edit-profile-btn" onclick="openEditModal()">練習開始に戻る</button>
         <div class="top-contents"><!-- 上のやつ -->
             <?php echo '<div id="question_genre">'.$genre_text.'</div>' ?> <!-- ジャンル名のやつ -->
             <?php echo '<div id="question_count">問題数'.($current_question_index+1).'/'.count($displayed_questions).'問目</div>'?> <!-- 問題数ののやつ -->
@@ -119,6 +120,17 @@ $genre_text = nl2br(htmlspecialchars($question['genre_text'], ENT_QUOTES, 'UTF-8
             <div class="next">
                 <a href="#" class="next-button" id="next-button">次に進む</a>
             </div>
+            <!-- 編集用のモーダル -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <a href="practice_start.php">
+	        <button type="button" class="button" id="container">移動</button>
+            <span class="close" onclick="closeEditModal()">&times;</span>
+            <button  onclick="closeEditModal()" class="button" id="container">閉じる</button>
+</a>
+
+    </div>
+
         </div>
     </div>
     <script>
@@ -145,6 +157,27 @@ $genre_text = nl2br(htmlspecialchars($question['genre_text'], ENT_QUOTES, 'UTF-8
                 window.location.href = 'practice_start.php';
             }
         });
+
+        
+        // モーダルを開く関数
+        function openEditModal() {
+            document.getElementById("editModal").style.display = "block";
+        }
+
+        // モーダルを閉じる関数
+        function closeEditModal() {
+            document.getElementById("editModal").style.display = "none";
+        }
+
+        // 閉じるボタンにイベントリスナーを追加
+        document.querySelector(".close").addEventListener("click", closeEditModal);
+
+        // モーダル外をクリックしたときにモーダルを閉じる
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("editModal")) {
+                closeEditModal();
+            }
+        }
 
     </script>
 </body>

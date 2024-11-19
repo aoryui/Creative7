@@ -123,10 +123,11 @@ $interval = $question['interval_num'];
 </head>
 <body scroll="no">
     <div class="content">
+    <button class="edit-profile-btn" onclick="openEditModal()">戻る</button>
         <div class="question">
         <div class="top-contents"><!-- 上のやつ -->
             <p id="question_count"><?php echo $genre_text ?></p> <!-- ジャンル名のやつ -->
-            <p><?php echo '問題数'.(count($displayed_questions)+1).'/'.$max_question.'問目'?></p> <!-- 問題数ののやつ -->
+            <p id="count"><?php echo '問題数'.(count($displayed_questions)+1).'/'.$max_question.'問目'?></p> <!-- 問題数ののやつ -->
         </div>
         <div class="center-contents"></div>
             <p class="img"><?php
@@ -159,6 +160,16 @@ $interval = $question['interval_num'];
             <div class="timer-bar" id="timer-bar"></div>
         </div>
     </div>
+                <!-- 編集用のモーダル -->
+                <div id="editModal" class="modal">
+                <div class="modal-content">
+                    <a href="teststart.php">
+                    <button type="button" class="button" id="container">移動</button>
+                    </a>
+                    <span class="close" onclick="closeEditModal()">&times;</span>
+                    <button  onclick="closeEditModal()" class="button" id="container">閉じる</button>
+                </div>
+                </div>
     <a href="#" class="next-button" id="next-button">次に進む</a>
     <script>
         const totalSegments = <?php echo $interval; ?>;
@@ -247,6 +258,26 @@ $interval = $question['interval_num'];
             timerBar.style.transition = 'width 0.1s linear'; // バーの動きのアニメーション設定
             updateTimer();
         });
+                
+        // モーダルを開く関数
+        function openEditModal() {
+            document.getElementById("editModal").style.display = "block";
+        }
+
+        // モーダルを閉じる関数
+        function closeEditModal() {
+            document.getElementById("editModal").style.display = "none";
+        }
+
+        // 閉じるボタンにイベントリスナーを追加
+        document.querySelector(".close").addEventListener("click", closeEditModal);
+
+        // モーダル外をクリックしたときにモーダルを閉じる
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("editModal")) {
+                closeEditModal();
+            }
+        }
     </script>
 </body>
 </html>
