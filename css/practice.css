@@ -1,10 +1,12 @@
 body {
     background-color: #ffefd5;
     margin-top: calc(100px + 20px);
+    overflow-y: scroll;
 }
 
 .top-contents{
     margin: 0 0 0 12px;
+    margin-top: -30px;
 }
 
 /* 親要素の幅を制限して、画像の拡大を防ぐ */
@@ -20,7 +22,8 @@ body {
     width: 500px;
     height: auto;
     margin: 0 50px;
-    object-fit: contain; 
+    object-fit: contain;
+    margin-top: -10px; 
 }
 
 #choiceForm{
@@ -53,6 +56,19 @@ label{
     cursor: pointer;
 }
 
+.edit-profile-btn{
+    background-color: #00aaff;    /* ボタンの背景色（必要に応じて調整） */
+    color: #fff; /* ボタンの文字色 */
+    width: 130px;
+    height: 60px;
+    position: relative;
+    top: 10px;
+    left: 1050px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
 .next-button {
     display: inline-block;
     padding: 10px 20px;
@@ -77,4 +93,61 @@ label{
 .next {
     align-self: flex-end; /* ボタンだけ下寄せ */
     margin-left: 20px; /* フォームとの間に余白 */
+}
+
+/* モーダルのスタイル */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    height: 40%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}  
+
+.button{
+    padding: 5px 10px; /* 内側の余白を減らして小さく */
+    background-color: #333; /* ボタンの背景色（必要に応じて調整） */
+    color: #fff; /* ボタンの文字色 */
+    border: none; /* 枠線を削除 */
+    border-radius: 5px; /* 少し丸みを持たせる */
+    width: 80px; /* ボタンの幅 */
+    height: 30px; /* ボタンの高さ */
+    cursor: pointer; /* カーソルの形状 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px; /* 必要に応じて位置調整 */
+    margin-left: 40%; /* 中央寄せにしたくない場合は削除 */
+}
+
+.button:hover {
+    background-color: #555;
 }
