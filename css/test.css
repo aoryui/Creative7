@@ -1,6 +1,6 @@
 html {
     height: 100%;
-    overflow: hidden;
+    overflow: hidden; /* スクロールを有効に */;
 }
 
 .top-contents{
@@ -11,7 +11,7 @@ html {
 body {
     min-height: 100%;
     background-color: #ffefd5;
-    overflow: hidden;
+    overflow: hidden; /* スクロールを有効に */;
 }
 
 .content {
@@ -78,6 +78,8 @@ body {
     margin-right: 200px;
     width: 200px;
     /* 適切な幅を設定 */
+    max-height: 300px; /* スクロール可能な高さを設定 */
+        overflow-y: auto; /* 縦方向にスクロールバーを追加 */
 }
 
 .choice {
