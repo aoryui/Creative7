@@ -73,11 +73,11 @@ if ($user_result->num_rows > 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Page</title>
     <link rel="stylesheet" href="../css/mypage.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="profile-container">
         <div class="profile-sidebar">
-            
             <div class="profile-info">
                 <?php if ($level >= 100): ?>
                     <img src="../image/character/human4.png" alt="破壊ロボット" width="300" height="300">
@@ -130,96 +130,57 @@ if ($user_result->num_rows > 0) {
                         <p>学習問題数：<?= htmlspecialchars($total_questions_nonlang, ENT_QUOTES, 'UTF-8') ?>問</p>
                     </div>
                 </div>
+                <!-- グラフ表示用のキャンバス -->
+                <canvas id="learningChart" width="100" height="100"></canvas>
             </div>
-           
-        </div>
-    </div>
-
-    <!-- 編集用のモーダル -->
-    <div id="editModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeEditModal()">&times;</span>
-            <div class="pro">
-            <h2>プロフィール編集</h2>
-            </div>
-                <form id="editForm" action="../backend/edit_profile.php" method="POST">
-                    <label for="editOption">編集する項目を選択してください:</label>
-                    <select id="editOption" name="editOption" required onchange="handleOptionChange()">
-                        <option value="name">名前</option>
-                        <option value="subject">学科</option>
-                    </select>
-
-                    <!-- 入力欄またはプルダウンメニュー -->
-                    <div id="editInputContainer">
-                        <label for="newValue">新しい値を入力してください:</label>
-                        <input type="text" id="newValue" name="newValue" required>
-                    </div>
-                    <div class="change-btn">
-                        <button class="edit-profile-btn" type="submit">変更</button>
-                    </div>
-                </form>
         </div>
     </div>
 
     <script>
-        function handleOptionChange() {
-            const editOption = document.getElementById('editOption').value;
-            const editInputContainer = document.getElementById('editInputContainer');
-            
-            if (editOption === 'subject') {
-                // 学科選択肢用のプルダウンメニューを表示
-                editInputContainer.innerHTML = `
-                    <label for="newValue">学科を選択してください:</label>
-                    <select id="newValue" name="newValue" required>
-                        <option value="ITエキスパート学科">ITエキスパート学科</option>
-                        <option value="ITスペシャリスト学科">ITスペシャリスト学科</option>
-                        <option value="情報処理学科">情報処理学科</option>
-                        <option value="AIシステム開発学科">AIシステム開発学科</option>
-                    </select>
-                `;
-            } else {
-                // 名前用のテキスト入力フィールドを表示
-                editInputContainer.innerHTML = `
-                    <label for="newValue">新しい値を入力してください:</label>
-                    <input type="text" id="newValue" name="newValue" required>
-                `;
-            }
-        }
-        // モーダルを開く関数
-        function openEditModal() {
-            document.getElementById("editModal").style.display = "block";
-        }
+        // PHPからデータをJSに渡す
+        const data = {
+            labels: ["総合", "言語", "非言語"],
+            datasets: [
+                {
+                    label: "平均正答率 (%)",
+                    data: [<?= $correct_rate ?>, <?= $correct_rate_lang ?>, <?= $correct_rate_nonlang ?>],
+                    backgroundColor: "rgba(75, 192, 192, 0.2)",
+                    borderColor: "rgba(75, 192, 192, 1)",
+                    borderWidth: 1,
+                },
+                {
+                    label: "平均回答時間 (秒)",
+                    data: [<?= $average_time ?>, <?= $average_time_lang ?>, <?= $average_time_nonlang ?>],
+                    backgroundColor: "rgba(255, 159, 64, 0.2)",
+                    borderColor: "rgba(255, 159, 64, 1)",
+                    borderWidth: 1,
+                },
+                {
+                    label: "学習問題数 (問)",
+                    data: [<?= $total_questions ?>, <?= $total_questions_lang ?>, <?= $total_questions_nonlang ?>],
+                    backgroundColor: "rgba(153, 102, 255, 0.2)",
+                    borderColor: "rgba(153, 102, 255, 1)",
+                    borderWidth: 1,
+                },
+            ],
+        };
 
-        // モーダルを閉じる関数
-        function closeEditModal() {
-            document.getElementById("editModal").style.display = "none";
-        }
+        const config = {
+            type: "bar",
+            data: data,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: "top" },
+                    title: { display: true, text: "学習進捗の統計" },
+                },
+                scales: { y: { beginAtZero: true } },
+            },
+        };
 
-        // 閉じるボタンにイベントリスナーを追加
-        document.querySelector(".close").addEventListener("click", closeEditModal);
-
-        // モーダル外をクリックしたときにモーダルを閉じる
-        window.onclick = function(event) {
-            if (event.target == document.getElementById("editModal")) {
-                closeEditModal();
-            }
-        }
-
-        // PHPから取得した経験値をJSに渡す
-        const currentExp = <?= $exp ?>; // 経験値
-        const maxExp = <?= $maxExp ?>; // 最大経験値
-
-        // レベルバーを更新する関数
-        function updateLevelBar(exp, maxExp) {
-            const levelBar = document.querySelector('.level-bar');
-            const percentage = (exp / maxExp) * 100;
-            levelBar.style.width = percentage + '%'; // 経験値に応じてバーの幅を調整
-        }
-
-        // ページ読み込み時に経験値バーを更新
-        window.onload = function() {
-            updateLevelBar(currentExp, maxExp);
-        }
+        // グラフを描画
+        const ctx = document.getElementById("learningChart").getContext("2d");
+        new Chart(ctx, config);
     </script>
 </body>
 </html>
