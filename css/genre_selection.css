@@ -1,125 +1,112 @@
-html {
-  overflow-y: scroll;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-
-body {
+body{
   background-color: #ffefd5;
- 
+}
+
+.border-frame {   
+    display: flex; /* フレックスボックスを有効化 */
+    flex-direction: column;
+    justify-content: center;
+    min-height: 450px;
+    padding-top: 120px;
+    padding-left: 200px;
+    padding-right: 200px;
+    box-sizing: border-box;
+    min-width: 400px;
+  }
+
+  .flex-inner[data-box-color="white"] {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden; /* 角を丸くするために内容を隠す */
+  }
+
+  .contain-left{
+    display: inline-block; 
+    margin: 0 10px; /* 少し余白をつける */
+    margin-left: 240px;
+    position: absolute;
+  }
+
+  .contain-right{
+  display: inline-block; /* inline-blockのままでもOK */
+  margin: 0 10px; /* 少し余白をつける */
+  margin-left: 450px;
+  margin-bottom: 50px ;
+  }
+
+h2 {
+    padding-top: 20px;
+    text-align: center; /* テキストを中央揃えに */
+}
+
+li{
+  width: fit-content;
+}
+
+legend{
+  text-align: center;
 }
 
 
-.border-frame{ /*言語非言語ジャンルの枠線*/
-max-width: 1000px;
-margin: 20px auto; /* 上に20pxの余白を追加 */
-background: #fff;
-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-border-radius: 8px;
-width: 900px;
-height: 420px;
-background-color: #fff;
-position: relative;
-text-align: center;
-top: 100px;
+/* 全選択のチェックボックスを中央に配置 */
+.select-all-container {
+  display: flex;
+  justify-content: center; /* 横方向の中央寄せ */
+  margin-bottom: 20px; /* 下部に少し余白を追加 */
 }
 
-.checksAll{ /*チェック機能のデザイン*/
-position: relative;
-top: 5px;
-left: -50px;
+.language-list-container, .non-language-list-container {
+  display: flex; /* フレックスボックスを使用 */
+  gap: 20px; /* 列間のスペースを調整 */
 }
 
-.checksAlls{
-  position: relative;
-top: 5px;
-left: -170px;
+.language-list, .non-language-list {
+  list-style: none; /* デフォルトのリストスタイルを削除 */
+  padding: 0; /* パディングをリセット */
+  margin: 0; /* マージンをリセット */
 }
 
-
-.contain { /*言語非言語ジャンルの枠線*/
-  max-width: 220px;
-  margin: 40px; /* 上に40pxの余白を追加 */
-  background: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  border-radius: 8px;
-  width: 140px;
-  background-color: rgb(244, 242, 242);
-  position: relative;
-  top: 110px;
-  left: 150px;
-  transform: translate(-50%, -50%);
-  padding: 10px; 
-  margin-bottom: 10px; 
-  border: 1px solid #333333;
+.primary {
+  margin-right: 20px; /* 左側のリストの余白調整 */
 }
 
-.contains { /*言語非言語ジャンルの枠線*/
-max-width: 450px;
-background: #fff;
-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-border-radius: 8px;
-width: 130px;
-height: 320px;
-background-color: rgb(244, 242, 242);
-position: relative;
-top: -90px;
-left: 450px;
-transform: translate(-50%, -50%); 
-border: 1px solid #333333;
+.secondary {
+  margin-left: 20px; /* 右側のリストの余白調整 */
 }
 
-
-.language{ /*言語*/
-display:block;
-padding: 5px;
-
+/* 言語系のリストのスタイル */
+.contain-left {
+  display: inline-block;
+  margin: 0 10px; /* 少し余白をつける */
+  margin-left: 240px;
+  position: absolute;
 }
 
-.non_language{ /*非言語*/
-  display:block;
-  padding: 2px;
+/* 非言語系のリストのスタイル */
+.contain-right {
+  display: inline-block;
+  margin: 0 10px; /* 少し余白をつける */
+  margin-left: 450px;
+  margin-bottom: 60px;
 }
 
-
-.button{ /*選択ボタン*/
-position: relative;
-left: 300px;
-top: -350px;
-display: block;
-text-align: center;
-vertical-align: middle;
-text-decoration: none;
-width: 180px;
-margin: auto;
-padding: 1rem 4rem;
-font-weight: bold;
-border: 2px solid #27acd9;
-background: #27acd9;
-color: #fff;
-border-radius: 100vh;
-transition: 0.5s;
+/* ボタンの基本スタイル */
+.button {
+  background-color: rgb(235, 118, 46); /* 緑色の背景 */
+  color: white; /* 白文字 */
+    padding: 12px 24px; /* 上下左右にパディング */
+    font-size: 16px; /* フォントサイズ */
+    border: none; /* ボーダーなし */
+    border-radius: 8px; /* 角を丸く */
+    cursor: pointer; /* ポインタを表示 */
+    display: block; /* ブロック要素として中央寄せ */
+    margin: 1px auto 15px; /* 自動マージンで中央に配置 */
+    width: 200px; /* ボタンの幅を指定 */
+    transition: background-color 0.3s, transform 0.2s; /* ホバー時のアニメーション */
 }
 
+/* ボタンにホバーエフェクトを追加 */
 .button:hover {
-  cursor: pointer;
+  background-color: rgb(235, 118, 46); /* ホバー時に色が少し変わる */
+  transform: scale(1.05); /* 少し拡大 */
 }
-
-.h2{
-  position: relative;
-  top: 20px;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-ul li {
-  text-align: left;
-  display: inline-block; /* 1~4個目まで横並び */
-  width: 100%;
-}
-
-

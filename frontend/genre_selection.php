@@ -14,108 +14,56 @@ require_once __DIR__ . '/header.php'; //ヘッダー指定
 
 <body>
     <div class="border-frame">
-        <div class="h2">
+    <div class="flex-inner" data-box-color="white">
         <h2>ジャンルを選択してください</h2>
-        </div>
+        
     <form method="post" action="../backend/genre.php"  onsubmit="return validateForm()">
     <!-- 言語系 -->
-    <fieldset class="contain">
-            <legend>言語系</legend>
-                <input type="checkbox" id="ChecksAllLanguage">
-                <label for="ChecksAllLanguage">全選択</label>
-        <div class="lan">
-        
-        <label class="language">
-            <input type="checkbox"  class="language-checkbox" id="genre1" name="language[]" value="1">二語の関係
-        </label>
-        <label class="language">
-            <input type="checkbox"  class="language-checkbox" id="genre2" name="language[]" value="2">語句の意味
-        </label>
-
-        <label class="language">
-            <input type="checkbox"  class="language-checkbox" id="genre3" name="language[]" value="3">語句の用法
-        </label>
-
-        <label class="language">
-            <input type="checkbox"  class="language-checkbox" id="genre4" name="language[]" value="4">文章の整序
-        </label>
-
-        <label class="language">
-            <input type="checkbox"  class="language-checkbox" id="genre5" name="language[]" value="5">空欄の補充
-        </label>
-        </div>
+<fieldset class="contain-left">
+    <legend>言語系</legend>
+    <div class="select-all-container">
+        <input type="checkbox" id="ChecksAllLanguage">
+        <label for="ChecksAllLanguage">全選択</label>
+    </div>
+    <div class="language-list-container">
+        <ul class="language-list primary">
+            <li><input type="checkbox" class="language-checkbox" id="genre1" name="language[]" value="1">二語の関係</li>
+            <li><input type="checkbox" class="language-checkbox" id="genre2" name="language[]" value="2">語句の意味</li>
+            <li><input type="checkbox" class="language-checkbox" id="genre3" name="language[]" value="3">語句の用法</li>
+            <li><input type="checkbox" class="language-checkbox" id="genre4" name="language[]" value="4">文章の整序</li>
+            <li><input type="checkbox" class="language-checkbox" id="genre5" name="language[]" value="5">空欄の補充</li>
+        </ul>
+    </div>
 </fieldset>
 
-    <!-- 非言語系 -->
-    <fieldset class="contains">
-            <legend>非言語系</legend>
-            <input type="checkbox" id="ChecksAllNonLanguage">
-                <label for="ChecksAllNonLanguage">全選択</label>
-        <ul>
-        <label class="non_language">
-            <li>
-            <input type="checkbox" class="non-language-checkbox" id="genre6" name="non_language[]" value="1">場合の数
-            </li>
-        </label>
-
-        <label class="non_language">
-            <li>
-            <input type="checkbox" class="non-language-checkbox" id="genre7" name="non_language[]" value="2">推論
-            </li>
-        </label>
-
-        <label class="non_language">
-            <li>
-            <input type="checkbox" class="non-language-checkbox" id="genre8" name="non_language[]" value="3">割合
-            </li>
-        </label>
-
-        <label class="non_language">
-            <li>
-            <input type="checkbox" class="non-language-checkbox" id="genre9" name="non_language[]" value="4">確率
-            </li>
-        </label>
-
-        <label class="non_language">
-            <li>
-            <input type="checkbox" class="non-language-checkbox" id="genre10" name="non_language[]" value="5">金額計算
-            </li>
-        </label>
-
-        <label class="non_language">
-            <li>
-            <input type="checkbox" class="non-language-checkbox" id="genre11" name="non_language[]" value="6">分担計算
-            </li>
-        </label>
-
-        <label class="non_language">
-            <li>
-            <input type="checkbox" class="non-language-checkbox" id="genre12" name="non_language[]" value="7">速度算
-            </li>
-        </label>
-
-        <label class="non_language">
-            <li>
-            <input type="checkbox" class="non-language-checkbox" id="genre12" name="non_language[]" value="8">集合
-            </li>
-        </label>
-
-        <label class="non_language">
-            <li>
-            <input type="checkbox" class="non-language-checkbox" id="genre12" name="non_language[]" value="9">表の読み取り
-            </li>
-        </label>
-
-        <label class="non_language">
-            <li>
-            <input type="checkbox" class="non-language-checkbox" id="genre12" name="non_language[]" value="10">特殊計算
-            </li>
-        </label>
-    </ul>
-    </fieldset>
+<!-- 非言語系 -->
+<fieldset class="contain-right">
+    <legend>非言語系</legend>
+    <div class="select-all-container">
+        <input type="checkbox" id="ChecksAllNonLanguage">
+        <label for="ChecksAllNonLanguage">全選択</label>
+    </div>
+    <div class="non-language-list-container">
+        <ul class="non-language-list primary">
+            <li><input type="checkbox" class="non-language-checkbox" id="genre6" name="non_language[]" value="1">場合の数</li>
+            <li><input type="checkbox" class="non-language-checkbox" id="genre7" name="non_language[]" value="2">推論</li>
+            <li><input type="checkbox" class="non-language-checkbox" id="genre8" name="non_language[]" value="3">割合</li>
+            <li><input type="checkbox" class="non-language-checkbox" id="genre9" name="non_language[]" value="4">確率</li>
+            <li><input type="checkbox" class="non-language-checkbox" id="genre10" name="non_language[]" value="5">金額計算</li>
+        </ul>
+        <ul class="non-language-list secondary">
+            <li><input type="checkbox" class="non-language-checkbox" id="genre11" name="non_language[]" value="6">分担計算</li>
+            <li><input type="checkbox" class="non-language-checkbox" id="genre12" name="non_language[]" value="7">速度算</li>
+            <li><input type="checkbox" class="non-language-checkbox" id="genre13" name="non_language[]" value="8">集合</li>
+            <li><input type="checkbox" class="non-language-checkbox" id="genre14" name="non_language[]" value="9">表の読み取り</li>
+            <li><input type="checkbox" class="non-language-checkbox" id="genre15" name="non_language[]" value="10">特殊計算</li>
+        </ul>
+    </div>
+</fieldset>
     <button class="button" type="submit">選択</button>
     </form>
     </div>        
+    </div>
 </body>
 </html>
 
