@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($current_question_index >= count($displayed_questions)) {
             // 模擬試験か練習問題かを判別させるセッション
             $_SESSION['test_display'] = 'practice';
-            echo '<script>window.location.href = "result.php";</script>';
+            echo '<script>window.location.href = "rensyu_result.php";</script>';
             exit;
         }
     }

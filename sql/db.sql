@@ -77,6 +77,15 @@ CREATE TABLE wrong (
     question_id int(255) NOT NULL 
 );
 
+DROP TABLE IF EXISTS question_statistics;
+CREATE TABLE question_statistics (
+    question_id INT NOT NULL,
+    total_answers INT NOT NULL DEFAULT 0, -- 総回答数
+    incorrect_answers INT NOT NULL DEFAULT 0, -- 間違えた回数
+    PRIMARY KEY (question_id),
+    FOREIGN KEY (question_id) REFERENCES questions(question_id) ON DELETE CASCADE
+);
+
 -- 問題を挿入
 INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (1,1,1,30,'二語の関係','1_1_1','相対的：絶対的');
 INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (2,1,1,30,'二語の関係','1_1_2','海流：暖流');

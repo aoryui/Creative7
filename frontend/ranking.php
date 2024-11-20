@@ -134,6 +134,6 @@ foreach ($rankings as $key => $value) {
 
     <a href="?page=<?php echo $page + 1; ?>" class="next <?php echo ($page >= $totalPages) ? 'hidden' : ''; ?>">次 &raquo;</a>
 </div>
-    </>
+<a href="question_ranking.php">ランキング</a>
 </body>
 </html>

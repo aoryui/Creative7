@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (count($displayed_questions) >= $max_question) {
         // 模擬試験か練習問題かを判別させるセッション
         $_SESSION['test_display'] = 'test';
-        echo '<script>window.location.href = "result.php";</script>';
+        echo '<script>window.location.href = "honban_result.php";</script>';
         exit();
     }
 }

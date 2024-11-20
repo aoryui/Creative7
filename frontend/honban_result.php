@@ -8,17 +8,18 @@ if (isset($_SESSION['userid'])) {
     $username1 = $_SESSION['userName'];
 }
 
-// データベースに接続するための情報
+// データベース接続設定
 $host = 'localhost';
+$dbname = 'creative7';
 $username = 'Creative7';
 $password = '11111';
-$database = 'creative7';
 
-// データベースに接続
-$conn = mysqli_connect($host, $username, $password, $database);
+// MySQLi を使った接続
+$conn = new mysqli($host, $username, $password, $dbname);
 
-if (!$conn) {
-    die('データベースに接続できませんでした: ' . mysqli_connect_error());
+// 接続エラーの確認
+if ($conn->connect_error) {
+    die("データベース接続エラー: " . $conn->connect_error);
 }
 
 // セッションから開いたページのファイル名を取得
@@ -67,9 +68,26 @@ foreach ($displayed_questions as $key => $question_id) {
 
     // 正誤判定
     if ($selected_choice_id == $correct_choice_id) {
+        // 正解の場合のSQL
+        $sql_correct = "INSERT INTO question_statistics (question_id, total_answers, incorrect_answers)
+                        VALUES ($question_id, 1, 0) -- 初回回答
+                        ON DUPLICATE KEY UPDATE
+                        total_answers = total_answers + 1";
+
+        // 正解の場合の処理
+        $conn->query($sql_correct); // $conn はデータベース接続オブジェクト
         $correct_answers[$question_id] = true; // 正解の場合
         $correct_count++; // 正解数をカウント
     } else {
+        // 不正解の場合のSQL
+        $sql_incorrect = "INSERT INTO question_statistics (question_id, total_answers, incorrect_answers)
+                        VALUES ($question_id, 1, 1) -- 初回回答
+                        ON DUPLICATE KEY UPDATE
+                        total_answers = total_answers + 1,
+                        incorrect_answers = incorrect_answers + 1";
+
+        // 不正解の場合の処理
+        $conn->query($sql_incorrect); // $conn はデータベース接続オブジェクト
         $correct_answers[$question_id] = false; // 不正解の場合
     }
 
