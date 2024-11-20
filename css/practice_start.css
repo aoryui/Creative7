@@ -4,15 +4,15 @@ body {
 
 .border-frame {   
     display: flex; /* フレックスボックスを有効化 */
-    flex-direction: column;
     justify-content: center;
-    min-height: 450px;
+    min-height: 530px; /* 縦の長さを増加 */
     padding-top: 120px;
     padding-left: 200px;
     padding-right: 200px;
     box-sizing: border-box;
     min-width: 600px;
 }
+
 
 .flex-inner[data-box-color="white"] {
     background: #fff;
@@ -30,11 +30,12 @@ h2 {
     margin: 0 10px; /* 少し余白をつける */
     margin-left: 240px;
     position: absolute;
+    margin-bottom: 40px;
+    
 }
 
 .right-contain {
-    display: inline-block; /* inline-blockのままでもOK */
-    margin: 0 100px; /* 少し余白をつける */
+    margin: 0 200px; /* 少し余白をつける */
     margin-left: 450px;
     margin-bottom: 30px;
 }
@@ -65,12 +66,43 @@ legend {
 
 .non-language-list-container {
     display: flex; /* フレックスボックスを有効化 */
-    
+    flex-wrap: wrap; /* 折り返しを有効にする */
+    max-width: 200px; /* コンテナの幅を調整 */
+    gap: 5px;
 }
 
 .non-language-list-container li {
-    display: block;
-    flex: 1 1 calc(100% / 2 - 20px); /* 1行に4つ並ぶ幅を計算 */
+    flex: 1 1 calc(50% - 20px); /* 1行に2つ並べるように幅を設定 */
     writing-mode: horizontal-tb; /* 文字を横書きにする */
-    margin-left: 10px; /* 初期は左マージンなし */
+    margin-left: 0; /* 初期は左マージンなし */
+    text-align: center;
 }
+
+/* ボタンの基本スタイル */
+.button {
+    background-color: rgb(235, 118, 46); /* 緑色の背景 */
+    color: white; /* 白文字 */
+      padding: 12px 24px; /* 上下左右にパディング */
+      font-size: 16px; /* フォントサイズ */
+      border: none; /* ボーダーなし */
+      border-radius: 8px; /* 角を丸く */
+      cursor: pointer; /* ポインタを表示 */
+      display: block; /* ブロック要素として中央寄せ */
+      margin: 1px auto 15px; /* 自動マージンで中央に配置 */
+      width: 200px; /* ボタンの幅を指定 */
+      transition: background-color 0.3s, transform 0.2s; /* ホバー時のアニメーション */
+      top: 300px;
+      position: relative;
+      top: 150px;
+  }
+  
+  /* ボタンにホバーエフェクトを追加 */
+  .button:hover {
+    background-color: rgb(235, 118, 46); /* ホバー時に色が少し変わる */
+    transform: scale(1.05); /* 少し拡大 */
+  }
+
+
+
+
+

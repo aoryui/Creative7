@@ -128,21 +128,19 @@ echo '<script>console.log('.json_encode($genre_texts).')</script>';
         <fieldset class="right-contain">
         <legend>非言語</legend>
         <div class="non-language-list-container">
-            <ul class="non-language-list primary">
-            <?php
-                if (empty($_SESSION['genre_texts']['field_2'])) {
-                    echo "<li>なし</li>";
-                } else {
-                    echo '<ul class="non-language-list-container">'; // コンテナを開始
-                    foreach ($_SESSION['genre_texts']['field_2'] as $genre_text) {
-                        echo "<li>{$genre_text}</li>"; // 各ジャンルをリストアイテムとして出力
-                    }
-                    echo '</ul>'; // コンテナを閉じる
-                }
-            ?>
+    <?php
+    if (empty($_SESSION['genre_texts']['field_2'])) {
+        echo "<li>なし</li>";
+    } else {
+        foreach ($_SESSION['genre_texts']['field_2'] as $genre_text) {
+            echo "<li>{$genre_text}</li>";
+        }
+    }
+    ?>
+        </div>
         </fieldset>
-        <div class="button-container">
-                    <input type="button" onclick="location.href='practice.php'" value="練習問題を開始する">
+                    
+                    <button class="button" type="submit" onclick="location.href='practice.php'">練習問題を開始する</button>
         </div>
     </div>
 </div>          
