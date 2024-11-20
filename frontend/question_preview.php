@@ -1,4 +1,8 @@
 <?php
+// キャッシュをクリア
+$filename = 'style.css';
+echo '<link rel="stylesheet" href="' . $filename . '?ver=' . filemtime($filename) . '">';
+
 require_once __DIR__ . '/header_kanrisya.php'; //ヘッダー指定
 require_once __DIR__ . '/../backend/class.php';
 $form = new form();
