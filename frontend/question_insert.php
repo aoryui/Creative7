@@ -32,7 +32,7 @@ if (!empty($message)) {
                 </li>
                 <li>
                 <input type="radio" id="lang_2" name="field" value="1_2" required />
-                <label for="lang_2">語句の意味</label>
+                <label for="lang_2">熟語の意味</label>
                 </li>
                 <li>
                 <input type="radio" id="lang_3" name="field" value="1_3" required />

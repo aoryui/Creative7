@@ -28,7 +28,7 @@ require_once __DIR__ . '/header.php'; //ヘッダー指定
     <div class="language-list-container">
         <ul class="language-list primary">
             <li><input type="checkbox" class="language-checkbox" id="genre1" name="language[]" value="1">二語の関係</li>
-            <li><input type="checkbox" class="language-checkbox" id="genre2" name="language[]" value="2">語句の意味</li>
+            <li><input type="checkbox" class="language-checkbox" id="genre2" name="language[]" value="2">熟語の意味</li>
             <li><input type="checkbox" class="language-checkbox" id="genre3" name="language[]" value="3">語句の用法</li>
             <li><input type="checkbox" class="language-checkbox" id="genre4" name="language[]" value="4">文章の整序</li>
             <li><input type="checkbox" class="language-checkbox" id="genre5" name="language[]" value="5">空欄の補充</li>

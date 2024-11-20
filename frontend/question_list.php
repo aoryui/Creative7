@@ -29,7 +29,7 @@ $list_questions = $form->getQuestion_fieldgenre($field, $genre);
     <select id="genre" name="genre"> 
         <option disabled="disabled">-- 言語 --</option>
         <option value="1,1" <?= $question_id === "1,1" ? 'selected' : ''; ?>>二語の関係</option>
-        <option value="1,2" <?= $question_id === "1,2" ? 'selected' : ''; ?>>語句の意味</option>
+        <option value="1,2" <?= $question_id === "1,2" ? 'selected' : ''; ?>>熟語の意味</option>
         <option value="1,3" <?= $question_id === "1,3" ? 'selected' : ''; ?>>語句の用法</option>
         <option value="1,4" <?= $question_id === "1,4" ? 'selected' : ''; ?>>文章整序</option>
         <option value="1,5" <?= $question_id === "1,5" ? 'selected' : ''; ?>>空欄補充</option>

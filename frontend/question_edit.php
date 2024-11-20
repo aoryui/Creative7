@@ -131,8 +131,8 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
                     <input type="radio" id="lang_1" name="field" value="1_1" required <?php if ($genre_text == '二語の関係') echo 'checked'; ?> />
                     <label for="lang_1">二語の関係</label>
 
-                    <input type="radio" id="lang_2" name="field" value="1_2" required <?php if ($genre_text == '語句の意味') echo 'checked'; ?> />
-                    <label for="lang_2">語句の意味</label>
+                    <input type="radio" id="lang_2" name="field" value="1_2" required <?php if ($genre_text == '熟語の意味') echo 'checked'; ?> />
+                    <label for="lang_2">熟語の意味</label>
 
                     <input type="radio" id="lang_3" name="field" value="1_3" required <?php if ($genre_text == '語句の用法') echo 'checked'; ?> />
                     <label for="lang_3">語句の用法</label>
