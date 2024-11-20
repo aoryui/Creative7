@@ -8,12 +8,10 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    color: #333;
 }
 
 header {
     background-color: #333;
-    color: #fff;
     padding: 20px 0;
     position: relative;
 }
@@ -23,13 +21,11 @@ header {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
-    text-align: center;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -41,7 +37,7 @@ nav ul li a {
 
 .kan-right {
     position: absolute;
-    top: 20px;
+    top: 13px;
     right: 20px;
     background-color: rgb(84, 196, 99);
     color: #fff;
@@ -104,55 +100,4 @@ img {
 
 .hero .btn:hover {
     background-color: rgb(60, 158, 202);
-}
-
-
-
-/* レスポンシブデザイン: iPhone 14（画面幅390px）対応 */
-@media (max-width: 390px) {
-    .container {
-        width: 90%; /* 横幅の余白を調整 */
-        padding: 0 10px;
-    }
-
-    nav ul {
-        flex-direction: column; /* ナビゲーションを縦並びに */
-    }
-
-    .hero {
-        position: relative;
-        top: 50px;
-        height: 300px; /* メインビジュアルの高さを小さく */
-    }
-
-    .hero h1 {
-        font-size: 2em; /* タイトルの文字サイズを小さく */
-        width: 270px;
-        margin-left: 20px; /* 右に配置 */
-    }
-
-    img{
-        position: relative;
-        left: -45px;
-    }
-    
-    .hero p {
-        font-size: 1em; /* 説明文の文字サイズを縮小 */
-    }
-
-    .hero .btn {
-        position: relative;
-        left: 0px;
-        top: -10px;
-        font-size: 1.2em; /* ボタンの文字サイズを小さく */
-        padding: 10px 20px;
-    }
-
-    .kan-right {
-        top: 15px;
-        right: 15px;
-        font-size: 0.8em;
-        padding: 6px 14px; /* 管理者ログインボタンのサイズ縮小 */
-        display: none;
-    }
 }

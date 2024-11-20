@@ -1,87 +1,114 @@
-/* ベーシックなリセット */
+/*header関連*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ページ全体のスタイル */
 body {
     font-family: Arial, sans-serif;
-    font-size: 14px;
-    line-height: 1.6;
     background-color: #f4f4f4;
-    padding: 20px;
 }
 
-/* ヘッダーのスタイル */
+
 header {
     background-color: #333;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-    margin-bottom: 20px;
+    padding: 20px 0;
+    position: relative;
 }
 
-header h1 {
-    margin-bottom: 10px;
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
 nav ul {
     list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li a {
-    color: white;
+    color: #fff;
     text-decoration: none;
+    padding: 10px;
 }
 
-/* セクションのスタイル */
+.kan-right {
+    position: absolute;
+    top: 13px;
+    right: 20px;
+    background-color: rgb(84, 196, 99);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    padding: 8px 18px;
+}
+
+.kan-right:hover {
+    background-color: rgb(60, 148, 74);
+}
+/*ここまでがheader関連*/
+/* メインセクションのデザイン */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+/* 各セクションのスタイル */
 section {
-    background-color: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff; /* 白い背景 */
+    margin-bottom: 20px; /* 各セクション間の余白 */
+    padding: 20px; /* 内側の余白 */
+    border-radius: 8px; /* 角丸デザイン */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 軽い影 */
 }
 
-/* フッターのスタイル */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: 20px;
+/* セクションタイトル */
+section h2 {
+    font-size: 1.8em; /* 大きめのフォントサイズ */
+    color: #007BFF; /* アクセントカラーに青を採用 */
+    border-left: 5px solid #007BFF; /* 左側にラインを追加 */
+    padding-left: 10px; /* ラインと文字の間に余白 */
+    margin-bottom: 10px; /* タイトル下部のスペース */
 }
 
-/* iPhone 14対応のレスポンシブスタイル */
-@media (max-width: 390px) {
-    body {
-        font-size: 16px; /* フォントサイズを少し大きく */
-        padding: 10px;
-    }
+/* テキスト部分 */
+section p {
+    font-size: 1.1em; /* 読みやすいフォントサイズ */
+    line-height: 1.6; /* 行間を広げて読みやすく */
+    color: #555; /* 優しい文字色 */
+    margin-bottom: 10px; /* 各段落の間隔 */
+}
 
-    header, footer {
-        padding: 15px 0;
-    }
+/* リストのスタイル */
+section ul {
+    list-style: disc; /* 通常の箇条書きスタイル */
+    padding-left: 20px; /* 左側に余白 */
+    margin: 10px 0; /* 上下に少し余白 */
+}
 
-    nav ul li {
-        display: block;
-        margin-bottom: 10px;
-    }
+section ul li {
+    margin-bottom: 5px; /* リスト項目の間隔 */
+    font-size: 1.1em; /* リスト項目も少し大きめに */
+}
 
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
     section {
-        padding: 15px;
-        margin-bottom: 15px;
+        padding: 15px; /* モバイルでは余白を調整 */
     }
 
-    #types  ul{
-        padding-left: 20px;
+    section h2 {
+        font-size: 1.5em; /* タイトルのフォントサイズを調整 */
+    }
 
+    section p,
+    section ul li {
+        font-size: 1em; /* テキストを少し縮小 */
     }
 }

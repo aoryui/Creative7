@@ -1,60 +1,60 @@
-<?php
-// ページタイトルとメタデータ
-$title = "SPI試験の概要";
-$description = "SPI試験とは、日本の企業で採用試験として広く利用されている試験です。その種類、内容、対策について詳しく説明します。";
-
-// ヘッダー
-function displayHeader($title) {
-    echo "<header>";
-    echo "<h1>" . $title . "</h1>";
-    echo "<nav><ul><li><a href='#about'>SPIとは？</a></li><li><a href='#types'>SPIの種類</a></li><li><a href='#prep'>対策方法</a></li></ul></nav>";
-    echo "</header>";
-}
-
-// フッター
-function displayFooter() {
-    echo "<footer>";
-    echo "<p>&copy; 2024 SPI試験の詳細 | お問い合わせはこちら</p>";
-    echo "</footer>";
-}
-
-// メインコンテンツ
-function displayContent() {
-    echo "<section id='about'>";
-    echo "<h2>SPIとは？</h2>";
-    echo "<p>SPIは、Synthetic Personality Inventoryの略で、多くの日本企業が採用選考の際に実施する適性試験です。基礎学力や論理的思考力、性格面を評価するために使われています。</p>";
-    echo "</section>";
-
-    echo "<section id='types'>";
-    echo "<h2>SPIの種類</h2>";
-    echo "<ul>";
-    echo "<li>ペーパーテスト</li>";
-    echo "<li>Webテスト</li>";
-    echo "<li>テストセンター</li>";
-    echo "</ul>";
-    echo "</section>";
-
-    echo "<section id='prep'>";
-    echo "<h2>SPIの対策方法</h2>";
-    echo "<p>SPI試験に対しては、適切な準備が必要です。問題集の活用や、過去問を繰り返し解くことが推奨されています。また、時間配分の練習も重要です。</p>";
-    echo "</section>";
-}
-?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="<?php echo $description; ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $title; ?></title>
-    <!-- SPI.css ファイルを読み込むためのリンク -->
+    <title>SPI サイト</title>
     <link rel="stylesheet" href="../css/SPI.css">
 </head>
+
 <body>
-    <?php
-    displayHeader($title);
-    displayContent();
-    displayFooter();
-    ?>
+
+<!-- ヘッダー -->
+<header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="home.php">ホーム</a></li> <!-- ""は更新　-->
+                    <li><a href="SPI.php">SPIとは</a></li>
+                    <li><a href="seihin.php">製品とサービス</a></li>
+                    <li><a href="https://forms.gle/oMCuBp2MY42qXyEu8">お問い合わせ</a></li>
+                </ul>
+            </nav>
+
+        </div>
+        <a href="kanrisya_login.php" class="kan-right">管理者ログイン</a>
+</header>
+
+  <main>
+    <section>
+      <h2>SPIとは</h2>
+      <ul>
+      <p>
+        SPIとは「Synthetic Personality Inventory」の略<br>
+        リクルートマネジメントソリューションズ社が開発した適性検査
+      </p>
+      </ul>
+    </section>
+    <section>
+      <h2>特徴</h2>
+        <ul>
+        <p>働く上で必要となる基礎的な能力を測る「能力検査」</p>
+        <p>人となりを知るための「性格検査」</p>
+        <p>現在国内で活用されている適性検査は約30種類。その中でも、最も多くの企業で活用されているのが「SPI」</p>
+        <p>企業はSPIを用いることで、応募者の性格特性や知的能力を知ることができ自社に合っているかどうかの判断材料としています</p>
+        </ul>
+    </section>
+    <section>
+      <h2>使用例</h2>
+      <p>
+        SPIは、以下のような場合に使用されます：
+      </p>
+        <ul>
+        <p>面接に呼び込む応募者の優先順位づけのための利用</p>
+        <p>内定者フォローにおける自己理解・相互理解促進ツールとしての利用</p>
+        <p>求める人物像の明確化における利用</p>
+        </ul>
+    </section>
+  </main>
 </body>
 </html>
