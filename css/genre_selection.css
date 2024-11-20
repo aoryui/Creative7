@@ -39,9 +39,7 @@ h2 {
     text-align: center; /* テキストを中央揃えに */
 }
 
-li{
-  width: fit-content;
-}
+
 
 legend{
   text-align: center;
