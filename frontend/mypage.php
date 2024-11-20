@@ -131,12 +131,12 @@ if ($user_result->num_rows > 0) {
                     </div>
                 </div>
                 <!-- グラフ表示用のキャンバス -->
-                <canvas id="learningChart" width="100" height="100"></canvas>
+                <!-- <canvas id="learningChart" width="100" height="100"></canvas> -->
             </div>
         </div>
     </div>
 
-    <script>
+    <!-- <script> 
         // PHPからデータをJSに渡す
         const data = {
             labels: ["総合", "言語", "非言語"],
@@ -181,6 +181,6 @@ if ($user_result->num_rows > 0) {
         // グラフを描画
         const ctx = document.getElementById("learningChart").getContext("2d");
         new Chart(ctx, config);
-    </script>
+    </script> -->
 </body>
 </html>
