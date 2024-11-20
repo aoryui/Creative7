@@ -45,8 +45,9 @@ if ($user_result->num_rows > 0) {
         // レベルアップ時に余剰経験値を計算し、$expをリセット
         $exp = $exp % $maxExp;
 
-        // レベルを更新
-        $level += floor($user['exp'] / $maxExp); // 余剰経験値に応じてレベルを更新
+        // levelをデータベースから取得
+        $level = $user['level']; // データベースからレベルを取得
+        $badge = '';
 
         // データベースのexpフィールドとlevelフィールドを更新
         $update_sql = "UPDATE userinfo SET exp = $exp, level = $level WHERE userid = $userid";
@@ -79,12 +80,56 @@ if ($user_result->num_rows > 0) {
     <div class="profile-container">
         <div class="profile-sidebar">
             <div class="profile-info">
-                <?php if ($level >= 100): ?>
-                    <img src="../image/character/human4.png" alt="破壊ロボット" width="300" height="300">
+                <?php if ($level >= 125): ?>
+                    <img src="../image/character/human5.5.png" alt="" width="300" height="300">
+                <?php elseif ($level >= 120): ?>
+                    <img src="../image/character/human5.4.png" alt="" width="300" height="300">
+                <?php elseif ($level >= 115): ?>
+                    <img src="../image/character/human5.3.png" alt="" width="300" height="300">
+                <?php elseif ($level >= 110): ?>
+                    <img src="../image/character/human5.2.png" alt="" width="300" height="300">
+                <?php elseif ($level >= 105): ?>
+                    <img src="../image/character/human5.1.png" alt="" width="300" height="300">
+                <?php elseif ($level >= 100): ?>
+                    <img src="../image/character/human4.5.png" alt="" width="300" height="300">
+                <?php elseif ($level >= 95): ?>
+                    <img src="../image/character/human4.4.png" alt="" width="300" height="300">
+                <?php elseif ($level >= 90): ?>
+                    <img src="../image/character/human4.3.png" alt="" width="300" height="300">
+                <?php elseif ($level >= 85): ?>
+                    <img src="../image/character/human4.2.png" alt="" width="300" height="300">
+                <?php elseif ($level >= 80): ?>
+                    <img src="../image/character/human4.1.png" alt="" width="300" height="300">
+                <?php elseif ($level >= 75): ?>
+                    <img src="../image/character/human3.5.png" alt="" width="300" height="300">
+                <?php elseif ($level >= 70): ?>
+                    <img src="../image/character/human3.4.png" alt="" width="300" height="300">
+                <?php elseif ($level >= 65): ?>
+                    <img src="../image/character/human3.3.png" alt="" width="300" height="300">
+                <?php elseif ($level >= 60): ?>
+                    <img src="../image/character/human3.2.png" alt="" width="300" height="300">
+                <?php elseif ($level >= 55): ?>
+                    <img src="../image/character/human3.1png" alt="" width="300" height="300">
                 <?php elseif ($level >= 50): ?>
-                    <img src="../image/character/human3.png" alt="黄金の騎士" width="300" height="300">
-                <?php elseif ($level >= 2): ?>
-                    <img src="../image/character/human2.png" alt="騎士" width="300" height="300">
+                    <img src="../image/character/human2.5png" alt="" width="300" height="300">
+                <?php elseif ($level >= 45): ?>
+                    <img src="../image/character/human2.4.png" alt="" width="300" height="300">
+                <?php elseif ($level >= 40): ?>
+                    <img src="../image/character/human2.3.png" alt="" width="300" height="300">
+                <?php elseif ($level >= 35): ?>
+                    <img src="../image/character/human2.2.png" alt="" width="300" height="300">
+                <?php elseif ($level >= 30): ?>
+                    <img src="../image/character/human2.1.png" alt="" width="300" height="300">
+                <?php elseif ($level >= 25): ?>
+                    <img src="../image/character/human1.5.png" alt="" width="300" height="300">
+                <?php elseif ($level >= 20): ?>
+                    <img src="../image/character/human1.4.png" alt="" width="300" height="300">
+                <?php elseif ($level >= 15): ?>
+                    <img src="../image/character/human1.3.png" alt="" width="300" height="300">
+                <?php elseif ($level >= 10): ?>
+                    <img src="../image/character/human1.2.png" alt="" width="300" height="300">
+                <?php elseif ($level >= 5): ?>
+                    <img src="../image/character/human1.1.png" alt="" width="300" height="300">
                 <?php else: ?>
                     <img src="../image/character/human1.png" alt="普通の村人" width="300" height="300">
                 <?php endif; ?>
@@ -105,6 +150,23 @@ if ($user_result->num_rows > 0) {
                     </div>
                 </div>
                 <button class="edit-profile-btn" onclick="openEditModal()">プロフィール編集</button>
+                <div id="badge"><p>レベル: <?= $level ?></p>
+                <?php if ($level >= 125): ?>
+                    <img src="../image/icon/badge7.png" alt="" width="75" height="75">
+                <?php elseif ($level >= 100): ?>
+                    <img src="../image/icon/badge6.png" alt="" width="75" height="75">
+                <?php elseif ($level >= 50): ?>
+                    <img src="../image/icon/badge5.png" alt="" width="75" height="75">
+                <?php elseif ($level >= 30): ?>
+                    <img src="../image/icon/badge4.png" alt="" width="75" height="75">
+                <?php elseif ($level >= 10): ?>
+                    <img src="../image/icon/badge3.png" alt="" width="75" height="75">
+                <?php elseif ($level >= 5): ?>
+                    <img src="../image/icon/badge2.png" alt="" width="75" height="75">
+                <?php else: ?>
+                    <img src="../image/icon/badge1.png" alt="" width="75" height="75">
+                <?php endif; ?>
+                </div>
             </div>
         </div>
         <div class="profile-main">
@@ -134,53 +196,89 @@ if ($user_result->num_rows > 0) {
                 <!-- <canvas id="learningChart" width="100" height="100"></canvas> -->
             </div>
         </div>
+        <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditModal()">&times;</span>
+            <div class="pro">
+                <h2>プロフィール編集</h2>
+            </div>
+            <form id="editForm" action="../backend/edit_profile.php" method="POST">
+                    <label for="editOption">編集する項目を選択してください:</label>
+                    <select id="editOption" name="editOption" required onchange="handleOptionChange()">
+                        <option value="name">名前</option>
+                        <option value="subject">学科</option>
+                    </select>
+
+                    <!-- 入力欄またはプルダウンメニュー -->
+                    <div id="editInputContainer">
+                        <label for="newValue">新しい値を入力してください:</label>
+                        <input type="text" id="newValue" name="newValue" required>
+                    </div>
+                    <div class="change-btn">
+                        <button class="edit-profile-btn" type="submit">変更</button>
+                    </div>
+                </form>
     </div>
 
-    <!-- <script> 
-        // PHPからデータをJSに渡す
-        const data = {
-            labels: ["総合", "言語", "非言語"],
-            datasets: [
-                {
-                    label: "平均正答率 (%)",
-                    data: [<?= $correct_rate ?>, <?= $correct_rate_lang ?>, <?= $correct_rate_nonlang ?>],
-                    backgroundColor: "rgba(75, 192, 192, 0.2)",
-                    borderColor: "rgba(75, 192, 192, 1)",
-                    borderWidth: 1,
-                },
-                {
-                    label: "平均回答時間 (秒)",
-                    data: [<?= $average_time ?>, <?= $average_time_lang ?>, <?= $average_time_nonlang ?>],
-                    backgroundColor: "rgba(255, 159, 64, 0.2)",
-                    borderColor: "rgba(255, 159, 64, 1)",
-                    borderWidth: 1,
-                },
-                {
-                    label: "学習問題数 (問)",
-                    data: [<?= $total_questions ?>, <?= $total_questions_lang ?>, <?= $total_questions_nonlang ?>],
-                    backgroundColor: "rgba(153, 102, 255, 0.2)",
-                    borderColor: "rgba(153, 102, 255, 1)",
-                    borderWidth: 1,
-                },
-            ],
-        };
+    <script>
+        function handleOptionChange() {
+            const editOption = document.getElementById('editOption').value;
+            const editInputContainer = document.getElementById('editInputContainer');
+        
+            if (editOption === 'subject') {
+                // 学科選択肢用のプルダウンメニューを表示
+                editInputContainer.innerHTML = `
+                    <label for="newValue">学科を選択してください:</label>
+                    <select id="newValue" name="newValue" required>
+                        <option value="ITエキスパート学科">ITエキスパート学科</option>
+                        <option value="ITスペシャリスト学科">ITスペシャリスト学科</option>
+                        <option value="情報処理学科">情報処理学科</option>
+                        <option value="AIシステム開発学科">AIシステム開発学科</option>
+                    </select>
+                `;
+            } else {
+                // 名前用のテキスト入力フィールドを表示
+                editInputContainer.innerHTML = `
+                    <label for="newValue">新しい値を入力してください:</label>
+                    <input type="text" id="newValue" name="newValue" required>
+                `;
+            }
+        }
+        // モーダルを開く関数
+        function openEditModal() {
+            document.getElementById("editModal").style.display = "block";
+        }
 
-        const config = {
-            type: "bar",
-            data: data,
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: { position: "top" },
-                    title: { display: true, text: "学習進捗の統計" },
-                },
-                scales: { y: { beginAtZero: true } },
-            },
-        };
+        // モーダルを閉じる関数
+        function closeEditModal() {
+            document.getElementById("editModal").style.display = "none";
+        }
 
-        // グラフを描画
-        const ctx = document.getElementById("learningChart").getContext("2d");
-        new Chart(ctx, config);
-    </script> -->
+        // 閉じるボタンにイベントリスナーを追加
+        document.querySelector(".close").addEventListener("click", closeEditModal);
+
+        // モーダル外をクリックしたときにモーダルを閉じる
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("editModal")) {
+                closeEditModal();
+            }
+        }
+
+        // PHPから取得した経験値をJSに渡す
+        const currentExp = <?= $exp ?>; // 経験値
+        const maxExp = <?= $maxExp ?>; // 最大経験値
+
+        // レベルバーを更新する関数
+        function updateLevelBar(exp, maxExp) {
+            const levelBar = document.querySelector('.level-bar');
+            const percentage = (exp / maxExp) * 100;
+            levelBar.style.width = percentage + '%'; // 経験値に応じてバーの幅を調整
+        }
+
+        // ページ読み込み時に経験値バーを更新
+        window.onload = function() {
+            updateLevelBar(currentExp, maxExp);
+        }
+    </script>
 </body>
 </html>

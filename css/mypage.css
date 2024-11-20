@@ -107,18 +107,20 @@ body {
     left: 550px;
 }
 
-
+#badge{
+    margin-top: 50px;
+    mix-blend-mode: multiply;
+}
 
 .profile-main {
     background-color: #ffffff;
     width: 70%;
-    height: 100%;
+    height: 800px;
     padding: 100px;
 }
 
 .profile-main h2 {
     margin-top: 0;
-
 }
 
 .learning-progress,
