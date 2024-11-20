@@ -17,9 +17,19 @@ $sentence = $list_question['sentence']; // 問題文の要約
 $explanation = $list_answers['explanation']; // 解説画像名
 $correct_choice_id = $list_answers['correct_choice_id']; // 正解のid
 
-
 $question_img= "../image/問題集/" . $question_text . ".jpg";
 $explanation_img = "../image/解説/" . $explanation . ".jpg";
+
+// 問題編集用のリストを宣言
+$edit_text = [
+    'question_id' => $list_question['question_id'],
+    'field_id' => "",
+    'genre_id' => "",
+    'genre_text' => "",
+    'interval_num'=> "",
+    'question_text'=> "",
+    'sentence'=> ""
+];
 
 echo '<script>console.log('.json_encode($list_question).')</script>';
 echo '<script>console.log('.json_encode($list_choices).')</script>';
@@ -37,68 +47,77 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
 <body>
 <a href="question_list.php">問題一覧</a>
 <h2 class="question-edit-title">問題編集</h2>
-<table>
-    <tbody>
-        <tr>
-            <th>&nbsp;</th>
-            <th>データ</th>
-            <th>更新データ</th>
-            <th>編集</th>
-        </tr>
-        <tr>
-            <th>ジャンル名</th>
-            <td data-original-genre="<?php echo $genre_text; ?>"><?php echo "<p>".$genre_text."</p>"?></td>
-            <td id="updatedGenre">&nbsp;</td>
-            <td><button onclick="openModal('modal1')">編集</button></td>
-        </tr>
+<form action="../backend/question_edit_db.php" method="POST" enctype="multipart/form-data">
+    <table>
+        <tbody>
+            <tr>
+                <th>&nbsp;</th>
+                <th>データ</th>
+                <th>更新データ</th>
+                <th>編集</th>
+            </tr>
+            <tr>
+                <th>ジャンル名</th>
+                <td data-original-genre="<?php echo $genre_text; ?>"><?php echo "<p>".$genre_text."</p>"?></td>
+                <td id="updatedGenre">&nbsp;</td>
+                <td><button type="button" onclick="openModal('modal1')">編集</button></td>
+            </tr>
 
-        <tr>
-            <th>問題画像</th>
-            <td><img class="img1" src="<?php echo $question_img; ?>" alt="問題画像"></td>
-            <td><img id="preview1" class="preview1" src="#" alt="プレビュー" style="display: none;"></td>
-            <td><button onclick="openModal('modal2')">編集</button></td>
-        </tr>
-        <tr>
-            <th>回答画像</th>
-            <td><img class="img1" src="<?php echo $explanation_img; ?>" alt="解説画像"></td>
-            <td><img id="preview2" class="preview2" src="#" alt="プレビュー" style="display: none;"></td>
-            <td><button onclick="openModal('modal3')">編集</button></td>
-        </tr>
-        <tr>
-            <th>選択肢</th>
-            <td>
-                <?php
-                    foreach ($list_choices as $choice_id => $choice_text) { // 選択肢を繰り返し処理で表示
-                        if ($choice_id == $correct_choice_id) {
-                            // 正しい選択肢だけ強調表示
-                            echo "<p class='correct-choice'>$choice_text</p>";
-                        } else {
-                            echo "<p>$choice_text</p>";
+            <tr>
+                <th>問題画像</th>
+                <td><img src="<?php echo $question_img; ?>" alt="問題画像"></td>
+                <td>
+                    <img id="preview1" src="#" alt="プレビュー" style="display: none;"> <!-- 画像を一時的に隠すためのdisplay: none; -->
+                </td>
+                <td>
+                    <button type="button" onclick="openModal('modal2')">編集</button>
+                </td>
+            </tr>
+            <tr>
+                <th>回答画像</th>
+                <td><img class="img1" src="<?php echo $explanation_img; ?>" alt="解説画像"></td>
+                <td><img id="preview2" class="preview2" src="#" alt="プレビュー" style="display: none;"></td> <!-- 画像を一時的に隠すためのdisplay: none; -->
+                <td><button disabled type="button" onclick="openModal('modal3')">編集</button></td>
+            </tr>
+            <tr>
+                <th>選択肢</th>
+                <td>
+                    <?php
+                        foreach ($list_choices as $choice_id => $choice_text) { // 選択肢を繰り返し処理で表示
+                            if ($choice_id == $correct_choice_id) {
+                                // 正しい選択肢だけ強調表示
+                                echo "<p class='correct-choice'>$choice_text</p>";
+                            } else {
+                                echo "<p>$choice_text</p>";
+                            }
                         }
-                    }
-                ?>
-            </td>
-            <td id="updatedChoices">&nbsp;</td>
-            <td><button onclick="openModal('modal4')">編集</button></td>
-        </tr>
-        <tr>
-            <th>制限時間</th>
-            <td><?php echo "<p>".$interval_num."</p>" ?></td>
-            <td id="updatedIntervalNum">&nbsp;</td>
-            <td><button onclick="openModal('modal5')">編集</button></td>
-        </tr>
-        <tr>
-            <th>問題の要約文</th>
-            <td data-original-sentence="<?php echo $sentence; ?>"><?php echo "<p>".$sentence."</p>" ?></td>
-            <td id="updatedSentence">&nbsp;</td>
-            <td><button onclick="openModal('modal6')">編集</button></td>
-        </tr>
-    </tbody>
-</table>
-<!-- 他のボタンとは別に配置 -->
-<div class="update-button-container">
-    <button type="button">問題を更新</button>
-</div>
+                    ?>
+                </td>
+                <td id="updatedChoices">&nbsp;</td>
+                <td><button disabled type="button" onclick="openModal('modal4')">編集</button></td>
+            </tr>
+            <tr>
+                <th>制限時間</th>
+                <td><?php echo "<p>".$interval_num."</p>" ?></td>
+                <td id="updatedIntervalNum">&nbsp;</td>
+                <td><button disabled type="button" onclick="openModal('modal5')">編集</button></td>
+            </tr>
+            <tr>
+                <th>問題の要約文</th>
+                <td data-original-sentence="<?php echo $sentence; ?>"><?php echo "<p>".$sentence."</p>" ?></td>
+                <td id="updatedSentence">&nbsp;</td>
+                <td><button disabled type="button" onclick="openModal('modal6')">編集</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- 他のボタンとは別に配置 -->
+    <input type="hidden" name="list_data" id="list_data" value='<?php echo json_encode($edit_text); ?>'>
+    <input type="file" name="image" id="imageInput" style="display: none;" accept=".jpg">
+    <div class="update-button-container">
+        <button type="submit">問題を更新</button>
+    </div>
+</form>
+
 
 <!-- モーダル -->
 <div id="modal1" class="modal">
@@ -171,9 +190,9 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
         <span class="close" onclick="closeModal('modal2')">&times;</span>
         <h2>問題画像を編集</h2>
         <form id="imageFormQuestion">
-            <label for="imageInputQuestion">問題の画像を選択:</label>
-            <input type="file" name="image" id="imageInputQuestion" accept=".jpg" required>
-            <input type="submit" value="決定">
+            <label for="imageInputQuestion">画像を選択:</label>
+            <input type="file" id="imageInputQuestion" accept=".jpg">
+            <button type="submit">決定</button>
         </form>
     </div>
 </div>
@@ -254,6 +273,8 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
     // モーダルを開く
     function openModal(modalId) {
         document.getElementById(modalId).style.display = "block";
+        document.getElementById('imageInputQuestion').value = ""; // モーダル内の選択状態をリセット
+        selectedFile = null; // 選択中のファイルもリセット
     }
 
     // モーダルを閉じる
@@ -271,45 +292,77 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
         }
     }
 
+    // edit_textリストをJavaScriptで定義（PHPから値を埋め込む）
+    const edit_text = <?php echo json_encode($edit_text); ?>;
+
     // ジャンル変更
     document.getElementById('genre_form').addEventListener('submit', function(event) {
-        event.preventDefault(); // form送信をしない
+        event.preventDefault(); // form送信を防ぐ
+
+        // 選択されたラジオボタンを取得
         const selectedRadio = document.querySelector('input[name="field"]:checked');
         if (selectedRadio) {
             const label = document.querySelector(`label[for="${selectedRadio.id}"]`);
             const selectedGenreText = label.textContent;
-            const originalGenreText = document.querySelector('td[data-original-genre]').getAttribute('data-original-genre');
 
-            // 更新前と同じデータなら更新データを消す
+            // ラジオボタンのvalueからfield_idとgenre_idを分割して取得
+            const [field_id, genre_id] = selectedRadio.value.split('_').map(value => parseInt(value, 10));
+
+            // edit_textリストを更新
+            edit_text['genre_text'] = selectedGenreText;
+            edit_text['field_id'] = field_id;
+            edit_text['genre_id'] = genre_id;
+
+            // 表示を更新
+            const originalGenreText = document.querySelector('td[data-original-genre]').getAttribute('data-original-genre');
             if (selectedGenreText === originalGenreText) {
                 document.getElementById('updatedGenre').innerHTML = '&nbsp;';
             } else {
                 document.getElementById('updatedGenre').innerHTML = `<p>${selectedGenreText}</p>`;
             }
 
-            document.getElementById('genre_name').value = selectedGenreText;
+            // data-original-genre属性を更新
+            document.querySelector('td[data-original-genre]').setAttribute('data-original-genre', selectedGenreText);
+
+            // list_dataの値を更新
+            document.getElementById('list_data').value = JSON.stringify(edit_text);
+
             closeModal('modal1'); // モーダルを閉じる
+
+            // デバッグログ
+            console.log('Updated edit_text:', edit_text);
+            console.log('Updated list_data:', document.getElementById('list_data').value);
         }
-        
     });
 
-    // 問題画像のプレビュー表示
-    document.getElementById('imageInputQuestion').addEventListener('change', function(event) {
-        const file = event.target.files[0];
-        if (file) {
+    let selectedFile = null; // 選択された問題画像ファイルを保存する変数
+    // ファイル選択時の処理（選択したファイルを保存するだけ）
+    document.getElementById('imageInputQuestion').addEventListener('change', function (event) {
+        selectedFile = event.target.files[0]; // ファイルを保存（この時点ではプレビューしない）
+    });
+
+    // モーダルのフォーム送信処理
+    document.getElementById('imageFormQuestion').addEventListener('submit', function (event) {
+        event.preventDefault(); // 通常のフォーム送信を防ぐ
+
+        // 選択されたファイルがある場合のみ処理を進める
+        if (selectedFile) {
+            // プレビューを更新
             const reader = new FileReader();
-            reader.onload = function(e) {
+            reader.onload = function (e) {
                 const preview = document.getElementById('preview1');
-                preview.src = e.target.result;
-                preview.style.display = 'block'; // プレビュー画像を表示
+                preview.src = e.target.result; // プレビュー画像のソースを設定
+                preview.style.display = "block"; // プレビューを表示
             };
-            reader.readAsDataURL(file);
-        }
-    });
+            reader.readAsDataURL(selectedFile);
 
-    // フォーム送信の処理
-    document.getElementById('imageFormQuestion').addEventListener('submit', function(event) {
-        event.preventDefault(); // フォーム送信を防ぐ
+            // メインフォームの隠しファイル入力にファイルをセット
+            const mainImageInput = document.getElementById('imageInput');
+            const dataTransfer = new DataTransfer();
+            dataTransfer.items.add(selectedFile);
+            mainImageInput.files = dataTransfer.files;
+        }
+
         closeModal('modal2'); // モーダルを閉じる
     });
 

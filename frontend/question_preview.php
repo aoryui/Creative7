@@ -3,7 +3,6 @@ require_once __DIR__ . '/header_kanrisya.php'; //ヘッダー指定
 require_once __DIR__ . '/../backend/class.php';
 $form = new form();
 // 問題idをセッションから取得
-session_start();
 if (isset($_GET['question_id'])) {
     // postでquestion_idを送った場合は一度セッションに保存する
     $_SESSION['question_id'] = $_GET['question_id'];

@@ -265,4 +265,19 @@ class form extends Dbdata
         $this->exec($sql, [$question_id, $correct_choice_id, $explanation]);
         return true;
     }
+
+    // ジャンルを編集する関数
+    public function updateGenre($question_id, $field_id, $genre_id, $genre_text)
+    {
+        try {
+            // 更新クエリ
+            $sql = "UPDATE questions SET field_id = ?, genre_id = ?, genre_text = ? WHERE question_id = ?";
+            $this->exec($sql, [$field_id, $genre_id, $genre_text, $question_id]);
+            return true;
+        } catch (PDOException $e) {
+            // エラー発生時の処理
+            return false;
+        }
+    }
+
 }    
