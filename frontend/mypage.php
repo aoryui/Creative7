@@ -133,7 +133,7 @@ if ($user_result->num_rows > 0) {
                 <?php else: ?>
                     <img src="../image/character/human1.png" alt="普通の村人" width="300" height="300">
                 <?php endif; ?>
-                
+               
                 <label>名前：</label><h2 id="name"><?= htmlspecialchars($user['username'], ENT_QUOTES, 'UTF-8') ?></h2>
                 <p>学科：</p><h2 id="subject"><?= htmlspecialchars($subject, ENT_QUOTES, 'UTF-8') ?></h2>
                 <div class="level" data-proficiency="100">
@@ -193,7 +193,97 @@ if ($user_result->num_rows > 0) {
                     </div>
                 </div>
                 <!-- グラフ表示用のキャンバス -->
-                <!-- <canvas id="learningChart" width="100" height="100"></canvas> -->
+                <canvas id="learningChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // PHPからデータをJSに渡す
+        const data = {
+            labels: ["総合", "言語", "非言語"],
+            datasets: [
+                {
+                    label: "平均正答率 (%)",
+                    data: [<?= $correct_rate ?>, <?= $correct_rate_lang ?>, <?= $correct_rate_nonlang ?>],
+                    backgroundColor: "rgba(75, 192, 192, 0.2)",
+                    borderColor: "rgba(75, 192, 192, 1)",
+                    borderWidth: 1,
+                },
+                {
+                    label: "平均回答時間 (秒)",
+                    data: [<?= $average_time ?>, <?= $average_time_lang ?>, <?= $average_time_nonlang ?>],
+                    backgroundColor: "rgba(255, 159, 64, 0.2)",
+                    borderColor: "rgba(255, 159, 64, 1)",
+                    borderWidth: 1,
+                },
+                {
+                    label: "学習問題数 (問)",
+                    data: [<?= $total_questions ?>, <?= $total_questions_lang ?>, <?= $total_questions_nonlang ?>],
+                    backgroundColor: "rgba(153, 102, 255, 0.2)",
+                    borderColor: "rgba(153, 102, 255, 1)",
+                    borderWidth: 1,
+                },
+            ],
+        };
+
+
+        // グラフ設定
+        const config = {
+            type: "bar",
+            data: data,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: "top" },
+                    title: {
+                        display: true,
+                        text: "学習進捗の統計",
+                        font: {
+                            size: 24,
+                            weight: "bold",
+                            family: "Arial, sans-serif",
+                        },
+                    },
+                },
+               
+                layout: {
+                    padding: {
+                        top: 20,
+                        bottom: 20,
+                    },
+                },
+            },
+        };
+
+
+        // キャンバスの親コンテナの高さを調整する関数
+        function adjustChartHeight() {
+            const maxDataValue = Math.max(...data.datasets[0].data); // データの最大値を取得
+            const chartContainer = document.getElementById("learningChart").parentNode;
+
+
+            // 基本高さ + データ量に応じた追加高さ
+            const baseHeight = 500; // 基本高さ（最低限の高さ）
+            const heightMultiplier = 0.5; // データ値に応じた調整係数
+            const calculatedHeight = baseHeight + maxDataValue * heightMultiplier;
+
+
+            chartContainer.style.height = `${calculatedHeight}px`; // 親コンテナの高さを設定
+        }
+
+
+        // 初期化処理
+        adjustChartHeight(); // 高さ調整
+        const ctx = document.getElementById("learningChart").getContext("2d");
+        new Chart(ctx, config);
+
+
+    </script>
+
+
             </div>
         </div>
         <div id="editModal" class="modal">
@@ -224,7 +314,7 @@ if ($user_result->num_rows > 0) {
         function handleOptionChange() {
             const editOption = document.getElementById('editOption').value;
             const editInputContainer = document.getElementById('editInputContainer');
-        
+       
             if (editOption === 'subject') {
                 // 学科選択肢用のプルダウンメニューを表示
                 editInputContainer.innerHTML = `
