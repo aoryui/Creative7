@@ -43,7 +43,6 @@ $subject = $_SESSION['subject'];
                 <?php
                 }
                 ?>
-                <li><a href="#" class="button-link" onclick="window.close();">ウィンドウを閉じる</a></li>
             </ul>
             </nav>
         <script>
