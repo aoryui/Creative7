@@ -38,6 +38,7 @@ h2 {
     margin: 0 200px; /* 少し余白をつける */
     margin-left: 450px;
     margin-bottom: 30px;
+    width: 200px;
 }
 
 ul {
