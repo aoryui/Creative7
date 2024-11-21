@@ -10,75 +10,108 @@ require_once __DIR__ . '/header_kanrisya.php';
     <meta http-equiv="Cache-Control" content="no-store">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* 基本設定 */
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #ffefd5;
             color: #333;
+            margin: 0;
+            padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 0;
-            padding: 0;
         }
+
+        /* ヘッダー */
         h1 {
             margin-top: 20px;
-            font-size: 2em;
+            font-size: 2rem;
             color: #4CAF50;
+            text-align: center;
         }
+
+        /* コンテナ */
         .container {
             width: 90%;
             max-width: 1200px;
             border-radius: 8px;
-            margin-top: 20px;
+            margin: 20px 0;
+            background: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
         }
+
         iframe {
-            width: 95%;
-            height: 330px;
+            width: 100%;
+            height: 400px;
             border: none;
-            border-radius: 8px;
         }
+
+        /* ボタンエリア */
         .btn-container {
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 15px;
             margin-top: 20px;
         }
+
+        /* ボタン */
         .btn-link {
-            padding: 10px 20px;
-            background-color: rgb(84, 196, 99);
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #4CAF50;
             color: white;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
-            transition: background-color 0.3s ease;
-            cursor: pointer;
-            border: none; /* デフォルトのボーダーを削除 */
-            outline: none; /* フォーカス時の黒い枠を削除 */
+            font-size: 1rem;
+            transition: background-color 0.3s ease, transform 0.2s;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         .btn-link:hover {
             background-color: #45a049;
+            transform: translateY(-2px);
+        }
+
+        .btn-link:active {
+            background-color: #388e3c;
+            transform: translateY(0);
+        }
+
+        /* モバイル対応 */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .btn-link {
+                font-size: 0.9rem;
+                padding: 10px 20px;
+            }
+
+            iframe {
+                height: 300px;
+            }
         }
     </style>
 </head>
 <body>
-    <h1></h1>
-    <h1></h1>
     <h1>スプレッドシート操作</h1>
     <div class="btn-container">
+        <!-- スプレッドシートを開くボタン -->
         <a href="https://docs.google.com/spreadsheets/d/1Cfi4TYYUqbFLIR3OfGuDXDXQDhRqsLxzeFNw1j36_oE/edit?usp=sharing" class="btn-link">
             スプレッドシートを開く
         </a>
-        <button class="btn-link" onclick="clearContent()">シートの内容を削除</button>
+        <!-- シートの内容を削除ボタン -->
+        <a href="https://script.google.com/u/1/home/projects/11tVUGc92hIjR74g3T9p9qmcixi3BitMRACyQtAu--hCsLDC7scLeoZPK/edit" class="btn-link">
+            シートの内容を削除
+        </a>
     </div>
     <div class="container">
-        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQWTdWjVhp7m51ffHyy8OFP3lRyXVyNrCNL8HHw4pn_gsxqLciBexJxWnkhX3hCEVDIh6e5F-VGGvlX/pubhtml?gid=644288189&amp;single=true&amp;widget=true&amp;headers=false">
-        </iframe>
+        <!-- Googleスプレッドシートの埋め込み -->
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQWTdWjVhp7m51ffHyy8OFP3lRyXVyNrCNL8HHw4pn_gsxqLciBexJxWnkhX3hCEVDIh6e5F-VGGvlX/pubhtml?gid=644288189&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
     </div>
-    <script>
-        function clearContent() {
-            google.script.run.clearSpreadsheetContent();
-            alert("スプレッドシートの内容を削除しました！");
-        }
-    </script>
 </body>
 </html>
