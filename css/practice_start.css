@@ -90,9 +90,12 @@ legend {
       margin: 1px auto 15px; /* 自動マージンで中央に配置 */
       width: 200px; /* ボタンの幅を指定 */
       transition: background-color 0.3s, transform 0.2s; /* ホバー時のアニメーション */
-      top: 300px;
-      position: relative;
-      top: 150px;
+      
+      
+      /* 緊急用 */
+      position: absolute;
+        top: 450px;
+        left: 550px;
   }
   
   /* ボタンにホバーエフェクトを追加 */
