@@ -45,28 +45,40 @@ $explanation_img = "../image/解説/" . $explanation . ".jpg";
     <title>問題表</title>
     <link rel="stylesheet" href="../css/question_preview.css">
 </head>
-    <body>
-        <p class="language">選択言語:</p>
-        <p class="genre_name">ジャンル名:</p>
-        <p class="interval_time">制限時間:</p>
-        <p class="summary">要約文:</p>
-        <a href="question_list.php" class="question_list">問題一覧</a>
+<body>
+    <div class="container">
+        <p class="language">選択言語: <?php echo $field_name; ?></p>
+        <p class="genre_name">ジャンル名: <?php echo $genre_text; ?></p>
+        <p class="interval_time">制限時間: <?php echo $interval_num; ?>分</p>
+        <p class="summary">要約文: <?php echo $sentence; ?></p>
+    </div>
+    
+
+
+
+    <!-- 問題画像表示 -->
+    <div class="content">
+    <div class="images">
+        <img src="<?php echo $question_img; ?>" alt="問題画像" class="question_image">
+        <img src="<?php echo $explanation_img; ?>" alt="解説画像" class="explanation_image">
+    </div>
+
+    <!-- 選択肢表示 -->
+    <div class="choices">
         <?php
-        echo '<p class="choice">'.$field_name.'</p>'; // 言語非言語
-        echo '<p class="genre">'.$genre_text.'</p>'; // ジャンル名(二語の関係など)
-        echo '<p class="interval">'.$interval_num.'</p>'; // 制限時間
-        echo '<p class="sentence">'.$sentence.'</p>'; // 問題の要約文
-        echo '<img src="' . $question_img . '" alt="問題画像"  class="question_image">';
-        echo '<img src="' . $explanation_img . '" alt="解説画像" class="explanation_image">';
-        foreach ($list_choices as $choice_id => $choice_text) { // 選択肢を繰り返し処理で表示
+        foreach ($list_choices as $choice_id => $choice_text) {
             if ($choice_id == $correct_choice_id) {
                 // 正しい選択肢だけ強調表示
                 echo "<p class='correct-choice'>$choice_text</p>";
             } else {
-                echo "<p  class='correct-choice1'>$choice_text</p>";
+                echo "<p>$choice_text</p>";
             }
         }
         ?>
+    </div>
 </div>
-    </body>
+
+</body>
 </html>
+
+
