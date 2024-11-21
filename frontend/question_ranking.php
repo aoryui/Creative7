@@ -30,7 +30,7 @@ $sql = "
     JOIN 
         questions q ON qs.question_id = q.question_id
     WHERE 
-        qs.total_answers > 0 -- 回答が1回以上ある問題に限定
+        qs.total_answers >= 10 -- 回答が10回以上の問題に限定
     ORDER BY 
         error_rate DESC, qs.total_answers DESC
     LIMIT 10; -- 上位10件を取得
