@@ -7,15 +7,15 @@ body {
 .container {
     display: flex;
     flex-direction: row; /* 横方向に配置 */
-    justify-content: flex-start; /* 左揃え */
-    align-items: flex-start; /* 上揃え */
-    gap: 20px; /* 各要素間の間隔 */
+    justify-content: center; /* 水平方向に中央揃え */
+    align-items: center; /* 垂直方向に中央揃え */
+    gap: 50px; /* 各要素間の間隔 */
     padding-top: 100px;
 }
 
 p {
     margin: 0;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
     width: fit-content;
 }
@@ -36,7 +36,7 @@ p {
 }
 
 .correct-choice {
-    color: green;
+    color: red;
     font-weight: bold;
 }
 
@@ -102,7 +102,22 @@ p {
 .choices {
     display: flex;
     flex-direction: column; /* 縦に並べる */
-    gap: 15px;
-    padding: 70px;
+    gap: 5px;
+    padding: 15px;
     max-width: 250px; /* 選択肢の最大幅を設定 */
+}
+
+fieldset {
+    border: 2px solid #000000; /* 枠線 */
+    padding: 10px; /* 内側の余白 */
+    border-radius: 5px; /* 角を丸くする */
+    margin-top: 20px;
+}
+
+legend {
+    font-size: 16px; /* 文字サイズ */
+    font-weight: bold; /* 太字 */
+    padding: 0 10px; /* 左右の余白 */
+    color: #333; /* テキスト色 */
+    text-align: center;
 }

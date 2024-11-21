@@ -64,6 +64,8 @@ $explanation_img = "../image/解説/" . $explanation . ".jpg";
     </div>
 
     <!-- 選択肢表示 -->
+    <fieldset>
+    <legend>選択肢</legend>
     <div class="choices">
         <?php
         foreach ($list_choices as $choice_id => $choice_text) {
@@ -76,6 +78,7 @@ $explanation_img = "../image/解説/" . $explanation . ".jpg";
         }
         ?>
     </div>
+</fieldset>
 </div>
 
 </body>
