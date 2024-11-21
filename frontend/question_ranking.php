@@ -1,4 +1,7 @@
 <?php
+
+require_once __DIR__ . '/header.php';
+
 // データベース接続設定
 $host = 'localhost';
 $dbname = 'creative7';
@@ -51,8 +54,6 @@ try {
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            margin: 20px;
-            padding: 20px;
             background-color: #f9f9f9;
         }
         table {
@@ -72,6 +73,8 @@ try {
         }
         h1 {
             margin-bottom: 20px;
+            text-align: center;
+            padding-top: 100px;
         }
     </style>
 </head>
@@ -91,7 +94,7 @@ try {
             </thead>
             <tbody>
                 <?php foreach ($rankingData as $index => $row): ?>
-                    <tr>
+                    <tr <?php echo $index === 0 ? 'style="background-color: #ffe5e5;"' : ''; ?>>
                         <td><?php echo $index + 1; ?></td>
                         <td><?php echo htmlspecialchars($row['genre_text'], ENT_QUOTES, 'UTF-8'); ?></td>
                         <td><?php echo htmlspecialchars($row['sentence'], ENT_QUOTES, 'UTF-8'); ?></td>

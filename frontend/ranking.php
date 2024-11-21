@@ -60,7 +60,12 @@ foreach ($rankings as $key => $value) {
     <div class="border-frame">
         <!-- ユーザーのランキングを表示 -->
         <?php 
-        echo '<p id="ranking"><img src="../image/icon/rank_icon.png" class="ranking_icon"> ランキング</p>';
+        echo '<div class="ranking-header">';
+        echo '    <p id="ranking">';
+        echo '        <img src="../image/icon/rank_icon.png" class="ranking_icon"> ランキング';
+        echo '    </p>';
+        echo '    <a href="question_ranking.php" class="stylish-link">間違えやすい問題ランキングはこちら</a>';
+        echo '</div>';
         echo '<div id="user_data">';
         if ($index !== null) {
             $user = $rankings[$index];
@@ -134,6 +139,5 @@ foreach ($rankings as $key => $value) {
 
     <a href="?page=<?php echo $page + 1; ?>" class="next <?php echo ($page >= $totalPages) ? 'hidden' : ''; ?>">次 &raquo;</a>
 </div>
-<a href="question_ranking.php">ランキング</a>
 </body>
 </html>

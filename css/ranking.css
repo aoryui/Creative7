@@ -164,4 +164,47 @@ body {
 
   }
 
+  .ranking-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* 横幅全体に均等配置 */
+    margin-bottom: 20px;
+}
+
+.ranking-header #ranking {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.ranking-header .ranking_icon {
+    margin-right: 8px;
+}
+
+.stylish-link {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    color: #ffffff;
+    background-color: #4caf50; /* 緑色 */
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.stylish-link:hover {
+    background-color: #45a049; /* ホバー時の少し濃い緑 */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.stylish-link:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 
