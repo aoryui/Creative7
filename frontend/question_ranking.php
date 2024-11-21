@@ -54,19 +54,27 @@ try {
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            background-color: #f9f9f9;
+            background-color: #ffefd5;
         }
         table {
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 20px;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+        tbody{
+            background-color: #f4f4f4;
         }
         table, th, td {
             border: 1px solid #ddd;
+            padding-left: 40px;
+            padding-right: 40px;
         }
         th, td {
             padding: 8px;
             text-align: left;
+           
         }
         th {
             background-color: #f4f4f4;
