@@ -74,7 +74,6 @@ if ($user_result->num_rows > 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Page</title>
     <link rel="stylesheet" href="../css/mypage.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="profile-container">
@@ -192,8 +191,6 @@ if ($user_result->num_rows > 0) {
                         <p>学習問題数：<?= htmlspecialchars($total_questions_nonlang, ENT_QUOTES, 'UTF-8') ?>問</p>
                     </div>
                 </div>
-                <!-- グラフ表示用のキャンバス -->
-                <canvas id="learningChart"></canvas>
             </div>
         </div>
     </div>
@@ -228,58 +225,7 @@ if ($user_result->num_rows > 0) {
             ],
         };
 
-
-        // グラフ設定
-        const config = {
-            type: "bar",
-            data: data,
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: { position: "top" },
-                    title: {
-                        display: true,
-                        text: "学習進捗の統計",
-                        font: {
-                            size: 24,
-                            weight: "bold",
-                            family: "Arial, sans-serif",
-                        },
-                    },
-                },
-               
-                layout: {
-                    padding: {
-                        top: 20,
-                        bottom: 20,
-                    },
-                },
-            },
-        };
-
-
-        // キャンバスの親コンテナの高さを調整する関数
-        function adjustChartHeight() {
-            const maxDataValue = Math.max(...data.datasets[0].data); // データの最大値を取得
-            const chartContainer = document.getElementById("learningChart").parentNode;
-
-
-            // 基本高さ + データ量に応じた追加高さ
-            const baseHeight = 500; // 基本高さ（最低限の高さ）
-            const heightMultiplier = 0.5; // データ値に応じた調整係数
-            const calculatedHeight = baseHeight + maxDataValue * heightMultiplier;
-
-
-            chartContainer.style.height = `${calculatedHeight}px`; // 親コンテナの高さを設定
-        }
-
-
-        // 初期化処理
-        adjustChartHeight(); // 高さ調整
-        const ctx = document.getElementById("learningChart").getContext("2d");
-        new Chart(ctx, config);
-
+        
 
     </script>
 
