@@ -1,7 +1,6 @@
 <?php
 // キャッシュをクリア
-$filename = 'style.css';
-echo '<link rel="stylesheet" href="' . $filename . '?ver=' . filemtime($filename) . '">';
+clearstatcache();
 
 require_once __DIR__ . '/header_kanrisya.php'; //ヘッダー指定
 require_once __DIR__ . '/../backend/class.php';
@@ -52,9 +51,6 @@ $explanation_img = "../image/解説/" . $explanation . ".jpg";
         <p class="interval_time">制限時間: <?php echo $interval_num; ?>分</p>
         <p class="summary">要約文: <?php echo $sentence; ?></p>
     </div>
-    
-
-
 
     <!-- 問題画像表示 -->
     <div class="content">
@@ -83,5 +79,3 @@ $explanation_img = "../image/解説/" . $explanation . ".jpg";
 
 </body>
 </html>
-
-

@@ -135,13 +135,7 @@ form input[type="submit"]:hover {
 }
 
 /* プレビュー画像 */
-img.preview1, img.preview2 {
-    width: 422px;
-    height: 256px;
-    margin-top: 10px;
-}
-
-.img1 {
+.question_now, .question_new, .answer_now, .answer_new{
     width: 422px;
     height: 256px;
 }
