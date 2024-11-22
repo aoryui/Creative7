@@ -1,6 +1,7 @@
 <?php
-// キャッシュをクリア
-clearstatcache();
+// 画像のセッションの期限を設定
+$now = time();
+$now = date('YmdHis');
 
 require_once __DIR__ . '/header_kanrisya.php'; //ヘッダー指定
 require_once __DIR__ . '/../backend/class.php';
@@ -55,8 +56,8 @@ $explanation_img = "../image/解説/" . $explanation . ".jpg";
     <!-- 問題画像表示 -->
     <div class="content">
     <div class="images">
-        <img src="<?php echo $question_img; ?>" alt="問題画像" class="question_image">
-        <img src="<?php echo $explanation_img; ?>" alt="解説画像" class="explanation_image">
+        <img src="<?php echo $question_img; ?>?<?php echo $now; ?>" alt="問題画像" class="question_image">
+        <img src="<?php echo $explanation_img; ?>?<?php echo $now; ?>" alt="解説画像" class="explanation_image">
     </div>
 
     <!-- 選択肢表示 -->

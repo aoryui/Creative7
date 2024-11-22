@@ -1,6 +1,7 @@
 <?php
-// キャッシュをクリア
-clearstatcache();
+// 画像のセッションの期限を設定
+$now = time();
+$now = date('YmdHis');
 
 require_once __DIR__ . '/header_kanrisya.php'; //ヘッダー指定
 require_once __DIR__ . '/../backend/class.php';
@@ -68,7 +69,7 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
 
             <tr>
                 <th>問題画像</th>
-                <td><img class="question_now" src="<?php echo $question_img; ?>" alt="問題画像"></td>
+                <td><img class="question_now" src="<?php echo $question_img; ?>?<?php echo $now; ?>" alt="問題画像"></td>
                 <td>
                     <img id="preview1" class="question_new" src="#" alt="プレビュー" style="display: none;"> <!-- 画像を一時的に隠すためのdisplay: none; -->
                 </td>
@@ -78,7 +79,7 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
             </tr>
             <tr>
                 <th>回答画像</th>
-                <td><img class="answer_now" src="<?php echo $explanation_img; ?>" alt="解説画像"></td>
+                <td><img class="answer_now" src="<?php echo $explanation_img; ?>?<?php echo $now; ?>" alt="解説画像"></td>
                 <td><img id="preview2" class="answer_new" class="preview2" src="#" alt="プレビュー" style="display: none;"></td> <!-- 画像を一時的に隠すためのdisplay: none; -->
                 <td><button disabled type="button" onclick="openModal('modal3')">編集</button></td>
             </tr>
