@@ -26,7 +26,7 @@ if ($conn->connect_error) {
 $test_display = isset($_SESSION['test_display']) ? $_SESSION['test_display'] : [];
 
 // リザルト画面のファイル場所をセッションに保存
-$_SESSION['result_display'] = 'result';
+$_SESSION['result_display'] = 'rensyu';
 
 $displayed_questions = isset($_SESSION['displayed_questions']) ? $_SESSION['displayed_questions'] : [];
 $selected_choice = isset($_SESSION['selected_choice']) ? $_SESSION['selected_choice'] : [];

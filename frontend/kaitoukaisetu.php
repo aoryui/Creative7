@@ -120,8 +120,12 @@ $_SESSION['test_display'] = ''; //test_displayを初期化
 
         <?php if ($before_display === 'review') : ?> 
             <a href="review.php" class="btn">復習問題一覧に戻る</a> <!-- 復習ページから開いた場合のボタンテキスト -->
+        <?php elseif ($before_display === 'honban') : ?>
+            <a href="honban_result.php" class="btn">本番ページに戻る</a> <!-- 本番ページに戻るボタン -->
+        <?php elseif ($before_display === 'rensyu') : ?>
+            <a href="rensyu_result.php" class="btn">練習ページに戻る</a> <!-- 練習ページに戻るボタン -->
         <?php else : ?>
-            <a href="<?php echo $before_display ?>.php" class="btn">リザルトに戻る</a>
+            <a href="<?php echo htmlspecialchars($before_display, ENT_QUOTES, 'UTF-8'); ?>.php" class="btn">リザルトに戻る</a>
         <?php endif; ?>
     </div>
 </body>

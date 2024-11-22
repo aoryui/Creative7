@@ -21,7 +21,7 @@ setcookie("userName", '', time() - 1000, '/');
             if (window.opener) {
                 window.close(); // ウィンドウを閉じる
             } else {
-                alert("このウィンドウはスクリプトで開かれていないため閉じられません。");
+                window.location.href = '../frontend/home.php'; // home.php に遷移
             }
         }, 1000); // 適宜タイミングを調整
     }
