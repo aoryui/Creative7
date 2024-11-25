@@ -1,0 +1,42 @@
+body {
+    background-color: #ffefd5;
+}
+
+table {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 120px;
+    margin-bottom: 5px;
+}
+
+th,
+td {
+    width: 150px;
+    /* 幅を固定 */
+    height: 150px;
+    /* 高さを幅と同じに設定 */
+    border: 1px solid #ddd;
+    /* 枠線 */
+    padding: 3px;
+    /* 内側の余白 */
+
+}
+
+
+td:hover {
+    background-color: #f1f1f1;
+    /* マウスオーバー時の色 */
+}
+
+#badgeimg {
+    height: 150px;
+    width: 150px;
+    filter: contrast(50%);
+}
+
+.collection-container {
+    background-color: #ffffff;
+    width: 805px;
+    margin-left: auto;
+    margin-right: auto;
+}
