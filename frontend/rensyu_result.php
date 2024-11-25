@@ -233,6 +233,38 @@ if ($exp >= $maxExp) {
     $conn->query($update_sql);   
 }
 
+// 一問以上正解していた場合の条件
+if ($correct_count > 0) {
+    // badge_idが6のバッジを取得
+    $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 6";
+    $badge_result = $conn->query($badge_query);
+
+    if ($badge_result && $badge_result->num_rows > 0) {
+        // 取得したbadge_idをowned_badgeテーブルに挿入
+        $row = $badge_result->fetch_assoc();
+        $badge_id = $row['badge_id'];
+
+        // すでにそのバッジを所有していないか確認
+        $check_query = "SELECT * FROM owned_badge WHERE userid = $userid AND badge_id = $badge_id";
+        $check_result = $conn->query($check_query);
+
+        if ($check_result && $check_result->num_rows === 0) {
+            // バッジを挿入
+            $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, $badge_id)";
+            if ($conn->query($insert_badge_query) === TRUE) {
+                echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
+            } else {
+                echo "<script>console.error('Failed to insert badge: " . $conn->error . "');</script>";
+            }
+        } else {
+            echo "<script>console.log('Badge $badge_id already owned by user $userid.');</script>";
+        }
+    } else {
+        // 条件に該当しない場合は何もしない
+        // No operation needed
+    }
+}
+
 // ログ表示
 echo '<script>console.log('.json_encode($displayed_questions).')</script>';
 echo '<script>console.log('.json_encode($selected_choice).')</script>';

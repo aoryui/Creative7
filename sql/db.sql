@@ -86,6 +86,36 @@ CREATE TABLE question_statistics (
     FOREIGN KEY (question_id) REFERENCES questions(question_id) ON DELETE CASCADE
 );
 
+DROP TABLE IF EXISTS badge_collections;
+CREATE TABLE badge_collections (
+    badge_id INT AUTO_INCREMENT PRIMARY KEY,
+    badge_file TEXT NOT NULL, -- バッジの画像
+);
+
+DROP TABLE IF EXISTS owned_badge;
+CREATE TABLE owned_badge (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    userid int(255) NOT NULL ,    
+    badge_id INT NOT NULL,
+);
+
+-- 問題を挿入
+INSERT INTO badge_collections (badge_id,badge_file) VALUES (1,'badge1');
+INSERT INTO badge_collections (badge_id,badge_file) VALUES (2,'badge2');
+INSERT INTO badge_collections (badge_id,badge_file) VALUES (3,'badge3');
+INSERT INTO badge_collections (badge_id,badge_file) VALUES (4,'badge4');
+INSERT INTO badge_collections (badge_id,badge_file) VALUES (5,'badge5');
+INSERT INTO badge_collections (badge_id,badge_file) VALUES (6,'badge6');
+INSERT INTO badge_collections (badge_id,badge_file) VALUES (7,'badge7');
+INSERT INTO badge_collections (badge_id,badge_file) VALUES (8,'badge8');
+INSERT INTO badge_collections (badge_id,badge_file) VALUES (9,'badge9');
+INSERT INTO badge_collections (badge_id,badge_file) VALUES (10,'badge10');
+INSERT INTO badge_collections (badge_id,badge_file) VALUES (11,'badge11');
+INSERT INTO badge_collections (badge_id,badge_file) VALUES (12,'badge12');
+INSERT INTO badge_collections (badge_id,badge_file) VALUES (13,'badge13');
+INSERT INTO badge_collections (badge_id,badge_file) VALUES (14,'badge14');
+INSERT INTO badge_collections (badge_id,badge_file) VALUES (15,'badge15');
+
 -- 問題を挿入
 INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (1,1,1,30,'二語の関係','1_1_1','相対的：絶対的');
 INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (2,1,1,30,'二語の関係','1_1_2','海流：暖流');
