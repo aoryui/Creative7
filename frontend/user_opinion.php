@@ -94,7 +94,7 @@ require_once __DIR__ . '/header_kanrisya.php';
         button:hover {
         background-color: #45a049;
         }
-        
+
         /* モバイル対応 */
         @media (max-width: 600px) {
             h1 {
@@ -124,7 +124,7 @@ require_once __DIR__ . '/header_kanrisya.php';
     <script>
     document.getElementById("clear-button").addEventListener("click", () => {
       // Apps Script の公開URLを指定
-      fetch("https://script.google.com/macros/s/AKfycbxpj_WTzF5GY7DgcTdNcTRdNI69KX7xpFTBiOq7JCQJN-J7IIlHmZT6lorIEzwEYLgz7w/exec") // コピーしたURLを貼り付け
+      fetch("https://script.google.com/macros/s/AKfycbxYRrCrPA8Nnc8wjqCbh09skG-qCKbwCu8-1dbqosQqDZElASgtpV8VbCbFgOYwJ0An-A/exec") // コピーしたURLを貼り付け
         .then(response => response.text())
         .then(data => alert(data)) // スクリプトからのレスポンスを表示
         .catch(error => console.error("エラー:", error));
@@ -134,7 +134,8 @@ require_once __DIR__ . '/header_kanrisya.php';
 
     <div class="container">
         <!-- Googleスプレッドシートの埋め込み -->
-        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQWTdWjVhp7m51ffHyy8OFP3lRyXVyNrCNL8HHw4pn_gsxqLciBexJxWnkhX3hCEVDIh6e5F-VGGvlX/pubhtml?gid=644288189&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQWTdWjVhp7m51ffHyy8OFP3lRyXVyNrCNL8HHw4pn_gsxqLciBexJxWnkhX3hCEVDIh6e5F-VGGvlX/pubhtml?widget=true&amp;headers=false"></iframe>
+        <!--スプレッドシートをサーバーに全表示したいときhttps://docs.google.com/spreadsheets/d/1Cfi4TYYUqbFLIR3OfGuDXDXQDhRqsLxzeFNw1j36_oE/edit?usp=sharing-->
     </div>
 </body>
 </html>
