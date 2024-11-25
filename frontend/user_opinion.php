@@ -80,6 +80,21 @@ require_once __DIR__ . '/header_kanrisya.php';
             transform: translateY(0);
         }
 
+        button {
+        padding: 12px 24px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+        background-color: #4CAF50;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        }
+        button:hover {
+        background-color: #45a049;
+        }
+        
         /* モバイル対応 */
         @media (max-width: 600px) {
             h1 {
@@ -104,11 +119,19 @@ require_once __DIR__ . '/header_kanrisya.php';
         <a href="https://docs.google.com/spreadsheets/d/1Cfi4TYYUqbFLIR3OfGuDXDXQDhRqsLxzeFNw1j36_oE/edit?usp=sharing" class="btn-link">
             スプレッドシートを開く
         </a>
-        <!-- シートの内容を削除ボタン -->
-        <a href="https://script.google.com/u/1/home/projects/11tVUGc92hIjR74g3T9p9qmcixi3BitMRACyQtAu--hCsLDC7scLeoZPK/edit" class="btn-link">
-            シートの内容を削除
-        </a>
+
+    <button id="clear-button">シートの内容を削除</button>
+    <script>
+    document.getElementById("clear-button").addEventListener("click", () => {
+      // Apps Script の公開URLを指定
+      fetch("https://script.google.com/macros/s/AKfycbxpj_WTzF5GY7DgcTdNcTRdNI69KX7xpFTBiOq7JCQJN-J7IIlHmZT6lorIEzwEYLgz7w/exec") // コピーしたURLを貼り付け
+        .then(response => response.text())
+        .then(data => alert(data)) // スクリプトからのレスポンスを表示
+        .catch(error => console.error("エラー:", error));
+    });
+  </script>
     </div>
+
     <div class="container">
         <!-- Googleスプレッドシートの埋め込み -->
         <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQWTdWjVhp7m51ffHyy8OFP3lRyXVyNrCNL8HHw4pn_gsxqLciBexJxWnkhX3hCEVDIh6e5F-VGGvlX/pubhtml?gid=644288189&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
