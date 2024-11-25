@@ -89,14 +89,14 @@ CREATE TABLE question_statistics (
 DROP TABLE IF EXISTS badge_collections;
 CREATE TABLE badge_collections (
     badge_id INT AUTO_INCREMENT PRIMARY KEY,
-    badge_file TEXT NOT NULL, -- バッジの画像
+    badge_file TEXT NOT NULL -- バッジの画像
 );
 
 DROP TABLE IF EXISTS owned_badge;
 CREATE TABLE owned_badge (
     id INT AUTO_INCREMENT PRIMARY KEY,
     userid int(255) NOT NULL ,    
-    badge_id INT NOT NULL,
+    badge_id INT NOT NULL
 );
 
 -- 問題を挿入
