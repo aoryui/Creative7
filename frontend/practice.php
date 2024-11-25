@@ -124,7 +124,6 @@ $genre_text = nl2br(htmlspecialchars($question['genre_text'], ENT_QUOTES, 'UTF-8
     <div id="editModal" class="modal">
         <div class="modal-content">
             <a href="practice_start.php">
-	        <button type="button" class="button" id="container">移動</button>
             <span class="close" onclick="closeEditModal()">&times;</span>
             <button  onclick="closeEditModal()" class="button" id="container">閉じる</button>
 </a>

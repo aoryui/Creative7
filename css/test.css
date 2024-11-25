@@ -95,6 +95,7 @@ button{
     align-content: center;
     justify-content: center;
     align-items: stretch;
+    max-width: 300px;
 }
 
 .choice {

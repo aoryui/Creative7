@@ -83,6 +83,7 @@ label{
     margin: 10px;
     position: relative;
     right: 100px;
+    top: 60px;
 }
 
 .next-button:hover{
