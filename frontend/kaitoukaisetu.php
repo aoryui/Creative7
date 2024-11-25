@@ -124,6 +124,8 @@ $_SESSION['test_display'] = ''; //test_displayを初期化
             <a href="honban_result.php" class="btn">本番ページに戻る</a> <!-- 本番ページに戻るボタン -->
         <?php elseif ($before_display === 'rensyu') : ?>
             <a href="rensyu_result.php" class="btn">練習ページに戻る</a> <!-- 練習ページに戻るボタン -->
+        <?php elseif ($before_display === 'ranking') : ?>
+            <a href="question_ranking.php" class="btn">ランキングページに戻る</a> <!-- ランキングページに戻るボタン -->
         <?php else : ?>
             <a href="<?php echo htmlspecialchars($before_display, ENT_QUOTES, 'UTF-8'); ?>.php" class="btn">リザルトに戻る</a>
         <?php endif; ?>

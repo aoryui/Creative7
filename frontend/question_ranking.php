@@ -16,6 +16,9 @@ try {
     die("データベース接続エラー: " . $e->getMessage());
 }
 
+// リザルト画面のファイル場所をセッションに保存
+$_SESSION['result_display'] = 'ranking';
+
 // 間違えやすい問題ランキングクエリ
 $sql = "
     SELECT 
@@ -94,10 +97,11 @@ try {
                 <tr>
                     <th>順位</th>
                     <th>ジャンル</th>
-                    <th>問題</th>
+                    <th>問題文</th>
                     <th>総回答数</th>
                     <th>間違えた回数</th>
                     <th>誤答率 (%)</th>
+                    <th>問題</th>
                 </tr>
             </thead>
             <tbody>
@@ -109,6 +113,7 @@ try {
                         <td><?php echo $row['total_answers']; ?></td>
                         <td><?php echo $row['incorrect_answers']; ?></td>
                         <td><?php echo $row['error_rate']; ?></td>
+                        <td id="tri"><a href="review_questions.php?question_id=<?php echo htmlspecialchars($row['question_id'], ENT_QUOTES, 'UTF-8'); ?>">問題</a></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
