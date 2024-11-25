@@ -29,8 +29,10 @@ td:hover {
 }
 
 #badgeimg {
-    height: 150px;
-    width: 150px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* セル内で画像が枠全体を埋める */
+    display: block; /* 余計な空白を除去 */
     filter: contrast(50%);
 }
 
