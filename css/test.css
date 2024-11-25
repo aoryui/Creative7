@@ -1,6 +1,7 @@
 html {
     height: 100%;
-    overflow: hidden; /* スクロールを有効に */;
+    overflow: scroll; /* スクロールを有効に */;
+    overflow-x: hidden;
 }
 
 .top-contents{
@@ -11,7 +12,6 @@ html {
 body {
     min-height: 100%;
     background-color: #ffefd5;
-    overflow: hidden;
 }
 
 button{
@@ -89,13 +89,12 @@ button{
     display: flex;
     flex-direction: column;
     margin-bottom: 40px;
-    margin-top: 170px;
-    /* 上側のマージンを追加 */
+    margin-top: 250px;
     margin-right: 200px;
-    width: 200px;
-    /* 適切な幅を設定 */
-    max-height: 300px; /* スクロール可能な高さを設定 */
-    overflow-y: auto; /* 縦方向にスクロールバーを追加 */
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: stretch;
 }
 
 .choice {
@@ -160,7 +159,7 @@ button{
     text-decoration: none;
     border-radius: 5px;
     position: absolute;
-    bottom: 10px;
+    bottom: 30px;
     /* ボタンの位置を調整 */
     position: relative;
     left: 1000px;

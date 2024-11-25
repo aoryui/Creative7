@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once __DIR__ . '/header.php';
+require_once __DIR__ . '/header_test.php';
 
 $servername = "localhost";
 $username = "Creative7";
@@ -121,7 +121,7 @@ $interval = $question['interval_num'];
     <title>SPIタイサくん</title>
     <link rel="stylesheet" href="../css/test.css">
 </head>
-<body scroll="no">
+<body>
     <div class="content">
     <button class="edit-profile-btn" onclick="openEditModal()">戻る</button>
         <div class="question">
@@ -130,12 +130,12 @@ $interval = $question['interval_num'];
             <p id="count"><?php echo '問題数'.(count($displayed_questions)+1).'/'.$max_question.'問目'?></p> <!-- 問題数ののやつ -->
         </div>
         <div class="center-contents"></div>
-            <p class="img"><?php
+            <?php
             // 画像のパスを作成
             $image_path = "../image/問題集/" . $question_text . ".jpg";
             // HTMLで画像を表示
             echo '<img src="' . $image_path . '" alt="問題画像" class="question_img">';
-            ?></p>
+            ?>
         </div>
         <form id="choiceForm" method="post" action="test.php">
             <div class="choices">
@@ -218,46 +218,46 @@ $interval = $question['interval_num'];
             }
         });
 
-        document.addEventListener('DOMContentLoaded', function () { // ページが表示されたら実行される
-            const timerBar = document.getElementById('timer-bar'); // バーの時間経過で右へ延びる部分
-            const timerContainer = document.getElementById('timer-container'); // バーの背景
-            const remainingTimeElement = document.getElementById('remaining-time'); // 残り時間表示
-            const intervalDuration = totalSegments * 1000; // 制限時間をミリ秒に変換
-            startTime = Date.now();
-            const endTime = startTime + intervalDuration;
+        // document.addEventListener('DOMContentLoaded', function () { // ページが表示されたら実行される
+        //     const timerBar = document.getElementById('timer-bar'); // バーの時間経過で右へ延びる部分
+        //     const timerContainer = document.getElementById('timer-container'); // バーの背景
+        //     const remainingTimeElement = document.getElementById('remaining-time'); // 残り時間表示
+        //     const intervalDuration = totalSegments * 1000; // 制限時間をミリ秒に変換
+        //     startTime = Date.now();
+        //     const endTime = startTime + intervalDuration;
 
-            function updateTimer() {
-                const currentTime = Date.now();
-                const timeElapsed = currentTime - startTime;
-                const timeRemaining = Math.max(0, endTime - currentTime);
-                const percentage = (timeElapsed / intervalDuration) * 100;
+        //     function updateTimer() {
+        //         const currentTime = Date.now();
+        //         const timeElapsed = currentTime - startTime;
+        //         const timeRemaining = Math.max(0, endTime - currentTime);
+        //         const percentage = (timeElapsed / intervalDuration) * 100;
 
-                // バーの長さを更新
-                timerBar.style.width = percentage + '%';
+        //         // バーの長さを更新
+        //         timerBar.style.width = percentage + '%';
 
-                // 背景の色を更新
-                if (percentage < 50) {
-                    timerContainer.style.backgroundColor = '#339966'; // 緑
-                } else if (percentage < 80) {
-                    timerContainer.style.backgroundColor = '#ffcc00'; // 黄
-                } else {
-                    timerContainer.style.backgroundColor = '#ff0000'; // 赤
-                }
+        //         // 背景の色を更新
+        //         if (percentage < 50) {
+        //             timerContainer.style.backgroundColor = '#339966'; // 緑
+        //         } else if (percentage < 80) {
+        //             timerContainer.style.backgroundColor = '#ffcc00'; // 黄
+        //         } else {
+        //             timerContainer.style.backgroundColor = '#ff0000'; // 赤
+        //         }
 
-                // 残り時間を更新
-                remainingTimeElement.textContent = Math.ceil(timeRemaining / 1000) + ' / '+ totalSegments +' 秒';
+        //         // 残り時間を更新
+        //         remainingTimeElement.textContent = Math.ceil(timeRemaining / 1000) + ' / '+ totalSegments +' 秒';
 
-                if (currentTime >= endTime) { // 時間切れ
-                    goToNextQuestion();
-                } else {
-                    requestAnimationFrame(updateTimer);
-                }
-            }
+        //         if (currentTime >= endTime) { // 時間切れ
+        //             goToNextQuestion();
+        //         } else {
+        //             requestAnimationFrame(updateTimer);
+        //         }
+        //     }
 
-            // 初期化
-            timerBar.style.transition = 'width 0.1s linear'; // バーの動きのアニメーション設定
-            updateTimer();
-        });
+        //     // 初期化
+        //     timerBar.style.transition = 'width 0.1s linear'; // バーの動きのアニメーション設定
+        //     updateTimer();
+        // });
                 
         // モーダルを開く関数
         function openEditModal() {
