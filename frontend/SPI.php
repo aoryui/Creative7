@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPI サイト</title>
     <link rel="stylesheet" href="../css/SPI.css">
+    <link rel="stylesheet" href="../responsive/SPI.css">
 </head>
 
 <body>

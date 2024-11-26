@@ -1,0 +1,90 @@
+/* タブレット（768px～1024px以下） */
+@media screen and (max-width: 1024px){
+    header {
+        padding: 15px 0; /* ヘッダーの高さを少し縮小 */
+    }
+
+    .kan-right {
+        display: none; /* ログインボタン非表示 */
+    }
+
+    nav ul {
+        flex-wrap: wrap; /* メニューが長い場合に折り返し対応 */
+        justify-content: center; /* 中央揃え */
+    }
+
+    nav ul li a {
+        padding: 8px 12px; /* メニュー項目の余白を調整 */
+    }
+
+    main {
+        padding: 0 15px; /* メインセクションの余白を少し小さく */
+    }
+
+    .feature h2 {
+        font-size: 1.4em; /* タイトルを少し小さく */
+    }
+
+    .feature p {
+        font-size: 1em; /* 内容は標準サイズを維持 */
+    }
+}
+
+
+
+/* スマホ（768px以下） */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 10px 0; /* ヘッダーの縦幅を縮小 */
+    }
+
+    .kan-right {
+        display: none; /* ログインボタン非表示 */
+    }
+
+    nav ul {
+        flex-direction: column; /* メニューを縦並びに */
+        align-items: center;
+    }
+
+    nav ul li a {
+        padding: 8px; /* メニュー項目の間隔を調整 */
+    }
+
+    main {
+        padding: 0 10px; /* メインセクションの余白を縮小 */
+    }
+
+    .feature h2 {
+        font-size: 1.2em; /* セクションタイトルの文字サイズを小さく */
+    }
+
+    .feature p {
+        font-size: 0.9em; /* セクション内容の文字サイズを小さく */
+    }
+}
+
+/* より小さいデバイス（480px以下） */
+@media screen and (max-width: 480px) {
+    header {
+        padding: 10px 0; /* ヘッダーの縦幅を縮小 */
+    }
+
+    nav ul li a {
+        font-size: 0.9em; /* ナビゲーションの文字サイズを調整 */
+        padding: 6px; /* 間隔をさらに調整 */
+    }
+
+    .feature {
+        padding: 15px; /* セクションの内側余白を縮小 */
+    }
+
+    .feature h2 {
+        font-size: 1em; /* タイトルをさらに小さく */
+        padding-left: 8px; /* 左側のライン間隔を縮小 */
+    }
+
+    .feature p {
+        font-size: 0.8em; /* 内容の文字サイズをさらに小さく */
+    }
+}

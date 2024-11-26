@@ -1,4 +1,5 @@
 /* 基本レイアウトのスタイル */
+
 * {
     margin: 0;
     padding: 0;
@@ -27,7 +28,6 @@ nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* スマホ対応 */
 }
 
 nav ul li a {
@@ -46,25 +46,27 @@ nav ul li a {
     border-radius: 5px;
     font-size: 0.9em;
     padding: 8px 18px;
-    white-space: nowrap; /* テキストが改行されないようにする */
 }
 
 .kan-right:hover {
     background-color: rgb(60, 148, 74);
 }
 
-/* ヒーローセクション */
 .hero {
     position: relative;
+    top: -10px;
     height: 400px;
+    max-height: 600px;
     color: #000;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 50px;
     padding: 0 15px;
 }
+
 
 .hero h1 {
     font-size: 2.5em;
@@ -76,12 +78,18 @@ nav ul li a {
     margin-bottom: 20px;
 }
 
-.hero .logo-img {
+.logo-img {
+    position: relative;
+    top: -20px;
+    left: 100px;
     max-width: 400px;
     height: auto;
 }
 
 .hero .btn {
+    position: relative;
+    top: 20px;
+    left: -200px;
     background-color: rgb(89, 208, 247);
     color: #fff;
     padding: 12px 25px;
@@ -89,84 +97,8 @@ nav ul li a {
     border-radius: 10px;
     font-size: 1.2em;
     margin-top: 20px;
-    white-space: nowrap; /* テキストの改行を防ぐ */
 }
 
 .hero .btn:hover {
     background-color: rgb(60, 158, 202);
-}
-
-/* レスポンシブ対応 */
-@media screen and (max-width: 1024px) {
-    header {
-        padding: 15px 0; /* ヘッダーの高さを調整 */
-    }
-
-    .kan-right {
-        font-size: 0.8em; /* ボタンサイズを縮小 */
-        padding: 6px 14px;
-        right: 10px;
-    }
-
-    nav ul {
-        flex-wrap: wrap; /* タブレットでナビゲーションが折り返す場合に対応 */
-        text-decoration:underline;
-    }
-
-    .hero h1 {
-        font-size: 1.8em;
-    }
-
-    .hero p {
-        font-size: 1em;
-    }
-
-    .hero .btn {
-        font-size: 1em;
-        padding: 10px 20px;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .kan-right {
-        display: none; /* スマホでは非表示 */
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .hero h1 {
-        font-size: 1.5em;
-    }
-
-    .hero .btn {
-        width: 100%; /* ボタンを横幅いっぱいに */
-        text-align: center;
-        padding: 12px;
-    }
-
-    .hero .logo-img {
-        max-width: 300px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .hero h1 {
-        font-size: 1.4em;
-    }
-
-    .hero p {
-        font-size: 0.9em;
-    }
-
-    .hero .btn {
-        font-size: 1.2em;
-        padding: 10px;
-    }
-
-    .hero .logo-img {
-        max-width: 250px;
-    }
 }

@@ -1,0 +1,77 @@
+/* レスポンシブ対応 */
+
+/* タブレット（1024px以下） */
+@media screen and (max-width: 1024px) {
+    .kan-right {
+        display: none; /* ログインボタン非表示 */
+    }
+
+    header {
+        padding: 10px 0; /* ヘッダーの高さを調整 */
+    }
+
+    .kan-right {
+        font-size: 0.8em; /* ログインボタンの文字サイズ縮小 */
+        padding: 6px 14px;
+        right: 10px;
+    }
+
+    nav ul {
+        flex-wrap: wrap; /* ナビゲーションが折り返し可能に */
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+}
+
+/* スマホ（768px以下） */
+@media screen and (max-width: 768px) {
+    .kan-right {
+        display: none; /* ログインボタン非表示 */
+    }
+    header {
+        padding: 5px 0; /* ヘッダーの高さを調整 */
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li a {
+        padding: 12px; /* メニュー項目の間隔調整 */
+    }
+
+    h2 {
+        font-size: 1.5em; /* 見出しのサイズ調整 */
+    }
+
+    p {
+        font-size: 1em; /* テキストサイズ調整 */
+    }
+}
+
+/* より小さいスマホ（480px以下） */
+@media screen and (max-width: 480px) {
+    .kan-right {
+        font-size: 0.8em; /* ログインボタンのフォントサイズ縮小 */
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    p {
+        font-size: 0.9em; /* 小さな画面向けにテキスト縮小 */
+    }
+
+
+}
