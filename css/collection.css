@@ -33,7 +33,6 @@ td:hover {
     height: 100%;
     display: block;
     /* 余計な空白を除去 */
-    filter: contrast(30%);
 }
 
 .collection-container {
@@ -41,4 +40,12 @@ td:hover {
     margin-left: auto;
     margin-right: auto;
     width: 800px;
+}
+
+.owned-badge {
+    filter: contrast(100%);
+}
+
+.unowned-badge {
+    filter: contrast(30%);
 }
