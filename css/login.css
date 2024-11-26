@@ -85,25 +85,3 @@ input:focus {
   color: red;
 }
 
-/* iPhone 14対応のスタイル調整 */
-@media (max-width: 390px) {
-  .login-container {
-    width: 80%; /* コンテナの幅を画面に合わせる */
-    padding: 20px;
-  }
-
-  #login {
-    width: 40%; /* ログインボタンをコンテナに合わせて広げる */
-    font-size: 18px; /* ボタン文字サイズを少し縮小 */
-  }
-
-  input {
-    font-size: 14px; /* 入力欄のフォントサイズを小さく */
-    padding: 8px; /* 入力欄のパディングを調整 */
-  }
-
-  .character {
-    width: 120px; /* キャラクター画像のサイズを縮小 */
-  }
-
-}

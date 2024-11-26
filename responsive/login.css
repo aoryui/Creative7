@@ -1,0 +1,51 @@
+/* スマートフォン用 */
+@media (max-width: 480px) {
+    .login-container {
+        width: 90%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    input {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #login {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .signup a {
+        font-size: 12px;
+    }
+}
+
+/* タブレット用 */
+@media (min-width: 481px) and (max-width: 768px) {
+    .login-container {
+        width: 80%;
+        padding: 30px;
+    }
+
+    label {
+        font-size: 15px;
+    }
+
+    input {
+        font-size: 15px;
+    }
+
+    #login {
+        font-size: 17px;
+        padding: 12px;
+    }
+
+    .signup a {
+        font-size: 14px;
+    }
+}

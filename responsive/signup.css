@@ -1,0 +1,92 @@
+/* スマートフォン用 */
+@media (max-width: 480px) {
+    .login-body {
+        padding: 20px;
+    }
+
+    .login-container {
+        margin-top: 90px;
+        width: 100%; /* 画面幅に合わせる */
+        height: 500px;
+        box-sizing: border-box;
+        overflow-y: auto; /* スクロールを有効化 */
+    }
+
+    .h1 {
+        font-size: 10px; /* タイトルを小さめに調整 */
+    }
+
+    .form-group {
+        margin-bottom: 10px; /* 各フォーム要素の間隔を狭める */
+    }
+
+    input, #school {
+        width: 100%; /* 画面幅に合わせる */
+        font-size: 20px;
+        padding: 8px;
+        background-color: #fff;
+    }
+
+    #submit {
+        width: 60%; /* ボタンサイズ調整 */
+        font-size: 18px;
+        top: 20px;
+        margin: 0 auto; /* 中央揃え */
+        display: block;
+    }
+
+    #username, #school, #address, #password {
+        left: 0;
+        top: 0;
+        width: 100%; /* 入力幅を最大化 */
+    }
+
+    #usernames, #schools, #addresses, #passwords {
+        left: 0;
+        top: 0;
+        text-align: left; /* 左揃えに変更 */
+        font-size: 14px; /* ラベルのフォントサイズを縮小 */
+        margin-bottom: 5px;
+    }
+
+    .character {
+        width: 100px; /* 画像を小さく調整 */
+        margin-bottom: 15px;
+    }
+
+    .message-red {
+        width: 100%; /* メッセージを画面幅に対応 */
+        padding: 10px;
+    }
+}
+
+/* タブレット用 */
+@media (min-width: 481px) and (max-width: 768px) {
+    .login-container {
+        width: 80%; /* 少し幅を広げる */
+        height: auto;
+        margin-top: 40px;
+        padding: 30px;
+    }
+
+    .h1 {
+        font-size: 16px; /* タイトルサイズを調整 */
+    }
+
+    input, #school {
+        width: 100%; /* 入力フィールド幅調整 */
+        font-size: 18px; /* フォントサイズ調整 */
+        padding: 10px;
+    }
+
+    #submit {
+        width: 80%; /* ボタンを広げる */
+        font-size: 18px;
+        padding: 12px;
+        margin-top: 10px;
+    }
+
+    .message-red {
+        width: 90%; /* メッセージ幅を少し制限 */
+    }
+}

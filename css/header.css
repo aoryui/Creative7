@@ -122,58 +122,6 @@ nav ul li a {
     font-size: 18px;
 }
 
-/* iPhone 14対応のレスポンシブスタイル */
-@media (max-width: 390px) {
-
-    /* ヘッダーをコンパクトに */
-    header {
-        height: 80px;
-        justify-content: space-between;
-        padding: 0 10px;
-        /* ヘッダー内のパディングを縮小 */
-    }
-
-    /* ロゴサイズ調整 */
-    #free-h1 {
-        position: relative;
-        left: 10px;
-        padding-right: 70px;
-        width: 200px;
-        height: 40px;
-    }
-
-    /* ナビゲーションメニューの幅とフォントサイズの調整 */
-    nav {
-        width: 100%;
-        height: calc(100% - 70px);
-        /* ヘッダーの高さに合わせる */
-        top: 70px;
-    }
-
-    nav ul li a {
-        font-size: 16px;
-    }
-
-    /* メニューアイコンとボタンを調整 */
-    #menuBtn {
-        padding-left: -22px;
-        font-size: 1px;
-        /* メニューボタンのアイコンサイズをさらに大きく */
-        width: 60px;
-    }
-
-    /* ドロップダウンメニューのフォントサイズとスペースを調整 */
-    #menuContent {
-        width: 100%;
-        min-width: unset;
-    }
-
-    #menuContent li a {
-        font-size: 16px;
-        padding: 10px;
-    }
-}
-
 
 .button-link {
     display: block;
