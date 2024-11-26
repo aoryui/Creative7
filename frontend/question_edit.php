@@ -35,6 +35,11 @@ $edit_text = [
     'sentence'=> ""
 ];
 
+// 選択肢編集用のリストを宣言
+$choice_list = [];
+// 正しい選択肢の番号を入れる変数
+$correct_num = null;
+
 echo '<script>console.log('.json_encode($list_question).')</script>';
 echo '<script>console.log('.json_encode($list_choices).')</script>';
 echo '<script>console.log('.json_encode($list_answers).')</script>';
@@ -98,7 +103,7 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
                     ?>
                 </td>
                 <td id="updatedChoices">&nbsp;</td>
-                <td><button disabled type="button" onclick="openModal('modal4')">編集</button></td>
+                <td><button type="button" onclick="openModal('modal4')">編集</button></td>
             </tr>
             <tr>
                 <th>制限時間</th>
@@ -114,9 +119,12 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
             </tr>
         </tbody>
     </table>
-    <!-- 他のボタンとは別に配置 -->
+    <!-- 編集内容をhiddenで送る -->
     <input type="hidden" name="list_data" id="list_data" value='<?php echo json_encode($edit_text); ?>'>
+    <input type="hidden" name="choice_data" id="choice_data" value='<?php echo json_encode($choice_list); ?>'>
+    <input type="hidden" name="correct_data" id="correct_data" value='<?php echo json_encode($correct_num); ?>'>
     <input type="file" name="image" id="imageInput" style="display: none;" accept=".jpg">
+    
     <div class="update-button-container">
         <button type="submit">問題を更新</button>
     </div>
@@ -279,6 +287,7 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
         document.getElementById(modalId).style.display = "block";
         document.getElementById('imageInputQuestion').value = ""; // モーダル内の選択状態をリセット
         selectedFile = null; // 選択中のファイルもリセット
+        console.log(edit_choice_list);
     }
 
     // モーダルを閉じる
@@ -414,6 +423,10 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
         }
     }
 
+    // 入力した選択肢をphpで扱う為に宣言
+    const edit_choice_list = <?php echo json_encode($choice_list); ?>;
+    let edit_correct_num = <?php echo json_encode($correct_num); ?>;
+    // 選択肢編集機能
     document.getElementById('choicesForm').addEventListener('submit', function(event) {
         event.preventDefault(); // フォーム送信を防ぐ
 
@@ -431,9 +444,20 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
 
             // 更新された選択肢コンテナに選択肢表示を追加する
             updatedChoices.appendChild(choiceDisplay);
+
+            // 選択肢をphpに送る用のリストに入れる
+            edit_choice_list.push(choiceText);
+            // 正解の番号をphpに送る用の変数に格納
+            if (isCorrect) {
+                edit_correct_num = index;
+            }
         });
+        document.getElementById('choice_data').value = JSON.stringify(edit_choice_list);
+        document.getElementById('correct_data').value = JSON.stringify(edit_correct_num);
 
         closeModal('modal4'); // モーダルを閉じる
+        console.log('Updated edit_text:', edit_text);
+        console.log('Updated list_data:', document.getElementById('list_data').value);
     });
 
     // 元の制限時間を取得

@@ -4,15 +4,18 @@ $form = new Form();
 
 $genre_success = false; // ジャンル保存の成功フラグ
 $image_success = false; // 画像アップロードの成功フラグ
+$choice_success = false; // 選択肢保存の成功フラグ
 
 // ジャンル
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // JSONデータを受け取る
     $list_data = isset($_POST["list_data"]) ? $_POST["list_data"] : "[]";
-    
+    $choice_data = $_POST["choice_data"] ?? "[]"; // 新規選択肢
+    $correct = $_POST["correct_data"] ?? null; // 回答
+
     // JSONをPHPの配列にデコード
     $list = json_decode($list_data, true);
-    echo '<script>console.log('.json_encode($list).')</script>';
+    $choice_list = json_decode($choice_data, true);
 
     $question_id = $list['question_id']; // 問題id
     $field_id = $list['field_id']; // 言語非言語
@@ -27,6 +30,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $result = $form->updateGenre($question_id, $field_id, $genre_id, $genre_text);
         if ($result === true) {
             $genre_success = true;
+        }
+    }
+
+    // 選択肢保存
+    if (is_array($choice_list) && !empty($choice_list) && $correct !== null && isset($list['question_id'])) {
+        // 選択肢と正解の更新
+        $result = $form->updateChoicesAndAnswer($question_id, $choice_list, $correct);
+        if ($result === true) {
+            $choice_success = true;
         }
     }
 }
@@ -46,34 +58,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['image'])) {
         }
     }
 }
-echo '<script>console.log('.json_encode($question_id).')</script>';
+
 // 条件分岐
-if ($genre_success && $image_success) {
-    echo "<script>
-        alert('ジャンルと画像を保存しました');
-        window.location.href = '../frontend/question_preview.php?question_id=" . $question_id . "';
-    </script>";
-    exit();
-} elseif ($genre_success && !$image_success) {
-    echo "<script>
-        alert('ジャンル保存は成功しましたが、画像のアップロードに失敗しました');
-        window.location.href = '../frontend/question_preview.php?question_id=" . $question_id . "';
-    </script>";
-    exit();
-} elseif (!$genre_success && $image_success) {
-    echo "<script>
-        alert('ジャンル保存に失敗しましたが、画像は正常にアップロードされました');
-        window.location.href = '../frontend/question_preview.php?question_id=" . $question_id . "';
-    </script>";
-    exit();
+$message = [
+    'genre' => $genre_success ? 'true' : 'false',
+    'img' => $image_success ? 'true' : 'false',
+    'choice' => $choice_success ? 'true' : 'false'
+];
+
+if ($genre_success || $image_success || $choice_success) {
+    // 成功したステータスをURLパラメータとして送信
+    $query_params = http_build_query(['status' => $message]);
+    $redirect_url = '../frontend/question_preview.php?question_id=' . $question_id . '&' . $query_params;
 } else {
-    echo "<script>
-        alert('ジャンル保存と画像アップロードの両方が失敗しました');
-        window.location.href = '../frontend/question_edit.php?question_id=" . $question_id . "';
-    </script>";
-    exit();
+    // 失敗時は何も送らず編集画面へ
+    $redirect_url = '../frontend/question_edit.php?question_id=' . $question_id;
 }
 
+// リダイレクト処理
+echo "<script>
+    window.location.href = '$redirect_url';
+</script>";
+exit();
 
 
 ?>

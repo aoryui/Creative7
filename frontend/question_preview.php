@@ -14,6 +14,25 @@ if (isset($_GET['question_id'])) {
 $question_id = isset($_SESSION['question_id']) ? $_SESSION['question_id'] : [];
 echo '<script>console.log('.json_encode(value: $question_id).')</script>';
 
+// URLパラメータから status を取得
+$status = $_GET['status'] ?? null;
+if ($status) {
+    // メッセージ配列を生成
+    $messages = [];
+    foreach ($status as $key => $value) {
+        if ($value === 'true') {
+            $messages[] = $key . ':成功';
+        } elseif ($value === 'false') {
+            $messages[] = $key . ':失敗';
+        }
+    }
+
+    // メッセージを JavaScript のアラートで表示
+    echo "<script>
+        alert('" . implode("\\n", $messages) . "');
+    </script>";
+}
+
 // 問題のデータを取得する
 $list_question = $form->getQuestion(question_id: $question_id); // questionsテーブルからデータを取り出す
 $list_choices = $form->getChoices($question_id); // choicesテーブルからデータを取り出す

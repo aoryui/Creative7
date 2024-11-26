@@ -280,4 +280,75 @@ class form extends Dbdata
         }
     }
 
+    // 選択肢を編集する関数
+    public function updateChoicesAndAnswer($question_id, $new_choices, $correct_index) {
+        try {
+            $this->pdo->beginTransaction();
+    
+            // 現在の選択肢を取得
+            $current_choices = $this->getChoices($question_id);
+            $current_choice_ids = array_keys($current_choices);
+    
+            // 現在の正解選択肢IDを取得
+            $sql = "SELECT correct_choice_id FROM answers WHERE question_id = ?";
+            $stmt = $this->query($sql, [$question_id]);
+            $correct_choice_id = $stmt->fetchColumn();
+    
+            // 正解選択肢が削除される場合に備えて正解を更新
+            if ($correct_choice_id && !array_key_exists($correct_index, $new_choices)) {
+                $correct_choice_id = null;
+                $sql = "UPDATE answers SET correct_choice_id = NULL WHERE question_id = ?";
+                $this->exec($sql, [$question_id]);
+            }
+    
+            // 選択肢の更新または挿入
+            foreach ($new_choices as $index => $choice_text) {
+                if (isset($current_choice_ids[$index])) {
+                    // 更新
+                    $sql = "UPDATE choices SET choice_text = ? WHERE choice_id = ?";
+                    $this->exec($sql, [$choice_text, $current_choice_ids[$index]]);
+                } else {
+                    // 新規追加
+                    $sql = "INSERT INTO choices (question_id, choice_text) VALUES (?, ?)";
+                    $this->exec($sql, [$question_id, $choice_text]);
+                    $current_choice_ids[] = $this->pdo->lastInsertId();
+                }
+            }
+    
+            // 余分な選択肢を削除
+            if (count($current_choices) > count($new_choices)) {
+                $extra_choice_ids = array_slice($current_choice_ids, count($new_choices));
+                $placeholders = implode(',', array_fill(0, count($extra_choice_ids), '?'));
+    
+                // 正解が削除される場合
+                if (in_array($correct_choice_id, $extra_choice_ids)) {
+                    $correct_choice_id = null;
+                    $sql = "UPDATE answers SET correct_choice_id = NULL WHERE question_id = ?";
+                    $this->exec($sql, [$question_id]);
+                }
+                
+                // 余分な選択肢を削除
+                $sql = "DELETE FROM choices WHERE choice_id IN ($placeholders)";
+                $this->exec($sql, $extra_choice_ids);
+            }
+    
+            // 正解の選択肢IDを更新
+            if (isset($current_choice_ids[$correct_index])) {
+                $correct_choice_id = $current_choice_ids[$correct_index];
+                $sql = "UPDATE answers SET correct_choice_id = ? WHERE question_id = ?";
+                $this->exec($sql, [$correct_choice_id, $question_id]);
+            }
+    
+            $this->pdo->commit();
+            // 保存に成功した場合
+            return true;
+    
+        } catch (Exception $e) {
+            $this->pdo->rollBack();
+            // 失敗した場合エラーメッセージを返す
+            return $e->getMessage();
+        }
+    }
+    
+
 }    

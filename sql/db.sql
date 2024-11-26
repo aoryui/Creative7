@@ -64,10 +64,9 @@ CREATE TABLE choices (
 DROP TABLE IF EXISTS answers;
 CREATE TABLE answers (
     question_id INT AUTO_INCREMENT PRIMARY KEY,
-    correct_choice_id INT NOT NULL,
+    correct_choice_id INT,
     explanation TEXT NOT NULL,
-    FOREIGN KEY (question_id) REFERENCES questions(question_id) ON DELETE CASCADE,
-    FOREIGN KEY (correct_choice_id) REFERENCES choices(choice_id) ON DELETE CASCADE
+    FOREIGN KEY (question_id) REFERENCES questions(question_id) ON DELETE CASCADE
 );
 
 DROP TABLE IF EXISTS wrong;
@@ -1330,4 +1329,3 @@ INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (149, 6
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (150, 673, '2_10_8');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (151, 678, '2_10_9');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (152, 682, '2_10_10');
-
