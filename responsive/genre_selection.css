@@ -1,0 +1,74 @@
+/* ====== レスポンシブ対応 ====== */
+
+/* タブレット用 */
+@media (max-width: 1024px) {
+    .border-frame {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+  
+    .contain-left,
+    .contain-right {
+      position: static;
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
+  
+    fieldset {
+      margin-bottom: 30px;
+    }
+  
+    .language-list-container,
+    .non-language-list-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .primary,
+    .secondary {
+      margin: 0;
+      width: 100%; /* リスト幅を100%に */
+    }
+  
+    .button {
+      width: 100%;
+    }
+  }
+  
+  /* スマートフォン用 */
+  @media (max-width: 768px) {
+    .border-frame {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  
+    .flex-inner {
+      padding: 30px;
+    }
+  
+    h2 {
+      font-size: 20px;
+    }
+  
+    .language-list-container,
+    .non-language-list-container {
+      flex-direction: column;
+      gap: 10px; /* 少し間隔を詰める */
+    }
+  
+    .primary,
+    .secondary {
+      margin: 0;
+      text-align: left; /* テキスト中央寄せ */
+    }
+  
+    li {
+      
+    }
+  
+    .button {
+      font-size: 14px;
+      width: 60%;
+    }
+  }

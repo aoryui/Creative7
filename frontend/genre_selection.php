@@ -10,6 +10,7 @@ require_once __DIR__ . '/header.php'; //ヘッダー指定
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPIタイサくん</title>
     <link rel="stylesheet" href="../css/genre_selection.css">
+    <link rel="stylesheet" href="../responsive/genre_selection.css">
 </head>
 
 <body>
