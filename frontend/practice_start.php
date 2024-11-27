@@ -95,6 +95,7 @@ echo '<script>console.log('.json_encode($genre_texts).')</script>';
     <html lang="ja">
     <head>
         <link rel="stylesheet" href="../css/practice_start.css">
+        <link rel="stylesheet" href="../responsive/practice_start.css">
     </head>
     <body>
         <div class="border-frame">

@@ -1,0 +1,72 @@
+/* ====== レスポンシブ対応 ====== */
+
+/* タブレット（1024px以下） */
+@media (max-width: 1024px) {
+    .border-frame {
+        padding: 20px;
+        min-width: auto;
+    }
+
+    .left-contain, .right-contain {
+        position: static; /* 位置指定を解除 */
+        margin: 10px 0; /* 上下に余白を設定 */
+        text-align: center; /* 中央揃え */
+    }
+
+    .language-list-container,
+    .non-language-list-container {
+        flex-direction: column; /* 縦並びに変更 */
+        gap: 20px; /* 上下の間隔を調整 */
+        justify-content: center; /* 中央揃え */
+    }
+
+    .language-list li, .non-language-list li {
+        flex: 1 1 calc(50% - 10px); /* 横並びで2列表示 */
+    }
+
+    .button {
+        position: static; /* 位置指定解除 */
+        margin: 20px auto; /* 上下余白と中央寄せ */
+    }
+}
+
+/* スマートフォン（768px以下） */
+@media (max-width: 768px) {
+    .border-frame {
+        margin-top: 100px;
+        padding: 25px;
+        min-width: auto;
+    }
+
+.left-contain {
+    display: block; /* ブロック要素にして中央揃え */
+    margin: 0 auto; /* 左右のマージンを自動で設定し、中央に配置 */
+    text-align: center; /* 中央揃え */
+    width: 80px; /* 幅を制限して中央に配置 */
+}
+
+.right-contain {
+    display: block; /* ブロック要素にして中央揃え */
+    margin: 0 auto; /* 左右のマージンを自動で設定し、中央に配置 */
+    text-align: center; /* 中央揃え */
+    width: 100px; /* 幅を制限して中央に配置 */
+}
+
+    .language-list-container,
+    .non-language-list-container {
+        flex-direction: column; /* 縦並びに変更 */
+        gap: 10px; /* リスト間の余白 */
+    }
+
+    .language-list li,
+    .non-language-list li {
+        flex: 1 1 100%; /* 1列表示 */
+    }
+
+    .button {
+        position: static; /* 位置指定解除 */
+        margin: 20px auto; /* 中央に配置 */
+        width: 70%; /* 幅いっぱいに広げる */
+        max-width: 300px; /* 最大幅を設定 */
+    }
+}
