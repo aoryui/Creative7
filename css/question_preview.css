@@ -121,3 +121,48 @@ legend {
     color: #333; /* テキスト色 */
     text-align: center;
 }
+
+/* モーダルの基本スタイル */
+#statusModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 50%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* 通常の状態（成功の場合） */
+.active {
+    color: red; /* 成功した場合の色 */
+    font-weight: bold;
+}
+/* 非活性状態（失敗の場合） */
+.inactive {
+    color: gray; /* 失敗した場合の色 */
+    opacity: 0.5; /* 透明度を下げる */
+    pointer-events: none; /* クリックを無効化 */
+}
+/* モーダルの閉じるボタン */
+.close-btn {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    margin: 20px 0 0 0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}

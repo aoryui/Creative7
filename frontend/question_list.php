@@ -12,6 +12,9 @@ $genre = $values[1];
 
 // 該当する全てのデータを取得
 $list_questions = $form->getQuestion_fieldgenre($field, $genre);
+
+$message = isset($_GET['message']) ? htmlspecialchars($_GET['message'], ENT_QUOTES, 'UTF-8') : null;
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -73,5 +76,41 @@ $list_questions = $form->getQuestion_fieldgenre($field, $genre);
         <?php endforeach; ?>
     </tbody>
 </table>
+
+<!-- モーダル -->
+<div id="resultModal" class="modal">
+    <div class="modal-content">
+        <h2><?php echo $message ? $message : ''; ?></h2>
+        <button class="close-btn" onclick="closeModal()">閉じる</button>
+    </div>
+</div>
+<script>
+    // メッセージがある場合はモーダルを表示
+    const message = "<?php echo $message; ?>";
+    const modal = document.getElementById('resultModal');
+
+    if (message === "true") {
+        document.querySelector(".modal-content h2").textContent = "問題を削除しました";
+        modal.style.display = 'block'; // モーダルを表示
+
+        // URLから message パラメータを削除
+        const url = new URL(window.location.href);
+        url.searchParams.delete('message');
+        history.replaceState(null, '', url.toString());
+    }
+
+    // 閉じるボタンをクリックするとモーダルを閉じる
+    function closeModal() {
+        modal.style.display = 'none';
+    }
+
+    // モーダル外をクリックすると閉じる
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+</script>
+
 </body>
 </html>

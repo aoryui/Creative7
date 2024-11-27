@@ -130,6 +130,21 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
     </div>
 </form>
 
+<!-- 削除ボタン -->
+<button id="deleteButton">問題を削除</button>
+
+<!-- 削除モーダル -->
+<div id="deleteModal" class="modal">
+    <div class="delete-modal">
+        <h2>本当に削除しますか？</h2>
+        <form action="../backend/question_delete.php" method="POST" style="display: inline;">
+            <input type="hidden" name="question_id" value="<?php echo $question_id?>">
+            <button type="submit" class="delete-button">削除</button>
+        </form>
+        <button id="cancelButton">キャンセル</button>
+
+    </div>
+</div>
 
 <!-- モーダル -->
 <div id="modal1" class="modal">
@@ -282,6 +297,18 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
 </div>
 
 <script>
+    // モーダル要素の取得
+    const modal = document.getElementById('deleteModal');
+    const deleteButton = document.getElementById('deleteButton');
+    const closeButton = document.querySelector('.close');
+    const cancelButton = document.getElementById('cancelButton');
+
+    // 削除ボタンをクリックするとモーダルを表示
+    deleteButton.onclick = () => {
+        modal.style.display = 'block';
+    };
+
+
     // モーダルを開く
     function openModal(modalId) {
         document.getElementById(modalId).style.display = "block";

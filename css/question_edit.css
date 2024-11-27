@@ -63,6 +63,12 @@ button:hover {
     margin-top: 20px;
 }
 
+#deleteButton{
+    background-color: red;
+    float: right;
+    margin: 0 20px 20px 0;
+}
+
 /* モーダルのスタイル */
 .modal {
     display: none;
@@ -157,4 +163,20 @@ form input[type="submit"]:hover {
 
 .correct-choice{
     background-color: #83E64E;
+}
+
+.delete-modal{
+    text-align: center;
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+}
+.delete-button{
+    background-color:red;
+}
+.delete-button:hover {
+    background-color: darkred;
 }

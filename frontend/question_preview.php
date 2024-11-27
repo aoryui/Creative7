@@ -14,23 +14,32 @@ if (isset($_GET['question_id'])) {
 $question_id = isset($_SESSION['question_id']) ? $_SESSION['question_id'] : [];
 echo '<script>console.log('.json_encode(value: $question_id).')</script>';
 
-// URLパラメータから status を取得
 $status = $_GET['status'] ?? null;
+$messages = [];
+
 if ($status) {
     // メッセージ配列を生成
-    $messages = [];
     foreach ($status as $key => $value) {
-        if ($value === 'true') {
-            $messages[] = $key . ':成功';
-        } elseif ($value === 'false') {
-            $messages[] = $key . ':失敗';
+        // keyに基づく表示テキストを定義
+        switch ($key) {
+            case 'genre':
+                $displayText = 'ジャンル名';
+                break;
+            case 'img':
+                $displayText = '問題画像';
+                break;
+            case 'choice':
+                $displayText = '選択肢';
+                break;
+            default:
+                $displayText = $key; // その他のキーはそのまま表示
+                break;
         }
-    }
 
-    // メッセージを JavaScript のアラートで表示
-    echo "<script>
-        alert('" . implode("\\n", $messages) . "');
-    </script>";
+        // 成功/失敗に応じたスタイルを決定
+        $status_class = ($value === 'true') ? 'active' : 'inactive';
+        $messages[] = ['text' => $displayText, 'status' => $status_class];
+    }
 }
 
 // 問題のデータを取得する
@@ -96,6 +105,42 @@ $explanation_img = "../image/解説/" . $explanation . ".jpg";
     </div>
 </fieldset>
 </div>
+
+<div id="statusModal">
+    <div class="modal-content">
+        <h2>問題を編集しました！</h2>
+        <div id="modalBody">
+            <?php if (!empty($messages)): ?>
+                <?php foreach ($messages as $message): ?>
+                    <p class="<?= $message['status']; ?>"><?= htmlspecialchars($message['text'], ENT_QUOTES, 'UTF-8'); ?></p>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </div>
+        <button class="close-btn" onclick="closeModal()">閉じる</button>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const modal = document.getElementById('statusModal');
+        <?php if (!empty($messages)): ?>
+        modal.style.display = 'block';
+        <?php endif; ?>
+    });
+
+    function closeModal() {
+        document.getElementById('statusModal').style.display = 'none';
+    }
+
+    // モーダル外をクリックすると閉じる
+    window.onclick = function(event) {
+        const modal = document.getElementById("statusModal");
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+    
+</script>
 
 </body>
 </html>

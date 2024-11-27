@@ -349,6 +349,13 @@ class form extends Dbdata
             return $e->getMessage();
         }
     }
-    
+
+    // 問題を削除する
+    public function deleteQuestion($question_id){
+        $sql = 'DELETE FROM questions WHERE question_id = ?';
+        $stmt = $this->exec($sql, array_params: [$question_id]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
 
 }    
