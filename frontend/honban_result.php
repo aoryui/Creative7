@@ -441,7 +441,7 @@ if ($correct_count === 100) {
     echo "<script>console.log('Correct count is not 10. No badge granted.');</script>";
 }
 
-if ($correct_count_lang != 0) { 
+if ($correct_count_lang === 50) { 
     // バッジIDが9のバッジを取得
     $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 13";
     $badge_result = $conn->query($badge_query);
@@ -481,7 +481,7 @@ if ($correct_count_lang != 0) {
     echo "<script>console.log('Correct count is not 10. No badge granted.');</script>";
 }
 
-if ($correct_count_nonlang != 0) { 
+if ($correct_count_nonlang === 150) { 
     // バッジIDが9のバッジを取得
     $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 14";
     $badge_result = $conn->query($badge_query);
