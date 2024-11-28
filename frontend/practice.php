@@ -84,6 +84,8 @@ $genre_text = nl2br(htmlspecialchars($question['genre_text'], ENT_QUOTES, 'UTF-8
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPIタイサくん</title>
     <link rel="stylesheet" href="../css/practice.css">
+    <link rel="stylesheet" href="../responsive/practice.css">
+    <link rel>
 </head>
 <body>
     <div class="content"> <!-- 全体の要素 -->

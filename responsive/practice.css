@@ -1,0 +1,117 @@
+/* スマートフォン向け */
+@media screen and (max-width: 600px) {
+    body {
+        margin-top: 70px; /* 上部の余白を調整 */
+    }
+
+    .top-contents {
+        margin: 0 0 0 10px;
+    }
+
+    .center-contents {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px;
+    }
+
+    .question_img {
+        width: 80%; /* 画像が親要素の幅に収まるように */
+        max-width: 400px; /* 最大幅を設定 */
+        height: auto;
+        margin: 10px 0;
+    }
+
+    #choiceForm {
+        float: none;
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .choices {
+        max-width: 100%;
+    }
+
+    .next-button {
+        width: 80px; /* ボタンの幅を100%にして、親要素の幅に合わせる */
+        text-align: right;
+        font-size: 18px; /* フォントサイズ調整 */
+        margin-right:0px;
+        margin: 10px 0;
+    }
+
+    .edit-profile-btn {
+        height: auto;
+        position: relative;
+        left: 300px;
+        margin: 5px 0; /* ボタン間の余白を追加 */
+    }
+}
+
+
+
+.modal-content {
+    width: 90%; /* スマホ画面の幅に合わせて広げる */
+    height: auto; /* 高さをコンテンツに応じて調整 */
+    margin-top: 300px; /* 画面中央に配置 */
+    border-radius: 10px; /* モダンな角丸 */
+    padding: 15px; /* 内側の余白を調整 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* 視覚的に浮いている感を追加 */
+}
+
+.modal {
+    padding: 0; /* 全体の余白をリセット */
+}
+
+.close {
+    font-size: 24px; /* 閉じるボタンをスマホ向けに縮小 */
+}
+
+/* モーダル内のテキストや要素 */
+.modal-content p {
+    font-size: 14px; /* フォントサイズを調整 */
+    line-height: 1.5; /* 読みやすく行間を設定 */
+}
+
+.modal-buttons {
+    display: flex;
+    flex-direction: column; /* ボタンを縦並びに */
+    gap: 10px; /* ボタン間の余白を調整 */
+    margin-top: 15px; /* コンテンツとの間隔を確保 */
+}
+
+.modal-button {
+    width: 100%; /* ボタンを幅いっぱいに */
+    padding: 10px; /* タップしやすい領域 */
+    font-size: 16px; /* ボタン文字の大きさ調整 */
+    border-radius: 5px; /* 少し丸みを持たせる */
+}
+
+/* モーダル背景 */
+.modal {
+    background-color: rgba(0, 0, 0, 0.7); /* 背景を少し暗く */
+}
+
+
+/* タブレット向け */
+@media screen and (max-width: 900px) {
+    .center-contents {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .question_img {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .edit-profile-btn {
+        width: 20%;
+        text-align: right;
+    }
+
+    .next-button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
