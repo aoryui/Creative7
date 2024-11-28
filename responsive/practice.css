@@ -50,7 +50,6 @@
 
 
 .modal-content {
-    width: 90%; /* スマホ画面の幅に合わせて広げる */
     height: auto; /* 高さをコンテンツに応じて調整 */
     margin-top: 300px; /* 画面中央に配置 */
     border-radius: 10px; /* モダンな角丸 */
