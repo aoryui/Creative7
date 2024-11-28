@@ -69,8 +69,6 @@ if ($user_result->num_rows > 0) {
     // ユーザーが見つからない場合の処理
 }
 
-include('badge_test.php');
-
 ?>
 <!DOCTYPE html>
 <html lang="ja">
