@@ -154,18 +154,200 @@ if ($user_result->num_rows > 0) {
                 <button class="edit-profile-btn" onclick="openEditModal()">プロフィール編集</button>
                 <div id="badge"><p>レベル: <?= $level ?></p>
                 <?php if ($level >= 125): ?>
+                    <?php
+                    $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 7";
+                    $badge_result = $conn->query($badge_query);
+
+                    if ($badge_result && $badge_result->num_rows > 0) {
+                        // 取得したbadge_idをowned_badgeテーブルに挿入
+                        $row = $badge_result->fetch_assoc();
+                        $badge_id = $row['badge_id'];
+
+                        // すでにそのバッジを所有していないか確認
+                        $check_query = "SELECT * FROM owned_badge WHERE userid = $userid AND badge_id = $badge_id";
+                        $check_result = $conn->query($check_query);
+
+                        if ($check_result && $check_result->num_rows === 0) {
+                            // バッジを挿入
+                            $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, $badge_id)";
+                            if ($conn->query($insert_badge_query) === TRUE) {
+                                echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
+                            } else {
+                                echo "<script>console.error('Failed to insert badge: " . $conn->error . "');</script>";
+                            }
+                        } else {
+                            echo "<script>console.log('Badge $badge_id already owned by user $userid.');</script>";
+                        }
+                    }
+                        ?>
                     <img src="../image/icon/badge7.png" alt="" width="75" height="75">
                 <?php elseif ($level >= 100): ?>
+                    <?php
+                    $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 6";
+                    $badge_result = $conn->query($badge_query);
+
+                    if ($badge_result && $badge_result->num_rows > 0) {
+                        // 取得したbadge_idをowned_badgeテーブルに挿入
+                        $row = $badge_result->fetch_assoc();
+                        $badge_id = $row['badge_id'];
+
+                        // すでにそのバッジを所有していないか確認
+                        $check_query = "SELECT * FROM owned_badge WHERE userid = $userid AND badge_id = $badge_id";
+                        $check_result = $conn->query($check_query);
+
+                        if ($check_result && $check_result->num_rows === 0) {
+                            // バッジを挿入
+                            $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, $badge_id)";
+                            if ($conn->query($insert_badge_query) === TRUE) {
+                                echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
+                            } else {
+                                echo "<script>console.error('Failed to insert badge: " . $conn->error . "');</script>";
+                            }
+                        } else {
+                            echo "<script>console.log('Badge $badge_id already owned by user $userid.');</script>";
+                        }
+                    }
+                        ?>
                     <img src="../image/icon/badge6.png" alt="" width="75" height="75">
                 <?php elseif ($level >= 50): ?>
+                    <?php
+                    $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 5";
+                    $badge_result = $conn->query($badge_query);
+
+                    if ($badge_result && $badge_result->num_rows > 0) {
+                        // 取得したbadge_idをowned_badgeテーブルに挿入
+                        $row = $badge_result->fetch_assoc();
+                        $badge_id = $row['badge_id'];
+
+                        // すでにそのバッジを所有していないか確認
+                        $check_query = "SELECT * FROM owned_badge WHERE userid = $userid AND badge_id = $badge_id";
+                        $check_result = $conn->query($check_query);
+
+                        if ($check_result && $check_result->num_rows === 0) {
+                            // バッジを挿入
+                            $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, $badge_id)";
+                            if ($conn->query($insert_badge_query) === TRUE) {
+                                echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
+                            } else {
+                                echo "<script>console.error('Failed to insert badge: " . $conn->error . "');</script>";
+                            }
+                        } else {
+                            echo "<script>console.log('Badge $badge_id already owned by user $userid.');</script>";
+                        }
+                    }
+                        ?>
                     <img src="../image/icon/badge5.png" alt="" width="75" height="75">
                 <?php elseif ($level >= 30): ?>
+                    <?php
+                    $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 4";
+                    $badge_result = $conn->query($badge_query);
+
+                    if ($badge_result && $badge_result->num_rows > 0) {
+                        // 取得したbadge_idをowned_badgeテーブルに挿入
+                        $row = $badge_result->fetch_assoc();
+                        $badge_id = $row['badge_id'];
+
+                        // すでにそのバッジを所有していないか確認
+                        $check_query = "SELECT * FROM owned_badge WHERE userid = $userid AND badge_id = $badge_id";
+                        $check_result = $conn->query($check_query);
+
+                        if ($check_result && $check_result->num_rows === 0) {
+                            // バッジを挿入
+                            $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, $badge_id)";
+                            if ($conn->query($insert_badge_query) === TRUE) {
+                                echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
+                            } else {
+                                echo "<script>console.error('Failed to insert badge: " . $conn->error . "');</script>";
+                            }
+                        } else {
+                            echo "<script>console.log('Badge $badge_id already owned by user $userid.');</script>";
+                        }
+                    }
+                        ?>
                     <img src="../image/icon/badge4.png" alt="" width="75" height="75">
                 <?php elseif ($level >= 10): ?>
+                    <?php
+                    $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 3";
+                    $badge_result = $conn->query($badge_query);
+
+                    if ($badge_result && $badge_result->num_rows > 0) {
+                        // 取得したbadge_idをowned_badgeテーブルに挿入
+                        $row = $badge_result->fetch_assoc();
+                        $badge_id = $row['badge_id'];
+
+                        // すでにそのバッジを所有していないか確認
+                        $check_query = "SELECT * FROM owned_badge WHERE userid = $userid AND badge_id = $badge_id";
+                        $check_result = $conn->query($check_query);
+
+                        if ($check_result && $check_result->num_rows === 0) {
+                            // バッジを挿入
+                            $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, $badge_id)";
+                            if ($conn->query($insert_badge_query) === TRUE) {
+                                echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
+                            } else {
+                                echo "<script>console.error('Failed to insert badge: " . $conn->error . "');</script>";
+                            }
+                        } else {
+                            echo "<script>console.log('Badge $badge_id already owned by user $userid.');</script>";
+                        }
+                    }
+                        ?>
                     <img src="../image/icon/badge3.png" alt="" width="75" height="75">
                 <?php elseif ($level >= 5): ?>
+                    <?php
+                    $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 2";
+                    $badge_result = $conn->query($badge_query);
+
+                    if ($badge_result && $badge_result->num_rows > 0) {
+                        // 取得したbadge_idをowned_badgeテーブルに挿入
+                        $row = $badge_result->fetch_assoc();
+                        $badge_id = $row['badge_id'];
+
+                        // すでにそのバッジを所有していないか確認
+                        $check_query = "SELECT * FROM owned_badge WHERE userid = $userid AND badge_id = $badge_id";
+                        $check_result = $conn->query($check_query);
+
+                        if ($check_result && $check_result->num_rows === 0) {
+                            // バッジを挿入
+                            $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, $badge_id)";
+                            if ($conn->query($insert_badge_query) === TRUE) {
+                                echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
+                            } else {
+                                echo "<script>console.error('Failed to insert badge: " . $conn->error . "');</script>";
+                            }
+                        } else {
+                            echo "<script>console.log('Badge $badge_id already owned by user $userid.');</script>";
+                        }
+                    }
+                        ?>
                     <img src="../image/icon/badge2.png" alt="" width="75" height="75">
                 <?php else: ?>
+                    <?php
+                    $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 1";
+                    $badge_result = $conn->query($badge_query);
+
+                    if ($badge_result && $badge_result->num_rows > 0) {
+                        // 取得したbadge_idをowned_badgeテーブルに挿入
+                        $row = $badge_result->fetch_assoc();
+                        $badge_id = $row['badge_id'];
+
+                        // すでにそのバッジを所有していないか確認
+                        $check_query = "SELECT * FROM owned_badge WHERE userid = $userid AND badge_id = $badge_id";
+                        $check_result = $conn->query($check_query);
+
+                        if ($check_result && $check_result->num_rows === 0) {
+                            // バッジを挿入
+                            $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, $badge_id)";
+                            if ($conn->query($insert_badge_query) === TRUE) {
+                                echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
+                            } else {
+                                echo "<script>console.error('Failed to insert badge: " . $conn->error . "');</script>";
+                            }
+                        } else {
+                            echo "<script>console.log('Badge $badge_id already owned by user $userid.');</script>";
+                        }
+                    }
+                        ?>
                     <img src="../image/icon/badge1.png" alt="" width="75" height="75">
                 <?php endif; ?>
                 </div>
