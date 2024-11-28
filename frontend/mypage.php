@@ -135,7 +135,6 @@ if ($user_result->num_rows > 0) {
                 <?php else: ?>
                     <img src="../image/character/human1.png" alt="普通の村人" width="300" height="300">
                 <?php endif; ?>                
-
                 <label>名前：</label><h2 id="name"><?= htmlspecialchars($user['username'], ENT_QUOTES, 'UTF-8') ?></h2>
                 <p>学科：</p><h2 id="subject"><?= htmlspecialchars($subject, ENT_QUOTES, 'UTF-8') ?></h2>
                 <div class="level" data-proficiency="100">
@@ -351,6 +350,7 @@ if ($user_result->num_rows > 0) {
                     <img src="../image/icon/badge1.png" alt="" width="75" height="75">
                 <?php endif; ?>
                 </div>
+                <a href="collection.php">バッジテストページに移動</a>
             </div>
         </div>
         <div class="profile-main">
@@ -375,7 +375,6 @@ if ($user_result->num_rows > 0) {
                         <p>平均回答時間：<?= htmlspecialchars($average_time_nonlang, ENT_QUOTES, 'UTF-8') ?>秒</p>
                         <p>学習問題数：<?= htmlspecialchars($total_questions_nonlang, ENT_QUOTES, 'UTF-8') ?>問</p>
                     </div>
-                    <a href="collection.php">バッジテストページに移動</a>
                 </div>
             </div>
         </div>
