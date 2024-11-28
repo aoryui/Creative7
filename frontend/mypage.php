@@ -36,6 +36,7 @@ if ($user_result->num_rows > 0) {
     $subject = $user['subject'];
     $exp = $user['exp'];
     $maxExp = 10;
+    $total_questions = $user['total_questions']; // 正解数の取得
 
     // levelをデータベースから取得
     $level = $user['level']; // データベースからレベルを取得
@@ -63,9 +64,13 @@ if ($user_result->num_rows > 0) {
     $correct_rate_nonlang = $user['correct_rate_nonlang'];
     $average_time_nonlang = $user['average_time_nonlang'];
     $total_questions_nonlang = $user['total_questions_nonlang'];
+    $correct_count = 0;
 } else {
     // ユーザーが見つからない場合の処理
 }
+
+include('badge_test.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -108,9 +113,9 @@ if ($user_result->num_rows > 0) {
                 <?php elseif ($level >= 60): ?>
                     <img src="../image/character/human3.2.png" alt="" width="300" height="300">
                 <?php elseif ($level >= 55): ?>
-                    <img src="../image/character/human3.1png" alt="" width="300" height="300">
+                    <img src="../image/character/human3.1.png" alt="" width="300" height="300">
                 <?php elseif ($level >= 50): ?>
-                    <img src="../image/character/human2.5png" alt="" width="300" height="300">
+                    <img src="../image/character/human2.5.png" alt="" width="300" height="300">
                 <?php elseif ($level >= 45): ?>
                     <img src="../image/character/human2.4.png" alt="" width="300" height="300">
                 <?php elseif ($level >= 40): ?>
@@ -131,8 +136,8 @@ if ($user_result->num_rows > 0) {
                     <img src="../image/character/human1.1.png" alt="" width="300" height="300">
                 <?php else: ?>
                     <img src="../image/character/human1.png" alt="普通の村人" width="300" height="300">
-                <?php endif; ?>
-               
+                <?php endif; ?>                
+
                 <label>名前：</label><h2 id="name"><?= htmlspecialchars($user['username'], ENT_QUOTES, 'UTF-8') ?></h2>
                 <p>学科：</p><h2 id="subject"><?= htmlspecialchars($subject, ENT_QUOTES, 'UTF-8') ?></h2>
                 <div class="level" data-proficiency="100">
@@ -190,7 +195,7 @@ if ($user_result->num_rows > 0) {
                         <p>平均回答時間：<?= htmlspecialchars($average_time_nonlang, ENT_QUOTES, 'UTF-8') ?>秒</p>
                         <p>学習問題数：<?= htmlspecialchars($total_questions_nonlang, ENT_QUOTES, 'UTF-8') ?>問</p>
                     </div>
-                    <a href="collection.php">バッジ一覧ページに移動</a>
+                    <a href="badge_test.php">バッジテストページに移動</a>
                 </div>
             </div>
         </div>
