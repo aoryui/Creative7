@@ -79,6 +79,7 @@ if ($user_result->num_rows > 0) {
     <link rel="stylesheet" href="../css/mypage.css">
 </head>
 <body>
+
     <div class="profile-container">
         <div class="profile-sidebar">
             <div class="profile-info">
@@ -442,6 +443,12 @@ if ($user_result->num_rows > 0) {
     </div>
 
     <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const targetDiv = document.querySelector('div[style*="z-index:"]');
+    if (targetDiv) {
+        targetDiv.style.display = "none"; // 非表示にする
+    }
+    });
         function handleOptionChange() {
             const editOption = document.getElementById('editOption').value;
             const editInputContainer = document.getElementById('editInputContainer');
@@ -501,5 +508,6 @@ if ($user_result->num_rows > 0) {
             updateLevelBar(currentExp, maxExp);
         }
     </script>
+    
 </body>
 </html>
