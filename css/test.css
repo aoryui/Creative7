@@ -125,7 +125,7 @@ button{
     /* 絶対位置に変更 */
     top: 120px;
     /* 調整が必要なら変更 */
-    right: 330px;
+    margin-left: 800px;
     /* 調整が必要なら変更 */
 }
 
@@ -175,9 +175,7 @@ button{
     margin-left: 920px;
 }
 
-#next-button {
-    margin: 10px 50px 10px 50px;
-}
+
 
 #question_count {
     margin-top: 100px;

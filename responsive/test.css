@@ -1,0 +1,150 @@
+/* 画面幅が768px以下のデバイス向け */
+@media (max-width: 768px) {
+    .content {
+        padding: 10px;
+        flex-direction: column; /* 要素を縦並びにする */
+        align-items: center;
+    }
+
+    .top-contents {
+        margin: 10px;
+    }
+
+    button {
+        position: relative;
+        top: 50px; /* ボタン位置を調整 */
+        left: 0;
+        width: 100%;
+        max-width: 300px; /* 幅を調整 */
+        height: 50px;
+    }
+
+    .question_img {
+        width: 100%; /* 画像の幅を100%に */
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+    .question-text {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 10px;
+        font-size: 14px; /* テキストサイズを小さく */
+    }
+
+    .choices {
+        margin-top: 20px;
+        margin-right: 0;
+        max-width: 100%;
+    }
+
+    .choice {
+        width: 100%; /* 選択肢を画面全体に広げる */
+        margin-bottom: 15px;
+    }
+
+    .next-button {
+        left: 0;
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .timer-container {
+        width: 90%;
+        left: 5%;
+    }
+
+    .modal-content {
+        width: 80%;
+        margin: 20% auto;
+    }
+
+    .footer p {
+        margin-left: 10px;
+        text-align: center;
+    }
+
+    .button {
+        width: 100%;
+        height: 40px;
+        margin-top: 20px;
+    }
+}
+
+/* 画面幅が480px以下のデバイス向け */
+@media (max-width: 480px) {
+    .content {
+        padding: 5px;
+    }
+
+    .question-text {
+        font-size: 12px; /* テキストサイズをさらに小さく */
+    }
+
+    .question_img {
+        width: 80%; /* 画像の幅を80%に */
+    }
+
+    .next-button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    #next-button{
+        margin-left: 300px;
+    }
+
+
+    .timer-label {
+        position: absolute;
+        /* 絶対位置に変更 */
+        top: 120px;
+        /* 調整が必要なら変更 */
+        margin-left: 100px;
+        margin-top: 20px;
+    }
+    
+
+    button {
+        width: 100%;
+        max-width: 100px;
+        height: 40px;
+        margin-top: 40px;
+        margin-left: 200px;
+    }
+
+    .choice {
+        padding: 8px;
+        font-size: 14px; /* 選択肢の文字サイズを小さく */
+    }
+
+    .timer-container {
+        width: 70%;
+        left: 70px;
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+    .modal-content {
+        width: 90%;
+        margin: 15% auto;
+    }
+
+    #question_count{
+        margin-left: 0px;
+        margin-top: -10px;
+    }
+
+    #count{
+        margin-left: 0px;
+    }
+
+    .choices{
+        left: 10px;
+    }
+
+
+
+}
