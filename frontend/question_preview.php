@@ -28,8 +28,17 @@ if ($status) {
             case 'img':
                 $displayText = '問題画像';
                 break;
+            case 'ans_img':
+                $displayText = '解説画像';
+                break;
             case 'choice':
                 $displayText = '選択肢';
+                break;
+            case 'interval':
+                $displayText = '制限時間';
+                break;
+            case 'sentence':
+                $displayText = '要約文';
                 break;
             default:
                 $displayText = $key; // その他のキーはそのまま表示

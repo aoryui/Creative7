@@ -85,8 +85,12 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
             <tr>
                 <th>回答画像</th>
                 <td><img class="answer_now" src="<?php echo $explanation_img; ?>?<?php echo $now; ?>" alt="解説画像"></td>
-                <td><img id="preview2" class="answer_new" class="preview2" src="#" alt="プレビュー" style="display: none;"></td> <!-- 画像を一時的に隠すためのdisplay: none; -->
-                <td><button disabled type="button" onclick="openModal('modal3')">編集</button></td>
+                <td>
+                    <img id="preview2" class="answer_new" src="#" alt="プレビュー" style="display: none;"> <!-- 画像を一時的に隠すためのdisplay: none; -->
+                </td>
+                <td>
+                    <button type="button" onclick="openModal('modal3')">編集</button>
+                </td>
             </tr>
             <tr>
                 <th>選択肢</th>
@@ -106,16 +110,16 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
                 <td><button type="button" onclick="openModal('modal4')">編集</button></td>
             </tr>
             <tr>
-                <th>制限時間</th>
+                <th>制限時間(秒)</th>
                 <td><?php echo "<p>".$interval_num."</p>" ?></td>
                 <td id="updatedIntervalNum">&nbsp;</td>
-                <td><button disabled type="button" onclick="openModal('modal5')">編集</button></td>
+                <td><button type="button" onclick="openModal('modal5')">編集</button></td>
             </tr>
             <tr>
                 <th>問題の要約文</th>
-                <td data-original-sentence="<?php echo $sentence; ?>"><?php echo "<p>".$sentence."</p>" ?></td>
+                <td><?php echo "<p>".$sentence."</p>" ?></td>
                 <td id="updatedSentence">&nbsp;</td>
-                <td><button disabled type="button" onclick="openModal('modal6')">編集</button></td>
+                <td><button type="button" onclick="openModal('modal6')">編集</button></td>
             </tr>
         </tbody>
     </table>
@@ -124,7 +128,8 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
     <input type="hidden" name="choice_data" id="choice_data" value='<?php echo json_encode($choice_list); ?>'>
     <input type="hidden" name="correct_data" id="correct_data" value='<?php echo json_encode($correct_num); ?>'>
     <input type="file" name="image" id="imageInput" style="display: none;" accept=".jpg">
-    
+    <input type="file" name="image_answer" id="imageInput_answer" style="display: none;" accept=".jpg">
+   
     <div class="update-button-container">
         <button type="submit">問題を更新</button>
     </div>
@@ -219,7 +224,7 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
         <form id="imageFormQuestion">
             <label for="imageInputQuestion">画像を選択:</label>
             <input type="file" id="imageInputQuestion" accept=".jpg">
-            <button type="submit">決定</button>
+            <input class="submit1" type="submit" value="決定">
         </form>
     </div>
 </div>
@@ -231,7 +236,7 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
         <form id="imageFormExplanation">
             <label for="imageInputExplanation">解説の画像を選択:</label>
             <input type="file" name="image" id="imageInputExplanation" accept=".jpg" required>
-            <input type="submit" value="決定">
+            <input class="submit1" type="submit" value="決定">
         </form>
     </div>
 </div>
@@ -307,7 +312,6 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
     deleteButton.onclick = () => {
         modal.style.display = 'block';
     };
-
 
     // モーダルを開く
     function openModal(modalId) {
@@ -406,23 +410,34 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
         closeModal('modal2'); // モーダルを閉じる
     });
 
-    // 解説画像のプレビュー表示
-    document.getElementById('imageInputExplanation').addEventListener('change', function(event) {
-        const file = event.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const preview = document.getElementById('preview2');
-                preview.src = e.target.result;
-                preview.style.display = 'block'; // プレビュー画像を表示
-            };
-            reader.readAsDataURL(file);
-        }
+    let selectedFile_img = null; // 選択された問題画像ファイルを保存する変数
+    // ファイル選択時の処理（選択したファイルを保存するだけ）
+    document.getElementById('imageInputExplanation').addEventListener('change', function (event) {
+        selectedFile_img = event.target.files[0]; // ファイルを保存（この時点ではプレビューしない）
     });
 
-    // フォーム送信の処理
-    document.getElementById('imageFormExplanation').addEventListener('submit', function(event) {
-        event.preventDefault(); // フォーム送信を防ぐ
+    // モーダルのフォーム送信処理
+    document.getElementById('imageFormExplanation').addEventListener('submit', function (event) {
+        event.preventDefault(); // 通常のフォーム送信を防ぐ
+
+        // 選択されたファイルがある場合のみ処理を進める
+        if (selectedFile_img) {
+            // プレビューを更新
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const preview = document.getElementById('preview2');
+                preview.src = e.target.result; // プレビュー画像のソースを設定
+                preview.style.display = "block"; // プレビューを表示
+            };
+            reader.readAsDataURL(selectedFile_img);
+
+            // メインフォームの隠しファイル入力にファイルをセット
+            const mainImageInput = document.getElementById('imageInput_answer');
+            const dataTransfer = new DataTransfer();
+            dataTransfer.items.add(selectedFile_img);
+            mainImageInput.files = dataTransfer.files;
+        }
+
         closeModal('modal3'); // モーダルを閉じる
     });
 
@@ -487,46 +502,62 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
         console.log('Updated list_data:', document.getElementById('list_data').value);
     });
 
-    // 元の制限時間を取得
-    const originalIntervalNum = <?php echo json_encode($interval_num); ?>;
-
-    // 制限時間フォームのイベントリスナー
+    // 制限時間を変更
     document.getElementById('timesForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent form submission
+        event.preventDefault(); // form送信を防ぐ
 
         // 入力された制限時間を取得
         const newTimeLimit = document.getElementById('time_limit').value;
         const updatedTimeLimitElement = document.getElementById('updatedIntervalNum');
+        if (newTimeLimit) {
+            // データベースの数値と比較する
+            if (newTimeLimit != <?php echo json_encode($interval_num);?>) {
+                updatedTimeLimitElement.innerHTML = `<p>${newTimeLimit}</p>`; // 数値が新し場合表示
+                // edit_textリストを更新
+                edit_text['interval_num'] = Number(newTimeLimit);
+            } else {
+                updatedTimeLimitElement.innerHTML = '&nbsp;'; // 元のデータと同じ場合表示させない
+                edit_text['interval_num'] = "";
+            }
 
-        // データベースの数値と比較する
-        if (newTimeLimit != originalIntervalNum) {
-            updatedTimeLimitElement.innerHTML = `<p>${newTimeLimit}</p>`; // 数値が新し場合表示
-        } else {
-            updatedTimeLimitElement.innerHTML = '&nbsp;'; // 元のデータと同じ場合表示させない
+            // list_dataの値を更新
+            document.getElementById('list_data').value = JSON.stringify(edit_text);
+
+            closeModal('modal5'); // モーダルを閉じる
+
+            // デバッグログ
+            console.log('Updated edit_text:', edit_text);
+            console.log('Updated list_data:', document.getElementById('list_data').value);
         }
-
-        closeModal('modal5'); // モーダルを閉じる
     });
 
-    // 元の要約文を取得
-    const originalSentence = <?php echo json_encode($sentence); ?>;
-
-    // 問題の要約文のフォームのイベントリスナー
+    // 要約文を変更
     document.getElementById('sentenceForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // フォーム送信を防ぐ
+        event.preventDefault(); // form送信を防ぐ
 
-        // 入力された新しい要約文を取得
+        // 入力された制限時間を取得
         const newSentence = document.getElementById('sentence').value;
         const updatedSentenceElement = document.getElementById('updatedSentence');
+        if (newSentence) {
+            // データベースの数値と比較する
+            if (newSentence != <?php echo json_encode($sentence);?>) {
+                updatedSentenceElement.innerHTML = `<p>${newSentence}</p>`; // 数値が新し場合表示
+                // edit_textリストを更新
+                edit_text['sentence'] = newSentence;
+            } else {
+                updatedSentenceElement.innerHTML = '&nbsp;'; // 元のデータと同じ場合表示させない
+                edit_text['sentence'] = "";
+            }
 
-        // オリジナルの要約文と比較し、更新があれば表示
-        if (newSentence !== originalSentence) {
-            updatedSentenceElement.innerHTML = `<p>${newSentence}</p>`; // 新しい要約文を表示
-        } else {
-            updatedSentenceElement.innerHTML = '&nbsp;'; // 元のデータと同じ場合は空白
+            // list_dataの値を更新
+            document.getElementById('list_data').value = JSON.stringify(edit_text);
+
+            closeModal('modal6'); // モーダルを閉じる
+
+            // デバッグログ
+            console.log('Updated edit_text:', edit_text);
+            console.log('Updated list_data:', document.getElementById('list_data').value);
         }
-
-        closeModal('modal6'); // モーダルを閉じる
     });
 
 

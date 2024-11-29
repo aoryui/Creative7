@@ -223,6 +223,46 @@ if ($already_saved === false && $test_display === 'test' && $getUser === true){ 
     $exp = $exp + $correct_count; // 経験値表示のズレを修正
 }
 
+if ($correct_count >= 50) { 
+    // バッジIDが9のバッジを取得
+    $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 15";
+    $badge_result = $conn->query($badge_query);
+
+    if ($badge_result && $badge_result->num_rows > 0) {
+        $row = $badge_result->fetch_assoc();
+        $badge_id = $row['badge_id'];
+
+        // すでにそのバッジを所有していないか確認
+        $check_query = "SELECT * FROM owned_badge WHERE userid = ? AND badge_id = ?";
+        $stmt = $conn->prepare($check_query);
+        $stmt->bind_param("ii", $userid, $badge_id);
+        $stmt->execute();
+        $check_result = $stmt->get_result();
+
+        if ($check_result->num_rows === 0) {
+            // バッジを付与
+            $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES (?, ?)";
+            $insert_stmt = $conn->prepare($insert_badge_query);
+            $insert_stmt->bind_param("ii", $userid, $badge_id);
+
+            if ($insert_stmt->execute()) {
+                echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
+            } else {
+                echo "<script>console.error('Failed to insert badge: " . $conn->error . "');</script>";
+            }
+        } else {
+            // すでに所有している場合
+            echo "<script>console.log('Badge $badge_id already owned by user $userid.');</script>";
+        }
+    } else {
+        // バッジが見つからなかった場合
+        echo "<script>console.error('Badge ID 10 not found in badge_collections.');</script>";
+    }
+} else {
+    // $correct_count が10でない場合
+    echo "<script>console.log('Correct count is not 10. No badge granted.');</script>";
+}
+
 // 経験値が最大経験値に到達またはそれを超えた場合の処理
 if ($exp >= $maxExp) {
     // レベルアップ時に余剰経験値を計算し、$expをリセット
