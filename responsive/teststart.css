@@ -1,4 +1,9 @@
 /* responsive/teststart.css */
+/*  広告を破壊 */
+div[style*="z-index: 2147483647"] {
+    display: none !important;
+}
+
 @media screen and (max-width: 900px) {
     .container {
         width: 80%;

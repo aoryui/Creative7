@@ -1,4 +1,9 @@
 /* タブレット（768px～1024px以下） */
+/*  広告を破壊 */
+div[style*="z-index: 2147483647"] {
+    display: none !important;
+}
+
 @media screen and (max-width: 1024px){
     header {
         padding: 15px 0; /* ヘッダーの高さを少し縮小 */

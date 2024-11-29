@@ -1,4 +1,9 @@
 /* スマートフォン向け */
+/*  広告を破壊 */
+div[style*="z-index: 2147483647"] {
+    display: none !important;
+}
+
 @media screen and (max-width: 600px) {
     body {
         margin-top: 70px; /* 上部の余白を調整 */
