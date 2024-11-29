@@ -280,6 +280,34 @@ class form extends Dbdata
         }
     }
 
+    // 制限時間を編集する関数
+    public function updateInterval($question_id, $interval_num)
+    {
+        try {
+            // 更新クエリ
+            $sql = "UPDATE questions SET interval_num = ? WHERE question_id = ?";
+            $this->exec($sql, [$interval_num, $question_id]);
+            return true;
+        } catch (PDOException $e) {
+            // エラー発生時の処理
+            return false;
+        }
+    }
+
+    // 要約文を編集する関数
+    public function updateSentence($question_id, $sentence)
+    {
+        try {
+            // 更新クエリ
+            $sql = "UPDATE questions SET sentence = ? WHERE question_id = ?";
+            $this->exec($sql, [$sentence, $question_id]);
+            return true;
+        } catch (PDOException $e) {
+            // エラー発生時の処理
+            return false;
+        }
+    }
+
     // 選択肢を編集する関数
     public function updateChoicesAndAnswer($question_id, $new_choices, $correct_index) {
         try {
