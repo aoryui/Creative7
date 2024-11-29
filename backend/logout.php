@@ -9,24 +9,6 @@ session_destroy();
 
 setcookie("userid", '', time() - 1000, '/');
 setcookie("userName", '', time() - 1000, '/');
+header('Location: ../frontend/home.php');
+exit();
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <script>
-        function redirectAndClose() {
-
-        // 少し遅れてウィンドウを閉じる
-        setTimeout(() => {
-            if (window.opener) {
-                window.close(); // ウィンドウを閉じる
-            } else {
-                window.location.href = '../frontend/home.php'; // home.php に遷移
-            }
-        }, 1000); // 適宜タイミングを調整
-    }
-    </script>
-</head>
-<body onload="redirectAndClose()">
-</body>
-</html>
