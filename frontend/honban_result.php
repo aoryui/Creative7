@@ -533,6 +533,7 @@ mysqli_close($conn);
 <html>
 <head>
     <link rel="stylesheet" href="../css/result.css">
+    <link rel="stylesheet" href="../responsive/honban_resulit.css">
     <!-- 制限時間がない場合はcssで非表示にするやつ -->
     <style>
         <?php if ($interval_time_empty): ?>
