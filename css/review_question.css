@@ -1,0 +1,250 @@
+html {
+    height: 100%;
+    overflow: scroll; /* スクロールを有効に */;
+    overflow-x: hidden;
+}
+
+.top-contents{
+    margin: 10 0 0 16px;
+    line-height: 5px;
+}
+
+body {
+    min-height: 100%;
+    background-color: #ffefd5;
+}
+
+button{
+    background-color: #00aaff;    /* ボタンの背景色（必要に応じて調整） */
+    color: #fff; /* ボタンの文字色 */
+    display: flex;
+    border: none;
+    cursor: pointer;
+    justify-content: center; /* 水平方向中央揃え */
+    align-items: center; /* 垂直方向中央揃え（必要に応じて） */
+    height: 60px;
+    width: 130px;
+    margin: 10px;
+    position: relative;
+    top: 100px;
+    left: 1050px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+    flex-grow: 1;
+    box-sizing: border-box;
+    /* コンテナの相対位置を指定 */
+}
+
+/* 親要素の幅を制限して、画像の拡大を防ぐ */
+.center-contents {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* 全体は上寄せ */
+    padding-top: 20px;
+    padding: 30px 40px;
+}
+
+
+
+.footer {
+    bottom: auto;
+}
+
+#timer-container {
+    bottom: 100px;
+}
+
+.question {
+    flex-grow: 1;
+    margin: 0 0 0 auto;
+}
+
+.question-text {
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-radius: 30px;
+    text-align: center;
+    /* テキストを右揃え */
+    margin-left: 310px;
+}
+
+.question_img {
+    width: 500px;
+    margin-top: 30px;
+    position: absolute;
+    top: 200px;
+    left: 70px;
+}
+
+.question p {
+    left: 300px;
+}
+
+.choices {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    margin-top: 250px;
+    margin-right: 200px;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: stretch;
+    max-width: 300px;
+}
+
+.choice {
+    margin-bottom: 10px;
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
+    background-color: #d3d3d3;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.choice input {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.choice label {
+    margin: 0;
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.timer-label {
+    position: absolute;
+    /* 絶対位置に変更 */
+    top: 120px;
+    /* 調整が必要なら変更 */
+    right: 330px;
+    /* 調整が必要なら変更 */
+}
+
+.timer-container {
+    width: 50%;
+    height: 20px;
+    margin-top: 20px;
+    position: absolute;
+    /* 絶対位置に変更 */
+    top: 150px;
+    /* 調整が必要なら変更 */
+    left: 70px;
+    /* 調整が必要なら変更 */
+    border: 1px solid #aaa;
+    transition: background-color 0.1s linear;
+}
+
+.timer-bar {
+    width: 0;
+    height: 100%;
+    background-color: #ddd;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: width 0.1s linear;
+}
+
+.next-button {
+    padding: 10px 20px;
+    background-color: #00aaff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 30px;
+    /* ボタンの位置を調整 */
+    position: relative;
+    left: 1000px;
+}
+
+.next-button:hover{
+    color: #0c0c0c; /* ホバー時の背景色 */
+    background-color: #898989;  /* ホバー時のテキスト色 */
+}
+
+.footer p {
+    margin-left: 920px;
+}
+
+#next-button {
+    margin: 10px 50px 10px 50px;
+}
+
+#question_count {
+    margin-top: 100px;
+    margin-left: -150px;
+}
+
+#count{
+    margin-left: -150px;
+}
+
+/* モーダルのスタイル */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    height: 50%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}  
+
+.button {
+    margin: 0 10px;
+    padding: 10px 20px; /* 内側の余白を減らして小さく */
+    background-color: #333; /* ボタンの背景色（必要に応じて調整） */
+    color: #fff; /* ボタンの文字色 */
+    border: none; /* 枠線を削除 */
+    border-radius: 5px; /* 少し丸みを持たせる */
+    width: 80px; /* ボタンの幅 */
+    height: 30px; /* ボタンの高さ */
+    cursor: pointer; /* カーソルの形状 */
+    position: relative;
+    left: 40%;
+    text-align: center;
+    display: flex;
+    gap: 8px; /* ボタン間のスペースを調整（少しだけ空ける） */
+    margin-top: 20px;
+    justify-content: center;
+    /* justify-content: center;
+    align-items: center;*/
+}
+
+.button:hover {
+    background-color: #555;
+}

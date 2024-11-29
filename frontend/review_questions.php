@@ -84,7 +84,7 @@ $question_text = nl2br(htmlspecialchars($question['question_text'], ENT_QUOTES, 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPIタイサくん</title>
-    <link rel="stylesheet" href="../css/test.css">
+    <link rel="stylesheet" href="../css/review_question.css">
 </head>
 <body>
     <div class="content">

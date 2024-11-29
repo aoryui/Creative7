@@ -8,6 +8,14 @@ body {
     overflow: hidden;
 }
 
+#deleteButton{
+    background-color: red;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 .bar-graph-wrap .graph {
     position: absolute;
     /* 親要素に対して固定 */
