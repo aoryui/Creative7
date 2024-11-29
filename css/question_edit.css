@@ -126,7 +126,7 @@ form input[type="number"] {
 }
 
 form input[type="submit"] {
-    background-color: #28a745;
+    background-color: #007BFF;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -135,7 +135,7 @@ form input[type="submit"] {
 }
 
 form input[type="submit"]:hover {
-    background-color: #218838;
+    background-color: #0056b3;
 }
 
 /* プレビュー画像 */

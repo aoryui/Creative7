@@ -30,16 +30,8 @@
             <h1>SPI対策して試験合格を確実に</h1>
             <p>シンプルでゲーム性溢れるSPIサイト</p>
             <img src="../image/icon/logo.png" class="logo-img" alt="タイサくんロゴ">
-            <a href="javascript:void(0);" class="btn" onclick="openMaximizedWindow()">ユーザーログイン</a>
+            <a href="login.php" class="btn">ユーザーログイン</a>
         </div>
     </section>
-
-    <script>
-        function openMaximizedWindow() {
-            const width = screen.availWidth;
-            const height = screen.availHeight;
-            window.open('login.php', '_blank', `width=${width},height=${height},top=0,left=0`);
-        }
-    </script>
 </body>
 </html>

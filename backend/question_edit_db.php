@@ -4,9 +4,12 @@ $form = new Form();
 
 $genre_success = false; // ジャンル保存の成功フラグ
 $image_success = false; // 画像アップロードの成功フラグ
+$image_ans_succsess = false; // 解説画像の成功フラグ
 $choice_success = false; // 選択肢保存の成功フラグ
+$interval_success = false; // 制限時間保存のフラグ
+$sentence_success = false; // 要約文保存のフラグ
 
-// ジャンル
+// questionsテーブル上書き
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // JSONデータを受け取る
     $list_data = isset($_POST["list_data"]) ? $_POST["list_data"] : "[]";
@@ -33,6 +36,22 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
     }
 
+    // 制限時間保存
+    if ($interval_num !== "") {
+        $result = $form->updateInterval($question_id, $interval_num);
+        if ($result === true) {
+            $interval_success = true;
+        }
+    }
+    
+    // 要約文保存
+    if ($sentence !== "") {
+        $result = $form->updateSentence($question_id, $sentence);
+        if ($result === true) {
+            $sentence_success = true;
+        }
+    }
+
     // 選択肢保存
     if (is_array($choice_list) && !empty($choice_list) && $correct !== null && isset($list['question_id'])) {
         // 選択肢と正解の更新
@@ -43,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 
-// 画像
+// 問題画像
 $list_question = $form->getQuestion(question_id: $question_id);
 $question_text = $list_question['question_text']; // 問題画像名
 $existing_image_path = "../image/問題集/" . $question_text . ".jpg";
@@ -59,14 +78,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['image'])) {
     }
 }
 
+// 解説画像
+$answer_data = $form->getAnswer($question_id);
+$answer_text = $answer_data['explanation']; // 問題画像名
+$answer_image_path = "../image/解説/" . $answer_text . ".jpg";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['image_answer'])) {
+    $image = $_FILES['image_answer'];
+
+    if ($image['error'] === UPLOAD_ERR_OK) {
+        $uploaded_ansimage_path = "../image/解説/" . $answer_text . ".jpg";
+        if (move_uploaded_file($image['tmp_name'], $uploaded_ansimage_path)) {
+            $image_ans_succsess = true;
+        }
+    }
+}
+
 // 条件分岐
 $message = [
     'genre' => $genre_success ? 'true' : 'false',
     'img' => $image_success ? 'true' : 'false',
-    'choice' => $choice_success ? 'true' : 'false'
+    'ans_img' => $image_ans_succsess  ? 'true' : 'false',
+    'choice' => $choice_success ? 'true' : 'false',
+    'interval' => $interval_success ? 'true' : 'false',
+    'sentence' => $sentence_success ? 'true' : 'false'
 ];
 
-if ($genre_success || $image_success || $choice_success) {
+if ($genre_success || $image_success || $choice_success || $image_ans_succsess || $interval_success || $sentence_success) {
     // 成功したステータスをURLパラメータとして送信
     $query_params = http_build_query(['status' => $message]);
     $redirect_url = '../frontend/question_preview.php?question_id=' . $question_id . '&' . $query_params;

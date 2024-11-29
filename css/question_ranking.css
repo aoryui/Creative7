@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #ffefd5;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+tbody{
+    background-color: #f4f4f4;
+}
+table, th, td {
+    border: 1px solid #ddd;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+   
+}
+th {
+    background-color: #f4f4f4;
+}
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    padding-top: 100px;
+}
+#tri a {
+display: inline-block;
+padding: 8px 12px;
+background-color: #007BFF; /* 青色 */
+color: white;
+text-decoration: none;
+border-radius: 5px;
+font-weight: bold;
+text-align: center;
+transition: background-color 0.3s ease, transform 0.2s ease;
+}
+#tri a:hover {
+background-color: #0056b3; /* 少し暗い青色 */
+transform: scale(1.05); /* 少し拡大 */
+}
+#tri a:active {
+background-color: #003d7a; /* さらに暗い青色 */
+transform: scale(0.95); /* 押し込むような効果 */
+}
