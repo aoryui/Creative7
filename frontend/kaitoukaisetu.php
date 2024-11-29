@@ -56,17 +56,49 @@ $_SESSION['test_display'] = ''; //test_displayを初期化
         document.addEventListener('DOMContentLoaded', function() {
             const urlParams = new URLSearchParams(window.location.search);
             const result = urlParams.get('result');
+            const modal = document.getElementById('resultModal');
+            const modalContent = document.getElementById('modalContent');
+            const modalImage = document.getElementById('modalImage');
+            const closeButton = document.getElementById('closeModal');
+
+            function showModal(message, imageSrc) {
+                modalContent.textContent = message;
+                modalImage.src = imageSrc;
+                modal.style.display = 'block';
+            }
+
             setTimeout(function() {
                 if (result === 'correct') {
-                    alert("正解です！");
+                    showModal("正解です！", "../image/icon/true.png");
                 } else if (result === 'incorrect') {
-                    alert("不正解です！");
+                    showModal("不正解です！", "../image/icon/false.png");
                 }
-            }, 500); // 500ミリ秒 (0.5秒) 後にアラートを表示
+            }, 500);
+
+            // モーダルを閉じる
+            closeButton.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+
+            // 背景クリックでモーダルを閉じる
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
         });
     </script>
 </head>
 <body>
+    <!-- モーダルのHTML -->
+    <div id="resultModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close-btn">&times;</span>
+            <h2 id="modalContent"></h2>
+            <img id="modalImage" class="modal-image" src="" alt="結果画像">
+        </div>
+    </div>
+
     <div class="top-contents">
         <b>ジャンル:</b>
         <span><?php echo htmlspecialchars($kaisetu['genre_text'], ENT_QUOTES, 'UTF-8'); ?></span>
