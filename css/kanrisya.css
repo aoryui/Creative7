@@ -1,154 +1,160 @@
-         body { /*ページ全体*/
-            background-color: #ffefd5;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-            padding: 20px;
-        }
+/*  広告を破壊 */
+div[style*="z-index: 2147483647"] {
+    display: none !important;
+}
 
-        .container { /*白枠*/
-            font-family: 'Arial', sans-serif;
-            width: 100%;
-            max-width: 1000px;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            margin-top: calc(100px + 30px);
-        }
 
-        h2 { /*テキスト*/
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 1.5em;
-            color: #333;
-        }
+body { /*ページ全体*/
+    background-color: #ffefd5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+}
 
-        form { /*ソートの同じ横列のエリア*/
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
+.container { /*白枠*/
+    font-family: 'Arial', sans-serif;
+    width: 100%;
+    max-width: 1000px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: calc(100px + 30px);
+}
 
-        label { /*表の頭の項目*/
-            font-weight: bold;
-            margin-right: 10px;
-        }
+h2 { /*テキスト*/
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: #333;
+}
 
-        select, button { /*プルダウンメニュー*/
-            padding: 8px 12px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            font-size: 1em;
-        }
+form { /*ソートの同じ横列のエリア*/
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
 
-        button { /*ソートボタン*/
-            background-color: rgb(84, 196, 99);
-            color: white;
-            border: none;
-            margin-left: 10px;
-            cursor: pointer;
-        }
+label { /*表の頭の項目*/
+    font-weight: bold;
+    margin-right: 10px;
+}
 
-        button:hover { 
-            background-color: rgb(48, 158, 63);
-        }
+select, button { /*プルダウンメニュー*/
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
 
-        table { /*管理表*/
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
+button { /*ソートボタン*/
+    background-color: rgb(84, 196, 99);
+    color: white;
+    border: none;
+    margin-left: 10px;
+    cursor: pointer;
+}
 
-        th, td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
+button:hover { 
+    background-color: rgb(48, 158, 63);
+}
 
-        th {
-            background-color: #f4f4f4;
-        }
+table { /*管理表*/
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
 
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
 
-        tr:hover {
-            background-color: #f1f1f1;
-        }
+th {
+    background-color: #f4f4f4;
+}
 
-        @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
 
-            .container {
-                padding: 15px;
-            }
+tr:hover {
+    background-color: #f1f1f1;
+}
 
-            form {
-                flex-direction: column;
-                align-items: center;
-            }
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
 
-            select, button {
-                width: 100%;
-                margin-bottom: 10px;
-            }
+    .container {
+        padding: 15px;
+    }
 
-            table {
-                font-size: 0.9em;
-            }
-        }
-        .pagination {
-            margin-top: 20px;
-            text-align: center;
-        }
-        
-        .pagination a {
-            margin: 0 5px;
-            padding: 5px 10px;
-            text-decoration: none;
-            color: #000;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-        
-        .pagination .current-page {
-            margin: 0 5px;
-            padding: 5px 10px;
-            background-color: #007bff;
-            color: white;
-            border: 1px solid #007bff;
-            border-radius: 4px;
-        }
-        .hidden {
-            visibility: hidden; /* 要素を非表示にし、レイアウト上には残す */
-        }
+    form {
+        flex-direction: column;
+        align-items: center;
+    }
 
-        /* 独自の新規登録者数ボックスのスタイル */
-        .new-users-box {
-            background-color: #f0f8ff; /* 明るい青の背景色 */
-            border-left: 5px solid #1e90ff; /* 強調する青色のライン */
-            padding: 15px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            border-radius: 8px;
-            font-size: 1rem; /* フォントサイズを小さめに調整 */
-        }
-        .new-users-box .icon {
-            font-size: 1.5rem;
-            margin-right: 10px;
-            color: #1e90ff; /* アイコン色を青に統一 */
-        }
-        .new-users-box .count {
-            font-weight: bold;
-            font-size: 1.4rem; /* 数字をやや強調 */
-            color: #333;
-        }
+    select, button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+}
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pagination a {
+    margin: 0 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #000;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.pagination .current-page {
+    margin: 0 5px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+}
+.hidden {
+    visibility: hidden; /* 要素を非表示にし、レイアウト上には残す */
+}
+
+/* 独自の新規登録者数ボックスのスタイル */
+.new-users-box {
+    background-color: #f0f8ff; /* 明るい青の背景色 */
+    border-left: 5px solid #1e90ff; /* 強調する青色のライン */
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    font-size: 1rem; /* フォントサイズを小さめに調整 */
+}
+.new-users-box .icon {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    color: #1e90ff; /* アイコン色を青に統一 */
+}
+.new-users-box .count {
+    font-weight: bold;
+    font-size: 1.4rem; /* 数字をやや強調 */
+    color: #333;
+}

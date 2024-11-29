@@ -1,3 +1,9 @@
+/*  広告を破壊 */
+div[style*="z-index: 2147483647"] {
+    display: none !important;
+}
+
+
 /* Google FontsからNoto Sans JPをインポート */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400&display=swap');
 
