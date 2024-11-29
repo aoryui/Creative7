@@ -52,42 +52,8 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/question_ranking.css">
     <title>間違えやすい問題ランキング</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #ffefd5;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-            padding-left: 40px;
-            padding-right: 40px;
-        }
-        tbody{
-            background-color: #f4f4f4;
-        }
-        table, th, td {
-            border: 1px solid #ddd;
-            padding-left: 40px;
-            padding-right: 40px;
-        }
-        th, td {
-            padding: 8px;
-            text-align: left;
-           
-        }
-        th {
-            background-color: #f4f4f4;
-        }
-        h1 {
-            margin-bottom: 20px;
-            text-align: center;
-            padding-top: 100px;
-        }
-    </style>
 </head>
 <body>
     <h1>間違えやすい問題ランキング</h1>
@@ -113,7 +79,7 @@ try {
                         <td><?php echo $row['total_answers']; ?></td>
                         <td><?php echo $row['incorrect_answers']; ?></td>
                         <td><?php echo $row['error_rate']; ?></td>
-                        <td id="tri"><a href="review_questions.php?question_id=<?php echo htmlspecialchars($row['question_id'], ENT_QUOTES, 'UTF-8'); ?>">問題</a></td>
+                        <td id="tri"><a href="review_questions.php?question_id=<?php echo htmlspecialchars($row['question_id'], ENT_QUOTES, 'UTF-8'); ?>">問題へ</a></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
