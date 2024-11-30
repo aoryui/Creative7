@@ -89,7 +89,6 @@ foreach ($displayed_questions as $key => $question_id) {
         // 不正解の場合の処理
         $conn->query($sql_incorrect); // $conn はデータベース接続オブジェクト
         $correct_answers[$question_id] = false; // 不正解の場合
-        $correct_count = 0;
     }
 
     // 分野名を取得するクエリ
@@ -317,7 +316,7 @@ if ($correct_count === 10) { // 正解数が10問連続の場合
         echo "<script>console.error('Badge ID 10 not found in badge_collections.');</script>";
     }
 } else {
-    // $correct_count が10でない場合
+    // $correct_count が11でない場合
     echo "<script>console.log('Correct count is not 10. No badge granted.');</script>";
 }
 
@@ -397,7 +396,7 @@ if ($correct_count >= 3 && $averageTime <= 1) { //正解数が3問連続かつ�
         echo "<script>console.error('Badge ID 10 not found in badge_collections.');</script>";
     }
 } else {
-    // $correct_count が10でない場合
+    // $correct_count が9でない場合
     echo "<script>console.log('Correct count is not 10. No badge granted.');</script>";
 }
 
@@ -437,7 +436,7 @@ if ($correct_count === 100) { //問題を100問以上正解した時
         echo "<script>console.error('Badge ID 10 not found in badge_collections.');</script>";
     }
 } else {
-    // $correct_count が10でない場合
+    // $correct_count が12でない場合
     echo "<script>console.log('Correct count is not 10. No badge granted.');</script>";
 }
 
@@ -477,12 +476,12 @@ if ($correct_count_lang === 50) { //言語で50問以上正解の処理
         echo "<script>console.error('Badge ID 10 not found in badge_collections.');</script>";
     }
 } else {
-    // $correct_count が10でない場合
+    // $correct_count が13でない場合
     echo "<script>console.log('Correct count is not 10. No badge granted.');</script>";
 }
 
 if ($correct_count_nonlang === 150) {   //非言語をすべて正解した時
-    // バッジIDが9のバッジを取得
+    // バッジIDが14のバッジを取得
     $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 14";
     $badge_result = $conn->query($badge_query);
 
@@ -517,7 +516,7 @@ if ($correct_count_nonlang === 150) {   //非言語をすべて正解した時
         echo "<script>console.error('Badge ID 10 not found in badge_collections.');</script>";
     }
 } else {
-    // $correct_count が10でない場合
+    // $correct_count が14でない場合
     echo "<script>console.log('Correct count is not 10. No badge granted.');</script>";
 }
 
