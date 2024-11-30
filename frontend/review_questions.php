@@ -1,7 +1,7 @@
 <?php
 session_start(); // セッションを開始
 
-require_once __DIR__ . '/header.php';
+require_once __DIR__ . '/header_review_question.php';
 
 $servername = "localhost";
 $username = "Creative7";

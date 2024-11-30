@@ -313,11 +313,11 @@ if ($correct_count === 10) { // 正解数が10問連続の場合
         }
     } else {
         // バッジが見つからなかった場合
-        echo "<script>console.error('Badge ID 10 not found in badge_collections.');</script>";
+        echo "<script>console.error('Badge ID 11 not found in badge_collections.');</script>";
     }
 } else {
     // $correct_count が11でない場合
-    echo "<script>console.log('Correct count is not 10. No badge granted.');</script>";
+    echo "<script>console.log('Correct count is not 11. No badge granted.');</script>";
 }
 
 if ($correct_count >= 7 && $averageTime <= 3) { //正解数が7問以上かつ平均回答時間が3秒以下の時
@@ -393,11 +393,11 @@ if ($correct_count >= 3 && $averageTime <= 1) { //正解数が3問連続かつ�
         }
     } else {
         // バッジが見つからなかった場合
-        echo "<script>console.error('Badge ID 10 not found in badge_collections.');</script>";
+        echo "<script>console.error('Badge ID 9 not found in badge_collections.');</script>";
     }
 } else {
     // $correct_count が9でない場合
-    echo "<script>console.log('Correct count is not 10. No badge granted.');</script>";
+    echo "<script>console.log('Correct count is not 9. No badge granted.');</script>";
 }
 
 if ($correct_count === 100) { //問題を100問以上正解した時
@@ -433,11 +433,11 @@ if ($correct_count === 100) { //問題を100問以上正解した時
         }
     } else {
         // バッジが見つからなかった場合
-        echo "<script>console.error('Badge ID 10 not found in badge_collections.');</script>";
+        echo "<script>console.error('Badge ID 12 not found in badge_collections.');</script>";
     }
 } else {
     // $correct_count が12でない場合
-    echo "<script>console.log('Correct count is not 10. No badge granted.');</script>";
+    echo "<script>console.log('Correct count is not 12. No badge granted.');</script>";
 }
 
 if ($correct_count_lang === 50) { //言語で50問以上正解の処理
@@ -473,11 +473,11 @@ if ($correct_count_lang === 50) { //言語で50問以上正解の処理
         }
     } else {
         // バッジが見つからなかった場合
-        echo "<script>console.error('Badge ID 10 not found in badge_collections.');</script>";
+        echo "<script>console.error('Badge ID 13 not found in badge_collections.');</script>";
     }
 } else {
     // $correct_count が13でない場合
-    echo "<script>console.log('Correct count is not 10. No badge granted.');</script>";
+    echo "<script>console.log('Correct count is not 13. No badge granted.');</script>";
 }
 
 if ($correct_count_nonlang === 150) {   //非言語をすべて正解した時
@@ -513,11 +513,11 @@ if ($correct_count_nonlang === 150) {   //非言語をすべて正解した時
         }
     } else {
         // バッジが見つからなかった場合
-        echo "<script>console.error('Badge ID 10 not found in badge_collections.');</script>";
+        echo "<script>console.error('Badge ID 14 not found in badge_collections.');</script>";
     }
 } else {
     // $correct_count が14でない場合
-    echo "<script>console.log('Correct count is not 10. No badge granted.');</script>";
+    echo "<script>console.log('Correct count is not 14. No badge granted.');</script>";
 }
 
 // ログ表示
