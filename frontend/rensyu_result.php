@@ -223,8 +223,72 @@ if ($already_saved === false && $test_display === 'test' && $getUser === true){ 
     $exp = $exp + $correct_count; // 経験値表示のズレを修正
 }
 
+//言語を全問正解した時の処理
+if ($correct_count_lang >= 50) {
+    // badge_idが8のバッジを取得
+    $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 13";
+    $badge_result = $conn->query($badge_query);
+
+    if ($badge_result && $badge_result->num_rows > 0) {
+        // 取得したbadge_idをowned_badgeテーブルに挿入
+        $row = $badge_result->fetch_assoc();
+        $badge_id = $row['badge_id'];
+
+        // すでにそのバッジを所有していないか確認
+        $check_query = "SELECT * FROM owned_badge WHERE userid = $userid AND badge_id = $badge_id";
+        $check_result = $conn->query($check_query);
+
+        if ($check_result && $check_result->num_rows === 0) {
+            // バッジを挿入
+            $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, $badge_id)";
+            if ($conn->query($insert_badge_query) === TRUE) {
+                echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
+            } else {
+                echo "<script>console.error('Failed to insert badge: " . $conn->error . "');</script>";
+            }
+        } else {
+            echo "<script>console.log('Badge $badge_id already owned by user $userid.');</script>";
+        }
+    } else {
+        // 条件に該当しない場合は何もしない
+        // No operation needed
+    }
+}
+
+//非言語を全問正解した時の処理
+if ($correct_count_nonlang >= 150) {
+    // badge_idが8のバッジを取得
+    $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 14";
+    $badge_result = $conn->query($badge_query);
+
+    if ($badge_result && $badge_result->num_rows > 0) {
+        // 取得したbadge_idをowned_badgeテーブルに挿入
+        $row = $badge_result->fetch_assoc();
+        $badge_id = $row['badge_id'];
+
+        // すでにそのバッジを所有していないか確認
+        $check_query = "SELECT * FROM owned_badge WHERE userid = $userid AND badge_id = $badge_id";
+        $check_result = $conn->query($check_query);
+
+        if ($check_result && $check_result->num_rows === 0) {
+            // バッジを挿入
+            $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, $badge_id)";
+            if ($conn->query($insert_badge_query) === TRUE) {
+                echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
+            } else {
+                echo "<script>console.error('Failed to insert badge: " . $conn->error . "');</script>";
+            }
+        } else {
+            echo "<script>console.log('Badge $badge_id already owned by user $userid.');</script>";
+        }
+    } else {
+        // 条件に該当しない場合は何もしない
+        // No operation needed
+    }
+}
+
 if ($correct_count >= 50) { 
-    // バッジIDが9のバッジを取得
+    // バッジIDが15のバッジを取得
     $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 15";
     $badge_result = $conn->query($badge_query);
 
@@ -256,11 +320,11 @@ if ($correct_count >= 50) {
         }
     } else {
         // バッジが見つからなかった場合
-        echo "<script>console.error('Badge ID 10 not found in badge_collections.');</script>";
+        echo "<script>console.error('Badge ID 15 not found in badge_collections.');</script>";
     }
 } else {
-    // $correct_count が10でない場合
-    echo "<script>console.log('Correct count is not 10. No badge granted.');</script>";
+    // $correct_count が15でない場合
+    echo "<script>console.log('Correct count is not 15. No badge granted.');</script>";
 }
 
 // 経験値が最大経験値に到達またはそれを超えた場合の処理
