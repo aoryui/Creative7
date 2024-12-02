@@ -90,48 +90,46 @@ $genre_text = nl2br(htmlspecialchars($question['genre_text'], ENT_QUOTES, 'UTF-8
 <body>
     <div class="content"> <!-- 全体の要素 -->
     <button class="edit-profile-btn" onclick="openEditModal()">練習開始に戻る</button>
-        <div class="top-contents"><!-- 上のやつ -->
-            <?php echo '<div id="question_genre">'.$genre_text.'</div>' ?> <!-- ジャンル名のやつ -->
-            <?php echo '<div id="question_count">問題数'.($current_question_index+1).'/'.count($displayed_questions).'問目</div>'?> <!-- 問題数ののやつ -->
+    <div class="top-contents"><!-- 上のやつ -->
+        <?php echo '<div id="question_genre">'.$genre_text.'</div>' ?> <!-- ジャンル名のやつ -->
+        <?php echo '<div id="question_count">問題数'.($current_question_index+1).'/'.count($displayed_questions).'問目</div>'?> <!-- 問題数ののやつ -->
+    </div>
+    <div class="center-contents">
+        <?php
+            // 画像のパスを作成
+            $image_path = "../image/問題集/" . $question_text . ".jpg";
+            // HTMLで画像を表示
+            echo '<img src="' . $image_path . '" alt="問題画像" class="question_img">';
+        ?>
+        <!-- 選択form -->
+        <div id="question_form">
+            <form id="choiceForm" method="post" action="practice.php">
+                <div class="choices">
+                    <?php
+                    while ($choice = $choices_result->fetch_assoc()) {
+                        echo '<div class="choice">';
+                        echo '<input type="radio" name="choice" value="' . $choice['choice_id'] . '" id="option' . $choice['choice_id'] . '">';
+                        echo '<label for="option' . $choice['choice_id'] . '">' . htmlspecialchars($choice['choice_text'], ENT_QUOTES, 'UTF-8') . '</label>';
+                        echo '</div>';
+                    }
+                    ?>
+                </div>
+                <input type="hidden" name="question_id" value="<?php echo $question_id; ?>">
+                <input type="hidden" name="time_taken" id="time_taken" value="">
+            </form>
         </div>
-        <div class="center-contents">
-            <?php
-                // 画像のパスを作成
-                $image_path = "../image/問題集/" . $question_text . ".jpg";
-                // HTMLで画像を表示
-                echo '<img src="' . $image_path . '" alt="問題画像" class="question_img">';
-            ?>
-            <!-- 選択form -->
-            <div id="question_form">
-                <form id="choiceForm" method="post" action="practice.php">
-                    <div class="choices">
-                        <?php
-                        while ($choice = $choices_result->fetch_assoc()) {
-                            echo '<div class="choice">';
-                            echo '<input type="radio" name="choice" value="' . $choice['choice_id'] . '" id="option' . $choice['choice_id'] . '">';
-                            echo '<label for="option' . $choice['choice_id'] . '">' . htmlspecialchars($choice['choice_text'], ENT_QUOTES, 'UTF-8') . '</label>';
-                            echo '</div>';
-                        }
-                        ?>
-                        
-                    </div>
-                    <input type="hidden" name="question_id" value="<?php echo $question_id; ?>">
-                    <input type="hidden" name="time_taken" id="time_taken" value="">
-                </form>
-            </div>
-            <div class="next">
-                <a href="#" class="next-button" id="next-button">次に進む</a>
-            </div>
-            <!-- 編集用のモーダル -->
+        <div class="next">
+            <a href="#" class="next-button" id="next-button">次に進む</a>
+        </div>
+    </div>
+    <!-- 編集用のモーダル -->
     <div id="editModal" class="modal">
         <div class="modal-content">
-            <a href="practice_start.php">
             <span class="close" onclick="closeEditModal()">&times;</span>
+            <a href="practice_start.php">
+                <button type="button" class="button" id="container">戻る</button>
+            </a>
             <button  onclick="closeEditModal()" class="button" id="container">閉じる</button>
-</a>
-
-    </div>
-
         </div>
     </div>
     <script>

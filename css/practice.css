@@ -121,7 +121,7 @@ label{
     padding: 20px;
     border: 1px solid #888;
     width: 30%;
-    height: 40%;
+    height: 50%;
 }
 
 .close {
@@ -138,8 +138,9 @@ label{
     cursor: pointer;
 }  
 
-.button{
-    padding: 5px 10px; /* 内側の余白を減らして小さく */
+.button {
+    margin: 0 10px;
+    padding: 10px 20px; /* 内側の余白を減らして小さく */
     background-color: #333; /* ボタンの背景色（必要に応じて調整） */
     color: #fff; /* ボタンの文字色 */
     border: none; /* 枠線を削除 */
@@ -147,12 +148,15 @@ label{
     width: 80px; /* ボタンの幅 */
     height: 30px; /* ボタンの高さ */
     cursor: pointer; /* カーソルの形状 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    left: 40%;
     text-align: center;
-    margin-top: 50px; /* 必要に応じて位置調整 */
-    margin-left: 40%; /* 中央寄せにしたくない場合は削除 */
+    display: flex;
+    gap: 8px; /* ボタン間のスペースを調整（少しだけ空ける） */
+    margin-top: 20px;
+    justify-content: center;
+    /* justify-content: center;
+    align-items: center;*/
 }
 
 .button:hover {
