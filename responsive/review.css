@@ -1,0 +1,39 @@
+/* メディアクエリでレスポンシブ対応 */
+@media (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+        width: 100%;
+    }
+
+    th, td {
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        padding: 8px;
+    }
+
+    tr {
+        margin-bottom: 10px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    th {
+        background-color: transparent;
+        font-weight: bold;
+    }
+
+    #table {
+        border: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .border-frame {
+        padding: 10px;
+    }
+
+    #deleteButton {
+        padding: 5px;
+        font-size: 12px;
+    }
+}

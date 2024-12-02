@@ -1,0 +1,65 @@
+/* 既存のスタイルを保持しつつ、レスポンシブ対応を追加 */
+
+/* デフォルトのスタイル（既存）をそのまま保持 */
+
+/* 画面幅が768px以下の場合（タブレット） */
+@media (max-width: 768px) {
+    body {
+        margin-top: 20px;
+    }
+
+    .top-contents{
+        margin: 0 10px;
+        margin-top: 100px;
+    }
+
+    h2 {
+        margin: 0 10px;
+        margin-top: 10px;
+    }
+    .question_img, .answer_img {
+        width: 90%; /* 画像を画面幅に合わせる */
+        max-width: 400px; /* 画像が大きくなりすぎないように制限 */
+    }
+
+    .center-contents {
+        flex-direction: column; /* 縦に並べる */
+        align-items: center;
+    }
+
+    .img-contents {
+        width: 100%;
+    }
+
+    .correct-choice, .correct-choice1 {
+        max-width: 100%; /* 選択肢の幅を制限しない */
+        top: 0;
+        left: 0;
+    }
+
+    .btn {
+        margin: 10px auto;
+        justify-content: center; /* ボタン中央揃え */
+    }
+}
+
+/* 画面幅が480px以下の場合（スマートフォン） */
+@media (max-width: 480px) {
+    .modal-content {
+        width: 90%; /* モーダル全体の幅を縮小 */
+    }
+
+    .modal-image {
+        max-height: 200px; /* モーダル内画像を小さく制限 */
+    }
+
+    .color-preview, .choice-preview {
+        width: 16px; /* サイズを小さめに設定 */
+        height: 16px;
+    }
+
+    .btn {
+        font-size: 14px; /* ボタンの文字サイズを小さくする */
+        padding: 8px; /* パディングを調整 */
+    }
+}

@@ -1,176 +1,52 @@
-/*  広告を破壊 */
-div[style*="z-index: 2147483647"] {
-    display: none !important;
-}
-
 body {
     background-color: #ffefd5;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
-
-.bar-graph-wrap {
-    position: relative;
-    height: 350px;
-    overflow: hidden;
-}
-
-#deleteButton{
-    background-color: red;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.bar-graph-wrap .graph {
-    position: absolute;
-    /* 親要素に対して固定 */
-    left: 10%;
-    /* 親要素の左から10%の位置に配置 */
-    top: 10%;
-    /* 親要素の上から10%の位置に配置 */
-    height: 50px;
-    background: #03a9f4;
-    width: 0%;
-    /* 初期幅を0%に設定 */
-    border-radius: 0 4px 4px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    animation: graphAnim 3s forwards;
-}
-
-.graph span {
-    font-size: 14px;
-    color: #ffffff;
-}
-
-@keyframes graphAnim {
-    from {
-        width: 0%;
-        /* アニメーション開始時の幅 */
-    }
-
-    to {
-        width: 88%;
-        /* アニメーション終了時の幅 */
-    }
-}
-
-
 
 .border-frame {
-    margin-top: calc(100px + 20px);
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
-    max-width: 1200px;
+    margin: 20px auto;
+    max-width: 90%;
     padding: 20px;
     background: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    width: 1000px;
     background-color: rgb(244, 242, 242);
 }
 
-td,
-th {
-    text-align: center;
-    /* 文字の揃え位置指定 */
-}
-
 table {
-    width: 800px;
-    margin: auto;
-}
-
-#tri {
-    color: rgb(63, 119, 232);
-}
-
-.level {
-    position: relative;
-    top: -300px;
-    left: 50px;
-}
-
-.exp {
-    position: relative;
-    top: -300px;
-    left: 800px;
-}
-
-.addition {
-    position: relative;
-    top: -320px;
-    left: 900px;
-}
-
-.correct-answer-rate {
-    position: relative;
-    top: -320px;
-    left: 600px;
-}
-
-.rate {
-    position: relative;
-    top: -375px;
-    left: 725px;
-}
-
-.response-time {
-    position: relative;
-    top: -375px;
-    left: 575px;
-}
-
-.time {
-    position: relative;
-    top: -430px;
-    left: 775px;
-}
-
-.answer {
-    font-size: 38px;
-}
-
-
-
-.average-time,
-.correct-rate {
-    font-size: 1.2em;
-    margin: 10px 0;
-    color: #333;
-}
-
-#table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
-#table th,
-#table td {
-    border: 1px solid #ccc;
-    padding: 10px;
+td, th {
     text-align: center;
+    padding: 10px;
 }
 
-#table th {
+th {
     background-color: #f2f2f2;
 }
 
-#table tr:nth-child(even) {
+tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
 #custom-question {
     text-align: left !important;
-    /* 左寄せ */
     white-space: pre-wrap;
-    /* 改行を維持 */
-    width: 40ch;
-    /* 10文字分の幅を設定 */
     word-wrap: break-word;
-    /* 単語を折り返す */
+    max-width: 100%;
 }
+
+/* ボタンのスタイル */
+#deleteButton {
+    background-color: red;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+

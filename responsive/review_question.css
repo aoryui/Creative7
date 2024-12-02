@@ -1,0 +1,97 @@
+/* 小さい画面用（スマートフォン向け） */
+@media (max-width: 600px) {
+    .content {
+        flex-direction: column; /* 縦並びに変更 */
+        align-items: center; /* 中央寄せ */
+        padding: 10px;
+    }
+
+    .question_img {
+        width: 90%; /* 画像の幅を画面幅に合わせる */
+        height: auto; /* アスペクト比を保つ */
+        position: relative;
+        margin: 10px auto;
+        left: 0;
+        top: 0;
+    }
+
+    .choices {
+        width: 100%; /* 選択肢の幅を画面幅に合わせる */
+        max-width: 400px; /* 最大幅を指定 */
+        margin: 20px auto;
+    }
+
+    .choice {
+        padding: 10px; /* 選択肢のクリック領域を広げる */
+        font-size: 14px; /* テキストサイズを調整 */
+    }
+
+    .next-button {
+        width: 90%; /* ボタン幅を画面幅に合わせる */
+        margin: 20px auto;
+        font-size: 16px; /* テキストサイズを調整 */
+    }
+
+    .timer-container {
+        width: 90%; /* タイマーの幅を画面幅に合わせる */
+        margin: 20px auto;
+        left: 5%; /* 中央揃え */
+    }
+
+    .timer-label {
+        top: 90px; /* タイマーラベルの位置を調整 */
+        right: auto;
+        text-align: center; /* 中央揃え */
+        margin: 10px 0;
+    }
+
+    button {
+        width: 90%; /* ボタンの幅を画面幅に合わせる */
+        height: 50px; /* 高さを調整 */
+        font-size: 16px; /* フォントサイズを調整 */
+        margin: 10px auto;
+        position: relative;
+        left: 0;
+        top: 0;
+    }
+
+    .button1 {
+        width: 90%; /* ボタンの幅を画面幅に合わせる */
+        height: 50px; /* 高さを調整 */
+        font-size: 16px; /* フォントサイズを調整 */
+        margin: 10px auto;
+        position: relative;
+        left: 0;
+        top: 0;
+    }
+}
+
+/* タブレット向け（中程度の画面用） */
+@media (max-width: 1024px) {
+    .content {
+        flex-direction: column; /* 縦並び */
+        padding: 20px;
+    }
+
+    .question_img {
+        width: 100%; /* 画像の幅を調整 */
+        margin: 20px auto;
+        margin-top: 70px;
+    }
+
+    .choices {
+        max-width: 500px; /* 選択肢の最大幅を制限 */
+        margin: 30px auto;
+    }
+
+    .next-button {
+        width: 70%; /* ボタン幅を調整 */
+        margin: 20px auto;
+        left: 250px;
+    }
+
+    .timer-container {
+        width: 80%; /* タイマーの幅を調整 */
+        left: 10%;
+    }
+}

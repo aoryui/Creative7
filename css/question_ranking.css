@@ -32,6 +32,9 @@ th {
     background-color: #f4f4f4;
 }
 h1 {
+    
+    font-size: 25px;
+    padding: 10px;
     margin-bottom: 20px;
     text-align: center;
     padding-top: 100px;

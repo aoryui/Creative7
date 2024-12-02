@@ -54,6 +54,7 @@ foreach ($rankings as $key => $value) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPIタイサくん</title>
     <link rel="stylesheet" href="../css/ranking.css">
+    <link rel="stylesheet" href="../responsive/ranking.css">
 </head>
 
 <body>

@@ -52,6 +52,7 @@ $_SESSION['test_display'] = ''; //test_displayを初期化
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>回答と解説画面</title>
     <link rel="stylesheet" href="../css/kaitoukaisetu.css">
+    <link rel="stylesheet" href="../responsive/kaitoukaisetu.css">
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const urlParams = new URLSearchParams(window.location.search);
@@ -126,7 +127,7 @@ $_SESSION['test_display'] = ''; //test_displayを初期化
         </div>
 
         <div class="kaitou">
-            <h2>回答</h2>
+            <h3>回答</h3>
             <?php
             foreach ($list_choices as $choice_id => $choice_text) { // 選択肢を繰り返し処理で表示
                 $id_attribute = ($choice_id == $user_choice_id) ? ' id="user-choice"' : ''; // ユーザーの選択肢にid属性を付与

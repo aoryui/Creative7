@@ -1,0 +1,71 @@
+/* レスポンシブデザインを追加 */
+@media (max-width: 768px) { /* 画面幅が768px以下の場合 */
+    .border-frame {
+        padding: 15px;
+        width: 90%; /* フレームの幅を狭める */
+        margin-top: 100px;
+    }
+
+    #user_data {
+        flex-direction: column; /* ユーザー情報を縦並びに */
+        align-items: flex-start; /* 左揃え */
+    }
+
+    #precedence, #total {
+        font-size: 16px; /* フォントサイズを調整 */
+        margin: 5px 0;
+    }
+
+    #table {
+        font-size: 14px; /* テーブル内のフォントサイズを縮小 */
+    }
+
+    .crown-icon {
+        width: 16px; /* 王冠アイコンの大きさを縮小 */
+        height: 16px;
+    }
+
+    .ranking-header {
+        flex-direction: column; /* ランキングヘッダーを縦並びに */
+        align-items: flex-start; /* 左揃え */
+    }
+
+    .stylish-link {
+        font-size: 14px; /* ボタンのフォントサイズを調整 */
+        padding: 8px 15px; /* ボタンのサイズを調整 */
+    }
+
+    .pagination {
+        font-size: 12px; /* ページネーションのフォントサイズを縮小 */
+    }
+
+    .update-button img {
+        width: 25px; /* 更新ボタンのアイコンを縮小 */
+        height: 25px;
+    }
+}
+
+@media (max-width: 480px) { /* 画面幅が480px以下の場合 */
+    #table th, #table td {
+        font-size: 12px; /* テーブル内フォントサイズをさらに縮小 */
+        padding: 5px; /* セルの余白を縮小 */
+    }
+
+    .stylish-link {
+        font-size: 12px; /* ボタンのフォントサイズをさらに縮小 */
+        padding: 5px 10px;
+    }
+
+    #ranking {
+        font-size: 20px; /* ランキングヘッダーのフォントサイズを調整 */
+    }
+
+    .ranking_icon {
+        width: 50px; /* ランキングアイコンの大きさを縮小 */
+        height: 40px;
+    }
+
+    .pagination a {
+        padding: 3px 8px; /* ページネーションリンクのサイズを縮小 */
+    }
+}

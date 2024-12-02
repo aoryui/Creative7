@@ -85,6 +85,7 @@ $question_text = nl2br(htmlspecialchars($question['question_text'], ENT_QUOTES, 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPIタイサくん</title>
     <link rel="stylesheet" href="../css/review_question.css">
+    <link rel="stylesheet" href="../responsive/review_question.css">
 </head>
 <body>
     <div class="content">
@@ -110,9 +111,7 @@ $question_text = nl2br(htmlspecialchars($question['question_text'], ENT_QUOTES, 
             <input type="hidden" name="question_id" value="<?php echo $question_id; ?>">
         </form>
     </div>
-    <div class="footer">
         <a href="#" class="next-button" id="next-button">判定する</a>
-    </div>
     <script>
         function goToNextQuestion() {
             // 次の問題に進む処理をここに書く

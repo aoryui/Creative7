@@ -1,151 +1,148 @@
-/*  広告を破壊 */
+/* 広告の削除 */
 div[style*="z-index: 2147483647"] {
-    display: none !important;
+    display: none !important; /* 特定のz-index値を持つ広告要素を非表示にする */
 }
-
 
 /* ヘッダーのスタイル */
 header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    /* ロゴとメニューボタンの間隔を調整 */
-    background-color: rgb(89, 208, 247);
-    color: white;
-    height: 100px;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 999;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
+    display: flex; /* ヘッダー内要素をフレックスボックスで配置 */
+    flex-direction: row; /* 横方向に配置 */
+    align-items: center; /* 垂直方向の中央揃え */
+    justify-content: space-between; /* 要素間を均等に配置 */
+    background-color: rgb(89, 208, 247); /* 背景色 */
+    color: white; /* テキストの色 */
+    height: 100px; /* ヘッダーの高さ */
+    width: 100%; /* ヘッダーを画面幅いっぱいに広げる */
+    position: fixed; /* 固定位置に配置 */
+    top: 0; /* 画面上部に固定 */
+    z-index: 999; /* 他の要素より前面に配置 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 下に薄い影を付ける */
 }
 
+/* ページ全体の余白をリセット */
 body,
 html {
-    margin: 0;
-    padding: 0;
+    margin: 0; /* ブラウザのデフォルトマージンをリセット */
+    padding: 0; /* ブラウザのデフォルトパディングをリセット */
 }
 
-
-
-/* ドロップダウンメニュー */
+/* ドロップダウンメニューのスタイル */
 #menuContent {
-    display: none;
-    position: fixed;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    z-index: 998;
+    display: none; /* 初期状態では非表示 */
+    position: fixed; /* 位置を固定 */
+    background-color: #f9f9f9; /* 背景色 */
+    min-width: 160px; /* メニューの最小幅 */
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); /* 下に影を付ける */
+    z-index: 998; /* 他の要素より手前に表示 */
 }
 
+/* メニュー表示ボタンのスタイル */
 #menuBtn {
-    margin-right: auto;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+    margin-right: auto; /* 自動で右側にマージンを取る */
+    background-color: transparent; /* 背景を透明に */
+    border: none; /* ボーダーを消す */
+    cursor: pointer; /* マウスオーバー時にポインタに変更 */
 }
 
+
+/* ドロップダウンメニューのリスト */
 #menuContent ul {
-    list-style-type: none;
-    padding: 0;
+    list-style-type: none; /* リストのマーカーを削除 */
+    padding: 0; /* パディングをリセット */
 }
 
+/* メニューリンクのスタイル */
 #menuContent li a {
-    display: block;
-    padding: 12px 16px;
-    text-decoration: none;
-    color: black;
+    display: block; /* リンクをブロック表示 */
+    padding: 12px 16px; /* 内側の余白を設定 */
+    text-decoration: none; /* 下線を削除 */
+    color: black; /* テキスト色 */
 }
 
 #menuContent li a:hover {
-    background-color: #f1f1f1;
+    background-color: #f1f1f1; /* マウスオーバー時の背景色 */
 }
 
-/* ナビゲーションメニュー */
+/* サイドナビゲーションメニュー */
 nav {
-    background-color: #f4f4f4;
-    width: 250px;
-    height: calc(100% - 100px);
-    position: fixed;
-    top: 100px;
-    left: 0;
-    z-index: 999;
+    background-color: #f4f4f4; /* 背景色 */
+    width: 250px; /* 幅 */
+    height: calc(100% - 100px); /* ヘッダーを除いた高さを自動計算 */
+    position: fixed; /* 固定配置 */
+    top: 100px; /* ヘッダーの下に配置 */
+    left: 0; /* 左端に固定 */
+    z-index: 999; /* 他の要素より前面に配置 */
 }
 
 nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+    list-style-type: none; /* リストマーカーを削除 */
+    padding: 0; /* パディングをリセット */
+    margin: 0; /* マージンをリセット */
 }
 
 nav ul li {
-    padding: 5px;
-    border-bottom: 1px solid #ccc;
+    padding: 5px; /* 内側の余白 */
+    border-bottom: 1px solid #ccc; /* 下線を追加 */
 }
 
 nav ul li:last-child {
-    border-bottom: none;
+    border-bottom: none; /* 最後の項目の下線を削除 */
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 18px;
+    text-decoration: none; /* 下線を削除 */
+    color: #333; /* テキスト色 */
+    font-size: 18px; /* フォントサイズ */
 }
 
 /* メニューアイコンのスタイル */
 #menubutton:hover {
-    opacity: 0.5;
-    cursor: pointer;
+    opacity: 0.5; /* ホバー時に透明度を変更 */
+    cursor: pointer; /* ポインター表示 */
 }
 
 #menubutton:active {
-    position: relative;
-    top: 3px;
+    position: relative; /* 相対位置に変更 */
+    top: 3px; /* 押したときに下に動かす */
 }
 
 /* 固定ヘッダータイトルのスタイル */
 #free-h1 {
-    position: relative;
-    right: 500px;
-    object-fit: cover;
-    width: 300px;
-    height: 50px;
+    position: relative; /* 相対位置で配置 */
+    right: 500px; /* 右に500px移動 */
+    object-fit: cover; /* 画像が枠内に収まるように調整 */
+    width: 300px; /* 幅 */
+    height: 50px; /* 高さ */
 }
 
+/* ボタンのデフォルトスタイル */
 #submit {
-    appearance: none;
-    background: none;
-    /* 背景を透明に */
-    border: none;
-    /* ボーダーを消す */
-    padding: 0;
-    /* パディングをリセット */
-    cursor: pointer;
-    /* ポインターを手のアイコンに */
-    font-size: 18px;
+    appearance: none; /* ブラウザのデフォルトスタイルを無効化 */
+    background: none; /* 背景を透明に */
+    border: none; /* ボーダーを削除 */
+    padding: 0; /* パディングをリセット */
+    cursor: pointer; /* ポインター表示 */
+    font-size: 18px; /* フォントサイズ */
 }
 
-
+/* ボタンリンクのスタイル */
 .button-link {
-    display: block;
-    padding: 12px 16px;
-    text-decoration: none;
-    color: black;
-    text-align: center;
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    display: block; /* ブロック要素として表示 */
+    padding: 12px 16px; /* 内側の余白を設定 */
+    text-decoration: none; /* 下線を削除 */
+    color: black; /* テキスト色 */
+    text-align: center; /* 中央揃え */
+    background-color: #f9f9f9; /* 背景色 */
+    border: 1px solid #ccc; /* 枠線 */
+    border-radius: 4px; /* 角を丸く */
+    transition: background-color 0.3s ease, color 0.3s ease; /* アニメーションを設定 */
 }
 
 .button-link:hover {
-    background-color: #f1f1f1;
-    color: #000;
+    background-color: #f1f1f1; /* ホバー時の背景色 */
+    color: #000; /* ホバー時のテキスト色 */
 }
 
 .button-link:active {
-    background-color: #ddd;
+    background-color: #ddd; /* クリック時の背景色 */
 }
