@@ -15,6 +15,8 @@ try {
 } catch (PDOException $e) {
     die("データベース接続エラー: " . $e->getMessage());
 }
+$conn = mysqli_connect($host, $username, $password, $dbname);
+
 
 // リザルト画面のファイル場所をセッションに保存
 $_SESSION['result_display'] = 'ranking';
@@ -45,6 +47,24 @@ try {
 } catch (PDOException $e) {
     die("クエリ実行エラー: " . $e->getMessage());
 }
+
+foreach ($rankingData as $item) {
+    $question_ids[] = $item['question_id'];
+    $selected_choice[] = 0;
+}
+foreach ($question_ids as $key => $question_id) {
+    // 問題IDに対応する正解の選択肢IDを取得するクエリ
+    $query = "SELECT correct_choice_id FROM answers WHERE question_id = $question_id";
+    $result = mysqli_query($conn, $query);
+    
+    $row = mysqli_fetch_assoc($result);
+    $correct_choice_id = $row['correct_choice_id'];
+    $correct_choices[] = $correct_choice_id;
+}
+
+$_SESSION['displayed_questions'] = $question_ids;
+$_SESSION['selected_choice'] = $selected_choice;
+$_SESSION['correct_choices'] = $correct_choices;
 ?>
 
 <!DOCTYPE html>
