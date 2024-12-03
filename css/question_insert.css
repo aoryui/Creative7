@@ -21,17 +21,25 @@ input[type="file"] {
 .btn--orange,
 a.btn--orange {
     position: relative;
-    left: 1110px;
-    color: #fff;
-    background-color: rgb(84, 196, 99); /* 背景色を緑に設定 */
-    font-size: 20px;
+    left: 1100px;
+    margin-top: -20px;
+    display: inline-block; /* インラインブロックで配置 */
+    padding: 12px 20px; /* ボタンの内側余白を調整 */
+    font-size: 18px; /* フォントサイズを設定 */
+    font-weight: bold; /* テキストを太字に */
+    color: #fff; /* テキストカラーを白に */
+    background-color: rgb(84, 196, 99);
+    border: none; /* ボーダーを消去 */
+    border-radius: 10px; /* 角を丸く */
+    text-align: center; /* テキストを中央揃え */
+    text-decoration: none; /* リンクの下線を消す */
 }
 
 /* ボタンホバー時の色変更 */
 .btn--orange:hover,
 a.btn--orange:hover {
     color: #fff;
-    background-color: #898989;
+    background-color: #45a049;
 }
 
 /* 角丸ボタン */
@@ -124,7 +132,7 @@ legend {
 /* フレーム2: 一部の内容表示用 */
 .border-frame2 { 
     position: absolute;
-    top: 450px;
+    top: 430px;
     left: 450px;
     max-width: 470px;
     height: 250px;
@@ -138,7 +146,7 @@ legend {
 /* フレーム3: 別の内容表示用 */
 .border-frame3 { 
     position: absolute;
-    top: 450px;
+    top: 430px;
     left: 0px;
     width: 300px;
     max-width: 470px;
@@ -184,14 +192,16 @@ legend {
 /* アップロードボタンのスタイル */
 .upload {
     position: absolute;
-    top: 700px;
-    left: 1000px;
-    color: #fff;
-    background-color: #eb6100;
-    cursor: pointer; /* マウスカーソルをポインタに設定 */
-    width: 250px;
-    height: 70px;
-    border-radius: 5px;
-    color: #fff;
-    background: #f56500;
+    top: 680px;
+    left: 900px;
+    display: inline-block; /* インラインブロックで配置 */
+    padding: 12px 20px; /* ボタンの内側余白を調整 */
+    font-size: 18px; /* フォントサイズを設定 */
+    font-weight: bold; /* テキストを太字に */
+    color: #fff; /* テキストカラーを白に */
+    background-color: rgb(255, 146, 51);
+    border: none; /* ボーダーを消去 */
+    border-radius: 10px; /* 角を丸く */
+    text-align: center; /* テキストを中央揃え */
+    text-decoration: none; /* リンクの下線を消す */
 }
