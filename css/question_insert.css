@@ -21,7 +21,7 @@ input[type="file"] {
 .btn--orange,
 a.btn--orange {
     position: relative;
-    left: 1100px;
+    left: 1105px;
     margin-top: -20px;
     display: inline-block; /* インラインブロックで配置 */
     padding: 12px 20px; /* ボタンの内側余白を調整 */
