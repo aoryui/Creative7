@@ -351,7 +351,7 @@ if ($user_result->num_rows > 0) {
                     <img src="../image/icon/badge1.png" alt="" width="75" height="75">
                 <?php endif; ?>
                 </div>
-                <a href="collection.php" id="button">バッジテストページに移動</a>
+                <a href="collection.php" id="button">バッジコレクションページに移動</a>
             </div>
         </div>
         <div class="profile-main">
