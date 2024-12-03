@@ -3,6 +3,8 @@ div[style*="z-index: 2147483647"] {
     display: none !important;
 }
 
+
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #ffefd5;
@@ -64,7 +66,6 @@ iframe {
 
 .btn-link:hover {
     background-color: #45a049;
-    transform: translateY(-2px);
 }
 
 .btn-link:active {

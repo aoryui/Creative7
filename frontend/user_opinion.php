@@ -19,16 +19,32 @@ require_once __DIR__ . '/header_kanrisya.php';
             スプレッドシートを開く
         </a>
 
-    <button id="clear-button">シートの内容を削除</button>
-    <script>
+        <button id="clear-button">シートの内容を削除</button>
+<script>
     document.getElementById("clear-button").addEventListener("click", () => {
-      // Apps Script の公開URLを指定
-      fetch("https://script.google.com/macros/s/AKfycbxYRrCrPA8Nnc8wjqCbh09skG-qCKbwCu8-1dbqosQqDZElASgtpV8VbCbFgOYwJ0An-A/exec") // コピーしたURLを貼り付け
-        .then(response => response.text())
-        .then(data => alert(data)) // スクリプトからのレスポンスを表示
-        .catch(error => console.error("エラー:", error));
+    const button = document.getElementById("clear-button");
+
+    // ボタンを無効化
+    button.disabled = true;
+    button.textContent = "処理中..."; // 処理中の表示を変更する
+
+    // Apps Script の公開URLを指定
+    fetch("https://script.google.com/macros/s/AKfycbxYRrCrPA8Nnc8wjqCbh09skG-qCKbwCu8-1dbqosQqDZElASgtpV8VbCbFgOYwJ0An-A/exec")
+    .then(response => response.text())
+    .then(data => {
+    alert(data); // スクリプトからのレスポンスを表示
+    button.disabled = false; // ボタンを再び有効化
+    button.textContent = "シートの内容を削除(キャッシュクリアしてください)"; // 元の表示に戻す
+    })
+    .catch(error => {
+      console.error("エラー:", error);
+      alert("エラーが発生しました。");
+      button.disabled = false; // ボタンを再び有効化
+      button.textContent = "シートの内容を削除"; // 元の表示に戻す
     });
-  </script>
+});
+</script>
+
     </div>
 
     <div class="container">

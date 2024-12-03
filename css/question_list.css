@@ -106,17 +106,24 @@ label {
 a.btn--orange {
     position: relative;
     left: 900px;
-    color: #fff;
-    background-color: rgb(84, 196, 99); /* 背景色を緑に設定 */
-    font-size: 20px;
-    border: 2px solid black;
+    margin-top: 20px;
+    display: inline-block; /* インラインブロックで配置 */
+    padding: 12px 20px; /* ボタンの内側余白を調整 */
+    font-size: 18px; /* フォントサイズを設定 */
+    font-weight: bold; /* テキストを太字に */
+    color: #fff; /* テキストカラーを白に */
+    background-color: rgb(84, 196, 99);
+    border: none; /* ボーダーを消去 */
+    border-radius: 10px; /* 角を丸く */
+    text-align: center; /* テキストを中央揃え */
+    text-decoration: none; /* リンクの下線を消す */
 }
 
 /* ボタンホバー時の色変更 */
 .btn--orange:hover,
 a.btn--orange:hover {
     color: #fff;
-    background-color: #898989;
+    background-color: #45a049;
 }
 
 /* モーダルの基本スタイル */
