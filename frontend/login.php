@@ -49,6 +49,7 @@ if (isset($_SESSION['login_error'])) {
 <div class="signup button">
 <p><a href="signup.php"><br>新規登録はこちら</a></p>
 </div>
+<a href="email_verify.php">パスワードを忘れた場合はこちら</a>
 </div>
 
 </html>
