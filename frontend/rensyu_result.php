@@ -223,6 +223,13 @@ if ($already_saved === false && $test_display === 'test' && $getUser === true){ 
     $exp = $exp + $correct_count; // 経験値表示のズレを修正
 }
 
+// バッジ取得フラグ
+$received_badges = [
+    'badge13' => false,
+    'badge14' => false,
+    'badge15' => false
+];
+
 //言語を全問正解した時の処理
 if ($correct_count_lang >= 50) {
     // badge_idが8のバッジを取得
@@ -242,6 +249,7 @@ if ($correct_count_lang >= 50) {
             // バッジを挿入
             $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, $badge_id)";
             if ($conn->query($insert_badge_query) === TRUE) {
+                $received_badges['badge13'] = true;
                 echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
             } else {
                 echo "<script>console.error('Failed to insert badge: " . $conn->error . "');</script>";
@@ -274,6 +282,7 @@ if ($correct_count_nonlang >= 150) {
             // バッジを挿入
             $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, $badge_id)";
             if ($conn->query($insert_badge_query) === TRUE) {
+                $received_badges['badge14'] = true;
                 echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
             } else {
                 echo "<script>console.error('Failed to insert badge: " . $conn->error . "');</script>";
@@ -310,6 +319,7 @@ if ($correct_count >= 50) {
             $insert_stmt->bind_param("ii", $userid, $badge_id);
 
             if ($insert_stmt->execute()) {
+                $received_badges['badge15'] = true;
                 echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
             } else {
                 echo "<script>console.error('Failed to insert badge: " . $conn->error . "');</script>";
@@ -342,6 +352,17 @@ echo '<script>console.log('.json_encode($selected_choice).')</script>';
 echo '<script>console.log('.json_encode($correct_choices).')</script>';
 // データベース接続をクローズ
 mysqli_close($conn);
+
+// trueのバッジ名を取得
+$true_badges = [];
+foreach ($received_badges as $badge_name => $status) {
+    if ($status) {
+        $true_badges[] = $badge_name;
+    }
+}
+
+// モーダルを表示するかの判定
+$show_modal = !empty($true_badges);
 ?>
 
 <!DOCTYPE html>
@@ -360,6 +381,19 @@ mysqli_close($conn);
     </style>
 </head>
 <body>
+    <?php if ($show_modal): ?>
+        <div class="modal-overlay" id="modalOverlay">
+            <div class="modal" id="modal">
+                <h2>バッジを獲得！</h2>
+                <div>
+                    <?php foreach ($true_badges as $badge_name): ?>
+                        <img src="../image/icon/<?= htmlspecialchars($badge_name) ?>.png" alt="<?= htmlspecialchars($badge_name) ?>">
+                    <?php endforeach; ?>
+                </div>
+                <button id="closeModal">閉じる</button>
+            </div>
+        </div>
+    <?php endif; ?>
     <div class="border-frame">
         <?php if (!$interval_time_empty): // 制限時間がない場合は実行しない -->
             if ($username1 !== "ゲスト") { // ゲストアカウントは経験値表示しない
@@ -405,20 +439,32 @@ mysqli_close($conn);
         </table>
     </div>
     <script>
-        // PHPから取得した経験値をJSに渡す
-        const currentExp = <?= $exp ?>; // 経験値
-        const maxExp = <?= $maxExp ?>; // 最大経験値
+        // モーダルを制御
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('modal');
+            const modalOverlay = document.getElementById('modalOverlay');
+            const closeModal = document.getElementById('closeModal');
 
-        // レベルバーを更新する関数
-        function updateLevelBar(exp, maxExp) {
-            const levelBar = document.querySelector('.level-bar');
-            const percentage = (exp / maxExp) * 100;
-            levelBar.style.width = percentage + '%'; // 経験値に応じてバーの幅を調整
+            if (modal) {
+                modal.classList.add('active');
+                modalOverlay.classList.add('active');
+                
+                closeModal.addEventListener('click', () => {
+                    closeEditModal();
+                });
+            }
+        });
+
+        // モーダルを閉じる関数
+        function closeEditModal() {
+            document.getElementById("modalOverlay").style.display = "none";
         }
 
-        // ページ読み込み時に経験値バーを更新
-        window.onload = function() {
-            updateLevelBar(currentExp, maxExp);
+        // モーダル外をクリックしたときにモーダルを閉じる
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("modalOverlay")) {
+                closeEditModal();
+            }
         }
     </script>
 </body>
