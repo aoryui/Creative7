@@ -124,7 +124,7 @@ $interval = $question['interval_num'];
 </head>
 <body>
     <div class="content">
-    <button class="edit-profile-btn" onclick="openEditModal()">戻る</button>
+    <button class="edit-profile-btn" onclick="openEditModal()">模擬試験開始に戻る</button>
         <div class="question">
         <div class="top-contents"><!-- 上のやつ -->
             <p id="question_count"><?php echo $genre_text ?></p> <!-- ジャンル名のやつ -->

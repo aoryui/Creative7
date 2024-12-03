@@ -28,10 +28,10 @@ $subject = $_SESSION['subject'];
         <img id="free-h1" src="../image/icon/headerlogo.png">
         <nav id="menuContent">
             <ul>
-                <li><a href="mypage.php">マイページへ</a></li>
-                <li><a href="genre_selection.php">ジャンル選択画面へ</a></li>
-                <li><a href="teststart.php">模擬試験開始画面へ</a></li>
-                <li><a href="review.php">復習ページへ</a></li>
+                <li><a href="mypage.php">マイページ</a></li>
+                <li><a href="genre_selection.php">ジャンル選択画面</a></li>
+                <li><a href="teststart.php">模擬試験開始画面</a></li>
+                <li><a href="review.php">復習ページ</a></li>
                 <li><a href="ranking.php">ランキング</a></li>
                 <?php
                 if ($username === "ゲスト") {
