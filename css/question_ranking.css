@@ -1,60 +1,88 @@
-/*  広告を破壊 */
+/* 広告を破壊 */
 div[style*="z-index: 2147483647"] {
     display: none !important;
 }
 
+/* 全体のフォントと背景 */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #ffefd5;
+    font-family: "Roboto", Arial, sans-serif; /* フォントを少しモダンに */
+    line-height: 1.8; /* 行間を広げて読みやすく */
+    background-color: #fff7e6; /* 優しいクリーム色に変更 */
+    margin: 0;
+    padding-top: 60px; /* ヘッダーの高さ分余白を追加 */
 }
+
+/* テーブル全体のスタイル */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-    padding-left: 40px;
-    padding-right: 40px;
+    width: 90%; /* 幅を90%に調整 */
+    border-collapse: collapse; /* ボーダーを重ねて表示 */
+    margin: 20px auto; /* 上下の余白を追加し中央揃え */
+    background-color: #f9f9f9; /* 背景色を薄いグレーに */
+    border-radius: 8px; /* 角を丸く */
+    overflow: hidden; /* 丸みを整える */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 立体感のある影を追加 */
 }
-tbody{
-    background-color: #f4f4f4;
-}
+
+/* テーブルのセルとボーダー */
 table, th, td {
-    border: 1px solid #ddd;
-    padding-left: 40px;
-    padding-right: 40px;
+    border: 1px solid #ddd; /* 薄いグレーのボーダー */
+    padding: 12px; /* 内側の余白を広げる */
 }
+
+/* テーブルのセル */
 th, td {
-    padding: 8px;
-    text-align: left;
-   
+    text-align: left; /* テキストを左揃え */
+    font-size: 16px; /* フォントサイズを少し大きく */
+    color: #333; /* テキストを濃いグレーに */
 }
+
+/* ヘッダーセルの背景 */
 th {
-    background-color: #f4f4f4;
+    background-color: #f4f4f4; /* ヘッダーセルの背景を淡いグレー */
+    font-weight: bold; /* ヘッダーセルの文字を太字に */
+    color: #555; /* 少し濃いテキストカラー */
 }
+
+/* テーブルの奇数行と偶数行 */
+tbody tr:nth-child(odd) {
+    background-color: #fff; /* 奇数行の背景を白に */
+}
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* 偶数行の背景を薄いグレーに */
+}
+
+/* h1スタイル */
 h1 {
-    
-    font-size: 25px;
-    padding: 10px;
-    margin-bottom: 20px;
-    text-align: center;
-    padding-top: 100px;
+    font-size: 30px; /* フォントサイズを少し大きく */
+    padding: 20px; /* 内側の余白を追加 */
+    margin-bottom: 20px; /* 下の余白を調整 */
+    text-align: center; /* テキストを中央揃え */
+    color: #444; /* 落ち着いたグレーに */
 }
+
+/* リンクボタンのスタイル */
 #tri a {
-display: inline-block;
-padding: 8px 12px;
-background-color: #007BFF; /* 青色 */
-color: white;
-text-decoration: none;
-border-radius: 5px;
-font-weight: bold;
-text-align: center;
-transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    padding: 12px 16px; /* ボタンの内側余白を増やす */
+    background-color: #007BFF; /* 明るい青色 */
+    color: white; /* テキストを白に */
+    text-decoration: none; /* 下線を消す */
+    border-radius: 8px; /* ボタンの角を丸く */
+    font-weight: bold; /* テキストを太字に */
+    font-size: 16px; /* フォントサイズを調整 */
+    text-align: center; /* テキストを中央揃え */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* アニメーションを追加 */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* ボタンに影を追加 */
 }
+
+/* リンクボタンのホバー時 */
 #tri a:hover {
-background-color: #0056b3; /* 少し暗い青色 */
-transform: scale(1.05); /* 少し拡大 */
+    background-color: #0056b3; /* 濃い青色に変更 */
 }
+
+/* リンクボタンのアクティブ時 */
 #tri a:active {
-background-color: #003d7a; /* さらに暗い青色 */
-transform: scale(0.95); /* 押し込むような効果 */
+    background-color: #003d7a; /* さらに濃い青色 */
+    transform: translateY(0); /* 元の位置に戻る */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 影を弱める */
 }
