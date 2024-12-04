@@ -1,0 +1,98 @@
+/* モバイル用スタイル (最大幅 768px) */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .profile-container {
+        flex-direction: column; /* 縦方向に並べる */
+        margin: 20px;
+    }
+
+    .profile-sidebar {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .profile-main {
+        width: 100%; /* メイン部分をフル幅にする */
+        padding: 20px;
+        margin-top: 30px;
+        height: 500px; /* 高さをコンテンツに合わせる */
+    }
+
+    .profile-info img {
+
+    }
+
+    .learning-progress h3,
+    .growth-record h3 {
+        font-size: 1.5em;
+        margin-top: 30px;
+        text-align: center; /* 中央寄せ */
+    }
+
+    .progress-item {
+        display: block;
+        position: relative;
+        top: -320px;
+        left: -50px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    #sougo,
+    #language,
+    #nonverbal {
+        position: static; /* 固定位置を解除 */
+        left: 0;
+    }
+
+    .language1,
+    .nonverbal1 {
+        position: static; /* 固定位置を解除 */
+        left: 0;
+        top: 0;
+    }
+
+    .edit-profile-btn,
+    #button {
+        width: 100%; /* ボタンをフル幅に */
+        margin: 10px 0;
+    }
+}
+
+/* タブレット用スタイル (768px - 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .profile-container {
+        flex-direction: column; /* 縦方向に並べる */
+    }
+
+    .profile-sidebar,
+    .profile-main {
+        width: 100%; /* フル幅にする */
+    }
+
+    .profile-sidebar {
+        padding: 30px;
+    }
+
+    .profile-main {
+        padding: 40px;
+    }
+
+    .profile-info img {
+        width: 200px; /* 画像を中程度に */
+        height: 200px;
+    }
+
+    .learning-progress h3,
+    .growth-record h3 {
+        font-size: 1.8em;
+        text-align: center; /* 中央寄せ */
+    }
+
+    .progress-item {
+        margin-bottom: 30px;
+    }
+}

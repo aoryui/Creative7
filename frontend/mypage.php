@@ -117,6 +117,7 @@ if (in_array(7, $owned_badges)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Page</title>
     <link rel="stylesheet" href="../css/mypage.css">
+    <link rel="stylesheet" href="../responsive/mypage.css">
 </head>
 <body>
 
