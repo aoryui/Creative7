@@ -41,6 +41,7 @@ $conn->close();
     <meta charset="UTF-8">
     <title>バッジ一覧ページ</title>
     <link rel="stylesheet" href="../css/collection.css">
+    <link rel="stylesheet" href="../responsive/collection.css">
 </head>
 <body>
 <div class="collection-container">

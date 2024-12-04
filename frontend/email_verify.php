@@ -3,7 +3,6 @@ require_once __DIR__ . '/../backend/pre.php';
 require_once __DIR__ . '/../backend/class.php';
 
 // セッション開始
-session_start();
 
 $dsn = 'mysql:dbname=creative7;host=localhost;charset=utf8';
 $user = 'Creative7';
