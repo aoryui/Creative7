@@ -19,6 +19,7 @@ $message = isset($_GET['message']) ? $_GET['message'] : '';
     <meta charset="UTF-8">
     <title>メールアドレス確認</title>
     <link rel="stylesheet" href="../css/verify.css">
+    <link rel="stylesheet" href="../responsive/email_verify.css">
 </head>
 <body>
     <div class="container">

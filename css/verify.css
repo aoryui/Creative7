@@ -12,7 +12,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh; /* ビューポートの高さ全体を確保 */
-    background-color: #f5f5f5; /* 背景色を設定（任意） */
+    background-color: #ffefd5;
 }
 
 .container {
