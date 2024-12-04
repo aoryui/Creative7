@@ -1,0 +1,24 @@
+.alert {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* verify.css */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* ビューポートの高さ全体を確保 */
+    background-color: #f5f5f5; /* 背景色を設定（任意） */
+}
+
+.container {
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
