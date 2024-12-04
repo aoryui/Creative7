@@ -45,29 +45,23 @@ $conn->close();
 </head>
 <body>
 <div class="collection-container">
-    <table>
-        <tr>
-            <td><img id="badgeimg1" class="<?= in_array("badge1.png", $owned_badges) ? "owned-badge" : "unowned-badge"; ?>" src="../image/icon/badge1.png"></td>
-            <td><img id="badgeimg2" class="<?= in_array("badge2.png", $owned_badges) ? "owned-badge" : "unowned-badge"; ?>" src="../image/icon/badge2.png"></td>
-            <td><img id="badgeimg3" class="<?= in_array("badge3.png", $owned_badges) ? "owned-badge" : "unowned-badge"; ?>" src="../image/icon/badge3.png"></td>
-            <td><img id="badgeimg4" class="<?= in_array("badge4.png", $owned_badges) ? "owned-badge" : "unowned-badge"; ?>" src="../image/icon/badge4.png"></td>
-            <td><img id="badgeimg5" class="<?= in_array("badge5.png", $owned_badges) ? "owned-badge" : "unowned-badge"; ?>" src="../image/icon/badge5.png"></td>
-        </tr>
-        <tr>
-            <td><img id="badgeimg6" class="<?= in_array("badge6.png", $owned_badges) ? "owned-badge" : "unowned-badge"; ?>" src="../image/icon/badge6.png"></td>
-            <td><img id="badgeimg7" class="<?= in_array("badge7.png", $owned_badges) ? "owned-badge" : "unowned-badge"; ?>" src="../image/icon/badge7.png"></td>
-            <td><img id="badgeimg8" class="<?= in_array("badge8.png", $owned_badges) ? "owned-badge" : "unowned-badge"; ?>" src="../image/icon/badge8.png"></td>
-            <td><img id="badgeimg9" class="<?= in_array("badge9.png", $owned_badges) ? "owned-badge" : "unowned-badge"; ?>" src="../image/icon/badge9.png"></td>
-            <td><img id="badgeimg10" class="<?= in_array("badge10.png", $owned_badges) ? "owned-badge" : "unowned-badge"; ?>" src="../image/icon/badge10.png"></td>
-        </tr>
-        <tr>
-            <td><img id="badgeimg11" class="<?= in_array("badge11.png", $owned_badges) ? "owned-badge" : "unowned-badge"; ?>" src="../image/icon/badge11.png"></td>
-            <td><img id="badgeimg12" class="<?= in_array("badge12.png", $owned_badges) ? "owned-badge" : "unowned-badge"; ?>" src="../image/icon/badge12.png"></td>
-            <td><img id="badgeimg13" class="<?= in_array("badge13.png", $owned_badges) ? "owned-badge" : "unowned-badge"; ?>" src="../image/icon/badge13.png"></td>
-            <td><img id="badgeimg14" class="<?= in_array("badge14.png", $owned_badges) ? "owned-badge" : "unowned-badge"; ?>" src="../image/icon/badge14.png"></td>
-            <td><img id="badgeimg15" class="<?= in_array("badge15.png", $owned_badges) ? "owned-badge" : "unowned-badge"; ?>" src="../image/icon/badge15.png"></td>
-        </tr>
-    </table>
+
+    <img id="badgeimg1" class="<?= in_array("badge1.png", $owned_badges) ? "owned-badge" : "unowned-badge"; ?>" src="../image/icon/badge1.png">
+    <img id="badgeimg2" class="<?= in_array("badge2.png", $owned_badges) ? "owned-badge" : "unowned-badge"; ?>" src="../image/icon/badge2.png">
+    <img id="badgeimg3" class="<?= in_array("badge3.png", $owned_badges) ? "owned-badge" : "unowned-badge"; ?>" src="../image/icon/badge3.png">
+    <img id="badgeimg4" class="<?= in_array("badge4.png", $owned_badges) ? "owned-badge" : "unowned-badge"; ?>" src="../image/icon/badge4.png">
+    <img id="badgeimg5" class="<?= in_array("badge5.png", $owned_badges) ? "owned-badge" : "unowned-badge"; ?>" src="../image/icon/badge5.png">
+    <img id="badgeimg6" class="<?= in_array("badge6.png", $owned_badges) ? "owned-badge" : "unowned-badge"; ?>" src="../image/icon/badge6.png">
+    <img id="badgeimg7" class="<?= in_array("badge7.png", $owned_badges) ? "owned-badge" : "unowned-badge"; ?>" src="../image/icon/badge7.png">
+    <img id="badgeimg8" class="<?= in_array("badge8.png", $owned_badges) ? "owned-badge" : "unowned-badge"; ?>" src="../image/icon/badge8.png">
+    <img id="badgeimg9" class="<?= in_array("badge9.png", $owned_badges) ? "owned-badge" : "unowned-badge"; ?>" src="../image/icon/badge9.png">
+    <img id="badgeimg10" class="<?= in_array("badge10.png", $owned_badges) ? "owned-badge" : "unowned-badge"; ?>" src="../image/icon/badge10.png">
+    <img id="badgeimg11" class="<?= in_array("badge11.png", $owned_badges) ? "owned-badge" : "unowned-badge"; ?>" src="../image/icon/badge11.png">
+    <img id="badgeimg12" class="<?= in_array("badge12.png", $owned_badges) ? "owned-badge" : "unowned-badge"; ?>" src="../image/icon/badge12.png">
+    <img id="badgeimg13" class="<?= in_array("badge13.png", $owned_badges) ? "owned-badge" : "unowned-badge"; ?>" src="../image/icon/badge13.png">
+    <img id="badgeimg14" class="<?= in_array("badge14.png", $owned_badges) ? "owned-badge" : "unowned-badge"; ?>" src="../image/icon/badge14.png">
+    <img id="badgeimg15" class="<?= in_array("badge15.png", $owned_badges) ? "owned-badge" : "unowned-badge"; ?>" src="../image/icon/badge15.png">
+    
 </div>
 <script>
 <?php for ($i = 1; $i <= 15; $i++): ?>//1から15まで繰り返し
