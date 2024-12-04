@@ -1,0 +1,61 @@
+/* デフォルトスタイルはそのままにしておきます */
+
+/* モバイルスタイル: 画面幅が768px以下の場合 */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* フォントサイズを少し小さく */
+        padding-top: 40px; /* 上部の余白を調整 */
+    }
+
+    table {
+        width: 100%; /* テーブルの幅を100%に */
+        font-size: 14px; /* テーブルのフォントサイズを小さく */
+    }
+
+    th, td {
+        padding: 8px; /* 内側の余白を減らす */
+    }
+
+    #tri a {
+        padding: 10px 12px; /* ボタンの内側余白を少し減らす */
+        font-size: 14px; /* ボタンのフォントサイズを小さく */
+    }
+
+    h1 {
+        font-size: 24px; /* 見出しのフォントサイズを調整 */
+        padding: 15px; /* 見出しの余白を減らす */
+    }
+}
+
+/* スマホ向け: 画面幅が576px以下の場合 */
+@media (max-width: 576px) {
+    table {
+        font-size: 12px; /* テーブルのフォントサイズをさらに小さく */
+    }
+
+    th, td {
+        padding: 6px; /* テーブルの余白をさらに調整 */
+    }
+
+    #tri a {
+        font-size: 12px; /* ボタンの文字サイズを小さく */
+        padding: 8px 10px; /* ボタンの余白を調整 */
+    }
+
+    h1 {
+        padding-top: 50px;
+        font-size: 20px; /* 見出しのフォントサイズをさらに調整 */
+    }
+
+    /* テーブルが狭い場合にスクロール可能にする */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap; /* 横スクロール用 */
+    }
+
+    /* ボタンが隙間なく詰まらないように調整 */
+    #tri {
+        text-align: center; /* ボタンを中央揃え */
+    }
+}

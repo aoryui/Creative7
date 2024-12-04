@@ -73,6 +73,7 @@ $_SESSION['correct_choices'] = $correct_choices;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/question_ranking.css">
+    <link rel="stylesheet" href="../responsive/question_ranking.css">
     <title>間違えやすい問題ランキング</title>
 </head>
 <body>
