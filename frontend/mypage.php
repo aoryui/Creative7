@@ -439,6 +439,7 @@ if ($user_result->num_rows > 0) {
                     <div class="change-btn">
                         <button class="edit-profile-btn" type="submit">変更</button>
                     </div>
+                    <a href="email_verify.php">パスワードを忘れた場合はこちら</a>
                 </form>
     </div>
 
