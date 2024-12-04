@@ -1,8 +1,6 @@
 <?php
 session_start();
 
-require_once __DIR__ . '/header.php';
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $input_code = $_POST['verification_code'];
 
@@ -17,8 +15,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-<html>
-    <head>
-    <link rel="stylesheet" href="../css/verify_code.css">
-    </head>
-</html>
