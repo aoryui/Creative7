@@ -80,6 +80,28 @@ if ($badge_result->num_rows > 0) {
     }
 }
 
+// バッジ取得フラグ
+$received_badges = [
+    'badge1' => false
+];
+
+// モーダル表示フラグを初期化
+$show_modal = false;
+
+// バッジ1を持っていない場合、バッジ1を追加
+$required_badges = [1];
+$has_required_badges = array_intersect($owned_badges, $required_badges);
+
+// バッジ1を持っていない場合、バッジ1を追加
+if (empty($has_required_badges) && !in_array(1, $owned_badges)) {
+    $add_badge_sql = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, 1)";
+    if ($conn->query($add_badge_sql) === TRUE) {
+        $owned_badges[] = 1; // 新しく追加したバッジを所持バッジリストに追加
+        $received_badges['badge1'] = true;
+    } else {
+        echo "バッジの取得エラー: " . $conn->error;
+    }
+}
 // バッジ画像の設定
 $badge_images = [
     1 => "../image/icon/badge1.png",
@@ -109,6 +131,17 @@ if (in_array(7, $owned_badges)) {
     $badge_to_display = $badge_images[1];
 }
 
+// trueのバッジ名を取得
+$true_badges = [];
+foreach ($received_badges as $badge_name => $status) {
+    if ($status) {
+        $true_badges[] = $badge_name;
+    }
+}
+// モーダルを表示するかの判定
+$show_modal = !empty($true_badges);
+// 接続を閉じる
+$conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -120,7 +153,19 @@ if (in_array(7, $owned_badges)) {
     <link rel="stylesheet" href="../responsive/mypage.css">
 </head>
 <body>
-
+    <?php if ($show_modal): ?>
+        <div class="badge-modal-overlay" id="badge-modalOverlay">
+            <div class="badge_modal" id="badge-modal">
+                <h2>バッジを獲得！</h2>
+                <div>
+                    <?php foreach ($true_badges as $badge_name): ?>
+                        <img src="../image/icon/<?= htmlspecialchars($badge_name) ?>.png" alt="<?= htmlspecialchars($badge_name) ?>">
+                    <?php endforeach; ?>
+                </div>
+                <button id="badge-closeModal">閉じる</button>
+            </div>
+        </div>
+    <?php endif; ?>
     <div class="profile-container">
         <div class="profile-sidebar">
             <div class="profile-info">
@@ -348,6 +393,34 @@ if (in_array(7, $owned_badges)) {
         // ページ読み込み時に経験値バーを更新
         window.onload = function() {
             updateLevelBar(currentExp, maxExp);
+        }
+
+        // JavaScriptでモーダルを制御
+        document.addEventListener('DOMContentLoaded', () => {
+            const badge_modal = document.getElementById('badge-modal'); // 修正済み
+            const badge_modalOverlay = document.getElementById('badge-modalOverlay');
+            const badge_closeModal = document.getElementById('badge-closeModal');
+
+            if (badge_modal) {
+                badge_modal.classList.add('active');
+                badge_modalOverlay.classList.add('active');
+                
+                badge_closeModal.addEventListener('click', () => {
+                    closeEditModal();
+                });
+            }
+        });
+
+        // モーダルを閉じる関数
+        function closeEditModal() {
+            document.getElementById("badge-modalOverlay").style.display = "none";
+        }
+
+        // モーダル外をクリックしたときにモーダルを閉じる
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("badge-modalOverlay")) {
+                closeEditModal();
+            }
         }
     </script>
     

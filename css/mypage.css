@@ -269,4 +269,47 @@ body {
     margin-top: 10px;
 }
 
+/* モーダルのスタイル */
+.badge_modal {
+    background-color: #fff;
+    margin: 5% auto auto auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+.badge_modal img {
+    width: 100px; /* 画像のサイズを調整 */
+    height: auto;
+    margin: 10px;
+}
+.badge-modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.badge_modal.active, .badge-modal-overlay.active {
+    display: block;
+}
 
+/* モーダルのボタンのスタイル */
+#badge-closeModal {
+    padding: 8px 16px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#closeModal:hover {
+    background-color: #0056b3;
+}
