@@ -21,10 +21,6 @@
         height: 500px; /* 高さをコンテンツに合わせる */
     }
 
-    .profile-info img {
-
-    }
-
     .learning-progress h3,
     .growth-record h3 {
         font-size: 1.5em;
@@ -35,6 +31,7 @@
     .progress-item {
         display: block;
         left: -50px;
+        top: -20px;
         margin-bottom: 20px;
         text-align: center;
     }
