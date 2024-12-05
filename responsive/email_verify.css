@@ -1,0 +1,45 @@
+
+/* レスポンシブデザイン */
+@media screen and (max-width: 768px) {
+    h2 {
+        font-size: 20px; /* 見出しを小さく */
+    }
+
+    label {
+        font-size: 14px; /* ラベルを小さく */
+    }
+
+    input[type="email"] {
+        font-size: 14px;
+        padding: 8px; /* パディングを縮小 */
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 16px; /* ボタンのパディングも縮小 */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h2 {
+        font-size: 18px; /* 小さいデバイス向けの調整 */
+    }
+
+    label {
+        font-size: 12px;
+    }
+
+    input[type="email"] {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .container {
+        margin: 0 10px; /* サイドの余白を縮小 */
+    }
+}

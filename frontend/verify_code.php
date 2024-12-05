@@ -1,19 +1,15 @@
 <?php
 session_start();
 
+require_once __DIR__ . '/header.php';
+
+
 // URLからメッセージを取得
 $message = isset($_GET['message']) ? $_GET['message'] : '';
 
 ?>
 <head>
 <link rel="stylesheet" href="../css/verify_code.css">
-<style>
-    .alert {
-        color: red;
-        font-weight: bold;
-        margin-bottom: 10px;
-    }
-</style>
 </head>
 <div class="container">
     <h2>確認コード入力</h2>

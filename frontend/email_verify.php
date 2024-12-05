@@ -1,8 +1,8 @@
 <?php
 require_once __DIR__ . '/../backend/pre.php';
 require_once __DIR__ . '/../backend/class.php';
+require_once __DIR__ . '/../frontend/header.php';
 
-// セッション開始
 
 $dsn = 'mysql:dbname=creative7;host=localhost;charset=utf8';
 $user = 'Creative7';
@@ -19,13 +19,7 @@ $message = isset($_GET['message']) ? $_GET['message'] : '';
     <meta charset="UTF-8">
     <title>メールアドレス確認</title>
     <link rel="stylesheet" href="../css/verify.css">
-    <style>
-        .alert {
-            color: red;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="../responsive/email_verify.css">
 </head>
 <body>
     <div class="container">
