@@ -145,7 +145,7 @@ INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,que
 INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (27,1,2,180,'熟語の意味','1_2_7','古くさくてありふれた');
 INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (28,1,2,180,'熟語の意味','1_2_8','事件や問題などの間');
 INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (29,1,2,180,'熟語の意味','1_2_9','それぞれのよいところ');
-INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (180,1,2,180,'熟語の意味','1_2_10','自慢げに見せること');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (30,1,2,180,'熟語の意味','1_2_10','自慢げに見せること');
 INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (31,1,2,180,'熟語の意味','1_2_11','その時々に応じた');
 INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (32,1,2,180,'熟語の意味','1_2_12','しつこく、ねばり強いこと');
 INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (33,1,2,180,'熟語の意味','1_2_13','言葉や態度が不明瞭で、はっきりしないこと');
@@ -175,7 +175,7 @@ INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,que
 INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (57,1,3,180,'語句の用法','1_3_17','己をもって人を「はかる」');
 INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (58,1,3,180,'語句の用法','1_3_18','「味」を占める');
 INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (59,1,3,180,'語句の用法','1_3_19','彼は努力家だった「そうだ」');
-INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (180,1,3,180,'語句の用法','1_3_20','「手」を抜く');
+INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (60,1,3,180,'語句の用法','1_3_20','「手」を抜く');
 INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (61,1,4,180,'文章整序','1_4_1','動物倫理は');
 INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (62,1,4,180,'文章整序','1_4_2','現代では');
 INSERT INTO questions (question_id,field_id,genre_id,interval_num,genre_text,question_text,sentence) VALUES (63,1,4,180,'文章整序','1_4_3','ウイルスと細菌は');
@@ -358,7 +358,7 @@ INSERT INTO choices (question_id, choice_text) VALUES (5, 'B.イだけ'); -- 26�
 INSERT INTO choices (question_id, choice_text) VALUES (5, 'C.ウだけ'); -- 27
 INSERT INTO choices (question_id, choice_text) VALUES (5, 'D.アとイ'); -- 28
 INSERT INTO choices (question_id, choice_text) VALUES (5, 'E.アとウ'); -- 29
-INSERT INTO choices (question_id, choice_text) VALUES (5, 'F.イとウ'); -- 180
+INSERT INTO choices (question_id, choice_text) VALUES (5, 'F.イとウ'); -- 30
 
 INSERT INTO choices (question_id, choice_text) VALUES (6, 'A.キロメートル：センチメートル'); -- 31
 INSERT INTO choices (question_id, choice_text) VALUES (6, 'B.キロメートル：単位'); -- 32〇
@@ -394,7 +394,7 @@ INSERT INTO choices (question_id, choice_text) VALUES (11, 'A.ア'); -- 56
 INSERT INTO choices (question_id, choice_text) VALUES (11, 'B.イ'); -- 57〇
 INSERT INTO choices (question_id, choice_text) VALUES (11, 'C.ウ'); -- 58
 INSERT INTO choices (question_id, choice_text) VALUES (11, 'D.アとイ'); -- 59
-INSERT INTO choices (question_id, choice_text) VALUES (11, 'E.アとウ'); -- 180
+INSERT INTO choices (question_id, choice_text) VALUES (11, 'E.アとウ'); -- 60
 INSERT INTO choices (question_id, choice_text) VALUES (11, 'F.イとウ'); -- 61
 
 INSERT INTO choices (question_id, choice_text) VALUES (12, 'A.ア'); -- 62
@@ -510,11 +510,11 @@ INSERT INTO choices (question_id, choice_text) VALUES (29, 'C.折半'); -- 154
 INSERT INTO choices (question_id, choice_text) VALUES (29, 'D.併合'); -- 155
 INSERT INTO choices (question_id, choice_text) VALUES (29, 'E.折衷'); -- 156〇
 
-INSERT INTO choices (question_id, choice_text) VALUES (180, 'A.高慢'); -- 157
-INSERT INTO choices (question_id, choice_text) VALUES (180, 'B.披露'); -- 158
-INSERT INTO choices (question_id, choice_text) VALUES (180, 'C.優越'); -- 159
-INSERT INTO choices (question_id, choice_text) VALUES (180, 'D.披瀝（れき）'); -- 160
-INSERT INTO choices (question_id, choice_text) VALUES (180, 'E.誇示'); -- 161〇
+INSERT INTO choices (question_id, choice_text) VALUES (30, 'A.高慢'); -- 157
+INSERT INTO choices (question_id, choice_text) VALUES (30, 'B.披露'); -- 158
+INSERT INTO choices (question_id, choice_text) VALUES (30, 'C.優越'); -- 159
+INSERT INTO choices (question_id, choice_text) VALUES (30, 'D.披瀝（れき）'); -- 160
+INSERT INTO choices (question_id, choice_text) VALUES (30, 'E.誇示'); -- 161〇
 
 INSERT INTO choices (question_id, choice_text) VALUES (31, 'A.策謀'); -- 162
 INSERT INTO choices (question_id, choice_text) VALUES (31, 'B.策定'); -- 163
@@ -683,11 +683,11 @@ INSERT INTO choices (question_id, choice_text) VALUES (59, 'C.雪が降ってき
 INSERT INTO choices (question_id, choice_text) VALUES (59, 'D.今日も冷え込み「そうだ」'); -- 297
 INSERT INTO choices (question_id, choice_text) VALUES (59, 'E.デザートがおいし「そうだ」'); -- 298
 
-INSERT INTO choices (question_id, choice_text) VALUES (180, 'A.もっとうまい「手」を探す'); -- 299
-INSERT INTO choices (question_id, choice_text) VALUES (180, 'B.そろばんの「手」が上がる'); -- 300
-INSERT INTO choices (question_id, choice_text) VALUES (180, 'C.敵と「手」を結ぶ'); -- 301
-INSERT INTO choices (question_id, choice_text) VALUES (180, 'D.「手」のこんだプレゼント'); -- 302〇
-INSERT INTO choices (question_id, choice_text) VALUES (180, 'E.先生の「手」が入る'); -- 303
+INSERT INTO choices (question_id, choice_text) VALUES (60, 'A.もっとうまい「手」を探す'); -- 299
+INSERT INTO choices (question_id, choice_text) VALUES (60, 'B.そろばんの「手」が上がる'); -- 300
+INSERT INTO choices (question_id, choice_text) VALUES (60, 'C.敵と「手」を結ぶ'); -- 301
+INSERT INTO choices (question_id, choice_text) VALUES (60, 'D.「手」のこんだプレゼント'); -- 302〇
+INSERT INTO choices (question_id, choice_text) VALUES (60, 'E.先生の「手」が入る'); -- 303
 
 INSERT INTO choices (question_id, choice_text) VALUES (61, 'A.ベジタリアン増加の'); -- 304
 INSERT INTO choices (question_id, choice_text) VALUES (61, 'B.具体的に扱うのは'); -- 305
@@ -1114,7 +1114,7 @@ INSERT INTO choices (question_id, choice_text) VALUES (131, 'D. 3/5'); -- 651
 INSERT INTO choices (question_id, choice_text) VALUES (132, 'A. 5/26'); -- 652
 INSERT INTO choices (question_id, choice_text) VALUES (132, 'B. 5/13'); -- 653
 INSERT INTO choices (question_id, choice_text) VALUES (132, 'C. 109/169'); -- 654
-INSERT INTO choices (question_id, choice_text) VALUES (132, 'D. 180/169'); -- 655〇
+INSERT INTO choices (question_id, choice_text) VALUES (132, 'D. 60/169'); -- 655〇
 
 INSERT INTO choices (question_id, choice_text) VALUES (133, 'A. 0.42'); -- 656
 INSERT INTO choices (question_id, choice_text) VALUES (133, 'B. 0.54'); -- 657〇
@@ -1144,7 +1144,7 @@ INSERT INTO choices (question_id, choice_text) VALUES (137, 'D. 1/6'); -- 675
 INSERT INTO choices (question_id, choice_text) VALUES (138, 'A. 1/5'); -- 676
 INSERT INTO choices (question_id, choice_text) VALUES (138, 'B. 1/6'); -- 677〇
 INSERT INTO choices (question_id, choice_text) VALUES (138, 'C. 1/18'); -- 678
-INSERT INTO choices (question_id, choice_text) VALUES (138, 'D. 1/180'); -- 679
+INSERT INTO choices (question_id, choice_text) VALUES (138, 'D. 1/30'); -- 679
 
 INSERT INTO choices (question_id, choice_text) VALUES (139, 'A. 0.15'); -- 680
 INSERT INTO choices (question_id, choice_text) VALUES (139, 'B. 0.45'); -- 681
@@ -1491,7 +1491,7 @@ INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (26, 13
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (27, 142, '1_2_7');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (28, 149, '1_2_8');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (29, 156, '1_2_9');
-INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (180, 161, '1_2_10');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (30, 161, '1_2_10');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (31, 164, '1_2_11');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (32, 171, '1_2_12');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (33, 172, '1_2_13');
@@ -1521,7 +1521,7 @@ INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (56, 28
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (57, 286, '1_3_17');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (58, 289, '1_3_18');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (59, 294, '1_3_19');
-INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (180, 302, '1_3_20');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (60, 302, '1_3_20');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (61, 308, '1_4_1');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (62, 309, '1_4_2');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (63, 314, '1_4_3');
