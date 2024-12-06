@@ -7,6 +7,11 @@ $username = "Creative7";
 $password = "11111";
 $dbname = "creative7";
 
+// $servername = "mysql1.php.starfree.ne.jp";
+// $username = "creative7_jun";
+// $password = "eL6VKCZh";
+// $dbname = "creative7_creative7";
+
 // データベース接続
 $conn = new mysqli($servername, $username, $password, $dbname);
 

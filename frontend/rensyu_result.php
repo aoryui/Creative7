@@ -14,6 +14,11 @@ $dbname = 'creative7';
 $username = 'Creative7';
 $password = '11111';
 
+// $host = 'mysql1.php.starfree.ne.jp';
+// $dbname = 'creative7_creative7';
+// $username = 'creative7_jun';
+// $password = 'eL6VKCZh';
+
 // MySQLi を使った接続
 $conn = new mysqli($host, $username, $password, $dbname);
 

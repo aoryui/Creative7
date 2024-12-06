@@ -21,6 +21,11 @@ $username = 'Creative7';
 $password = '11111';
 $database = 'creative7';
 
+// $host = 'mysql1.php.starfree.ne.jp';
+// $username = 'creative7_jun';
+// $password = 'eL6VKCZh';
+// $database = 'creative7_creative7';
+
 // データベースに接続
 $conn = mysqli_connect($host, $username, $password, $database);
 

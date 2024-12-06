@@ -8,6 +8,11 @@ $dbname = 'creative7';
 $username = 'Creative7';
 $password = '11111';
 
+// $host = 'mysql1.php.starfree.ne.jp';
+// $dbname = 'creative7_creative7';
+// $username = 'creative7_jun';
+// $password = 'eL6VKCZh';
+
 try {
     // PDOを使用したデータベース接続
     $db = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);

@@ -1,4 +1,4 @@
-<?php
+    <?php
 require_once __DIR__ . '/../backend/pre.php';
 require_once __DIR__ . '/../backend/class.php';
 
@@ -8,6 +8,9 @@ session_start();
 $dsn = 'mysql:dbname=creative7;host=localhost;charset=utf8';
 $user = 'Creative7';
 $password = '11111';
+// $dsn = 'mysql:dbname=creative7_creative7;host=mysql1.php.starfree.ne.jp;charset=utf8';
+// $user = 'creative7_jun';
+// $password = 'eL6VKCZh';
 $dbh = new PDO($dsn, $user, $password);
 $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
