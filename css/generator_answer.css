@@ -14,6 +14,8 @@ body {
 #image-upload {
     position: relative;
     bottom: 30px;
+    top: -380px;
+    transform: translateX(550px);
 }
 
 html {
