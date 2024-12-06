@@ -181,21 +181,23 @@ if (!$interval_time_empty) { // 制限時間がない場合は計算しない
     $correct_rate_nonlang = ($correct_count_nonlang / $total_questions_nonlang) * 100;
 }
 $correct_rate = ($correct_count / $total_questions) * 100; // 正答率を計算
-// データベースに正答率、平均回答時間、学習問題数を保存
-$result = $form->getStatus($userid);    // 学習記録を取得
-$level = $result['level']; 
-$exp = $result['exp']; // 経験値
-$maxExp = 10;
+if ($getUser === true){ // result初表示、ログイン状態、模擬試験、の時だけDBに保存
+    // データベースに正答率、平均回答時間、学習問題数を保存
+    $result = $form->getStatus($userid);    // 学習記録を取得
+    $level = $result['level']; 
+    $exp = $result['exp']; // 経験値
+    $maxExp = 10;
 
-$correctRate = $result['correct_rate'];      // 正答率
-$averageTime = $result['average_time'];      // 平均回答時間
-$totalQuestions = $result['total_questions']; // 学習問題数
-$correctRate_lang = $result['correct_rate_lang'];
-$averageTime_lang = $result['average_time_lang'];
-$totalQuestions_lang = $result['total_questions_lang'];
-$correctRate_nonlang = $result['correct_rate_nonlang'];
-$averageTime_nonlang = $result['average_time_nonlang'];
-$totalQuestions_nonlang = $result['total_questions_nonlang'];
+    $correctRate = $result['correct_rate'];      // 正答率
+    $averageTime = $result['average_time'];      // 平均回答時間
+    $totalQuestions = $result['total_questions']; // 学習問題数
+    $correctRate_lang = $result['correct_rate_lang'];
+    $averageTime_lang = $result['average_time_lang'];
+    $totalQuestions_lang = $result['total_questions_lang'];
+    $correctRate_nonlang = $result['correct_rate_nonlang'];
+    $averageTime_nonlang = $result['average_time_nonlang'];
+    $totalQuestions_nonlang = $result['total_questions_nonlang'];
+}
 
 if ($already_saved === false && $test_display === 'test' && $getUser === true){ // result初表示、ログイン状態、模擬試験、の時だけDBに保存
     // 全体の結果
@@ -241,337 +243,337 @@ if ($already_saved === false && $test_display === 'test' && $getUser === true){ 
     $form->updateStatus($userid, $correct_count, $new_correctRate, $new_averageTime, $new_totalQuestions, $new_correctRate_lang, $new_averageTime_lang, $new_totalQuestions_lang, $new_correctRate_nonlang, $new_averageTime_nonlang, $new_totalQuestions_nonlang);
     $_SESSION['already_saved'] = true; // DBに保存したことをセッションに保存
     $exp = $exp + $correct_count; // 経験値表示のズレを修正
-}
 
-// 経験値が最大経験値に到達またはそれを超えた場合の処理
-if ($exp >= $maxExp) {
-    // レベルアップ時に余剰経験値を計算し、$expをリセット
-    $level = $level + floor($exp / $maxExp); // レベルアップ
-    $exp = $exp % $maxExp; 
-    // データベースのexpフィールドを更新
-    $update_sql = "UPDATE userinfo SET exp = $exp, level = $level WHERE userid = $userid";
-    $conn->query($update_sql);   
-}
+    // 経験値が最大経験値に到達またはそれを超えた場合の処理
+    if ($exp >= $maxExp) {
+        // レベルアップ時に余剰経験値を計算し、$expをリセット
+        $level = $level + floor($exp / $maxExp); // レベルアップ
+        $exp = $exp % $maxExp; 
+        // データベースのexpフィールドを更新
+        $update_sql = "UPDATE userinfo SET exp = $exp, level = $level WHERE userid = $userid";
+        $conn->query($update_sql);   
+    }
 
-// バッジ取得フラグ
-$received_badges = [
-    'badge1' => false,
-    'badge2' => false,
-    'badge3' => false,
-    'badge4' => false,
-    'badge5' => false,
-    'badge6' => false,
-    'badge7' => false,
-    'badge8' => false,
-    'badge9' => false,
-    'badge10' => false,
-    'badge11' => false,
-    'badge12' => false
-];
+    // バッジ取得フラグ
+    $received_badges = [
+        'badge1' => false,
+        'badge2' => false,
+        'badge3' => false,
+        'badge4' => false,
+        'badge5' => false,
+        'badge6' => false,
+        'badge7' => false,
+        'badge8' => false,
+        'badge9' => false,
+        'badge10' => false,
+        'badge11' => false,
+        'badge12' => false
+    ];
 
-if ($level >= 125){
-    $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 7";
-    $badge_result = $conn->query($badge_query);
+    if ($level >= 125){
+        $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 7";
+        $badge_result = $conn->query($badge_query);
 
-    if ($badge_result && $badge_result->num_rows > 0) {
-        // 取得したbadge_idをowned_badgeテーブルに挿入
-        $row = $badge_result->fetch_assoc();
-        $badge_id = $row['badge_id'];
+        if ($badge_result && $badge_result->num_rows > 0) {
+            // 取得したbadge_idをowned_badgeテーブルに挿入
+            $row = $badge_result->fetch_assoc();
+            $badge_id = $row['badge_id'];
 
-        // すでにそのバッジを所有していないか確認
-        $check_query = "SELECT * FROM owned_badge WHERE userid = $userid AND badge_id = $badge_id";
-        $check_result = $conn->query($check_query);
+            // すでにそのバッジを所有していないか確認
+            $check_query = "SELECT * FROM owned_badge WHERE userid = $userid AND badge_id = $badge_id";
+            $check_result = $conn->query($check_query);
 
-        if ($check_result && $check_result->num_rows === 0) {
-            // バッジを挿入
-            $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, $badge_id)";
-            if ($conn->query($insert_badge_query) === TRUE) {
-                $received_badges['badge7'] = true;
-                echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
+            if ($check_result && $check_result->num_rows === 0) {
+                // バッジを挿入
+                $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, $badge_id)";
+                if ($conn->query($insert_badge_query) === TRUE) {
+                    $received_badges['badge7'] = true;
+                    echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
+                }
+            }
+        }
+    }elseif ($level >= 100){
+        $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 6";
+        $badge_result = $conn->query($badge_query);
+
+        if ($badge_result && $badge_result->num_rows > 0) {
+            // 取得したbadge_idをowned_badgeテーブルに挿入
+            $row = $badge_result->fetch_assoc();
+            $badge_id = $row['badge_id'];
+
+            // すでにそのバッジを所有していないか確認
+            $check_query = "SELECT * FROM owned_badge WHERE userid = $userid AND badge_id = $badge_id";
+            $check_result = $conn->query($check_query);
+
+            if ($check_result && $check_result->num_rows === 0) {
+                // バッジを挿入
+                $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, $badge_id)";
+                if ($conn->query($insert_badge_query) === TRUE) {
+                    $received_badges['badge6'] = true;
+                    echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
+                }
+            }
+        }
+    }elseif ($level >= 50){
+        $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 5";
+        $badge_result = $conn->query($badge_query);
+
+        if ($badge_result && $badge_result->num_rows > 0) {
+            // 取得したbadge_idをowned_badgeテーブルに挿入
+            $row = $badge_result->fetch_assoc();
+            $badge_id = $row['badge_id'];
+
+            // すでにそのバッジを所有していないか確認
+            $check_query = "SELECT * FROM owned_badge WHERE userid = $userid AND badge_id = $badge_id";
+            $check_result = $conn->query($check_query);
+
+            if ($check_result && $check_result->num_rows === 0) {
+                // バッジを挿入
+                $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, $badge_id)";
+                if ($conn->query($insert_badge_query) === TRUE) {
+                    $received_badges['badge5'] = true;
+                    echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
+                }
+            }
+        }
+    }elseif ($level >= 30){
+        $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 4";
+        $badge_result = $conn->query($badge_query);
+
+        if ($badge_result && $badge_result->num_rows > 0) {
+            // 取得したbadge_idをowned_badgeテーブルに挿入
+            $row = $badge_result->fetch_assoc();
+            $badge_id = $row['badge_id'];
+
+            // すでにそのバッジを所有していないか確認
+            $check_query = "SELECT * FROM owned_badge WHERE userid = $userid AND badge_id = $badge_id";
+            $check_result = $conn->query($check_query);
+
+            if ($check_result && $check_result->num_rows === 0) {
+                // バッジを挿入
+                $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, $badge_id)";
+                if ($conn->query($insert_badge_query) === TRUE) {
+                    $received_badges['badge4'] = true;
+                    echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
+                }
+            }
+        }
+    }elseif ($level >= 10){
+        $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 3";
+        $badge_result = $conn->query($badge_query);
+
+        if ($badge_result && $badge_result->num_rows > 0) {
+            // 取得したbadge_idをowned_badgeテーブルに挿入
+            $row = $badge_result->fetch_assoc();
+            $badge_id = $row['badge_id'];
+
+            // すでにそのバッジを所有していないか確認
+            $check_query = "SELECT * FROM owned_badge WHERE userid = $userid AND badge_id = $badge_id";
+            $check_result = $conn->query($check_query);
+
+            if ($check_result && $check_result->num_rows === 0) {
+                // バッジを挿入
+                $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, $badge_id)";
+                if ($conn->query($insert_badge_query) === TRUE) {
+                    $received_badges['badge3'] = true;
+                    echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
+                }
+            }
+        }
+    }elseif ($level >= 5){
+        $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 2";
+        $badge_result = $conn->query($badge_query);
+
+        if ($badge_result && $badge_result->num_rows > 0) {
+            // 取得したbadge_idをowned_badgeテーブルに挿入
+            $row = $badge_result->fetch_assoc();
+            $badge_id = $row['badge_id'];
+
+            // すでにそのバッジを所有していないか確認
+            $check_query = "SELECT * FROM owned_badge WHERE userid = $userid AND badge_id = $badge_id";
+            $check_result = $conn->query($check_query);
+
+            if ($check_result && $check_result->num_rows === 0) {
+                // バッジを挿入
+                $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, $badge_id)";
+                if ($conn->query($insert_badge_query) === TRUE) {
+                    $received_badges['badge2'] = true;
+                    echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
+                }
             }
         }
     }
-}elseif ($level >= 100){
-    $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 6";
-    $badge_result = $conn->query($badge_query);
 
-    if ($badge_result && $badge_result->num_rows > 0) {
-        // 取得したbadge_idをowned_badgeテーブルに挿入
-        $row = $badge_result->fetch_assoc();
-        $badge_id = $row['badge_id'];
+    // 一問以上正解していた場合の条件
+    if ($correct_count > 0) {
+        // badge_idが8のバッジを取得
+        $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 8";
+        $badge_result = $conn->query($badge_query);
 
-        // すでにそのバッジを所有していないか確認
-        $check_query = "SELECT * FROM owned_badge WHERE userid = $userid AND badge_id = $badge_id";
-        $check_result = $conn->query($check_query);
+        if ($badge_result && $badge_result->num_rows > 0) {
+            // 取得したbadge_idをowned_badgeテーブルに挿入
+            $row = $badge_result->fetch_assoc();
+            $badge_id = $row['badge_id'];
 
-        if ($check_result && $check_result->num_rows === 0) {
-            // バッジを挿入
-            $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, $badge_id)";
-            if ($conn->query($insert_badge_query) === TRUE) {
-                $received_badges['badge6'] = true;
-                echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
-            }
-        }
-    }
-}elseif ($level >= 50){
-    $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 5";
-    $badge_result = $conn->query($badge_query);
+            // すでにそのバッジを所有していないか確認
+            $check_query = "SELECT * FROM owned_badge WHERE userid = $userid AND badge_id = $badge_id";
+            $check_result = $conn->query($check_query);
 
-    if ($badge_result && $badge_result->num_rows > 0) {
-        // 取得したbadge_idをowned_badgeテーブルに挿入
-        $row = $badge_result->fetch_assoc();
-        $badge_id = $row['badge_id'];
-
-        // すでにそのバッジを所有していないか確認
-        $check_query = "SELECT * FROM owned_badge WHERE userid = $userid AND badge_id = $badge_id";
-        $check_result = $conn->query($check_query);
-
-        if ($check_result && $check_result->num_rows === 0) {
-            // バッジを挿入
-            $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, $badge_id)";
-            if ($conn->query($insert_badge_query) === TRUE) {
-                $received_badges['badge5'] = true;
-                echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
-            }
-        }
-    }
-}elseif ($level >= 30){
-    $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 4";
-    $badge_result = $conn->query($badge_query);
-
-    if ($badge_result && $badge_result->num_rows > 0) {
-        // 取得したbadge_idをowned_badgeテーブルに挿入
-        $row = $badge_result->fetch_assoc();
-        $badge_id = $row['badge_id'];
-
-        // すでにそのバッジを所有していないか確認
-        $check_query = "SELECT * FROM owned_badge WHERE userid = $userid AND badge_id = $badge_id";
-        $check_result = $conn->query($check_query);
-
-        if ($check_result && $check_result->num_rows === 0) {
-            // バッジを挿入
-            $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, $badge_id)";
-            if ($conn->query($insert_badge_query) === TRUE) {
-                $received_badges['badge4'] = true;
-                echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
-            }
-        }
-    }
-}elseif ($level >= 10){
-    $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 3";
-    $badge_result = $conn->query($badge_query);
-
-    if ($badge_result && $badge_result->num_rows > 0) {
-        // 取得したbadge_idをowned_badgeテーブルに挿入
-        $row = $badge_result->fetch_assoc();
-        $badge_id = $row['badge_id'];
-
-        // すでにそのバッジを所有していないか確認
-        $check_query = "SELECT * FROM owned_badge WHERE userid = $userid AND badge_id = $badge_id";
-        $check_result = $conn->query($check_query);
-
-        if ($check_result && $check_result->num_rows === 0) {
-            // バッジを挿入
-            $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, $badge_id)";
-            if ($conn->query($insert_badge_query) === TRUE) {
-                $received_badges['badge3'] = true;
-                echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
-            }
-        }
-    }
-}elseif ($level >= 5){
-    $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 2";
-    $badge_result = $conn->query($badge_query);
-
-    if ($badge_result && $badge_result->num_rows > 0) {
-        // 取得したbadge_idをowned_badgeテーブルに挿入
-        $row = $badge_result->fetch_assoc();
-        $badge_id = $row['badge_id'];
-
-        // すでにそのバッジを所有していないか確認
-        $check_query = "SELECT * FROM owned_badge WHERE userid = $userid AND badge_id = $badge_id";
-        $check_result = $conn->query($check_query);
-
-        if ($check_result && $check_result->num_rows === 0) {
-            // バッジを挿入
-            $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, $badge_id)";
-            if ($conn->query($insert_badge_query) === TRUE) {
-                $received_badges['badge2'] = true;
-                echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
-            }
-        }
-    }
-}
-
-// 一問以上正解していた場合の条件
-if ($correct_count > 0) {
-    // badge_idが8のバッジを取得
-    $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 8";
-    $badge_result = $conn->query($badge_query);
-
-    if ($badge_result && $badge_result->num_rows > 0) {
-        // 取得したbadge_idをowned_badgeテーブルに挿入
-        $row = $badge_result->fetch_assoc();
-        $badge_id = $row['badge_id'];
-
-        // すでにそのバッジを所有していないか確認
-        $check_query = "SELECT * FROM owned_badge WHERE userid = $userid AND badge_id = $badge_id";
-        $check_result = $conn->query($check_query);
-
-        if ($check_result && $check_result->num_rows === 0) {
-            // バッジを挿入
-            $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, $badge_id)";
-            if ($conn->query($insert_badge_query) === TRUE) {
-                $received_badges['badge8'] = true;
-                echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
+            if ($check_result && $check_result->num_rows === 0) {
+                // バッジを挿入
+                $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, $badge_id)";
+                if ($conn->query($insert_badge_query) === TRUE) {
+                    $received_badges['badge8'] = true;
+                    echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
+                } else {
+                    echo "<script>console.error('Failed to insert badge: " . $conn->error . "');</script>";
+                }
             } else {
-                echo "<script>console.error('Failed to insert badge: " . $conn->error . "');</script>";
+                echo "<script>console.log('Badge $badge_id already owned by user $userid.');</script>";
             }
         } else {
-            echo "<script>console.log('Badge $badge_id already owned by user $userid.');</script>";
+            // 条件に該当しない場合は何もしない
+            // No operation needed
         }
-    } else {
-        // 条件に該当しない場合は何もしない
-        // No operation needed
     }
-}
 
-if ($correct_count > 3 && $averageTime < 1) { //3問連続正解かつ平均回答時間が1秒
-    // badge_idが9のバッジを取得
-    $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 9";
-    $badge_result = $conn->query($badge_query);
+    if ($correct_count > 3 && $averageTime < 1) { //3問連続正解かつ平均回答時間が1秒
+        // badge_idが9のバッジを取得
+        $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 9";
+        $badge_result = $conn->query($badge_query);
 
-    if ($badge_result && $badge_result->num_rows > 0) {
-        // 取得したbadge_idをowned_badgeテーブルに挿入
-        $row = $badge_result->fetch_assoc();
-        $badge_id = $row['badge_id'];
+        if ($badge_result && $badge_result->num_rows > 0) {
+            // 取得したbadge_idをowned_badgeテーブルに挿入
+            $row = $badge_result->fetch_assoc();
+            $badge_id = $row['badge_id'];
 
-        // すでにそのバッジを所有していないか確認
-        $check_query = "SELECT * FROM owned_badge WHERE userid = $userid AND badge_id = $badge_id";
-        $check_result = $conn->query($check_query);
+            // すでにそのバッジを所有していないか確認
+            $check_query = "SELECT * FROM owned_badge WHERE userid = $userid AND badge_id = $badge_id";
+            $check_result = $conn->query($check_query);
 
-        if ($check_result && $check_result->num_rows === 0) {
-            // バッジを挿入
-            $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, $badge_id)";
-            if ($conn->query($insert_badge_query) === TRUE) {
-                $received_badges['badge9'] = true;                echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
+            if ($check_result && $check_result->num_rows === 0) {
+                // バッジを挿入
+                $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, $badge_id)";
+                if ($conn->query($insert_badge_query) === TRUE) {
+                    $received_badges['badge9'] = true;                echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
+                } else {
+                    echo "<script>console.error('Failed to insert badge: " . $conn->error . "');</script>";
+                }
             } else {
-                echo "<script>console.error('Failed to insert badge: " . $conn->error . "');</script>";
+                echo "<script>console.log('Badge $badge_id already owned by user $userid.');</script>";
             }
         } else {
-            echo "<script>console.log('Badge $badge_id already owned by user $userid.');</script>";
+            // 条件に該当しない場合は何もしない
+            // No operation needed
         }
-    } else {
-        // 条件に該当しない場合は何もしない
-        // No operation needed
     }
-}
 
-if ($correct_count > 7 && $averageTime < 20) { //平均回答時間が20秒かつ7問以上正解
-    // badge_idが10のバッジを取得
-    $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 10";
-    $badge_result = $conn->query($badge_query);
+    if ($correct_count > 7 && $averageTime < 20) { //平均回答時間が20秒かつ7問以上正解
+        // badge_idが10のバッジを取得
+        $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 10";
+        $badge_result = $conn->query($badge_query);
 
-    if ($badge_result && $badge_result->num_rows > 0) {
-        // 取得したbadge_idをowned_badgeテーブルに挿入
-        $row = $badge_result->fetch_assoc();
-        $badge_id = $row['badge_id'];
+        if ($badge_result && $badge_result->num_rows > 0) {
+            // 取得したbadge_idをowned_badgeテーブルに挿入
+            $row = $badge_result->fetch_assoc();
+            $badge_id = $row['badge_id'];
 
-        // すでにそのバッジを所有していないか確認
-        $check_query = "SELECT * FROM owned_badge WHERE userid = $userid AND badge_id = $badge_id";
-        $check_result = $conn->query($check_query);
+            // すでにそのバッジを所有していないか確認
+            $check_query = "SELECT * FROM owned_badge WHERE userid = $userid AND badge_id = $badge_id";
+            $check_result = $conn->query($check_query);
 
-        if ($check_result && $check_result->num_rows === 0) {
-            // バッジを挿入
-            $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, $badge_id)";
-            if ($conn->query($insert_badge_query) === TRUE) {
-                $received_badges['badge10'] = true;                echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
+            if ($check_result && $check_result->num_rows === 0) {
+                // バッジを挿入
+                $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, $badge_id)";
+                if ($conn->query($insert_badge_query) === TRUE) {
+                    $received_badges['badge10'] = true;                echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
+                } else {
+                    echo "<script>console.error('Failed to insert badge: " . $conn->error . "');</script>";
+                }
             } else {
-                echo "<script>console.error('Failed to insert badge: " . $conn->error . "');</script>";
+                echo "<script>console.log('Badge $badge_id already owned by user $userid.');</script>";
             }
         } else {
-            echo "<script>console.log('Badge $badge_id already owned by user $userid.');</script>";
+            // 条件に該当しない場合は何もしない
+            // No operation needed
         }
-    } else {
-        // 条件に該当しない場合は何もしない
-        // No operation needed
     }
-}
 
-if ($correct_count == 10) {  //10問連続正解
-    // badge_idが11のバッジを取得
-    $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 11";
-    $badge_result = $conn->query($badge_query);
+    if ($correct_count == 10) {  //10問連続正解
+        // badge_idが11のバッジを取得
+        $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 11";
+        $badge_result = $conn->query($badge_query);
 
-    if ($badge_result && $badge_result->num_rows > 0) {
-        // 取得したbadge_idをowned_badgeテーブルに挿入
-        $row = $badge_result->fetch_assoc();
-        $badge_id = $row['badge_id'];
+        if ($badge_result && $badge_result->num_rows > 0) {
+            // 取得したbadge_idをowned_badgeテーブルに挿入
+            $row = $badge_result->fetch_assoc();
+            $badge_id = $row['badge_id'];
 
-        // すでにそのバッジを所有していないか確認
-        $check_query = "SELECT * FROM owned_badge WHERE userid = $userid AND badge_id = $badge_id";
-        $check_result = $conn->query($check_query);
+            // すでにそのバッジを所有していないか確認
+            $check_query = "SELECT * FROM owned_badge WHERE userid = $userid AND badge_id = $badge_id";
+            $check_result = $conn->query($check_query);
 
-        if ($check_result && $check_result->num_rows === 0) {
-            // バッジを挿入
-            $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, $badge_id)";
-            if ($conn->query($insert_badge_query) === TRUE) {
-                $received_badges['badge11'] = true;                echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
+            if ($check_result && $check_result->num_rows === 0) {
+                // バッジを挿入
+                $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, $badge_id)";
+                if ($conn->query($insert_badge_query) === TRUE) {
+                    $received_badges['badge11'] = true;                echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
+                } else {
+                    echo "<script>console.error('Failed to insert badge: " . $conn->error . "');</script>";
+                }
             } else {
-                echo "<script>console.error('Failed to insert badge: " . $conn->error . "');</script>";
+                echo "<script>console.log('Badge $badge_id already owned by user $userid.');</script>";
             }
         } else {
-            echo "<script>console.log('Badge $badge_id already owned by user $userid.');</script>";
+            // 条件に該当しない場合は何もしない
+            // No operation needed
         }
-    } else {
-        // 条件に該当しない場合は何もしない
-        // No operation needed
     }
-}
 
-if ($correct_count > 100) { //100問以上正解
-    // badge_idが12のバッジを取得
-    $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 12";
-    $badge_result = $conn->query($badge_query);
+    if ($correct_count > 100) { //100問以上正解
+        // badge_idが12のバッジを取得
+        $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 12";
+        $badge_result = $conn->query($badge_query);
 
-    if ($badge_result && $badge_result->num_rows > 0) {
-        // 取得したbadge_idをowned_badgeテーブルに挿入
-        $row = $badge_result->fetch_assoc();
-        $badge_id = $row['badge_id'];
+        if ($badge_result && $badge_result->num_rows > 0) {
+            // 取得したbadge_idをowned_badgeテーブルに挿入
+            $row = $badge_result->fetch_assoc();
+            $badge_id = $row['badge_id'];
 
-        // すでにそのバッジを所有していないか確認
-        $check_query = "SELECT * FROM owned_badge WHERE userid = $userid AND badge_id = $badge_id";
-        $check_result = $conn->query($check_query);
+            // すでにそのバッジを所有していないか確認
+            $check_query = "SELECT * FROM owned_badge WHERE userid = $userid AND badge_id = $badge_id";
+            $check_result = $conn->query($check_query);
 
-        if ($check_result && $check_result->num_rows === 0) {
-            // バッジを挿入
-            $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, $badge_id)";
-            if ($conn->query($insert_badge_query) === TRUE) {
-                $received_badges['badge12'] = true;                echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
+            if ($check_result && $check_result->num_rows === 0) {
+                // バッジを挿入
+                $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES ($userid, $badge_id)";
+                if ($conn->query($insert_badge_query) === TRUE) {
+                    $received_badges['badge12'] = true;                echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
+                } else {
+                    echo "<script>console.error('Failed to insert badge: " . $conn->error . "');</script>";
+                }
             } else {
-                echo "<script>console.error('Failed to insert badge: " . $conn->error . "');</script>";
+                echo "<script>console.log('Badge $badge_id already owned by user $userid.');</script>";
             }
         } else {
-            echo "<script>console.log('Badge $badge_id already owned by user $userid.');</script>";
+            // 条件に該当しない場合は何もしない
+            // No operation needed
         }
-    } else {
-        // 条件に該当しない場合は何もしない
-        // No operation needed
     }
-}
 
-// ログ表示
-echo '<script>console.log('.json_encode($displayed_questions).')</script>';
-echo '<script>console.log('.json_encode($selected_choice).')</script>';
-echo '<script>console.log('.json_encode($correct_choices).')</script>';
-// データベース接続をクローズ
-mysqli_close($conn);
+    // ログ表示
+    echo '<script>console.log('.json_encode($displayed_questions).')</script>';
+    echo '<script>console.log('.json_encode($selected_choice).')</script>';
+    echo '<script>console.log('.json_encode($correct_choices).')</script>';
+    // データベース接続をクローズ
+    mysqli_close($conn);
 
-// trueのバッジ名を取得
-$true_badges = [];
-foreach ($received_badges as $badge_name => $status) {
-    if ($status) {
-        $true_badges[] = $badge_name;
+    // trueのバッジ名を取得
+    $true_badges = [];
+    foreach ($received_badges as $badge_name => $status) {
+        if ($status) {
+            $true_badges[] = $badge_name;
+        }
     }
 }
 
@@ -656,6 +658,7 @@ $show_modal = !empty($true_badges);
     </div>
     <script>
         // PHPから取得した経験値をJSに渡す
+        // ログインしていないとここでエラー出る。許して。by.F
         const currentExp = <?= $exp ?>; // 経験値
         const maxExp = <?= $maxExp ?>; // 最大経験値
 
