@@ -8,6 +8,11 @@ $username = "Creative7";
 $password = "11111";
 $dbname = "creative7";
 
+// $servername = "mysql1.php.starfree.ne.jp";
+// $username = "creative7_jun";
+// $password = "eL6VKCZh";
+// $dbname = "creative7_creative7";
+
 // データベース接続
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -310,29 +315,29 @@ $conn->close();
 
             </div>
         </div>
-        <div id="editModal" class="modal">
-        <div class="modal-content">
+        <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="modal">
             <span class="close" onclick="closeEditModal()">&times;</span>
-            <div class="pro">
-                <h2>プロフィール編集</h2>
-            </div>
-            <form id="editForm" action="../backend/edit_profile.php" method="POST">
-                    <label for="editOption">編集する項目を選択してください:</label>
-                    <select id="editOption" name="editOption" required onchange="handleOptionChange()">
-                        <option value="name">名前</option>
-                        <option value="subject">学科</option>
-                    </select>
 
-                    <!-- 入力欄またはプルダウンメニュー -->
-                    <div id="editInputContainer">
-                        <label for="newValue">新しい値を入力してください:</label>
-                        <input type="text" id="newValue" name="newValue" required>
-                    </div>
-                    <div class="change-btn">
-                        <button class="edit-profile-btn" type="submit">変更</button>
-                    </div>
-                    <a href="email_verify.php">パスワードを忘れた場合はこちら</a>
-                </form>
+            <h2 class="modalTitle">プロフィール編集</h2>
+
+            <form id="editForm" action="../backend/edit_profile.php" method="POST">
+                <label for="editOption">編集する項目を選択してください:</label>
+                <select id="editOption" name="editOption" required onchange="handleOptionChange()">
+                    <option value="name">名前</option>
+                    <option value="subject">学科</option>
+                </select>
+
+                <!-- 入力欄またはプルダウンメニュー -->
+                <div id="editInputContainer">
+                    <label for="newValue">新しい値を入力してください:</label>
+                    <input type="text" id="newValue" name="newValue" required>
+                </div>
+                <div class="change-btn">
+                    <button class="edit-profile-btn" type="submit">変更</button>
+                </div>
+                <a href="email_verify.php">パスワードを忘れた場合はこちら</a>
+            </form>
     </div>
 
     <script>
@@ -359,25 +364,30 @@ $conn->close();
                 `;
             }
         }
+
         // モーダルを開く関数
         function openEditModal() {
-            document.getElementById("editModal").style.display = "block";
+            document.getElementById("modalOverlay").style.display = "block";
         }
 
         // モーダルを閉じる関数
         function closeEditModal() {
-            document.getElementById("editModal").style.display = "none";
+            document.getElementById("modalOverlay").style.display = "none";
         }
 
         // 閉じるボタンにイベントリスナーを追加
         document.querySelector(".close").addEventListener("click", closeEditModal);
 
         // モーダル外をクリックしたときにモーダルを閉じる
-        window.onclick = function(event) {
-            if (event.target == document.getElementById("editModal")) {
+        window.addEventListener('click', function(event) {
+            const modalOverlay = document.getElementById("modalOverlay");
+            const modal = document.getElementById("modal");
+
+            // モーダル自体がクリックされた場合は閉じない
+            if (event.target === modalOverlay) {
                 closeEditModal();
             }
-        }
+        });
 
         // PHPから取得した経験値をJSに渡す
         const currentExp = <?= $exp ?>; // 経験値
@@ -406,20 +416,20 @@ $conn->close();
                 badge_modalOverlay.classList.add('active');
                 
                 badge_closeModal.addEventListener('click', () => {
-                    closeEditModal();
+                    closeBadgeModal();
                 });
             }
         });
 
         // モーダルを閉じる関数
-        function closeEditModal() {
+        function closeBadgeModal() {
             document.getElementById("badge-modalOverlay").style.display = "none";
         }
 
         // モーダル外をクリックしたときにモーダルを閉じる
         window.onclick = function(event) {
             if (event.target == document.getElementById("badge-modalOverlay")) {
-                closeEditModal();
+                closeBadgeModal();
             }
         }
     </script>

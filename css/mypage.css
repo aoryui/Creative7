@@ -204,7 +204,10 @@ body {
 }
 
 /* モーダルのスタイル */
-.modal {
+.modalTitle{
+    display: inline;
+}
+.modal-overlay {
     display: none;
     position: fixed;
     z-index: 1;
@@ -216,7 +219,7 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.modal-content {
+.modal {
     background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
