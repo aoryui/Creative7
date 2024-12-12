@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     } else {
         echo "パスワードが違います";
-        header("Location: ../frontend/passchange.php?message=" . urlencode("パスワードが違います"));
+        header("Location: ../frontend/change_password.php?message=" . urlencode("パスワードが違います"));
         exit();
     }
 } else {
