@@ -1,4 +1,4 @@
-    <?php
+<?php
 require_once __DIR__ . '/../backend/pre.php';
 require_once __DIR__ . '/../backend/class.php';
 
@@ -8,9 +8,6 @@ session_start();
 $dsn = 'mysql:dbname=creative7;host=localhost;charset=utf8';
 $user = 'Creative7';
 $password = '11111';
-// $dsn = 'mysql:dbname=creative7_creative7;host=mysql1.php.starfree.ne.jp;charset=utf8';
-// $user = 'creative7_jun';
-// $password = 'eL6VKCZh';
 $dbh = new PDO($dsn, $user, $password);
 $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -27,12 +24,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // ランダムな4桁のコードを生成
         $verification_code = rand(1000, 9999);
 
-        // セッションに保存
+        // 現在時刻から10分後の時刻を計算
+        $expire_time = time() + 600; // 現在時刻 + 600秒（10分）
+        $expire_time_formatted = date('m/d H:i', $expire_time); // フォーマット例: 12/16 10:22
+
+        // セッションに保存（コードと生成時刻を保存）
         $_SESSION['verification_code'] = $verification_code;
+        $_SESSION['verification_code_time'] = time(); // 現在のタイムスタンプを保存
         $_SESSION['email'] = $email;
 
-        // メールを送信 (メール送信ライブラリなどを使用)
-        mail($email, '確認コード', "あなたの確認コードは: $verification_code", 'From: no-reply@yourdomain.com');
+        // メール内容の作成
+        $mail_subject = '確認コード';
+        $mail_body = "[セキュリティコード] $verification_code\n";
+        $mail_body .= "[有効期限] $expire_time_formatted\n";
+        $mail_headers = 'From: no-reply@yourdomain.com';
+
+        // メールを送信
+        mail($email, $mail_subject, $mail_body, $mail_headers);
 
         // 確認コード入力ページにリダイレクト
         header('Location: ../frontend/verify_code.php');
