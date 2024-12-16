@@ -50,3 +50,34 @@ tr:nth-child(even) {
     padding: 5px 10px;
 }
 
+.answer {
+    margin-top: 85px;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+    border-radius: 4px;
+}
+.pagination a.active {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+}
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+}
+.pagination a.disabled {
+    color: #ccc;
+    pointer-events: none;
+    border: 1px solid #ddd;
+}

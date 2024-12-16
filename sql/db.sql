@@ -748,11 +748,11 @@ INSERT INTO choices (question_id, choice_text) VALUES (70, 'C.一般の家庭で
 INSERT INTO choices (question_id, choice_text) VALUES (70, 'D.例えば高度経済成長期のさなか登場した'); -- 351
 INSERT INTO choices (question_id, choice_text) VALUES (70, 'E.人々の生活を豊かにするための'); -- 352〇
 
-INSERT INTO choices (question_id, choice_text) VALUES (71, 'A.A'); -- 353〇
-INSERT INTO choices (question_id, choice_text) VALUES (71, 'B.B'); -- 354
-INSERT INTO choices (question_id, choice_text) VALUES (71, 'C.C'); -- 355
-INSERT INTO choices (question_id, choice_text) VALUES (71, 'D.D'); -- 356
-INSERT INTO choices (question_id, choice_text) VALUES (71, 'E.E'); -- 357
+INSERT INTO choices (question_id, choice_text) VALUES (71, 'A'); -- 353〇
+INSERT INTO choices (question_id, choice_text) VALUES (71, 'B'); -- 354
+INSERT INTO choices (question_id, choice_text) VALUES (71, 'C'); -- 355
+INSERT INTO choices (question_id, choice_text) VALUES (71, 'D'); -- 356
+INSERT INTO choices (question_id, choice_text) VALUES (71, 'E'); -- 357
 
 INSERT INTO choices (question_id, choice_text) VALUES (72, 'A.ア'); -- 358
 INSERT INTO choices (question_id, choice_text) VALUES (72, 'B.ウ'); -- 359
@@ -760,17 +760,17 @@ INSERT INTO choices (question_id, choice_text) VALUES (72, 'C.エ'); -- 360
 INSERT INTO choices (question_id, choice_text) VALUES (72, 'D.オ'); -- 361〇
 INSERT INTO choices (question_id, choice_text) VALUES (72, 'E.イが最後の文'); -- 362
 
-INSERT INTO choices (question_id, choice_text) VALUES (73, 'A.A'); -- 363
-INSERT INTO choices (question_id, choice_text) VALUES (73, 'B.B'); -- 364
-INSERT INTO choices (question_id, choice_text) VALUES (73, 'C.C'); -- 365
-INSERT INTO choices (question_id, choice_text) VALUES (73, 'D.D'); -- 366
-INSERT INTO choices (question_id, choice_text) VALUES (73, 'E.E'); -- 367〇
+INSERT INTO choices (question_id, choice_text) VALUES (73, 'A'); -- 363
+INSERT INTO choices (question_id, choice_text) VALUES (73, 'B'); -- 364
+INSERT INTO choices (question_id, choice_text) VALUES (73, 'C'); -- 365
+INSERT INTO choices (question_id, choice_text) VALUES (73, 'D'); -- 366
+INSERT INTO choices (question_id, choice_text) VALUES (73, 'E'); -- 367〇
 
-INSERT INTO choices (question_id, choice_text) VALUES (74, 'A.A'); -- 368
-INSERT INTO choices (question_id, choice_text) VALUES (74, 'B.B'); -- 369
-INSERT INTO choices (question_id, choice_text) VALUES (74, 'C.C'); -- 370
-INSERT INTO choices (question_id, choice_text) VALUES (74, 'D.D'); -- 371
-INSERT INTO choices (question_id, choice_text) VALUES (74, 'E.E'); -- 372〇
+INSERT INTO choices (question_id, choice_text) VALUES (74, 'A'); -- 368
+INSERT INTO choices (question_id, choice_text) VALUES (74, 'B'); -- 369
+INSERT INTO choices (question_id, choice_text) VALUES (74, 'C'); -- 370
+INSERT INTO choices (question_id, choice_text) VALUES (74, 'D'); -- 371
+INSERT INTO choices (question_id, choice_text) VALUES (74, 'E'); -- 372〇
 
 INSERT INTO choices (question_id, choice_text) VALUES (75, 'A.アとイ'); -- 373
 INSERT INTO choices (question_id, choice_text) VALUES (75, 'B.イとア'); -- 374
@@ -1033,11 +1033,11 @@ INSERT INTO choices (question_id, choice_text) VALUES (116, 'C. D-E-A-C-B'); -- 
 INSERT INTO choices (question_id, choice_text) VALUES (116, 'D. E-D-C-B-A'); -- 588
 INSERT INTO choices (question_id, choice_text) VALUES (116, 'E. D-A-E-B-C'); -- 589
 
-INSERT INTO choices (question_id, choice_text) VALUES (117, 'A. A'); -- 590
-INSERT INTO choices (question_id, choice_text) VALUES (117, 'B. B'); -- 591〇
-INSERT INTO choices (question_id, choice_text) VALUES (117, 'C. C'); -- 592
-INSERT INTO choices (question_id, choice_text) VALUES (117, 'D. D'); -- 593
-INSERT INTO choices (question_id, choice_text) VALUES (117, 'E. E'); -- 594
+INSERT INTO choices (question_id, choice_text) VALUES (117, 'A'); -- 590
+INSERT INTO choices (question_id, choice_text) VALUES (117, 'B'); -- 591〇
+INSERT INTO choices (question_id, choice_text) VALUES (117, 'C'); -- 592
+INSERT INTO choices (question_id, choice_text) VALUES (117, 'D'); -- 593
+INSERT INTO choices (question_id, choice_text) VALUES (117, 'E'); -- 594
 
 INSERT INTO choices (question_id, choice_text) VALUES (118, 'A. 1'); -- 595
 INSERT INTO choices (question_id, choice_text) VALUES (118, 'B. 2'); -- 596
@@ -1377,8 +1377,8 @@ INSERT INTO choices (question_id, choice_text) VALUES (183, 'D. 20%'); -- 861
 
 INSERT INTO choices (question_id, choice_text) VALUES (184, 'A. 1.4倍'); -- 862
 INSERT INTO choices (question_id, choice_text) VALUES (184, 'B. 2.9倍'); -- 863
-INSERT INTO choices (question_id, choice_text) VALUES (184, 'C. 7.9倍'); -- 864〇
-INSERT INTO choices (question_id, choice_text) VALUES (184, 'D. 9.4倍'); -- 865
+INSERT INTO choices (question_id, choice_text) VALUES (184, 'C. 7.9倍'); -- 864
+INSERT INTO choices (question_id, choice_text) VALUES (184, 'D. 9.4倍'); -- 865〇
 
 INSERT INTO choices (question_id, choice_text) VALUES (185, 'A. 60人'); -- 866〇
 INSERT INTO choices (question_id, choice_text) VALUES (185, 'B. 65人'); -- 867
@@ -1652,7 +1652,7 @@ INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (180, 8
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (181, 851, '2_9_1');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (182, 856, '2_9_2');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (183, 860, '2_9_3');
-INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (184, 864, '2_9_4');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (184, 865, '2_9_4');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (185, 866, '2_9_5');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (186, 871, '2_9_6');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (187, 876, '2_9_7');
@@ -1669,4 +1669,4 @@ INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (196, 9
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (197, 915, '2_10_7');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (198, 920, '2_10_8');
 INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (199, 925, '2_10_9');
-INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (200, 927, '2_10_10');
+INSERT INTO answers (question_id, correct_choice_id, explanation) VALUES (200, 929, '2_10_10');
