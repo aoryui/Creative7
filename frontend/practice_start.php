@@ -82,7 +82,8 @@ $conn->close();
 // セッションに解く問題とジャンル名を保存し、リザルト表示に不必要セッションを初期化
 $_SESSION['displayed_questions'] = $question_ids; 
 $_SESSION['genre_texts'] = $genre_texts;
-$_SESSION['selected_choice'] = [];
+// 問題数分「0」で初期化
+$_SESSION['selected_choice'] = array_fill(0, count($question_ids), 0);
 $_SESSION['current_question_index'] = 0;
 $_SESSION['interval_time'] = [];
 

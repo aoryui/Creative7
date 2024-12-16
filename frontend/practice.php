@@ -1,24 +1,8 @@
 <?php
 session_start();
 require_once __DIR__ . '/header.php';
-
-$servername = "localhost";
-$username = "Creative7";
-$password = "11111";
-$dbname = "creative7";
-
-// $servername = "mysql1.php.starfree.ne.jp";
-// $username = "creative7_jun";
-// $password = "eL6VKCZh";
-// $dbname = "creative7_creative7";
-
-// データベース接続
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// 接続確認
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+require_once __DIR__ . '/../backend/class.php';
+$form = new Form();
 
 // displayed_questions と current_question_index をセッションから取得
 $displayed_questions = isset($_SESSION['displayed_questions']) && is_array($_SESSION['displayed_questions']) ? $_SESSION['displayed_questions'] : [];
@@ -29,23 +13,27 @@ $selected_choice = isset($_SESSION['selected_choice']) && is_array($_SESSION['se
 
 // フォーム送信時の処理
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // 選択肢を保存
     if (isset($_POST['choice'])) {
-        $choice_id = $_POST['choice'];
-
-        // 選択肢IDをセッションに保存
-        $selected_choice[] = $choice_id;
-        $_SESSION['selected_choice'] = $selected_choice;
-
-        // 次の問題に進むためにインデックスを更新
+        $choice_id = intval($_POST['choice']);
+        $_SESSION['selected_choice'][$current_question_index] = $choice_id;
         $current_question_index++;
         $_SESSION['current_question_index'] = $current_question_index;
 
-        // 全ての問題が表示されたら終了メッセージを表示（例として）
+        // 全ての問題を回答済みの場合はリダイレクト
         if ($current_question_index >= count($displayed_questions)) {
-            // 模擬試験か練習問題かを判別させるセッション
             $_SESSION['test_display'] = 'practice';
             echo '<script>window.location.href = "rensyu_result.php";</script>';
             exit;
+        }
+    }
+
+    // ジャンプ処理
+    elseif (isset($_POST['go_to_index'])) {
+        $go_to_index = intval($_POST['go_to_index']);
+        if ($go_to_index >= 0 && $go_to_index < count($displayed_questions)) {
+            $current_question_index = $go_to_index;
+            $_SESSION['current_question_index'] = $current_question_index;
         }
     }
 }
@@ -54,32 +42,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 if (isset($displayed_questions[$current_question_index])) {
     $question_id = $displayed_questions[$current_question_index];
 } else {
-    die("No more questions available.");
+    echo '<script>console.log("問題がありません")</script>';
 }
 
 // ログ表示
-echo '<script>console.log('.json_encode($displayed_questions).')</script>'; // 既に表示した問題IDをコンソールに表示
-echo '<script>console.log('.json_encode($selected_choice).')</script>'; // 選択した答えを表示
+echo '<script>console.log('.json_encode($displayed_questions).')</script>';
+echo '<script>console.log('.json_encode($selected_choice).')</script>';
 
-// 問題を取得
-$question_sql = "SELECT * FROM questions WHERE question_id = $question_id";
-$question_result = $conn->query($question_sql);
-
-if ($question_result->num_rows > 0) {
-    $question = $question_result->fetch_assoc();
-} else {
-    die("No question found with the given ID.");
-}
-
-// 選択肢を取得
-$choices_sql = "SELECT * FROM choices WHERE question_id=" . $question['question_id'];
-$choices_result = $conn->query($choices_sql);
-
-$conn->close();
+// questionテーブルから問題データを取得
+$question_data = $form->getQuestion($question_id);
+// choicesテーブルから選択肢データを取り出す
+$choices_data = $form->getChoices($question_id);
+echo '<script>console.log('.json_encode($choices_data).')</script>';
 
 // 改行を HTML 改行タグに変換
-$question_text = nl2br(htmlspecialchars($question['question_text'], ENT_QUOTES, 'UTF-8'));
-$genre_text = nl2br(htmlspecialchars($question['genre_text'], ENT_QUOTES, 'UTF-8'));
+$question_text = nl2br(htmlspecialchars($question_data['question_text'], ENT_QUOTES, 'UTF-8'));
+$genre_text = nl2br(htmlspecialchars($question_data['genre_text'], ENT_QUOTES, 'UTF-8'));
+
+// 最新のセッションデータを取得
+$selected_choice = isset($_SESSION['selected_choice']) && is_array($_SESSION['selected_choice']) ? $_SESSION['selected_choice'] : [];
 ?>
 
 <!DOCTYPE html>
@@ -90,51 +71,71 @@ $genre_text = nl2br(htmlspecialchars($question['genre_text'], ENT_QUOTES, 'UTF-8
     <title>SPIタイサくん</title>
     <link rel="stylesheet" href="../css/practice.css">
     <link rel="stylesheet" href="../responsive/practice.css">
-    <link rel>
 </head>
 <body>
-    <div class="content"> <!-- 全体の要素 -->
-    <button class="edit-profile-btn" onclick="openEditModal()">練習開始に戻る</button>
-    <div class="top-contents"><!-- 上のやつ -->
-        <?php echo '<div id="question_genre">'.$genre_text.'</div>' ?> <!-- ジャンル名のやつ -->
-        <?php echo '<div id="question_count">問題数'.($current_question_index+1).'/'.count($displayed_questions).'問目</div>'?> <!-- 問題数ののやつ -->
-    </div>
-    <div class="center-contents">
-        <?php
-            // 画像のパスを作成
+    <div class="content">
+        <button class="open-edit-btn" onclick="openEditModal('nav-modal')">問題メニュー</button>
+        <div class="top-contents">
+            <?php echo '<div id="question_genre">'.$genre_text.'</div>' ?>
+            <?php echo '<div id="question_count">問題数'.($current_question_index+1).'/'.count($displayed_questions).'問目</div>'?>
+        </div>
+
+        <div class="center-contents">
+            <?php
+            $image_path = "../image/問題集/" . $question_text . ".jpg";
             $image_path = "../image/問題集/" . $question_text . ".jpg";
             // HTMLで画像を表示
-            echo '<img src="' . $image_path . '" alt="問題画像" class="question_img">';
-        ?>
-        <!-- 選択form -->
-        <div id="question_form">
-            <form id="choiceForm" method="post" action="practice.php">
-                <div class="choices">
-                    <?php
-                    while ($choice = $choices_result->fetch_assoc()) {
-                        echo '<div class="choice">';
-                        echo '<input type="radio" name="choice" value="' . $choice['choice_id'] . '" id="option' . $choice['choice_id'] . '">';
-                        echo '<label for="option' . $choice['choice_id'] . '">' . htmlspecialchars($choice['choice_text'], ENT_QUOTES, 'UTF-8') . '</label>';
-                        echo '</div>';
-                    }
-                    ?>
-                </div>
-                <input type="hidden" name="question_id" value="<?php echo $question_id; ?>">
-                <input type="hidden" name="time_taken" id="time_taken" value="">
-            </form>
-        </div>
-        <div class="next">
-            <a href="#" class="next-button" id="next-button">次に進む</a>
+                $image_path = "../image/問題集/" . $question_text . ".jpg";
+            // HTMLで画像を表示
+                echo '<img src="' . $image_path . '" alt="問題画像" class="question_img">';
+            ?>
+            <div id="question_form">
+                <form id="choiceForm" method="post" action="practice.php">
+                    <div class="choices">
+                        <?php
+                            foreach ($choices_data as $key => $value) {
+                                $checked = isset($_SESSION['selected_choice'][$current_question_index]) && $_SESSION['selected_choice'][$current_question_index] == $key ? 'checked' : '';
+                                echo '<div class="choice">';
+                                echo '<input type="radio" name="choice" value="' . $key . '" id="option' . $key . '" ' . $checked . '>';
+                                echo '<label for="option' . $key . '">' . htmlspecialchars($value, ENT_QUOTES, 'UTF-8') . '</label>';
+                                echo '</div>';
+                            }
+                        ?>
+                    </div>
+                    <input type="hidden" name="question_id" value="<?php echo $question_id; ?>">
+                </form>
+            </div>
+            <div class="next">
+                <a href="#" class="next-button" id="next-button">次に進む</a>
+            </div>
         </div>
     </div>
-    <!-- 編集用のモーダル -->
-    <div id="editModal" class="modal">
+
+    <div id="questionModal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeEditModal()">&times;</span>
-            <a href="practice_start.php">
-                <button type="button" class="button" id="container">戻る</button>
-            </a>
-            <button  onclick="closeEditModal()" class="button" id="container">閉じる</button>
+            <span class="close" onclick="closeEditModal('nav-modal')">&times;</span>
+            <button type="button" class="button" id="container" onclick="location.href='practice_start.php';">
+                開始画面に戻る
+            </button>
+            <div class="navigation-buttons">
+                <?php foreach ($displayed_questions as $index => $question_id): ?>
+                    <form method="post" style="display: inline-block;">
+                        <input type="hidden" name="go_to_index" value="<?php echo $index; ?>">
+                        <button type="submit" class="nav-button 
+                            <?php 
+                                if (isset($selected_choice[$index]) && $selected_choice[$index] !== 0) {
+                                    echo 'answered'; // 回答済み
+                                } else {
+                                    echo 'not-answered'; // 未回答
+                                }
+                            ?>" 
+                            <?php if ($index == $current_question_index) echo 'disabled'; ?>>
+                            <?php echo $index + 1; ?>
+                        </button>
+                    </form>
+                <?php endforeach; ?>
+            </div>
+
         </div>
     </div>
     <script>
@@ -165,24 +166,20 @@ $genre_text = nl2br(htmlspecialchars($question['genre_text'], ENT_QUOTES, 'UTF-8
         
         // モーダルを開く関数
         function openEditModal() {
-            document.getElementById("editModal").style.display = "block";
+            document.getElementById("questionModal").style.display = "block";
         }
 
         // モーダルを閉じる関数
         function closeEditModal() {
-            document.getElementById("editModal").style.display = "none";
+            document.getElementById("questionModal").style.display = "none";
         }
 
-        // 閉じるボタンにイベントリスナーを追加
-        document.querySelector(".close").addEventListener("click", closeEditModal);
-
-        // モーダル外をクリックしたときにモーダルを閉じる
         window.onclick = function(event) {
-            if (event.target == document.getElementById("editModal")) {
+            if (event.target == document.getElementById("questionModal")) {
                 closeEditModal();
             }
         }
-
     </script>
+    
 </body>
 </html>
