@@ -3,11 +3,24 @@ div[style*="z-index: 2147483647"] {
     display: none !important;
 }
 
+html{
+    overflow-y: scroll;
+    /*スクロールバー非表示（IE・Edge）*/
+    -ms-overflow-style: none;
+    /*スクロールバー非表示（Firefox）*/
+    scrollbar-width: none;
+}
+
+/*スクロールバー非表示（Chrome・Safari）*/
+html::-webkit-scrollbar{
+    display:none;
+  }
+
 
 body {
     background-color: #ffefd5;
     margin-top: calc(100px + 20px);
-    overflow-y: scroll;
+    
 }
 
 .top-contents{
@@ -38,15 +51,14 @@ body {
 }
 
 .choices {
-    max-width: 500px;
-    min-width: 200px;
+    min-width: auto;
     word-wrap: break-word; /* 内容が幅を超えた場合に折り返し */
 }
 
 #question_form{
     display: flex;
     flex-direction: column;
-    margin: 0 0 0 50px;
+    
 }
 
 .choice {
@@ -54,9 +66,10 @@ body {
     display: flex;
     align-items: center;
     background-color: #d3d3d3;
-    padding: 5px;
+    padding: 3px;
     border-radius: 5px;
     cursor: pointer;
+    width: auto;
 }
 label{
     cursor: pointer;
@@ -77,7 +90,7 @@ label{
 }
 
 .next-button {
-    display: inline-block;
+    display: flex;
     padding: 10px 20px;
     background-color: #00aaff;
     color: #fff;
@@ -90,7 +103,7 @@ label{
     margin: 10px;
     position: relative;
     right: 100px;
-    top: 60px;
+    top: 40px;
 }
 
 .next-button:hover{
@@ -109,10 +122,11 @@ label{
     margin: 10% auto;
     padding: 20px;
     border-radius: 8px;
-    width: 80%;
-    max-width: 600px;
+    width: 100%;
+
 }
 
+/* モーダル全体の背景 */
 .modal {
     display: none;
     position: fixed;
@@ -121,54 +135,88 @@ label{
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.6); /* 少し暗い背景を追加 */
+    backdrop-filter: blur(5px); /* 背景をぼかしてスタイリッシュに */
+    transition: opacity 0.3s ease; /* 開閉時のスムーズなフェードイン/アウト */
 }
 
+/* モーダルのコンテンツ */
+.modal-content {
+    background-color: #fff;
+    border-radius: 12px; /* 柔らかい角丸 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* スタイリッシュな影 */
+    margin: auto;
+    padding: 20px 30px; /* 内側の余白を広めに */
+    width: 80%; /* 横幅を適度に制限 */
+    max-width: 800px; /* 最大幅を設定 */
+    animation: slideDown 0.4s ease; /* 開くときのスライド効果 */
+    max-height: 80vh; /* 画面の高さを超えないよう制限 */
+    overflow-y: auto; /* 縦スクロールを有効に */
+    text-align: center; /* 内容を中央揃え */
+    margin-top: 50px;
+    
+}
+
+/* モーダルの開閉時のアニメーション */
+@keyframes slideDown {
+    from {
+        transform: translateY(-30px); /* 少し上からスライドイン */
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* 閉じるボタン */
 .close {
     color: #aaa;
-    float: right;
-    font-size: 28px;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
     font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease; /* ホバー時のスムーズな色変化 */
 }
 
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}  
+.close:hover {
+    color: #333; /* ホバー時に少し濃い色 */
+}
 
+/* モーダル内のボタンデザイン */
 .button {
-    margin: 0 auto;
-    padding: 2%; /* 内側の余白を減らして小さく */
-    background-color: #333; /* ボタンの背景色（必要に応じて調整） */
-    color: #fff; /* ボタンの文字色 */
-    border: none; /* 枠線を削除 */
-    border-radius: 5px; /* 少し丸みを持たせる */
-    width: auto; /* ボタンの幅 */
-    height: auto; /* ボタンの高さ */
-    cursor: pointer; /* カーソルの形状 */
-    text-align: center;
-    display: flex;
-    justify-content: center;
+    margin: 10px auto; /* 全体に対して中央揃え */
+    padding: 10px 20px; /* 内側の余白 */
+    background-color: #007bff; /* 青系のボタン */
+    color: #fff;
+    border: none;
+    border-radius: 5px; /* 柔らかい角丸 */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* なめらかな変化 */
 }
 
 .button:hover {
-    background-color: #555;
+    background-color: #0056b3; /* ホバー時に濃い青 */
+    transform: scale(1.05); /* 少し大きく */
 }
 
+/* ナビゲーションボタンの調整 */
 .navigation-buttons {
-    margin-top: 10px;
+    margin-top: 20px;
     text-align: center;
 }
 
 .nav-button {
-    margin: 0 5px;
-    padding: 5px 10px;
+    margin: 5px;
+    padding: 10px 15px;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
+    font-size: 14px;
     cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
 .nav-button.answered {
@@ -181,5 +229,7 @@ label{
 }
 
 .nav-button:disabled {
-    border: 3px solid #00CCFF;
+    border: 2px solid #00CCFF;
+    background-color: #e6f7ff;
+    color: #333;
 }

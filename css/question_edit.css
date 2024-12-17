@@ -21,11 +21,30 @@ body {
     padding-bottom: 30px; /* ボトムボタンの余白 */
 }
 
+.border-frame {   
+    display: flex; /* フレックスボックスを有効化 */
+    flex-direction: column;
+    justify-content: center;
+    min-height: 450px;
+    padding-top: 120px;
+    padding-left: 30px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    min-width: 400px;
+  }
+
+  .flex-inner[data-box-color="white"] {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden; /* 角を丸くするために内容を隠す */
+  }
+
 .question-edit-title {
     width: fit-content;
     block-size: fit-content;
     padding-top: 100px;
-    padding-left: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* テーブルのスタイル */
@@ -42,11 +61,25 @@ th, td {
     text-align: left;
     border-bottom: 1px solid #ddd;
     white-space: nowrap;
+    background-color: #dddddda2;
 }
 
 th {
     background-color: #f5f5f5;
     width: 20%;
+}
+
+legend{
+    text-align: center;
+  }
+
+fieldset{
+    margin: 10px;
+    margin-left: auto;
+}
+
+.contain-left{
+    margin-left: 0px;
 }
 
 /* ボタンのスタイル */
@@ -67,12 +100,13 @@ button:hover {
 .update-button-container {
     text-align: center;
     margin-top: 20px;
+    margin: 0 10px 10px 0;
 }
 
 #deleteButton{
     background-color: red;
     float: right;
-    margin: 0 20px 20px 0;
+    margin: -50px 30px 30px 0;
 }
 
 /* モーダルのスタイル */
@@ -89,6 +123,7 @@ button:hover {
 }
 
 .modal-content {
+    text-align: center;
     background-color: #fff;
     margin: 10% auto;
     padding: 20px;
@@ -131,6 +166,16 @@ form input[type="number"] {
     border-radius: 4px;
 }
 
+form input[type="number"],
+form input[class="time_limit1"] {
+    width: 100px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
 form input[type="submit"] {
     background-color: #007BFF;
     color: white;
@@ -142,6 +187,10 @@ form input[type="submit"] {
 
 form input[type="submit"]:hover {
     background-color: #0056b3;
+}
+
+.submit2{
+margin-top: 20px;
 }
 
 /* プレビュー画像 */
@@ -163,9 +212,6 @@ form input[type="submit"]:hover {
     background-color: #218838;
 }
 
-.submit1{
-    margin-left: 245px;
-}
 
 .correct-choice{
     background-color: #83E64E;

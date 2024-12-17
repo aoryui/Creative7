@@ -54,8 +54,24 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
     <link rel="stylesheet" href="../css/question_edit.css">
 </head>
 <body>
-<a href="question_list.php">問題一覧</a>
+    <div class="border-frame">
+        <div class="flex-inner" data-box-color="white">
 <h2 class="question-edit-title">問題編集</h2>
+<!-- 削除ボタン -->
+<button id="deleteButton">問題を削除</button>
+
+<!-- 削除モーダル -->
+<div id="deleteModal" class="modal">
+    <div class="delete-modal">
+        <h2>本当に削除しますか？</h2>
+        <form action="../backend/question_delete.php" method="POST" style="display: inline;">
+            <input type="hidden" name="question_id" value="<?php echo $question_id?>">
+            <button type="submit" class="delete-button">削除</button>
+        </form>
+        <button id="cancelButton">キャンセル</button>
+
+    </div>
+</div>
 <form action="../backend/question_edit_db.php" method="POST" enctype="multipart/form-data">
     <table>
         <tbody>
@@ -135,21 +151,7 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
     </div>
 </form>
 
-<!-- 削除ボタン -->
-<button id="deleteButton">問題を削除</button>
 
-<!-- 削除モーダル -->
-<div id="deleteModal" class="modal">
-    <div class="delete-modal">
-        <h2>本当に削除しますか？</h2>
-        <form action="../backend/question_delete.php" method="POST" style="display: inline;">
-            <input type="hidden" name="question_id" value="<?php echo $question_id?>">
-            <button type="submit" class="delete-button">削除</button>
-        </form>
-        <button id="cancelButton">キャンセル</button>
-
-    </div>
-</div>
 
 <!-- モーダル -->
 <div id="modal1" class="modal">
@@ -157,7 +159,7 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
         <span class="close" onclick="closeModal('modal1')">&times;</span>
         <h2>ジャンル名を編集</h2>
         <form id="genre_form">
-            <fieldset>
+        <fieldset class="contain-left">
                 <legend>言語</legend>
                 <div>
                     <input type="radio" id="lang_1" name="field" value="1_1" required <?php if ($genre_text == '二語の関係') echo 'checked'; ?> />
@@ -176,7 +178,7 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
                     <label for="lang_5">空欄補充</label>
                 </div>
             </fieldset>
-            <fieldset>
+            <fieldset class="contain-left">
                 <legend>非言語</legend>
                 <div>
                     <input type="radio" id="non-lang_1" name="field" value="2_1" required <?php if ($genre_text == '場合の数') echo 'checked'; ?> />
@@ -193,7 +195,7 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
 
                     <input type="radio" id="non-lang_5" name="field" value="2_5" required <?php if ($genre_text == '金額計算') echo 'checked'; ?> />
                     <label for="non-lang_5">金額計算</label>
-
+                    <br>
                     <input type="radio" id="non-lang_6" name="field" value="2_6" required <?php if ($genre_text == '分担計算') echo 'checked'; ?> />
                     <label for="non-lang_6">分担計算</label>
 
@@ -274,7 +276,7 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
             </div>
             <button type="button" onclick="addChoice()">選択肢を追加</button>
             <button type="button" onclick="removeChoice()">選択肢を削除</button><br>
-            <input class="submit1" type="submit" value="決定">
+            <input class="submit2" type="submit" value="決定">
         </form>
     </div>
 </div>
@@ -282,9 +284,9 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
 <div id="modal5" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal('modal5')">&times;</span>
-        <h2 for="time_limit">制限時間を入力（秒）:</h2>
+        <h2 for="time_limit">制限時間を入力（秒）</h2>
         <form id="timesForm">
-            <input type="number" id="time_limit" name="time_limit" min="1" value="30" required>
+            <input type="number" class="time_limit1" name="time_limit" min="1" value="30" required>
             <input class="submit1" type="submit" value="決定">
         </form>
     </div>
@@ -562,5 +564,7 @@ echo '<script>console.log('.json_encode($list_answers).')</script>';
 
 
 </script>
+        </div>
+    </div>
 </body>
 </html>

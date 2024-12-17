@@ -113,6 +113,7 @@ $selected_choice = isset($_SESSION['selected_choice']) && is_array($_SESSION['se
 
     <div id="questionModal" class="modal">
         <div class="modal-content">
+            
             <span class="close" onclick="closeEditModal('nav-modal')">&times;</span>
             <button type="button" class="button" id="container" onclick="location.href='practice_start.php';">
                 開始画面に戻る
@@ -134,8 +135,9 @@ $selected_choice = isset($_SESSION['selected_choice']) && is_array($_SESSION['se
                         </button>
                     </form>
                 <?php endforeach; ?>
-            </div>
 
+            </div>
+            
         </div>
     </div>
     <script>

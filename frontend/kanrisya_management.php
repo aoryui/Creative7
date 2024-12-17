@@ -19,36 +19,22 @@ if (isset($_SESSION['userid'])) {
     <link rel="stylesheet" href="../css/kanrisya_management.css">
 </head>
 <body>
-<div class="login-container">
-
-    <div class="introduce-container1">        
-    <img src="../image/icon/kanrisya.png" class="kanrisya1">       
-    <div class="kanrisyakanri">ユーザー情報一覧</div>
-    <button class="button1" onclick="window.location.href='kanrisya.php'"></button>
-
-    <div class="introduce-container2">
-    <img src="../image/icon/test-icon.png" class="kanrisya2">
-    <div class="problem">画像作成</div>
-    <button class="button2" onclick="window.location.href='generator_test.php'"></button>
-
-    <div class="introduce-container3">
-    <img src="../image/icon/sinki.png" class="kanrisya3">
-    <div class="problem">問題一覧・作成</div>
-    <button class="button2" onclick="window.location.href='question_list.php'"></button>
+    <div class="border-frame">
+    <div class="flex-inner" data-box-color="white">
+            <h2>利用者管理一覧</h2>
+    <a href="kanrisya.php"><img src="../image/icon/kanrisya.png" class="kanrisya" id="png" alt="ユーザー情報一覧"></a>
+    <a href="question_list.php"><img src="../image/icon/problem.png" id="png" alt="問題一覧"></a>
+    <a href="generator_test.php"><img src="../image/icon/test-icon.png" id="png" alt="画像作成"></a>
+    <a href="question_insert.php"><img src="../image/icon/sinki.png" id="png" alt="問題作成"></a>
+    <a href="user_opinion.php"><img src="../image/icon/users_6.png" id="png" alt="ユーザー意見欄"></a>
+    <div>
+    <p class="left1">ユーザー情報一覧</p>
+    <p class="left2">問題一覧</p>
+    <p class="left3">画像作成</p>
+    <p class="left4">問題作成</p>
+    <p class="left5">ユーザー意見欄</p>
     </div>
-
-
-
-
-
-</div>
-
-    
-
-
-
-
-</div>
+    </div>
 </body>
 
 </html>

@@ -52,7 +52,7 @@ p {
 .question_image, .explanation_image {
     max-width: 100%;
     height: auto;
-    margin-top: 10px;
+    margin-top: 80px;
 }
 
 .button-container {
@@ -116,7 +116,7 @@ fieldset {
     border: 2px solid #000000; /* 枠線 */
     padding: 10px; /* 内側の余白 */
     border-radius: 5px; /* 角を丸くする */
-    margin-top: 20px;
+    margin: 150px 50px 0px;
 }
 
 legend {

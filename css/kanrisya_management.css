@@ -14,80 +14,48 @@ body {
     background-color: #ffefd5;
 }
 
-.login-container{ /*白枠の部分*/
-    position: relative;
-    height: 420px;
-    max-width: 900px;
-    margin: 130px auto;
-    background-color: hsl(0, 0%, 100%);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.border-frame{
+    display: flex; /* フレックスボックスを有効化 */
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 120px;
+    padding-left: 100px;
+    padding-right: 100px;
+    box-sizing: border-box;
+    min-width: 400px;
 }
 
-.introduce-container1{ /*ユーザー管理*/
-    position: relative;
-    width: 230px;
-    height: 230px;
-    top: 80px;
-    left: 7%;
-    background-color: #e3e3e6;
-    z-index: 1;
-    font-size: 30px
+.flex-inner[data-box-color="white"] {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden; /* 角を丸くするために内容を隠す */
 }
 
-.introduce-container2{ /*問題作成*/
-    position: relative;
-    width: 230px;
-    height: 230px;
-    top: -385px;
-    left: 120%;
-    background-color: #e3e3e6;
-    z-index: 1;
-    font-size: 30px
-}
-
-.introduce-container3{
-    position: relative;
-    width: 230px;
-    height: 230px;
-    top: -392px;
-    left: 120%;
-    background-color: #e3e3e6;
-    z-index: 1;
-    font-size: 30px
-
-}
-.button1{ /*ユーザー管理*/
-    position: relative;
-    top: -150px;
-    background-color:  #e3e3e600;
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
+h2{
     text-align: center;
-    text-decoration: none;
+}
+
+.kanrisya{
+    margin-left: 100px;
+    
+  
+}
+
+#png{
+    margin-top: 30px;
+    height: 180px;
+    width: 180px;
+    background-color: #e3e3e6;
+}
+
+div p{
     display: inline-block;
-    width: 230px;
-    height: 230px;
-    cursor: pointer;
+    margin: 0px 0px 100px 100px;
+    
 }
 
-.button2{ /*問題作成*/
-    position: relative;
-    top: -160px;
-    background-color:  #e3e3e600;
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    width: 230px;
-    height: 230px;
-    cursor: pointer;
+.left1{
+    margin-left: 120px;
 }
 
 
@@ -95,39 +63,3 @@ body {
 
 
 
-
-
-.kanrisya1{
-    width: 100px;/*80pxに画像の縮小*/
-    position: relative;
-    left: 30%;
-    top: 20px;
-}
-
-.kanrisya2{
-    width: 100px;/*80pxに画像の縮小*/
-    position: relative;
-    left: 27%;
-    top: 20px;
-}
-.kanrisya3
-{
-    width: 100px;/*80pxに画像の縮小*/
-    position: relative;
-    left: 27%;
-    top: 20px;
-}
-
-.kanrisyakanri{
-    position: relative;
-    left: 20px;
-    top: 10%;
-    font-size: 25px;
-}
-
-.problem{
-    position: relative;
-    text-align: center;
-    top: 20px;
-    font-size: 30px;
-}
