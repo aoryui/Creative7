@@ -124,15 +124,19 @@ a {
     border: 1px solid #888;
     border-radius: 8px;
     width: 90%; /* モーダル全体の幅 */
-    max-width: 500px; /* モーダルの最大幅 */
+    max-width: 300px; /* モーダルの最大幅 */
     margin: 5% auto;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+#modalContent{
+    font-size: 20px;
+}
+
 .modal-image {
-    width: auto; /* モーダルの幅に合わせる */
-    height: auto; /* アスペクト比を保つ */
+    width: 100px; /* モーダルの幅に合わせる */
+    height: 100px; /* アスペクト比を保つ */
     max-height: 300px; /* モーダル内で画像が大きくなりすぎないよう制限 */
     margin-top: 10px;
 }
