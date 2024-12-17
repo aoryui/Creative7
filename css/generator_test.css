@@ -23,8 +23,8 @@ html {
 
 .button{
     position: relative;
-    top: -30px;
-    left: 30px;
+    top: -20px;
+    left: 200px;
     margin-right: 10px;
 } 
 
@@ -175,7 +175,7 @@ a {
 #image-upload {
     margin-top: 10px;
     position: relative;
-    left: 70px;
+    left: 250px;
 }
 
 #preview img {
