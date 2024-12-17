@@ -1,4 +1,5 @@
 <?php
+session_start(); // セッションを開始
 require_once __DIR__ . '/header.php';
 require_once __DIR__ . '/../backend/class.php';
 $form = new form();
@@ -26,6 +27,85 @@ $conn = new mysqli($host, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("データベース接続エラー: " . $conn->connect_error);
 }
+
+// 一番大きい badge_id を取得 
+$maxBadgeIdResult = $conn->query("SELECT MAX(badge_id) AS max_badge_id FROM badge_collections"); $maxBadgeId = $maxBadgeIdResult->fetch_assoc()['max_badge_id']; 
+// その値を除外するクエリを実行 
+$result = $conn->query("SELECT badge_id FROM badge_collections WHERE badge_id != $maxBadgeId");
+
+
+if ($result) {
+    while ($row = $result->fetch_assoc()) {
+        $all_badges[] = $row['badge_id']; // バッジIDを配列に追加
+    }
+}
+
+// ユーザーID (例: セッションなどから取得)
+$userid = $_SESSION['userid']; // セッションからユーザーIDを取得
+
+
+// 所有バッジ取得
+$owned_badges = [];
+$stmt = $conn->prepare("
+    SELECT bc.badge_id
+    FROM owned_badge ob
+    JOIN badge_collections bc ON ob.badge_id = bc.badge_id
+    WHERE ob.userid = ?
+");
+$stmt->bind_param("i", $userid); // プレースホルダーにバインド
+$stmt->execute();
+$stmt->bind_result($badge_id);
+
+
+// バッジIDを配列に追加
+while ($stmt->fetch()) {
+    $owned_badges[] = $badge_id;
+}
+$stmt->close();
+
+
+// すべてのバッジを持っているか比較
+if (count(array_diff($all_badges, $owned_badges)) === 0) {
+    // バッジIDが15のバッジを取得
+    $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 15";
+    $badge_result = $conn->query($badge_query);
+
+    if ($badge_result && $badge_result->num_rows > 0) {
+        $row = $badge_result->fetch_assoc();
+        $badge_id = $row['badge_id'];
+
+        // すでにそのバッジを所有していないか確認
+        $check_query = "SELECT * FROM owned_badge WHERE userid = ? AND badge_id = ?";
+        $stmt = $conn->prepare($check_query);
+        $stmt->bind_param("ii", $userid, $badge_id);
+        $stmt->execute();
+        $check_result = $stmt->get_result();
+
+        if ($check_result->num_rows === 0) {
+            // バッジを付与
+            $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES (?, ?)";
+            $insert_stmt = $conn->prepare($insert_badge_query);
+            $insert_stmt->bind_param("ii", $userid, $badge_id);
+
+            if ($insert_stmt->execute()) {
+                $received_badges['badge15'] = true;
+                echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
+            } else {
+                echo "<script>console.error('Failed to insert badge: " . $conn->error . "');</script>";
+            }
+        } else {
+            // すでに所有している場合
+            echo "<script>console.log('Badge $badge_id already owned by user $userid.');</script>";
+        }
+    } else {
+        // バッジが見つからなかった場合
+        echo "<script>console.error('Badge ID 15 not found in badge_collections.');</script>";
+    }
+} else {
+    // $correct_count が15でない場合
+    echo "<script>console.log('Correct count is not 15. No badge granted.');</script>";
+}
+
 
 // セッションから開いたページのファイル名を取得
 $test_display = isset($_SESSION['test_display']) ? $_SESSION['test_display'] : [];
@@ -650,8 +730,8 @@ $show_modal = !empty($true_badges);
                     <?php if (!$interval_time_empty): ?> <!-- 制限時間がない場合は非表示 -->
                         <td class="interval-time-cell"><?php echo (isset($interval_time[$key]) && $interval_time[$key] === '時間切れ') ? $interval_time[$key] : (isset($interval_time[$key]) ? $interval_time[$key] . '秒' : ''); ?></td>
                     <?php endif; ?>
-                    <td id="tri"><a href="kaitoukaisetu.php?question_id=<?php echo $key; ?>">解説リンク</a></td>
-                    <td id="tri"><a href="review_questions.php?question_id=<?php echo $displayed_questions[$key]; ?>">復習リンク</a></td>
+                    <td id="tri"><a href="kaitoukaisetu.php?question_id=<?php echo $key; ?>">解説</a></td>
+                    <td id="tri"><a href="review_questions.php?question_id=<?php echo $displayed_questions[$key]; ?>">復習</a></td>
                 </tr>
             <?php endforeach; ?>
         </table>
