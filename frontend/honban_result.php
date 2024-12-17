@@ -650,8 +650,8 @@ $show_modal = !empty($true_badges);
                     <?php if (!$interval_time_empty): ?> <!-- 制限時間がない場合は非表示 -->
                         <td class="interval-time-cell"><?php echo (isset($interval_time[$key]) && $interval_time[$key] === '時間切れ') ? $interval_time[$key] : (isset($interval_time[$key]) ? $interval_time[$key] . '秒' : ''); ?></td>
                     <?php endif; ?>
-                    <td id="tri"><a href="kaitoukaisetu.php?question_id=<?php echo $key; ?>">解説リンク</a></td>
-                    <td id="tri"><a href="review_questions.php?question_id=<?php echo $displayed_questions[$key]; ?>">復習リンク</a></td>
+                    <td id="tri"><a href="kaitoukaisetu.php?question_id=<?php echo $key; ?>">解説</a></td>
+                    <td id="tri"><a href="review_questions.php?question_id=<?php echo $displayed_questions[$key]; ?>">復習</a></td>
                 </tr>
             <?php endforeach; ?>
         </table>
