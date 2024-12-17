@@ -27,19 +27,20 @@ button{
     cursor: pointer;
     justify-content: center; /* 水平方向中央揃え */
     align-items: center; /* 垂直方向中央揃え（必要に応じて） */
+    border-radius: 5px; /*丸めるやつ*/
     height: 60px;
-    width: 130px;
+    width: 150px;
     margin: 10px;
     position: relative;
     top: 100px;
-    left: 1050px;
+    left: 1000px;
 }
 
 .content {
     display: flex;
     justify-content: center;
     width: 100%;
-    padding: 20px;
+    padding: 40px;
     flex-grow: 1;
     box-sizing: border-box;
     /* コンテナの相対位置を指定 */
@@ -159,7 +160,7 @@ button{
 }
 
 .next-button {
-    padding: 10px 20px;
+    padding: 10px 45px;
     background-color: #00aaff;
     color: #fff;
     text-decoration: none;
@@ -168,7 +169,7 @@ button{
     bottom: 30px;
     /* ボタンの位置を調整 */
     position: relative;
-    left: 1000px;
+    left: 1048px;
 }
 
 .next-button:hover{
