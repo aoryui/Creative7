@@ -27,7 +27,8 @@ html {
   
   .login-container { /*大きい枠*/
     width: 400px;
-    margin-top: calc(100px + 20px);
+    height: 350px;
+    margin-top: 150px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: auto;
@@ -72,7 +73,7 @@ html {
   }
   
   #submit { /*登録ボタン*/
-    width: 200px;
+    width: 150px;
     padding: 10px;
     background-color:rgb(84, 196, 99);
     color: white;
