@@ -63,50 +63,6 @@ while ($stmt->fetch()) {
 }
 $stmt->close();
 
-
-// すべてのバッジを持っているか比較
-if (count(array_diff($all_badges, $owned_badges)) === 0) {
-    // バッジIDが15のバッジを取得
-    $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 15";
-    $badge_result = $conn->query($badge_query);
-
-    if ($badge_result && $badge_result->num_rows > 0) {
-        $row = $badge_result->fetch_assoc();
-        $badge_id = $row['badge_id'];
-
-        // すでにそのバッジを所有していないか確認
-        $check_query = "SELECT * FROM owned_badge WHERE userid = ? AND badge_id = ?";
-        $stmt = $conn->prepare($check_query);
-        $stmt->bind_param("ii", $userid, $badge_id);
-        $stmt->execute();
-        $check_result = $stmt->get_result();
-
-        if ($check_result->num_rows === 0) {
-            // バッジを付与
-            $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES (?, ?)";
-            $insert_stmt = $conn->prepare($insert_badge_query);
-            $insert_stmt->bind_param("ii", $userid, $badge_id);
-
-            if ($insert_stmt->execute()) {
-                $received_badges['badge15'] = true;
-                echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
-            } else {
-                echo "<script>console.error('Failed to insert badge: " . $conn->error . "');</script>";
-            }
-        } else {
-            // すでに所有している場合
-            echo "<script>console.log('Badge $badge_id already owned by user $userid.');</script>";
-        }
-    } else {
-        // バッジが見つからなかった場合
-        echo "<script>console.error('Badge ID 15 not found in badge_collections.');</script>";
-    }
-} else {
-    // $correct_count が15でない場合
-    echo "<script>console.log('Correct count is not 15. No badge granted.');</script>";
-}
-
-
 // セッションから開いたページのファイル名を取得
 $test_display = isset($_SESSION['test_display']) ? $_SESSION['test_display'] : [];
 
@@ -347,7 +303,8 @@ if ($already_saved === false && $test_display === 'test' && $getUser === true){ 
         'badge9' => false,
         'badge10' => false,
         'badge11' => false,
-        'badge12' => false
+        'badge12' => false,
+        'badge15' => false
     ];
 
     if ($level >= 125){
@@ -640,6 +597,49 @@ if ($already_saved === false && $test_display === 'test' && $getUser === true){ 
             // No operation needed
         }
     }
+
+    // すべてのバッジを持っているか比較
+    if (count(array_diff($all_badges, $owned_badges)) === 0) {
+        // バッジIDが15のバッジを取得
+        $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 15";
+        $badge_result = $conn->query($badge_query);
+
+        if ($badge_result && $badge_result->num_rows > 0) {
+            $row = $badge_result->fetch_assoc();
+            $badge_id = $row['badge_id'];
+
+            // すでにそのバッジを所有していないか確認
+            $check_query = "SELECT * FROM owned_badge WHERE userid = ? AND badge_id = ?";
+            $stmt = $conn->prepare($check_query);
+            $stmt->bind_param("ii", $userid, $badge_id);
+            $stmt->execute();
+            $check_result = $stmt->get_result();
+
+            if ($check_result->num_rows === 0) {
+                // バッジを付与
+                $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES (?, ?)";
+                $insert_stmt = $conn->prepare($insert_badge_query);
+                $insert_stmt->bind_param("ii", $userid, $badge_id);
+
+                if ($insert_stmt->execute()) {
+                    $received_badges['badge15'] = true;
+                    echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
+                } else {
+                    echo "<script>console.error('Failed to insert badge: " . $conn->error . "');</script>";
+                }
+            } else {
+                // すでに所有している場合
+                echo "<script>console.log('Badge $badge_id already owned by user $userid.');</script>";
+            }
+        } else {
+            // バッジが見つからなかった場合
+            echo "<script>console.error('Badge ID 15 not found in badge_collections.');</script>";
+        }
+    } else {
+        // $correct_count が15でない場合
+        echo "<script>console.log('Correct count is not 15. No badge granted.');</script>";
+    }
+
 
     // ログ表示
     echo '<script>console.log('.json_encode($displayed_questions).')</script>';
