@@ -33,7 +33,7 @@ $subject = $_SESSION['subject'];
                 <li><a href="teststart.php">模擬試験開始画面</a></li>
                 <li><a href="review.php">復習ページ</a></li>
                 <li><a href="ranking.php">ランキング</a></li>
-                <li><a href="question_ranking.php">間違えた問題ランキング</a></li>
+                <li><a href="question_ranking.php">間違やすい問題ランキング</a></li>
                 <?php
                 if ($username === "ゲスト") {
                 ?>
