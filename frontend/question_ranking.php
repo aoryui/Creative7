@@ -82,6 +82,8 @@ $_SESSION['correct_choices'] = $correct_choices;
     <title>間違えやすい問題ランキング</title>
 </head>
 <body>
+<div class="border-frame">
+<div class="flex-inner" data-box-color="white">
     <h1>間違えやすい問題ランキング</h1>
     <?php if (count($rankingData) > 0): ?>
         <table>
@@ -113,5 +115,7 @@ $_SESSION['correct_choices'] = $correct_choices;
     <?php else: ?>
         <p>ランキングデータがありません。</p>
     <?php endif; ?>
+    </div>
+    </div>
 </body>
 </html>

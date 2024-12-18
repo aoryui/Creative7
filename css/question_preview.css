@@ -15,7 +15,7 @@ body {
     justify-content: center; /* 水平方向に中央揃え */
     align-items: center; /* 垂直方向に中央揃え */
     gap: 50px; /* 各要素間の間隔 */
-    padding-top: 100px;
+    margin-top: 150px;
 }
 
 p {
@@ -81,8 +81,9 @@ p {
     display: flex; /* 横並びに配置 */
     justify-content: left; /* 左寄せ */
     gap: 20px; /* 画像間の隙間 */
-    margin-top: 20px;
-    padding-left: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -60px;
     width: fit-content;
 }
 
@@ -109,14 +110,15 @@ p {
     flex-direction: column; /* 縦に並べる */
     gap: 5px;
     padding: 15px;
-    max-width: 250px; /* 選択肢の最大幅を設定 */
 }
 
 fieldset {
-    border: 2px solid #000000; /* 枠線 */
-    padding: 10px; /* 内側の余白 */
-    border-radius: 5px; /* 角を丸くする */
-    margin: 150px 50px 0px;
+    border: 2px solid #000000;
+    padding: 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: 500px;
+    left: 150px;
 }
 
 legend {
