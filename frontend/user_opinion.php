@@ -12,7 +12,7 @@ require_once __DIR__ . '/header_kanrisya.php';
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>スプレッドシート操作</h1>
+    <h1></h1><!-- ヘッダーにかぶらないように -->
     <div class="btn-container">
         <!-- スプレッドシートを開くボタン -->
         <a href="https://docs.google.com/spreadsheets/d/1Cfi4TYYUqbFLIR3OfGuDXDXQDhRqsLxzeFNw1j36_oE/edit?usp=sharing" class="btn-link">
