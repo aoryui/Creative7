@@ -9,43 +9,41 @@ body{
 }
 
 .border-frame {   
-    display: flex; /* フレックスボックスを有効化 */
-    flex-direction: column;
-    justify-content: center;
-    min-height: 450px;
-    padding-top: 120px;
-    padding-left: 200px;
-    padding-right: 200px;
-    box-sizing: border-box;
-    min-width: 400px;
-  }
+  display: flex; /* フレックスボックスを有効化 */
+  flex-direction: column;
+  justify-content: center;
+  min-height: 450px;
+  padding-top: 120px;
+  padding-left: 200px;
+  padding-right: 200px;
+  box-sizing: border-box;
+  min-width: 400px;
+}
 
-  .flex-inner[data-box-color="white"] {
-    background: #fff;
-    border-radius: 20px;
-    overflow: hidden; /* 角を丸くするために内容を隠す */
-  }
+.flex-inner[data-box-color="white"] {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden; /* 角を丸くするために内容を隠す */
+}
 
-  .contain-left{
-    display: inline-block; 
-    margin: 0 10px; /* 少し余白をつける */
-    margin-left: 240px;
-    position: absolute;
-  }
-
-  .contain-right{
-  display: inline-block; /* inline-blockのままでもOK */
+.contain-left{
+  display: inline-block; 
   margin: 0 10px; /* 少し余白をつける */
-  margin-left: 450px;
-  margin-bottom: 50px ;
-  }
+  margin-left: 240px;
+  position: absolute;
+}
+
+.contain-right{
+display: inline-block; /* inline-blockのままでもOK */
+margin: 0 10px; /* 少し余白をつける */
+margin-left: 450px;
+margin-bottom: 50px ;
+}
 
 h2 {
     padding-top: 20px;
     text-align: center; /* テキストを中央揃えに */
 }
-
-
 
 legend{
   text-align: center;
@@ -94,19 +92,42 @@ legend{
   margin-bottom: 60px;
 }
 
+.genre-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px; /* 各ジャンル間のスペース */
+}
+
+.genre-label {
+  display: flex;
+  width: 100%;
+}
+
+.genre-name {
+  flex: 1;
+  text-align: left;
+}
+
+.genre-stats {
+  flex: 0;
+  text-align: right;
+  white-space: nowrap;
+}
+
 /* ボタンの基本スタイル */
 .button {
   background-color: rgb(235, 118, 46); /* 緑色の背景 */
   color: white; /* 白文字 */
-    padding: 12px 24px; /* 上下左右にパディング */
-    font-size: 16px; /* フォントサイズ */
-    border: none; /* ボーダーなし */
-    border-radius: 8px; /* 角を丸く */
-    cursor: pointer; /* ポインタを表示 */
-    display: block; /* ブロック要素として中央寄せ */
-    margin: 1px auto 15px; /* 自動マージンで中央に配置 */
-    width: 200px; /* ボタンの幅を指定 */
-    transition: background-color 0.3s, transform 0.2s; /* ホバー時のアニメーション */
+  padding: 12px 24px; /* 上下左右にパディング */
+  font-size: 16px; /* フォントサイズ */
+  border: none; /* ボーダーなし */
+  border-radius: 8px; /* 角を丸く */
+  cursor: pointer; /* ポインタを表示 */
+  display: block; /* ブロック要素として中央寄せ */
+  margin: 1px auto 15px; /* 自動マージンで中央に配置 */
+  width: 200px; /* ボタンの幅を指定 */
+  transition: background-color 0.3s, transform 0.2s; /* ホバー時のアニメーション */
 }
 
 /* ボタンにホバーエフェクトを追加 */

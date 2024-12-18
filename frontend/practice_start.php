@@ -86,6 +86,7 @@ $_SESSION['genre_texts'] = $genre_texts;
 $_SESSION['selected_choice'] = array_fill(0, count($question_ids), 0);
 $_SESSION['current_question_index'] = 0;
 $_SESSION['interval_time'] = [];
+$_SESSION['already_saved'] = false;
 
 // 問題とジャンル名をコンソールに表示
 echo '<script>console.log('.json_encode($question_ids).')</script>';

@@ -386,4 +386,48 @@ class form extends Dbdata
         return $result;
     }
 
+    // 解いた問題を保存
+    public function save_solve($userid, $question_ids) { // save(保存)とsolve(解く)を掛けた関数名((´∀`*))ｹﾗｹﾗ
+        // 複数行を一度に挿入、重複を無視
+        $placeholders = implode(',', array_fill(0, count($question_ids), '(?, ?)'));
+        $sql = "INSERT IGNORE INTO solved_questions (user_id, question_id) VALUES $placeholders";
+        $stmt = $this->pdo->prepare($sql);
+        // パラメータの配列を作成
+        $params = [];
+        foreach ($question_ids as $question_id) {
+            $params[] = $userid;
+            $params[] = $question_id;
+        }
+        $stmt->execute($params);
+    
+        return true;
+    }    
+
+    // 正解した問題を取得する関数
+    public function get_question_solved_ratios($user_id) {
+        // SQL クエリ
+        $sql = "
+            SELECT 
+                q.field_id,
+                q.genre_id,
+                COUNT(q.question_id) AS total_questions,
+                COUNT(sq.question_id) AS solved_questions,
+                CONCAT(COUNT(sq.question_id), '/', COUNT(q.question_id)) AS solved_ratio
+            FROM questions q
+            LEFT JOIN solved_questions sq
+                ON q.question_id = sq.question_id AND sq.user_id = :user_id
+            GROUP BY q.field_id, q.genre_id
+            ORDER BY q.field_id, q.genre_id;
+        ";
+    
+        // クエリを準備して実行
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(['user_id' => $user_id]);
+    
+        // 結果を取得
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
+      
+
 }    

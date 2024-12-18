@@ -16,28 +16,23 @@ $dbname = 'creative7';
 $username = 'Creative7';
 $password = '11111';
 
-
 // $host = 'mysql1.php.starfree.ne.jp';
 // $dbname = 'creative7_creative7';
 // $username = 'creative7_jun';
 // $password = 'eL6VKCZh';
 
-
 // MySQLi を使った接続
 $conn = new mysqli($host, $username, $password, $dbname);
-
 
 // 接続エラーの確認
 if ($conn->connect_error) {
     die("データベース接続エラー: " . $conn->connect_error);
 }
 
-
 // 一番大きい badge_id を取得 
 $maxBadgeIdResult = $conn->query("SELECT MAX(badge_id) AS max_badge_id FROM badge_collections"); $maxBadgeId = $maxBadgeIdResult->fetch_assoc()['max_badge_id']; 
 // その値を除外するクエリを実行 
 $result = $conn->query("SELECT badge_id FROM badge_collections WHERE badge_id != $maxBadgeId");
-
 
 if ($result) {
     while ($row = $result->fetch_assoc()) {
@@ -45,10 +40,8 @@ if ($result) {
     }
 }
 
-
 // ユーザーID (例: セッションなどから取得)
 $userid = $_SESSION['userid']; // セッションからユーザーIDを取得
-
 
 // 所有バッジ取得
 $owned_badges = [];
@@ -62,13 +55,11 @@ $stmt->bind_param("i", $userid); // プレースホルダーにバインド
 $stmt->execute();
 $stmt->bind_result($badge_id);
 
-
 // バッジIDを配列に追加
 while ($stmt->fetch()) {
     $owned_badges[] = $badge_id;
 }
 $stmt->close();
-
 
 // すべてのバッジを持っているか比較
 if (count(array_diff($all_badges, $owned_badges)) === 0) {
@@ -112,29 +103,22 @@ if (count(array_diff($all_badges, $owned_badges)) === 0) {
     echo "<script>console.log('Correct count is not 15. No badge granted.');</script>";
 }
 
-
-
-
 // セッションから開いたページのファイル名を取得
 $test_display = isset($_SESSION['test_display']) ? $_SESSION['test_display'] : [];
 
-
 // リザルト画面のファイル場所をセッションに保存
 $_SESSION['result_display'] = 'rensyu';
-
 
 $displayed_questions = isset($_SESSION['displayed_questions']) ? $_SESSION['displayed_questions'] : [];
 $selected_choice = isset($_SESSION['selected_choice']) ? $_SESSION['selected_choice'] : [];
 $interval_time = isset($_SESSION['interval_time']) ? $_SESSION['interval_time'] : [];
 $already_saved = isset($_SESSION['already_saved']) ? $_SESSION['already_saved'] : [];
 
-
 // 正誤判定用の配列を初期化
 $correct_answers = [];  // 各問題の正誤を格納する配列
 $genres = [];  // 各問題の分野を格納する配列
 $correct_choices = [];  // 各問題の正解選択肢IDを格納する配列
 $questionTexts = []; // 問題のテキストを格納する配列
-
 
 $total_time = 0; // 合計回答時間
 $total_time_lang = 0;
@@ -145,7 +129,6 @@ $total_questions_nonlang = 0;
 $correct_count = 0; // 正解数
 $correct_count_lang = 0;
 $correct_count_nonlang = 0;
-
 
 // 各問題の正誤を判定する
 foreach ($displayed_questions as $key => $question_id) {
@@ -240,17 +223,18 @@ foreach ($displayed_questions as $key => $question_id) {
     }
 }
 
+// 正解した問題をリストに格納
+$correct_questions = array_keys(array_filter($correct_answers));
 
 // 制限時間があるか判定
 $interval_time_empty = empty($interval_time);
-
 
 $getUser = $form->getUser($userid); // ユーザーが存在するか確認
 if($getUser === true){ // ログインしている時のみ間違えた問題を保存
     // 間違えた問題を取得
     $incorrect_questions = array_keys(array_filter($correct_answers, function($value) {return $value === false;}));
     sort($incorrect_questions); // 問題番号を昇順にソート
-    echo '<script>console.log('.json_encode($incorrect_questions).')</script>';
+    echo '<script>console.log('.json_encode($test_display).')</script>';
 
 
     foreach ($incorrect_questions as $index => $question_id) {
@@ -283,64 +267,10 @@ $exp = $result['exp']; // 経験値
 $maxExp = 10;
 
 
-if ($already_saved === false && $test_display === 'test' && $getUser === true){ // result初表示、ログイン状態、模擬試験、の時だけDBに保存
-    $correctRate = $result['correct_rate'];      // 正答率
-    $averageTime = $result['average_time'];      // 平均回答時間
-    $totalQuestions = $result['total_questions']; // 学習問題数
-    $correctRate_lang = $result['correct_rate_lang'];
-    $averageTime_lang = $result['average_time_lang'];
-    $totalQuestions_lang = $result['total_questions_lang'];
-    $correctRate_nonlang = $result['correct_rate_nonlang'];
-    $averageTime_nonlang = $result['average_time_nonlang'];
-    $totalQuestions_nonlang = $result['total_questions_nonlang'];
+if ($already_saved === false && $test_display === 'practice' && $getUser === true){ // result初表示、ログイン状態、模擬試験、の時だけDBに保存
 
-
-    // 全体の結果
-    // 回答率の計算
-    $correct_rate_num = $correct_rate / 100; // %を小数に変換
-    $correctRate_num = $correctRate / 100;
-    // 正答率を計算
-    $new_correctRate = (($correctRate_num*$totalQuestions + $correct_rate_num*$total_questions) / ($totalQuestions+$total_questions))*100;
-    $new_correctRate = round($new_correctRate); // 四捨五入
-    // 回答時間の計算
-    $new_averageTime = ($average_time*$total_questions + $averageTime*$totalQuestions) / ($total_questions+$totalQuestions);
-    $new_averageTime = round($new_averageTime); // 四捨五入
-    // 問題数の合計を計算
-    $new_totalQuestions = $totalQuestions+$total_questions;
-
-
-    // 言語の結果
-    // 回答率の計算
-    $correct_rate_num_lang = $correct_rate_lang / 100; // %を小数に変換
-    $correctRate_num_lang = $correctRate_lang / 100;
-    // 正答率を計算
-    $new_correctRate_lang = (($correctRate_num_lang*$totalQuestions_lang + $correct_rate_num_lang*$total_questions_lang) / ($totalQuestions_lang+$total_questions_lang))*100;
-    $new_correctRate_lang = round($new_correctRate_lang); // 四捨五入
-    // 回答時間の計算
-    $new_averageTime_lang = ($average_time_lang*$total_questions_lang + $averageTime_lang*$totalQuestions_lang) / ($total_questions_lang+$totalQuestions_lang);
-    $new_averageTime_lang = round($new_averageTime_lang); // 四捨五入
-    // 問題数の合計を計算
-    $new_totalQuestions_lang = $totalQuestions_lang+$total_questions_lang;
-   
-    // 非言語の結果
-    // 回答率の計算
-    $correct_rate_num_nonlang = $correct_rate_nonlang / 100; // %を小数に変換
-    $correctRate_num_nonlang = $correctRate_nonlang / 100;
-    // 正答率を計算
-    $new_correctRate_nonlang = (($correctRate_num_nonlang*$totalQuestions_nonlang + $correct_rate_num_nonlang*$total_questions_nonlang) / ($totalQuestions_nonlang+$total_questions_nonlang))*100;
-    $new_correctRate_nonlang = round($new_correctRate_nonlang); // 四捨五入
-    // 回答時間の計算
-    $new_averageTime_nonlang = ($average_time_nonlang*$total_questions_nonlang + $averageTime_nonlang*$totalQuestions_nonlang) / ($total_questions_nonlang+$totalQuestions_nonlang);
-    $new_averageTime_nonlang = round($new_averageTime_nonlang); // 四捨五入
-    // 問題数の合計を計算
-    $new_totalQuestions_nonlang = $totalQuestions_nonlang+$total_questions_nonlang;
-
-
-    // ここにclass.phpのupdateStatusを実行するコード
-    $form->updateStatus($userid, $correct_count, $new_correctRate, $new_averageTime, $new_totalQuestions, $new_correctRate_lang, $new_averageTime_lang, $new_totalQuestions_lang, $new_correctRate_nonlang, $new_averageTime_nonlang, $new_totalQuestions_nonlang);
     $_SESSION['already_saved'] = true; // DBに保存したことをセッションに保存
     $exp = $exp + $correct_count; // 経験値表示のズレを修正
-
 
     // バッジ取得フラグ
     $received_badges = [
@@ -492,8 +422,10 @@ if ($already_saved === false && $test_display === 'test' && $getUser === true){ 
             $true_badges[] = $badge_name;
         }
     }
-}
 
+    // 正解した問題をdbのsolved_questionsテーブルに保存
+    $solved_questions = $form->save_solve($userid, $correct_questions);
+}
 
 // モーダルを表示するかの判定
 $show_modal = !empty($true_badges);
@@ -610,8 +542,3 @@ mysqli_close($conn);
     </script>
 </body>
 </html>
-
-
-
-
-

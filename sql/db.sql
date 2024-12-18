@@ -76,6 +76,16 @@ CREATE TABLE wrong (
     question_id int(255) NOT NULL 
 );
 
+-- 解いた問題を保存
+DROP TABLE IF EXISTS solved_questions;
+CREATE TABLE solved_questions (
+    user_id INT NOT NULL,
+    question_id INT NOT NULL,
+    PRIMARY KEY (user_id, question_id),
+    FOREIGN KEY (user_id) REFERENCES userinfo(userid),
+    FOREIGN KEY (question_id) REFERENCES questions(question_id)
+);
+
 DROP TABLE IF EXISTS question_statistics;
 CREATE TABLE question_statistics (
     question_id INT NOT NULL,
