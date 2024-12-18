@@ -30,10 +30,14 @@ button{
     border-radius: 5px; /*丸めるやつ*/
     height: 60px;
     width: 150px;
-    margin: 10px;
-    position: relative;
-    top: 100px;
-    left: 1000px;
+}
+
+.edit-profile-btn{
+    position: fixed;
+margin-top: 100px;
+right: 100px;
+
+
 }
 
 .content {
@@ -95,18 +99,20 @@ button{
     display: flex;
     flex-direction: column;
     margin-bottom: 40px;
-    margin-top: 250px;
-    margin-right: 200px;
+    margin-top: 200px;
+    margin-right: 150px;
+    margin-left: 100px;
     flex-wrap: nowrap;
     align-content: center;
     justify-content: center;
     align-items: stretch;
-    max-width: 300px;
+    max-width: 500px;
 }
 
 .choice {
     margin-bottom: 10px;
     margin-right: 50px;
+    margin-left: 30px;
     display: flex;
     align-items: center;
     background-color: #d3d3d3;
@@ -160,6 +166,7 @@ button{
 }
 
 .next-button {
+    display: flex;
     padding: 10px 45px;
     background-color: #00aaff;
     color: #fff;
@@ -167,9 +174,7 @@ button{
     border-radius: 5px;
     position: absolute;
     bottom: 30px;
-    /* ボタンの位置を調整 */
-    position: relative;
-    left: 1048px;
+    margin-left: 1050px;
 }
 
 .next-button:hover{
@@ -184,13 +189,11 @@ button{
 
 
 #question_count {
-    margin-top: 100px;
-    margin-left: -150px;
+    margin-top: 80px;
+    
 }
 
-#count{
-    margin-left: -150px;
-}
+
 
 /* モーダルのスタイル */
 .modal {
@@ -207,14 +210,28 @@ button{
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
     border: 1px solid #888;
-    width: 30%;
-    height: 50%;
+    animation: slideDown 0.4s ease;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
 }
-
+/* モーダルの開閉時のアニメーション */
+@keyframes slideDown {
+    from {
+        transform: translateY(-30px); /* 少し上からスライドイン */
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 .close {
+    margin-right: 20px;
     color: #aaa;
     float: right;
     font-size: 28px;
@@ -229,24 +246,14 @@ button{
 }  
 
 .button {
-    margin: 0 10px;
-    padding: 10px 20px; /* 内側の余白を減らして小さく */
-    background-color: #333; /* ボタンの背景色（必要に応じて調整） */
-    color: #fff; /* ボタンの文字色 */
-    border: none; /* 枠線を削除 */
-    border-radius: 5px; /* 少し丸みを持たせる */
-    width: 80px; /* ボタンの幅 */
-    height: 30px; /* ボタンの高さ */
-    cursor: pointer; /* カーソルの形状 */
-    position: relative;
-    left: 40%;
-    text-align: center;
-    display: flex;
-    gap: 8px; /* ボタン間のスペースを調整（少しだけ空ける） */
-    margin-top: 20px;
-    justify-content: center;
-    /* justify-content: center;
-    align-items: center;*/
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  position: relative;
+  top: 60px;
+  left: 20px;
+  height: 30px;
+  width: 60px;
 }
 
 .button:hover {

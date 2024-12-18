@@ -20,8 +20,12 @@ body {
 
 /* ユーザー名やランキング表示用のフレーム */
 .border-frame { 
-    max-width: 1200px; /* 最大幅を1200pxに設定 */
-    margin: 100px auto 30px; /* 上下のマージンを設定し、中央揃え */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto; /* 上下のマージンを設定し、中央揃え */
+    margin-top: 70px;
     padding: 20px; /* 内側の余白を20pxに設定 */
     background: #fff; /* 背景色を白に設定 */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 影をつけて立体感を演出 */
@@ -106,6 +110,7 @@ label {
 a.btn--orange {
     position: relative;
     left: 900px;
+    width: 80px;
     margin-top: 20px;
     display: inline-block; /* インラインブロックで配置 */
     padding: 12px 20px; /* ボタンの内側余白を調整 */
@@ -150,6 +155,8 @@ a.btn--orange:hover {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+
 
 /* モーダルの閉じるボタン */
 .close-btn {

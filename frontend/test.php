@@ -129,7 +129,7 @@ $interval = $question['interval_num'];
 </head>
 <body>
     <div class="content">
-    <button class="edit-profile-btn" onclick="openEditModal()">模擬試験開始に戻る</button>
+    <button class="edit-profile-btn" onclick="location.href='teststart.php';">模擬試験開始に戻る</button>
         <div class="question">
         <div class="top-contents"><!-- 上のやつ -->
             <p id="question_count"><?php echo $genre_text ?></p> <!-- ジャンル名のやつ -->
@@ -166,16 +166,7 @@ $interval = $question['interval_num'];
             <div class="timer-bar" id="timer-bar"></div>
         </div>
     </div>
-                <!-- 編集用のモーダル -->
-                <div id="editModal" class="modal">
-                <div class="modal-content">
-                    <a href="teststart.php">
-                    <button type="button" class="button" id="container">戻る</button>
-                    </a>
-                    <span class="close" onclick="closeEditModal()">&times;</span>
-                    <button  onclick="closeEditModal()" class="button" id="container">閉じる</button>
-                </div>
-                </div>
+
     <a href="#" class="next-button" id="next-button">次に進む</a>
     <script>
         const totalSegments = <?php echo $interval; ?>;
