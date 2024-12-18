@@ -9,7 +9,6 @@ if (isset($_SESSION['userid'])) {
     $username1 = $_SESSION['userName'];
 }
 
-
 // データベース接続設定
 $host = 'localhost';
 $dbname = 'creative7';
@@ -60,48 +59,6 @@ while ($stmt->fetch()) {
     $owned_badges[] = $badge_id;
 }
 $stmt->close();
-
-// すべてのバッジを持っているか比較
-if (count(array_diff($all_badges, $owned_badges)) === 0) {
-    // バッジIDが15のバッジを取得
-    $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 15";
-    $badge_result = $conn->query($badge_query);
-
-    if ($badge_result && $badge_result->num_rows > 0) {
-        $row = $badge_result->fetch_assoc();
-        $badge_id = $row['badge_id'];
-
-        // すでにそのバッジを所有していないか確認
-        $check_query = "SELECT * FROM owned_badge WHERE userid = ? AND badge_id = ?";
-        $stmt = $conn->prepare($check_query);
-        $stmt->bind_param("ii", $userid, $badge_id);
-        $stmt->execute();
-        $check_result = $stmt->get_result();
-
-        if ($check_result->num_rows === 0) {
-            // バッジを付与
-            $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES (?, ?)";
-            $insert_stmt = $conn->prepare($insert_badge_query);
-            $insert_stmt->bind_param("ii", $userid, $badge_id);
-
-            if ($insert_stmt->execute()) {
-                $received_badges['badge15'] = true;
-                echo "<script>console.log('Badge $badge_id granted to user $userid.');</script>";
-            } else {
-                echo "<script>console.error('Failed to insert badge: " . $conn->error . "');</script>";
-            }
-        } else {
-            // すでに所有している場合
-            echo "<script>console.log('Badge $badge_id already owned by user $userid.');</script>";
-        }
-    } else {
-        // バッジが見つからなかった場合
-        echo "<script>console.error('Badge ID 15 not found in badge_collections.');</script>";
-    }
-} else {
-    // $correct_count が15でない場合
-    echo "<script>console.log('Correct count is not 15. No badge granted.');</script>";
-}
 
 // セッションから開いたページのファイル名を取得
 $test_display = isset($_SESSION['test_display']) ? $_SESSION['test_display'] : [];
@@ -242,11 +199,9 @@ if($getUser === true){ // ログインしている時のみ間違えた問題を
     }
 }
 
-
 // 正解と選択肢のセッション保存
 $_SESSION['correct_choices'] = $correct_choices;
 $_SESSION['selected_choice'] = $selected_choice;
-
 
 // 平均回答時間を計算
 if (!$interval_time_empty) { // 制限時間がない場合は計算しない
@@ -265,7 +220,6 @@ $result = $form->getStatus($userid);    // 学習記録を取得
 $level = $result['level'];
 $exp = $result['exp']; // 経験値
 $maxExp = 10;
-
 
 if ($already_saved === false && $test_display === 'practice' && $getUser === true){ // result初表示、ログイン状態、模擬試験、の時だけDBに保存
 
@@ -352,18 +306,16 @@ if ($already_saved === false && $test_display === 'practice' && $getUser === tru
             // No operation needed
         }
     }
-
-
-    if ($correct_count >= 50) {
+    
+    // すべてのバッジを持っているか比較
+    if (count(array_diff($all_badges, $owned_badges)) === 0) {
         // バッジIDが15のバッジを取得
         $badge_query = "SELECT badge_id FROM badge_collections WHERE badge_id = 15";
         $badge_result = $conn->query($badge_query);
 
-
         if ($badge_result && $badge_result->num_rows > 0) {
             $row = $badge_result->fetch_assoc();
             $badge_id = $row['badge_id'];
-
 
             // すでにそのバッジを所有していないか確認
             $check_query = "SELECT * FROM owned_badge WHERE userid = ? AND badge_id = ?";
@@ -372,13 +324,11 @@ if ($already_saved === false && $test_display === 'practice' && $getUser === tru
             $stmt->execute();
             $check_result = $stmt->get_result();
 
-
             if ($check_result->num_rows === 0) {
                 // バッジを付与
                 $insert_badge_query = "INSERT INTO owned_badge (userid, badge_id) VALUES (?, ?)";
                 $insert_stmt = $conn->prepare($insert_badge_query);
                 $insert_stmt->bind_param("ii", $userid, $badge_id);
-
 
                 if ($insert_stmt->execute()) {
                     $received_badges['badge15'] = true;
@@ -398,7 +348,6 @@ if ($already_saved === false && $test_display === 'practice' && $getUser === tru
         // $correct_count が15でない場合
         echo "<script>console.log('Correct count is not 15. No badge granted.');</script>";
     }
-
 
     // 経験値が最大経験値に到達またはそれを超えた場合の処理
     if ($exp >= $maxExp) {
