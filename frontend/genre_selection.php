@@ -1,8 +1,50 @@
 <?php
 require_once __DIR__ . '/header.php'; //ヘッダー指定
+require_once __DIR__ . '/../backend/class.php';
+require_once __DIR__ . '/../backend/pre.php';
+
+$form = new form();
+// ゲストの場合true、ログインしている場合false
+$is_guest = ($username === 'ゲスト'); 
+
+// ジャンルごとの解いた問題数と総問題数の比率を取得
+$solved_ratios = $form->get_question_solved_ratios($userid);
+
+// ジャンル名を配列に格納
+$genre_names = [
+    1 => [
+        1 => "二語の関係",
+        2 => "熟語の意味",
+        3 => "語句の用法",
+        4 => "文章の整序",
+        5 => "空欄の補充"
+    ],
+    2 => [
+        1 => "場合の数",
+        2 => "推論",
+        3 => "割合",
+        4 => "確率",
+        5 => "金額計算",
+        6 => "分担計算",
+        7 => "速度算",
+        8 => "集合",
+        9 => "表の読み取り",
+        10 => "特殊計算"
+    ]
+];
+
+// 解いた問題数と総問題数のデータをジャンル名に紐づける
+$solved_data = [];
+foreach ($solved_ratios as $ratio) {
+    $field_id = $ratio['field_id'];
+    $genre_id = $ratio['genre_id'];
+    $solved_data[$field_id][$genre_id] = [
+        'solved' => $ratio['solved_questions'],
+        'total' => $ratio['total_questions']
+    ];
+}
 ?>
 
- <!-- html開始 -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -15,74 +57,94 @@ require_once __DIR__ . '/header.php'; //ヘッダー指定
 
 <body>
     <div class="border-frame">
-    <div class="flex-inner" data-box-color="white">
-        <h2>ジャンルを選択してください</h2>
-        
-    <form method="post" action="../backend/genre.php"  onsubmit="return validateForm()">
-    <!-- 言語系 -->
-<fieldset class="contain-left">
-    <legend>言語系</legend>
-    <div class="select-all-container">
-        <input type="checkbox" id="ChecksAllLanguage">
-        <label for="ChecksAllLanguage">全選択</label>
-    </div>
-    <div class="language-list-container">
-        <ul class="language-list primary">
-            <li><input type="checkbox" class="language-checkbox" id="genre1" name="language[]" value="1">二語の関係</li>
-            <li><input type="checkbox" class="language-checkbox" id="genre2" name="language[]" value="2">熟語の意味</li>
-            <li><input type="checkbox" class="language-checkbox" id="genre3" name="language[]" value="3">語句の用法</li>
-            <li><input type="checkbox" class="language-checkbox" id="genre4" name="language[]" value="4">文章の整序</li>
-            <li><input type="checkbox" class="language-checkbox" id="genre5" name="language[]" value="5">空欄の補充</li>
-        </ul>
-    </div>
-</fieldset>
+        <div class="flex-inner" data-box-color="white">
+            <h2>ジャンルを選択してください</h2>
+            <form method="post" action="../backend/genre.php" onsubmit="return validateForm()">
+                <!-- 言語系 -->
+                <fieldset class="contain-left">
+                    <legend>
+                        <label>
+                            <input type="checkbox" id="CheckLanguage"> 言語
+                        </label>
+                    </legend>
+                    <div class="language-list-container">
+                        <ul class="language-list primary">
+                            <?php foreach ($genre_names[1] as $genre_id => $genre_name): ?>
+                                <li class="genre-item">
+                                    <label for="genre<?= $genre_id ?>" class="genre-label">
+                                        <input type="checkbox" class="language-checkbox" id="genre<?= $genre_id ?>" name="language[]" value="<?= $genre_id ?>">
+                                        <span class="genre-name"><?= $genre_name ?></span>
+                                        <span class="genre-stats">
+                                            <?php
+                                            $data = $solved_data[1][$genre_id] ?? ['solved' => 0, 'total' => 0];
+                                            if ($is_guest) { 
+                                                // ゲスト場合
+                                                echo "{$data['total']}問";
+                                            } else {
+                                                // ログインしている場合
+                                                echo "{$data['solved']}/{$data['total']}問";
+                                            }
+                                            ?>
+                                        </span>
+                                    </label>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                </fieldset>
 
-<!-- 非言語系 -->
-<fieldset class="contain-right">
-    <legend>非言語系</legend>
-    <div class="select-all-container">
-        <input type="checkbox" id="ChecksAllNonLanguage">
-        <label for="ChecksAllNonLanguage">全選択</label>
-    </div>
-    <div class="non-language-list-container">
-        <ul class="non-language-list primary">
-            <li><input type="checkbox" class="non-language-checkbox" id="genre6" name="non_language[]" value="1">場合の数</li>
-            <li><input type="checkbox" class="non-language-checkbox" id="genre7" name="non_language[]" value="2">推論</li>
-            <li><input type="checkbox" class="non-language-checkbox" id="genre8" name="non_language[]" value="3">割合</li>
-            <li><input type="checkbox" class="non-language-checkbox" id="genre9" name="non_language[]" value="4">確率</li>
-            <li><input type="checkbox" class="non-language-checkbox" id="genre10" name="non_language[]" value="5">金額計算</li>
-        </ul>
-        <ul class="non-language-list secondary">
-            <li><input type="checkbox" class="non-language-checkbox" id="genre11" name="non_language[]" value="6">分担計算</li>
-            <li><input type="checkbox" class="non-language-checkbox" id="genre12" name="non_language[]" value="7">速度算</li>
-            <li><input type="checkbox" class="non-language-checkbox" id="genre13" name="non_language[]" value="8">集合</li>
-            <li><input type="checkbox" class="non-language-checkbox" id="genre14" name="non_language[]" value="9">表の読み取り</li>
-            <li><input type="checkbox" class="non-language-checkbox" id="genre15" name="non_language[]" value="10">特殊計算</li>
-        </ul>
-    </div>
-</fieldset>
-    <button class="button" type="submit">選択</button>
-    </form>
-    </div>        
+                <!-- 非言語系 -->
+                <fieldset class="contain-right">
+                    <legend>
+                        <label>
+                            <input type="checkbox" id="CheckNonLanguage"> 非言語
+                        </label>
+                    </legend>
+                    <div class="non-language-list-container">
+                        <ul class="non-language-list primary">
+                            <?php foreach ($genre_names[2] as $genre_id => $genre_name): ?>
+                                <li class="genre-item">
+                                    <label for="genre<?= $genre_id + 5 ?>" class="genre-label">
+                                        <input type="checkbox" class="non-language-checkbox" id="genre<?= $genre_id + 5 ?>" name="non_language[]" value="<?= $genre_id ?>">
+                                        <span class="genre-name"><?= $genre_name ?></span>
+                                        <span class="genre-stats">
+                                            <?php
+                                            $data = $solved_data[2][$genre_id] ?? ['solved' => 0, 'total' => 0];
+                                            if ($is_guest) {
+                                                // ゲスト場合
+                                                echo "{$data['total']}問";
+                                            } else {
+                                                // ログインしている場合
+                                                echo "{$data['solved']}/{$data['total']}問";
+                                            }
+                                            ?>
+                                        </span>
+                                    </label>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                </fieldset>
+                <button class="button" type="submit">選択</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
 
-
-
 <!-- javascript -->
 <script>
-const checkAllLanguage = document.getElementById("ChecksAllLanguage");
+const checkLanguage = document.getElementById("CheckLanguage");
 const languageCheckboxes = document.querySelectorAll(".language-checkbox");
 
-const checkAllNonLanguage = document.getElementById("ChecksAllNonLanguage");
+const checkNonLanguage = document.getElementById("CheckNonLanguage");
 const nonLanguageCheckboxes = document.querySelectorAll(".non-language-checkbox");
 
 // 言語系全選択のチェックボックスがクリックされた時
-checkAllLanguage.addEventListener('click', () => {
-    for (let checkbox of languageCheckboxes) {
-        checkbox.checked = checkAllLanguage.checked;
-    }
+checkLanguage.addEventListener("change", () => {
+    languageCheckboxes.forEach((checkbox) => {
+        checkbox.checked = checkLanguage.checked;
+    });
 });
 
 // 言語系の個別チェックボックスがクリックされた時
@@ -97,10 +159,10 @@ for (let checkbox of languageCheckboxes) {
 }
 
 // 非言語系全選択のチェックボックスがクリックされた時
-checkAllNonLanguage.addEventListener('click', () => {
-    for (let checkbox of nonLanguageCheckboxes) {
-        checkbox.checked = checkAllNonLanguage.checked;
-    }
+checkNonLanguage.addEventListener("change", () => {
+    nonLanguageCheckboxes.forEach((checkbox) => {
+        checkbox.checked = checkNonLanguage.checked;
+    });
 });
 
 // 非言語系の個別チェックボックスがクリックされた時
