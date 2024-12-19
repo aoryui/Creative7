@@ -70,27 +70,27 @@ foreach ($solved_ratios as $ratio) {
                     
                     <div class="language-list-container">
                         <ul class="language-list primary">
-                        <p><input type="checkbox" id="CheckLanguage">全選択</p>
-                            <?php foreach ($genre_names[1] as $genre_id => $genre_name): ?>
-                                <li class="genre-item">
-                                    <label for="genre<?= $genre_id ?>" class="genre-label">
-                                        <input type="checkbox" class="language-checkbox" id="genre<?= $genre_id ?>" name="language[]" value="<?= $genre_id ?>">
-                                        <span class="genre-name"><?= $genre_name ?></span>
-                                        <span class="genre-stats">
-                                            <?php
-                                            $data = $solved_data[1][$genre_id] ?? ['solved' => 0, 'total' => 0];
-                                            if ($is_guest) { 
-                                                // ゲスト場合
-                                                echo "{$data['total']}問";
-                                            } else {
-                                                // ログインしている場合
-                                                echo "{$data['solved']}/{$data['total']}問";
-                                            }
-                                            ?>
-                                        </span>
-                                    </label>
-                                </li>
-                            <?php endforeach; ?>
+                        <p><label><input type="checkbox" id="CheckLanguage">全選択</label></p>
+                        <?php foreach ($genre_names[1] as $genre_id => $genre_name): ?>
+                            <li class="genre-item">
+                                <label for="genre<?= $genre_id ?>" class="genre-label">
+                                    <input type="checkbox" class="language-checkbox" id="genre<?= $genre_id ?>" name="language[]" value="<?= $genre_id ?>">
+                                    <span class="genre-name"><?= $genre_name ?></span>
+                                    <span class="genre-stats">
+                                        <?php
+                                        $data = $solved_data[1][$genre_id] ?? ['solved' => 0, 'total' => 0];
+                                        if ($is_guest) { 
+                                            // ゲスト場合
+                                            echo "{$data['total']}問";
+                                        } else {
+                                            // ログインしている場合
+                                            echo "{$data['solved']}/{$data['total']}問";
+                                        }
+                                        ?>
+                                    </span>
+                                </label>
+                            </li>
+                        <?php endforeach; ?>
                         </ul>
                     </div>
                 </fieldset>
@@ -104,27 +104,27 @@ foreach ($solved_ratios as $ratio) {
                     </legend>
                     <div class="non-language-list-container">
                         <ul class="non-language-list primary">
-                        <p class="tasukete"><input type="checkbox" id="CheckNonLanguage">全選択</p>
+                        <p class="tasukete"><label><input type="checkbox" id="CheckNonLanguage">全選択</label></p>
                         <?php foreach ($genre_names[2] as $genre_id => $genre_name): ?>
-    <li class="genre-item <?php echo ($genre_id >= 6 && $genre_id <= 10) ? 'special-class' : ''; ?>">
-        <label for="genre<?= $genre_id + 5 ?>" class="genre-label">
-            <input type="checkbox" class="non-language-checkbox" id="genre<?= $genre_id + 5 ?>" name="non_language[]" value="<?= $genre_id ?>">
-            <span class="genre-name"><?= $genre_name ?></span>
-            <span class="genre-stats">
-                <?php
-                $data = $solved_data[2][$genre_id] ?? ['solved' => 0, 'total' => 0];
-                if ($is_guest) {
-                    // ゲストの場合
-                    echo "{$data['total']}問";
-                } else {
-                    // ログインしている場合
-                    echo "{$data['solved']}/{$data['total']}問";
-                }
-                ?>
-            </span>
-        </label>
-    </li>
-<?php endforeach; ?>
+                                <li class="genre-item <?php echo ($genre_id >= 6 && $genre_id <= 10) ? 'special-class' : ''; ?>">
+                                    <label for="genre<?= $genre_id + 5 ?>" class="genre-label">
+                                        <input type="checkbox" class="non-language-checkbox" id="genre<?= $genre_id + 5 ?>" name="non_language[]" value="<?= $genre_id ?>">
+                                        <span class="genre-name"><?= $genre_name ?></span>
+                                        <span class="genre-stats">
+                                            <?php
+                                            $data = $solved_data[2][$genre_id] ?? ['solved' => 0, 'total' => 0];
+                                            if ($is_guest) {
+                                                // ゲストの場合
+                                                echo "{$data['total']}問";
+                                            } else {
+                                                // ログインしている場合
+                                                echo "{$data['solved']}/{$data['total']}問";
+                                            }
+                                            ?>
+                                        </span>
+                                    </label>
+                                </li>
+                            <?php endforeach; ?>
                         </ul>
                     </div>
                 </fieldset>
