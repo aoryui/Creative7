@@ -21,6 +21,9 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+// URLパラメータからメッセージを取得
+$message = isset($_GET['message']) ? $_GET['message'] : '';
+
 $userid = $_SESSION['userid']; // セッションからユーザーIDを取得
 echo '<script>console.log('.json_encode($userid).')</script>';
 
@@ -158,6 +161,12 @@ $conn->close();
     <link rel="stylesheet" href="../responsive/mypage.css">
 </head>
 <body>
+    <?php if (!empty($message)) : ?>
+        <script>
+            // メッセージをアラートで表示
+            alert("<?php echo htmlspecialchars($message, ENT_QUOTES, 'UTF-8'); ?>");
+        </script>
+    <?php endif; ?>
     <?php if ($show_modal): ?>
         <div class="badge-modal-overlay" id="badge-modalOverlay">
             <div class="badge_modal" id="badge-modal">
