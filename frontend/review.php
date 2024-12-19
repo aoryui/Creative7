@@ -121,13 +121,20 @@ mysqli_close($conn);
 <body>
     <div class="border-frame">
         <h2 class="answer">復習問題</h2>
+
         <table border="1" id="table">
             <tr>
                 <th>分野</th>
                 <th>問題文</th>
                 <th>解説</th>
                 <th>復習</th>
-                <th>削除</th>
+                <th>削除<!-- 全削除ボタン -->
+                <?php if (!empty($display_questions)): // 復習する問題がある場合のみ表示 ?>
+                <form method="post" action="../backend/delete_all_questions.php" onsubmit="return confirmDeleteAll();">
+                    <button class="btn btn-danger" id="deleteAllButton" type="submit">全削除</button>
+                </form>
+            <?php endif; ?>
+                </th>
             </tr>
             <?php foreach ($display_questions as $key => $question_id): ?>
                 <?php
@@ -185,6 +192,9 @@ mysqli_close($conn);
 <script>
     function confirmDelete() {
         return confirm("本当に削除しますか？");
+    }
+    function confirmDeleteAll() {
+        return confirm("全ての問題を削除します。本当によろしいですか？");
     }
 </script>
 </html>

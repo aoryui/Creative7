@@ -44,7 +44,7 @@ if ($user_result->num_rows > 0) {
     $subject = $user['subject'];
     $exp = $user['exp'];
     $maxExp = 10;
-    $total_questions = $user['total_questions']; // 正解数の取得
+    $total_questions = $user['total_questions']; // 回答数の取得
 
     // levelをデータベースから取得
     $level = $user['level']; // データベースからレベルを取得
@@ -72,7 +72,8 @@ if ($user_result->num_rows > 0) {
     $correct_rate_nonlang = $user['correct_rate_nonlang'];
     $average_time_nonlang = $user['average_time_nonlang'];
     $total_questions_nonlang = $user['total_questions_nonlang'];
-    $correct_count = 0;
+    $correct_count = floor($total_questions * ($correct_rate / 100)); //正解数の取得
+
 } else {
     // ユーザーが見つからない場合の処理
 }
@@ -263,6 +264,7 @@ $conn->close();
         <div class="profile-main">
             <div class="learning-progress">
                 <h3>学習進捗</h3>
+                <p>正解数： <?=htmlspecialchars($correct_count, ENT_QUOTES, 'UTF-8') ?></p>
                 <div class="progress-item">
                     <h4 id="sougo">総合</h4>
                     <div class="sougo1">
@@ -286,7 +288,6 @@ $conn->close();
             </div>
         </div>
     </div>
-
 
     <script>
         // PHPからデータをJSに渡す
@@ -316,14 +317,8 @@ $conn->close();
                 },
             ],
         };
-
         
-
     </script>
-
-
-            </div>
-        </div>
         <div class="modal-overlay" id="modalOverlay">
         <div class="modal" id="modal">
             <span class="close" onclick="closeEditModal()">&times;</span>
