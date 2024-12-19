@@ -313,3 +313,15 @@ body {
 #closeModal:hover {
     background-color: #0056b3;
 }
+
+#count_lang{
+    position: absolute;
+    left: 200px;
+    top: -15px;
+}
+
+#count_nonlang{
+    position: absolute;
+    left: 420px;
+    top: -15px;
+}

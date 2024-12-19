@@ -72,7 +72,9 @@ if ($user_result->num_rows > 0) {
     $correct_rate_nonlang = $user['correct_rate_nonlang'];
     $average_time_nonlang = $user['average_time_nonlang'];
     $total_questions_nonlang = $user['total_questions_nonlang'];
-    $correct_count = floor($total_questions * ($correct_rate / 100)); //正解数の取得
+    $correct_count = floor($total_questions * ($correct_rate / 100)); //すべての問題の正解数の取得
+    $correct_count_lang = floor($total_questions_lang * ($correct_rate_lang / 100));
+    $correct_count_nonlang = floor($total_questions_nonlang * ($correct_rate_nonlang / 100));
 
 } else {
     // ユーザーが見つからない場合の処理
@@ -264,8 +266,10 @@ $conn->close();
         <div class="profile-main">
             <div class="learning-progress">
                 <h3>学習進捗</h3>
-                <p>正解数： <?=htmlspecialchars($correct_count, ENT_QUOTES, 'UTF-8') ?></p>
                 <div class="progress-item">
+                <p id="count">正解数： <?=htmlspecialchars($correct_count, ENT_QUOTES, 'UTF-8') ?></p>
+                <p id="count_lang">言語の正解数： <?=htmlspecialchars($correct_count_lang, ENT_QUOTES, 'UTF-8') ?></p>
+                <p id="count_nonlang">非言語の正解数： <?=htmlspecialchars($correct_count_nonlang, ENT_QUOTES, 'UTF-8') ?></p>
                     <h4 id="sougo">総合</h4>
                     <div class="sougo1">
                         <p>平均正答率：<?= htmlspecialchars($correct_rate, ENT_QUOTES, 'UTF-8') ?>%</p>
