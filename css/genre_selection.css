@@ -1,21 +1,18 @@
-/*  広告を破壊 */
+/* 広告を破壊 */
 div[style*="z-index: 2147483647"] {
   display: none !important;
 }
 
-
-body{
+body {
   background-color: #ffefd5;
 }
 
 .border-frame {   
-  display: flex; /* フレックスボックスを有効化 */
+  display: flex;
   flex-direction: column;
   justify-content: center;
   min-height: 450px;
-  padding-top: 120px;
-  padding-left: 200px;
-  padding-right: 200px;
+  padding: 120px 200px 0;
   box-sizing: border-box;
   min-width: 400px;
 }
@@ -23,81 +20,59 @@ body{
 .flex-inner[data-box-color="white"] {
   background: #fff;
   border-radius: 20px;
-  overflow: hidden; /* 角を丸くするために内容を隠す */
+  overflow: hidden;
 }
 
-.contain-left{
-  display: inline-block; 
-  margin: 0 10px; /* 少し余白をつける */
-  margin-left: 240px;
-  position: absolute;
-}
-
-.contain-right{
-display: inline-block; /* inline-blockのままでもOK */
-margin: 0 10px; /* 少し余白をつける */
-margin-left: 450px;
-margin-bottom: 50px ;
-}
-
-h2 {
-    padding-top: 20px;
-    text-align: center; /* テキストを中央揃えに */
-}
-
-legend{
+h2, legend {
   text-align: center;
 }
 
 
-/* 全選択のチェックボックスを中央に配置 */
-.select-all-container {
+
+.language-list-container{
   display: flex;
-  justify-content: center; /* 横方向の中央寄せ */
-  margin-bottom: 20px; /* 下部に少し余白を追加 */
+  flex-direction: column;
+  gap: 10px;
 }
 
-.language-list-container, .non-language-list-container {
-  display: flex; /* フレックスボックスを使用 */
-  gap: 20px; /* 列間のスペースを調整 */
+.non-language-list-container {
+  display: flex;
+  flex-wrap: wrap; /* 折り返しを有効化 */
+  gap: 10px; /* 要素間のスペース */
 }
+
+
 
 .language-list, .non-language-list {
-  list-style: none; /* デフォルトのリストスタイルを削除 */
-  padding: 0; /* パディングをリセット */
-  margin: 0; /* マージンをリセット */
-}
-
-.primary {
-  margin-right: 20px; /* 左側のリストの余白調整 */
-}
-
-.secondary {
-  margin-left: 20px; /* 右側のリストの余白調整 */
-}
-
-/* 言語系のリストのスタイル */
-.contain-left {
-  display: inline-block;
-  margin: 0 10px; /* 少し余白をつける */
-  margin-left: 240px;
-  position: absolute;
-}
-
-/* 非言語系のリストのスタイル */
-.contain-right {
-  display: inline-block;
-  margin: 0 10px; /* 少し余白をつける */
-  margin-left: 450px;
-  margin-bottom: 60px;
-}
-
-.genre-item {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px; /* 各ジャンル間のスペース */
+  flex-direction: column;
+  gap: 10px;
 }
+
+
+
+/* 横並び配置用のコンテナ幅を調整 */
+.non-language-list .genre-item {
+  display: inline-flex; /* 横並びにする */
+  align-items: center; /* 垂直方向の中央揃え */
+  gap: 10px; /* ラベルとデータの間隔を調整 */
+}
+.non-language-list .genre-item:nth-child(1),
+.non-language-list .genre-item:nth-child(6) {
+  flex-basis: calc(50% - 20px); /* 各アイテムの幅を指定（50%の幅で調整） */
+  display: inline-flex; /* 横並びにする */
+}
+
+.special-class {
+  position: relative;
+  left: 200px;
+  top: -170px;
+}
+
+
 
 .genre-label {
   display: flex;
@@ -115,23 +90,54 @@ legend{
   white-space: nowrap;
 }
 
-/* ボタンの基本スタイル */
-.button {
-  background-color: rgb(235, 118, 46); /* 緑色の背景 */
-  color: white; /* 白文字 */
-  padding: 12px 24px; /* 上下左右にパディング */
-  font-size: 16px; /* フォントサイズ */
-  border: none; /* ボーダーなし */
-  border-radius: 8px; /* 角を丸く */
-  cursor: pointer; /* ポインタを表示 */
-  display: block; /* ブロック要素として中央寄せ */
-  margin: 1px auto 15px; /* 自動マージンで中央に配置 */
-  width: 200px; /* ボタンの幅を指定 */
-  transition: background-color 0.3s, transform 0.2s; /* ホバー時のアニメーション */
+.primary {
+  margin-right: 20px;
+  display: inline-flex; /* 横並びにする */
 }
 
-/* ボタンにホバーエフェクトを追加 */
+.secondary {
+  margin-left: 20px;
+}
+
+p {
+  margin: 0 0 10px 0;
+  text-align: center;
+}
+
+.contain-left {
+  display: inline-block;
+  margin: 0 10px;
+  margin-left: 120px;
+}
+
+.contain-right {
+  display: inline-block;
+  width: 400px;
+  height: 225px;
+}
+
+.tasukete{
+  position: relative;
+  left: 100px;
+}
+
+.button {
+  background-color: rgb(235, 118, 46);
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  margin: 20px 20px 20px 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
 .button:hover {
-  background-color: rgb(235, 118, 46); /* ホバー時に色が少し変わる */
-  transform: scale(1.05); /* 少し拡大 */
+  background-color: rgb(235, 118, 46);
+  transform: scale(1.05);
 }
