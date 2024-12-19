@@ -25,7 +25,7 @@ body {
     justify-content: center;
     margin-left: auto;
     margin-right: auto; /* 上下のマージンを設定し、中央揃え */
-    margin-top: 70px;
+    margin-top: 200px;
     padding: 20px; /* 内側の余白を20pxに設定 */
     background: #fff; /* 背景色を白に設定 */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 影をつけて立体感を演出 */
