@@ -1,7 +1,7 @@
 <?php 
 require_once __DIR__ . '/header_kanrisya.php'; //ヘッダー指定
 require_once __DIR__ . '/../backend/class.php';
-session_start();
+
 $form = new form();
 $question_id = isset($_GET['genre']) ? $_GET['genre'] : "1,1";
 
