@@ -40,6 +40,7 @@ html {
 }
 
 #menuBtn {
+    margin-left: 10px;
     /*メニューボタン*/
     margin-right: auto;
     background-color: transparent;
@@ -48,6 +49,8 @@ html {
     /* ボタンの枠をなくす */
     cursor: pointer;
     /* カーソルをポインタに */
+    height: 50px;
+    width: 59px;
 }
 
 #menuContent ul {
