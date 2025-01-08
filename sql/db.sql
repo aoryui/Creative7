@@ -108,6 +108,20 @@ CREATE TABLE owned_badge (
     badge_id INT NOT NULL
 );
 
+CREATE TABLE access_logs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    ip_address VARCHAR(45) NOT NULL,
+    access_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    access_status ENUM('許可', '拒否') DEFAULT '拒否'
+);
+
+CREATE TABLE allowed_ips (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    ip_address VARCHAR(45) NOT NULL UNIQUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
 -- 問題を挿入
 INSERT INTO badge_collections (badge_id,badge_file) VALUES (1,'badge1');
 INSERT INTO badge_collections (badge_id,badge_file) VALUES (2,'badge2');
