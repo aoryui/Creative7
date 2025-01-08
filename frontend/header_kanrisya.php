@@ -1,5 +1,14 @@
 <?php
 require_once __DIR__ . '/../backend/kanrisya_pre.php';
+require_once __DIR__ . '/../backend/pre.php';
+
+if ($userid >= 10000000 && $userid <= 99999999) {
+    echo "<script>
+            alert('ログインしてください');
+            window.location.href = 'kanrisya_login.php';
+        </script>";
+    exit();
+}
 $userid = $_SESSION['userid'];
 $username1 = $_SESSION['userName'];
 ?>
