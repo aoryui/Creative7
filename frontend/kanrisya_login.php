@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-$host = 'mysql1.php.starfree.ne.jp'; // データベースのホスト名
-$user = 'creative7_jun';      // データベースのユーザー名
-$password = 'eL6VKCZh';      // データベースのパスワード
-$dbname = 'creative7_creative7'; // データベース名
+$host = "localhost";
+$user = "Creative7";
+$password = "11111";
+$dbname = "creative7";
 
 // MySQLiで接続
 $mysqli = new mysqli($host, $user, $password, $dbname);
