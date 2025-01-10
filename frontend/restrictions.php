@@ -1,10 +1,11 @@
 <?php
 session_start();
 
-$host = "localhost";
-$user = "Creative7";
-$password = "11111";
-$dbname = "creative7";
+$host = 'mysql1.php.starfree.ne.jp';
+$user = 'creative7_jun';
+$password = 'eL6VKCZh';
+$dbname = 'creative7_creative7';
+
 
 // MySQLiで接続
 $mysqli = new mysqli($host, $user, $password, $dbname);
@@ -65,6 +66,7 @@ if (isset($_POST['allow_ip_from_logs'])) {
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="../css/restrictions.css">
     <title>アクセス制御画面</title>
 </head>
 <body>
