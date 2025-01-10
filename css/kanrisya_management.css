@@ -8,14 +8,15 @@ html {
     overflow-y: scroll;
     overflow-x: hidden;
     overflow-y: hidden;
-  }
-  
+}
+
 body {
     background-color: #ffefd5;
 }
 
-.border-frame{
-    display: flex; /* フレックスボックスを有効化 */
+.border-frame {
+    display: flex;
+    /* フレックスボックスを有効化 */
     flex-direction: column;
     justify-content: center;
     padding-top: 120px;
@@ -23,43 +24,83 @@ body {
     padding-right: 100px;
     box-sizing: border-box;
     min-width: 400px;
+    text-align: center;
 }
 
 .flex-inner[data-box-color="white"] {
     background: #fff;
     border-radius: 20px;
-    overflow: hidden; /* 角を丸くするために内容を隠す */
+    overflow: hidden;
+    /* 角を丸くするために内容を隠す */
+    height: 500px;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-h2{
+h2 {
     text-align: center;
+    margin-bottom: 0;
 }
 
-.kanrisya{
-    margin-left: 100px;
-    
-  
-}
-
-#png{
+#png1,
+#png2,
+#png3 {
     margin-top: 30px;
-    height: 180px;
-    width: 180px;
+    height: 170px;
+    width: 170px;
     background-color: #e3e3e6;
+    text-align: center;
+    margin: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
-div p{
-    display: inline-block;
-    margin: 0px 0px 100px 100px;
-    
+#png4,
+#png5,
+#png6 {
+    margin-top: 30px;
+    height: 170px;
+    width: 170px;
+    background-color: #e3e3e6;
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
-.left1{
-    margin-left: 120px;
+#text1 {
+    position: absolute;
+    left: 335px;
+    top: 360px;
 }
 
+#text2 {
+    position: absolute;
+    left: 600px;
+    top: 360px;
+}
 
+#text3 {
+    position: absolute;
+    left: 840px;
+    top: 360px;
+}
 
+#text4 {
+    position: absolute;
+    left: 365px;
+    top: 580px;
+}
 
+#text5 {
+    position: absolute;
+    left: 580px;
+    top: 580px;
+}
 
-
+#text6 {
+    position: absolute;
+    left: 825px;
+    top: 580px;
+}

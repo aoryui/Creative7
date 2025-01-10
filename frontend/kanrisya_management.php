@@ -22,20 +22,19 @@ if (isset($_SESSION['userid'])) {
     <div class="border-frame">
     <div class="flex-inner" data-box-color="white">
             <h2>利用者管理一覧</h2>
-    <a href="kanrisya.php"><img src="../image/icon/kanrisya.png" class="kanrisya" id="png" alt="ユーザー情報一覧"></a>
-    <a href="question_list.php"><img src="../image/icon/problem.png" id="png" alt="問題一覧"></a>
-    <a href="generator_test.php"><img src="../image/icon/test-icon.png" id="png" alt="画像作成"></a>
-    <a href="question_insert.php"><img src="../image/icon/sinki.png" id="png" alt="問題作成"></a>
-    <a href="user_opinion.php"><img src="../image/icon/users_6.png" id="png" alt="ユーザー意見欄"></a>
-    <a href="restrictions.php"><img src="../image/icon/access-lock.png" id="png" alt="アクセス制限"></a>
-    <div>
-    <p class="left1">ユーザー情報一覧</p>
-    <p class="left2">問題一覧</p>
-    <p class="left3">画像作成</p>
-    <p class="left4">問題作成</p>
-    <p class="left5">ユーザー意見欄</p>
-    <p class="left6">アクセス制限</p>
-    </div>
+    <a href="kanrisya.php"><img src="../image/icon/kanrisya.png" class="kanrisya" id="png1" alt="ユーザー情報一覧" href="kanrisya.php"></a>
+    <a id="text1">ユーザー情報一覧</a>
+    <a href="question_list.php"><img src="../image/icon/problem.png" id="png2" alt="問題一覧"></a>
+    <a id="text2">問題一覧</a>
+    <a href="generator_test.php"><img src="../image/icon/test-icon.png" id="png3" alt="画像作成"></a>
+    <a id="text3">画像作成</a><br>
+    <a href="question_insert.php"><img src="../image/icon/sinki.png" id="png4" alt="問題作成"></a>
+    <a id="text4">問題作成</a>
+    <a href="user_opinion.php"><img src="../image/icon/users_6.png" id="png5" alt="ユーザー意見欄"></a>
+    <a id="text5">ユーザー意見欄</a>
+    <a href="restrictions.php"><img src="../image/icon/access-lock.png" id="png6" alt="アクセス制限"></a>
+    <a id="text6">アクセス制限</a>
+    
     </div>
 </body>
 
