@@ -3,7 +3,6 @@ div[style*="z-index: 2147483647"] {
     display: none !important;
 }
 
-
 body {
     background-color: #ffefd5;
     width: 100%;
@@ -15,8 +14,6 @@ body {
     left: 20px;
 }
 
-
-
 .profile-container {
     display: flex;
     height: auto;
@@ -26,10 +23,7 @@ body {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-   
 }
-
-
 
 .profile-sidebar {
     background-color: #e9e9e9;
@@ -37,6 +31,7 @@ body {
     text-align: center;
     display: flex;
     height: auto;
+    margin-top: -100px;
 }
 
 .profile-icon {
@@ -163,42 +158,39 @@ body {
     left: -20px;
 }
 
-
-
 #language{
     position: relative;
     left: 180px;
-    top: -170px;
+    top: -210px;
 }
 
 .language1{
     position: relative;
     left: 240px;
-    top: -170px;
+    top: -210px;
 }
 
 #nonverbal{
     position: relative;
     left: 400px;
-    top: -340px;
+    top: -420px;
 }
 
 .nonverbal1{
     position: relative;
     left: 480px;
-    top: -340px;
+    top: -420px;
 }
 
 .progress-item{
     position: relative;
     height: 50%;
+    top: -50px;
 }
 .sougo1{
     position: relative;
     left: 20px;
 }
-
-
 
 /* モーダルのスタイル */
 .modalTitle{

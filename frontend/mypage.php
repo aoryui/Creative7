@@ -267,26 +267,26 @@ $conn->close();
             <div class="learning-progress">
                 <h3>学習進捗</h3>
                 <div class="progress-item">
-                <p id="count">正解数： <?=htmlspecialchars($correct_count, ENT_QUOTES, 'UTF-8') ?></p>
-                <p id="count_lang">言語の正解数： <?=htmlspecialchars($correct_count_lang, ENT_QUOTES, 'UTF-8') ?></p>
-                <p id="count_nonlang">非言語の正解数： <?=htmlspecialchars($correct_count_nonlang, ENT_QUOTES, 'UTF-8') ?></p>
                     <h4 id="sougo">総合</h4>
                     <div class="sougo1">
                         <p>平均正答率：<?= htmlspecialchars($correct_rate, ENT_QUOTES, 'UTF-8') ?>%</p>
                         <p>平均回答時間：<?= htmlspecialchars($average_time, ENT_QUOTES, 'UTF-8') ?>秒</p>
                         <p>学習問題数：<?= htmlspecialchars($total_questions, ENT_QUOTES, 'UTF-8') ?>問</p>
+                        <p>正解数： <?=htmlspecialchars($correct_count, ENT_QUOTES, 'UTF-8') ?></p>
                     </div>
                     <h4 id="language">言語</h4>
                     <div class="language1">
                         <p>平均正答率：<?= htmlspecialchars($correct_rate_lang, ENT_QUOTES, 'UTF-8') ?>%</p>
                         <p>平均回答時間：<?= htmlspecialchars($average_time_lang, ENT_QUOTES, 'UTF-8') ?>秒</p>
                         <p>学習問題数：<?= htmlspecialchars($total_questions_lang, ENT_QUOTES, 'UTF-8') ?>問</p>
+                        <p>言語の正解数： <?=htmlspecialchars($correct_count_lang, ENT_QUOTES, 'UTF-8') ?></p>
                     </div>
                     <h4 id="nonverbal">非言語</h4>
                     <div class="nonverbal1">
                         <p>平均正答率：<?= htmlspecialchars($correct_rate_nonlang, ENT_QUOTES, 'UTF-8') ?>%</p>
                         <p>平均回答時間：<?= htmlspecialchars($average_time_nonlang, ENT_QUOTES, 'UTF-8') ?>秒</p>
                         <p>学習問題数：<?= htmlspecialchars($total_questions_nonlang, ENT_QUOTES, 'UTF-8') ?>問</p>
+                        <p>非言語の正解数： <?=htmlspecialchars($correct_count_nonlang, ENT_QUOTES, 'UTF-8') ?></p>
                     </div>
                 </div>
             </div>
