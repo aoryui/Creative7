@@ -5,7 +5,7 @@ $host = 'mysql1.php.starfree.ne.jp';
 $user = 'creative7_jun';
 $password = 'eL6VKCZh';
 $dbname = 'creative7_creative7';
-
+require_once __DIR__ . '/header_kanrisya.php'; //ヘッダー指定
 
 // MySQLiで接続
 $mysqli = new mysqli($host, $user, $password, $dbname);
