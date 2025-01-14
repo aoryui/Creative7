@@ -1,6 +1,5 @@
 <?php
 require_once __DIR__ . '/../backend/kanrisya_pre.php';
-require_once __DIR__ . '/../backend/pre.php';
 
 if ($userid >= 10000000 && $userid <= 99999999) {
     echo "<script>
