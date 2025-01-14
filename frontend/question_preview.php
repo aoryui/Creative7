@@ -86,7 +86,7 @@ $explanation_img = "../image/解説/" . $explanation . ".jpg";
     <div class="container">
         <p class="language">選択言語: <?php echo $field_name; ?></p>
         <p class="genre_name">ジャンル名: <?php echo $genre_text; ?></p>
-        <p class="interval_time">制限時間: <?php echo $interval_num; ?>分</p>
+        <p class="interval_time">制限時間: <?php echo $interval_num; ?>秒</p>
         <p class="summary">要約文: <?php echo $sentence; ?></p>
     </div>
 
