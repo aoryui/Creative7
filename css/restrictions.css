@@ -4,17 +4,7 @@ body {
     background-color: #f4f4f9;
     color: #333;
     margin: 0;
-    padding: 40px 20px; /* 上部に40pxの余白を追加 */
-}
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    background: #fff;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-top: 40px; /* コンテナ全体を下にずらす */
 }
 
 h2 {
@@ -75,4 +65,17 @@ form input[type="text"] {
 
 form button {
     margin-top: 5px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container h2:first-of-type {
+    margin-top: 0;
 }
