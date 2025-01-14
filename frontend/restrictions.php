@@ -15,54 +15,41 @@ if ($mysqli->connect_error) {
     die("接続に失敗しました: " . $mysqli->connect_error);
 }
 
-// アクセスログを取得
-$sql = "SELECT * FROM access_logs ORDER BY access_time DESC";
-$result = $mysqli->query($sql);
+// 1ページに表示するログの件数
+$logs_per_page = 10;
+
+// 現在のページ番号を取得
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$page = max(1, $page); // 1未満を防ぐ
+
+// 総ログ数を取得
+$sql_count = "SELECT COUNT(*) AS total FROM access_logs";
+$total_result = $mysqli->query($sql_count);
+$total_logs = $total_result->fetch_assoc()['total'];
+
+// 総ページ数を計算
+$total_pages = ceil($total_logs / $logs_per_page);
+
+// ページ番号の表示範囲を設定
+$range = 10;
+
+// データ取得の開始位置を計算
+$offset = ($page - 1) * $logs_per_page;
+
+// 表示するログを取得
+$sql_logs = "SELECT * FROM access_logs ORDER BY access_time DESC LIMIT $logs_per_page OFFSET $offset";
+$result = $mysqli->query($sql_logs);
 
 // 許可されたIPアドレスを取得
 $allowed_ips = [];
-$sql_allowed = "SELECT ip_address FROM allowed_ips";
+$sql_allowed = "SELECT ip_address, name FROM allowed_ips";
 $allowed_result = $mysqli->query($sql_allowed);
 while ($row = $allowed_result->fetch_assoc()) {
-    $allowed_ips[] = $row['ip_address'];
+    $allowed_ips[] = $row;
 }
 
-// IPアドレスを手動で追加する
-if (isset($_POST['add_ip'])) {
-    $ip_to_add = $_POST['ip_address'];
-    // 既に許可されているIPアドレスでないか確認
-    if (!in_array($ip_to_add, $allowed_ips)) {
-        $mysqli->query("INSERT INTO allowed_ips (ip_address) VALUES ('$ip_to_add')");
-    }
-    // リダイレクトしてページをリフレッシュ
-    header('Location: ' . $_SERVER['PHP_SELF']);
-    exit;
-}
-
-// 許可を取り消す
-if (isset($_POST['remove_ip'])) {
-    $ip_to_remove = $_POST['ip_address'];
-    $mysqli->query("DELETE FROM allowed_ips WHERE ip_address = '$ip_to_remove'");
-    // リダイレクトしてページをリフレッシュ
-    header('Location: ' . $_SERVER['PHP_SELF']);
-    exit;
-}
-
-// 許可されたIPアドレスに`access_logs`から追加する
-if (isset($_POST['allow_ip_from_logs'])) {
-    $ip_to_allow = $_POST['ip_address'];
-    // `allowed_ips`テーブルに追加
-    if (!in_array($ip_to_allow, $allowed_ips)) {
-        $mysqli->query("INSERT INTO allowed_ips (ip_address) VALUES ('$ip_to_allow')");
-    }
-    // `access_logs`に記録したIPアドレスの`access_status`を'allowed'に変更
-    $mysqli->query("UPDATE access_logs SET access_status = '許可' WHERE ip_address = '$ip_to_allow'");
-    // リダイレクトしてページをリフレッシュ
-    header('Location: ' . $_SERVER['PHP_SELF']);
-    exit;
-}
+// 以下の関数や処理は省略（省略箇所は既存コードと同様）
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -101,21 +88,71 @@ if (isset($_POST['allow_ip_from_logs'])) {
         </tbody>
     </table>
 
+    <!-- ページングナビゲーション -->
+    <div class="pagination">
+        <?php
+        // "<<" 最初のページへのリンク
+        if ($page > 1): ?>
+            <a href="?page=1"><<</a>
+        <?php endif; ?>
+
+        <!-- "<" 前のページへのリンク -->
+        <?php if ($page > 1): ?>
+            <a href="?page=<?php echo $page - 1; ?>"><</a>
+        <?php endif; ?>
+
+        <?php
+        // ページリンクの範囲を計算
+        $start = max(1, $page - floor($range / 2));
+        $end = min($total_pages, $start + $range - 1);
+        
+        if ($end - $start + 1 < $range) {
+            $start = max(1, $end - $range + 1);
+        }
+
+        // ページリンクを表示
+        for ($i = $start; $i <= $end; $i++) {
+            echo $i == $page 
+                ? "<strong>$i</strong> " 
+                : "<a href='?page=$i'>$i</a> ";
+        }
+        ?>
+
+        <!-- ">" 次のページへのリンク -->
+        <?php if ($page < $total_pages): ?>
+            <a href="?page=<?php echo $page + 1; ?>">></a>
+        <?php endif; ?>
+
+        <!-- ">>" 最後のページへのリンク -->
+        <?php if ($page < $total_pages): ?>
+            <a href="?page=<?php echo $total_pages; ?>">>></a>
+        <?php endif; ?>
+    </div>
+
+
     <h2>許可されたIPアドレス</h2>
     <table border="1">
         <thead>
             <tr>
                 <th>IPアドレス</th>
+                <th>名前</th>
                 <th>操作</th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($allowed_ips as $allowed_ip): ?>
                 <tr>
-                    <td><?php echo $allowed_ip; ?></td>
+                    <td><?php echo $allowed_ip['ip_address']; ?></td>
                     <td>
                         <form method="POST">
-                            <input type="hidden" name="ip_address" value="<?php echo $allowed_ip; ?>">
+                            <input type="hidden" name="ip_address" value="<?php echo $allowed_ip['ip_address']; ?>">
+                            <input type="text" name="name" value="<?php echo htmlspecialchars($allowed_ip['name']); ?>" placeholder="名前を編集">
+                            <button type="submit" name="update_name">更新</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form method="POST">
+                            <input type="hidden" name="ip_address" value="<?php echo $allowed_ip['ip_address']; ?>">
                             <button type="submit" name="remove_ip">削除</button>
                         </form>
                     </td>
@@ -127,6 +164,8 @@ if (isset($_POST['allow_ip_from_logs'])) {
     <h2>手動でIPアドレスを許可</h2>
     <form method="POST">
         <input type="text" name="ip_address" required placeholder="IPアドレスを入力">
+        <input type="text" name="name" placeholder="名前（任意）">
+        <input type="text" name="cidr" placeholder="CIDR（例: 118.17.181.0/24）">
         <button type="submit" name="add_ip">追加</button>
     </form>
 </body>

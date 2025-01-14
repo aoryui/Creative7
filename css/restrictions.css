@@ -79,3 +79,36 @@ form button {
 .container h2:first-of-type {
     margin-top: 0;
 }
+
+.pagination {
+    display: flex;
+    justify-content: center; /* 中央揃え */
+    align-items: center; /* 垂直方向に揃える */
+    gap: 5px; /* 各要素の間隔 */
+    margin-top: 20px; /* 上部の余白 */
+}
+
+.pagination a,
+.pagination strong {
+    display: inline-block;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #007bff;
+    background-color: #f9f9f9;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.pagination a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.pagination strong {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+    font-weight: bold;
+}
