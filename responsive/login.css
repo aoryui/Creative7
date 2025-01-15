@@ -3,54 +3,20 @@ div[style*="z-index: 2147483647"] {
     display: none !important;
 }
 
-/* スマートフォン用 */
-@media (max-width: 480px) {
+/* スマホサイズのメディアクエリ */
+@media only screen and (max-width: 480px) {
     .login-container {
-        width: 90%;
-        padding: 20px;
-        box-sizing: border-box;
-    }
-
-    label {
-        font-size: 14px;
-    }
-
-    input {
-        font-size: 14px;
-        padding: 8px;
-    }
-
-    #login {
-        font-size: 16px;
-        padding: 10px;
-    }
-
-    .signup a {
-        font-size: 12px;
+        width: 95%;
+        padding-bottom: 60px;
+        overflow: auto;
     }
 }
 
-/* タブレット用 */
-@media (min-width: 481px) and (max-width: 768px) {
+/* 中型スマホ (415px ~ 768px) */
+@media screen and (max-width: 768px) {
     .login-container {
-        width: 80%;
-        padding: 30px;
-    }
-
-    label {
-        font-size: 15px;
-    }
-
-    input {
-        font-size: 15px;
-    }
-
-    #login {
-        font-size: 17px;
-        padding: 12px;
-    }
-
-    .signup a {
-        font-size: 14px;
+        width: 95%;
+        padding-bottom: 60px;
+        overflow: auto;
     }
 }

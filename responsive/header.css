@@ -1,86 +1,31 @@
-/* スマートフォン (最大幅 768px) */
 /*  広告を破壊 */
 div[style*="z-index: 2147483647"] {
     display: none !important;
 }
 
+/* 極小スマホ (360px以下) */
+@media screen and (max-width: 360px) {
+    #free-h1{
+        position: fixed;
+        left: 70px;
+        width: 80%;
+    }
+}
+
+/* 小型スマホ (361px ~ 414px) */
+@media screen and (max-width: 414px) {
+    #free-h1{
+        position: fixed;
+        left: 70px;
+        width: 80%;
+    }
+}
+
+/* 中型スマホ (415px ~ 768px) */
 @media screen and (max-width: 768px) {
-
-    header {
-        height: 80px; /* ヘッダーの高さをコンパクトに */
-        padding: 0 10px;
-        justify-content: space-between;
-    }
-
-    #free-h1 {
-        width: 250px; /* ロゴの幅を縮小 */
-        height: 40px; /* ロゴの高さを調整 */
-        right: 40px;
-    }
-
-    nav {
-        width: 100%;
-        height: calc(100% - 80px); /* ヘッダー高さに応じて調整 */
-        top: 80px;
-        left: 0;
-    }
-
-    nav ul li a {
-        font-size: 16px; /* メニューの文字サイズを小さめに */
-        padding: 10px; /* 各項目のスペースを調整 */
-    }
-
-    #menuBtn img{
-        width: 65px;
-        height: 65px;
-
-    }
-
-    #menuBtn {
-        width: 40px; /* スマホでは少し小さめ */
-        left: 20px;
-    }
-
-    #menuContent {
-        width: 100%;
-        left: 0;
-        top: 80px;
-        box-shadow: none; /* モバイルでは影を削除 */
+    #free-h1{
+        position: fixed;
+        left: 70px;
+        width: 80%;
     }
 }
-
-/* タブレット (最大幅 1024px、最小幅 769px) */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-    header {
-        height: 90px;
-        padding: 0 15px;
-    }
-
-    #free-h1 {
-        width: 250px; /* ロゴをタブレット用に少し大きく */
-        height: 50px;
-        left: auto;
-    }
-
-    nav {
-        width: 300px; /* メニューの幅を広めに */
-        height: calc(100% - 90px);
-        top: 90px;
-    }
-
-    nav ul li a {
-        font-size: 18px; /* メニュー項目を適度なサイズに */
-        padding: 12px; /* スペースを確保 */
-    }
-
-    #menuBtn {
-        width: 60px;
-        height: 45px;
-    }
-
-    #menuContent {
-        width: 300px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 軽い影を追加 */
-    }
-}
-

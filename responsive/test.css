@@ -39,26 +39,35 @@ div[style*="z-index: 2147483647"] {
     }
 
     .choices {
-        margin-top: 20px;
-        margin-right: 0;
-        max-width: 100%;
+        position: absolute;
+        top: 275px;
+        right: -60px;
+        max-width: 80%;
     }
 
     .choice {
-        width: 100%; /* 選択肢を画面全体に広げる */
+        width: max-content; /* 選択肢を画面全体に広げる */
         margin-bottom: 15px;
     }
 
     .next-button {
-        left: 0;
-        width: 100%;
-        padding: 12px;
+        left: 200px;
+        width: 17%;
+        position: relative;
+        top: 280px;
         font-size: 16px;
+        margin-left: 0px;
+        margin-top: 20px;
     }
 
     .timer-container {
         width: 90%;
         left: 5%;
+    }
+    .timer-label {
+        position: absolute;
+        top: 142px;
+        margin-left: 20px;
     }
 
     .modal-content {
@@ -76,80 +85,13 @@ div[style*="z-index: 2147483647"] {
         height: 40px;
         margin-top: 20px;
     }
-}
 
-/* 画面幅が480px以下のデバイス向け */
-@media (max-width: 480px) {
-    .content {
-        padding: 5px;
-    }
-
-    .question-text {
-        font-size: 12px; /* テキストサイズをさらに小さく */
-    }
-
-    .question_img {
-        width: 80%; /* 画像の幅を80%に */
-    }
-
-    .next-button {
-        padding: 10px;
-        font-size: 14px;
-    }
-
-    #next-button{
-        margin-left: 200px;
-    }
-
-
-    .timer-label {
+    .edit-profile-btn {
         position: absolute;
-        /* 絶対位置に変更 */
-        top: 120px;
-        /* 調整が必要なら変更 */
-        margin-left: 100px;
-        margin-top: 20px;
-    }
-    
-
-    button {
-        width: 100%;
-        max-width: 100px;
+        width: 35%;
         height: 40px;
-        margin-top: 40px;
-        margin-left: 200px;
+        margin: 32px 0px 0px 210px;
     }
-
-    .choice {
-        padding: 8px;
-        font-size: 14px; /* 選択肢の文字サイズを小さく */
-    }
-
-    .timer-container {
-        width: 70%;
-        left: 70px;
-        margin-top: 20px;
-        margin-left: 20px;
-    }
-
-    .modal-content {
-        width: 90%;
-        margin: 15% auto;
-    }
-
-    #question_count{
-        margin-left: 0px;
-        margin-top: -10px;
-    }
-
-    #count{
-        margin-left: 0px;
-    }
-
-    .choices{
-        left: 10px;
-    }
-
-
-
 }
+
+
