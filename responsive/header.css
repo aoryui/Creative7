@@ -25,7 +25,7 @@ div[style*="z-index: 2147483647"] {
 @media screen and (max-width: 768px) {
     #free-h1{
         position: fixed;
-        left: 70px;
+        left: 80px;
         width: 80%;
     }
 }
