@@ -342,7 +342,7 @@ $conn->close();
                     <input type="text" id="newValue" name="newValue" required>
                 </div>
                 <div class="change-btn">
-                    <button class="edit-profile-btn" type="submit">変更</button>
+                    <button class="edit-profile-btn1" type="submit">変更</button>
                 </div>
                 <a href="email_verify.php">パスワードを忘れた場合はこちら</a>
             </form>
