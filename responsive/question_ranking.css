@@ -25,6 +25,10 @@
         font-size: 24px; /* 見出しのフォントサイズを調整 */
         padding: 15px; /* 見出しの余白を減らす */
     }
+
+    .flex-inner{
+        margin-left: -20px;
+    }
 }
 
 /* スマホ向け: 画面幅が576px以下の場合 */
