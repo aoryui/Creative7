@@ -1,62 +1,60 @@
-/*  広告を破壊 */
+/* 広告を破壊 */
 div[style*="z-index: 2147483647"] {
-  display: none !important;
+  display: none !important; /* z-indexが2147483647の広告要素を非表示にする */
 }
 
-
 body {
-  background-color: #ffefd5;
-  color: #ff6b6b;
+  background-color: #ffefd5; /* 背景色を淡いピンク色に設定 */
+  color: #ff6b6b; /* 文字色をピンク色に設定 */
   /* min-height: 100vh; */
-  /* display: flex;*/
-  /*justify-content: center; */
-  align-items: center;
+  /* display: flex; */
+  /* justify-content: center; */
+  align-items: center; /* 中央揃え（縦方向） */
 }
 
 .container {
-  margin-top: calc(100px + 20px);
-  margin-bottom: auto;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #fff;
-  padding: 50px;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 500px;
+  margin-top: calc(100px + 20px); /* 上部に120pxのマージンを設定 */
+  margin-bottom: auto; /* 下部マージンを自動調整 */
+  margin-left: auto; /* 左マージンを自動調整 */
+  margin-right: auto; /* 右マージンを自動調整 */
+  background-color: #fff; /* 背景色を白に設定 */
+  padding: 50px; /* 内側に50pxの余白を設定 */
+  border-radius: 20px; /* 角丸を20pxに設定 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 軽い影をつける */
+  text-align: center; /* テキストを中央に配置 */
+  width: 500px; /* 幅を500pxに設定 */
 }
 
 label {
-  display: block;
+  display: block; /* ラベルをブロック要素として表示 */
 }
 
 #submit {
-  padding: 10px;
-  background-color: rgb(89, 208, 247);
-  color: white;
-  border: none;
-  border-radius: 2px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-  margin: 20px;
+  padding: 10px; /* ボタン内に10pxの余白を追加 */
+  background-color: rgb(89, 208, 247); /* 背景色を水色に設定 */
+  color: white; /* 文字色を白に設定 */
+  border: none; /* 枠線なし */
+  border-radius: 2px; /* 角丸を2pxに設定 */
+  cursor: pointer; /* カーソルをポインタに変更 */
+  font-weight: bold; /* 文字を太字に */
+  transition: background-color 0.3s ease; /* 背景色の変化に0.3秒のアニメーションを追加 */
+  margin: 20px; /* 上下に20pxの余白を設定 */
 }
 
 input {
-  width: 100%;
-  padding: 10px 10px;
-  border: 2px solid #ffc0cb;
-  border-radius: 25px;
-  font-size: 16px;
+  width: 100%; /* 幅を100%に設定（親要素に合わせる） */
+  padding: 10px 10px; /* 内側に10pxの余白を追加 */
+  border: 2px solid #ffc0cb; /* 薄いピンク色の枠線 */
+  border-radius: 25px; /* 角丸を25pxに設定 */
+  font-size: 16px; /* フォントサイズを16pxに設定 */
 }
 
 input::placeholder {
-  color: #ffb6c1;
+  color: #ffb6c1; /* プレースホルダーの文字色を薄いピンクに設定 */
 }
 
-
 input:focus {
-  outline: none;
-  border-color: rgb(89, 208, 247);
-  box-shadow: 0 0 5px rgba(72, 70, 71, 0.5);
+  outline: none; /* フォーカス時のアウトラインを無効化 */
+  border-color: rgb(89, 208, 247); /* フォーカス時に枠線の色を水色に変更 */
+  box-shadow: 0 0 5px rgba(72, 70, 71, 0.5); /* フォーカス時に軽い影を追加 */
 }

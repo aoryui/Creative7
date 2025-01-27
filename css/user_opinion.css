@@ -1,105 +1,110 @@
-/*  広告を破壊 */
+/* 広告を破壊 */
 div[style*="z-index: 2147483647"] {
-    display: none !important;
+    display: none !important; /* 高いz-indexを持つ広告要素を非表示にする */
 }
 
-
-
+/* bodyタグのスタイル */
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #ffefd5;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    font-family: 'Roboto', sans-serif; /* フォントをRobotoに設定 */
+    background-color: #ffefd5; /* 背景色を薄いピンクに設定 */
+    color: #333; /* 文字色を濃いグレーに設定 */
+    margin: 0; /* マージンを0に設定 */
+    padding: 0; /* パディングを0に設定 */
+    display: flex; /* フレックスボックスを使用してレイアウト */
+    flex-direction: column; /* 子要素を縦に並べる */
+    align-items: center; /* 子要素を水平方向に中央揃え */
 }
 
-/* ヘッダー */
+/* ヘッダー（タイトル）のスタイル */
 h1 {
-    margin-top: 20px;
-    font-size: 2rem;
-    color: #4CAF50;
-    text-align: center;
+    margin-top: 20px; /* 上部に20pxのマージン */
+    font-size: 2rem; /* フォントサイズを2remに設定 */
+    color: #4CAF50; /* 緑色の文字 */
+    text-align: center; /* 中央揃え */
 }
 
-/* 全体 */
+/* 全体コンテナのスタイル */
 .container {
-    width: 90%;
-    max-width: 1200px;
-    border-radius: 8px;
-    margin: 20px 0;
-    background: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    width: 90%; /* 幅を90%に設定 */
+    max-width: 1200px; /* 最大幅を1200pxに設定 */
+    border-radius: 8px; /* 角を丸くする */
+    margin: 20px 0; /* 上下に20pxのマージン */
+    background: #ffffff; /* 背景色を白に設定 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* シャドウを追加して浮き上がらせる */
+    overflow: hidden; /* コンテナ内で溢れた要素を隠す */
 }
 
+/* iframeのスタイル */
 iframe {
-    width: 100%;
-    height: 400px;
-    border: none;
+    width: 100%; /* 幅を100%に設定して親要素に合わせる */
+    height: 400px; /* 高さを400pxに設定 */
+    border: none; /* 枠線をなくす */
 }
 
-/* ボタンエリア */
+/* ボタンエリアのスタイル */
 .btn-container {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
+    display: flex; /* フレックスボックスを使用 */
+    justify-content: center; /* ボタンを中央に配置 */
+    gap: 15px; /* ボタン間の間隔を15pxに設定 */
+    margin-top: 20px; /* 上部に20pxのマージン */
 }
 
-/* ボタン */
+/* リンクボタンのスタイル */
 .btn-link {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: #4CAF50;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 1rem;
-    transition: background-color 0.3s ease, transform 0.2s;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: inline-block; /* インラインブロック表示 */
+    padding: 12px 24px; /* 内側に12px上下、24px左右のパディング */
+    background-color: #4CAF50; /* 背景色を緑色に設定 */
+    color: white; /* 文字色を白に設定 */
+    text-decoration: none; /* 下線を削除 */
+    border-radius: 5px; /* 角を丸くする */
+    font-weight: bold; /* 文字を太くする */
+    font-size: 1rem; /* フォントサイズを1remに設定 */
+    transition: background-color 0.3s ease, transform 0.2s; /* 背景色とトランスフォームに遷移効果 */
+    text-align: center; /* 中央揃え */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* シャドウを追加して立体感を出す */
 }
 
+/* リンクボタンのホバー時のスタイル */
 .btn-link:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* ホバー時の背景色を少し暗くする */
 }
 
+/* リンクボタンのアクティブ時（クリック時）のスタイル */
 .btn-link:active {
-    background-color: #388e3c;
-    transform: translateY(0);
+    background-color: #388e3c; /* クリック時の背景色を更に暗くする */
+    transform: translateY(0); /* ボタンが押されるような視覚効果 */
 }
 
+/* 通常のボタンのスタイル */
 button {
-    padding: 12px 24px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #fff;
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-button:hover {
-    background-color: #45a049;
+    padding: 12px 24px; /* 内側に12px上下、24px左右のパディング */
+    font-size: 16px; /* フォントサイズを16pxに設定 */
+    font-weight: bold; /* 文字を太くする */
+    color: #fff; /* 文字色を白に設定 */
+    background-color: #4CAF50; /* 背景色を緑色に設定 */
+    border: none; /* 枠線を削除 */
+    border-radius: 5px; /* 角を丸くする */
+    cursor: pointer; /* カーソルをポインタに変更 */
+    transition: background-color 0.3s ease; /* 背景色の遷移効果 */
 }
 
-/* モバイル対応 */
+/* 通常ボタンのホバー時のスタイル */
+button:hover {
+    background-color: #45a049; /* ホバー時に背景色を暗くする */
+}
+
+/* モバイル対応（画面幅600px以下） */
 @media (max-width: 600px) {
-h1  {
-    font-size: 1.5rem;
+    h1 {
+        font-size: 1.5rem; /* フォントサイズを1.5remに変更 */
     }
 
-.btn-link {
-    font-size: 0.9rem;
-    padding: 10px 20px;
+    .btn-link {
+        font-size: 0.9rem; /* フォントサイズを0.9remに変更 */
+        padding: 10px 20px; /* パディングを10px上下、20px左右に変更 */
     }
 
     iframe {
-    height: 300px;
+        height: 300px; /* iframeの高さを300pxに変更 */
     }
 }

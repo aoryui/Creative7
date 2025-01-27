@@ -1,13 +1,14 @@
-/*  広告を破壊 */
+/* 広告を破壊するために、特定のz-indexを持つ要素を非表示にする */
 div[style*="z-index: 2147483647"] {
     display: none !important;
 }
 
+/* 背景色をパステルイエロー (#ffefd5) に設定 */
 body {
     background-color: #ffefd5;
 }
 
-
+/* 各バッジ画像のスタイルを設定 */
 #badgeimg1,
 #badgeimg2,
 #badgeimg3,
@@ -23,31 +24,31 @@ body {
 #badgeimg13,
 #badgeimg14,
 #badgeimg15 {
-    width: 150px;
-    height: 150px;
-    display: block;
-    /* 余計な空白を除去 */
-    border: 1px solid rgb(131, 131, 131);
+    width: 150px; /* バッジ画像の幅 */
+    height: 150px; /* バッジ画像の高さ */
+    display: block; /* インライン要素をブロック要素として扱う */
+    border: 1px solid rgb(131, 131, 131); /* グレーの境界線を設定 */
 }
 
+/* バッジコレクション全体を囲むコンテナのスタイル */
 .collection-container {
-    padding: 5px;
-    background-color: #ffffff;
-    margin-top: 120px;
-    margin-left: auto;
+    padding: 5px; /* コンテナ内の余白を設定 */
+    background-color: #ffffff; /* 背景色を白に設定 */
+    margin-top: 120px; /* 上部のマージンを設定 */
+    margin-left: auto; /* 左右のマージンを自動調整 */
     margin-right: auto;
-    width: 800px;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    /* 1行に5つの要素を配置 */
-    gap: 10px;
-    /* 要素間のスペース */
+    width: 800px; /* コンテナの幅を固定 */
+    display: grid; /* グリッドレイアウトを使用 */
+    grid-template-columns: repeat(5, 1fr); /* 1行に5つの要素を配置 */
+    gap: 10px; /* 要素間のスペースを設定 */
 }
 
+/* 所有済みバッジのスタイル */
 .owned-badge {
-    filter: contrast(100%);
+    filter: contrast(100%); /* コントラストを標準に設定 */
 }
 
+/* 未所有バッジのスタイル */
 .unowned-badge {
-    filter: contrast(30%);
+    filter: contrast(30%); /* コントラストを下げて暗く表示 */
 }

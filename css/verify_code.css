@@ -1,33 +1,36 @@
-/* verify.css */
+/* bodyタグのスタイル */
 body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffefd5;
+    margin: 0; /* マージンを0に設定 */
+    padding: 0; /* パディングを0に設定 */
+    display: flex; /* フレックスボックスでレイアウト */
+    justify-content: center; /* 水平方向に中央揃え */
+    align-items: center; /* 垂直方向に中央揃え */
+    background-color: #ffefd5; /* 背景色を薄いピンク色に設定 */
     min-height: 100vh; /* ビューポートの高さ全体を確保 */
 }
 
+/* コンテナのスタイル */
 .container {
-    text-align: center;
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center; /* テキストを中央揃え */
+    background: #fff; /* 背景色を白に設定 */
+    padding: 20px; /* 内側に20pxのパディング */
+    border-radius: 8px; /* 角を丸くする */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* シャドウを追加して立体感を出す */
 }
 
+/* アラートメッセージのスタイル */
 .alert {
-    color: red;
-    font-weight: bold;
-    margin-bottom: 10px;
+    color: red; /* 文字色を赤に設定 */
+    font-weight: bold; /* 文字を太字に設定 */
+    margin-bottom: 10px; /* 下部に10pxのマージン */
 }
 
-#submit{
-    background-color: #00aaff;    /* ボタンの背景色（必要に応じて調整） */
-    color: #fff; /* ボタンの文字色 */
-    margin-top: 10px;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
+/* submitボタンのスタイル */
+#submit {
+    background-color: #00aaff; /* ボタンの背景色を青色に設定 */
+    color: #fff; /* ボタンの文字色を白に設定 */
+    margin-top: 10px; /* 上部に10pxのマージン */
+    border: none; /* ボーダーを削除 */
+    border-radius: 5px; /* 角を丸くする */
+    padding: 5px 10px; /* パディングを上下5px、左右10pxに設定 */
 }

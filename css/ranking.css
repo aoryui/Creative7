@@ -1,101 +1,107 @@
-/*  広告を破壊 */
+/* 広告を破壊 */
 div[style*="z-index: 2147483647"] {
-    display: none !important;
+    display: none !important; /* 高いz-indexを持つ広告要素を非表示に */
 }
 
 body {
-    background-color: #ffefd5;
+    background-color: #ffefd5; /* 背景色を薄いクリーム色に設定 */
 }
 
-.border-frame { /*ユーザー名、ランキングなど*/
-    max-width: 1200px;
-    margin: 100px auto 30px;
-    padding: 20px;
-    background: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    width: 80%; /* widthを%で設定し、レスポンシブに対応 */
-    width: 80%; /* widthを%で設定し、レスポンシブに対応 */
-    background-color: rgb(244, 242, 242);
-    margin-top: calc(100px + 30px);
+/* コンテンツを囲むフレーム */
+.border-frame { 
+    max-width: 1200px; /* 最大幅を1200pxに設定 */
+    margin: 100px auto 30px; /* 上部に余白を追加し、中央寄せ */
+    padding: 20px; /* 内側の余白 */
+    background: #fff; /* 背景色を白に */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 軽い影を追加 */
+    border-radius: 8px; /* 角を丸く */
+    width: 80%; /* 幅を80%に設定し、レスポンシブ対応 */
+    background-color: rgb(244, 242, 242); /* 背景色を薄いグレーに設定 */
+    margin-top: calc(100px + 30px); /* マージンを動的に設定 */
 }
-    
-.table { /*表*/
-    width: 90%; /* テーブルも全体に合わせてレスポンシブ対応 */
-    margin: 20px auto; /* 上部に余白を追加し中央寄せ */
+
+/* 表のスタイル */
+.table { 
+    width: 90%; /* 幅を90%に設定 */
+    margin: 20px auto; /* 上部の余白を追加し中央寄せ */
     border-collapse: collapse; /* ボーダーを1本にまとめる */
-    top: 90px;
+    top: 90px; /* テーブルの位置を調整 */
 }
 
+/* リンクのカラー設定 */
 #tri {
-    color: rgb(63, 119, 232);
+    color: rgb(63, 119, 232); /* リンクの色を青色に */
 }
 
+/* 回答のフォントサイズ */
 .answer {
-    font-size: 38px;
+    font-size: 38px; /* 回答部分のフォントサイズを大きく */
 }
 
+/* 平均時間と正答率のスタイル */
 .average-time,
 .correct-rate {
-    font-size: 1.2em;
-    margin: 10px 0;
-    color: #333;
+    font-size: 1.2em; /* 少し大きめに */
+    margin: 10px 0; /* 上下の余白 */
+    color: #333; /* 濃いグレー */
 }
 
+/* ランキング表のスタイル */
 #table {
-    width: 100%; /* テーブルは全幅を使用 */
-    border-collapse: collapse;
-
+    width: 100%; /* テーブル全幅 */
+    border-collapse: collapse; /* ボーダーをまとめる */
 }
 
 #table th,
 #table td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
+    border: 1px solid #ccc; /* 薄いボーダー */
+    padding: 10px; /* 内側の余白 */
+    text-align: center; /* セル内のテキストを中央寄せ */
 }
 
-#table th { /*ランキング表*/
-    background-color: #f2f2f2;
+#table th {
+    background-color: #f2f2f2; /* ヘッダーの背景色 */
 }
 
+/* 質問部分のスタイル */
 #custom-question {
-    text-align: left !important;
-    white-space: pre-wrap;
-    width: 40ch;
-    word-wrap: break-word;
+    text-align: left !important; /* 左寄せ */
+    white-space: pre-wrap; /* 改行を有効に */
+    width: 40ch; /* 幅を40文字に設定 */
+    word-wrap: break-word; /* 長い単語を折り返す */
 }
 
-#user_data{
+/* ユーザーデータのスタイル */
+#user_data {
+    display: flex; /* 横並び */
+}
+
+/* その他のスタイル */
+#precedence, #total {
+    margin: 10px; /* マージン追加 */
+}
+
+#ranking_update {
     display: flex;
+    align-items: center; /* アイテムを中央揃え */
+    float: right; /* 右側に浮動 */
 }
 
-#precedence{
-    margin: 10px;
-}
-
-#total{
-    margin: 10px;
-}
-
-#ranking_update{
-    display: flex;
-    align-items: center;
-    float: right;
-}
-
+/* 更新ボタン */
 .update-button {
     background: none;
     border: none;
     padding: 0;
-    cursor: pointer;
+    cursor: pointer; /* ポインターを表示 */
 }
 
+/* 更新ボタン内の画像 */
 .update-button img {
     width: 30px; /* 画像の幅 */
     height: 30px; /* 画像の高さ */
 }
 
+/* 1位、2位、3位の背景色 */
 .first-place {
     background-color: #F9F4AF; /* 1位の背景色 */
 }
@@ -110,70 +116,66 @@ body {
 
 /* 王冠アイコン */
 .crown-icon {
-    margin-left: 10px; /* 王冠アイコンと順位数字の間にスペースを追加 */
+    margin-left: 10px; /* アイコンと順位数字の間にスペース */
     vertical-align: middle; /* アイコンをテキストの中央に揃える */
-    width: 20px; /* 王冠アイコンの大きさを適切に設定 */
+    width: 20px; /* アイコンのサイズ */
     height: 20px;
 }
 
-/* 王冠アイコン */
-.crown-icon {
-    margin-left: 10px; /* 王冠アイコンと順位数字の間にスペースを追加 */
-    vertical-align: middle; /* アイコンをテキストの中央に揃える */
-    width: 20px; /* 王冠アイコンの大きさを適切に設定 */
-    height: 20px;
-}
-
+/* ページネーション */
 .pagination {
     margin: 10px;
-    text-align: center;
+    text-align: center; /* ページネーションを中央寄せ */
 }
 
+/* ページネーションリンクのスタイル */
 .pagination a {
     margin: 0 5px;
     padding: 5px 10px;
     text-decoration: none;
-    color: #000;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+    color: #000; /* 黒色 */
+    border: 1px solid #ccc; /* ボーダー */
+    border-radius: 4px; /* 角を丸く */
+    transition: background-color 0.3s; /* ホバー時のアニメーション */
 }
 
+/* 現在のページリンク */
 .pagination .current-page {
     margin: 0 5px;
     padding: 5px 10px;
-    background-color: #007bff;
-    color: white;
+    background-color: #007bff; /* 青色 */
+    color: white; /* 白文字 */
     border: 1px solid #007bff;
     border-radius: 4px;
 }
 
+/* 非表示の要素 */
 .hidden {
-    visibility: hidden; /* 要素を非表示にし、レイアウト上には残す */
+    visibility: hidden; /* 要素を非表示にする */
 }
 
-
-/*ランキングアイコン大きさ指定とフォント指定*/
+/* ランキングアイコン */
 #ranking {
-    font-size: 25px; /* テキストサイズを調整 */
-    font-weight: bold; /* 太字にする */
-    max-width: 250px;
-    top: -10px;
-  }
-  
-  .ranking_icon {
+    font-size: 25px; /* フォントサイズ調整 */
+    font-weight: bold; /* 太字 */
+    max-width: 250px; /* 最大幅を設定 */
+    top: -10px; /* 上部マージンを調整 */
+}
+
+/* ランキングアイコン */
+.ranking_icon {
     width: 70px; /* アイコンの幅 */
     height: 50px; /* アイコンの高さ */
     margin-right: 10px; /* アイコンと文字の間隔 */
-    vertical-align: middle; /* 画像をテキストの中央に揃える */
+    vertical-align: middle; /* アイコンとテキストを中央揃え */
+}
 
-  }
-
-  .ranking-header {
+/* ランキングヘッダー */
+.ranking-header {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* 横幅全体に均等配置 */
-    margin-bottom: 20px;
+    justify-content: space-between; /* 横並びで均等配置 */
+    margin-bottom: 20px; /* 下部マージン */
 }
 
 .ranking-header #ranking {
@@ -185,24 +187,25 @@ body {
 }
 
 .ranking-header .ranking_icon {
-    margin-right: 8px;
+    margin-right: 8px; /* アイコンと文字の間隔調整 */
 }
 
+/* スタイリッシュなリンクボタン */
 .stylish-link {
     display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    text-decoration: none;
+    padding: 10px 20px; /* 内側の余白 */
+    font-size: 16px; /* フォントサイズ */
+    font-weight: bold; /* 太字 */
+    text-decoration: none; /* 下線なし */
     text-align: center;
-    color: #ffffff;
+    color: #ffffff; /* 白文字 */
     background-color: #007bff; /* 青色 */
-    border-radius: 8px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 8px; /* 角を丸く */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* ホバー時のアニメーション */
 }
 
+/* リンクボタンのアクティブ時 */
 .stylish-link:active {
-    transform: translateY(1px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(1px); /* 押したときに下に動く */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 影を追加 */
 }
-

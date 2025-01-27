@@ -1,160 +1,156 @@
 /*  広告を破壊 */
 div[style*="z-index: 2147483647"] {
-    display: none !important;
+    display: none !important; /* 高 z-index の広告を非表示にする */
 }
 
 html{
-    overflow-y: scroll;
-    /*スクロールバー非表示（IE・Edge）*/
+    overflow-y: scroll; /* スクロールバーが常に表示されるように設定 */
+    /* スクロールバー非表示（IE・Edge） */
     -ms-overflow-style: none;
-    /*スクロールバー非表示（Firefox）*/
+    /* スクロールバー非表示（Firefox） */
     scrollbar-width: none;
 }
 
-/*スクロールバー非表示（Chrome・Safari）*/
+/* スクロールバー非表示（Chrome・Safari） */
 html::-webkit-scrollbar{
-    display:none;
-  }
-
-
-body {
-    background-color: #ffefd5;
-    margin-top: calc(100px + 20px);
-    
+    display:none; /* Chrome と Safari のスクロールバーを非表示 */
 }
 
-.top-contents{
+body {
+    background-color: #ffefd5; /* 背景色をアイボリーに設定 */
+    margin-top: calc(100px + 20px); /* 上部の余白を調整 */
+}
+
+.top-contents {
     margin: 0 0 0 12px;
-    margin-top: -30px;
+    margin-top: -30px; /* 上の余白をマイナスに設定 */
 }
 
 /* 親要素の幅を制限して、画像の拡大を防ぐ */
 .center-contents {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start; /* 全体は上寄せ */
-    padding-top: 20px;
+    display: flex; /* Flexboxを使用 */
+    justify-content: space-between; /* 左右に要素を配置 */
+    align-items: flex-start; /* 上寄せに配置 */
+    padding-top: 20px; /* 上部の余白 */
 }
 
 /* 画像が画面幅に応じて縮小するように設定 */
 .question_img {
-    width: 500px;
-    height: auto;
-    margin: 0 50px;
-    object-fit: contain;
-    margin-top: -10px; 
+    width: 500px; /* 画像の横幅 */
+    height: auto; /* 高さは自動調整 */
+    margin: 0 50px; /* 左右に余白 */
+    object-fit: contain; /* 画像が枠内に収まるように調整 */
+    margin-top: -10px; /* 上部の余白を調整 */
 }
 
-#choiceForm{
-    float: right;
-    display: flex;
+#choiceForm {
+    float: right; /* フォームを右側に配置 */
+    display: flex; /* フレックスボックスを使用 */
 }
 
 .choices {
     min-width: auto;
-    word-wrap: break-word; /* 内容が幅を超えた場合に折り返し */
+    word-wrap: break-word; /* 長い単語が折り返されるように設定 */
 }
 
-#question_form{
+#question_form {
     display: flex;
-    flex-direction: column;
-    
+    flex-direction: column; /* フォームを縦に並べる */
 }
 
 .choice {
-    margin: 10px;
+    margin: 10px; /* 各選択肢の余白 */
     display: flex;
-    align-items: center;
-    background-color: #d3d3d3;
+    align-items: center; /* 中央に揃える */
+    background-color: #d3d3d3; /* 背景色をグレーに設定 */
     padding: 3px;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 5px; /* 角丸にする */
+    cursor: pointer; /* カーソルをポインタに変更 */
     width: auto;
 }
-label{
-    cursor: pointer;
+
+label {
+    cursor: pointer; /* ラベルをクリック可能に */
 }
 
-.open-edit-btn{
-    background-color: #00aaff;    /* ボタンの背景色（必要に応じて調整） */
+.open-edit-btn {
+    background-color: #00aaff; /* ボタンの背景色 */
     color: #fff; /* ボタンの文字色 */
-    width: 130px;
-    height: 60px;
-    font-size: 16px;
+    width: 130px; /* 幅 */
+    height: 60px; /* 高さ */
+    font-size: 16px; /* フォントサイズ */
     position: relative;
     top: 10px;
-    left: 1050px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
+    left: 1050px; /* 画面の右側に配置 */
+    border: none; /* ボーダーなし */
+    cursor: pointer; /* ポインタを表示 */
+    border-radius: 5px; /* 角丸 */
 }
 
 .next-button {
     display: flex;
     padding: 10px 20px;
-    background-color: #00aaff;
-    color: #fff;
+    background-color: #00aaff; /* 背景色 */
+    color: #fff; /* 文字色 */
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 5px; /* 角丸 */
     text-align: center;
-    font-size: 16px; /* フォントサイズを調整 */
-    width: 80px;
+    font-size: 16px; /* フォントサイズ */
+    width: 80px; /* 幅 */
     height: auto;
-    margin: 10px;
+    margin: 10px; /* 余白 */
     position: relative;
-    right: 100px;
-    top: 40px;
+    right: 100px; /* 右に寄せる */
+    top: 40px; /* 下に寄せる */
 }
 
-.next-button:hover{
-    color: #0c0c0c; /* ホバー時の背景色 */
-    background-color: #898989;  /* ホバー時のテキスト色 */
+.next-button:hover {
+    color: #0c0c0c; /* ホバー時の文字色 */
+    background-color: #898989;  /* ホバー時の背景色 */
 }
 
 .next {
-    align-self: flex-end; /* ボタンだけ下寄せ */
-    margin-left: 20px; /* フォームとの間に余白 */
+    align-self: flex-end; /* ボタンを下部に配置 */
+    margin-left: 20px; /* 左側に余白 */
 }
 
 /* モーダルのスタイル */
 .modal-content {
-    background-color: #fff;
-    margin: 10% auto;
-    padding: 20px;
-    border-radius: 8px;
+    background-color: #fff; /* 背景色を白に設定 */
+    margin: 10% auto; /* 中央に配置 */
+    padding: 20px; /* 内側の余白 */
+    border-radius: 8px; /* 角丸 */
     width: 100%;
-
 }
 
 /* モーダル全体の背景 */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1001;
+    display: none; /* 初期状態は非表示 */
+    position: fixed; /* 固定位置 */
+    z-index: 1001; /* 背景より前面に配置 */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* 少し暗い背景を追加 */
+    background-color: rgba(0, 0, 0, 0.6); /* 背景を暗く設定 */
     backdrop-filter: blur(5px); /* 背景をぼかしてスタイリッシュに */
-    transition: opacity 0.3s ease; /* 開閉時のスムーズなフェードイン/アウト */
+    transition: opacity 0.3s ease; /* フェードイン/アウトのアニメーション */
 }
 
 /* モーダルのコンテンツ */
 .modal-content {
     background-color: #fff;
-    border-radius: 12px; /* 柔らかい角丸 */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* スタイリッシュな影 */
-    margin: auto;
-    padding: 20px 30px; /* 内側の余白を広めに */
-    width: 80%; /* 横幅を適度に制限 */
-    max-width: 800px; /* 最大幅を設定 */
-    animation: slideDown 0.4s ease; /* 開くときのスライド効果 */
-    max-height: 80vh; /* 画面の高さを超えないよう制限 */
-    overflow-y: auto; /* 縦スクロールを有効に */
-    text-align: center; /* 内容を中央揃え */
+    border-radius: 12px; /* 角丸 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* 影をつける */
+    margin: auto; /* 中央揃え */
+    padding: 20px 30px; /* 内側の余白 */
+    width: 80%;
+    max-width: 800px; /* 最大幅の制限 */
+    animation: slideDown 0.4s ease; /* スライドインアニメーション */
+    max-height: 80vh; /* 最大高さを制限 */
+    overflow-y: auto; /* 縦方向のスクロール */
+    text-align: center;
     margin-top: 50px;
-    
 }
 
 /* モーダルの開閉時のアニメーション */
@@ -171,36 +167,36 @@ label{
 
 /* 閉じるボタン */
 .close {
-    color: #aaa;
+    color: #aaa; /* 閉じるボタンの文字色 */
     position: absolute;
     top: 15px;
     right: 20px;
     font-size: 24px;
     font-weight: bold;
-    cursor: pointer;
-    transition: color 0.2s ease; /* ホバー時のスムーズな色変化 */
+    cursor: pointer; /* クリック可能に */
+    transition: color 0.2s ease; /* ホバー時の色変化 */
 }
 
 .close:hover {
-    color: #333; /* ホバー時に少し濃い色 */
+    color: #333; /* ホバー時に文字色が濃くなる */
 }
 
 /* モーダル内のボタンデザイン */
 .button {
-    margin: 10px auto; /* 全体に対して中央揃え */
-    padding: 10px 20px; /* 内側の余白 */
+    margin: 10px auto;
+    padding: 10px 20px;
     background-color: #007bff; /* 青系のボタン */
     color: #fff;
     border: none;
-    border-radius: 5px; /* 柔らかい角丸 */
+    border-radius: 5px; /* 角丸 */
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* なめらかな変化 */
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .button:hover {
     background-color: #0056b3; /* ホバー時に濃い青 */
-    transform: scale(1.05); /* 少し大きく */
+    transform: scale(1.05); /* 少し拡大 */
 }
 
 /* ナビゲーションボタンの調整 */
@@ -220,16 +216,16 @@ label{
 }
 
 .nav-button.answered {
-    background-color: #28a745; /* 緑色：回答済み */
+    background-color: #28a745; /* 回答済みボタンの緑色 */
     color: #fff;
 }
 
 .nav-button.not-answered {
-    background-color: #cccccc;
+    background-color: #cccccc; /* 未回答ボタンのグレー */
 }
 
 .nav-button:disabled {
-    border: 2px solid #00CCFF;
-    background-color: #e6f7ff;
-    color: #333;
+    border: 2px solid #00CCFF; /* 無効化されたボタンのボーダー */
+    background-color: #e6f7ff; /* 無効化されたボタンの背景色 */
+    color: #333; /* 文字色 */
 }

@@ -1,27 +1,25 @@
-/*  広告を破壊 */
+/* 広告を破壊 */
 div[style*="z-index: 2147483647"] {
-    display: none !important;
+    display: none !important; /* 広告を表示しない */
 }
-
 
 /* 全体のリセットとボックスサイジング */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* 全ての要素に対してボックスサイズを適切に調整 */
 }
-
-
 
 /* ボディのスタイル */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #ffefd5;
+    font-family: Arial, sans-serif; /* フォントの設定 */
+    background-color: #ffefd5; /* 背景色 */
     padding-top: 50px; /* ヘッダー分の余白 */
     padding-bottom: 30px; /* ボトムボタンの余白 */
 }
 
-.border-frame {   
+/* フレックスボックスによるレイアウト */
+.border-frame {
     display: flex; /* フレックスボックスを有効化 */
     flex-direction: column;
     justify-content: center;
@@ -30,205 +28,224 @@ body {
     padding-left: 30px;
     padding-right: 10px;
     box-sizing: border-box;
-    min-width: 400px;
-  }
+    min-width: 400px; /* 最小幅設定 */
+}
 
-  .flex-inner[data-box-color="white"] {
-    background: #fff;
-    border-radius: 20px;
+/* 背景色の変更と角丸の設定 */
+.flex-inner[data-box-color="white"] {
+    background: #fff; /* 白背景 */
+    border-radius: 20px; /* 角丸 */
     overflow: hidden; /* 角を丸くするために内容を隠す */
-  }
+}
 
+/* 質問タイトルのスタイル */
 .question-edit-title {
-    width: fit-content;
-    block-size: fit-content;
-    padding-top: 100px;
+    width: fit-content; /* コンテンツの幅に合わせる */
+    block-size: fit-content; /* 高さもコンテンツに合わせる */
+    padding-top: 100px; /* 上の余白 */
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto; /* 横方向で中央揃え */
 }
 
 /* テーブルのスタイル */
 table {
-    width: 80%;
-    margin: 20px auto;
-    border-collapse: collapse;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%; /* 幅80% */
+    margin: 20px auto; /* 上下の余白と中央揃え */
+    border-collapse: collapse; /* テーブルセルのボーダーを一体化 */
+    background-color: #fff; /* 背景色 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 影 */
 }
 
+/* テーブルセルのスタイル */
 th, td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-    white-space: nowrap;
-    background-color: #dddddda2;
+    padding: 12px; /* 内側の余白 */
+    text-align: left; /* 左揃え */
+    border-bottom: 1px solid #ddd; /* 下線 */
+    white-space: nowrap; /* 改行を防ぐ */
+    background-color: #dddddda2; /* セルの背景色 */
 }
 
+/* ヘッダーセルのスタイル */
 th {
-    background-color: #f5f5f5;
-    width: 20%;
+    background-color: #f5f5f5; /* 背景色 */
+    width: 20%; /* 幅20% */
 }
 
-legend{
-    text-align: center;
-  }
-
-fieldset{
-    margin: 10px;
-    margin-left: auto;
+/* フィールドセットとレジェンド */
+legend {
+    text-align: center; /* 中央揃え */
 }
 
-.contain-left{
-    margin-left: 0px;
+fieldset {
+    margin: 10px; /* マージン */
+    margin-left: auto; /* 自動で左揃え */
 }
 
-/* ボタンのスタイル */
+/* 左の余白 */
+.contain-left {
+    margin-left: 0px; /* 左余白0 */
+}
+
+/* ボタンの基本スタイル */
 button {
-    padding: 8px 16px;
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
+    padding: 8px 16px; /* パディング */
+    background-color: #007BFF; /* 背景色 */
+    color: #fff; /* 文字色 */
+    border: none; /* 枠線なし */
+    border-radius: 5px; /* 角丸 */
+    cursor: pointer; /* マウスカーソルがポインタ */
+    font-size: 14px; /* フォントサイズ */
 }
 
+/* ボタンのホバー時 */
 button:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* ホバー時の背景色 */
 }
 
+/* 更新ボタンのコンテナ */
 .update-button-container {
-    text-align: center;
+    text-align: center; /* 中央揃え */
     margin-top: 20px;
     margin: 0 10px 10px 0;
 }
 
-#deleteButton{
-    background-color: red;
-    float: right;
-    margin: -40px 76px 30px 0;
+/* 削除ボタンのスタイル */
+#deleteButton {
+    background-color: red; /* 背景色赤 */
+    float: right; /* 右寄せ */
+    margin: -40px 76px 30px 0; /* マージン設定 */
 }
 
 /* モーダルのスタイル */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1001;
+    display: none; /* 初期状態では非表示 */
+    position: fixed; /* 固定位置 */
+    z-index: 1001; /* 重なり順 */
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%; /* 全画面 */
+    height: 100%; /* 全画面 */
+    overflow: auto; /* コンテンツが溢れた場合スクロール */
+    background-color: rgba(0, 0, 0, 0.4); /* 半透明の黒背景 */
 }
 
+/* モーダル内コンテンツ */
 .modal-content {
-    text-align: center;
-    background-color: #fff;
-    margin: 10% auto;
+    text-align: center; /* 中央揃え */
+    background-color: #fff; /* 背景色 */
+    margin: 10% auto; /* 上下中央揃え */
     padding: 20px;
-    border-radius: 8px;
-    width: 80%;
-    max-width: 600px;
+    border-radius: 8px; /* 角丸 */
+    width: 80%; /* 幅80% */
+    max-width: 600px; /* 最大幅 */
 }
 
+/* モーダルの閉じるボタン */
 .close {
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    float: right;
+    color: #aaa; /* 色 */
+    font-size: 28px; /* フォントサイズ */
+    font-weight: bold; /* 太字 */
+    cursor: pointer; /* ポインタ */
+    float: right; /* 右寄せ */
 }
 
+/* ホバー時のスタイル */
 .close:hover,
 .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+    color: black; /* 色 */
+    text-decoration: none; /* 下線なし */
+    cursor: pointer; /* ポインタ */
 }
 
 /* フォームのスタイル */
 form {
-    margin-top: 20px;
+    margin-top: 20px; /* 上マージン */
 }
 
+/* ラジオボタンのスタイル */
 form input[type="radio"] {
-    margin-right: 10px;
+    margin-right: 10px; /* 右マージン */
 }
 
+/* テキストボックスと数値入力のスタイル */
 form input[type="text"],
 form input[type="number"] {
-    width: 95%;
+    width: 95%; /* 幅95% */
     padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    margin-top: 10px; /* 上マージン */
+    margin-bottom: 10px; /* 下マージン */
+    border: 1px solid #ccc; /* 枠線 */
+    border-radius: 4px; /* 角丸 */
 }
 
+/* 数値入力フィールドとタイムリミットのスタイル */
 form input[type="number"],
 form input[class="time_limit1"] {
-    width: 100px;
+    width: 100px; /* 幅100px */
     padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    margin-top: 10px; /* 上マージン */
+    margin-bottom: 10px; /* 下マージン */
+    border: 1px solid #ccc; /* 枠線 */
+    border-radius: 4px; /* 角丸 */
 }
 
+/* 提出ボタンのスタイル */
 form input[type="submit"] {
-    background-color: #007BFF;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    background-color: #007BFF; /* 背景色 */
+    color: white; /* 文字色 */
+    padding: 10px 20px; /* パディング */
+    border: none; /* 枠線なし */
+    border-radius: 5px; /* 角丸 */
+    cursor: pointer; /* ポインタ */
 }
 
+/* 提出ボタンのホバー時 */
 form input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* ホバー時の背景色 */
 }
 
-.submit2{
-margin-top: 20px;
-}
-
-/* プレビュー画像 */
-.question_now, .question_new, .answer_now, .answer_new{
-    width: 422px;
-    height: 256px;
+/* プレビュー画像のスタイル */
+.question_now, .question_new, .answer_now, .answer_new {
+    width: 422px; /* 幅 */
+    height: 256px; /* 高さ */
 }
 
 /* 「問題を更新」ボタンのスタイル */
 .update-button-container button {
-    padding: 12px 24px;
-    font-size: 18px;
-    background-color: #28a745;
-    border-radius: 8px;
-    cursor: pointer;
+    padding: 12px 24px; /* パディング */
+    font-size: 18px; /* フォントサイズ */
+    background-color: #28a745; /* 背景色 */
+    border-radius: 8px; /* 角丸 */
+    cursor: pointer; /* ポインタ */
 }
 
+/* ホバー時の「問題を更新」ボタン */
 .update-button-container button:hover {
-    background-color: #218838;
+    background-color: #218838; /* ホバー時の背景色 */
 }
 
-
-.correct-choice{
-    background-color: #83E64E;
+/* 正解の選択肢のスタイル */
+.correct-choice {
+    background-color: #83E64E; /* 背景色 */
 }
 
-.delete-modal{
-    text-align: center;
-    background-color: #fff;
-    margin: 10% auto;
+/* 削除モーダルのスタイル */
+.delete-modal {
+    text-align: center; /* 中央揃え */
+    background-color: #fff; /* 背景色 */
+    margin: 10% auto; /* 中央揃え */
     padding: 20px;
-    border-radius: 8px;
-    width: 80%;
-    max-width: 600px;
+    border-radius: 8px; /* 角丸 */
+    width: 80%; /* 幅80% */
+    max-width: 600px; /* 最大幅 */
 }
-.delete-button{
-    background-color:red;
+
+/* 削除ボタンのスタイル */
+.delete-button {
+    background-color: red; /* 赤背景 */
 }
+
+/* ホバー時の削除ボタン */
 .delete-button:hover {
-    background-color: darkred;
+    background-color: darkred; /* ホバー時の背景色 */
 }

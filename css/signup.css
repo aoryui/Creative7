@@ -1,115 +1,124 @@
-/*  広告を破壊 */
+/* 広告を破壊 */
 div[style*="z-index: 2147483647"] {
-  display: none !important;
+  display: none !important; /* 高いz-indexを持つ広告を非表示にする */
 }
 
 /* スクロールバーを隠す */
 html {
-  overflow: hidden;
-  /* 全体のスクロールバーを隠す */
+  overflow: hidden; /* 全体のスクロールバーを隠す */
 }
 
 body {
-  overflow-y: hidden;
-  /* 垂直スクロールバーを隠す */
+  overflow-y: hidden; /* 垂直スクロールバーを隠す */
 }
 
+/* ログインページのスタイル */
 .login-body {
-  background-color: #ffefd5;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  color: rgb(89, 208, 247);
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: #ffefd5; /* 背景色を薄い黄色に設定 */
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* フォントをComic Sansに設定 */
+  color: rgb(89, 208, 247); /* テキストカラーを青色に設定 */
+  min-height: 100vh; /* ページ全体の高さを画面サイズに合わせる */
+  display: flex; /* Flexboxを使用して配置 */
+  justify-content: center; /* 中央揃え（横方向） */
+  align-items: center; /* 中央揃え（縦方向） */
 }
 
+/* ログインフォームコンテナのスタイル */
 .login-container {
-  height: 410px;
-  width: 420px;
-  margin-top: calc(100px + 20px);
-  margin-left: auto;
+  height: 410px; /* フォームの高さ */
+  width: 420px; /* フォームの幅 */
+  margin-top: calc(100px + 20px); /* 上部のマージンを設定 */
+  margin-left: auto; /* 左右のマージンを自動で設定して中央揃え */
   margin-right: auto;
   margin-bottom: auto;
-  background-color: #fff;
-  padding-top: 10px;
-  padding-left: 40px;
-  padding-right: 40px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  background-color: #fff; /* 背景色を白に設定 */
+  padding-top: 10px; /* 上部にパディング */
+  padding-left: 40px; /* 左側にパディング */
+  padding-right: 40px; /* 右側にパディング */
+  border-radius: 10px; /* 角を丸く設定 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影をつけて立体感を出す */
+  text-align: center; /* 中央揃え */
 }
 
+/* ログインフォーム内のテキストスタイル */
 .login-ji {
-  font-size: 15px;
-  position: relative;
-  top: -10px;
+  font-size: 15px; /* フォントサイズを小さく設定 */
+  position: relative; 
+  top: -10px; /* 上に少し移動 */
 }
 
+/* フォームグループのスタイル */
 .form-group {
-  margin-bottom: 5px;
+  margin-bottom: 5px; /* フォーム項目間のスペース */
 }
 
+/* ラベルのスタイル */
 label {
-  display: block;
-  margin-bottom: 5px;
+  display: block; /* ラベルをブロック要素として表示 */
+  margin-bottom: 5px; /* ラベルとフォーム項目の間にスペース */
 }
 
+/* 入力フィールドのスタイル */
 input {
-  padding: 6px 6px;
-  border: 2px solid rgb(89, 208, 247);
-  border-radius: 10px;
-  font-size: 15px;
+  padding: 6px 6px; /* 入力フィールドの内側の余白 */
+  border: 2px solid rgb(89, 208, 247); /* 入力フィールドの枠線色 */
+  border-radius: 10px; /* 入力フィールドの角を丸くする */
+  font-size: 15px; /* フォントサイズ */
 }
 
+/* プレースホルダーテキストのスタイル */
 input::placeholder {
-  color: #ffb6c1;
+  color: #ffb6c1; /* プレースホルダーテキストの色 */
 }
 
+/* フォーカス時のスタイル */
 input:focus {
-  outline: none;
-  border-color: rgb(89, 160, 247);
-  box-shadow: 0 0 5px rgba(255, 192, 203, 0.5);
+  outline: none; /* フォーカス時のアウトラインを消す */
+  border-color: rgb(89, 160, 247); /* フォーカス時の枠線色 */
+  box-shadow: 0 0 5px rgba(255, 192, 203, 0.5); /* フォーカス時にぼかしを追加 */
 }
 
+/* 送信ボタンのスタイル */
 #submit {
-  width: 200px;
-  padding: 10px;
-  background-color: rgb(89, 208, 247);
-  color: white;
-  border: none;
-  border-radius: 2px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+  width: 200px; /* ボタンの幅 */
+  padding: 10px; /* ボタンの内側の余白 */
+  background-color: rgb(89, 208, 247); /* ボタンの背景色 */
+  color: white; /* ボタンの文字色 */
+  border: none; /* 枠線なし */
+  border-radius: 2px; /* 少し丸みを持たせる */
+  cursor: pointer; /* カーソルをポインタにする */
+  font-weight: bold; /* 文字を太くする */
+  transition: background-color 0.3s ease; /* 背景色の変更にアニメーションを追加 */
   position: relative;
-  top: -70px;
-  font-size: 20px;
-  border-radius: 10px;
-  font-size: 16px;
+  top: -70px; /* 上部に少し移動 */
+  font-size: 20px; /* フォントサイズ */
+  border-radius: 10px; /* ボタンを丸くする */
 }
 
+/* ボタンのホバー時のスタイル */
 #submit:hover {
-  background-color: #68B7F0;
+  background-color: #68B7F0; /* ホバー時に背景色が変わる */
 }
 
+/* キャラクター画像のスタイル */
 .character {
-  width: 150px;
-  margin-bottom: 20px;
+  width: 150px; /* 幅を指定 */
+  margin-bottom: 20px; /* 下部にスペース */
 }
 
+/* 見出しのスタイル */
 .h1 {
-    font-size: 26px; 
+    font-size: 26px; /* フォントサイズ */
 }
 
-
-
+/* ユーザー名入力欄のスタイル */
 #username {
   position: relative;
   top: -40px;
-  left: 80px;
+  left: 80px; /* ユーザー名欄を右に移動 */
 }
 
+/* ユーザー名ラベルのスタイル */
 #usernames {
   color: black;
   position: relative;
@@ -117,32 +126,34 @@ input:focus {
   font-size: 20px;
 }
 
+/* 学校名入力欄のスタイル */
 #school {
   position: relative;
   top: -60px;
   left: 80px;
-  padding: 6px 6px;
-  border: 2px solid rgb(89, 208, 247);
-  border-radius: 10px;
-  font-size: 16px;
-
+  padding: 6px 6px; /* 内側に余白 */
+  border: 2px solid rgb(89, 208, 247); /* 枠線の色 */
+  border-radius: 10px; /* 角を丸く */
+  font-size: 16px; /* フォントサイズ */
 }
 
+/* 学校名ラベルのスタイル */
 #schools {
   color: black;
   position: relative;
   font-size: 20px;
   left: -160px;
   top: -20px;
-
 }
 
+/* 住所入力欄のスタイル */
 #address {
   position: relative;
   top: -80px;
-  left: 80px;
+  left: 80px; /* 左に移動 */
 }
 
+/* 住所ラベルのスタイル */
 #addresses {
   color: black;
   position: relative;
@@ -151,12 +162,14 @@ input:focus {
   top: -40px;
 }
 
+/* パスワード入力欄のスタイル */
 #password {
   position: relative;
   top: -100px;
-  left: 80px;
+  left: 80px; /* 左に移動 */
 }
 
+/* パスワードラベルのスタイル */
 #passwords {
   color: black;
   position: relative;
@@ -165,10 +178,10 @@ input:focus {
   top: -60px;
 }
 
+/* エラーメッセージのスタイル */
 .message-red{
-  width: 470px;
+  width: 470px; /* 幅を指定 */
   position: relative;
   top: -20px;
-  left: -20px;
+  left: -20px; /* 少し左に移動 */
 }
-

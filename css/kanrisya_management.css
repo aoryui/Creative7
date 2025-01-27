@@ -1,106 +1,104 @@
-/*  広告を破壊 */
+/* 広告を破壊 */
 div[style*="z-index: 2147483647"] {
-    display: none !important;
-}
-
-
-html {
-    overflow-y: scroll;
-    overflow-x: hidden;
-    overflow-y: hidden;
-}
-
-body {
-    background-color: #ffefd5;
-}
-
-.border-frame {
-    display: flex;
-    /* フレックスボックスを有効化 */
-    flex-direction: column;
-    justify-content: center;
-    padding-top: 120px;
-    padding-left: 100px;
-    padding-right: 100px;
-    box-sizing: border-box;
-    min-width: 400px;
-    text-align: center;
-}
-
-.flex-inner[data-box-color="white"] {
-    background: #fff;
-    border-radius: 20px;
-    overflow: hidden;
-    /* 角を丸くするために内容を隠す */
-    height: 500px;
-    width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 0;
-}
-
-#png1,
-#png2,
-#png3 {
-    margin-top: 30px;
-    height: 170px;
-    width: 170px;
-    background-color: #e3e3e6;
-    text-align: center;
-    margin: 10px;
-    margin-left: 30px;
-    margin-right: 30px;
-}
-
-#png4,
-#png5,
-#png6 {
-    margin-top: 30px;
-    height: 170px;
-    width: 170px;
-    background-color: #e3e3e6;
-    text-align: center;
-    margin-top: 30px;
-    margin-left: 30px;
-    margin-right: 30px;
-}
-
-#text1 {
-    position: absolute;
-    left: 335px;
-    top: 360px;
-}
-
-#text2 {
-    position: absolute;
-    left: 600px;
-    top: 360px;
-}
-
-#text3 {
-    position: absolute;
-    left: 840px;
-    top: 360px;
-}
-
-#text4 {
-    position: absolute;
-    left: 365px;
-    top: 580px;
-}
-
-#text5 {
-    position: absolute;
-    left: 580px;
-    top: 580px;
-}
-
-#text6 {
-    position: absolute;
-    left: 825px;
-    top: 580px;
-}
+    display: none !important; /* 高いz-index値を持つ広告要素を非表示にする */
+  }
+  
+  html {
+    overflow-y: scroll; /* 垂直スクロールを強制的に表示 */
+    overflow-x: hidden; /* 横スクロールを隠す */
+    overflow-y: hidden; /* 垂直スクロールも隠す（これが上記と矛盾している） */
+  }
+  
+  body {
+    background-color: #ffefd5; /* 背景色を薄いクリーム色に設定 */
+  }
+  
+  .border-frame {
+    display: flex; /* フレックスボックスレイアウト */
+    flex-direction: column; /* 子要素を縦に並べる */
+    justify-content: center; /* コンテンツを縦方向に中央揃え */
+    padding-top: 120px; /* 上部に120pxのパディングを設定 */
+    padding-left: 100px; /* 左側に100pxのパディングを設定 */
+    padding-right: 100px; /* 右側に100pxのパディングを設定 */
+    box-sizing: border-box; /* パディングをボックスの内側に含める */
+    min-width: 400px; /* 最小幅を400pxに設定 */
+    text-align: center; /* テキストを中央揃え */
+  }
+  
+  .flex-inner[data-box-color="white"] {
+    background: #fff; /* 背景色を白に設定 */
+    border-radius: 20px; /* 角を丸くする */
+    overflow: hidden; /* 角を丸くした部分を隠す */
+    height: 500px; /* 高さを500pxに設定 */
+    width: 800px; /* 幅を800pxに設定 */
+    margin-left: auto; /* 左マージンを自動調整 */
+    margin-right: auto; /* 右マージンを自動調整 */
+  }
+  
+  h2 {
+    text-align: center; /* 見出しを中央揃え */
+    margin-bottom: 0; /* 下部のマージンを0に設定 */
+  }
+  
+  #png1,
+  #png2,
+  #png3 {
+    margin-top: 30px; /* 上部に30pxのマージンを設定 */
+    height: 170px; /* 高さを170pxに設定 */
+    width: 170px; /* 幅を170pxに設定 */
+    background-color: #e3e3e6; /* 背景色を薄いグレーに設定 */
+    text-align: center; /* 中身を中央揃え */
+    margin: 10px; /* 全辺に10pxのマージンを設定 */
+    margin-left: 30px; /* 左に30pxのマージンを設定 */
+    margin-right: 30px; /* 右に30pxのマージンを設定 */
+  }
+  
+  #png4,
+  #png5,
+  #png6 {
+    margin-top: 30px; /* 上部に30pxのマージンを設定 */
+    height: 170px; /* 高さを170pxに設定 */
+    width: 170px; /* 幅を170pxに設定 */
+    background-color: #e3e3e6; /* 背景色を薄いグレーに設定 */
+    text-align: center; /* 中身を中央揃え */
+    margin-top: 30px; /* 上部に30pxのマージンを設定 */
+    margin-left: 30px; /* 左に30pxのマージンを設定 */
+    margin-right: 30px; /* 右に30pxのマージンを設定 */
+  }
+  
+  #text1 {
+    position: absolute; /* 絶対位置指定 */
+    left: 335px; /* 左から335pxの位置に設定 */
+    top: 360px; /* 上から360pxの位置に設定 */
+  }
+  
+  #text2 {
+    position: absolute; /* 絶対位置指定 */
+    left: 600px; /* 左から600pxの位置に設定 */
+    top: 360px; /* 上から360pxの位置に設定 */
+  }
+  
+  #text3 {
+    position: absolute; /* 絶対位置指定 */
+    left: 840px; /* 左から840pxの位置に設定 */
+    top: 360px; /* 上から360pxの位置に設定 */
+  }
+  
+  #text4 {
+    position: absolute; /* 絶対位置指定 */
+    left: 365px; /* 左から365pxの位置に設定 */
+    top: 580px; /* 上から580pxの位置に設定 */
+  }
+  
+  #text5 {
+    position: absolute; /* 絶対位置指定 */
+    left: 580px; /* 左から580pxの位置に設定 */
+    top: 580px; /* 上から580pxの位置に設定 */
+  }
+  
+  #text6 {
+    position: absolute; /* 絶対位置指定 */
+    left: 825px; /* 左から825pxの位置に設定 */
+    top: 580px; /* 上から580pxの位置に設定 */
+  }
+  

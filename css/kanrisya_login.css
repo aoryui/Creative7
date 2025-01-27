@@ -1,91 +1,88 @@
-/*  広告を破壊 */
+/* 広告を破壊 */
 div[style*="z-index: 2147483647"] {
-  display: none !important;
+  display: none !important; /* 高いz-index値を持つ広告要素を非表示にする */
 }
 
-
 .login-body { /*管理者全体のボディ*/
-    background-color: #ffefd5;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    color: rgb(84, 196, 99);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
-  
-  
-  html {
-    overflow: hidden; /*隠す*/
-  }
-  
-  .login-container { /*ログインの白枠*/
-    margin-top: 120px;
-    margin-bottom: auto;
-    background-color: #fff;
-    padding: 20px;
-    width: 450px;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  .login-ji {
-    text-align: center;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    color: black;
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input { /*入力欄*/
-    padding: 10px 10px;
-    border: 2px solid rgb(84, 196, 99);;
-    border-radius: 10px;
-    font-size: 16px;
-  }
-  
-  input::placeholder { /*リンクと思われし場所*/
-    color: rgb(89, 208, 247);
-  }
-  
-  input:focus {
-    outline: none;
-    border-color: rgb(84, 196, 99);
-    box-shadow: 0 0 5px rgba(255, 192, 203, 0.5);
-  }
-  
-  #login {
-    margin-top: 10px;
-    width: 50%;
-    padding: 10px;
-    background-color: rgb(84, 196, 99);
-    color: white;
-    border: none;
-    border-radius: 2px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    font-size: 20px;
-  }
-  
-  
-  #login:hover {
-    background-color: rgb(48, 158, 63);
-  }
-  
-  .character {
-    width: 150px;
-    margin-bottom: 20px;
-  }
-  
-  .message-red {
-    color: red;
-  }
+  background-color: #ffefd5; /* 背景色を薄いクリーム色に設定 */
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* フォントにComic Sans MSを使用 */
+  color: rgb(84, 196, 99); /* テキストカラーを緑色に設定 */
+  min-height: 100vh; /* 最小高さをビューの高さに合わせる */
+  display: flex; /* フレックスボックスレイアウト */
+  justify-content: center; /* コンテンツを水平方向に中央揃え */
+  align-items: center; /* コンテンツを垂直方向に中央揃え */
+  overflow: hidden; /* コンテンツがはみ出さないようにする */
+}
+
+html {
+  overflow: hidden; /* スクロールバーを非表示にする */
+}
+
+.login-container { /*ログインの白枠*/
+  margin-top: 120px; /* 上に120pxのマージンを設定 */
+  margin-bottom: auto; /* 下のマージンを自動調整 */
+  background-color: #fff; /* 背景色を白に設定 */
+  padding: 20px; /* パディングを20pxに設定 */
+  width: 450px; /* 幅を450pxに設定 */
+  border-radius: 20px; /* 角を丸くする */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* わずかな影を付けて立体感を出す */
+  text-align: center; /* テキストを中央揃え */
+}
+
+.login-ji {
+  text-align: center; /* テキストを中央揃え */
+}
+
+.form-group {
+  margin-bottom: 15px; /* 下部に15pxのマージンを設定 */
+}
+
+label {
+  color: black; /* ラベルの色を黒に設定 */
+  display: block; /* ブロック要素として表示 */
+  margin-bottom: 5px; /* 下部に5pxのマージンを設定 */
+}
+
+input { /*入力欄*/
+  padding: 10px 10px; /* 上下左右10pxのパディングを設定 */
+  border: 2px solid rgb(84, 196, 99); /* 緑色のボーダーを2px設定 */
+  border-radius: 10px; /* 角を10pxの半径で丸くする */
+  font-size: 16px; /* フォントサイズを16pxに設定 */
+}
+
+input::placeholder { /* プレースホルダーテキスト */
+  color: rgb(89, 208, 247); /* プレースホルダーの色を水色に設定 */
+}
+
+input:focus {
+  outline: none; /* フォーカス時のアウトラインを消す */
+  border-color: rgb(84, 196, 99); /* フォーカス時にボーダーの色を緑色に変更 */
+  box-shadow: 0 0 5px rgba(255, 192, 203, 0.5); /* 薄いピンク色のぼかし効果 */
+}
+
+#login {
+  margin-top: 10px; /* 上部に10pxのマージンを設定 */
+  width: 50%; /* 幅を親要素の50%に設定 */
+  padding: 10px; /* パディングを10pxに設定 */
+  background-color: rgb(84, 196, 99); /* ボタンの背景色を緑色に設定 */
+  color: white; /* テキスト色を白に設定 */
+  border: none; /* ボーダーを非表示に設定 */
+  border-radius: 2px; /* 角を少し丸くする */
+  cursor: pointer; /* カーソルをポインターに変更 */
+  font-weight: bold; /* フォントを太字に設定 */
+  transition: background-color 0.3s ease; /* 背景色の変化にスムーズな遷移を追加 */
+  font-size: 20px; /* フォントサイズを20pxに設定 */
+}
+
+#login:hover {
+  background-color: rgb(48, 158, 63); /* ホバー時にボタンの背景色を暗く変更 */
+}
+
+.character {
+  width: 150px; /* 幅を150pxに設定 */
+  margin-bottom: 20px; /* 下部に20pxのマージンを設定 */
+}
+
+.message-red {
+  color: red; /* テキストの色を赤に設定 */
+}

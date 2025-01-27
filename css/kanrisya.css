@@ -1,139 +1,140 @@
-/*  広告を破壊 */
+/* 広告を破壊 */
 div[style*="z-index: 2147483647"] {
-    display: none !important;
+    display: none !important; /* 広告やポップアップを非表示にする */
 }
 
-
-body { /*ページ全体*/
-    background-color: #ffefd5;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    padding: 20px;
+body { /* ページ全体 */
+    background-color: #ffefd5; /* 背景色を薄いクリーム色に設定 */
+    margin: 0; /* ページのマージンをリセット */
+    padding: 0; /* ページのパディングをリセット */
+    display: flex; /* コンテンツをflexboxで配置 */
+    justify-content: center; /* 中央に配置 */
+    align-items: flex-start; /* コンテンツを上部に揃える */
+    min-height: 100vh; /* ビューポートの高さを最大に設定 */
+    padding: 20px; /* ページに余白を設定 */
 }
 
-.container { /*白枠*/
-    font-family: 'Arial', sans-serif;
-    width: 100%;
-    max-width: 1000px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-top: calc(100px + 30px);
+.container { /* 白枠 */
+    font-family: 'Arial', sans-serif; /* フォント設定 */
+    width: 100%; /* コンテナの幅を100%に設定 */
+    max-width: 1000px; /* 最大幅を1000pxに設定 */
+    background-color: #fff; /* 背景色を白に設定 */
+    padding: 20px; /* 内側の余白を設定 */
+    border-radius: 8px; /* 角を丸く設定 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* ボックスに影をつける */
+    margin-top: calc(100px + 30px); /* 上部のマージンを設定 */
 }
 
-h2 { /*テキスト*/
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 1.5em;
-    color: #333;
+h2 { /* テキスト */
+    text-align: center; /* テキストを中央揃え */
+    margin-bottom: 20px; /* 下部に余白を設定 */
+    font-size: 1.5em; /* フォントサイズを設定 */
+    color: #333; /* テキストカラーを暗い灰色に設定 */
 }
 
-form { /*ソートの同じ横列のエリア*/
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+form { /* ソートの同じ横列のエリア */
+    display: flex; /* 横並びに配置 */
+    justify-content: center; /* 中央に配置 */
+    margin-bottom: 20px; /* 下部に余白を設定 */
 }
 
-label { /*表の頭の項目*/
-    font-weight: bold;
-    margin-right: 10px;
+label { /* 表の頭の項目 */
+    font-weight: bold; /* 太字に設定 */
+    margin-right: 10px; /* 右側に余白を設定 */
 }
 
-select, button { /*プルダウンメニュー*/
-    padding: 8px 12px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    font-size: 1em;
+select, button { /* プルダウンメニューとボタン */
+    padding: 8px 12px; /* 内側の余白を設定 */
+    border-radius: 4px; /* 角を丸く設定 */
+    border: 1px solid #ccc; /* 枠線の色を設定 */
+    font-size: 1em; /* フォントサイズを設定 */
 }
 
-button { /*ソートボタン*/
-    background-color: rgb(84, 196, 99);
-    color: white;
-    border: none;
-    margin-left: 10px;
-    cursor: pointer;
+button { /* ソートボタン */
+    background-color: rgb(84, 196, 99); /* ボタンの背景色 */
+    color: white; /* テキストカラーを白に設定 */
+    border: none; /* 枠線を削除 */
+    margin-left: 10px; /* 左側に余白を設定 */
+    cursor: pointer; /* カーソルをポインターに変更 */
 }
 
-button:hover { 
-    background-color: rgb(48, 158, 63);
+button:hover { /* ボタンにホバー時のスタイル */
+    background-color: rgb(48, 158, 63); /* ホバー時の背景色を設定 */
 }
 
-table { /*管理表*/
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+table { /* 管理表 */
+    width: 100%; /* テーブル幅を100%に設定 */
+    border-collapse: collapse; /* 枠線を重ねて表示 */
+    margin-top: 20px; /* 上部に余白を設定 */
 }
 
-th, td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+th, td { /* テーブルのセル */
+    padding: 10px; /* セルの内側に余白を設定 */
+    text-align: left; /* テキストを左揃え */
+    border-bottom: 1px solid #ddd; /* 下部の枠線を設定 */
 }
 
-th {
-    background-color: #f4f4f4;
+th { /* ヘッダ行 */
+    background-color: #f4f4f4; /* ヘッダ行の背景色を設定 */
 }
 
-tr:nth-child(even) {
-    background-color: #f9f9f9;
+tr:nth-child(even) { /* 偶数行 */
+    background-color: #f9f9f9; /* 偶数行の背景色を設定 */
 }
 
-tr:hover {
-    background-color: #f1f1f1;
+tr:hover { /* 行にカーソルを合わせた時 */
+    background-color: #f1f1f1; /* 背景色を薄く変更 */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) { /* スマートフォンなどの小さい画面用のスタイル */
     body {
-        padding: 10px;
+        padding: 10px; /* 内側の余白を少なく設定 */
     }
 
     .container {
-        padding: 15px;
+        padding: 15px; /* コンテナのパディングを少なく設定 */
     }
 
     form {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* フォームの項目を縦並びに設定 */
+        align-items: center; /* アイテムを中央揃え */
     }
 
     select, button {
-        width: 100%;
-        margin-bottom: 10px;
+        width: 100%; /* 幅を100%に設定 */
+        margin-bottom: 10px; /* 下部に余白を設定 */
     }
 
     table {
-        font-size: 0.9em;
+        font-size: 0.9em; /* フォントサイズを少し小さく設定 */
     }
 }
-.pagination {
-    margin-top: 20px;
-    text-align: center;
+
+.pagination { /* ページネーション */
+    margin-top: 20px; /* 上部に余白を設定 */
+    text-align: center; /* 中央揃え */
 }
 
-.pagination a {
-    margin: 0 5px;
-    padding: 5px 10px;
-    text-decoration: none;
-    color: #000;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+.pagination a { /* ページネーションのリンク */
+    margin: 0 5px; /* 左右に余白を設定 */
+    padding: 5px 10px; /* 内側に余白を設定 */
+    text-decoration: none; /* 下線を削除 */
+    color: #000; /* テキストカラーを黒に設定 */
+    border: 1px solid #ccc; /* 枠線の色を設定 */
+    border-radius: 4px; /* 角を丸く設定 */
+    transition: background-color 0.3s; /* 背景色の変更にトランジションを追加 */
 }
 
-.pagination .current-page {
-    margin: 0 5px;
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: white;
-    border: 1px solid #007bff;
-    border-radius: 4px;
+.pagination .current-page { /* 現在のページのスタイル */
+    margin: 0 5px; /* 左右に余白を設定 */
+    padding: 5px 10px; /* 内側に余白を設定 */
+    background-color: #007bff; /* 背景色を青に設定 */
+    color: white; /* テキストカラーを白に設定 */
+    border: 1px solid #007bff; /* 枠線を青に設定 */
+    border-radius: 4px; /* 角を丸く設定 */
 }
-.hidden {
+
+.hidden { /* 非表示 */
     visibility: hidden; /* 要素を非表示にし、レイアウト上には残す */
 }
 
@@ -141,20 +142,22 @@ tr:hover {
 .new-users-box {
     background-color: #f0f8ff; /* 明るい青の背景色 */
     border-left: 5px solid #1e90ff; /* 強調する青色のライン */
-    padding: 15px;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    border-radius: 8px;
+    padding: 15px; /* 内側の余白を設定 */
+    margin-bottom: 20px; /* 下部に余白を設定 */
+    display: flex; /* フレックスボックスで配置 */
+    align-items: center; /* 中央揃え */
+    border-radius: 8px; /* 角を丸く設定 */
     font-size: 1rem; /* フォントサイズを小さめに調整 */
 }
+
 .new-users-box .icon {
-    font-size: 1.5rem;
-    margin-right: 10px;
-    color: #1e90ff; /* アイコン色を青に統一 */
+    font-size: 1.5rem; /* アイコンのサイズを設定 */
+    margin-right: 10px; /* アイコンとテキストの間に余白を設定 */
+    color: #1e90ff; /* アイコンの色を青に設定 */
 }
+
 .new-users-box .count {
-    font-weight: bold;
-    font-size: 1.4rem; /* 数字をやや強調 */
-    color: #333;
+    font-weight: bold; /* 数字を太字に設定 */
+    font-size: 1.4rem; /* 数字のフォントサイズを強調 */
+    color: #333; /* 数字の色を暗い灰色に設定 */
 }

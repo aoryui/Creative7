@@ -1,6 +1,6 @@
 /* 広告を破壊 */
 div[style*="z-index: 2147483647"] {
-    display: none !important;
+    display: none !important; /* 高いz-indexを持つ要素（広告等）を非表示にする */
 }
 
 /* 全体のフォントと背景 */
@@ -12,6 +12,7 @@ body {
     padding-top: 60px; /* ヘッダーの高さ分余白を追加 */
 }
 
+/* フレックスボックスを使った中央配置 */
 .border-frame{
     display: flex; /* フレックスボックスを有効化 */
     flex-direction: column;
@@ -23,6 +24,7 @@ body {
     min-width: 400px;
 }
 
+/* 内部の白い背景ボックス */
 .flex-inner[data-box-color="white"] {
     background: #fff;
     border-radius: 20px;
@@ -84,13 +86,10 @@ h1 {
     text-decoration: none; /* 下線を消す */
     border-radius: 8px; /* ボタンの角を丸く */
     font-weight: bold; /* テキストを太字に */
-   
     text-align: center; /* テキストを中央揃え */
     transition: background-color 0.3s ease, transform 0.2s ease; /* アニメーションを追加 */
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* ボタンに影を追加 */
 }
-
-
 
 /* リンクボタンのホバー時 */
 #tri a:hover {

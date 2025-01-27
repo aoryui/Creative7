@@ -1,109 +1,117 @@
-/*  広告を破壊 */
+/* 広告を非表示にするためのスタイル指定 */
+/* 特定のz-indexを持つ要素を対象に、完全に非表示にする */
 div[style*="z-index: 2147483647"] {
     display: none !important;
 }
 
-
-/* 基本レイアウトのスタイル */
+/* 基本レイアウトのスタイル設定 */
+/* 画面幅が1920px以下の場合に適用されるメディアクエリ */
 @media screen and (max-width: 1920px) {
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    /* 全要素の基本リセットスタイル */
+    * {
+        margin: 0; /* 要素の外側の余白を0にリセット */
+        padding: 0; /* 要素の内側の余白を0にリセット */
+        box-sizing: border-box; /* 要素の幅と高さにパディングとボーダーを含める */
+    }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-}
+    /* ページ全体のスタイル */
+    body {
+        font-family: Arial, sans-serif; /* フォントをArialに設定 */
+        background-color: #f4f4f4; /* 背景色を薄いグレーに設定 */
+    }
 
-header {
-    background-color: #333;
-    padding: 20px 0;
-    position: relative;
-}
+    /* ヘッダーのスタイル */
+    header {
+        background-color: #333; /* ヘッダーの背景色を黒に設定 */
+        padding: 20px 0; /* 上下に20pxの余白を設定 */
+        position: relative; /* 相対位置を設定 */
+    }
 
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
+    /* コンテナのスタイル */
+    .container {
+        width: 100%; /* コンテナの幅を全体に広げる */
+        max-width: 1200px; /* 最大幅を1200pxに制限 */
+        margin: 0 auto; /* コンテナを中央揃えにする */
+        padding: 0 15px; /* 横方向に15pxの余白を設定 */
+    }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-}
+    /* ナビゲーションメニューのスタイル */
+    nav ul {
+        list-style: none; /* リストのスタイルを削除 */
+        display: flex; /* フレックスボックスを使用 */
+        justify-content: center; /* メニュー項目を中央揃え */
+    }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px;
-}
+    nav ul li a {
+        color: #fff; /* テキスト色を白に設定 */
+        text-decoration: none; /* 下線を削除 */
+        padding: 10px; /* 内側に余白を設定 */
+    }
 
-.kan-right {
-    position: absolute;
-    top: 13px;
-    right: 20px;
-    background-color: rgb(84, 196, 99);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 0.9em;
-    padding: 8px 18px;
-}
+    /* 右上に配置されるボタンのスタイル */
+    .kan-right {
+        position: absolute; /* 絶対位置を指定 */
+        top: 13px; /* 上からの位置を調整 */
+        right: 20px; /* 右からの位置を調整 */
+        background-color: rgb(84, 196, 99); /* ボタンの背景色を緑に設定 */
+        color: #fff; /* テキスト色を白に設定 */
+        text-decoration: none; /* 下線を削除 */
+        border-radius: 5px; /* ボタンの角を丸くする */
+        font-size: 0.9em; /* フォントサイズを少し小さく設定 */
+        padding: 8px 18px; /* ボタン内の余白を調整 */
+    }
 
-.kan-right:hover {
-    background-color: rgb(60, 148, 74);
-}
+    .kan-right:hover {
+        background-color: rgb(60, 148, 74); /* ホバー時に背景色を暗い緑に変更 */
+    }
 
-.hero {
-    margin-top: 50px;
-    max-height: 600px;
-    color: #000;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 0 15px;
-}
+    /* ヒーローセクションのスタイル */
+    .hero {
+        margin-top: 50px; /* 上に余白を設定 */
+        max-height: 600px; /* 最大の高さを設定 */
+        color: #000; /* テキスト色を黒に設定 */
+        text-align: center; /* 中央揃え */
+        display: flex; /* フレックスボックスを使用 */
+        justify-content: center; /* 縦方向に中央揃え */
+        align-items: center; /* 横方向に中央揃え */
+        flex-direction: column; /* 子要素を縦方向に配置 */
+        padding: 0 15px; /* 横方向の余白を設定 */
+    }
 
+    .hero h1 {
+        font-size: 2.5em; /* 見出しのフォントサイズを設定 */
+        margin-bottom: 10px; /* 下に余白を設定 */
+    }
 
-.hero h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-}
+    .hero p {
+        font-size: 1.2em; /* 段落のフォントサイズを設定 */
+        margin-bottom: 20px; /* 下に余白を設定 */
+    }
 
-.hero p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-}
+    /* ロゴ画像のスタイル */
+    .logo-img {
+        position: relative; /* 相対位置を設定 */
+        top: -20px; /* 上に20px移動 */
+        left: 100px; /* 左に100px移動 */
+        max-width: 400px; /* 最大幅を400pxに制限 */
+        height: auto; /* 高さを自動調整 */
+    }
 
-.logo-img {
-    position: relative;
-    top: -20px;
-    left: 100px;
-    max-width: 400px;
-    height: auto;
-}
+    /* ボタンのスタイル */
+    .hero .btn {
+        position: relative; /* 相対位置を設定 */
+        top: 20px; /* 上に20px移動 */
+        left: -200px; /* 左に200px移動 */
+        background-color: rgb(89, 208, 247); /* ボタンの背景色を青に設定 */
+        color: #fff; /* テキスト色を白に設定 */
+        padding: 12px 25px; /* ボタン内の余白を調整 */
+        text-decoration: none; /* 下線を削除 */
+        border-radius: 10px; /* ボタンの角を丸くする */
+        font-size: 1.2em; /* フォントサイズを設定 */
+        margin-top: 20px; /* 上に余白を設定 */
+    }
 
-.hero .btn {
-    position: relative;
-    top: 20px;
-    left: -200px;
-    background-color: rgb(89, 208, 247);
-    color: #fff;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 10px;
-    font-size: 1.2em;
-    margin-top: 20px;
-}
-
-.hero .btn:hover {
-    background-color: rgb(60, 158, 202);
-}
-
+    .hero .btn:hover {
+        background-color: rgb(60, 158, 202); /* ホバー時に背景色を暗く変更 */
+    }
 }

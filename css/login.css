@@ -1,93 +1,93 @@
-/*  広告を破壊 */
+/* 広告を破壊 */
 div[style*="z-index: 2147483647"] {
-  display: none !important;
+  display: none !important; /* 広告の要素を非表示にして、重なることを防ぐ */
 }
-
 
 /* 背景色とフォントスタイル */
 .login-body {
-  background-color: #ffefd5;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  color: rgb(89, 208, 247);
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  background-color: #ffefd5; /* 背景色：淡いピンク色 */
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* フォント：カジュアルな手書き風 */
+  color: rgb(89, 208, 247); /* テキストの色：明るい青 */
+  min-height: 100vh; /* 最低高さをビューの高さに設定 */
+  display: flex; /* フレックスボックスで中央配置 */
+  justify-content: center; /* 横方向中央配置 */
+  align-items: center; /* 縦方向中央配置 */
+  overflow: hidden; /* コンテンツがビューを超えてもスクロールしない */
 }
 
 html {
-  overflow: hidden;
+  overflow: hidden; /* ページ全体でスクロールを禁止 */
 }
 
 /* ログインコンテナのスタイル */
 .login-container {
-  margin-top: 120px;
-  margin-bottom: auto;
-  background-color: #fff;
-  width: 450px;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  margin-top: 120px; /* 上部にスペースを追加 */
+  margin-bottom: auto; /* 下部を自動調整 */
+  background-color: #fff; /* 背景色：白 */
+  width: 450px; /* コンテナの幅 */
+  border-radius: 20px; /* 角を丸く */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 薄い影を追加 */
+  text-align: center; /* テキスト中央揃え */
 }
 
 .login-ji {
-  text-align: center;
+  text-align: center; /* 文字を中央に配置 */
 }
 
 /* フォームグループの設定 */
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 15px; /* フォーム項目間にスペース */
 }
 
 label {
-  color: black;
-  display: block;
-  margin-bottom: 5px;
+  color: black; /* ラベルの色：黒 */
+  display: block; /* ラベルをブロック要素として表示 */
+  margin-bottom: 5px; /* ラベル下部にスペース */
 }
 
 input {
-  padding: 10px 10px;
-  border: 2px solid rgb(89, 208, 247);
-  border-radius: 10px;
-  font-size: 16px;
+  padding: 10px 10px; /* 内側の余白 */
+  border: 2px solid rgb(89, 208, 247); /* 境界線の色 */
+  border-radius: 10px; /* 角を丸く */
+  font-size: 16px; /* フォントサイズ */
 }
 
 input::placeholder {
-  color: rgb(89, 208, 247);
+  color: rgb(89, 208, 247); /* プレースホルダーの色 */
 }
 
 input:focus {
-  outline: none;
-  border-color: rgb(89, 160, 247);
-  box-shadow: 0 0 5px rgba(255, 192, 203, 0.5);
+  outline: none; /* フォーカス時のアウトラインを消す */
+  border-color: rgb(89, 160, 247); /* フォーカス時の境界線色 */
+  box-shadow: 0 0 5px rgba(255, 192, 203, 0.5); /* フォーカス時にぼんやりしたシャドウを追加 */
 }
 
 /* ログインボタンのスタイル */
 #login {
-  margin-top: 10px;
-  width: 180px;
-  padding: 10px;
-  background-color: rgb(89, 208, 247);
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-  font-size: 20px;
+  margin-top: 10px; /* 上部にスペース */
+  width: 180px; /* ボタンの幅 */
+  padding: 10px; /* ボタン内の余白 */
+  background-color: rgb(89, 208, 247); /* ボタンの背景色 */
+  color: white; /* テキストの色：白 */
+  border: none; /* 境界線なし */
+  border-radius: 4px; /* 角を少し丸く */
+  cursor: pointer; /* マウスカーソルをポインタに */
+  font-weight: bold; /* 太字 */
+  transition: background-color 0.3s ease; /* 背景色の変更にスムーズなアニメーション */
+  font-size: 20px; /* フォントサイズ */
 }
 
 #login:hover {
-  background-color: #68B7F0;
+  background-color: #68B7F0; /* ホバー時の背景色 */
 }
 
+/* キャラクター画像のサイズ */
 .character {
-  width: 150px;
-  margin-bottom: 20px;
+  width: 150px; /* 画像の幅 */
+  margin-bottom: 20px; /* 画像下部にスペース */
 }
 
+/* エラーメッセージのスタイル */
 .message-red {
-  color: red;
+  color: red; /* テキストの色：赤 */
 }
-

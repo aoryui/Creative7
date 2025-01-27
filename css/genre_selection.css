@@ -1,144 +1,157 @@
-/* 広告を破壊 */
+/* 特定の広告要素を非表示にするスタイル */
 div[style*="z-index: 2147483647"] {
   display: none !important;
 }
 
+/* ページ全体の背景色を設定 */
 body {
   background-color: #ffefd5;
 }
 
+/* ボーダーフレームの基本スタイル */
 .border-frame {   
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 450px;
-  padding: 120px 200px 0;
-  box-sizing: border-box;
-  min-width: 400px;
+  min-height: 450px; /* フレームの最小高さを指定 */
+  padding: 120px 200px 0; /* 内側の余白を設定 */
+  box-sizing: border-box; /* パディングを含めたボックスサイズを計算 */
+  min-width: 400px; /* フレームの最小幅を指定 */
 }
 
+/* 白い背景を持つ内部フレーム */
 .flex-inner[data-box-color="white"] {
   background: #fff;
-  border-radius: 20px;
-  overflow: hidden;
+  border-radius: 20px; /* 角を丸くする */
+  overflow: hidden; /* 内容がはみ出さないようにする */
 }
 
+/* 見出しやフォームタイトルを中央揃えにする */
 h2, legend {
   text-align: center;
 }
 
-
-
+/* 言語リスト用のコンテナスタイル */
 .language-list-container{
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 10px; /* 要素間の隙間を設定 */
 }
 
+/* 言語以外のリストを横並びで折り返し可能に */
 .non-language-list-container {
   display: flex;
-  flex-wrap: wrap; /* 折り返しを有効化 */
+  flex-wrap: wrap; /* 要素が画面幅を超えると折り返す */
   gap: 10px; /* 要素間のスペース */
 }
 
-
-
+/* リストの基本スタイル */
 .language-list, .non-language-list {
-  list-style: none;
+  list-style: none; /* デフォルトのリストスタイルを無効化 */
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  flex-direction: column; /* 縦並びにする */
+  gap: 10px; /* 要素間の隙間を設定 */
 }
 
-
-
-/* 横並び配置用のコンテナ幅を調整 */
+/* 横並び配置用のスタイル（非言語リストアイテム） */
 .non-language-list .genre-item {
   display: inline-flex; /* 横並びにする */
   align-items: center; /* 垂直方向の中央揃え */
   gap: 10px; /* ラベルとデータの間隔を調整 */
 }
+
+/* 特定のアイテムの幅を50%に設定 */
 .non-language-list .genre-item:nth-child(1),
 .non-language-list .genre-item:nth-child(6) {
-  flex-basis: calc(50% - 20px); /* 各アイテムの幅を指定（50%の幅で調整） */
+  flex-basis: calc(50% - 20px); /* 各アイテムの幅を調整 */
   display: inline-flex; /* 横並びにする */
 }
 
+/* 特殊なクラスで位置調整 */
 .special-class {
   position: relative;
   left: 200px;
   top: -170px;
 }
 
-
-
+/* ジャンルラベルの配置を調整 */
 .genre-label {
   display: flex;
   width: 100%;
 }
 
+/* ジャンル名を左寄せにする */
 .genre-name {
   flex: 1;
   text-align: left;
 }
 
+/* ジャンル統計を右寄せにする */
 .genre-stats {
   flex: 0;
   text-align: right;
-  white-space: nowrap;
-  margin-left: 10px;
+  white-space: nowrap; /* テキストを折り返さない */
+  margin-left: 10px; /* 左側に余白を追加 */
 }
 
+/* 主ボタンのスタイル */
 .primary {
   margin-right: 20px;
   display: inline-flex; /* 横並びにする */
 }
 
+/* 副ボタンのスタイル */
 .secondary {
   margin-left: 20px;
 }
 
+/* 段落要素のスタイル */
 p {
-  margin: 0 0 10px 0;
-  text-align: center;
+  margin: 0 0 10px 0; /* 下部に余白を追加 */
+  text-align: center; /* 中央揃えにする */
 }
 
+/* 左側コンテナのスタイル */
 .contain-left {
   display: inline-block;
   margin: 0 10px;
   margin-left: 120px;
 }
 
+/* 右側コンテナのスタイル */
 .contain-right {
   display: inline-block;
   width: 400px;
   height: 225px;
 }
 
+/* 要素位置を微調整 */
 .tasukete{
   position: relative;
   left: 100px;
 }
 
+/* ボタンのスタイル */
 .button {
-  background-color: rgb(235, 118, 46);
-  color: white;
-  padding: 12px 24px;
-  font-size: 16px;
-  margin: 20px 20px 20px 10px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  display: block;
+  background-color: rgb(235, 118, 46); /* 背景色をオレンジに設定 */
+  color: white; /* テキスト色を白に設定 */
+  padding: 12px 24px; /* 内側の余白を設定 */
+  font-size: 16px; /* フォントサイズを設定 */
+  margin: 20px 20px 20px 10px; /* 外側の余白を設定 */
+  border: none; /* ボーダーをなしにする */
+  border-radius: 8px; /* ボタンを角丸にする */
+  cursor: pointer; /* カーソルをポインターに変更 */
+  display: block; /* ブロック要素にする */
   margin-left: auto;
-  margin-right: auto;
-  width: 200px;
-  transition: background-color 0.3s, transform 0.2s;
+  margin-right: auto; /* ボタンを中央揃えにする */
+  width: 200px; /* ボタンの幅を固定 */
+  transition: background-color 0.3s, transform 0.2s; /* ホバー時のアニメーションを設定 */
 }
 
+/* ボタンのホバー時のスタイル */
 .button:hover {
-  background-color: rgb(235, 118, 46);
-  transform: scale(1.05);
+  background-color: rgb(235, 118, 46); /* 背景色を維持 */
+  transform: scale(1.05); /* ボタンを少し拡大 */
 }

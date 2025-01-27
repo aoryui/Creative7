@@ -1,175 +1,197 @@
 /*  広告を破壊 */
 div[style*="z-index: 2147483647"] {
-    display: none !important;
+    display: none !important; /* 高 z-index の広告要素を非表示にする */
 }
 
+/* ページ全体の背景色を設定 */
 body {
-    background-color: #ffefd5; /* ページ全体の背景色を薄いパープルに設定 */
-    margin: 0;
-    font-family: Arial, sans-serif;
+    background-color: #ffefd5; /* 背景色を薄いピンクに設定 */
+    margin: 0; /* マージンをリセット */
+    font-family: Arial, sans-serif; /* フォントをArialに設定 */
 }
 
+/* コンテナ要素 */
 .container {
-    display: flex;
-    flex-direction: row; /* 横方向に配置 */
+    display: flex; /* フレックスボックスでレイアウト */
+    flex-direction: row; /* 横並びに配置 */
     justify-content: center; /* 水平方向に中央揃え */
     align-items: center; /* 垂直方向に中央揃え */
-    gap: 50px; /* 各要素間の間隔 */
-    margin-top: 150px;
+    gap: 50px; /* 各要素間に50pxの間隔を設定 */
+    margin-top: 150px; /* 上部に150pxの余白を設定 */
 }
 
+/* 段落のスタイル */
 p {
-    margin: 0;
-    font-size: 20px;
-    font-weight: bold;
-    width: fit-content;
+    margin: 0; /* マージンをリセット */
+    font-size: 20px; /* フォントサイズを20pxに設定 */
+    font-weight: bold; /* 太字に設定 */
+    width: fit-content; /* コンテンツに合わせて幅を調整 */
 }
 
+/* 質問リストのリンクスタイル */
 .question_list {
-    margin-top: 10px;
-    text-decoration: none;
-    color: #000;
-    border: 1px solid #000;
-    padding: 5px 10px;
-    border-radius: 5px;
-    background-color: #ffe4b5;
-    transition: background-color 0.3s;
+    margin-top: 10px; /* 上部に10pxの余白 */
+    text-decoration: none; /* 下線を消す */
+    color: #000; /* テキストカラーを黒に設定 */
+    border: 1px solid #000; /* 枠線を黒に設定 */
+    padding: 5px 10px; /* 内側の余白を設定 */
+    border-radius: 5px; /* 角を丸くする */
+    background-color: #ffe4b5; /* 背景色を淡い黄色に設定 */
+    transition: background-color 0.3s; /* 背景色変更のトランジション */
 }
 
+/* ホバー時の背景色変更 */
 .question_list:hover {
-    background-color: #f0e68c;
+    background-color: #f0e68c; /* ホバー時の背景色を変更 */
 }
 
+/* 正解選択肢のスタイル */
 .correct-choice {
-    color: red;
-    font-weight: bold;
+    color: red; /* 正解の場合の文字色を赤に設定 */
+    font-weight: bold; /* 太字に設定 */
 }
 
+/* 正解選択肢のスタイル（異なるバリエーション） */
 .correct-choice1 {
-    color: black;
+    color: black; /* 正解の場合の文字色を黒に設定 */
 }
 
+/* 画像のスタイル（質問画像と説明画像） */
 .question_image, .explanation_image {
-    max-width: 100%;
-    height: auto;
-    margin-top: 80px;
+    max-width: 100%; /* 幅を親要素に合わせる */
+    height: auto; /* 高さは自動調整 */
+    margin-top: 80px; /* 上部に80pxの余白 */
 }
 
+/* ボタンコンテナのスタイル */
 .button-container {
-    margin-top: 20px;
+    margin-top: 20px; /* 上部に20pxの余白 */
     text-align: center; /* ボタンを中央揃え */
 }
 
+/* 質問リストのボタンスタイル */
 .question_list {
-    display: inline-block; /* ボタンをインラインブロック要素に */
-    padding: 10px 20px; /* 内側の余白を調整 */
-    font-size: 16px;
-    color: white;
-    background-color: #007BFF;
-    text-decoration: none;
+    display: inline-block; /* インラインブロックでボタンを表示 */
+    padding: 10px 20px; /* 内側の余白を設定 */
+    font-size: 16px; /* フォントサイズを16pxに設定 */
+    color: white; /* 文字色を白に設定 */
+    background-color: #007BFF; /* 背景色を青に設定 */
+    text-decoration: none; /* リンクの下線を消す */
     border-radius: 5px; /* 角を丸くする */
-    border: none;
-    transition: background-color 0.3s, transform 0.2s;
+    border: none; /* ボーダーを無効化 */
+    transition: background-color 0.3s, transform 0.2s; /* 背景色変更とスケール効果のトランジション */
 }
 
+/* ホバー時の背景色変更とスケール効果 */
 .question_list:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* ホバー時に背景色を変更 */
     transform: scale(1.05); /* ホバー時に少し拡大 */
 }
 
+/* 画像を横並びに配置 */
 .images {
-    display: flex; /* 横並びに配置 */
+    display: flex; /* フレックスボックスで横並び */
     justify-content: left; /* 左寄せ */
-    gap: 20px; /* 画像間の隙間 */
+    gap: 20px; /* 画像間の隙間を設定 */
     margin-left: auto;
     margin-right: auto;
-    margin-top: -60px;
-    width: fit-content;
+    margin-top: -60px; /* 上部にマイナスの余白を設定 */
+    width: fit-content; /* 幅をコンテンツに合わせる */
 }
 
+/* 画像のスタイル */
 .question_image,
 .explanation_image {
-    width: 450px; /* 画像の幅を設定 */
-    height: auto; /* アスペクト比を維持 */
-    border: 1px solid #ccc; /* 枠線を追加 (任意) */
-    border-radius: 5px; /* 角を丸くする (任意) */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 影を追加 (任意) */
+    width: 450px; /* 幅を450pxに設定 */
+    height: auto; /* 高さは自動調整 */
+    border: 1px solid #ccc; /* 枠線を追加 */
+    border-radius: 5px; /* 角を丸くする */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 影を追加 */
     transition: transform 0.3s; /* ホバー時のアニメーション */
 }
 
+/* コンテンツエリアのスタイル */
 .content {
-    display: flex;
+    display: flex; /* フレックスボックスでレイアウト */
     justify-content: flex-start; /* 左揃え */
     gap: 30px; /* 画像と選択肢間の隙間 */
-    align-items: flex-start; /* 上に揃える */
-    margin-top: 20px;
+    align-items: flex-start; /* 上揃え */
+    margin-top: 20px; /* 上部に20pxの余白 */
 }
 
+/* 選択肢のスタイル */
 .choices {
-    display: flex;
-    flex-direction: column; /* 縦に並べる */
-    gap: 5px;
-    padding: 15px;
+    display: flex; /* フレックスボックスで縦並び */
+    flex-direction: column; /* 縦方向に並べる */
+    gap: 5px; /* 各選択肢間に隙間を設定 */
+    padding: 15px; /* 内側の余白を設定 */
 }
 
+/* フィールドセットのスタイル */
 fieldset {
-    border: 2px solid #000000;
-    padding: 10px;
-    border-radius: 5px;
-    position: absolute;
-    top: 500px;
-    left: 170px;
+    border: 2px solid #000000; /* 枠線を黒に設定 */
+    padding: 10px; /* 内側の余白を設定 */
+    border-radius: 5px; /* 角を丸くする */
+    position: absolute; /* 絶対配置 */
+    top: 500px; /* 上部に500pxの位置 */
+    left: 170px; /* 左に170pxの位置 */
 }
 
+/* レジェンドのスタイル */
 legend {
-    font-size: 16px; /* 文字サイズ */
-    font-weight: bold; /* 太字 */
-    padding: 0 10px; /* 左右の余白 */
-    color: #333; /* テキスト色 */
-    text-align: center;
+    font-size: 16px; /* フォントサイズを16pxに設定 */
+    font-weight: bold; /* 太字に設定 */
+    padding: 0 10px; /* 左右の余白を設定 */
+    color: #333; /* テキスト色を設定 */
+    text-align: center; /* 中央揃え */
 }
 
-/* モーダルの基本スタイル */
+/* モーダルのスタイル */
 #statusModal {
-    display: none;
-    position: fixed;
+    display: none; /* 初期状態では非表示 */
+    position: fixed; /* 固定位置 */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5); /* 背景を半透明の黒に */
+    z-index: 1000; /* 優先度を高く設定 */
 }
+
+/* モーダルのコンテンツ */
 .modal-content {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #fff;
-    margin: 10% auto;
+    flex-direction: column; /* 縦に並べる */
+    align-items: center; /* 中央揃え */
+    background-color: #fff; /* 背景色を白に設定 */
+    margin: 10% auto; /* 上部に10%、中央に配置 */
     padding: 20px;
     border-radius: 5px;
-    width: 50%;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 50%; /* 幅を50%に設定 */
+    text-align: center; /* 中央揃え */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 影を追加 */
 }
-/* 通常の状態（成功の場合） */
+
+/* 成功時のスタイル */
 .active {
-    color: red; /* 成功した場合の色 */
-    font-weight: bold;
+    color: red; /* 成功時の文字色を赤に設定 */
+    font-weight: bold; /* 太字に設定 */
 }
-/* 非活性状態（失敗の場合） */
+
+/* 失敗時のスタイル */
 .inactive {
-    color: gray; /* 失敗した場合の色 */
+    color: gray; /* 失敗時の文字色を灰色に設定 */
     opacity: 0.5; /* 透明度を下げる */
     pointer-events: none; /* クリックを無効化 */
 }
+
 /* モーダルの閉じるボタン */
 .close-btn {
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
+    background-color: #007BFF; /* 背景色を青に設定 */
+    color: #fff; /* 文字色を白に設定 */
+    border: none; /* ボーダーを無効化 */
     margin: 20px 0 0 0;
     padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 5px; /* 角を丸くする */
+    cursor: pointer; /* カーソルをポインタに変更 */
 }

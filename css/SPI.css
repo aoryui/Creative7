@@ -1,111 +1,111 @@
 /*  広告を破壊 */
 div[style*="z-index: 2147483647"] {
-    display: none !important;
+    display: none !important; /* 広告要素（z-indexが2147483647のもの）を非表示にする */
 }
 
 /*header関連*/
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* 全ての要素のマージン、パディングを0にし、ボックスモデルを統一 */
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: Arial, sans-serif; /* フォントをArialに設定 */
+    background-color: #f4f4f4; /* 背景色を薄いグレーに設定 */
 }
 
-
 header {
-    background-color: #333;
-    padding: 20px 0;
-    position: relative;
+    background-color: #333; /* ヘッダーの背景色をダークグレーに設定 */
+    padding: 20px 0; /* ヘッダー内の上下余白を設定 */
+    position: relative; /* ヘッダーの位置を相対位置に設定 */
 }
 
 .container {
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
+    max-width: 1200px; /* 最大幅を1200pxに設定 */
+    margin: 0 auto; /* 横方向中央揃え */
+    padding: 0 15px; /* 左右に余白を設定 */
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
+    list-style: none; /* リストのデフォルトのスタイルを削除 */
+    display: flex; /* 水平に並べるためにフレックスボックスを使用 */
+    justify-content: center; /* リストアイテムを中央に配置 */
 }
 
 nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px;
+    color: #fff; /* リンクの文字色を白に設定 */
+    text-decoration: none; /* リンクの下線を消去 */
+    padding: 10px; /* リンク内の余白を設定 */
 }
 
 .kan-right {
-    position: absolute;
+    position: absolute; /* 右上に配置 */
     top: 13px;
     right: 20px;
-    background-color: rgb(84, 196, 99);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 0.9em;
-    padding: 8px 18px;
+    background-color: rgb(84, 196, 99); /* ボタンの背景色 */
+    color: #fff; /* ボタン内の文字色を白に設定 */
+    text-decoration: none; /* ボタン内のリンクの下線を消去 */
+    border-radius: 5px; /* ボタンの角を丸くする */
+    font-size: 0.9em; /* フォントサイズを少し小さく */
+    padding: 8px 18px; /* ボタンの余白を設定 */
 }
 
 .kan-right:hover {
-    background-color: rgb(60, 148, 74);
+    background-color: rgb(60, 148, 74); /* ホバー時に背景色を変化 */
 }
 /*ここまでがheader関連*/
+
 /* メインセクションのデザイン */
 main {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 15px;
+    max-width: 1200px; /* 最大幅を1200pxに設定 */
+    margin: 20px auto; /* 上下に余白を設定し、中央揃え */
+    padding: 0 15px; /* 左右に余白を設定 */
 }
 
 /* 各セクションのスタイル */
 section {
-    background-color: #fff; /* 白い背景 */
-    margin-bottom: 20px; /* 各セクション間の余白 */
-    padding: 20px; /* 内側の余白 */
-    border-radius: 8px; /* 角丸デザイン */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 軽い影 */
+    background-color: #fff; /* 各セクションの背景色を白に設定 */
+    margin-bottom: 20px; /* セクション間の余白を設定 */
+    padding: 20px; /* セクション内の余白を設定 */
+    border-radius: 8px; /* 角を丸くする */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 軽い影を追加 */
 }
 
 /* セクションタイトル */
 section h2 {
-    font-size: 1.8em; /* 大きめのフォントサイズ */
-    color: #007BFF; /* アクセントカラーに青を採用 */
-    border-left: 5px solid #007BFF; /* 左側にラインを追加 */
-    padding-left: 10px; /* ラインと文字の間に余白 */
-    margin-bottom: 10px; /* タイトル下部のスペース */
+    font-size: 1.8em; /* タイトルのフォントサイズを大きく */
+    color: #007BFF; /* アクセントカラーに青を設定 */
+    border-left: 5px solid #007BFF; /* 左に青いラインを追加 */
+    padding-left: 10px; /* ラインとテキストの間に余白を設定 */
+    margin-bottom: 10px; /* タイトル下に余白を設定 */
 }
 
 /* テキスト部分 */
 section p {
-    font-size: 1.1em; /* 読みやすいフォントサイズ */
+    font-size: 1.1em; /* フォントサイズを少し大きく */
     line-height: 1.6; /* 行間を広げて読みやすく */
-    color: #555; /* 優しい文字色 */
-    margin-bottom: 10px; /* 各段落の間隔 */
+    color: #555; /* 文字色を優しいグレーに設定 */
+    margin-bottom: 10px; /* 各段落の間隔を設定 */
 }
 
 /* リストのスタイル */
 section ul {
-    list-style: disc; /* 通常の箇条書きスタイル */
-    padding-left: 20px; /* 左側に余白 */
-    margin: 10px 0; /* 上下に少し余白 */
+    list-style: disc; /* 通常の丸い箇条書きスタイル */
+    padding-left: 20px; /* 左に余白を設定 */
+    margin: 10px 0; /* 上下に余白を設定 */
 }
 
 section ul li {
-    margin-bottom: 5px; /* リスト項目の間隔 */
-    font-size: 1.1em; /* リスト項目も少し大きめに */
+    margin-bottom: 5px; /* リスト項目の間隔を設定 */
+    font-size: 1.1em; /* リスト項目のフォントサイズを少し大きく */
 }
 
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
     section {
-        padding: 15px; /* モバイルでは余白を調整 */
+        padding: 15px; /* モバイルビューではセクション内の余白を調整 */
     }
 
     section h2 {
@@ -114,6 +114,6 @@ section ul li {
 
     section p,
     section ul li {
-        font-size: 1em; /* テキストを少し縮小 */
+        font-size: 1em; /* テキストサイズを少し縮小 */
     }
 }

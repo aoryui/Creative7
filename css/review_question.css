@@ -1,253 +1,253 @@
-/*  広告を破壊 */
+/* 広告を破壊 */
 div[style*="z-index: 2147483647"] {
-    display: none !important;
+    display: none !important; /* 高いz-indexを持つ広告要素を非表示に */
 }
 
+/* ページ全体の設定 */
 html {
-    height: 100%;
-    overflow: scroll; /* スクロールを有効に */;
-    overflow-x: hidden;
+    height: 100%; /* 高さを100%に設定 */
+    overflow: scroll; /* スクロールを常に表示 */
+    overflow-x: hidden; /* 横スクロールを無効に */
 }
 
-.top-contents{
-    margin: 10 0 0 16px;
-    line-height: 5px;
+.top-contents {
+    margin: 10 0 0 16px; /* 上、左にマージンを追加 */
+    line-height: 5px; /* 行間を設定 */
 }
 
 body {
-    min-height: 100%;
-    background-color: #ffefd5;
+    min-height: 100%; /* 最小高さを100%に設定 */
+    background-color: #ffefd5; /* 背景色を設定 */
 }
 
-button{
-    background-color: #00aaff;    /* ボタンの背景色（必要に応じて調整） */
+/* ボタンのスタイル */
+button {
+    background-color: #00aaff; /* ボタンの背景色 */
     color: #fff; /* ボタンの文字色 */
     display: flex;
-    border: none;
-    cursor: pointer;
+    border: none; /* ボーダーをなしに */
+    cursor: pointer; /* カーソルをポインタに */
     justify-content: center; /* 水平方向中央揃え */
-    align-items: center; /* 垂直方向中央揃え（必要に応じて） */
-    height: 60px;
-    width: 130px;
-    margin: 10px;
+    align-items: center; /* 垂直方向中央揃え */
+    height: 60px; /* 高さを60pxに設定 */
+    width: 130px; /* 幅を130pxに設定 */
+    margin: 10px; /* ボタン周りにマージンを追加 */
     position: relative;
-    top: 100px;
-    left: 1050px;
+    top: 100px; /* 上から100pxの位置に設定 */
+    left: 1050px; /* 左から1050pxの位置に設定 */
 }
 
+/* コンテンツのレイアウト */
 .content {
     display: flex;
-    justify-content: center;
-    width: 100%;
-    padding: 20px;
-    flex-grow: 1;
-    box-sizing: border-box;
-    /* コンテナの相対位置を指定 */
+    justify-content: center; /* コンテンツを中央揃え */
+    width: 100%; /* 幅100% */
+    padding: 20px; /* パディングを追加 */
+    flex-grow: 1; /* コンテンツを拡張可能に */
+    box-sizing: border-box; /* ボックスのサイズをパディングを含めて設定 */
 }
 
-/* 親要素の幅を制限して、画像の拡大を防ぐ */
+/* コンテンツを左右に分ける */
 .center-contents {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start; /* 全体は上寄せ */
+    justify-content: space-between; /* アイテム間をスペースで分ける */
+    align-items: flex-start; /* 上寄せ */
     padding-top: 20px;
-    padding: 30px 40px;
+    padding: 30px 40px; /* 内側のパディング */
 }
 
-
-
+/* フッター設定 */
 .footer {
-    bottom: auto;
+    bottom: auto; /* フッターを自動位置に設定 */
 }
 
 #timer-container {
-    bottom: 100px;
+    bottom: 100px; /* タイマーコンテナの位置を調整 */
 }
 
+/* 問題部分のスタイル */
 .question {
-    flex-grow: 1;
-    margin: 0 0 0 auto;
+    flex-grow: 1; /* コンテンツ内で拡張可能 */
+    margin: 0 0 0 auto; /* 右寄せ */
 }
 
 .question-text {
-    background-color: #e0e0e0;
-    padding: 10px;
-    border-radius: 30px;
-    text-align: center;
-    /* テキストを右揃え */
-    margin-left: 310px;
+    background-color: #e0e0e0; /* 背景色を設定 */
+    padding: 10px; /* パディングを設定 */
+    border-radius: 30px; /* 丸みをつける */
+    text-align: center; /* テキストを中央揃え */
+    margin-left: 310px; /* 左にマージン */
 }
 
+/* 画像の位置設定 */
 .question_img {
-    width: 500px;
-    margin-top: 30px;
-    position: absolute;
-    top: 200px;
-    left: 70px;
+    width: 500px; /* 画像幅 */
+    margin-top: 30px; /* 上部にマージン */
+    position: absolute; /* 絶対位置 */
+    top: 200px; /* 上から200px */
+    left: 70px; /* 左から70px */
 }
 
-.question p {
-    left: 300px;
-}
-
+/* 選択肢のスタイル */
 .choices {
     display: flex;
-    flex-direction: column;
-    margin-bottom: 40px;
-    margin-top: 250px;
-    margin-right: 200px;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: center;
-    align-items: stretch;
-    max-width: 300px;
+    flex-direction: column; /* 縦並び */
+    margin-bottom: 40px; /* 下部にマージン */
+    margin-top: 250px; /* 上部にマージン */
+    margin-right: 200px; /* 右側にマージン */
+    flex-wrap: nowrap; /* アイテムの折り返しを無効に */
+    align-content: center; /* 中央揃え */
+    justify-content: center; /* 中央揃え */
+    align-items: stretch; /* アイテムを引き伸ばす */
+    max-width: 300px; /* 最大幅設定 */
 }
 
 .choice {
-    margin-bottom: 10px;
-    margin-right: 50px;
+    margin-bottom: 10px; /* 下部にマージン */
+    margin-right: 50px; /* 右にマージン */
     display: flex;
-    align-items: center;
-    background-color: #d3d3d3;
-    padding: 5px;
-    border-radius: 5px;
-    cursor: pointer;
+    align-items: center; /* 中央揃え */
+    background-color: #d3d3d3; /* 背景色を設定 */
+    padding: 5px; /* パディングを設定 */
+    border-radius: 5px; /* 角を丸める */
+    cursor: pointer; /* カーソルをポインタに */
 }
 
 .choice input {
-    margin-right: 10px;
-    cursor: pointer;
+    margin-right: 10px; /* 入力とラベルの間にマージン */
+    cursor: pointer; /* カーソルをポインタに */
 }
 
 .choice label {
-    margin: 0;
-    flex-grow: 1;
-    cursor: pointer;
+    margin: 0; /* マージンをなくす */
+    flex-grow: 1; /* 左右に広がる */
+    cursor: pointer; /* カーソルをポインタに */
 }
 
+/* タイマーのラベル */
 .timer-label {
-    position: absolute;
-    /* 絶対位置に変更 */
-    top: 120px;
-    /* 調整が必要なら変更 */
-    right: 330px;
-    /* 調整が必要なら変更 */
+    position: absolute; /* 絶対位置 */
+    top: 120px; /* 上から120px */
+    right: 330px; /* 右から330px */
 }
 
+/* タイマーコンテナ */
 .timer-container {
-    width: 50%;
-    height: 20px;
-    margin-top: 20px;
-    position: absolute;
-    /* 絶対位置に変更 */
-    top: 150px;
-    /* 調整が必要なら変更 */
-    left: 70px;
-    /* 調整が必要なら変更 */
-    border: 1px solid #aaa;
-    transition: background-color 0.1s linear;
+    width: 50%; /* 幅50% */
+    height: 20px; /* 高さ20px */
+    margin-top: 20px; /* 上部にマージン */
+    position: absolute; /* 絶対位置 */
+    top: 150px; /* 上から150px */
+    left: 70px; /* 左から70px */
+    border: 1px solid #aaa; /* 境界線の色 */
+    transition: background-color 0.1s linear; /* 背景色の遷移 */
 }
 
+/* タイマーの進行バー */
 .timer-bar {
-    width: 0;
-    height: 100%;
-    background-color: #ddd;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: width 0.1s linear;
+    width: 0; /* 初期幅は0 */
+    height: 100%; /* 高さは親要素と同じ */
+    background-color: #ddd; /* バーの色 */
+    position: absolute; /* 絶対位置 */
+    top: 0; /* 上から0px */
+    left: 0; /* 左から0px */
+    transition: width 0.1s linear; /* 幅の遷移 */
 }
 
+/* 次のボタンのスタイル */
 .next-button {
-    padding: 10px 20px;
-    background-color: #00aaff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    position: absolute;
-    bottom: 30px;
-    /* ボタンの位置を調整 */
-    position: relative;
-    left: 1000px;
+    padding: 10px 20px; /* 内側にパディング */
+    background-color: #00aaff; /* 背景色 */
+    color: #fff; /* 文字色 */
+    text-decoration: none; /* 装飾なし */
+    border-radius: 5px; /* 角を丸める */
+    position: absolute; /* 絶対位置 */
+    bottom: 30px; /* 下から30px */
+    left: 1000px; /* 左から1000px */
 }
 
-.next-button:hover{
-    color: #0c0c0c; /* ホバー時の背景色 */
-    background-color: #898989;  /* ホバー時のテキスト色 */
+/* 次のボタンのホバー時 */
+.next-button:hover {
+    color: #0c0c0c; /* ホバー時の文字色 */
+    background-color: #898989;  /* ホバー時の背景色 */
 }
 
+/* フッターの設定 */
 .footer p {
-    margin-left: 920px;
+    margin-left: 920px; /* 左にマージン */
 }
 
-
-
+/* 質問カウントの設定 */
 #question_count {
-    margin-top: 100px;
-    margin-left: -150px;
+    margin-top: 100px; /* 上にマージン */
+    margin-left: -150px; /* 左にマージン */
 }
 
-#count{
-    margin-left: -150px;
+/* カウントの設定 */
+#count {
+    margin-left: -150px; /* 左にマージン */
 }
 
 /* モーダルのスタイル */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
+    display: none; /* 初期状態は非表示 */
+    position: fixed; /* 固定位置 */
+    z-index: 1; /* 優先度を設定 */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto; /* 自動スクロール */
+    background-color: rgba(0, 0, 0, 0.5); /* 背景色 */
 }
 
+/* モーダルの内容 */
 .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 30%;
-    height: 50%;
+    background-color: #fefefe; /* 背景色 */
+    margin: 15% auto; /* 上から15%の位置に自動配置 */
+    padding: 20px; /* パディング */
+    border: 1px solid #888; /* 境界線 */
+    width: 30%; /* 幅を30% */
+    height: 50%; /* 高さ50% */
 }
 
+/* モーダルのクローズボタン */
 .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+    color: #aaa; /* 色設定 */
+    float: right; /* 右寄せ */
+    font-size: 28px; /* 文字サイズ */
+    font-weight: bold; /* 太字 */
 }
 
+/* クローズボタンのホバー時 */
 .close:hover,
 .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}  
-
-.button {
-    margin: 0 10px;
-    padding: 10px 20px; /* 内側の余白を減らして小さく */
-    background-color: #333; /* ボタンの背景色（必要に応じて調整） */
-    color: #fff; /* ボタンの文字色 */
-    border: none; /* 枠線を削除 */
-    border-radius: 5px; /* 少し丸みを持たせる */
-    width: 80px; /* ボタンの幅 */
-    height: 30px; /* ボタンの高さ */
-    cursor: pointer; /* カーソルの形状 */
-    position: relative;
-    left: 40%;
-    text-align: center;
-    display: flex;
-    gap: 8px; /* ボタン間のスペースを調整（少しだけ空ける） */
-    margin-top: 20px;
-    justify-content: center;
-    /* justify-content: center;
-    align-items: center;*/
+    color: black; /* ホバー時の文字色 */
+    text-decoration: none; /* 下線を消す */
+    cursor: pointer; /* ポインタに */
 }
 
+/* ボタンスタイル */
+.button {
+    margin: 0 10px; /* 左右にマージン */
+    padding: 10px 20px; /* 内側のパディング */
+    background-color: #333; /* 背景色 */
+    color: #fff; /* 文字色 */
+    border: none; /* 枠線なし */
+    border-radius: 5px; /* 角を丸める */
+    width: 80px; /* 幅80px */
+    height: 30px; /* 高さ30px */
+    cursor: pointer; /* カーソルをポインタに */
+    position: relative; /* 相対位置 */
+    left: 40%; /* 左寄せ */
+    text-align: center; /* 中央揃え */
+    display: flex;
+    gap: 8px; /* ボタン間の隙間 */
+    margin-top: 20px; /* 上にマージン */
+    justify-content: center; /* 中央揃え */
+}
+
+/* ボタンホバー時 */
 .button:hover {
-    background-color: #555;
+    background-color: #555; /* 背景色を変更 */
 }

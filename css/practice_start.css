@@ -1,115 +1,103 @@
-/*  広告を破壊 */
+/* 広告を破壊 */
 div[style*="z-index: 2147483647"] {
-    display: none !important;
+    display: none !important; /* z-indexが2147483647の広告要素を非表示にする */
 }
-
 
 body {
-    background-color: #ffefd5;
+    background-color: #ffefd5; /* 背景色を淡いピンク色に設定 */
 }
 
-.border-frame {   
+.border-frame {
     display: flex; /* フレックスボックスを有効化 */
-    justify-content: center;
-    min-height: 530px; /* 縦の長さを増加 */
-    padding-top: 120px;
-    padding-left: 200px;
-    padding-right: 200px;
-    box-sizing: border-box;
-    min-width: 600px;
+    justify-content: center; /* 横方向で中央揃え */
+    min-height: 530px; /* 縦の長さを530pxに設定 */
+    padding-top: 120px; /* 上部に120pxのパディング */
+    padding-left: 200px; /* 左側に200pxのパディング */
+    padding-right: 200px; /* 右側に200pxのパディング */
+    box-sizing: border-box; /* paddingやborderを含めたサイズ計算 */
+    min-width: 600px; /* 最小幅を600pxに設定 */
 }
-
 
 .flex-inner[data-box-color="white"] {
-    background: #fff;
-    border-radius: 20px;
+    background: #fff; /* 背景色を白に設定 */
+    border-radius: 20px; /* 角丸を20pxに設定 */
     overflow: hidden; /* 角を丸くするために内容を隠す */
 }
 
 h2 {
-    padding-top: 20px;
-    text-align: center; /* テキストを中央揃えに */
+    padding-top: 20px; /* 上部に20pxの余白 */
+    text-align: center; /* 見出しテキストを中央揃えに */
 }
 
 .left-contain {
-    display: inline-block; 
-    margin: 0 10px; /* 少し余白をつける */
-    margin-left: 240px;
-    position: absolute;
-    margin-bottom: 40px;
-    
+    display: inline-block; /* インラインブロック表示 */
+    margin: 0 10px; /* 左右に10pxの余白を設定 */
+    margin-left: 240px; /* 左側に240pxの余白を設定 */
+    position: absolute; /* 絶対位置に設定 */
+    margin-bottom: 40px; /* 下に40pxの余白を設定 */
 }
 
 .right-contain {
-    margin: 0 200px; /* 少し余白をつける */
-    margin-left: 450px;
-    margin-bottom: 30px;
-    width: 200px;
+    margin: 0 200px; /* 左右に200pxの余白を設定 */
+    margin-left: 450px; /* 左側に450pxの余白を設定 */
+    margin-bottom: 30px; /* 下に30pxの余白を設定 */
+    width: 200px; /* 幅を200pxに設定 */
 }
 
 ul {
-    padding-left: 0px;
+    padding-left: 0px; /* リストの左側の余白を0に設定 */
 }
 
 li {
-    list-style: none;
-    padding-top: 0px;
+    list-style: none; /* リストアイテムの番号や記号を削除 */
+    padding-top: 0px; /* 上の余白を0に設定 */
 }
 
 legend {
-    text-align: center;
+    text-align: center; /* legendタグのテキストを中央揃えに */
 }
 
 .language-list-container {
     display: flex; /* フレックスボックスを使用 */
-    gap: 10px; /* 列間のスペースを調整 */
-    top: -20px;
+    gap: 10px; /* 各要素間に10pxの隙間を設定 */
+    top: -20px; /* 上方向に-20pxの位置調整 */
 }
 
 .primary {
-    margin-right: 0px; /* 左側のリストの余白調整 */
+    margin-right: 0px; /* 右側の余白を0に設定 */
 }
 
 .non-language-list-container {
     display: flex; /* フレックスボックスを有効化 */
     flex-wrap: wrap; /* 折り返しを有効にする */
-    max-width: 200px; /* コンテナの幅を調整 */
-    gap: 5px;
+    max-width: 200px; /* 最大幅を200pxに設定 */
+    gap: 5px; /* 各要素間に5pxの隙間を設定 */
 }
 
 .non-language-list-container li {
-    flex: 1 1 calc(50% - 20px); /* 1行に2つ並べるように幅を設定 */
-    writing-mode: horizontal-tb; /* 文字を横書きにする */
-    margin-left: 0; /* 初期は左マージンなし */
-    text-align: center;
+    flex: 1 1 calc(50% - 20px); /* 1行に2つ並べるための幅設定 */
+    writing-mode: horizontal-tb; /* 文字を横書きに設定 */
+    margin-left: 0; /* 初期状態では左の余白を0に設定 */
+    text-align: center; /* テキストを中央揃えに設定 */
 }
 
 /* ボタンの基本スタイル */
 .button {
-    background-color: rgb(235, 118, 46); /* 緑色の背景 */
-    color: white; /* 白文字 */
-      padding: 12px 24px; /* 上下左右にパディング */
-      font-size: 16px; /* フォントサイズ */
-      border: none; /* ボーダーなし */
-      border-radius: 8px; /* 角を丸く */
-      cursor: pointer; /* ポインタを表示 */
-      display: block; /* ブロック要素として中央寄せ */
-      margin: 1px auto 15px; /* 自動マージンで中央に配置 */
-      width: 200px; /* ボタンの幅を指定 */
-      transition: background-color 0.3s, transform 0.2s; /* ホバー時のアニメーション */
-      
-      
-      /* 緊急用 */
-      position: absolute;
-        top: 450px;
-        left: 550px;
-  }
-  
-  /* ボタンにホバーエフェクトを追加 */
-  .button:hover {
-    background-color: rgb(235, 118, 46); /* ホバー時に色が少し変わる */
-    transform: scale(1.05); /* 少し拡大 */
-  }
+    background-color: rgb(235, 118, 46); /* 背景色をオレンジ色に設定 */
+    color: white; /* 文字色を白に設定 */
+    padding: 12px 24px; /* 上下に12px、左右に24pxのパディングを追加 */
+    font-size: 16px; /* フォントサイズを16pxに設定 */
+    border: none; /* ボーダーなし */
+    border-radius: 8px; /* 角丸を8pxに設定 */
+    cursor: pointer; /* マウスカーソルをポインタに変更 */
+    display: block; /* ブロック要素として中央に配置 */
+    margin: 1px auto 15px; /* 上下に自動マージン、下に15pxの余白 */
+    width: 200px; /* ボタンの幅を200pxに設定 */
+    transition: background-color 0.3s, transform 0.2s; /* 背景色と拡大のアニメーション */
+}
 
-
-
+/* ボタンにホバーエフェクトを追加 */
+.button:hover {
+    background-color: rgb(235, 118, 46); /* ホバー時に背景色が変化 */
+    transform: scale(1.05); /* ボタンを少し拡大 */
+}

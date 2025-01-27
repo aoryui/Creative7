@@ -1,126 +1,126 @@
-/*  広告を破壊 */
+/* 広告を非表示にするスタイル */
 div[style*="z-index: 2147483647"] {
     display: none !important;
 }
 
-
+/* ヘッダーのスタイル設定 */
 header {
-    /*ヘッダー設定*/
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(84, 196, 99);
-    color: white;
-    height: 100px;
-    width: 100%;
-    position: relative;
-    position: fixed;
-    position: -webkit-sticky;
-    top: 0;
-    z-index: 999;
-    overflow: visible;
+    display: flex; /* 子要素を横並びに配置 */
+    flex-direction: row; /* 横方向の配置を指定 */
+    align-items: center; /* 垂直方向の中央揃え */
+    justify-content: center; /* 子要素を中央揃え */
+    background-color: rgb(84, 196, 99); /* 背景色を緑色に設定 */
+    color: white; /* テキスト色を白に設定 */
+    height: 100px; /* ヘッダーの高さ */
+    width: 100%; /* ヘッダーの幅を画面全体に設定 */
+    position: relative; /* 基準位置を設定 */
+    position: fixed; /* 固定位置に設定 */
+    position: -webkit-sticky; /* Safari用のsticky位置 */
+    top: 0; /* 上端に固定 */
+    z-index: 999; /* 他の要素よりも前面に表示 */
+    overflow: visible; /* 内容が溢れても表示 */
 }
 
-
+/* ページ全体の余白をリセット */
 body,
 html {
     margin: 0;
     padding: 0;
 }
 
+/* メニューコンテンツのスタイル設定 */
 #menuContent {
-    /*メニューコンテンツ*/
-    display: none;
-    position: fixed;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    z-index: 998;
+    display: none; /* 初期状態で非表示 */
+    position: fixed; /* 固定位置に配置 */
+    background-color: #f9f9f9; /* 背景色を薄いグレーに設定 */
+    min-width: 160px; /* 最小幅を指定 */
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); /* ドロップシャドウを追加 */
+    z-index: 998; /* ヘッダーの下に配置 */
 }
 
+/* メニューボタンのスタイル設定 */
 #menuBtn {
-    margin-left: 10px;
-    /*メニューボタン*/
-    margin-right: auto;
-    background-color: transparent;
-    /* ボタンの背景色を透明に */
-    border: none;
-    /* ボタンの枠をなくす */
-    cursor: pointer;
-    /* カーソルをポインタに */
-    height: 50px;
-    width: 59px;
+    margin-left: 10px; /* 左側に余白を追加 */
+    margin-right: auto; /* 右側の余白を自動調整 */
+    background-color: transparent; /* ボタンの背景色を透明に設定 */
+    border: none; /* ボタンの枠を削除 */
+    cursor: pointer; /* カーソルをポインタに変更 */
+    height: 50px; /* ボタンの高さを指定 */
+    width: 59px; /* ボタンの幅を指定 */
 }
 
+/* メニューリストのスタイル設定 */
 #menuContent ul {
-    list-style-type: none;
-    padding: 0;
+    list-style-type: none; /* リストマーカーを削除 */
+    padding: 0; /* パディングをリセット */
 }
 
+/* メニュー項目リンクのスタイル設定 */
 #menuContent li a {
-    display: block;
-    padding: 8px 10px;
-    text-decoration: none;
-    color: black;
+    display: block; /* リンクをブロック要素に設定 */
+    padding: 8px 10px; /* 内側の余白を設定 */
+    text-decoration: none; /* テキストの下線を削除 */
+    color: black; /* テキスト色を黒に設定 */
 }
 
+/* メニュー項目リンクのホバー時のスタイル設定 */
 #menuContent li a:hover {
-    background-color: #f1f1f1;
+    background-color: #f1f1f1; /* 背景色を薄いグレーに変更 */
 }
 
+/* ナビゲーションバーのスタイル設定 */
 nav {
-    background-color: #f4f4f4;
-    width: 250px;
-    height: calc(100% - 100px);
-    /* ヘッダーの高さに合わせてメニューバーの高さを調整 */
-    position: fixed;
-    top: 100px;
-    left: 0;
-    overflow-y: none;
-    z-index: 999;
+    background-color: #f4f4f4; /* 背景色を薄いグレーに設定 */
+    width: 250px; /* 幅を指定 */
+    height: calc(100% - 100px); /* ヘッダー分の高さを引いた値に設定 */
+    position: fixed; /* 固定位置に配置 */
+    top: 100px; /* ヘッダーの下に配置 */
+    left: 0; /* 左端に配置 */
+    overflow-y: none; /* 垂直方向のスクロールを無効化 */
+    z-index: 999; /* 他の要素より前面に表示 */
 }
 
+/* ナビゲーションリストのスタイル設定 */
 nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+    list-style-type: none; /* リストマーカーを削除 */
+    padding: 0; /* パディングをリセット */
+    margin: 0; /* マージンをリセット */
 }
 
+/* ナビゲーションリスト項目のスタイル設定 */
 nav ul li {
-    padding: 5px;
-    border-bottom: 1px solid #ccc;
+    padding: 5px; /* 内側の余白を設定 */
+    border-bottom: 1px solid #ccc; /* 下線を追加 */
 }
 
+/* ナビゲーションリストの最後の項目のスタイル設定 */
 nav ul li:last-child {
-    border-bottom: none;
+    border-bottom: none; /* 下線を削除 */
 }
 
+/* ナビゲーションリンクのスタイル設定 */
 nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 18px;
+    text-decoration: none; /* テキストの下線を削除 */
+    color: #333; /* テキスト色を濃いグレーに設定 */
+    font-size: 18px; /* フォントサイズを指定 */
 }
 
+/* メニューボタンのホバー時のスタイル設定 */
 #menubutton:hover {
-    /*画像にポインタが触られたとき*/
-    opacity: 0.5;
-    /*アイコンを薄くする*/
-    cursor: pointer;
-    /* カーソルをポインターに変更 */
+    opacity: 0.5; /* アイコンを薄くする */
+    cursor: pointer; /* カーソルをポインタに変更 */
 }
 
+/* メニューボタンのクリック時のスタイル設定 */
 #menubutton:active {
-    /*画像がクリックされたとき*/
-    position: relative;
-    /*画像の位置を元に戻す*/
-    top: 3px;
-    /* 画像を少し下に移動させる */
+    position: relative; /* 基準位置を相対的に設定 */
+    top: 3px; /* 画像を少し下に移動 */
 }
 
+/* 固定位置の見出しのスタイル設定 */
 #free-h1 {
-    position: fixed;
-    object-fit: cover;
-    width: 400px;
-    height: 100px;
+    position: fixed; /* 固定位置に配置 */
+    object-fit: cover; /* 内容を要素のサイズに合わせてカバー */
+    width: 400px; /* 幅を指定 */
+    height: 100px; /* 高さを指定 */
 }

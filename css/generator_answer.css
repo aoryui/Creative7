@@ -1,186 +1,206 @@
-/*  広告を破壊 */
+/* 特定のz-indexを持つ広告を非表示にする */
 div[style*="z-index: 2147483647"] {
     display: none !important;
 }
 
+/* 全体の背景色をパステルイエローに設定 */
 body {
-    position: relative;
-    top: -10px;
-    font-family: 'Meiryo', sans-serif;
-    margin: 0;
-    background-color: #ffefd5;
+    position: relative; /* 要素の配置基準を設定 */
+    top: -10px; /* 少し上に移動 */
+    font-family: 'Meiryo', sans-serif; /* メイリオフォントを指定 */
+    margin: 0; /* ページ全体のマージンをリセット */
+    background-color: #ffefd5; /* 背景色を指定 */
 }
 
+/* 画像アップロードボタンの位置を調整 */
 #image-upload {
     position: relative;
-    bottom: 30px;
-    top: -380px;
-    transform: translateX(550px);
+    bottom: 30px; /* 少し下に移動 */
+    top: -380px; /* 上方向に移動 */
+    transform: translateX(550px); /* 水平方向に位置調整 */
 }
 
+/* スクロールバーを非表示にする */
 html {
     overflow: hidden;
-  }
+}
 
-.button{
+/* ボタンのスタイル */
+.button {
     position: relative;
-    top: -30px;
-    left: 30px;
-    display: flex;
-    justify-content:space-around;
-} 
+    top: -30px; /* 上方向に移動 */
+    left: 30px; /* 左方向に移動 */
+    display: flex; /* フレックスボックスを使用 */
+    justify-content: space-around; /* ボタン間のスペースを均等に配置 */
+}
 
-
+/* 見出し部分のスタイル */
 #bun {
-    margin-top: 120px;
-    text-align: center;
+    margin-top: 120px; /* 上部に余白を設定 */
+    text-align: center; /* 中央揃え */
 }
 
+/* コンテナの配置を設定 */
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 30px;
+    display: flex; /* フレックスボックスを使用 */
+    justify-content: center; /* 中央寄せ */
+    align-items: flex-start; /* 上揃え */
+    gap: 30px; /* 要素間のスペースを設定 */
 }
 
+/* テキストエリアとキャンバスエリアのスタイル */
 .text-area,
 .canvas-area {
-    flex: 1;
+    flex: 1; /* 各エリアが等分にスペースを占有 */
     max-width: 600px; /* 最大幅を指定 */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: flex; /* フレックスボックスを使用 */
+    flex-direction: column; /* 垂直方向に要素を配置 */
+    align-items: center; /* 中央揃え */
 }
 
+/* テキストエリアとキャンバスの共通スタイル */
 textarea,
 canvas {
-    width: 450px; /* 591px から縮小 */
-    height: 295px; /* 354px から縮小 */
-    padding: 10px;
-    box-sizing: border-box;
-    border: 1px solid black;
-    background-color: #ffff;
-    transform: scale(0.87) translate(400px, 10px); /* 微調整 */
+    width: 450px; /* 幅を指定 */
+    height: 295px; /* 高さを指定 */
+    padding: 10px; /* 内側の余白を指定 */
+    box-sizing: border-box; /* ボックスの幅を内側の要素で計算 */
+    border: 1px solid black; /* 境界線を設定 */
+    background-color: #ffff; /* 背景色を白に設定 */
+    transform: scale(0.87) translate(400px, 10px); /* サイズと位置を調整 */
     transform-origin: top left; /* スケールの基準点を左上に設定 */
 }
 
+/* テキストエリア専用のスタイル */
 textarea {
-    font-size: 14px;
-    resize: none;
+    font-size: 14px; /* フォントサイズを指定 */
+    resize: none; /* サイズ変更を禁止 */
 }
 
+/* ボタン全体のスタイル */
 button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-family: 'Noto Sans JP', sans-serif; /* フォントを変更 */
-    color: #fff;
+    margin-top: 10px; /* 上部の余白を設定 */
+    padding: 10px 20px; /* ボタン内の余白を指定 */
+    font-size: 16px; /* フォントサイズを指定 */
+    font-family: 'Noto Sans JP', sans-serif; /* 日本語フォントを指定 */
+    color: #fff; /* テキスト色を白に設定 */
     background-color: rgb(84, 196, 99); /* 背景色を緑に設定 */
-    border: none;
-    border-radius: 50px; /* 丸みのあるボタン */
-    cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    border: none; /* 境界線をなしに設定 */
+    border-radius: 50px; /* 丸みをつけたデザイン */
+    cursor: pointer; /* ホバー時にカーソルをポインターに変更 */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease; /* アニメーション効果を追加 */
 }
 
-.button:hover{
-    color: #fff; /* ホバー時の背景色 */
-    background-color: #898989;  /* ホバー時のテキスト色 */
+/* ボタンのホバー時のスタイル */
+.button:hover {
+    color: #fff; /* テキスト色を白に設定 */
+    background-color: #898989; /* 背景色を灰色に設定 */
 }
 
+/* ボタンコンテナのスタイル */
 .button-container {
     position: relative;
-    right: -770px;
-    bottom: 450px;
-
+    right: -770px; /* 横方向に移動 */
+    bottom: 450px; /* 上方向に移動 */
 }
 
-.button-container :hover{
-    color: #fff; /* ホバー時の背景色 */
-    background-color: #898989;  /* ホバー時のテキスト色 */
+/* ボタンコンテナのホバー時のスタイル */
+.button-container :hover {
+    color: #fff; /* テキスト色を白に設定 */
+    background-color: #898989; /* 背景色を灰色に設定 */
 }
 
-
+/* サブミットボタンのスタイル */
 .button-container input[type="submit"] {
     background-color: rgb(84, 196, 99); /* 背景色を緑に設定 */
-    color: white; /* テキスト色を白に */
-    padding: 12px 24px; 
-    border: none; /* 境界線なし */
-    border-radius: 5px; /* 角丸 */
-    font-size: 16px; /* フォントサイズ */
-    cursor: pointer; 
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease; /* ホバー時の色変化をスムーズに */
+    color: white; /* テキスト色を白に設定 */
+    padding: 12px 24px; /* 内側の余白を設定 */
+    border: none; /* 境界線をなしに設定 */
+    border-radius: 5px; /* 角丸を設定 */
+    font-size: 16px; /* フォントサイズを指定 */
+    cursor: pointer; /* ホバー時にカーソルをポインターに変更 */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 影を追加 */
+    transition: background-color 0.3s ease; /* 背景色変更のアニメーションを追加 */
 }
 
+/* アンカータグのスタイル */
 a {
-    margin-top: 10px;
+    margin-top: 10px; /* 上部の余白を設定 */
 }
 
-#preview { /*プレビュー画面*/
-    display: flex;
-    position: relative;
-    width: 1182px;
-    height: 709px;
-    padding: 10px;
-    font-family: 'Yu Mincho', '游明朝', serif; /* 明朝体を指定 */
-    font-size: 20px;
-    white-space: pre-wrap; /* 改行を保持する */
-    overflow-wrap: break-word; /* テキストがはみ出さないようにする */
+/* プレビュー画面のスタイル */
+#preview {
+    display: flex; /* フレックスボックスを使用 */
+    position: relative; /* 相対位置指定 */
+    width: 1182px; /* プレビューの幅を指定 */
+    height: 709px; /* プレビューの高さを指定 */
+    padding: 10px; /* 内側の余白を設定 */
+    font-family: 'Yu Mincho', '游明朝', serif; /* 明朝体フォントを指定 */
+    font-size: 20px; /* フォントサイズを指定 */
+    white-space: pre-wrap; /* 改行を保持 */
+    overflow-wrap: break-word; /* 長い単語を改行 */
     background-color: #FFFFFF; /* 背景色を白に設定 */
-    border: 1px solid black;
-    transform: scale(0.35) translate(1200px, 30px); /* 微調整 */
-    transform-origin: top left; /* スケールの基準点を左上に設定 */
+    border: 1px solid black; /* 枠線を設定 */
+    transform: scale(0.35) translate(1200px, 30px); /* サイズと位置を調整 */
+    transform-origin: top left; /* スケール基準を左上に設定 */
     line-height: 1; /* 行間を縮める */
-    justify-content: center;
-    align-items: center;
-    left: -100px;
+    justify-content: center; /* 中央揃え */
+    align-items: center; /* 中央揃え */
+    left: -100px; /* 左方向に移動 */
     max-width: 1182px; /* 最大幅を指定 */
-    max-height: 709px; /* 最大幅を指定 */
+    max-height: 709px; /* 最大高さを指定 */
     overflow: auto; /* スクロールバーを表示 */
     border: 1px solid #ccc; /* 枠線を追加 */
     word-wrap: break-word; /* 長い単語を改行 */
-    overflow-wrap: break-word; /* 長い単語を改行 */
-    word-break: break-word; /* テキストが幅を超えたら改行 */
-    white-space: pre-wrap; /* 改行や空白を維持して自動で改行 */
-    }
+    word-break: break-word; /* 長い単語を改行 */
+    white-space: pre-wrap; /* 改行を保持 */
+}
 
-#downloadLink { /*ダウンロードリンクの高さの位置*/
+/* ダウンロードリンクのスタイル */
+#downloadLink {
     display: none; /* 初期状態で非表示 */
-    position: relative;
-    bottom: 30px;    
-    margin-top: 10px;
-}
-#generate-button{ /*遷移ボタン*/
-    position: relative;
-    left: 300px;
-    bottom: 100px;
+    position: relative; /* 相対位置指定 */
+    bottom: 30px; /* 上方向に移動 */
+    margin-top: 10px; /* 上部の余白を設定 */
 }
 
-#generate-button:hover{
-    color: #0c0c0c; /* ホバー時の背景色 */
-    background-color: #898989;  /* ホバー時のテキスト色 */
+/* 遷移ボタンのスタイル */
+#generate-button {
+    position: relative;
+    left: 300px; /* 横方向に移動 */
+    bottom: 100px; /* 上方向に移動 */
 }
 
+/* 遷移ボタンのホバー時のスタイル */
+#generate-button:hover {
+    color: #0c0c0c; /* テキスト色を指定 */
+    background-color: #898989; /* 背景色を灰色に設定 */
+}
+
+/* 全体コンテナのスタイル */
 .container {
     display: flex; /* フレックスボックスを使用 */
     max-width: 1200px; /* コンテナの最大幅 */
     margin: 0 auto; /* 中央寄せ */
 }
 
+/* テキストエリアのスタイル */
 .text-area {
-    flex: 1; /* テキストエリアが残りのスペースを占有 */
-    margin-right: 20px; /* テキストエリアとキャンバスの間にスペースを追加 */
+    flex: 1; /* 残りのスペースを占有 */
+    margin-right: 20px; /* キャンバスエリアとの間にスペースを追加 */
     position: relative;
-    left: -250px;
+    left: -250px; /* 左方向に移動 */
 }
 
+/* 画像アップロードボタンの位置を調整 */
 #image-upload {
-    margin-top: 10px;
+    margin-top: 10px; /* 上部の余白を設定 */
     position: relative;
-    left: 70px;
+    left: 70px; /* 左方向に移動 */
 }
 
+/* プレビュー内の画像スタイル */
 #preview img {
     max-width: 100%; /* プレビュー内で幅いっぱいに収める */
-    height: auto;
+    height: auto; /* 高さを自動調整 */
 }

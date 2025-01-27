@@ -1,114 +1,131 @@
+/* 全体のスタイル */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f9;
-    color: #333;
-    margin: 0;
-    padding: 20px;
+    font-family: Arial, sans-serif; /* フォント設定 */
+    line-height: 1.6; /* 行間を広げて読みやすく */
+    background-color: #f4f4f9; /* 背景色 */
+    color: #333; /* 文字色 */
+    margin: 0; /* デフォルトのマージンを削除 */
+    padding: 20px; /* 周囲に余白を追加 */
 }
 
+/* 見出し h2 のスタイル */
 h2 {
-    color: #555;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 5px;
-    margin-bottom: 20px;
+    color: #555; /* 色設定 */
+    border-bottom: 2px solid #ddd; /* 下線 */
+    padding-bottom: 5px; /* 下の余白 */
+    margin-bottom: 20px; /* 下の余白 */
 }
 
+/* テーブル全体のスタイル */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%; /* テーブル幅を100%に設定 */
+    border-collapse: collapse; /* セルのボーダーを統一 */
+    margin-bottom: 20px; /* 下部の余白 */
+    background-color: #fff; /* 背景色 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 薄いシャドウを追加 */
 }
 
+/* テーブルセルのスタイル */
 table th, table td {
-    text-align: left;
-    padding: 10px;
-    border: 1px solid #ddd;
+    text-align: left; /* 左寄せ */
+    padding: 10px; /* セル内の余白 */
+    border: 1px solid #ddd; /* セルのボーダー */
 }
 
+/* テーブルヘッダーのスタイル */
 table th {
-    background-color: #f7f7f7;
-    font-weight: bold;
+    background-color: #f7f7f7; /* 背景色 */
+    font-weight: bold; /* 太字 */
 }
 
+/* 偶数行の背景色 */
 table tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #f9f9f9; /* 背景色 */
 }
 
+/* ボタンのスタイル */
 button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 7px 12px;
-    cursor: pointer;
-    font-size: 14px;
-    border-radius: 3px;
+    background-color: #007bff; /* 背景色 */
+    color: white; /* 文字色 */
+    border: none; /* ボーダーなし */
+    padding: 7px 12px; /* パディング */
+    cursor: pointer; /* マウスカーソルをポインターに */
+    font-size: 14px; /* フォントサイズ */
+    border-radius: 3px; /* 角を丸く */
 }
 
+/* ボタンのホバー時のスタイル */
 button:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* ホバー時の背景色 */
 }
 
+/* フォームのスタイル */
 form {
-    display: inline;
+    display: inline; /* インライン表示 */
 }
 
+/* テキスト入力欄のスタイル */
 form input[type="text"] {
-    padding: 7px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    width: calc(100% - 20px);
-    max-width: 300px;
+    padding: 7px; /* パディング */
+    border: 1px solid #ccc; /* ボーダー */
+    border-radius: 3px; /* 角を丸く */
+    width: calc(100% - 20px); /* 幅を調整 */
+    max-width: 300px; /* 最大幅 */
 }
 
+/* フォームボタンのスタイル */
 form button {
-    margin-top: 5px;
+    margin-top: 5px; /* 上部の余白 */
 }
 
+/* コンテナのスタイル */
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    background: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* 最大幅 */
+    margin: 0 auto; /* 中央揃え */
+    background: #fff; /* 背景色 */
+    padding: 20px; /* 内部の余白 */
+    border-radius: 5px; /* 角を丸く */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 薄いシャドウ */
 }
 
+/* 最初のh2要素に対するスタイル */
 .container h2:first-of-type {
-    margin-top: 0;
+    margin-top: 0; /* 最初のh2の上部余白を削除 */
 }
 
+/* ページネーションのスタイル */
 .pagination {
-    display: flex;
-    justify-content: center; /* 中央揃え */
-    align-items: center; /* 垂直方向に揃える */
-    gap: 5px; /* 各要素の間隔 */
+    display: flex; /* フレックスボックス */
+    justify-content: center; /* 水平中央揃え */
+    align-items: center; /* 垂直方向の中央揃え */
+    gap: 5px; /* 要素間の隙間 */
     margin-top: 20px; /* 上部の余白 */
 }
 
+/* ページネーションリンクのスタイル */
 .pagination a,
 .pagination strong {
-    display: inline-block;
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 14px;
-    color: #007bff;
-    background-color: #f9f9f9;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    display: inline-block; /* インラインブロック */
+    padding: 8px 12px; /* パディング */
+    border: 1px solid #ccc; /* ボーダー */
+    border-radius: 5px; /* 角を丸く */
+    text-decoration: none; /* 下線なし */
+    font-size: 14px; /* フォントサイズ */
+    color: #007bff; /* 文字色 */
+    background-color: #f9f9f9; /* 背景色 */
+    transition: background-color 0.2s ease, color 0.2s ease; /* 色の変更にアニメーション */
 }
 
+/* ページネーションリンクのホバー時のスタイル */
 .pagination a:hover {
-    background-color: #007bff;
-    color: #fff;
+    background-color: #007bff; /* 背景色 */
+    color: #fff; /* 文字色 */
 }
 
+/* 現在のページのスタイル */
 .pagination strong {
-    background-color: #007bff;
-    color: #fff;
-    border-color: #007bff;
-    font-weight: bold;
+    background-color: #007bff; /* 背景色 */
+    color: #fff; /* 文字色 */
+    border-color: #007bff; /* ボーダー色 */
+    font-weight: bold; /* 太字 */
 }

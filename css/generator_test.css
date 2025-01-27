@@ -1,170 +1,188 @@
-/*  広告を破壊 */
+/* 広告を非表示にするスタイル */
 div[style*="z-index: 2147483647"] {
     display: none !important;
 }
 
+/* 全体の基本スタイル */
 body {
-    position: relative;
+    position: relative; /* 上方向に調整 */
     top: -10px;
-    font-family: 'Meiryo', sans-serif;
-    margin: 0;
-    background-color: #ffefd5;
+    font-family: 'Meiryo', sans-serif; /* フォント指定 */
+    margin: 0; /* 余白なし */
+    background-color: #ffefd5; /* ペールカラーの背景色 */
 }
 
+/* 画像アップロードボタンの位置調整 */
 #image-upload {
     position: relative;
     top: -380px;
     transform: translateX(550px);
 }
 
+/* HTMLのスクロールバーを非表示 */
 html {
     overflow: hidden;
-  }
+}
 
-.button{
+/* 汎用ボタンスタイル */
+.button {
     position: relative;
     top: -20px;
     left: 200px;
     margin-right: 10px;
-} 
+}
 
-
+/* テキストエリアの配置を調整 */
 #bun {
     margin-top: 120px;
     text-align: center;
 }
 
+/* フレックスコンテナの設定 */
 .container {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 30px;
+    gap: 30px; /* 子要素間の隙間 */
 }
 
+/* テキストエリアとキャンバスエリアの共通スタイル */
 .text-area,
 .canvas-area {
-    flex: 1;
-    max-width: 600px; /* 最大幅を指定 */
+    flex: 1; /* 均等に幅を占有 */
+    max-width: 600px; /* 最大幅 */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* テキストエリアとキャンバスのサイズ調整 */
 textarea,
 canvas {
-    width: 450px; /* 591px から縮小 */
-    height: 295px; /* 354px から縮小 */
-    padding: 10px;
-    box-sizing: border-box;
-    border: 1px solid black;
-    background-color: #ffff;
-    transform: scale(0.87) translate(400px, 10px); /* 微調整 */
-    transform-origin: top left; /* スケールの基準点を左上に設定 */
+    width: 450px; /* 幅設定 */
+    height: 295px; /* 高さ設定 */
+    padding: 10px; /* 内側の余白 */
+    box-sizing: border-box; /* ボーダー込みでサイズ計算 */
+    border: 1px solid black; /* 枠線 */
+    background-color: #ffff; /* 背景色 */
+    transform: scale(0.87) translate(400px, 10px); /* 縮小と位置調整 */
+    transform-origin: top left; /* スケール基準を左上に設定 */
 }
 
+/* テキストエリアのスタイル */
 textarea {
     font-size: 14px;
-    resize: none;
+    resize: none; /* サイズ変更禁止 */
 }
 
+/* ボタンのスタイル */
 button {
     margin-top: 10px;
     padding: 10px 20px;
     font-size: 16px;
-    font-family: 'Noto Sans JP', sans-serif; /* フォントを変更 */
+    font-family: 'Noto Sans JP', sans-serif; /* フォント指定 */
     color: #fff;
-    background-color: rgb(84, 196, 99); /* 背景色を緑に設定 */
+    background-color: rgb(84, 196, 99); /* 緑背景 */
     border: none;
-    border-radius: 50px; /* 丸みのあるボタン */
+    border-radius: 50px; /* 丸みを追加 */
     cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease; /* エフェクト */
 }
 
-.button:hover{
-    color: #fff; /* ホバー時の背景色 */
-    background-color: #898989;  /* ホバー時のテキスト色 */
+/* ボタンのホバー時の効果 */
+.button:hover {
+    color: #fff; /* テキスト色維持 */
+    background-color: #898989; /* 背景色変更 */
 }
 
+/* ボタンコンテナの位置調整 */
 .button-container {
     position: relative;
     right: -770px;
     bottom: 450px;
-
 }
 
-.button-container :hover{
-    color: #fff; /* ホバー時の背景色 */
-    background-color: #898989;  /* ホバー時のテキスト色 */
+/* ボタンコンテナのホバー効果 */
+.button-container :hover {
+    color: #fff;
+    background-color: #898989;
 }
 
-
+/* 提出ボタンのスタイル */
 .button-container input[type="submit"] {
-    background-color: rgb(84, 196, 99); /* 背景色を緑に設定 */
-    color: white; /* テキスト色を白に */
-    padding: 12px 24px; 
-    border: none; /* 境界線なし */
+    background-color: rgb(84, 196, 99); /* 緑背景 */
+    color: white; /* テキスト色白 */
+    padding: 12px 24px; /* 内側の余白 */
+    border: none; /* ボーダーなし */
     border-radius: 5px; /* 角丸 */
     font-size: 16px; /* フォントサイズ */
     cursor: pointer; 
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease; /* ホバー時の色変化をスムーズに */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 影効果 */
+    transition: background-color 0.3s ease; /* ホバー時の効果 */
 }
 
+/* リンクのスタイル */
 a {
     margin-top: 10px;
 }
 
-#preview { /*プレビュー画面*/
+/* プレビュー画面のスタイル */
+#preview {
     display: flex;
     position: relative;
-    width: 1182px;
-    height: 709px;
-    padding: 10px;
-    font-family: 'Yu Mincho', '游明朝', serif; /* 明朝体を指定 */
+    width: 1182px; /* 横幅 */
+    height: 709px; /* 高さ */
+    padding: 10px; /* 内側の余白 */
+    font-family: 'Yu Mincho', '游明朝', serif; /* フォント */
     font-size: 20px;
-    white-space: pre-wrap; /* 改行を保持する */
+    white-space: pre-wrap; /* 改行維持 */
     overflow-wrap: break-word; /* テキストがはみ出さないようにする */
-    background-color: #FFFFFF; /* 背景色を白に設定 */
-    border: 1px solid black;
-    transform: scale(0.35) translate(1200px, 30px); /* 微調整 */
-    transform-origin: top left; /* スケールの基準点を左上に設定 */
-    line-height: 1; /* 行間を縮める */
+    background-color: #FFFFFF; /* 背景色を白 */
+    border: 1px solid black; /* 枠線 */
+    transform: scale(0.35) translate(1200px, 30px); /* 縮小と位置調整 */
+    transform-origin: top left; /* 縮小基準を左上に */
+    line-height: 1; /* 行間を狭く設定 */
     justify-content: center;
     align-items: center;
     left: -100px;
-    max-width: 1182px; /* 最大幅を指定 */
-    max-height: 709px; /* 最大幅を指定 */
+    max-width: 1182px; /* 最大幅 */
+    max-height: 709px; /* 最大高さ */
     overflow: auto; /* スクロールバーを表示 */
-    border: 1px solid #ccc; /* 枠線を追加 */
     word-wrap: break-word; /* 長い単語を改行 */
     overflow-wrap: break-word; /* 長い単語を改行 */
     word-break: break-word; /* テキストが幅を超えたら改行 */
     white-space: pre-wrap; /* 改行や空白を維持して自動で改行 */
-    }
+}
 
-#downloadLink { /*ダウンロードリンクの高さの位置*/
-    display: none; /* 初期状態で非表示 */
+/* ダウンロードリンクのスタイル */
+#downloadLink {
+    display: none; /* 初期状態では非表示 */
     position: relative;
     bottom: 30px;    
     margin-top: 10px;
 }
-#generate-button{ /*遷移ボタン*/
+
+/* 遷移ボタンの位置調整 */
+#generate-button {
     position: relative;
     left: 300px;
     bottom: 100px;
 }
 
-#generate-button:hover{
-    color: #fff; /* ホバー時の背景色 */
-    background-color: #898989;  /* ホバー時のテキスト色 */
+/* 遷移ボタンのホバー効果 */
+#generate-button:hover {
+    color: #fff;
+    background-color: #898989;
 }
 
+/* コンテナのスタイル調整 */
 .container {
     display: flex; /* フレックスボックスを使用 */
     max-width: 1200px; /* コンテナの最大幅 */
     margin: 0 auto; /* 中央寄せ */
 }
 
+/* テキストエリアの配置を調整 */
 .text-area {
     flex: 1; /* テキストエリアが残りのスペースを占有 */
     margin-right: 20px; /* テキストエリアとキャンバスの間にスペースを追加 */
@@ -172,12 +190,14 @@ a {
     left: -250px;
 }
 
+/* 画像アップロードボタンの調整 */
 #image-upload {
     margin-top: 10px;
     position: relative;
     left: 250px;
 }
 
+/* プレビュー内の画像スタイル */
 #preview img {
     max-width: 100%; /* プレビュー内で幅いっぱいに収める */
     height: auto;

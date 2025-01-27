@@ -1,95 +1,110 @@
+/* bodyの基本設定 */
 body {
-    background-color: #ffefd5;
-    margin: 0;
-    font-family: Arial, sans-serif;
+    background-color: #ffefd5; /* 背景色をクリーム色に設定 */
+    margin: 0; /* ページ全体のマージンを削除 */
+    font-family: Arial, sans-serif; /* フォントをArialに設定 */
 }
 
+/* ボーダーフレーム（外枠） */
 .border-frame {
-    margin: 20px auto;
-    max-width: 90%;
-    padding: 20px;
-    background: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    background-color: rgb(244, 242, 242);
+    margin: 20px auto; /* 上下20px、左右中央寄せ */
+    max-width: 90%; /* 最大幅を90%に設定 */
+    padding: 20px; /* 内側のパディングを20pxに設定 */
+    background: #fff; /* 背景色を白に設定 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* シャドウを追加して立体感を出す */
+    border-radius: 8px; /* 角を丸くする */
+    background-color: rgb(244, 242, 242); /* 背景色を薄いグレーに設定 */
 }
 
+/* テーブルのスタイル */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+    width: 100%; /* 幅を100%に設定 */
+    border-collapse: collapse; /* テーブルのボーダーを重ならないように設定 */
+    margin-top: 20px; /* 上に20pxのマージン */
 }
 
+/* テーブルのセル（td, th）のスタイル */
 td, th {
-    text-align: center;
-    padding: 10px;
-    
+    text-align: center; /* セル内のテキストを中央揃え */
+    padding: 10px; /* セル内に10pxのパディング */
 }
 
+/* th（ヘッダー）の背景色 */
 th {
-    background-color: #f2f2f2;
-    
+    background-color: #f2f2f2; /* 背景色を薄い灰色に設定 */
 }
 
+/* 偶数行の背景色を変更 */
 tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #f9f9f9; /* 偶数行の背景色を淡い灰色に設定 */
 }
 
+/* 質問部分のカスタマイズ */
 #custom-question {
-    text-align: left !important;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    max-width: 100%;
+    text-align: left !important; /* テキストを左揃え */
+    white-space: pre-wrap; /* 改行を維持して表示 */
+    word-wrap: break-word; /* 単語の折り返しを有効に */
+    max-width: 100%; /* 最大幅を100%に設定 */
 }
 
-/* ボタンのスタイル */
+/* 削除ボタンのスタイル */
 #deleteButton {
-    background-color: red;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    padding: 5px 10px;
+    background-color: red; /* 背景色を赤に設定 */
+    color: #fff; /* 文字色を白に設定 */
+    border: none; /* ボーダーをなしに設定 */
+    border-radius: 5px; /* 角を丸くする */
+    cursor: pointer; /* ポインターカーソルを表示 */
+    padding: 5px 10px; /* 内側のパディングを設定 */
 }
 
+/* 答え部分のスタイル */
 .answer {
-    margin-top: 85px;
-  }
+    margin-top: 85px; /* 上部に85pxのマージン */
+}
 
-  .pagination {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
+/* ページネーション（ページ送り）のスタイル */
+.pagination {
+    display: flex; /* フレックスボックスで配置 */
+    justify-content: center; /* 中央寄せ */
+    margin: 20px 0; /* 上下に20pxのマージン */
 }
+
+/* ページネーションリンクのスタイル */
 .pagination a {
-    color: black;
-    float: left;
-    padding: 8px 16px;
-    text-decoration: none;
-    border: 1px solid #ddd;
-    margin: 0 4px;
-    border-radius: 4px;
+    color: black; /* 文字色を黒に設定 */
+    float: left; /* 左寄せ */
+    padding: 8px 16px; /* 内側のパディング */
+    text-decoration: none; /* 下線をなしに */
+    border: 1px solid #ddd; /* 薄い灰色のボーダー */
+    margin: 0 4px; /* 左右に4pxのマージン */
+    border-radius: 4px; /* 角を丸くする */
 }
+
+/* アクティブなページのスタイル */
 .pagination a.active {
-    background-color: #007bff;
-    color: white;
-    border: 1px solid #007bff;
+    background-color: #007bff; /* 背景色を青に設定 */
+    color: white; /* 文字色を白に設定 */
+    border: 1px solid #007bff; /* ボーダーを青に設定 */
 }
+
+/* 非アクティブなページのホバー時のスタイル */
 .pagination a:hover:not(.active) {
-    background-color: #ddd;
+    background-color: #ddd; /* 背景色を灰色に設定 */
 }
+
+/* 無効なページリンクのスタイル */
 .pagination a.disabled {
-    color: #ccc;
-    pointer-events: none;
-    border: 1px solid #ddd;
+    color: #ccc; /* 文字色を灰色に設定 */
+    pointer-events: none; /* クリックできなくする */
+    border: 1px solid #ddd; /* ボーダーを灰色に設定 */
 }
-#deleteAllButton{
-    background-color: palevioletred;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    padding: 5px 10px;
-    
-    
+
+/* 全削除ボタンのスタイル */
+#deleteAllButton {
+    background-color: palevioletred; /* 背景色を薄いバイオレットレッドに設定 */
+    color: #fff; /* 文字色を白に設定 */
+    border: none; /* ボーダーをなしに設定 */
+    border-radius: 5px; /* 角を丸くする */
+    cursor: pointer; /* ポインターカーソルを表示 */
+    padding: 5px 10px; /* 内側のパディングを設定 */
 }

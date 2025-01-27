@@ -1,255 +1,232 @@
-/*  広告を破壊 */
+/* 広告を破壊 */
 div[style*="z-index: 2147483647"] {
-    display: none !important;
+    display: none !important; /* 広告の要素を非表示にする */
 }
 
 body {
-    background-color: #ffefd5;
+    background-color: #ffefd5; /* 背景色を温かみのある色に変更 */
 }
 
 .bar-graph-wrap {
-    position: relative;
-    height: 350px;
-    overflow: hidden;
+    position: relative; /* グラフの親要素の位置を相対配置 */
+    height: 350px; /* 高さを350pxに設定 */
+    overflow: hidden; /* 子要素が親要素の範囲を超えた部分を非表示に */
 }
 
 .bar-graph-wrap .graph {
-    position: absolute;
-    /* 親要素に対して固定 */
-    left: 10%;
-    /* 親要素の左から10%の位置に配置 */
-    top: 10%;
-    /* 親要素の上から10%の位置に配置 */
-    height: 50px;
-    background: #03a9f4;
-    width: 0%;
-    /* 初期幅を0%に設定 */
-    border-radius: 0 4px 4px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    animation: graphAnim 3s forwards;
+    position: absolute; /* グラフを親要素に対して絶対配置 */
+    left: 10%; /* 左から10%の位置に配置 */
+    top: 10%; /* 上から10%の位置に配置 */
+    height: 50px; /* 高さを50pxに設定 */
+    background: #03a9f4; /* グラフの背景色を青色に */
+    width: 0%; /* 初期の幅を0%に設定 */
+    border-radius: 0 4px 4px 0; /* グラフの右上と右下に丸みをつける */
+    display: flex; /* 子要素をフレックスボックスで配置 */
+    align-items: center; /* アイテムを縦方向に中央揃え */
+    justify-content: space-between; /* アイテム間にスペースを均等に配置 */
+    padding: 10px; /* パディングを10pxに設定 */
+    animation: graphAnim 3s forwards; /* アニメーションでグラフが広がる */
 }
 
 .graph span {
-    font-size: 14px;
-    color: #ffffff;
+    font-size: 14px; /* テキストのフォントサイズを14pxに設定 */
+    color: #ffffff; /* テキストカラーを白に設定 */
 }
 
+/* グラフのアニメーション */
 @keyframes graphAnim {
     from {
-        width: 0%;
-        /* アニメーション開始時の幅 */
+        width: 0%; /* アニメーション開始時の幅 */
     }
-
     to {
-        width: 88%;
-        /* アニメーション終了時の幅 */
+        width: 88%; /* アニメーション終了時の幅 */
     }
 }
 
-
-
+/* ボーダーフレーム */
 .border-frame {
-    max-width: 1200px;
-    margin-top: calc(100px + 20px);
-    margin-bottom: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 20px;
-    background: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    width: 1000px;
-    background-color: rgb(244, 242, 242);
-    top: 60%;
-    left: 50%;
+    max-width: 1200px; /* 最大幅を1200pxに設定 */
+    margin-top: calc(100px + 20px); /* 上に100px + 20pxのマージンを設定 */
+    margin-bottom: 30px; /* 下に30pxのマージンを設定 */
+    margin-left: auto; /* 左のマージンを自動設定（中央揃え） */
+    margin-right: auto; /* 右のマージンを自動設定（中央揃え） */
+    padding: 20px; /* 内側に20pxのパディング */
+    background: #fff; /* 背景色を白に設定 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 軽いシャドウを設定 */
+    border-radius: 8px; /* 角を8pxの丸みに設定 */
+    width: 1000px; /* 幅を1000pxに設定 */
+    background-color: rgb(244, 242, 242); /* 背景色を薄い灰色に設定 */
+    top: 60%; /* 親要素から60%の位置に配置 */
+    left: 50%; /* 親要素の50%の位置に配置 */
 }
 
 td,
 th {
-    text-align: center;
-    /* 文字の揃え位置指定 */
+    text-align: center; /* テーブルセル内の文字を中央揃え */
 }
 
 table {
-    width: 800px;
-    margin: auto;
+    width: 800px; /* テーブルの幅を800pxに設定 */
+    margin: auto; /* テーブルを中央に配置 */
 }
 
 #tri {
-    color: rgb(63, 119, 232);
+    color: rgb(63, 119, 232); /* テキストの色を青色に設定 */
 }
 
+/* 各要素の位置を調整 */
 .level {
-    position: relative;
-    top: -300px;
-    left: 50px;
+    position: relative; /* レベルの位置を相対配置 */
+    top: -300px; /* 上に300px移動 */
+    left: 50px; /* 左に50px移動 */
 }
 
 .exp {
-    position: relative;
-    top: -300px;
-    left: 800px;
+    position: relative; /* 経験値の位置を相対配置 */
+    top: -300px; /* 上に300px移動 */
+    left: 800px; /* 左に800px移動 */
 }
 
 .addition {
-    position: relative;
-    top: -320px;
-    left: 900px;
+    position: relative; /* 追加の位置を相対配置 */
+    top: -320px; /* 上に320px移動 */
+    left: 900px; /* 左に900px移動 */
 }
 
 .correct-answer-rate {
-    position: relative;
-    top: -320px;
-    left: 600px;
+    position: relative; /* 正答率の位置を相対配置 */
+    top: -320px; /* 上に320px移動 */
+    left: 600px; /* 左に600px移動 */
 }
 
 .rate {
-    position: relative;
-    top: -375px;
-    left: 725px;
+    position: relative; /* レートの位置を相対配置 */
+    top: -375px; /* 上に375px移動 */
+    left: 725px; /* 左に725px移動 */
 }
 
 .response-time {
-    position: relative;
-    top: -375px;
-    left: 575px;
+    position: relative; /* 応答時間の位置を相対配置 */
+    top: -375px; /* 上に375px移動 */
+    left: 575px; /* 左に575px移動 */
 }
 
 .time {
-    position: relative;
-    top: -430px;
-    left: 775px;
+    position: relative; /* 時間の位置を相対配置 */
+    top: -430px; /* 上に430px移動 */
+    left: 775px; /* 左に775px移動 */
 }
 
 .answer {
-    font-size: 38px;
+    font-size: 38px; /* 答えのフォントサイズを38pxに設定 */
 }
-
-
 
 .average-time,
 .correct-rate {
-    font-size: 1.2em;
-    margin: 10px 0;
-    color: #333;
+    font-size: 1.2em; /* フォントサイズを1.2emに設定 */
+    margin: 10px 0; /* 上下マージンを10pxに設定 */
+    color: #333; /* テキストカラーを暗い灰色に設定 */
 }
 
 #table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+    width: 100%; /* テーブルの幅を100%に設定 */
+    border-collapse: collapse; /* テーブルの境界線を重ねないように設定 */
+    margin-top: 20px; /* 上に20pxのマージン */
 }
 
 #table th,
 #table td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
+    border: 1px solid #ccc; /* セルに薄い灰色の境界線を設定 */
+    padding: 10px; /* セル内のパディングを10pxに設定 */
+    text-align: center; /* テキストを中央揃え */
 }
 
 #table th {
-    background-color: #f2f2f2;
+    background-color: #f2f2f2; /* ヘッダーの背景色を薄い灰色に設定 */
 }
 
 #table tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #f9f9f9; /* 偶数行の背景色を明るい灰色に設定 */
 }
 
 #custom-question {
-    text-align: left !important;
-    /* 左寄せ */
-    white-space: pre-wrap;
-    /* 改行を維持 */
-    width: 40ch;
-    /* 10文字分の幅を設定 */
-    word-wrap: break-word;
-    /* 単語を折り返す */
+    text-align: left !important; /* 左寄せに設定（強制） */
+    white-space: pre-wrap; /* 改行を保持 */
+    width: 40ch; /* 幅を40文字に設定 */
+    word-wrap: break-word; /* 単語が長すぎる場合に折り返す */
 }
 
-/* レベルバー全体のスタイル */
+/* レベルバーのスタイル */
 .level-bar-container {
-    /* width: 300px; /* レベルバーの幅 
-    height: 20px; /* レベルバーの高さ 
-    background-color: #ddd; /* バックグラウンドの色 
-    overflow: hidden; /* バーの外側に溢れないようにする 
-    border: 1.5px solid #333; /* バーに境界線を追加 
-    margin: 20px 0; /* 上下に余白 */
-    display: flex;
-    justify-items: center;
-    width: 300px; /* 全幅 */
-    overflow: hidden; /* バーの外側に溢れないようにする */
-    background-color: #ffffff; /* バーの背景色 */
-    border: 1.5px solid #333;
-    position: relative; /* 中の要素を絶対配置できるようにする */
-    height: 30px; /* 高さ */
-    margin: 10px 0; /* 上下マージン */
-    align-items: center; /* 縦方向の中央揃え */
-    
+    height: 30px; /* 高さを30pxに設定 */
+    background-color: #ddd; /* 背景色を灰色に設定 */
+    overflow: hidden; /* 溢れた部分は非表示 */
+    border: 1.5px solid #333; /* 境界線を追加 */
+    margin: 10px 0; /* 上下マージンを10pxに設定 */
+    display: flex; /* フレックスボックスを使用 */
+    justify-items: center; /* アイテムを中央揃え */
+    align-items: center; /* アイテムを垂直方向に中央揃え */
+    width: 300px; /* 幅を300pxに設定 */
 }
 
-/* 実際のレベルバー（経験値の増減を示す部分） */
+/* 実際のレベルバー */
 .level-bar {
-    /* height: 100%; /* 親要素の高さに合わせる 
-    width: 0; /* デフォルトの幅は0（経験値0） 
-    background-color: #0070f7; /* レベルバーの色 
-    transition: width 0.5s ease; アニメーションで滑らかに変化 */
-    height: 100%; /* 高さを親要素に合わせる */
-    background-color: #0070f7; /* 進行状況の色 */
-    transition: width 0.5s ease; /*アニメーションで滑らかに変化 */
-
+    height: 100%; /* 親要素の高さに合わせる */
+    background-color: #0070f7; /* バーの進行色を青に設定 */
+    transition: width 0.5s ease; /* 幅の変更をスムーズに */
 }
 
-/* レベルバーの数値（表示用） */
+/* レベルバーの数値 */
 .level-bar-text {
-    text-align: center;
-    font-size: 16px;
-    margin-top: 10px;
+    font-size: 16px; /* フォントサイズを16pxに設定 */
+    margin-top: 10px; /* 上に10pxのマージンを設定 */
 }
 
 /* モーダルのスタイル */
 .modal {
-    background-color: #fff;
-    margin: 5% auto auto auto;
-    padding: 20px;
-    border-radius: 8px;
-    width: 80%;
-    max-width: 600px;
-    text-align: center;
+    background-color: #fff; /* 背景色を白に設定 */
+    margin: 5% auto; /* 中央に配置（上下5%） */
+    padding: 20px; /* パディングを20pxに設定 */
+    border-radius: 8px; /* 角を8px丸める */
+    width: 80%; /* 幅を80%に設定 */
+    max-width: 600px; /* 最大幅を600pxに設定 */
+    text-align: center; /* テキストを中央揃え */
 }
+
 .modal img {
-    width: 100px; /* 画像のサイズを調整 */
-    height: auto;
-    margin: 10px;
+    width: 100px; /* 画像の幅を100pxに設定 */
+    height: auto; /* 高さは自動調整 */
+    margin: 10px; /* 画像周りに10pxのマージンを追加 */
 }
+
+/* モーダルオーバーレイ */
 .modal-overlay {
-    display: none;
-    position: fixed;
-    z-index: 1001;
+    display: none; /* 初期状態では非表示 */
+    position: fixed; /* 固定位置に配置 */
+    z-index: 1001; /* z-indexを設定して他の要素より前面に表示 */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-.modal.active, .modal-overlay.active {
-    display: block;
+    background-color: rgba(0, 0, 0, 0.4); /* 背景を半透明の黒に設定 */
 }
 
-/* モーダルのボタンのスタイル */
+/* モーダルがアクティブな場合 */
+.modal.active, .modal-overlay.active {
+    display: block; /* 表示状態に変更 */
+}
+
+/* モーダルの閉じるボタン */
 #closeModal {
-    padding: 8px 16px;
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
+    padding: 8px 16px; /* ボタンの内側にパディング */
+    background-color: #007BFF; /* 背景色を青に設定 */
+    color: #fff; /* 文字色を白に設定 */
+    border: none; /* 枠線なし */
+    border-radius: 5px; /* 角を5px丸める */
+    cursor: pointer; /* ポインターカーソルを表示 */
+    font-size: 14px; /* フォントサイズを14pxに設定 */
 }
 
 #closeModal:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* ホバー時の背景色を暗く */
 }

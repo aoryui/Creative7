@@ -1,89 +1,96 @@
-/*  広告を破壊 */
+/* 広告を非表示にするためのスタイル */
 div[style*="z-index: 2147483647"] {
-    display: none !important;
+    display: none !important; /* z-indexが2147483647のスタイルを持つ広告要素を非表示に */
 }
 
-/* header関連 */
+/* 全体のマージンとパディングをリセットする設定 */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; /* すべての要素のマージンを削除 */
+    padding: 0; /* すべての要素のパディングを削除 */
+    box-sizing: border-box; /* ボックスの計算方法をborder-boxに設定 */
 }
 
+/* bodyの基本スタイル設定 */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: Arial, sans-serif; /* フォントをArialに設定 */
+    background-color: #f4f4f4; /* 背景色を薄い灰色に設定 */
 }
 
+/* ヘッダーのスタイル設定 */
 header {
-    background-color: #333;
-    padding: 20px 0;
-    position: relative;
+    background-color: #333; /* 背景色を濃いグレーに設定 */
+    padding: 20px 0; /* 上下に20pxのパディングを設定 */
+    position: relative; /* 相対位置を指定して、後述の絶対位置の要素に基準を与える */
 }
 
+/* ヘッダー内のコンテナのスタイル設定 */
 .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
+    width: 100%; /* 幅を100%に設定 */
+    max-width: 1200px; /* 最大幅を1200pxに設定 */
+    margin: 0 auto; /* 左右のマージンを自動で調整し中央寄せ */
+    padding: 0 15px; /* 左右に15pxのパディングを設定 */
 }
 
+/* ナビゲーションのリストのスタイル設定 */
 nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
+    list-style: none; /* リストの点を非表示 */
+    display: flex; /* フレックスボックスでリスト項目を並べる */
+    justify-content: center; /* ナビゲーションアイテムを中央揃え */
 }
 
+/* ナビゲーションリンクのスタイル設定 */
 nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px;
+    color: #fff; /* 文字色を白に設定 */
+    text-decoration: none; /* 下線を削除 */
+    padding: 10px; /* パディングを10pxに設定 */
 }
 
+/* 右側のボタン（例: ログインや会員登録）のスタイル設定 */
 .kan-right {
-    position: absolute;
-    top: 13px;
-    right: 20px;
-    background-color: rgb(84, 196, 99);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 0.9em;
-    padding: 8px 18px;
+    position: absolute; /* 絶対位置を指定して右上に配置 */
+    top: 13px; /* 上から13pxの位置 */
+    right: 20px; /* 右から20pxの位置 */
+    background-color: rgb(84, 196, 99); /* 背景色を緑に設定 */
+    color: #fff; /* 文字色を白に設定 */
+    text-decoration: none; /* 下線を削除 */
+    border-radius: 5px; /* 角を丸くする */
+    font-size: 0.9em; /* フォントサイズを少し小さめに設定 */
+    padding: 8px 18px; /* パディングを8px上下、18px左右に設定 */
 }
 
+/* 右側のボタンにホバーした時のスタイル設定 */
 .kan-right:hover {
-    background-color: rgb(60, 148, 74);
+    background-color: rgb(60, 148, 74); /* ホバー時に背景色を濃い緑に変更 */
 }
-/*ここまでがheader関連*/
-/* メインセクションのスタイル */
+
+/* メインセクションのスタイル設定 */
 main {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 15px;
+    max-width: 1200px; /* 最大幅を1200pxに設定 */
+    margin: 20px auto; /* 上下に20px、左右中央寄せ */
+    padding: 0 15px; /* 左右に15pxのパディングを設定 */
 }
 
-/* 各セクションのデザイン */
+/* 各セクションのスタイル設定 */
 .feature {
-    background-color: #fff; /* セクション背景を白に設定 */
-    margin-bottom: 20px; /* セクション間のスペース */
-    padding: 20px; /* セクション内部の余白 */
-    border-radius: 8px; /* 角丸デザイン */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 軽い影で浮き出し効果 */
+    background-color: #fff; /* 背景色を白に設定 */
+    margin-bottom: 20px; /* セクション間に20pxの間隔を設定 */
+    padding: 20px; /* 内側のパディングを20pxに設定 */
+    border-radius: 8px; /* 角を丸くする */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 軽い影を追加して浮き上がる感じを出す */
 }
 
-/* セクションタイトル */
+/* セクションタイトルのスタイル設定 */
 .feature h2 {
-    font-size: 1.5em; /* タイトルを大きく */
-    color: #007BFF; /* アクセントカラーに青を使用 */
-    border-left: 5px solid #007BFF; /* タイトル左側にラインを追加 */
-    padding-left: 10px; /* ラインと文字の間に余白 */
-    margin-bottom: 10px; /* タイトル下部にスペース */
+    font-size: 1.5em; /* フォントサイズを大きめに設定 */
+    color: #007BFF; /* タイトルの文字色を青に設定 */
+    border-left: 5px solid #007BFF; /* 左側に青い線を追加 */
+    padding-left: 10px; /* 線と文字の間に10pxの余白 */
+    margin-bottom: 10px; /* タイトル下に10pxのスペースを設定 */
 }
 
-/* セクション内容 */
+/* セクション内容のスタイル設定 */
 .feature p {
-    font-size: 1em; /* 読みやすい標準サイズ */
-    line-height: 1.6; /* 行間を広げて読みやすく */
-    color: #555; /* 少し薄めの文字色で柔らかさを演出 */
+    font-size: 1em; /* 標準的なフォントサイズ */
+    line-height: 1.6; /* 行間を1.6に設定して読みやすく */
+    color: #555; /* 文字色を薄めのグレーに設定 */
 }

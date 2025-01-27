@@ -1,143 +1,152 @@
-/*  広告を破壊 */
+/* 広告を破壊 */
 div[style*="z-index: 2147483647"] {
-  display: none !important;
+  display: none !important; /* 高いz-index値を持つ広告要素を非表示にする */
 }
-
 
 /* スクロールバーを隠す */
 html {
-    overflow: hidden;
-    /* 全体のスクロールバーを隠す */
-  }
-  
-  body {
-    overflow-y: hidden;
-    /* 垂直スクロールバーを隠す */
-  }
-  
-  .login-body { /*全体のボデイ*/ 
-    background-color: #ffefd5;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    color: rgb(84, 196, 99);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .login-container { /*大きい枠*/
-    width: 400px;
-    height: 350px;
-    margin-top: 150px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: auto;
-    background-color: #fff;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 40px;
-    padding-right: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  .login-ji {
-    font-size: 15px;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input {
-    padding: 10px 10px;
-    border: 2px solid rgb(84, 196, 99);
-    border-radius: 10px;
-    font-size: 16px;
-  }
-  
-  input::placeholder {
-    color: #ffb6c1;
-  }
-  
-  input:focus {
-    outline: none;
-    border-color:rgb(84, 196, 99);
-    box-shadow: 0 0 5px rgba(255, 192, 203, 0.5);
-  }
-  
-  #submit { /*登録ボタン*/
-    width: 150px;
-    padding: 10px;
-    background-color:rgb(84, 196, 99);
-    color: white;
-    border: none;
-    border-radius: 2px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    position: relative;
-    top: -85px;
-    font-size: 20px;
-  }
-  
-  #submit:hover {
-    background-color:rgb(84, 196, 99);
-  }
-  
-  .character {
-    width: 150px;
-    margin-bottom: 20px;
-  }
-  
-  .h1 {
-    font-size: 28px;
-  }
-  
-  #username { /*ユーザー名*/
-    position: relative;
-    top: -40px;
-    left: 80px;
-  }
-  
-  #usernames {
-    color: black;
-    position: relative;
-    left: -150px;
-    font-size: 20px;
-  }
-  
-  
-  #address { /*アドレス*/
-    position: relative;
-    top: -80px;
-    left: 80px;
-  }
-  
-  #addresses {
-    color: black;
-    position: relative;
-    left: -130px;
-    font-size: 20px;
-    top: -40px;
-  }
-  
-  #password { /*パスワード*/
-    position: relative;
-    top: -100px;
-    left: 80px;
-  }
-  
-  #passwords {
-    color: black;
-    position: relative;
-    left: -150px;
-    font-size: 20px;
-    top: -60px;
-  }
+  overflow: hidden; /* 横・縦両方のスクロールバーを隠す */
+}
+
+body {
+  overflow-y: hidden; /* 垂直スクロールバーを隠す */
+}
+
+/* ログインページの全体のスタイル */
+.login-body { 
+  background-color: #ffefd5; /* 背景色を薄いクリーム色に設定 */
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* フォントをComic Sans MSに設定 */
+  color: rgb(84, 196, 99); /* テキストの色を緑色に設定 */
+  min-height: 100vh; /* 最低でも画面全体の高さにする */
+  display: flex; /* フレックスボックスを使用 */
+  justify-content: center; /* 中央揃え */
+  align-items: center; /* 縦方向も中央揃え */
+}
+
+/* ログインフォームの枠のスタイル */
+.login-container { 
+  width: 400px; /* 幅を400pxに設定 */
+  height: 350px; /* 高さを350pxに設定 */
+  margin-top: 150px; /* 上部に150pxのマージンを設定 */
+  margin-left: auto; /* 左マージンを自動調整 */
+  margin-right: auto; /* 右マージンを自動調整 */
+  margin-bottom: auto; /* 下部マージンを自動調整 */
+  background-color: #fff; /* 背景色を白に設定 */
+  padding-top: 10px; /* 上部に10pxのパディング */
+  padding-bottom: 10px; /* 下部に10pxのパディング */
+  padding-left: 40px; /* 左に40pxのパディング */
+  padding-right: 40px; /* 右に40pxのパディング */
+  border-radius: 10px; /* 角を10px丸くする */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影をつけて立体感を演出 */
+  text-align: center; /* テキストを中央揃え */
+}
+
+/* フォームグループの間隔 */
+.form-group {
+  margin-bottom: 15px; /* 下部に15pxのマージンを設定 */
+}
+
+/* ラベルのスタイル */
+label {
+  display: block; /* ラベルをブロック要素にして横幅いっぱいに広げる */
+  margin-bottom: 5px; /* ラベル下部に5pxのマージンを設定 */
+}
+
+/* 入力欄のスタイル */
+input {
+  padding: 10px 10px; /* 入力欄に10pxのパディング */
+  border: 2px solid rgb(84, 196, 99); /* 緑色の境界線 */
+  border-radius: 10px; /* 角を10px丸くする */
+  font-size: 16px; /* フォントサイズを16pxに設定 */
+}
+
+/* 入力欄のプレースホルダのスタイル */
+input::placeholder {
+  color: #ffb6c1; /* プレースホルダの色を薄いピンクに設定 */
+}
+
+/* 入力欄がフォーカスされた時のスタイル */
+input:focus {
+  outline: none; /* フォーカス時のアウトラインを削除 */
+  border-color: rgb(84, 196, 99); /* 境界線を緑色に変更 */
+  box-shadow: 0 0 5px rgba(255, 192, 203, 0.5); /* 薄いピンク色のボックスシャドウを追加 */
+}
+
+/* 登録ボタンのスタイル */
+#submit {
+  width: 150px; /* 幅を150pxに設定 */
+  padding: 10px; /* パディングを10pxに設定 */
+  background-color: rgb(84, 196, 99); /* 背景色を緑に設定 */
+  color: white; /* テキスト色を白に設定 */
+  border: none; /* 枠線を削除 */
+  border-radius: 2px; /* 角を2px丸くする */
+  cursor: pointer; /* カーソルをポインタに変更 */
+  font-weight: bold; /* フォントを太字に設定 */
+  transition: background-color 0.3s ease; /* 背景色の遷移を0.3秒で設定 */
+  position: relative; /* 相対位置に設定 */
+  top: -85px; /* 上に85pxの位置に設定 */
+  font-size: 20px; /* フォントサイズを20pxに設定 */
+}
+
+/* 登録ボタンのホバー時のスタイル */
+#submit:hover {
+  background-color: rgb(84, 196, 99); /* ホバー時にも背景色は変わらず */
+}
+
+/* キャラクター画像のサイズ */
+.character {
+  width: 150px; /* 幅を150pxに設定 */
+  margin-bottom: 20px; /* 下部に20pxのマージンを設定 */
+}
+
+/* 見出し1（h1）のスタイル */
+.h1 {
+  font-size: 28px; /* フォントサイズを28pxに設定 */
+}
+
+/* ユーザー名の位置調整 */
+#username {
+  position: relative; /* 相対位置に設定 */
+  top: -40px; /* 上に40pxの位置に設定 */
+  left: 80px; /* 左に80pxの位置に設定 */
+}
+
+/* ユーザー名のラベルのスタイル */
+#usernames {
+  color: black; /* テキスト色を黒に設定 */
+  position: relative; /* 相対位置に設定 */
+  left: -150px; /* 左に150pxの位置に設定 */
+  font-size: 20px; /* フォントサイズを20pxに設定 */
+}
+
+/* アドレスの位置調整 */
+#address {
+  position: relative; /* 相対位置に設定 */
+  top: -80px; /* 上に80pxの位置に設定 */
+  left: 80px; /* 左に80pxの位置に設定 */
+}
+
+/* アドレスのラベルのスタイル */
+#addresses {
+  color: black; /* テキスト色を黒に設定 */
+  position: relative; /* 相対位置に設定 */
+  left: -130px; /* 左に130pxの位置に設定 */
+  font-size: 20px; /* フォントサイズを20pxに設定 */
+  top: -40px; /* 上に40pxの位置に設定 */
+}
+
+/* パスワードの位置調整 */
+#password {
+  position: relative; /* 相対位置に設定 */
+  top: -100px; /* 上に100pxの位置に設定 */
+  left: 80px; /* 左に80pxの位置に設定 */
+}
+
+/* パスワードのラベルのスタイル */
+#passwords {
+  color: black; /* テキスト色を黒に設定 */
+  position: relative; /* 相対位置に設定 */
+  left: -150px; /* 左に150pxの位置に設定 */
+  font-size: 20px; /* フォントサイズを20pxに設定 */
+  top: -60px; /* 上に60pxの位置に設定 */
+}
