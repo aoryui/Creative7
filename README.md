@@ -1,4 +1,13 @@
 # SPIタイサくん
+<img src="image/poster.jpg" alt="ヘッダー画像" width="300">
+
+## サービズ紹介動画
+[![動画](http://img.youtube.com/vi/UkzGfDF1sEs/0.jpg)](https://www.youtube.com/watch?v=UkzGfDF1sEs")
+
+## サービスURL
+http://creative7.starfree.jp
+
+## サービス概要
 「__就職活動の対策を__」したい
 「__就活生__」向けの、
 「__SPIタイサくん__」というプロダクトは、
@@ -37,5 +46,4 @@
   <img src="https://img.shields.io/badge/-XAMPP-FFFFFF.svg?logo=Xampp&style=flat-square">
   <img src="https://img.shields.io/badge/-GitHub-181717.svg?logo=github&style=flat-square">
   <img src="https://img.shields.io/badge/-Figma-000000.svg?logo=figma&style=flat-square">
-  <img src="https://img.shields.io/badge/-Twitch-ffffff.svg?logo=twitch&style=flat-square">
 </p>
