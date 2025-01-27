@@ -1,84 +1,90 @@
 <?php
-session_start();
-require_once __DIR__ . '/header_test.php';
+session_start(); // セッション開始
+require_once __DIR__ . '/header_test.php'; // ヘッダーの読み込み
 
-$servername = "localhost";
-$username = "Creative7";
-$password = "11111";
-$dbname = "creative7";
+// データベース接続の設定
+$servername = "localhost"; // サーバー名
+$username = "Creative7"; // ユーザー名
+$password = "11111"; // パスワード
+$dbname = "creative7"; // データベース名
 
-// $servername = "mysql1.php.starfree.ne.jp";
-// $username = "creative7_jun";
-// $password = "eL6VKCZh";
-// $dbname = "creative7_creative7";
+// $servername = "mysql1.php.starfree.ne.jp"; // もし本番環境を使用する場合のサーバー名
+// $username = "creative7_jun"; // 本番環境のユーザー名
+// $password = "eL6VKCZh"; // 本番環境のパスワード
+// $dbname = "creative7_creative7"; // 本番環境のデータベース名
 
-// データベース接続
+// データベース接続を確立
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // 接続確認
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die("Connection failed: " . $conn->connect_error); // 接続失敗時にエラーメッセージを表示
 }
 
 // 出題する問題数を設定
 $max_question = 10;
 
-// 既に表示した question_id を取得
+// 既に表示した問題のIDをセッションから取得
 $displayed_questions = isset($_SESSION['displayed_questions']) ? $_SESSION['displayed_questions'] : [];
-// 選択したchoice_id を取得
+// 選択した回答（choice_id）をセッションから取得
 $selected_choice = isset($_SESSION['selected_choice']) ? $_SESSION['selected_choice'] : [];
-// 回答時間を取得
+// 回答にかかった時間（秒）をセッションから取得
 $interval_time = isset($_SESSION['interval_time']) ? $_SESSION['interval_time'] : [];
-// $displayed_questions をセッションに保存
+
+// セッションにデータを保存
 $_SESSION['displayed_questions'] = $displayed_questions;
 $_SESSION['selected_choice'] = $selected_choice;
 $_SESSION['interval_time'] = $interval_time;
 
-// フォーム送信時の処理
+// フォームが送信された時の処理
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // 選択した選択肢がある場合
     if (isset($_POST['choice'])) {
-        $choice_id = $_POST['choice'];
+        $choice_id = $_POST['choice']; // 選択肢のIDを取得
 
         // 選択肢IDをセッションに保存
         $selected_choice[] = $choice_id;
         $_SESSION['selected_choice'] = $selected_choice;
     }
 
+    // 回答時間を取得
     if (isset($_POST['time_taken'])) {
         $time_taken = $_POST['time_taken'];
 
-        // 時間切れになると「時間切れ」を入れる
+        // 時間切れの場合、「時間切れ」を記録
         if ($time_taken === 'timeout') {
             $interval_time[] = '時間切れ';
         } else {
+            // 時間が正常に計測された場合
             $interval_time[] = (int)$time_taken;
         }
         $_SESSION['interval_time'] = $interval_time;
     }
 
-    // 既に表示した question_id の数が10つに達したらリセット
+    // 既に表示した問題数が10問に達したら結果ページへ遷移
     if (count($displayed_questions) >= $max_question) {
-        // 模擬試験か練習問題かを判別させるセッション
+        // 模擬試験か練習問題かを判別し、テスト終了後に結果ページへ遷移
         $_SESSION['test_display'] = 'test';
         echo '<script>window.location.href = "honban_result.php";</script>';
-        exit();
+        exit(); // これ以上処理を実行しない
     }
 }
 
-// ログ表示
-echo '<script>console.log('.json_encode($displayed_questions).')</script>'; // 既に表示した問題IDをコンソールに表示
-echo '<script>console.log('.json_encode($selected_choice).')</script>'; // 選択した答えを表示
-echo '<script>console.log('.json_encode($interval_time).')</script>'; // 回答時間を表示
+// ログ表示（デバッグ用）
+echo '<script>console.log('.json_encode($displayed_questions).')</script>'; // 表示した問題ID
+echo '<script>console.log('.json_encode($selected_choice).')</script>'; // 選択した選択肢
+echo '<script>console.log('.json_encode($interval_time).')</script>'; // 回答時間
 
-// パラメータから question_id を取得。無ければランダムに選択
+// URLパラメータからquestion_idを取得（指定がない場合はランダムに選択）
 $question_id = isset($_GET['question_id']) ? (int)$_GET['question_id'] : null;
 
 if (!$question_id) {
-    // 既に表示した question_id を除外してランダムに選択
+    // 既に表示した問題を除外し、ランダムに問題IDを選択
     if (count($displayed_questions) > 0) {
-        $excluded_ids = implode(',', $displayed_questions);
+        $excluded_ids = implode(',', $displayed_questions); // 既に表示した問題IDをカンマ区切りで取得
         $random_sql = "SELECT question_id FROM questions WHERE question_id NOT IN ($excluded_ids) ORDER BY RAND() LIMIT 1";
     } else {
+        // 初回表示時は全ての問題からランダムに選択
         $random_sql = "SELECT question_id FROM questions ORDER BY RAND() LIMIT 1";
     }
     $random_result = $conn->query($random_sql);
@@ -86,36 +92,37 @@ if (!$question_id) {
         $random_question = $random_result->fetch_assoc();
         $question_id = $random_question['question_id'];
     } else {
-        // 全ての問題を表示した場合の処理（例: 全ての問題が表示されたとユーザーに通知）
+        // すべての問題が表示された場合の処理
         die("All questions have been displayed.");
     }
 }
 
-// 問題を取得
+// 問題の詳細をデータベースから取得
 $question_sql = "SELECT * FROM questions WHERE question_id = $question_id";
 $question_result = $conn->query($question_sql);
 
 if ($question_result->num_rows > 0) {
-    $question = $question_result->fetch_assoc();
+    $question = $question_result->fetch_assoc(); // 問題情報を取得
 } else {
-    die("No question found with the given ID.");
+    die("No question found with the given ID."); // 問題が見つからなかった場合の処理
 }
 
 // 選択肢を取得
 $choices_sql = "SELECT * FROM choices WHERE question_id=" . $question['question_id'];
 $choices_result = $conn->query($choices_sql);
 
+// データベース接続を閉じる
 $conn->close();
 
-// 改行を HTML 改行タグに変換
+// 改行をHTMLの改行タグに変換
 $question_text = nl2br(htmlspecialchars($question['question_text'], ENT_QUOTES, 'UTF-8'));
 $genre_text = nl2br(htmlspecialchars($question['genre_text'], ENT_QUOTES, 'UTF-8'));
 
-// セッションに現在のquestion_idを保存
+// 現在の問題IDをセッションに保存
 $_SESSION['displayed_questions'][] = $question_id;
 
 // 制限時間を取得
-$interval = $question['interval_num'];
+$interval = $question['interval_num']; // 制限時間
 ?>
 
 <!DOCTYPE html>
@@ -124,20 +131,20 @@ $interval = $question['interval_num'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPIタイサくん</title>
-    <link rel="stylesheet" href="../css/test.css">
-    <link rel="stylesheet" href="../responsive/test.css">
+    <link rel="stylesheet" href="../css/test.css"> <!-- テスト用CSS -->
+    <link rel="stylesheet" href="../responsive/test.css"> <!-- レスポンシブCSS -->
 </head>
 <body>
     <div class="content">
-    <button class="edit-profile-btn" onclick="location.href='teststart.php';">模擬試験開始に戻る</button>
+        <button class="edit-profile-btn" onclick="location.href='teststart.php';">模擬試験開始に戻る</button> <!-- 模擬試験開始に戻るボタン -->
         <div class="question">
-        <div class="top-contents"><!-- 上のやつ -->
-            <p id="question_count"><?php echo $genre_text ?></p> <!-- ジャンル名のやつ -->
-            <p id="count"><?php echo '問題数'.(count($displayed_questions)+1).'/'.$max_question.'問目'?></p> <!-- 問題数ののやつ -->
-        </div>
-        <div class="center-contents"></div>
+            <div class="top-contents">
+                <p id="question_count"><?php echo $genre_text ?></p> <!-- ジャンル名 -->
+                <p id="count"><?php echo '問題数'.(count($displayed_questions)+1).'/'.$max_question.'問目'?></p> <!-- 現在の問題数 -->
+            </div>
+            <div class="center-contents"></div>
             <?php
-            // 画像のパスを作成
+            // 画像パスを作成
             $image_path = "../image/問題集/" . $question_text . ".jpg";
             // HTMLで画像を表示
             echo '<img src="' . $image_path . '" alt="問題画像" class="question_img">';
@@ -147,6 +154,7 @@ $interval = $question['interval_num'];
             <div class="choices">
                 <?php
                 while ($choice = $choices_result->fetch_assoc()) {
+                    // 各選択肢を表示
                     echo '<div class="choice">';
                     echo '<input type="radio" name="choice" value="' . $choice['choice_id'] . '" id="option' . $choice['choice_id'] . '">';
                     echo '<label for="option' . $choice['choice_id'] . '">' . htmlspecialchars($choice['choice_text'], ENT_QUOTES, 'UTF-8') . '</label>';
@@ -158,8 +166,8 @@ $interval = $question['interval_num'];
             <input type="hidden" name="time_taken" id="time_taken" value="">
         </form>
     </div>
-    </div>
     
+    <!-- タイマーの表示 -->
     <div class="timer">
         <div class="timer-label">回答時間 <span id="remaining-time"></span></div>
         <div class="timer-container" id="timer-container">
@@ -167,40 +175,46 @@ $interval = $question['interval_num'];
         </div>
     </div>
 
+    <!-- 次に進むボタン -->
     <a href="#" class="next-button" id="next-button">次に進む</a>
-    <script>
-        const totalSegments = <?php echo $interval; ?>;
-        let startTime;
 
+    <script>
+        const totalSegments = <?php echo $interval; ?>; // 制限時間（秒）
+        let startTime; // 開始時間
+
+        // 次の問題に進む処理
         function goToNextQuestion() {
             const timeTakenInput = document.getElementById('time_taken');
             const endTime = Date.now();
-            const timeTaken = Math.ceil((endTime - startTime) / 1000);
-            
-            // Check if the timer has reached its end
+            const timeTaken = Math.ceil((endTime - startTime) / 1000); // 経過時間を秒単位で計算
+
+            // 時間切れ判定
             if (timeTaken >= totalSegments) {
-                timeTakenInput.value = 'timeout'; // Indicate timeout
+                timeTakenInput.value = 'timeout'; // 時間切れ
             } else {
-                timeTakenInput.value = timeTaken; // Normal time taken
+                timeTakenInput.value = timeTaken; // 通常の経過時間
             }
-            
-            // Handle choice selection
-            if (!document.querySelector('input[name="choice"]:checked')) { // 時間切れの場合は0を格納する
+
+            // 回答が選択されていない場合は0をセット
+            if (!document.querySelector('input[name="choice"]:checked')) {
                 const hiddenInput = document.createElement('input');
                 hiddenInput.type = 'hidden';
                 hiddenInput.name = 'choice';
                 hiddenInput.value = '0';
                 document.getElementById('choiceForm').appendChild(hiddenInput);
             }
-            document.getElementById('choiceForm').submit();
+
+            document.getElementById('choiceForm').submit(); // フォームを送信
         }
 
+        // 次に進むボタンがクリックされたとき
         document.getElementById('next-button').addEventListener('click', (e) => {
             e.preventDefault();
             goToNextQuestion();
         });
 
-        document.querySelectorAll('.choice').forEach(choice => { // 選択肢の当たり判定をclass="choice"にも反映
+        // 画面上の選択肢クリック時にラジオボタンを選択
+        document.querySelectorAll('.choice').forEach(choice => {
             choice.addEventListener('click', () => {
                 const radio = choice.querySelector('input[type="radio"]');
                 if (radio) {
@@ -209,14 +223,15 @@ $interval = $question['interval_num'];
             });
         });
 
-        window.addEventListener('load', function() { // ページリロードされたらteststart.phpに遷移
+        window.addEventListener('load', function() { // ページがリロードされたとき
             if (performance.navigation.type === 1) {
-                window.location.href = 'teststart.php';
+                window.location.href = 'teststart.php'; // teststart.phpに遷移
             }
         });
 
-        document.addEventListener('DOMContentLoaded', function () { // ページが表示されたら実行される
-            const timerBar = document.getElementById('timer-bar'); // バーの時間経過で右へ延びる部分
+        // ページが表示されたときにタイマーを開始
+        document.addEventListener('DOMContentLoaded', function () {
+            const timerBar = document.getElementById('timer-bar'); // タイマーのバー
             const timerContainer = document.getElementById('timer-container'); // バーの背景
             const remainingTimeElement = document.getElementById('remaining-time'); // 残り時間表示
             const intervalDuration = totalSegments * 1000; // 制限時間をミリ秒に変換
@@ -232,7 +247,7 @@ $interval = $question['interval_num'];
                 // バーの長さを更新
                 timerBar.style.width = percentage + '%';
 
-                // 背景の色を更新
+                // 背景色の更新
                 if (percentage < 50) {
                     timerContainer.style.backgroundColor = '#339966'; // 緑
                 } else if (percentage < 80) {
@@ -242,39 +257,17 @@ $interval = $question['interval_num'];
                 }
 
                 // 残り時間を更新
-                remainingTimeElement.textContent = Math.ceil(timeRemaining / 1000) + ' / '+ totalSegments +' 秒';
+                remainingTimeElement.textContent = Math.ceil(timeRemaining / 1000) + ' / ' + totalSegments + ' 秒';
 
-                if (currentTime >= endTime) { // 時間切れ
-                    goToNextQuestion();
+                if (currentTime >= endTime) {
+                    goToNextQuestion(); // 時間切れで次の問題へ
                 } else {
-                    requestAnimationFrame(updateTimer);
+                    requestAnimationFrame(updateTimer); // タイマーを更新
                 }
             }
 
-            // 初期化
-            timerBar.style.transition = 'width 0.1s linear'; // バーの動きのアニメーション設定
             updateTimer();
         });
-                
-        // モーダルを開く関数
-        function openEditModal() {
-            document.getElementById("editModal").style.display = "block";
-        }
-
-        // モーダルを閉じる関数
-        function closeEditModal() {
-            document.getElementById("editModal").style.display = "none";
-        }
-
-        // 閉じるボタンにイベントリスナーを追加
-        document.querySelector(".close").addEventListener("click", closeEditModal);
-
-        // モーダル外をクリックしたときにモーダルを閉じる
-        window.onclick = function(event) {
-            if (event.target == document.getElementById("editModal")) {
-                closeEditModal();
-            }
-        }
     </script>
 </body>
 </html>

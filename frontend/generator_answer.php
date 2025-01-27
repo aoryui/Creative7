@@ -1,25 +1,27 @@
 <?php
+// ヘッダーをインクルード
 require_once __DIR__ . '/header_kanrisya.php';
 
+// POSTリクエストの場合、処理を実行
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $data = json_decode(file_get_contents('php://input'), true);
+    $data = json_decode(file_get_contents('php://input'), true); // JSONデータを取得
 
     if (isset($data['image'])) {
-        // Get the base64 encoded image
+        // Base64エンコードされた画像データを取得
         $imageData = $data['image'];
 
-        // Remove the base64 header (data:image/jpg;base64,)
+        // Base64ヘッダーを削除（例: data:image/jpg;base64,）
         $imageData = str_replace('data:image/jpg;base64,', '', $imageData);
         $imageData = str_replace(' ', '+', $imageData);
 
-        // Decode the image
+        // 画像データをデコード
         $decodedImage = base64_decode($imageData);
 
-        // Save the image
-        $fileName = 'generated_image_' . time() . '.jpg';
+        // 画像を保存
+        $fileName = 'generated_image_' . time() . '.jpg'; // ファイル名をタイムスタンプで設定
         file_put_contents($fileName, $decodedImage);
 
-        // Send response
+        // レスポンスを送信
         echo json_encode(['success' => true, 'filename' => $fileName]);
         exit;
     } else {
@@ -35,9 +37,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>テキストから画像へ</title>
+    <!-- スタイルシートのリンク -->
     <link rel="stylesheet" href="../css/generator_test.css">
-    <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script> <!-- Markdownパーサー -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script> <!-- HTMLを画像化するライブラリ -->
 </head>
 <body>
 
@@ -60,20 +63,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </div>
 
 <script>
-    const md = window.markdownit({ breaks: true });
-    const textarea = document.getElementById('markdown-input');
-    const preview = document.getElementById('preview');
-    const generateButton = document.getElementById('generate-button');
-    const imageUpload = document.getElementById('image-upload');
-    const addHeadingButton = document.getElementById('add-heading');
-    const addBoldButton = document.getElementById('add-bold');
-    const addListButton = document.getElementById('add-list');
+    const md = window.markdownit({ breaks: true }); // Markdownパーサーの初期化
+    const textarea = document.getElementById('markdown-input'); // Markdown入力エリア
+    const preview = document.getElementById('preview'); // プレビューエリア
+    const generateButton = document.getElementById('generate-button'); // 画像生成ボタン
+    const imageUpload = document.getElementById('image-upload'); // 画像アップロードボタン
+    const addHeadingButton = document.getElementById('add-heading'); // 見出しボタン
+    const addBoldButton = document.getElementById('add-bold'); // 太字ボタン
+    const addListButton = document.getElementById('add-list'); // リストボタン
     const addLineBreakButton = document.getElementById('add-line-break'); // 改行ボタンを取得
 
+    // 入力イベントでプレビューを更新
     textarea.addEventListener('input', () => {
         updatePreview();
     });
 
+    // ファイルアップロード時の処理
     imageUpload.addEventListener('change', (event) => {
         const file = event.target.files[0];
         if (file) {
@@ -89,12 +94,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     });
 
+    // 見出しボタンのクリックイベント
     addHeadingButton.addEventListener('click', () => {
         const currentText = textarea.value;
         textarea.value = `# ${currentText}`;
         updatePreview();
     });
 
+    // 太字ボタンのクリックイベント
     addBoldButton.addEventListener('click', () => {
         const selectedText = textarea.value.substring(textarea.selectionStart, textarea.selectionEnd) || "太字にしたいテキスト";
         const currentText = textarea.value;
@@ -102,24 +109,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         updatePreview();
     });
 
+    // リストボタンのクリックイベント
     addListButton.addEventListener('click', () => {
         const currentText = textarea.value;
         textarea.value = `${currentText}- `;
         updatePreview();
     });
 
-    // 改行ボタンのクリックで `  \n` を追加
+    // 改行ボタンのクリックイベント
     addLineBreakButton.addEventListener('click', () => {
         const currentText = textarea.value;
         textarea.value = `${currentText}  \n`;
         updatePreview();
     });
 
+    // プレビューを更新
     function updatePreview() {
         preview.innerHTML = md.render(textarea.value);
-        adjustFontSize();
+        adjustFontSize(); // フォントサイズを調整
     }
 
+    // 画像生成ボタンのクリックイベント
     generateButton.addEventListener('click', () => {
         const originalZoom = preview.style.zoom;
         preview.style.zoom = "100%";
@@ -129,6 +139,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             const imageData = canvas.toDataURL('image/jpg');
 
+            // ダウンロードリンクを作成
             const a = document.createElement('a');
             a.href = imageData;
             const currentTime = new Date().toISOString().slice(0, 19).replace(/:/g, '-');
@@ -137,6 +148,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             a.click();
             document.body.removeChild(a);
 
+            // サーバーに画像を送信
             fetch('your_php_script.php', {
                 method: 'POST',
                 headers: {
@@ -158,6 +170,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         });
     });
 
+    // プレビュー領域のフォントサイズを調整
     function adjustFontSize() {
         let fontSize = 50;
         preview.style.fontSize = fontSize + 'px';

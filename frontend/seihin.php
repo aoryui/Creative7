@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+    <!-- ページの文字コードをUTF-8に設定 -->
     <meta charset="UTF-8">
+    <!-- レスポンシブデザインのため、画面サイズに応じてページを調整 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPI サイト</title>
+    <!-- スタイルシートのリンク -->
     <link rel="stylesheet" href="../css/seihin.css">
     <link rel="stylesheet" href="../responsive/seihin.css">
 </head>
@@ -14,19 +17,24 @@
 <header>
     <div class="container">
         <nav>
+            <!-- ナビゲーションメニュー -->
             <ul>
-                <li><a href="home.php">ホーム</a></li>
-                <li><a href="SPI.php">SPIとは</a></li>
-                <li><a href="seihin.php">製品とサービス</a></li>
-                <li><a href="https://forms.gle/oMCuBp2MY42qXyEu8">お問い合わせ</a></li>
+                <!-- 各リンクのリスト -->
+                <li><a href="home.php">ホーム</a></li> <!-- ホームページ -->
+                <li><a href="SPI.php">SPIとは</a></li> <!-- SPIの説明ページ -->
+                <li><a href="seihin.php">製品とサービス</a></li> <!-- 製品とサービスのページ -->
+                <li><a href="https://forms.gle/oMCuBp2MY42qXyEu8">お問い合わせ</a></li> <!-- お問い合わせフォーム -->
             </ul>
         </nav>
     </div>
+    <!-- 管理者ログインリンク -->
     <a href="kanrisya_login.php" class="kan-right">管理者ログイン</a>
 </header>
 
+<!-- メインコンテンツ -->
 <main>
-    <section class="feature">
+    <!-- 各機能を紹介するセクション -->
+    <section class="feature">      
         <h2>ログイン・ログアウト</h2>
         <p>ユーザーはセキュアなログインとログアウト機能を使って、個人アカウントにアクセスできます。</p>
     </section>

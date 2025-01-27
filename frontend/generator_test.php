@@ -1,28 +1,33 @@
 <?php
+// 管理者用ヘッダーファイルを読み込み
 require_once __DIR__ . '/header_kanrisya.php';
 
+// POSTリクエストが送信された場合の処理
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // 送信されたJSONデータをデコード
     $data = json_decode(file_get_contents('php://input'), true);
 
+    // 'image'キーが存在する場合の処理
     if (isset($data['image'])) {
-        // Get the base64 encoded image
+        // Base64エンコードされた画像データを取得
         $imageData = $data['image'];
 
-        // Remove the base64 header (data:image/jpg;base64,)
+        // Base64ヘッダー部分 (data:image/jpg;base64,) を削除
         $imageData = str_replace('data:image/jpg;base64,', '', $imageData);
         $imageData = str_replace(' ', '+', $imageData);
 
-        // Decode the image
+        // 画像データをデコード
         $decodedImage = base64_decode($imageData);
 
-        // Save the image
-        $fileName = 'generated_image_' . time() . '.jpg';
+        // 画像をファイルとして保存
+        $fileName = 'generated_image_' . time() . '.jpg'; // 現在のタイムスタンプをファイル名に使用
         file_put_contents($fileName, $decodedImage);
 
-        // Send response
+        // 保存完了のレスポンスを返却
         echo json_encode(['success' => true, 'filename' => $fileName]);
         exit;
     } else {
+        // 画像データが送信されなかった場合のエラーレスポンス
         echo json_encode(['success' => false, 'message' => 'No image data received.']);
         exit;
     }
@@ -35,45 +40,53 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>テキストから画像へ</title>
-    <link rel="stylesheet" href="../css/generator_test.css">
-    <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="../css/generator_test.css"> <!-- 外部CSSファイルを読み込み -->
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script> <!-- MarkdownをHTMLに変換するライブラリ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script> <!-- HTMLを画像に変換するライブラリ -->
 </head>
 <body>
 
 <h1 id="bun">作成したい問題文を入力してください</h1>
-<button class="button" id="add-heading">拡大</button>
-<button class="button" id="add-bold">太字</button>
-<button class="button" id="add-list">リスト</button>
-<button class="button" id="add-line-break">改行</button> <!-- 改行ボタンを追加 -->
+<!-- ボタン群 -->
+<button class="button" id="add-heading">拡大</button> <!-- 見出しを追加するボタン -->
+<button class="button" id="add-bold">太字</button> <!-- 太字を追加するボタン -->
+<button class="button" id="add-list">リスト</button> <!-- リストを追加するボタン -->
+<button class="button" id="add-line-break">改行</button> <!-- 改行を追加するボタン -->
 
 <div class="container">
     <div class="text-area">
+        <!-- Markdown入力用のテキストエリア -->
         <textarea id="markdown-input" rows="10" cols="50" placeholder="テキストを入力してください(MarkDownを使用できます)"></textarea><br>
+        <!-- 画像アップロード用のファイル選択 -->
         <input type="file" id="image-upload" accept="image/*"><br>
-        <button id="generate-button">画像をダウンロード</button>
+        <button id="generate-button">画像をダウンロード</button> <!-- 画像生成ボタン -->
     </div>
 
     <div class="canvas-area">
-        <div id="preview"></div>
+        <div id="preview"></div> <!-- プレビューエリア -->
     </div>
 </div>
 
 <script>
+    // Markdownライブラリのインスタンス化
     const md = window.markdownit({ breaks: true });
-    const textarea = document.getElementById('markdown-input');
-    const preview = document.getElementById('preview');
-    const generateButton = document.getElementById('generate-button');
-    const imageUpload = document.getElementById('image-upload');
-    const addHeadingButton = document.getElementById('add-heading');
-    const addBoldButton = document.getElementById('add-bold');
-    const addListButton = document.getElementById('add-list');
-    const addLineBreakButton = document.getElementById('add-line-break'); // 改行ボタンを取得
 
+    // 各要素の取得
+    const textarea = document.getElementById('markdown-input'); // Markdown入力エリア
+    const preview = document.getElementById('preview'); // プレビューエリア
+    const generateButton = document.getElementById('generate-button'); // 画像生成ボタン
+    const imageUpload = document.getElementById('image-upload'); // 画像アップロードボタン
+    const addHeadingButton = document.getElementById('add-heading'); // 見出しボタン
+    const addBoldButton = document.getElementById('add-bold'); // 太字ボタン
+    const addListButton = document.getElementById('add-list'); // リストボタン
+    const addLineBreakButton = document.getElementById('add-line-break'); // 改行ボタン
+
+    // テキストエリアの内容が変更されたらプレビューを更新
     textarea.addEventListener('input', () => {
         updatePreview();
     });
 
+    // アップロードされた画像をプレビューに表示
     imageUpload.addEventListener('change', (event) => {
         const file = event.target.files[0];
         if (file) {
@@ -89,46 +102,52 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     });
 
+    // 見出しボタンがクリックされた時の処理
     addHeadingButton.addEventListener('click', () => {
         const currentText = textarea.value;
-        textarea.value = `# ${currentText}`;
+        textarea.value = `# ${currentText}`; // 見出しのMarkdown記法を追加
         updatePreview();
     });
 
+    // 太字ボタンがクリックされた時の処理
     addBoldButton.addEventListener('click', () => {
         const selectedText = textarea.value.substring(textarea.selectionStart, textarea.selectionEnd) || "太字にしたいテキスト";
         const currentText = textarea.value;
-        textarea.value = `${currentText} **${selectedText}**`;
+        textarea.value = `${currentText} **${selectedText}**`; // 太字のMarkdown記法を追加
         updatePreview();
     });
 
+    // リストボタンがクリックされた時の処理
     addListButton.addEventListener('click', () => {
         const currentText = textarea.value;
-        textarea.value = `${currentText}- `;
+        textarea.value = `${currentText}- `; // リストのMarkdown記法を追加
         updatePreview();
     });
 
-    // 改行ボタンのクリックで `  \n` を追加
+    // 改行ボタンがクリックされた時の処理
     addLineBreakButton.addEventListener('click', () => {
         const currentText = textarea.value;
-        textarea.value = `${currentText}  \n`;
+        textarea.value = `${currentText}  \n`; // Markdownの改行記法を追加
         updatePreview();
     });
 
+    // プレビューを更新する関数
     function updatePreview() {
-        preview.innerHTML = md.render(textarea.value);
-        adjustFontSize();
+        preview.innerHTML = md.render(textarea.value); // MarkdownをHTMLに変換してプレビューに反映
+        adjustFontSize(); // フォントサイズを調整
     }
 
+    // 画像生成ボタンがクリックされた時の処理
     generateButton.addEventListener('click', () => {
-        const originalZoom = preview.style.zoom;
+        const originalZoom = preview.style.zoom; // 元のズーム設定を保存
         preview.style.zoom = "100%";
 
         html2canvas(preview, { scale: 2 }).then(canvas => {
             preview.style.zoom = originalZoom;
 
-            const imageData = canvas.toDataURL('image/jpg');
+            const imageData = canvas.toDataURL('image/jpg'); // プレビューを画像に変換
 
+            // 画像をダウンロード
             const a = document.createElement('a');
             a.href = imageData;
             const currentTime = new Date().toISOString().slice(0, 19).replace(/:/g, '-');
@@ -137,6 +156,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             a.click();
             document.body.removeChild(a);
 
+            // サーバーに画像を送信
             fetch('your_php_script.php', {
                 method: 'POST',
                 headers: {
@@ -158,8 +178,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         });
     });
 
+    // プレビューエリアのフォントサイズを調整する関数
     function adjustFontSize() {
-        let fontSize = 50;
+        let fontSize = 50; // 初期フォントサイズ
         preview.style.fontSize = fontSize + 'px';
 
         while (preview.scrollHeight > preview.clientHeight || preview.scrollWidth > preview.clientWidth) {
@@ -167,7 +188,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             preview.style.fontSize = fontSize + 'px';
 
             if (fontSize <= 10) {
-                break;
+                break; // フォントサイズが最小値に達したら終了
             }
         }
     }

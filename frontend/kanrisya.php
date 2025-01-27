@@ -1,51 +1,55 @@
 <?php
+// 管理者ヘッダーを読み込み
 require_once __DIR__ . '/header_kanrisya.php';
 
-// データベースに接続するための情報
-$host = 'localhost';
-$username = 'Creative7';
-$password = '11111';
-$database = 'creative7';
+// データベース接続情報
+$host = 'localhost'; // ホスト名
+$username = 'Creative7'; // データベースユーザー名
+$password = '11111'; // データベースパスワード
+$database = 'creative7'; // データベース名
 
 // データベースに接続
 $conn = mysqli_connect($host, $username, $password, $database);
 
+// 接続エラーがあれば終了
 if (!$conn) {
     die('データベースに接続できませんでした: ' . mysqli_connect_error());
 }
 
-// 新規登録者数をカウント
+// 新規登録者数のカウント
 $newUsersCount = 0; // 初期化
-$sqlNewUsers = "SELECT COUNT(*) as new_users FROM userinfo";
+$sqlNewUsers = "SELECT COUNT(*) as new_users FROM userinfo"; // 新規登録者数を取得するSQLクエリ
 $newUsersResult = $conn->query($sqlNewUsers);
 
+// 結果があれば、新規登録者数を変数に格納
 if ($newUsersResult && $row = $newUsersResult->fetch_assoc()) {
     $newUsersCount = $row['new_users'];
 }
 
-// データベースから情報を取得
+// ユーザー情報を取得するSQLクエリ
 $sql = "SELECT userid, username, subject, email, password, last_login FROM userinfo";
 
-// 学科フィルタ
-$selected_subject = isset($_GET['subject']) ? $_GET['subject'] : '';
+// 学科フィルタ処理（GETで選択された学科で絞り込み）
+$selected_subject = isset($_GET['subject']) ? $_GET['subject'] : ''; // 送信された学科名を取得
 if ($selected_subject !== '') {
+    // SQLインジェクション対策のため、入力値をエスケープ
     $sql .= " WHERE subject = '" . mysqli_real_escape_string($conn, $selected_subject) . "'";
 }
 
-// 総ユーザー数を取得
-$total_result = $conn->query($sql);
-$totaluser = $total_result->num_rows;
+// ユーザー数を取得
+$total_result = $conn->query($sql); // クエリ実行
+$totaluser = $total_result->num_rows; // ユーザー数
 
-// ページネーションの処理
-$itemsPerPage = 10;
-$totalPages = ceil($totaluser / $itemsPerPage);
-$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-$page = max(1, min($totalPages, $page));
-$offset = ($page - 1) * $itemsPerPage;
+// ページネーションの設定
+$itemsPerPage = 10; // 1ページに表示するアイテム数
+$totalPages = ceil($totaluser / $itemsPerPage); // 総ページ数
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1; // 現在のページ番号（デフォルトは1）
+$page = max(1, min($totalPages, $page)); // ページ番号が範囲外の場合に修正
+$offset = ($page - 1) * $itemsPerPage; // OFFSETの計算
 
-// LIMIT句を追加して、データを取得
+// LIMIT句を追加して、取得するデータを制限
 $sql .= " LIMIT $itemsPerPage OFFSET $offset";
-$result = $conn->query($sql);
+$result = $conn->query($sql); // 実行して結果を取得
 ?>
 
 <!DOCTYPE html>
@@ -60,14 +64,14 @@ $result = $conn->query($sql);
 
 <div class="container">
     <h2>ユーザー情報一覧</h2>
-    
-    <!-- 独自の新規登録者数ボックス -->
+
+    <!-- 新規登録者数を表示するボックス -->
     <div class="new-users-box">
         <span class="icon">👤</span>
         <span>総新規登録者数: <span class="count"><?php echo $newUsersCount; ?></span> 人</span>
     </div>
 
-    <!-- 検索フォームとテーブル表示部分はそのまま -->
+    <!-- 学科フィルタフォーム -->
     <form method="GET" action="">
         <label for="subject">学科で検索:</label>
         <select id="subject" name="subject">
@@ -80,6 +84,7 @@ $result = $conn->query($sql);
         <button type="submit">ソート</button>
     </form>
 
+    <!-- ユーザー情報を表示するテーブル -->
     <table>
         <thead>
             <tr>
@@ -91,8 +96,10 @@ $result = $conn->query($sql);
         </thead>
         <tbody>
             <?php
+            // データが存在する場合は、ユーザー情報をテーブルに表示
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
+                    // データを安全に表示するためにhtmlspecialcharsでエスケープ
                     $userid = htmlspecialchars($row['userid']);
                     $username = htmlspecialchars($row['username']);
                     $subject = htmlspecialchars($row['subject']);
@@ -100,13 +107,14 @@ $result = $conn->query($sql);
                     $last_login = htmlspecialchars($row['last_login']);
 
                     echo "<tr>";
-                    echo "<td><a href='user.php?userid={$userid}'>{$username}</a></td>";
+                    echo "<td><a href='user.php?userid={$userid}'>{$username}</a></td>"; // ユーザー名リンク
                     echo "<td>{$subject}</td>";
                     echo "<td>{$email}</td>";
                     echo "<td>{$last_login}</td>";
                     echo "</tr>";
                 }
             } else {
+                // データがなければ「データがありません」と表示
                 echo "<tr><td colspan='4'>データがありません</td></tr>";
             }
             ?>
@@ -115,12 +123,15 @@ $result = $conn->query($sql);
 
     <!-- ページネーション -->
     <div class="pagination">
+        <!-- 前のページへのリンク（最初のページなら非表示） -->
         <a href="?page=<?php echo $page - 1; ?>&subject=<?php echo urlencode($selected_subject); ?>" class="prev <?php echo ($page <= 1) ? 'hidden' : ''; ?>">&laquo; 前</a>
 
+        <!-- 各ページへのリンク -->
         <?php for ($i = 1; $i <= $totalPages; $i++): ?>
             <a href="?page=<?php echo $i; ?>&subject=<?php echo urlencode($selected_subject); ?>" class="<?php echo ($i == $page) ? 'current-page' : ''; ?>"><?php echo $i; ?></a>
         <?php endfor; ?>
 
+        <!-- 次のページへのリンク（最後のページなら非表示） -->
         <a href="?page=<?php echo $page + 1; ?>&subject=<?php echo urlencode($selected_subject); ?>" class="next <?php echo ($page >= $totalPages) ? 'hidden' : ''; ?>">次 &raquo;</a>
     </div>
 </div>

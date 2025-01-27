@@ -49,6 +49,7 @@ $conn->close();
     <link rel="stylesheet" href="../responsive/collection.css">
 </head>
 <body>
+    <!-- 表示させるバッジ -->
 <div class="collection-container">
 
     <img id="badgeimg1" class="<?= in_array("badge1.png", $owned_badges) ? "owned-badge" : "unowned-badge"; ?>" src="../image/icon/badge1.png">
