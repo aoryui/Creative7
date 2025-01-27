@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
     } else {
         header('Location: ../frontend/email_verify.php?message=確認コードが保存されていません再度メールアドレスを入力してください');
-            exit();
+        exit();
     }
 }
 ?>

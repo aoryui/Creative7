@@ -22,9 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $_SESSION['field'] = $field;
     $_SESSION['genre'] = $genres;
-
-    echo '<script>console.log('.json_encode($field).')</script>';
-    echo '<script>console.log('.json_encode($genres).')</script>';
     
     // リストを表示
     echo implode(",", $field) . "<br>";

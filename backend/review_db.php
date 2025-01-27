@@ -43,13 +43,6 @@ $selected_choice_id = $selected_choices[$position];
 $correct_choice_id = $correct_choices[$position];
 $displayed_questions_id = $displayed_questions[$position];
 
-// デバッグ情報を表示
-echo '<script>console.log('.json_encode($selected_choices).')</script>';
-echo '<script>console.log('.json_encode($correct_choices).')</script>';
-echo '<script>console.log('.json_encode($selected_choice_id).')</script>';
-echo '<script>console.log('.json_encode($correct_choice_id).')</script>';
-echo '<script>console.log('.json_encode($displayed_questions_id).')</script>';
-
 if ($selected_choice_id == $correct_choice_id) {
     $result = 'correct';
 } else {

@@ -5,8 +5,7 @@ use LDAP\Result;
 require_once __DIR__ . '/dbdata.php';
 
 class form extends Dbdata
-{
-    
+{ 
     public function getpass($userid, $newPass)
     {
         $sql = "UPDATE userinfo SET userinfo.password = ? WHERE userinfo.userid = ?";
@@ -199,7 +198,6 @@ class form extends Dbdata
     
             $previousScore = $score;
         }
-    
         return $rankings; // Return all rankings at once
     }
 
@@ -426,8 +424,6 @@ class form extends Dbdata
     
         // 結果を取得
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
-    
-      
+    }      
 
 }    
