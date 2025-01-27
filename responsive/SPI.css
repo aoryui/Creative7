@@ -16,7 +16,7 @@ div[style*="z-index: 2147483647"] {
 
     .kan-right {
         font-size: 0.8em; /* ログインボタンの文字サイズ縮小 */
-        padding: 6px 14px;
+        padding: 6px 14px; /* ボタンの余白を調整 */
         right: 10px;
     }
 
@@ -25,15 +25,15 @@ div[style*="z-index: 2147483647"] {
     }
 
     nav ul li {
-        margin: 5px 0;
+        margin: 5px 0; /* メニュー項目の間隔調整 */
     }
 
     .hero h1 {
-        font-size: 2em;
+        font-size: 2em; /* ヒーローセクションの見出しのフォントサイズ調整 */
     }
 
     .hero p {
-        font-size: 1em;
+        font-size: 1em; /* ヒーローセクションのテキストサイズ調整 */
     }
 }
 
@@ -46,8 +46,8 @@ div[style*="z-index: 2147483647"] {
         padding: 5px 0; /* ヘッダーの高さを調整 */
     }
     nav ul {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* メニュー項目を縦並びに */
+        align-items: center; /* 中央揃え */
     }
 
     nav ul li a {
@@ -70,7 +70,7 @@ div[style*="z-index: 2147483647"] {
     }
 
     h2 {
-        font-size: 1.4em;
+        font-size: 1.4em; /* 見出しのフォントサイズをさらに縮小 */
     }
 
     p {

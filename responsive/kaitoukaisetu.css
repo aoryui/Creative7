@@ -2,64 +2,77 @@
 
 /* デフォルトのスタイル（既存）をそのまま保持 */
 
-/* 画面幅が768px以下の場合（タブレット） */
+/* ====== 画面幅が768px以下の場合のスタイル ====== */
 @media (max-width: 768px) {
+    /* bodyの上部マージンを調整 */
     body {
-        margin-top: 20px;
+        margin-top: 20px; /* ページ全体の上端に20pxの余白を追加 */
     }
 
+    /* トップコンテンツの余白を調整 */
     .top-contents{
-        margin: 0 10px;
-        margin-top: 100px;
+        margin: 0 10px; /* 左右に10pxの余白を設定 */
+        margin-top: 100px; /* トップコンテンツの上に100pxの余白を追加 */
     }
 
+    /* h2要素の余白を調整 */
     h2 {
-        margin: 0 10px;
-        margin-top: 10px;
+        margin: 0 10px; /* 左右に10pxの余白を設定 */
+        margin-top: 10px; /* 上に10pxの余白を追加 */
     }
+
+    /* 質問と回答の画像サイズを調整 */
     .question_img, .answer_img {
         width: 90%; /* 画像を画面幅に合わせる */
         max-width: 400px; /* 画像が大きくなりすぎないように制限 */
     }
 
+    /* コンテンツを縦並びに変更し、中央揃え */
     .center-contents {
-        flex-direction: column; /* 縦に並べる */
-        align-items: center;
+        flex-direction: column; /* 要素を縦並びに変更 */
+        align-items: center; /* 要素を中央揃え */
     }
 
+    /* 画像コンテンツの幅を調整 */
     .img-contents {
-        width: 100%;
+        width: 100%; /* 幅を画面全体に合わせる */
     }
 
+    /* 選択肢の幅制限を解除し、配置を調整 */
     .correct-choice, .correct-choice1 {
         max-width: 100%; /* 選択肢の幅を制限しない */
-        top: 0;
-        left: 0;
+        top: 0; /* 上の位置をリセット */
+        left: 0; /* 左の位置をリセット */
     }
 
+    /* ボタンの配置を中央揃えに変更 */
     .btn {
-        margin: 10px auto;
+        margin: 10px auto; /* ボタンの上下マージンを追加し、左右中央揃え */
         justify-content: center; /* ボタン中央揃え */
     }
 }
 
-/* 画面幅が480px以下の場合（スマートフォン） */
+/* ====== 画面幅が480px以下の場合（スマートフォン向けのスタイル） ====== */
 @media (max-width: 480px) {
+    /* モーダル全体の幅を画面サイズに合わせて縮小 */
     .modal-content {
-        width: 90%; /* モーダル全体の幅を縮小 */
+        width: 90%; /* モーダル幅を90%に設定 */
     }
 
+    /* モーダル内の画像サイズを調整 */
     .modal-image {
-        max-height: 200px; /* モーダル内画像を小さく制限 */
+        max-height: 200px; /* 高さを200px以内に制限 */
     }
 
+    /* プレビューアイコン（カラー、選択肢）のサイズを小さく設定 */
     .color-preview, .choice-preview {
-        width: 16px; /* サイズを小さめに設定 */
-        height: 16px;
+        width: 16px; /* 幅を16pxに設定 */
+        height: 16px; /* 高さも16pxに設定 */
     }
 
+    /* ボタンのフォントサイズとパディングを調整 */
     .btn {
         font-size: 14px; /* ボタンの文字サイズを小さくする */
-        padding: 8px; /* パディングを調整 */
+        padding: 8px; /* ボタンのパディングを調整してコンパクトに */
     }
 }

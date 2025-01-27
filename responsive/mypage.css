@@ -1,28 +1,33 @@
 /* モバイル用スタイル (最大幅 768px) */
 @media screen and (max-width: 768px) {
+    /* 全体のフォントサイズを調整 */
     body {
-        font-size: 14px;
+        font-size: 14px; /*フォントサイズを15pxに設定*/
     }
 
+    /* プロフィールコンテナを縦方向に並べる */
     .profile-container {
         flex-direction: column; /* 縦方向に並べる */
         margin: 20px;
-        margin-top: 115px;
+        margin-top: 115px; /* 上部に余白を追加 */
     }
 
+    /* サイドバーのスタイルを調整 */
     .profile-sidebar {
-        padding: 20px;
-        text-align: center;
-        height: 930px;
+        padding: 20px; /* 余白のサイズを 20 ピクセルに設定 */
+        text-align: center; /* テキストを中央揃え */
+        height: 930px; /* 固定高さを設定 */
     }
 
+    /* メインコンテンツをフル幅に拡張 */
     .profile-main {
-        width: 100%; /* メイン部分をフル幅にする */
-        padding: 20px;
-        margin-top: 60px;
-        height: 625px; /* 高さをコンテンツに合わせる */
+        width: 100%; /* 横幅を100%に設定 */
+        padding: 20px; /* 余白のサイズを 20 ピクセルに設定 */
+        margin-top: 60px; /* 上部に 60px の空白が追加 */
+        height: 625px; /* 高さを固定 */
     }
 
+    /* セクションの見出しを中央揃えに */
     .learning-progress h3,
     .growth-record h3 {
         font-size: 1.5em;
@@ -30,37 +35,40 @@
         text-align: center; /* 中央寄せ */
     }
 
+    /* プログレスアイテムのスタイル調整 */
     .progress-item {
-        display: block;
-        left: -50px;
+        display: block; /* ブロック要素に変更 */
+        left: -50px; /* 左方向に位置調整 */
         top: -20px;
         margin-bottom: 20px;
-        text-align: center;
+        text-align: center; /* 中央揃え */
     }
 
+    /* モーダルウィンドウのスタイルを設定 */
     .modal{
-        background-color: #fefefe;
-        margin: 15% auto;
+        background-color: #fefefe; /* 白背景 */
+        margin: 15% auto; /* 自動マージンで中央配置 */
         padding: 20px;
-        border: 1px solid #888;
-        width: 65%;
-        height: 40%;
-        margin-top: 180px;
+        border: 1px solid #888; /* ボーダーを追加 */
+        width: 65%; /* モーダル幅を調整 */
+        height: 40%; /* モーダル高さを調整 */
+        margin-top: 180px; /* 画面上部からの間隔 */
     }
 
+    /* 編集オプションの幅を調整 */
     #editOption {
         width: 24%;
     }
 
+    /* 編集ボタンの位置を調整 */
     .edit-profile-btn1 {
         width: 24%;
-        /* margin: 10px 0; */
         position: relative;
         left: -395px;
         top: 78px;
     }
     
-
+    /* その他の要素位置をリセット */
     #sougo,
     #language,
     #nonverbal {
@@ -75,74 +83,81 @@
         top: 0;
     }
 
+    /* ボタンをフル幅に拡張 */
     .edit-profile-btn,
     #button {
-        width: 100%; /* ボタンをフル幅に */
+        width: 100%;  /* 幅を100%に設定 */
         margin: 10px 0;
     }
 }
 
-/* モバイル用スタイル (最大幅 360px) */
+/* ===== モバイル用スタイル (最大幅 360px) ===== */
 @media screen and (max-width: 360px) {
+    /* 全体のフォントサイズを調整 */
     body {
-        font-size: 14px;
+        font-size: 14px; /* 画面サイズが小さいため、読みやすいフォントサイズに変更 */
     }
 
+    /* プロフィールコンテナのスタイルを調整 */
     .profile-container {
-        flex-direction: column; /* 縦方向に並べる */
-        margin: 20px;
-        margin-top: 115px;
+        flex-direction: column; /* コンテンツを縦方向に並べる */
+        margin: 20px; /* コンテナ全体に余白を設定 */
+        margin-top: 115px; /* 上部に追加の余白を設定 */
     }
 
-
+    /* サイドバーのスタイル */
     .profile-sidebar {
-        padding: 20px;
-        text-align: center;
-        height: 930px;
+        padding: 20px; /* サイドバー内部に余白を追加 */
+        text-align: center; /* テキストを中央揃え */
+        height: 930px; /* サイドバーの高さを固定 */
     }
 
+    /* メインコンテンツのスタイル */
     .profile-main {
-        width: 100%; /* メイン部分をフル幅にする */
-        padding: 20px;
-        margin-top: 60px;
-        height: 625px; /* 高さをコンテンツに合わせる */
+        width: 100%; /* 横幅をフルに使用 */
+        padding: 20px; /* 内部余白を追加 */
+        margin-top: 60px; /* 上部の余白を設定 */
+        height: 625px; /* 高さを固定 */
     }
 
+    /* セクションタイトルのスタイル調整 */
     .learning-progress h3,
     .growth-record h3 {
-        font-size: 1.5em;
-        margin-top: 30px;
-        text-align: center; /* 中央寄せ */
+        font-size: 1.5em; /* 見出しのフォントサイズを大きく設定 */
+        margin-top: 30px; /* 上部に余白を追加 */
+        text-align: center; /* テキストを中央揃え */
     }
 
+    /* プログレスアイテムのスタイル調整 */
     .progress-item {
-        display: block;
-        left: -50px;
-        top: -20px;
-        margin-bottom: 20px;
-        text-align: center;
+        display: block; /* ブロック要素に変更 */
+        left: -50px; /* 左位置を調整 */
+        top: -20px; /* 上位置を調整 */
+        margin-bottom: 20px; /* 下部に余白を追加 */
+        text-align: center; /* 中央揃え */
     }
 
     .modal{
-        background-color: #fefefe;
-        margin: 15% auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 65%;
-        height: 40%;
-        margin-top: 180px;
+        background-color: #fefefe; /* 背景色を白に設定 */
+        margin: 15% auto; /* 上下中央に配置 */
+        padding: 20px; /* 内部余白を追加 */
+        border: 1px solid #888; /* ボーダーを設定 */
+        width: 65%; /* 横幅を調整 */
+        height: 40%; /* 高さを調整 */
+        margin-top: 180px; /* 上部に大きな余白を設定 */
     }
 
+    /* 編集オプションの幅を調整 */
     #editOption {
-        width: 24%;
+        width: 24%; /* 編集オプションの横幅を固定 */
     }
 
+     /* 編集ボタンの位置とサイズを調整 */
     .edit-profile-btn1 {
-        width: 24%;
-        /* margin: 10px 0; */
-        position: relative;
-        left: -395px;
-        top: 78px;
+        width: 24%; /* ボタンの横幅を固定 */
+        position: relative; /* 相対位置に変更 */
+        left: -395px; /* 左方向に配置を調整 */
+        top: 78px; /* 上方向に配置を調整 */
     }
     
 
@@ -150,19 +165,20 @@
     #language,
     #nonverbal {
         position: static; /* 固定位置を解除 */
-        left: 0;
+        left: 0; /* 左位置を初期化 */
     }
 
+    /* 言語選択関連の位置をリセット */
     .language1,
     .nonverbal1 {
         position: static; /* 固定位置を解除 */
-        left: 0;
-        top: 0;
+        left: 0; /* 左位置を初期化 */
+        top: 0; /* 上位置を初期化 */
     }
 
     .edit-profile-btn,
     #button {
         width: 100%; /* ボタンをフル幅に */
-        margin: 10px 0;
+        margin: 10px 0; /* 上下に余白を追加 */
     }
 }

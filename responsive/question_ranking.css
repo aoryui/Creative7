@@ -27,12 +27,12 @@
     }
 
     .flex-inner{
-        margin-left: -90px;
-        margin-right: -90px;
+        margin-left: -90px; /* 要素の左側の外側の余白を90px左に移動 */
+        margin-right: -90px;/* 要素の左側の外側の余白を90px右に移動 */
     }
 }
 
-/* スマホ向け: 画面幅が576px以下の場合 */
+/*--- スマホ向け: 画面幅が576px以下の場合 ---*/
 @media (max-width: 576px) {
     table {
         font-size: 12px; /* テーブルのフォントサイズをさらに小さく */
@@ -48,14 +48,14 @@
     }
 
     h1 {
-        padding-top: 50px;
+        padding-top: 50px; /* 要素の上部に50pxの余白を追加、内容が上から50px離れて配置 */
         font-size: 20px; /* 見出しのフォントサイズをさらに調整 */
     }
 
     /* テーブルが狭い場合にスクロール可能にする */
     table {
-        display: block;
-        overflow-x: auto;
+        display: block; /* 要素をブロックレベル要素として表示 */
+        overflow-x: auto; /* 横方向のオーバーフローが発生した場合にスクロールバーを表示 */
         white-space: nowrap; /* 横スクロール用 */
     }
 

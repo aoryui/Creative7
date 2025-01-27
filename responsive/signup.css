@@ -3,92 +3,92 @@
 div[style*="z-index: 2147483647"] {
     display: none !important;
 }
-
+/*--- 画面幅が480px以下のデバイスに適用 ---*/
 @media (max-width: 480px) {
     .login-body {
-        padding: 20px;
+        padding: 20px; /* ログイン画面の内側の余白を調整 */
     }
 
     .login-container {
-        margin-top: 90px;
+        margin-top: 90px; /* ログインフォームの上部に余白を作成 */
         width: 100%; /* 画面幅に合わせる */
-        height: 500px;
+        height: 500px; /* 高さを設定 */
         box-sizing: border-box;
         overflow-y: auto; /* スクロールを有効化 */
     }
 
     .h1 {
-        font-size: 10px; /* タイトルを小さめに調整 */
+        font-size: 10px; /* タイトルのフォントサイズを小さく */
     }
 
     .form-group {
-        margin-bottom: 10px; /* 各フォーム要素の間隔を狭める */
+        margin-bottom: 10px; /* 各フォーム要素間の間隔を狭く */
     }
 
     input, #school {
         width: 100%; /* 画面幅に合わせる */
-        font-size: 20px;
-        padding: 8px;
-        background-color: #fff;
+        font-size: 20px; /* フォントサイズ調整 */
+        padding: 8px; /* 内側の余白を8pxに設定 */
+        background-color: #fff; /* 背景色を白に設定 */
     }
 
     #submit {
-        width: 60%; /* ボタンサイズ調整 */
-        font-size: 18px;
-        top: 20px;
+        width: 60%;  /* ボタン幅を画面の60%に調整 */
+        font-size: 18px; /* フォントサイズ調整 */
+        top: 20px; /* ボタン位置調整 */
         margin: 0 auto; /* 中央揃え */
-        display: block;
+        display: block; /* ボタンをブロック要素として扱い、中央揃えが効くように */
     }
 
     #username, #school, #address, #password {
-        left: 0;
-        top: 0;
+        left: 0; /* 0ピクセルの位置に設定 */
+        top: 0; /* 0ピクセルの位置に設定 */
         width: 100%; /* 入力幅を最大化 */
     }
 
     #usernames, #schools, #addresses, #passwords {
-        left: 0;
-        top: 0;
-        text-align: left; /* 左揃えに変更 */
+        left: 0; /* 0ピクセルの位置に設定 */
+        top: 0; /* 0ピクセルの位置に設定 */
+        text-align: left; /* ラベルを左揃え */
         font-size: 14px; /* ラベルのフォントサイズを縮小 */
-        margin-bottom: 5px;
+        margin-bottom: 5px; /* ラベル間の余白を狭く */
     }
 
     .character {
         width: 100px; /* 画像を小さく調整 */
-        margin-bottom: 15px;
+        margin-bottom: 15px;  /* 画像と下の要素との間隔を確保 */
     }
 
     .message-red {
         width: 100%; /* メッセージを画面幅に対応 */
-        padding: 10px;
+        padding: 10px; /* メッセージの内側余白を調整 */
     }
 }
 
 /* タブレット用 */
 @media (min-width: 481px) and (max-width: 768px) {
     .login-container {
-        width: 80%; /* 少し幅を広げる */
-        height: auto;
-        margin-top: 40px;
-        padding: 30px;
+        width: 80%;  /* ログインフォームの幅を80%に設定 */
+        height: auto; /* 高さを自動調整 */
+        margin-top: 40px; /* 上部に40pxの余白 */
+        padding: 30px; /* 内側余白を30pxに設定 */
     }
 
     .h1 {
-        font-size: 16px; /* タイトルサイズを調整 */
+        font-size: 16px; /* タイトルのフォントサイズを調整 */
     }
 
     input, #school {
-        width: 100%; /* 入力フィールド幅調整 */
-        font-size: 18px; /* フォントサイズ調整 */
-        padding: 10px;
+        width: 100%; /* 入力フィールドの幅を100%に設定 */
+        font-size: 18px;  /* フォントサイズ調整 */
+        padding: 10px; /* パディング調整 */
     }
 
     #submit {
-        width: 80%; /* ボタンを広げる */
-        font-size: 18px;
-        padding: 12px;
-        margin-top: 10px;
+        width: 80%; /* ボタン幅を80%に調整 */
+        font-size: 18px; /* フォントサイズ調整 */
+        padding: 12px; /* 内側余白調整 */
+        margin-top: 10px; /* ボタン上部の余白を10pxに設定 */
     }
 
     .message-red {

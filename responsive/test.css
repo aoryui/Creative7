@@ -8,89 +8,89 @@ div[style*="z-index: 2147483647"] {
     .content {
         padding: 10px;
         flex-direction: column; /* 要素を縦並びにする */
-        align-items: center;
+        align-items: center; /* 横方向で中央揃え */
     }
 
     .top-contents {
-        margin: 10px;
+        margin: 10px; /* クラスの外側に10pxの余白を追加 */
     }
 
     button {
-        position: relative;
+        position: relative; /* ボタンを親要素に対して相対的に配置 */
         top: 50px; /* ボタン位置を調整 */
-        left: 0;
+        left: 0; /* ボタンを親要素の左端に配置 */
         width: 100%;
         max-width: 300px; /* 幅を調整 */
-        height: 50px;
+        height: 50px; /* ボタンの高さを50pxに設定 */
     }
 
     .question_img {
         width: 100%; /* 画像の幅を100%に */
-        position: relative;
-        top: 0;
-        left: 0;
+        position: relative; /* 画像の位置を親要素に対して相対的に配置 */
+        top: 0; /* 画像を親要素から0pxの位置に配置 */
+        left: 0; /* 画像を親要素の左端に配置 */
     }
 
     .question-text {
-        margin-left: 0;
-        margin-right: 0;
-        padding: 10px;
+        margin-left: 0; /* 左側の外側余白を0に設定 */
+        margin-right: 0; /* 右側の外側余白を0に設定 */
+        padding: 10px; /* 内側に10pxの余白を設定 */
         font-size: 14px; /* テキストサイズを小さく */
     }
 
     .choices {
-        position: absolute;
-        top: 275px;
-        right: -60px;
-        max-width: 80%;
+        position: absolute; /* 親要素に対して絶対位置で配置 */
+        top: 275px; /* 親要素の上から275pxの位置 */
+        right: -60px; /* 親要素の右から-60pxの位置に配置 */
+        max-width: 80%; /* 親要素の幅の80%に制限 */
     }
 
     .choice {
         width: max-content; /* 選択肢を画面全体に広げる */
-        margin-bottom: 15px;
+        margin-bottom: 15px; /* 各選択肢の下に15pxの余白を設定 */
     }
 
     .next-button {
-        left: 200px;
-        width: 17%;
-        position: relative;
-        top: 280px;
-        font-size: 16px;
-        margin-left: 0px;
-        margin-top: 20px;
+        left: 200px; /* ボタンが画面の左から200px離れた位置に配置 */
+        width: 17%; /* ボタンの幅を親要素の幅の17%に設定 */
+        position: relative; /* ボタンの位置を親要素に対して相対的に配置します */
+        top: 280px; /* 縦方向での位置を下に280pxずらします */
+        font-size: 16px; /* ボタン内の文字が16pxで表示 */
+        margin-left: 0px; /* 左端にぴったり配置 */
+        margin-top: 20px; /*ボタンが上から20px離れた位置に配置 */
     }
 
     .timer-container {
-        width: 90%;
-        left: 5%;
+        width: 90%; /* 親要素の幅の90%に設定 */
+        left: 5%; /* 左端から5%の位置にコンテナが配置 */
     }
     .timer-label {
-        position: absolute;
-        top: 142px;
-        margin-left: 20px;
+        position: absolute; /* 親要素に対して絶対位置で配置 */
+        top: 142px; /* タイマーのラベルが縦方向で142px下に配置 */
+        margin-left: 20px; /* 左端から20pxの位置にラベルが配置 */
     }
 
     .modal-content {
-        width: 80%;
-        margin: 20% auto;
+        width: 80%; /* モーダルのコンテンツの幅を親要素の80%に設定 */
+        margin: 20% auto; /* モーダルのコンテンツを縦方向で親要素の20%下に配置し、横方向で中央揃え */
     }
 
     .footer p {
-        margin-left: 10px;
-        text-align: center;
+        margin-left: 10px; /* フッター内の<p>タグに10pxの左余白を設定 */
+        text-align: center; /*  フッター内の<p>タグのテキストを中央揃え */
     }
 
     .button {
-        width: 100%;
-        height: 40px;
-        margin-top: 20px;
+        width: 100%; /* 親要素の幅の100%に設定 */
+        height: 40px; /* ボタンの高さを40pxに設定 */
+        margin-top: 20px; /* ボタンの上に20pxの余白を設定 */
     }
 
     .edit-profile-btn {
-        position: absolute;
-        width: 35%;
-        height: 40px;
-        margin: 32px 0px 0px 210px;
+        position: absolute; /* 親要素に対して絶対位置で配置 */
+        width: 35%; /* 親要素の幅の35%に設定 */
+        height: 40px; /* 高さを40pxに設定 */
+        margin: 32px 0px 0px 210px; /* ボタンに上部に32px、左側に210pxの余白を設定 */
     }
 }
 

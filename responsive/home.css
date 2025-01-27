@@ -5,61 +5,86 @@ div[style*="z-index: 2147483647"] {
 
 /* 極小スマホ (360px以下) */
 @media screen and (max-width: 360px) {
+    /* .kan-rightを非表示にする */
     .kan-right {
-        display: none;
+        display: none; /* このプロパティは、kan-right クラスの要素を画面に表示しないように */
     }
+
+    /* ナビゲーションリストを縦並び＆中央寄せに変更 */
     nav ul {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* ナビゲーションリスト（<ul> 要素）内のリスト項目（<li>）を縦並びに変更 */
+        align-items: center; /* リスト項目が水平方向の中央に配置 */
     }
+
+    /* ヒーローセクションのタイトルのフォントサイズを調整 */
     .hero h1 {
-        font-size: 1.8em;
+        font-size: 1.8em; /* タイトルを小さく調整 */
     }
+
+    /* ヒーローセクションの段落のフォントサイズを調整 */
     .hero p {
-        font-size: 0.7em;
+        font-size: 0.7em; /* 段落をより小さく調整 */
     }
 }
 
 /* 小型スマホ (361px ~ 414px) */
 @media screen and (max-width: 414px) {
+    /* .kan-rightを非表示にする */
     .kan-right {
-        display: none;
+        display: none; /* kan-right の要素が表示されなくなる */
     }
+
+    /* ナビゲーションリストを縦並び＆中央寄せに変更 */
     nav ul {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* メニューが縦方向に表示 */
+        align-items: center; /* リスト項目が画面の中央に揃って配置 */
     }
+
+    /* ヒーローセクションのタイトルのフォントサイズを調整 */
     .hero h1 {
-        font-size: 2em;
+        font-size: 2em; /* タイトルのフォントサイズを少し大きく設定 */
     }
+
+    /* ヒーローセクションの段落のフォントサイズを調整 */
     .hero p {
-        font-size: 0.9em;
+        font-size: 0.9em; /* 段落をやや小さめに設定 */
     }
 }
 
 /* 中型スマホ (415px ~ 768px) */
 @media screen and (max-width: 768px) {
+    /* .kan-rightを非表示にする */
     .kan-right {
-        display: none;
+        display: none; /* kan-right の要素が表示されない */
     }
+    
+    /* ナビゲーションリストを縦並び＆中央寄せに変更 */
     nav ul {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* メニューが縦方向に表示 */
+        align-items: center; /* リスト項目が画面の中央に揃って表示 */
     }
+
+    /* ロゴ画像の配置と幅を調整 */
     .logo-img{
-        display: flex;
-        left: 1px;
-        width: 100%;
+        display: flex; /* ロゴ画像をフレックスで表示 */
+        left: 1px; /* 左に1px調整 */
+        width: 100%; /* 幅を100%に設定 */
     }
+
+    /* ヒーローセクションのタイトルのフォントサイズを調整 */
     .hero h1 {
-        font-size: 2.2em;
+        font-size: 2.2em; /* タイトルをさらに大きく設定 */
     }
+
+    /* ヒーローセクションの段落のフォントサイズを調整 */
     .hero p {
-        font-size: 1em;
+        font-size: 1em; /* 段落のフォントサイズを標準的に設定 */
     }
+
+    /* ヒーローセクション内のボタンのスタイルを調整 */
     .hero .btn {
-        display: flex;
-        left: 30px;
-        margin: 0px 83px 50px 29px;
+        display: flex; /* ボタンをフレックスで表示 */
+        left: 30px; /* 左に30px移動 */
+        margin: 0px 83px 50px 29px; /* 上、右、下、左のマージンを設定 */
     }
 }

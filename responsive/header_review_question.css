@@ -8,21 +8,21 @@ div[style*="z-index: 2147483647"] {
 
     header {
         height: 80px; /* ヘッダーの高さをコンパクトに */
-        padding: 0 10px;
-        justify-content: space-between;
+        padding: 0 10px; /* 左右10px に設定 */
+        justify-content: space-between; /* ヘッダー内の要素を左右に配置 */
     }
 
     #free-h1 {
         width: 250px; /* ロゴの幅を縮小 */
         height: 40px; /* ロゴの高さを調整 */
-        right: 40px;
+        right: 40px; /* ロゴを右側に配置 */
     }
 
     nav {
-        width: 100%;
+        width: 100%; /* ナビゲーションの幅を 100% に設定 */
         height: calc(100% - 80px); /* ヘッダー高さに応じて調整 */
-        top: 80px;
-        left: 0;
+        top: 80px; /* ヘッダーの下にナビゲーションを配置 */
+        left: 0; /* 左配置 */
     }
 
     nav ul li a {
@@ -31,20 +31,20 @@ div[style*="z-index: 2147483647"] {
     }
 
     #menuBtn img{
-        width: 65px;
-        height: 65px;
+        width: 65px; /* メニューボタン内の画像サイズを 65px に調整 */
+        height: 65px; /* メニューボタン内の画像サイズを 65px に調整 */
 
     }
 
     #menuBtn {
         width: 40px; /* スマホでは少し小さめ */
-        left: -225px;
+        left: -225px; /* メニューボタンを画面外に配置するため、left: -225px; を設定 */
     }
 
     #menuContent {
-        width: 100%;
-        left: 0;
-        top: 80px;
+        width: 100%; /* メニューコンテンツの幅を 100% に設定 */
+        left: 0; /* 左配置 */
+        top: 80px; /* top: 80px; で、ヘッダーの下に配置 */
         box-shadow: none; /* モバイルでは影を削除 */
     }
 }
@@ -52,20 +52,20 @@ div[style*="z-index: 2147483647"] {
 /* タブレット (最大幅 1024px、最小幅 769px) */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     header {
-        height: 90px;
-        padding: 0 15px;
+        height: 90px; /* ヘッダーの高さを 90px に設定 */
+        padding: 0 15px; /* 内側の余白（padding）を 左右15px に設定 */
     }
 
     #free-h1 {
         width: 250px; /* ロゴをタブレット用に少し大きく */
-        height: 50px;
-        left: auto;
+        height: 50px; /* ロゴの高さを 50px に調整 */
+        left: auto; /* ロゴが左に寄らず自動で位置が調整 */
     }
 
     nav {
         width: 300px; /* メニューの幅を広めに */
-        height: calc(100% - 90px);
-        top: 90px;
+        height: calc(100% - 90px); /* 高さは画面の高さから 90px を引いた値に設定 */
+        top: 90px; /* 上に90px配置 */
     }
 
     nav ul li a {
@@ -74,12 +74,12 @@ div[style*="z-index: 2147483647"] {
     }
 
     #menuBtn {
-        width: 60px;
-        height: 45px;
+        width: 60px; /* メニューボタンの幅を 60px */
+        height: 45px;/* 高さを45pxサイズ調整 */
     }
 
     #menuContent {
-        width: 300px;
+        width: 300px; /* メニューコンテンツの幅を 300px に設定 */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 軽い影を追加 */
     }
 }

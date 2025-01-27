@@ -1,9 +1,9 @@
 /* レスポンシブデザインを追加 */
 @media (max-width: 768px) { /* 画面幅が768px以下の場合 */
     .border-frame {
-        padding: 15px;
+        padding: 15px; /* フレームの内側の余白を調整 */
         width: 90%; /* フレームの幅を狭める */
-        margin-top: 100px;
+        margin-top: 100px; /* 上部の余白を設定 */
     }
 
     #user_data {
@@ -13,7 +13,7 @@
 
     #precedence, #total {
         font-size: 16px; /* フォントサイズを調整 */
-        margin: 5px 0;
+        margin: 5px 0; /* 上下に余白を設定 */
     }
 
     #table {
@@ -22,7 +22,7 @@
 
     .crown-icon {
         width: 16px; /* 王冠アイコンの大きさを縮小 */
-        height: 16px;
+        height: 16px; /* 高さも合わせて縮小 */
     }
 
     .ranking-header {
@@ -41,11 +41,12 @@
 
     .update-button img {
         width: 25px; /* 更新ボタンのアイコンを縮小 */
-        height: 25px;
+        height: 25px; /* 高さも合わせて縮小 */
     }
 }
 
-@media (max-width: 480px) { /* 画面幅が480px以下の場合 */
+/* 画面幅が480px以下の場合 */
+@media (max-width: 480px) {
     #table th, #table td {
         font-size: 12px; /* テーブル内フォントサイズをさらに縮小 */
         padding: 5px; /* セルの余白を縮小 */
@@ -53,7 +54,7 @@
 
     .stylish-link {
         font-size: 12px; /* ボタンのフォントサイズをさらに縮小 */
-        padding: 5px 10px;
+        padding: 5px 10px; /* ボタンのパディングをさらに縮小 */
     }
 
     #ranking {
@@ -62,7 +63,7 @@
 
     .ranking_icon {
         width: 50px; /* ランキングアイコンの大きさを縮小 */
-        height: 40px;
+        height: 40px; /* 高さも合わせて縮小 */
     }
 
     .pagination a {

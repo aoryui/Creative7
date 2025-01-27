@@ -4,51 +4,61 @@ div[style*="z-index: 2147483647"] {
     display: none !important;
 }
 
+/* 画面幅が768px以下の場合に適用されるスタイル */
 @media (max-width: 768px) {
 
     header{
-        height: 70px;
+        height: 70px;/* ヘッダーの高さを70pxに設定 */
     }
 
     #free-h1 {
-        width: 129px;
+        width: 129px;/* #free-h1の幅を調整 */
     }
 
     #menuBtn {
-        width: 40px;
-        height: 40px;
+        width: 40px;/* メニューボタンの幅と高さを40pxに設定 */
+        height: 40px;/* メニューボタンの幅と高さを40pxに設定 */
     }
 
     nav {
-        width: 200px;
-        height: calc(100% - 60px);
+        width: 200px; /* ビゲーションの高さを画面の高さから 60px を引いた値に設定 */
+        height: calc(100% - 60px); /* ビゲーションの高さを画面の高さから 60px を引いた値に設定 */
     }
 
+    /* ナビゲーション内のリンクのフォントサイズを14pxに設定 */
     nav ul li a {
-        font-size: 14px;
+        font-size: 14px; /* ナビゲーションメニュー内のリンクのフォントサイズを 14px に設定 */
     }
 }
 
+/* 画面幅が480px以下の場合に適用されるスタイル */
 @media (max-width: 480px) {
+
+    /* ヘッダーの高さを70pxに設定 */
     header{
-        height: 70px;
+        height: 70px; /* ヘッダーの高さを 70px に設定 */
     }
+
+    /* #free-h1の位置と幅を調整 */
     #free-h1 {
-        left: 30px;
-        width: 250px;
+        left: 30px; /* 左から30pxの位置に配置 */
+        width: 250px; /* 幅を250pxに設定 */
+
         }
-
+    
     #menuBtn {
-        width: 30px;
-        height: 30px;
+        width: 30px; /* メニューボタンの幅と高さを30pxに設定 */
+        height: 30px; /* メニューボタンの幅と高さを30pxに設定 */
     }
 
+    /* ナビゲーションバーの幅と高さを調整 */
     nav {
-        width: 180px;
-        height: calc(100% - 50px);
+        width: 180px; /* ナビゲーションバーの幅を 180px に設定 */
+        height: calc(100% - 50px); /* ナビゲーションバーの幅を 180px に設定 */
     }
 
+    /* ナビゲーション内のリンクのフォントサイズを12pxに設定 */
     nav ul li a {
-        font-size: 12px;
+        font-size: 12px; /* ナビゲーションリンクのフォントサイズを 12px に設定 */
     }
 }

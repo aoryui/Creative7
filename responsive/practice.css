@@ -4,79 +4,92 @@ div[style*="z-index: 2147483647"] {
     display: none !important;
 }
 
+/* 画面幅が768px以下の場合のスタイル */
 @media screen and (max-width: 768px) {
     body {
         margin-top: 70px; /* 上部の余白を調整 */
     }
 
+    /* 上部コンテンツの余白設定 */
     .top-contents {
-        margin: 0 0 0 10px;
+        margin: 0 0 0 10px; /* 左側にのみ10pxの余白を設定 */
     }
 
+    /* センターコンテンツを縦並びに */
     .center-contents {
-        flex-direction: column;
-        align-items: center;
-        padding-top: 10px;
+        flex-direction: column; /* 縦並びに変更 */
+        align-items: center; /* 中央揃え */
+        padding-top: 10px; /* 上部に余白を追加 */
     }
 
+    /* 画像のスタイル設定 */
     .question_img {
-        width: 80%; /* 画像が親要素の幅に収まるように */
-        max-width: 400px; /* 最大幅を設定 */
-        height: auto;
-        margin: 10px 0;
+        width: 80%; /* 画像の幅を親要素の80%に設定 */
+        max-width: 400px; /* 最大幅を400pxに制限 */
+        height: auto; /* 高さは自動で調整 */
+        margin: 10px 0; /* 上下に10pxの余白を追加 */
     }
 
+    /* 選択フォームのスタイル設定 */
     #choiceForm {
-        float: none;
-        margin-top: 20px;
-        width: 100%;
+        float: none; /* 浮動位置を解除 */
+        margin-top: 20px; /* 上部に20pxの余白を追加 */
+        width: 100%; /* 幅を100%に設定して親要素に合わせる */
     }
 
+    /* 選択肢の最大幅設定 */
     .choices {
-        max-width: 100%;
+        max-width: 100%; /* 幅が親要素に合わせて100% */
     }
 
+    /* 次へボタンのスタイル設定 */
     .next-button {
-        width: 80px; /* ボタンの幅を100%にして、親要素の幅に合わせる */
-        text-align: right;
-        font-size: 18px; /* フォントサイズ調整 */
-        margin-right:0px;
-        margin: 10px 0;
+        width: 80px; /* ボタンの幅を80pxに設定 */
+        text-align: right; /* 右揃え */
+        font-size: 18px; /* フォントサイズを18pxに設定 */
+        margin-right:0px; /* 右側の余白をゼロに設定 */
+        margin: 10px 0; /* 上下に10pxの余白を追加 */
     }
 
+    /* 編集プロフィールボタンのスタイル */
     .edit-profile-btn {
-        height: auto;
+        height: auto; /* 高さを自動調整 */
         position: relative;
-        left: 300px;
+        left: 300px; /* 左側に300pxの位置調整 */
         margin: 5px 0; /* ボタン間の余白を追加 */
     }
+    /* 編集ボタンの位置調整 */
     .open-edit-btn {
         position: relative;
-        left: 265px;
-        top: 40px;
+        left: 265px; /* 左側に265pxの位置調整 */
+        top: 40px; /* 上に40pxの位置調整 */
     }
 }
 
-/* タブレット向け */
+/* タブレット向け (900px以下) */
 @media screen and (max-width: 900px) {
+    /* センターコンテンツを縦並びに */
     .center-contents {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* 縦並びに変更 */
+        align-items: center; /* 中央揃え */
     }
 
+    /* 画像の幅を100%に設定 */
     .question_img {
-        width: 100%;
-        max-width: 400px;
+        width: 100%; /* 親要素の幅に合わせる */
+        max-width: 400px;  /* 最大幅は400pxに制限 */
     }
 
+    /* 編集プロフィールボタンの幅設定 */
     .edit-profile-btn {
-        width: 20%;
-        text-align: right;
+        width: 20%; /* ボタン幅を20%に設定 */
+        text-align: right; /* 右揃え */
     }
 
+    /* 次へボタンのスタイル設定 */
     .next-button {
-        width: 100%;
-        text-align: center;
+        width: 100%; /* ボタンの幅を100%に設定 */
+        text-align: center; /* ボタン内のテキストを中央揃え */
     }
 }
 

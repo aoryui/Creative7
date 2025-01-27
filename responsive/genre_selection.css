@@ -3,26 +3,32 @@
 div[style*="z-index: 2147483647"] {
   display: none !important;
 }
-
+/* 画面幅が768px以下の場合に適用されるスタイル */
 @media screen and (max-width: 768px) {
+
+/* .border-frameのパディングを調整 */
   .border-frame {
-    padding-left: 12px;
-    padding-right: 14px;
+    padding-left: 12px; /* 12pxの左内側余白を調整 */
+    padding-right: 14px; /* 14pxの右内側余白を調整 */
   }
 
+/* .flex-innerのパディングを調整 */
   .flex-inner {
-    padding: 30px;
+    padding: 30px; /* 内側余白を 30px に設定 */
   }
 
+/* h2のフォントサイズを調整 */
   h2 {
-    font-size: 20px;
+    font-size: 20px; /* フォントサイズを 20px に設定 */
   }
 
+/* 言語リストの間隔を調整 */
   .language-list-container,
   .non-language-list-container {
     gap: 10px; /* 少し間隔を詰める */
   }
 
+/* .contain-leftのスタイルを変更 */
   .contain-left{
     display: inline-block;
     margin: 0 10px;
@@ -30,6 +36,7 @@ div[style*="z-index: 2147483647"] {
     padding: 0px 0px 8px 42px;
   }
 
+/* .contain-rightのスタイルを変更 */
   .contain-right{
     width: 100%;
     padding:0px 0px 0px 34px;
@@ -39,44 +46,49 @@ div[style*="z-index: 2147483647"] {
         height: 250px;
   }
 
+/* .genre-statsをインライン表示 */
   .genre-stats{
     display: inline;
     margin-left: -1px;
   }
 
+/* .genre-labelをインライン表示し、幅を100%に設定 */
   .genre-label{
     display: inline;
     width: 100%;
   }
 
+/* .genre-nameのテキストを左揃えに設定 */
   .genre-name{
     text-align: left;
   }
 
+/* .genre-itemの位置を調整 */
   .genre-item
   {
     position: relative;
     left: -30px;
   }
 
-
+/* 特定のクラスに対して位置を変更 */
   .genre-item.special-class{
     position: relative;
     left: 130px;
   }
                                   
-
+/* .primary, .secondaryのマージンをゼロにし、テキストを左寄せ */
   .primary,
   .secondary {
     margin: 0;
     text-align: left; /* テキスト中央寄せ */
   }
 
+/* ボタンのフォントサイズ、幅、位置を調整 */
   .button {
     font-size: 14px;
     width: 60%;
     position: absolute;
-    top: 700px;
+    top: 700px; /* 画面上での位置調整 */
     margin: 20px 0px 20px 20px;
   }
 }

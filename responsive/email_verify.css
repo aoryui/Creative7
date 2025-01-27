@@ -1,5 +1,7 @@
 
-/* レスポンシブデザイン */
+/*--- レスポンシブデザイン ---*/
+
+/* 画面幅が768px以下の場合のスタイル */
 @media screen and (max-width: 768px) {
     h2 {
         font-size: 20px; /* 見出しを小さく */
@@ -20,23 +22,24 @@
     }
 }
 
+/* 画面幅が480px以下の場合のスタイル */
 @media screen and (max-width: 480px) {
     h2 {
-        font-size: 18px; /* 小さいデバイス向けの調整 */
+        font-size: 18px; /* さらに小さいデバイス向けに見出しのフォントサイズを調整 */
     }
 
     label {
-        font-size: 12px;
+        font-size: 12px; /* ラベルのフォントサイズをさらに小さく設定 */
     }
 
     input[type="email"] {
-        font-size: 12px;
-        padding: 6px;
+        font-size: 12px; /* 入力欄のフォントサイズを小さく */
+        padding: 6px; /* 入力欄のパディングをさらに縮小 */
     }
 
     button {
-        font-size: 12px;
-        padding: 6px 12px;
+        font-size: 12px; /* ボタンのフォントサイズを小さく */
+        padding: 6px 12px; /* ボタンのパディングをさらに縮小 */
     }
 
     .container {

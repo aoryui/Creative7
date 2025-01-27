@@ -5,8 +5,9 @@ div[style*="z-index: 2147483647"] {
 }
 
 @media screen and (max-width: 1024px){
+    /* ヘッダーの高さを少し縮小 */
     header {
-        padding: 15px 0; /* ヘッダーの高さを少し縮小 */
+        padding: 15px 0; /* 上下のパディングを15pxに設定 */
     }
 
     .kan-right {
@@ -37,7 +38,7 @@ div[style*="z-index: 2147483647"] {
 
 
 
-/* スマホ（768px以下） */
+/*--- スマホ（768px以下） ---*/
 @media screen and (max-width: 768px) {
     header {
         padding: 10px 0; /* ヘッダーの縦幅を縮小 */

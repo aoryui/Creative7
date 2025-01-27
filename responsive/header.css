@@ -6,26 +6,27 @@ div[style*="z-index: 2147483647"] {
 /* 極小スマホ (360px以下) */
 @media screen and (max-width: 360px) {
     #free-h1{
-        position: fixed;
-        left: 70px;
-        width: 80%;
+        position: fixed; /* 固定表示に設定（スクロールしても位置が変わらない） */
+        left: 70px; /* 左から70pxの位置に固定 */
+        width: 80%; /* 幅を画面の80%に設定 */
     }
 }
 
 /* 小型スマホ (361px ~ 414px) */
 @media screen and (max-width: 414px) {
+    /* #free-h1の位置と幅を調整 */
     #free-h1{
-        position: fixed;
-        left: 70px;
-        width: 80%;
+        position: fixed; /* 固定表示に設定 */
+        left: 70px; /* 左から70pxの位置に固定 */
+        width: 80%; /* 幅を画面の80%に設定 */
     }
 }
 
 /* 中型スマホ (415px ~ 768px) */
 @media screen and (max-width: 768px) {
     #free-h1{
-        position: fixed;
-        left: 80px;
-        width: 80%;
+        position: fixed; /* 固定表示に設定 */
+        left: 80px; /* 左から80pxの位置に固定 */
+        width: 80%; /* 幅を画面の80%に設定 */
     }
 }

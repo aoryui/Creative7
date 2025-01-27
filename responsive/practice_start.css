@@ -4,73 +4,82 @@ div[style*="z-index: 2147483647"] {
     display: none !important;
 }
 
-/* タブレット（1024px以下） */
+/* ===== タブレット（1024px以下） ===== */
 @media (max-width: 1024px) {
+     /* 境界フレームの余白と最小幅を調整 */
     .border-frame {
-        padding: 20px;
-        min-width: auto;
+        padding: 20px; /* 内部余白を20pxに設定 */
+        min-width: auto; /* 最小幅の自動調整を有効化 */
     }
 
     .left-contain, .right-contain {
-        position: static; /* 位置指定を解除 */
-        margin: 10px 0; /* 上下に余白を設定 */
-        text-align: center; /* 中央揃え */
+        position: static; /* 絶対位置を解除して通常の位置付けに変更 */
+        margin: 10px 0; /* 上下に余白を追加 */
+        text-align: center; /* テキストを中央揃え */
     }
 
+    /* 言語リストの配置を縦並びに変更 */
     .language-list-container,
     .non-language-list-container {
-        flex-direction: column; /* 縦並びに変更 */
-        gap: 20px; /* 上下の間隔を調整 */
-        justify-content: center; /* 中央揃え */
+        flex-direction: column; /* フレックスボックスを縦方向に変更 */
+        gap: 20px; /* 各アイテム間の余白を20pxに設定 */
+        justify-content: center; /* リスト全体を中央揃え */
     }
 
+    /* 言語リスト内の各アイテムを2列表示 */
     .language-list li, .non-language-list li {
-        flex: 1 1 calc(50% - 10px); /* 横並びで2列表示 */
+        flex: 1 1 calc(50% - 10px); /* 50%幅で間隔を調整 */
     }
 
     .button {
-        position: static; /* 位置指定解除 */
-        margin: 20px auto; /* 上下余白と中央寄せ */
+        position: static; /* 絶対位置を解除 */
+        margin: 20px auto; /* 中央寄せと上下に余白を追加 */
     }
 }
 
-/* スマートフォン（768px以下） */
+/* ===== スマートフォン（768px以下） ===== */
 @media (max-width: 768px) {
+    /* 境界フレームのスタイル調整 */
     .border-frame {
-        margin-top: 100px;
-        padding: 25px;
-        min-width: auto;
+        margin-top: 100px; /* 上部に余白を追加 */
+        padding: 25px; /* 内部余白を25pxに設定 */
+        min-width: auto; /* 最小幅の自動調整を有効化 */
     }
-
+    
+/* 左コンテンツのスタイル */
 .left-contain {
-    display: block; /* ブロック要素にして中央揃え */
-    margin: 0 auto; /* 左右のマージンを自動で設定し、中央に配置 */
+    display: block; /* ブロック要素として表示 */
+    margin: 0 auto; /* 左右の余白を自動設定して中央寄せ */
     text-align: center; /* 中央揃え */
-    width: 80px; /* 幅を制限して中央に配置 */
+    width: 80px; /* 幅を80pxに制限 */
 }
 
+/* 右コンテンツのスタイル */
 .right-contain {
-    display: block; /* ブロック要素にして中央揃え */
-    margin: 0 auto; /* 左右のマージンを自動で設定し、中央に配置 */
+    display: block; /* ブロック要素として表示 */
+    margin: 0 auto; /* 左右の余白を自動設定して中央寄せ */
     text-align: center; /* 中央揃え */
-    width: 100px; /* 幅を制限して中央に配置 */
+    width: 100px; /* 幅を100pxに制限 */
 }
 
+/* 言語リストの配置を縦並びに変更 */
     .language-list-container,
     .non-language-list-container {
-        flex-direction: column; /* 縦並びに変更 */
-        gap: 10px; /* リスト間の余白 */
+        flex-direction: column; /* フレックスボックスを縦方向に変更 */
+        gap: 10px; /* 各アイテム間の余白を10pxに設定 */
     }
 
+    /* 言語リスト内の各アイテムを1列表示 */
     .language-list li,
     .non-language-list li {
-        flex: 1 1 100%; /* 1列表示 */
+        flex: 1 1 100%; /* 各アイテムをフル幅に設定 */
     }
 
+    /* ボタンのスタイル調整 */
     .button {
         position: static; /* 位置指定解除 */
-        margin: 20px auto; /* 中央に配置 */
-        width: 70%; /* 幅いっぱいに広げる */
-        max-width: 300px; /* 最大幅を設定 */
+        margin: 20px auto; /* 上下の余白と中央寄せ */
+        width: 70%; /* 幅を画面の70%に設定 */
+        max-width: 300px; /* 最大幅を300pxに制限 */
     }
 }
