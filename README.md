@@ -1,5 +1,5 @@
 # SPIタイサくん
-![ヘッダー画像](image/poster.jpg)
+<img src="image/poster.jpg" alt="ヘッダー画像" width="300">
 
 ## サービズ紹介動画
 [![動画](http://img.youtube.com/vi/UkzGfDF1sEs/0.jpg)](https://www.youtube.com/watch?v=UkzGfDF1sEs")
